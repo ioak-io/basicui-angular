@@ -1,26 +1,33 @@
-# BasicuiAngular
+# Basicui Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.1.
+Example on how to use Angular & Storybook together for developing Basic UI Components.
 
-## Development server
+## Install dependencies
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `npm i` to install dependencies.
 
-## Code scaffolding
+## Build StoryBook
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `npm run build-storybook` to build StoryBook static web application.
 
-## Build
+## Run StoryBook
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `npm run storybook` to run StoryBook in your local machine at `http://localhost:6006`.
 
-## Running unit tests
+## Run StoryBook - Docs
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `npm run storybook-docs` to run just StoryBook - Docs.
 
-## Running end-to-end tests
+## Open the source code and start editing
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Open the `basicui-angular` directory in your code editor of choice and building your first component!
+
+## Learning Storybook
+
+1. Read our introductory tutorial at [Learn Storybook](https://www.learnstorybook.com/intro-to-storybook/angular/en/get-started/).
+2. Learn how to transform your component libraries into design systems in our [Design Systems for Developers](https://www.learnstorybook.com/design-systems-for-developers/) tutorial.
+2. See our official documentation at [Storybook](https://storybook.js.org/).
 
 ## Further help
 
