@@ -13,6 +13,7 @@
   ],
   "include": [
     "../src/**/*",
+    "./preview.ts",
     "../projects/**/*"
   ],
   "files": [

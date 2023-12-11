@@ -10,5 +10,12 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  options: {
+    storySort: {
+        method: 'alphabetical',
+        order: ['Introduction', 'Styleguide', 'Atoms', 'Molecules', 'Organisms'],
+        locales: 'en-US',
+    }
+},
   docs: { inlineStories: true },
 }

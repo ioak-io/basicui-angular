@@ -1,1 +1,226 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -ms-overflow-style: scrollbar;
+    --antd-wave-shadow-color:#1890ff;
+    --scroll-bar:0 ;
+  }
+  body {
+    margin: 0;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    background-color: #fff;
+    font-feature-settings: "tnum";
+  }
+  .button, input, optgroup, select, textarea {
+    padding: 0px;
+    line-height: inherit;
+    color: inherit;
+    margin: 0px;
+}
+.button, select{
+  text-transform: none;
+}
+  ::before,
+::after {
+  box-sizing: border-box;
+  /* 1 */
+  border-width: 0;
+  /* 2 */
+  border-style: solid;
+  /* 2 */
+  border-color: #e2e8f0;
+  /* 2 */
+}
+.btn[_ngcontent-bkw-c42] {
+  font-size: 14.5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  vertical-align: middle;
+  line-height: 1;
+  white-space: nowrap;
+  border-radius: 0.125rem;
+  transition-property: all;
+  transition-duration: 100ms;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.btn[_ngcontent-ljs-c42] {
+  font-size: 14.5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  vertical-align: middle;
+  line-height: 1;
+  white-space: nowrap;
+  border-radius: 0.125rem;
+  transition-property: all;
+  transition-duration: 100ms;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.btn.icon-only[_ngcontent-bkw-c42] {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.btn.icon-only[_ngcontent-bkw-c42]   .with-padding[_ngcontent-bkw-c42] {
+  padding: 0;
+}
+
+.btn.disabled[_ngcontent-bkw-c42] {
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;
+}
+
+.btn[_ngcontent-bkw-c42]:focus, .btn[_ngcontent-bkw-c42]:active {
+  outline-color: #1890ff;
+}
+
+.btn.no-padding-left[_ngcontent-bkw-c42] {
+  padding-left: 0;
+}
+
+.btn.no-padding-right[_ngcontent-bkw-c42] {
+  padding-right: 0;
+}
+
+.btn-primary[_ngcontent-bkw-c42] {
+  color: #fff;
+  font-weight: 500;
+  background: #0052cc;
+}
+.btn-primary[_ngcontent-ljs-c42] {
+  color: #fff;
+  font-weight: 500;
+  background: #0052cc;
+}
+.btn-primary[_ngcontent-bkw-c42]:disabled {
+  cursor: not-allowed;
+  background-color: #0052cc;
+}
+
+.btn-primary[_ngcontent-bkw-c42]:not(:disabled):hover {
+  background: #0067ff;
+}
+
+.btn-primary[_ngcontent-bkw-c42]:not(:disabled):active {
+  background: #003e99;
+}
+
+.btn-primary[_ngcontent-bkw-c42]:not(:disabled).active {
+  background: #003e99 !important;
+}
+
+.btn-success[_ngcontent-bkw-c42] {
+  color: #fff;
+  font-weight: 500;
+  background: #0b875b;
+}
+
+.btn-success[_ngcontent-bkw-c42]:disabled {
+  cursor: not-allowed;
+  background-color: #3cefb0;
+}
+
+.btn-success[_ngcontent-bkw-c42]:not(:disabled):hover {
+  background: #0fb67b;
+}
+
+.btn-success[_ngcontent-bkw-c42]:not(:disabled):active {
+  background: #07583b;
+}
+
+.btn-success[_ngcontent-bkw-c42]:not(:disabled).active {
+  background: #07583b !important;
+}
+
+.btn-secondary[_ngcontent-bkw-c42] {
+  --text-opacity:1;
+  color: #42526E;
+  color: rgba(66, 82, 110, var(--text-opacity));
+  font-weight: 400;
+  background: #f4f5f7;
+}
+
+.btn-secondary[_ngcontent-bkw-c42]:not(:disabled):hover {
+  --bg-opacity:1;
+  background-color: #ebecf0;
+  background-color: rgba(235, 236, 240, var(--bg-opacity));
+}
+
+.btn-secondary[_ngcontent-bkw-c42]:not(:disabled):active {
+  --bg-opacity:1;
+  background-color: #D2E5FE;
+  background-color: rgba(210, 229, 254, var(--bg-opacity));
+  color: #0052cc;
+}
+
+.btn-empty[_ngcontent-bkw-c42] {
+  background: #fff;
+  outline: none;
+  --text-opacity:1;
+  color: #42526E;
+  color: rgba(66, 82, 110, var(--text-opacity));
+}
+
+.btn-empty[_ngcontent-bkw-c42]:focus, .btn-empty[_ngcontent-bkw-c42]:active {
+  outline: none;
+}
+
+.btn-empty[_ngcontent-bkw-c42]:not(:disabled):hover {
+  --bg-opacity:1;
+  background-color: #ebecf0;
+  background-color: rgba(235, 236, 240, var(--bg-opacity));
+}
+
+.btn-empty[_ngcontent-bkw-c42]:not(:disabled):active {
+  --bg-opacity:1;
+  background-color: #D2E5FE;
+  background-color: rgba(210, 229, 254, var(--bg-opacity));
+  color: #0052cc;
+}
+
+.btn-empty[_ngcontent-bkw-c42]:not(:disabled).is-active {
+  background-color: #deebff;
+  --text-opacity:1;
+  color: #42526E;
+  color: rgba(66, 82, 110, var(--text-opacity));
+}
+
+.with-padding[_ngcontent-bkw-c42] {
+  padding-left: 0.5rem;
+}
+
+.is-active[_ngcontent-bkw-c42] {
+  --text-opacity:1;
+  color: #0052cc;
+  color: rgba(0, 82, 204, var(--text-opacity));
+  --bg-opacity:1;
+  background-color: #D2E5FE;
+  background-color: rgba(210, 229, 254, var(--bg-opacity));
+}

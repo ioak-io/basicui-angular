@@ -1,0 +1,17 @@
+.text-textMedium {
+    --text-opacity: 1;
+    &.text-15{
+        color: rgba(94, 108, 132, var(--text-opacity));
+        font-size: 0.9375rem;
+}
+}
+.relative{
+    &.mx-2{
+        &.font-lg{
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+        }
+}
+}
+
+
