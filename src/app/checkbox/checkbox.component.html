@@ -1,5 +1,36 @@
+<label [for]="label">
+  <input type="checkbox" [checked]="isChecked" (change)="onCheckboxChange($event)" /> {{label}}
+</label>
 
-<div [ngClass]="['checkbox-container', containerClassName]">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div [ngClass]="['checkbox-container', containerClassName]">
   <div *ngIf="icon"
        class="checkbox-icon-container"
        [style.width.px]="iconContainerWidth">
@@ -10,6 +41,9 @@
   <div class="checkbox-background">
     <input 
         [type]="type"
+        [checked]="isChecked"
+        [disabled]="disabled"
+        [indeterminate]="indeterminate"
         [ngClass]="['input', 'form-input']" 
         [style.padding-left.px]="icon ? iconContainerWidth : 20"
         [style.padding-right.px]="isShowClearButton ? iconContainerWidth : 10"/>
@@ -26,3 +60,4 @@
          (click)="clear()"></i>
   </div>
 </div>
+-->

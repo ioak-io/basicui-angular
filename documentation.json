@@ -586,7 +586,7 @@
         },
         {
             "name": "CheckboxComponent",
-            "id": "component-CheckboxComponent-188681ed9187001d4cf29a92759fce9482d0444bbf5b1db69fd23b1eefec81bb289e589ba011f3c1da90bf9d7effa80bc5bc5ef17ee23c7c8417f8a345555a29",
+            "id": "component-CheckboxComponent-710a1c721a7800b4b785886face6eb90fe641b4cc77bb8dc1b44e0a85f58d9e8223c28f0b4b25f527a9386954b96f34a44d5bd1ae5b1d45e05204f84edef631a",
             "file": "src/app/checkbox/checkbox.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -604,129 +604,62 @@
             "viewProviders": [],
             "inputsClass": [
                 {
-                    "name": "checked",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 21,
-                    "type": "",
-                    "decorators": []
-                },
-                {
-                    "name": "color",
-                    "defaultValue": "'red'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 23,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "containerClassName",
-                    "defaultValue": "'Name'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 13,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "control",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 12,
-                    "type": "FormControl",
-                    "decorators": []
-                },
-                {
-                    "name": "danger",
+                    "name": "isChecked",
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 22,
+                    "line": 9,
                     "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "enableClearButton",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 16,
-                    "type": "boolean | undefined",
-                    "decorators": []
-                },
-                {
-                    "name": "for",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 19,
-                    "type": "string | undefined",
-                    "decorators": []
-                },
-                {
-                    "name": "icon",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 14,
-                    "type": "string | undefined",
-                    "decorators": []
-                },
-                {
-                    "name": "iconSize",
-                    "defaultValue": "16",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 15,
-                    "type": "number",
                     "decorators": []
                 },
                 {
                     "name": "label",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "name",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 17,
-                    "type": "string | undefined",
-                    "decorators": []
-                },
-                {
-                    "name": "type",
-                    "defaultValue": "'checkbox'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 20,
+                    "line": 11,
                     "type": "string",
                     "decorators": []
                 }
             ],
-            "outputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "checkedChange",
+                    "defaultValue": "new EventEmitter<boolean>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "EventEmitter"
+                }
+            ],
             "propertiesClass": [],
             "methodsClass": [
                 {
-                    "name": "clear",
-                    "args": [],
+                    "name": "onCheckboxChange",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 39,
+                    "line": 13,
                     "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 35,
-                    "deprecated": false,
-                    "deprecationMessage": ""
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
                 }
             ],
             "deprecated": false,
@@ -736,47 +669,16 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\nimport { FormControl } from '@angular/forms';\r\n\r\n@Component({\r\n    selector:'app-checkbox',\r\n    templateUrl: './checkbox.component.html',\r\n    styleUrls:['./checkbox.component.scss']\r\n})\r\n\r\nexport class CheckboxComponent implements OnInit {\r\n[x: string]: any;\r\n    @Input() control!: FormControl;\r\n    @Input() containerClassName='Name';\r\n    @Input() icon: string | undefined;\r\n    @Input() iconSize =16;\r\n    @Input() enableClearButton: boolean | undefined;\r\n    @Input() name: string | undefined;\r\n    @Input() label!: string;\r\n    @Input() for : string | undefined;\r\n    @Input() type = 'checkbox';\r\n    @Input() checked!: 'checked';\r\n    @Input() danger = false;\r\n    @Input() color = 'red';\r\n    \r\n    get iconContainerWidth(): number {\r\n        return this.iconSize * 2;\r\n      }\r\n    \r\n      get isShowClearButton(): boolean {\r\n        return this.enableClearButton && this.control?.value;\r\n      }\r\n    \r\n      constructor() {}\r\n\r\n      ngOnInit(): void {\r\n        this.control = this.control ?? new FormControl('');\r\n      }\r\n    \r\n      clear() {\r\n        this.control.patchValue('');\r\n      }\r\n} ",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-checkbox',\r\n  templateUrl: './checkbox.component.html',\r\n  styleUrls: ['./checkbox.component.scss']\r\n})\r\nexport class CheckboxComponent {\r\n  @Input() isChecked: boolean = false;\r\n  @Output() checkedChange = new EventEmitter<boolean>();\r\n  @Input() label!: string;\r\n\r\n  onCheckboxChange(event: Event) {\r\n    this.isChecked = (event.target as HTMLInputElement).checked;\r\n    this.checkedChange.emit(this.isChecked);\r\n  }\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n/*import { Component, Input, OnInit } from '@angular/core';\r\nimport { FormControl } from '@angular/forms';\r\n\r\n@Component({\r\n    selector:'app-checkbox',\r\n    templateUrl: './checkbox.component.html',\r\n    styleUrls:['./checkbox.component.scss']\r\n})\r\n\r\nexport class CheckboxComponent implements OnInit {\r\n[x: string]: any;\r\n    @Input() control!: FormControl;\r\n    @Input() containerClassName='Name';\r\n    @Input() icon: string | undefined;\r\n    @Input() iconSize =16;\r\n    @Input() enableClearButton: boolean | undefined;\r\n    @Input() name: string | undefined;\r\n    @Input() label!: string;\r\n    @Input() for : string | undefined;\r\n    @Input() type = 'checkbox';\r\n    @Input() checked!: 'checked';\r\n    @Input() danger = false;\r\n    @Input() color = true;\r\n    \r\n    get iconContainerWidth(): number {\r\n        return this.iconSize * 2;\r\n      }\r\n    \r\n      get isShowClearButton(): boolean {\r\n        return this.enableClearButton && this.control?.value;\r\n      }\r\n    \r\n      constructor() {}\r\n\r\n      ngOnInit(): void {\r\n        this.control = this.control ?? new FormControl('');\r\n      }\r\n    \r\n      clear() {\r\n        this.control.patchValue('');\r\n      }\r\n} */\r\n\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".checkboxes {\r\n    padding: 5px;\r\n    \r\n}\r\n.checkboxes input{\r\n    margin-right: 5px;\r\n}\r\n    /*.input{\r\n    width: 100%;\r\n    padding: 15px 0px 15px 35px;\r\n    margin: 8px 0;\r\n    display: inline-block;\r\n    border: 1px solid #ccc;\r\n    border-radius: 4px;\r\n    box-sizing: border-box;\r\n  \r\n    &::placeholder {\r\n      font-size: 18px;\r\n      text-align:left;\r\n      \r\n    }\r\n  }*/\r\n  .input{\r\n    &.form-input{\r\n      accent-color: #9d3039;\r\n    }\r\n    &.specific-checkbox {\r\n      color: blue;\r\n  }\r\n}\r\n.checkbox-background{\r\n  display: flex;  \r\n  padding: 1.5rem; //width: fit-content; \r\n  //background-color: white; \r\n  //border-radius: 4px;\r\n}\r\n",
+                    "data": ".checkboxes {\r\n    padding: 5px;\r\n    \r\n}\r\n.checkboxes input{\r\n    margin-right: 5px;\r\n}\r\n    /*.input{\r\n    width: 100%;\r\n    padding: 15px 0px 15px 35px;\r\n    margin: 8px 0;\r\n    display: inline-block;\r\n    border: 1px solid #ccc;\r\n    border-radius: 4px;\r\n    box-sizing: border-box;\r\n  \r\n    &::placeholder {\r\n      font-size: 18px;\r\n      text-align:left;\r\n      \r\n    }\r\n  }*/\r\n  .input{\r\n    &.form-input{\r\n      accent-color: #9d3039;\r\n    }\r\n    &.specific-checkbox {\r\n      color: blue;\r\n  }\r\n}\r\n.checkbox-background{\r\n  display: flex;  \r\n  padding: 1.5rem; //width: fit-content; \r\n  //background-color: white; \r\n  //border-radius: 4px;\r\n}\r\n\r\n",
                     "styleUrl": "./checkbox.component.scss"
                 }
             ],
             "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 31
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "accessors": {
-                "iconContainerWidth": {
-                    "name": "iconContainerWidth",
-                    "getSignature": {
-                        "name": "iconContainerWidth",
-                        "type": "number",
-                        "returnType": "number",
-                        "line": 25
-                    }
-                },
-                "isShowClearButton": {
-                    "name": "isShowClearButton",
-                    "getSignature": {
-                        "name": "isShowClearButton",
-                        "type": "boolean",
-                        "returnType": "boolean",
-                        "line": 29
-                    }
-                }
-            },
-            "templateData": "\r\n<div [ngClass]=\"['checkbox-container', containerClassName]\">\r\n  <div *ngIf=\"icon\"\r\n       class=\"checkbox-icon-container\"\r\n       [style.width.px]=\"iconContainerWidth\">\r\n      <svg-icon [name]=\"icon\"\r\n                [size]=\"iconSize\">\r\n      </svg-icon>\r\n  </div>\r\n  <div class=\"checkbox-background\">\r\n    <input \r\n        [type]=\"type\"\r\n        [ngClass]=\"['input', 'form-input']\" \r\n        [style.padding-left.px]=\"icon ? iconContainerWidth : 20\"\r\n        [style.padding-right.px]=\"isShowClearButton ? iconContainerWidth : 10\"/>\r\n    <div>\r\n        <label [for]=\"label\" style=\"font-size: 18px; padding-left: 10px; color: #b4b4b4; \">{{label}}</label>     \r\n    </div> \r\n  </div>\r\n  <div *ngIf=\"isShowClearButton\"\r\n       class=\"checkbox-icon-container right\"\r\n       [style.width.px]=\"iconContainerWidth\">\r\n      <i nz-icon\r\n         nzType=\"close\"\r\n         nzTheme=\"outline\"\r\n         (click)=\"clear()\"></i>\r\n  </div>\r\n</div>\r\n"
+            "templateData": "<label [for]=\"label\">\r\n  <input type=\"checkbox\" [checked]=\"isChecked\" (change)=\"onCheckboxChange($event)\" /> {{label}}\r\n</label>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<!-- <div [ngClass]=\"['checkbox-container', containerClassName]\">\r\n  <div *ngIf=\"icon\"\r\n       class=\"checkbox-icon-container\"\r\n       [style.width.px]=\"iconContainerWidth\">\r\n      <svg-icon [name]=\"icon\"\r\n                [size]=\"iconSize\">\r\n      </svg-icon>\r\n  </div>\r\n  <div class=\"checkbox-background\">\r\n    <input \r\n        [type]=\"type\"\r\n        [checked]=\"isChecked\"\r\n        [disabled]=\"disabled\"\r\n        [indeterminate]=\"indeterminate\"\r\n        [ngClass]=\"['input', 'form-input']\" \r\n        [style.padding-left.px]=\"icon ? iconContainerWidth : 20\"\r\n        [style.padding-right.px]=\"isShowClearButton ? iconContainerWidth : 10\"/>\r\n    <div>\r\n        <label [for]=\"label\" style=\"font-size: 18px; padding-left: 10px; color: #b4b4b4; \">{{label}}</label>     \r\n    </div> \r\n  </div>\r\n  <div *ngIf=\"isShowClearButton\"\r\n       class=\"checkbox-icon-container right\"\r\n       [style.width.px]=\"iconContainerWidth\">\r\n      <i nz-icon\r\n         nzType=\"close\"\r\n         nzTheme=\"outline\"\r\n         (click)=\"clear()\"></i>\r\n  </div>\r\n</div>\r\n-->"
         },
         {
             "name": "HeaderComponent",
@@ -1363,8 +1265,8 @@
                 "file": "src/app/checkbox/checkbox.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<CheckboxComponent>",
-                "defaultValue": "Template.bind({})"
+                "type": "",
+                "defaultValue": "() => ({\r\n  template: `\r\n    <app-checkbox></app-checkbox>\r\n    Article description\r\n  `,\r\n  \r\n})"
             },
             {
                 "name": "CheckboxWithError",
@@ -1373,18 +1275,18 @@
                 "file": "src/app/checkbox/checkbox.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<CheckboxComponent>",
-                "defaultValue": "Template.bind({})"
+                "type": "",
+                "defaultValue": "() => ({\r\n    template: `\r\n      <app-checkbox [isChecked]=\"true\" class=\"custom-checkbox\" style= accent-color:red;></app-checkbox>\r\n      <label for='' style= color:red;>Danger Theme</label>\r\n    `,\r\n  })"
             },
             {
-                "name": "CheckboxWithTooltip",
+                "name": "CheckboxWithToolitip",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/checkbox/checkbox.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<CheckboxComponent>",
-                "defaultValue": "Template.bind({})"
+                "type": "",
+                "defaultValue": "() => ({\r\n  template: `\r\n    <app-checkbox [isChecked]=\"true\" class=\"custom-checkbox\" style= accent-color:black;></app-checkbox>\r\n    <label for=''>Article description</label>\r\n\r\n  `,\r\n})"
             },
             {
                 "name": "config",
@@ -1640,16 +1542,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/checkbox/checkbox.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<CheckboxComponent>",
-                "defaultValue": "(args:CheckboxComponent) =>({\r\n    component: CheckboxComponent,\r\n    props:args\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/input/input.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1659,55 +1551,7 @@
         ],
         "functions": [],
         "typealiases": [],
-        "enumerations": [
-            {
-                "name": "ThemeType",
-                "childs": [
-                    {
-                        "name": "default",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "default"
-                    },
-                    {
-                        "name": "primary",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "primary"
-                    },
-                    {
-                        "name": "secondary",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "secondary"
-                    },
-                    {
-                        "name": "success",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "success"
-                    },
-                    {
-                        "name": "warning",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "warning"
-                    },
-                    {
-                        "name": "danger",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "danger"
-                    }
-                ],
-                "ctype": "miscellaneous",
-                "subtype": "enum",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "file": "src/app/checkbox/ThemeType.ts"
-            }
-        ],
+        "enumerations": [],
         "groupedVariables": {
             "src/app/avatar/avatar.stories.ts": [
                 {
@@ -1759,8 +1603,8 @@
                     "file": "src/app/checkbox/checkbox.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<CheckboxComponent>",
-                    "defaultValue": "Template.bind({})"
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  template: `\r\n    <app-checkbox></app-checkbox>\r\n    Article description\r\n  `,\r\n  \r\n})"
                 },
                 {
                     "name": "CheckboxWithError",
@@ -1769,28 +1613,18 @@
                     "file": "src/app/checkbox/checkbox.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<CheckboxComponent>",
-                    "defaultValue": "Template.bind({})"
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    template: `\r\n      <app-checkbox [isChecked]=\"true\" class=\"custom-checkbox\" style= accent-color:red;></app-checkbox>\r\n      <label for='' style= color:red;>Danger Theme</label>\r\n    `,\r\n  })"
                 },
                 {
-                    "name": "CheckboxWithTooltip",
+                    "name": "CheckboxWithToolitip",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/checkbox/checkbox.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<CheckboxComponent>",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/checkbox/checkbox.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<CheckboxComponent>",
-                    "defaultValue": "(args:CheckboxComponent) =>({\r\n    component: CheckboxComponent,\r\n    props:args\r\n})"
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  template: `\r\n    <app-checkbox [isChecked]=\"true\" class=\"custom-checkbox\" style= accent-color:black;></app-checkbox>\r\n    <label for=''>Article description</label>\r\n\r\n  `,\r\n})"
                 }
             ],
             ".storybook/main.ts": [
@@ -2045,57 +1879,7 @@
             ]
         },
         "groupedFunctions": {},
-        "groupedEnumerations": {
-            "src/app/checkbox/ThemeType.ts": [
-                {
-                    "name": "ThemeType",
-                    "childs": [
-                        {
-                            "name": "default",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "default"
-                        },
-                        {
-                            "name": "primary",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "primary"
-                        },
-                        {
-                            "name": "secondary",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "secondary"
-                        },
-                        {
-                            "name": "success",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "success"
-                        },
-                        {
-                            "name": "warning",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "warning"
-                        },
-                        {
-                            "name": "danger",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "danger"
-                        }
-                    ],
-                    "ctype": "miscellaneous",
-                    "subtype": "enum",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "file": "src/app/checkbox/ThemeType.ts"
-                }
-            ]
-        },
+        "groupedEnumerations": {},
         "groupedTypeAliases": {}
     },
     "routes": [],
@@ -2264,7 +2048,7 @@
                 "linktype": "component",
                 "name": "CheckboxComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/16",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -2292,17 +2076,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "CheckboxWithTooltip",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/checkbox/checkbox.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
+                "name": "CheckboxWithToolitip",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

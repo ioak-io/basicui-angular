@@ -1,3 +1,63 @@
+import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { CheckboxComponent } from './checkbox.component';
+
+export default {
+  title: 'Components/Checkbox',
+  component: CheckboxComponent,
+  decorators: [
+    moduleMetadata({
+      declarations: [CheckboxComponent],
+    }),
+  ],
+} as Meta;
+
+export const BasicCheckbox = () => ({
+  template: `
+    <app-checkbox></app-checkbox>
+    Article description
+  `,
+  
+});
+
+export const CheckboxWithToolitip = () => ({
+  template: `
+    <app-checkbox [isChecked]="true" class="custom-checkbox" style= accent-color:black;></app-checkbox>
+    <label for=''>Article description</label>
+
+  `,
+});
+export const CheckboxWithError = () => ({
+    template: `
+      <app-checkbox [isChecked]="true" class="custom-checkbox" style= accent-color:red;></app-checkbox>
+      <label for='' style= color:red;>Danger Theme</label>
+    `,
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //import { FormsModule } from '@angular/forms';
 /*import { Meta, Story } from '@storybook/angular';
 import { CheckboxComponent } from './checkbox.component';
@@ -21,7 +81,7 @@ Checked.args = {
    
 };*/
 
-import { Meta, Story } from '@storybook/angular';
+/*import { Meta, Story } from '@storybook/angular';
 import { CheckboxComponent } from './checkbox.component';
 import { moduleMetadata } from '@storybook/angular';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -53,19 +113,15 @@ export const BasicCheckbox: Story<CheckboxComponent> = Template.bind({});
 BasicCheckbox.args={
     containerClassName: '',
     label: 'Article description',
-    danger: false
-    
 };
 export const CheckboxWithTooltip: Story<CheckboxComponent> = Template.bind({});
 CheckboxWithTooltip.args={
     containerClassName: '',
     label: 'Article description',
-    checked: 'checked'
 };
 export const CheckboxWithError: Story<CheckboxComponent> = Template.bind({});
 CheckboxWithError.args={
     containerClassName: '',
     label: 'Danger theme',
-    danger: true,
-    color: true
-};
+};*/
+
