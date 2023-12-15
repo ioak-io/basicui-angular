@@ -1,0 +1,36 @@
+.checkboxes {
+    padding: 5px;
+    
+}
+.checkboxes input{
+    margin-right: 5px;
+}
+    /*.input{
+    width: 100%;
+    padding: 15px 0px 15px 35px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  
+    &::placeholder {
+      font-size: 18px;
+      text-align:left;
+      
+    }
+  }*/
+  .input{
+    &.form-input{
+      accent-color: #9d3039;
+    }
+    &.specific-checkbox {
+      color: blue;
+  }
+}
+.checkbox-background{
+  display: flex;  
+  padding: 1.5rem; //width: fit-content; 
+  //background-color: white; 
+  //border-radius: 4px;
+}

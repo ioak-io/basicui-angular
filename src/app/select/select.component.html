@@ -1,0 +1,34 @@
+<select (change)="onSelectionChange($event.target.value)">
+    <option *ngFor="let option of options" [value]="option.value">
+      {{ option.label }}
+    </option>
+</select>
+<!-- <div [ngClass]="['input-container', containerClassName]">
+    <div *ngIf="icon"
+         class="input-icon-container"
+         [style.width.px]="iconContainerWidth">
+        <svg-icon [name]="icon"
+                  [size]="iconSize">
+        </svg-icon>
+    </div>
+    <div>
+        <label [for]="label" style="font-size: 23px;">{{label}}</label>
+        <br>
+    </div>
+    <input 
+        [type]="type"
+        [placeholder]="placeholder"
+        [ngClass]="['input', 'form-input']" 
+        [style.padding-left.px]="icon ? iconContainerWidth : 20"
+        [style.padding-right.px]="isShowClearButton ? iconContainerWidth : 10" />
+        
+    <div *ngIf="isShowClearButton"
+         class="input-icon-container right"
+         [style.width.px]="iconContainerWidth">
+        <i nz-icon
+           nzType="close"
+           nzTheme="outline"
+           (click)="clear()"></i>
+    </div>
+</div>-->
+

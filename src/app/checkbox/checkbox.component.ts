@@ -2,25 +2,26 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
-    selector:'app-input',
-    templateUrl: './input.component.html',
-    styleUrls:['./input.component.scss']
+    selector:'app-checkbox',
+    templateUrl: './checkbox.component.html',
+    styleUrls:['./checkbox.component.scss']
 })
 
-export class InputComponent implements OnInit {
+export class CheckboxComponent implements OnInit {
 [x: string]: any;
     @Input() control!: FormControl;
     @Input() containerClassName='Name';
     @Input() icon: string | undefined;
     @Input() iconSize =16;
-    @Input() placeholder = '';
     @Input() enableClearButton: boolean | undefined;
     @Input() name: string | undefined;
     @Input() label!: string;
     @Input() for : string | undefined;
-    @Input() text : string | undefined;
-    @Input() type: string | undefined;
-
+    @Input() type = 'checkbox';
+    @Input() checked!: 'checked';
+    @Input() danger = false;
+    @Input() color = true;
+    
     get iconContainerWidth(): number {
         return this.iconSize * 2;
       }
@@ -38,5 +39,4 @@ export class InputComponent implements OnInit {
       clear() {
         this.control.patchValue('');
       }
-      
 } 

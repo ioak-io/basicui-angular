@@ -1,26 +1,23 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
+//import { FormControl } from '@angular/forms';
 
 @Component({
-    selector:'app-input',
-    templateUrl: './input.component.html',
-    styleUrls:['./input.component.scss']
+    selector:'app-select',
+    templateUrl: './select.component.html',
+    styleUrls: ['./select.component.scss']
 })
 
-export class InputComponent implements OnInit {
-[x: string]: any;
+/*export class SelectComponent implements OnInit{
     @Input() control!: FormControl;
     @Input() containerClassName='Name';
     @Input() icon: string | undefined;
     @Input() iconSize =16;
-    @Input() placeholder = '';
     @Input() enableClearButton: boolean | undefined;
     @Input() name: string | undefined;
     @Input() label!: string;
     @Input() for : string | undefined;
-    @Input() text : string | undefined;
-    @Input() type: string | undefined;
-
+    @Input() type = 'select';
+    
     get iconContainerWidth(): number {
         return this.iconSize * 2;
       }
@@ -38,5 +35,13 @@ export class InputComponent implements OnInit {
       clear() {
         this.control.patchValue('');
       }
-      
-} 
+
+}*/
+export class SelectComponent {
+  @Input() options: { value: any; label: string }[] = [];
+  @Output() selectionChange = new EventEmitter<any>();
+
+  onSelectionChange(value: any) {
+    this.selectionChange.emit(value);
+  }
+}
