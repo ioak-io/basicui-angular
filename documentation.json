@@ -586,7 +586,7 @@
         },
         {
             "name": "CheckboxComponent",
-            "id": "component-CheckboxComponent-710a1c721a7800b4b785886face6eb90fe641b4cc77bb8dc1b44e0a85f58d9e8223c28f0b4b25f527a9386954b96f34a44d5bd1ae5b1d45e05204f84edef631a",
+            "id": "component-CheckboxComponent-883f74174a5c1cbfe2abf8d494902ffc5a6332928027800950b84f5459debac81eb22426f10734431734fcdbd8629397efbd53954f81d75647c2ddaf77d79d67",
             "file": "src/app/checkbox/checkbox.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -669,16 +669,16 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-checkbox',\r\n  templateUrl: './checkbox.component.html',\r\n  styleUrls: ['./checkbox.component.scss']\r\n})\r\nexport class CheckboxComponent {\r\n  @Input() isChecked: boolean = false;\r\n  @Output() checkedChange = new EventEmitter<boolean>();\r\n  @Input() label!: string;\r\n\r\n  onCheckboxChange(event: Event) {\r\n    this.isChecked = (event.target as HTMLInputElement).checked;\r\n    this.checkedChange.emit(this.isChecked);\r\n  }\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n/*import { Component, Input, OnInit } from '@angular/core';\r\nimport { FormControl } from '@angular/forms';\r\n\r\n@Component({\r\n    selector:'app-checkbox',\r\n    templateUrl: './checkbox.component.html',\r\n    styleUrls:['./checkbox.component.scss']\r\n})\r\n\r\nexport class CheckboxComponent implements OnInit {\r\n[x: string]: any;\r\n    @Input() control!: FormControl;\r\n    @Input() containerClassName='Name';\r\n    @Input() icon: string | undefined;\r\n    @Input() iconSize =16;\r\n    @Input() enableClearButton: boolean | undefined;\r\n    @Input() name: string | undefined;\r\n    @Input() label!: string;\r\n    @Input() for : string | undefined;\r\n    @Input() type = 'checkbox';\r\n    @Input() checked!: 'checked';\r\n    @Input() danger = false;\r\n    @Input() color = true;\r\n    \r\n    get iconContainerWidth(): number {\r\n        return this.iconSize * 2;\r\n      }\r\n    \r\n      get isShowClearButton(): boolean {\r\n        return this.enableClearButton && this.control?.value;\r\n      }\r\n    \r\n      constructor() {}\r\n\r\n      ngOnInit(): void {\r\n        this.control = this.control ?? new FormControl('');\r\n      }\r\n    \r\n      clear() {\r\n        this.control.patchValue('');\r\n      }\r\n} */\r\n\r\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-checkbox',\r\n  templateUrl: './checkbox.component.html',\r\n  styleUrls: ['./checkbox.component.scss']\r\n})\r\nexport class CheckboxComponent {\r\n  @Input() isChecked: boolean = false;\r\n  @Output() checkedChange = new EventEmitter<boolean>();\r\n  @Input() label!: string;\r\n\r\n  onCheckboxChange(event: Event) {\r\n    this.isChecked = (event.target as HTMLInputElement).checked;\r\n    this.checkedChange.emit(this.isChecked);\r\n  }\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".checkboxes {\r\n    padding: 5px;\r\n    \r\n}\r\n.checkboxes input{\r\n    margin-right: 5px;\r\n}\r\n    /*.input{\r\n    width: 100%;\r\n    padding: 15px 0px 15px 35px;\r\n    margin: 8px 0;\r\n    display: inline-block;\r\n    border: 1px solid #ccc;\r\n    border-radius: 4px;\r\n    box-sizing: border-box;\r\n  \r\n    &::placeholder {\r\n      font-size: 18px;\r\n      text-align:left;\r\n      \r\n    }\r\n  }*/\r\n  .input{\r\n    &.form-input{\r\n      accent-color: #9d3039;\r\n    }\r\n    &.specific-checkbox {\r\n      color: blue;\r\n  }\r\n}\r\n.checkbox-background{\r\n  display: flex;  \r\n  padding: 1.5rem; //width: fit-content; \r\n  //background-color: white; \r\n  //border-radius: 4px;\r\n}\r\n\r\n",
+                    "data": ".checkboxes:hover {\r\n  padding: 10px;\r\n}\r\n.checkboxes input{\r\n  margin-right: 5px;\r\n}\r\n  /*.input{\r\n  width: 100%;\r\n  padding: 15px 0px 15px 35px;\r\n  margin: 8px 0;\r\n  display: inline-block;\r\n  border: 1px solid #ccc;\r\n  border-radius: 4px;\r\n  box-sizing: border-box;\r\n\r\n  &::placeholder {\r\n    font-size: 18px;\r\n    text-align:left;\r\n    \r\n  }\r\n}*/\r\n.input{\r\n  &.form-input{\r\n    accent-color: #9d3039;\r\n  }\r\n  &.specific-checkbox {\r\n    color: blue;\r\n}\r\n}\r\n.checkbox-background{\r\ndisplay: flex;  \r\npadding: 1.5rem; //width: fit-content; \r\n//background-color: white; \r\n//border-radius: 4px;\r\n}\r\n.tooltip {\r\n  position: relative;\r\n  display: inline-block;\r\n  border-bottom: 1px dotted black;\r\n}\r\n.tooltip .tooltiptext {\r\n  visibility: hidden;\r\n  width: 120px;\r\n  background-color: black;\r\n  color: #fff;\r\n  text-align: center;\r\n  border-radius: 6px;\r\n  padding: 5px 0;\r\n\r\n  /* Position the tooltip */\r\n  position: absolute;\r\n  z-index: 1;\r\n}\r\n\r\n.tooltip:hover .tooltiptext {\r\n  visibility: visible;\r\n}",
                     "styleUrl": "./checkbox.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<label [for]=\"label\">\r\n  <input type=\"checkbox\" [checked]=\"isChecked\" (change)=\"onCheckboxChange($event)\" /> {{label}}\r\n</label>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<!-- <div [ngClass]=\"['checkbox-container', containerClassName]\">\r\n  <div *ngIf=\"icon\"\r\n       class=\"checkbox-icon-container\"\r\n       [style.width.px]=\"iconContainerWidth\">\r\n      <svg-icon [name]=\"icon\"\r\n                [size]=\"iconSize\">\r\n      </svg-icon>\r\n  </div>\r\n  <div class=\"checkbox-background\">\r\n    <input \r\n        [type]=\"type\"\r\n        [checked]=\"isChecked\"\r\n        [disabled]=\"disabled\"\r\n        [indeterminate]=\"indeterminate\"\r\n        [ngClass]=\"['input', 'form-input']\" \r\n        [style.padding-left.px]=\"icon ? iconContainerWidth : 20\"\r\n        [style.padding-right.px]=\"isShowClearButton ? iconContainerWidth : 10\"/>\r\n    <div>\r\n        <label [for]=\"label\" style=\"font-size: 18px; padding-left: 10px; color: #b4b4b4; \">{{label}}</label>     \r\n    </div> \r\n  </div>\r\n  <div *ngIf=\"isShowClearButton\"\r\n       class=\"checkbox-icon-container right\"\r\n       [style.width.px]=\"iconContainerWidth\">\r\n      <i nz-icon\r\n         nzType=\"close\"\r\n         nzTheme=\"outline\"\r\n         (click)=\"clear()\"></i>\r\n  </div>\r\n</div>\r\n-->"
+            "templateData": "<label [for]=\"label\">\r\n  <input type=\"checkbox\" [checked]=\"isChecked\" (change)=\"onCheckboxChange($event)\" /> {{label}}\r\n</label>\r\n"
         },
         {
             "name": "HeaderComponent",
@@ -1018,6 +1018,142 @@
             "stylesData": ""
         },
         {
+            "name": "SelectComponent",
+            "id": "component-SelectComponent-a50d16a9d63284d46fc1688b42e6c640504a1717c765bf1506c6c8ffc74e2b5779dfd245a9cc7e353b42e84b2152fcc4b5e4ffeb102c7a440d5eb2350e30dfe7",
+            "file": "src/app/select/select.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-select",
+            "styleUrls": [
+                "./select.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./select.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "options",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "literal type[]",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "selectType",
+                    "defaultValue": "'single'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "\"single\" | \"multi\" | \"autocomplete\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "selectedValue",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "selectedValues",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-select',\r\n  templateUrl: './select.component.html',\r\n  styleUrls: ['./select.component.scss']\r\n})\r\nexport class SelectComponent {\r\n  @Input() placeholder = '';\r\n  @Input() selectType: 'single' | 'multi' | 'autocomplete' = 'single';\r\n  @Input() options: { value: string, label: string }[] = [];\r\n  selectedValue: string = '';\r\n  selectedValues: string[] = [];\r\n  \r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n/*import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-select',\r\n  templateUrl: './select.component.html',\r\n  styleUrls: ['./select.component.scss']\r\n})\r\nexport class SelectComponent {\r\n[x: string]: any;\r\n  @Input() options: { value: any, label: string }[] = [];\r\n  selectedValue: { value: any, label: string };\r\n  @Input() value: any;\r\n  @Input() text : string | undefined;\r\n  @Input() type: string | undefined;\r\n  @Input() name: string | undefined;\r\n\r\n  constructor() {\r\n    this.selectedValue = this.options[0]; \r\n  }\r\n}*/",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "select:hover{\r\n    border: 1px solid black;\r\n}\r\nselect {\r\n    padding: 8px;\r\n    border: 1px solid #ccc;\r\n    border-radius: 4px;\r\n    width: 100%;\r\n    outline: none;\r\n  }\r\n  select option:hover{\r\n    color: #333;\r\n    border: 1px solid #f5f0f0;\r\n    padding: 5px;\r\n    margin: 5px;\r\n  }\r\n  select option{\r\n    //color: #333;\r\n    padding: 5px;\r\n    margin: 5px;\r\n  }\r\n  .custom-select div {\r\n    padding: 4px;\r\n    cursor: pointer;\r\n  }\r\n  .selected {\r\n    background-color: #216787; /* Change this to your desired selected color */\r\n  }\r\n  .auto-select:hover{\r\n    //background-color: #cce4f5;\r\n    border: 1px solid black;\r\n  }\r\n  .auto-select{\r\n    padding: 5px;\r\n    font-size: 14px;\r\n    border-radius: 4px;\r\n    border: 1px solid #000;\r\n    background-color: #fff;\r\n    width: 100%;\r\n    outline: none;\r\n  }\r\n  .datalist-styling {\r\n    border: 1px solid #ccc;\r\n    padding: 5px;\r\n    background-color: #f7f7f7;\r\n    width: 100%;\r\n  }\r\n  .datalist-styling option {\r\n    background-color: #fff;\r\n    padding: 5px;\r\n  }\r\n  \r\n  ",
+                    "styleUrl": "./select.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": " <div class=\"custom-select\" *ngIf=\"selectType === 'single'\">\r\n    <select *ngIf=\"selectedValue !== undefined\">\r\n      <option> {{ selectedValue }}</option> \r\n      <option *ngFor=\"let option of options\">\r\n        <span *ngIf=\"option.value !== selectedValue\">{{ option.label }}</span>\r\n      </option>\r\n    </select>\r\n  </div>\r\n\r\n  <div class=\"custom-select\" *ngIf=\"selectType === 'multi'\">\r\n    <select multiple>\r\n      <option *ngFor=\"let option of options\" [value]=\"option.value\">{{ option.label }}</option>\r\n    </select>\r\n  </div>\r\n  \r\n  <div class=\"custom-select\" *ngIf=\"selectType === 'autocomplete'\">\r\n    <input type=\"text\" placeholder=\"Autocomplete dropdown\" list=\"autocompleteOptions\" class=\"auto-select\" style=\"width: 100%; \">\r\n    <datalist id=\"autocompleteOptions\">\r\n      <option *ngFor=\"let option of options\" [value]=\"option.label\" style=\"width: 100%;\">{{ option.label }}</option>\r\n    </datalist>\r\n  </div>\r\n  \r\n  <div class=\"custom-select\" *ngIf=\"selectType === 'autocomplete-multi'\">\r\n    <input type=\"text\" placeholder=\"Autocomplete dropdown\" list=\"autocompleteOptions\" class=\"auto-select\" style=\"width: 100%;\">\r\n    <datalist id=\"autocompleteOptions\">\r\n      <option *ngFor=\"let option of options\" [value]=\"option.label\" style=\"width: 100%;\">{{ option.label }}</option>\r\n    </datalist>\r\n  </div>\r\n\r\n  <!--<div class=\"custom-select\">\r\n    <select>\r\n      <option *ngFor=\"let option of options\" [value]=\"option.value\" selected>\r\n        {{ option.label }}\r\n      </option>\r\n    </select>\r\n  </div>-->\r\n  <!-- <div class=\"selected-label\">\r\n    selected value:  {{ selectedValue }}\r\n  </div> -->\r\n  "
+        },
+        {
+            "name": "SelectedOptionComponent",
+            "id": "component-SelectedOptionComponent-31b93162b0d01064c0ad266398c05efbc609016cf92076c1978f0008d359b93c107effa3634b927891b0a4ff51629aa9e121835b31b17db1bb5fd8316e04547c",
+            "file": "src/app/select/selected-option.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-select",
+            "styleUrls": [
+                "./selected-option.component.scss"
+            ],
+            "styles": [],
+            "template": "<div class=\"selected-option\">\n  Selected Option: {{ selectedValue }}\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "selectedValue",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "any",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-select',\r\n  template: `\r\n    <div class=\"selected-option\">\r\n      Selected Option: {{ selectedValue }}\r\n    </div>\r\n  `,\r\n  styleUrls: ['./selected-option.component.scss']\r\n})\r\nexport class SelectedOptionComponent {\r\n  @Input() selectedValue: any;\r\n}",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".selected-option {\r\n    font-size: 16px;\r\n    padding: 8px;\r\n    background-color: #f0f0f0;\r\n    border: 1px solid #ccc;\r\n    border-radius: 4px;\r\n  }",
+                    "styleUrl": "./selected-option.component.scss"
+                }
+            ],
+            "stylesData": ""
+        },
+        {
             "name": "SvgIconComponent",
             "id": "component-SvgIconComponent-d3079d126b5caacf056d6fa8414a20f0b0a9e688729a4f6b48a3adb84f698f3e2a454e92c71b32b29cc99d7ac579020ca3d5fd50de9a8f525d0eb05df663cae6",
             "file": "src/app/svg-icon/svg-icon.component.ts",
@@ -1111,13 +1247,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-86681282365c00e016aeeef4087718effdd34c13d46a8178e09382c93e4916e1a78b73ace0d5b7f9a90d5629674b7f7da5aed831d7bd45a1e46a9ea4b26a741c",
+            "id": "module-AppModule-6dff4dc5724ee45157f4898fa0f01dc14219d755bc8ce9fb8a4c86b823e89f2408436284880a252db17d9ebb1c19e1a0ad215cbe70387e2eb59ede90c121613a",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { BrowserModule } from '@angular/platform-browser';\r\nimport { NgModule } from '@angular/core';\r\n//import { TaskModule } from './components/task.module';\r\nimport { NgxsModule } from '@ngxs/store';\r\nimport { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';\r\nimport { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';\r\nimport { environment } from '../environments/environment';\r\nimport { AppComponent } from './app.component';\r\n//import InboxScreenComponent from './components/inbox-screen.component';\r\n//import PureInboxScreenComponent from './components/pure-inbox-screen.component';\r\n//import { AvatarComponent } from './avatar/avatar.component';\r\n\r\n@NgModule({\r\n  declarations: [AppComponent /*InboxScreenComponent, PureInboxScreenComponent,*/ /*AvatarComponent*/],\r\n  imports: [\r\n    BrowserModule,\r\n    //TaskModule,\r\n    NgxsModule.forRoot([], { developmentMode: !environment.production, }),\r\n    NgxsReduxDevtoolsPluginModule.forRoot(),\r\n    NgxsLoggerPluginModule.forRoot({ disabled: environment.production, }),\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {}\r\n",
+            "sourceCode": "import { BrowserModule } from '@angular/platform-browser';\r\nimport { NgModule } from '@angular/core';\r\n//import { TaskModule } from './components/task.module';\r\nimport { NgxsModule } from '@ngxs/store';\r\nimport { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';\r\nimport { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';\r\nimport { environment } from '../environments/environment';\r\nimport { AppComponent } from './app.component';\r\n//import InboxScreenComponent from './components/inbox-screen.component';\r\n//import PureInboxScreenComponent from './components/pure-inbox-screen.component';\r\n//import { AvatarComponent } from './avatar/avatar.component';\r\nimport { FormsModule } from '@angular/forms';\r\n\r\n@NgModule({\r\n  declarations: [AppComponent /*InboxScreenComponent, PureInboxScreenComponent,*/ /*AvatarComponent*/],\r\n  imports: [\r\n    BrowserModule,\r\n    FormsModule,\r\n    //TaskModule,\r\n    NgxsModule.forRoot([], { developmentMode: !environment.production, }),\r\n    NgxsReduxDevtoolsPluginModule.forRoot(),\r\n    NgxsLoggerPluginModule.forRoot({ disabled: environment.production, }),\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1249,6 +1385,26 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "Autocomplete",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/select/select..stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: SelectComponent,\r\n  props: {\r\n    selectType: 'autocomplete',\r\n    options: [\r\n      { value: '1', label: 'Lorem ipsum' },\r\n      { value: '2', label: 'Dolor sit' },\r\n      { value: '3', label: 'Another long text another long text' },\r\n    ],\r\n    selectedValue: 'Dolor sit', \r\n    placeholder: 'Enter select option'\r\n  },\r\n})"
+            },
+            {
+                "name": "AutocompleteMultiSelect",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/select/select..stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: SelectComponent,\r\n  props: {\r\n    selectType: 'autocomplete-multi',\r\n    options: [\r\n      { value: '1', label: 'Lorem ipsum' },\r\n      { value: '2', label: 'Dolor sit' },\r\n      { value: '3', label: 'Another long text another long text' },\r\n    ],\r\n    selectedValues: ['Dolor sit', 'Lorem ipsum', 'Another long text another long text'],\r\n  },\r\n})"
+            },
+            {
                 "name": "avatarUrl",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1276,7 +1432,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "() => ({\r\n    template: `\r\n      <app-checkbox [isChecked]=\"true\" class=\"custom-checkbox\" style= accent-color:red;></app-checkbox>\r\n      <label for='' style= color:red;>Danger Theme</label>\r\n    `,\r\n  })"
+                "defaultValue": "() => ({\r\n    template: `\r\n      <app-checkbox class=\"custom-checkbox\" style= accent-color:red;></app-checkbox>\r\n      <label for='' style= color:#f4e7e7; onMouseOver=\"this.style.color='red'\"\r\n      onMouseOut=\"this.style.color='red'\" >Danger Theme</label>\r\n    `,\r\n  })"
             },
             {
                 "name": "CheckboxWithToolitip",
@@ -1286,7 +1442,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "() => ({\r\n  template: `\r\n    <app-checkbox [isChecked]=\"true\" class=\"custom-checkbox\" style= accent-color:black;></app-checkbox>\r\n    <label for=''>Article description</label>\r\n\r\n  `,\r\n})"
+                "defaultValue": "() => ({\r\n  template: `\r\n    <app-checkbox class=\"custom-checkbox\" style= accent-color:black;></app-checkbox>\r\n    <label for=''>Article description</label>\r\n\r\n  `,\r\n})"
             },
             {
                 "name": "config",
@@ -1409,6 +1565,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "MultiSelect",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/select/select..stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: SelectComponent,\r\n  props: {\r\n    selectType: 'multi',\r\n    options: [\r\n      { value: '1', label: 'Lorem ipsum' },\r\n      { value: '2', label: 'Dolor sit' },\r\n      { value: '3', label: 'Another long text another long text' },\r\n      \r\n    ],\r\n    selectedValue: 'Dolor sit',\r\n    selectedValues: ['Lorem ipsum','Dolor sit'],\r\n  },\r\n})"
+            },
+            {
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1457,6 +1623,16 @@
                 "deprecationMessage": "",
                 "type": "Story<ButtonProps>",
                 "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "SingleSelect",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/select/select..stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: SelectComponent,\r\n  props: {\r\n    selectType: 'single',\r\n    options: [\r\n      { value: '1', label: 'Lorem ipsum' },\r\n      { value: '2', label: 'Another long text another long text' },\r\n      { value: '3', label: 'Dolor sit' },\r\n    \r\n    ],\r\n    selectedValue: 'Dolor sit', \r\n  },\r\n})"
             },
             {
                 "name": "Small",
@@ -1553,6 +1729,48 @@
         "typealiases": [],
         "enumerations": [],
         "groupedVariables": {
+            "src/app/select/select..stories.ts": [
+                {
+                    "name": "Autocomplete",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/select/select..stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: SelectComponent,\r\n  props: {\r\n    selectType: 'autocomplete',\r\n    options: [\r\n      { value: '1', label: 'Lorem ipsum' },\r\n      { value: '2', label: 'Dolor sit' },\r\n      { value: '3', label: 'Another long text another long text' },\r\n    ],\r\n    selectedValue: 'Dolor sit', \r\n    placeholder: 'Enter select option'\r\n  },\r\n})"
+                },
+                {
+                    "name": "AutocompleteMultiSelect",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/select/select..stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: SelectComponent,\r\n  props: {\r\n    selectType: 'autocomplete-multi',\r\n    options: [\r\n      { value: '1', label: 'Lorem ipsum' },\r\n      { value: '2', label: 'Dolor sit' },\r\n      { value: '3', label: 'Another long text another long text' },\r\n    ],\r\n    selectedValues: ['Dolor sit', 'Lorem ipsum', 'Another long text another long text'],\r\n  },\r\n})"
+                },
+                {
+                    "name": "MultiSelect",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/select/select..stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: SelectComponent,\r\n  props: {\r\n    selectType: 'multi',\r\n    options: [\r\n      { value: '1', label: 'Lorem ipsum' },\r\n      { value: '2', label: 'Dolor sit' },\r\n      { value: '3', label: 'Another long text another long text' },\r\n      \r\n    ],\r\n    selectedValue: 'Dolor sit',\r\n    selectedValues: ['Lorem ipsum','Dolor sit'],\r\n  },\r\n})"
+                },
+                {
+                    "name": "SingleSelect",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/select/select..stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: SelectComponent,\r\n  props: {\r\n    selectType: 'single',\r\n    options: [\r\n      { value: '1', label: 'Lorem ipsum' },\r\n      { value: '2', label: 'Another long text another long text' },\r\n      { value: '3', label: 'Dolor sit' },\r\n    \r\n    ],\r\n    selectedValue: 'Dolor sit', \r\n  },\r\n})"
+                }
+            ],
             "src/app/avatar/avatar.stories.ts": [
                 {
                     "name": "avatarUrl",
@@ -1614,7 +1832,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "() => ({\r\n    template: `\r\n      <app-checkbox [isChecked]=\"true\" class=\"custom-checkbox\" style= accent-color:red;></app-checkbox>\r\n      <label for='' style= color:red;>Danger Theme</label>\r\n    `,\r\n  })"
+                    "defaultValue": "() => ({\r\n    template: `\r\n      <app-checkbox class=\"custom-checkbox\" style= accent-color:red;></app-checkbox>\r\n      <label for='' style= color:#f4e7e7; onMouseOver=\"this.style.color='red'\"\r\n      onMouseOut=\"this.style.color='red'\" >Danger Theme</label>\r\n    `,\r\n  })"
                 },
                 {
                     "name": "CheckboxWithToolitip",
@@ -1624,7 +1842,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "() => ({\r\n  template: `\r\n    <app-checkbox [isChecked]=\"true\" class=\"custom-checkbox\" style= accent-color:black;></app-checkbox>\r\n    <label for=''>Article description</label>\r\n\r\n  `,\r\n})"
+                    "defaultValue": "() => ({\r\n  template: `\r\n    <app-checkbox class=\"custom-checkbox\" style= accent-color:black;></app-checkbox>\r\n    <label for=''>Article description</label>\r\n\r\n  `,\r\n})"
                 }
             ],
             ".storybook/main.ts": [
@@ -2127,6 +2345,64 @@
                 "name": "avatarUser",
                 "coveragePercent": 0,
                 "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/select/select..stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Autocomplete",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/select/select..stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "AutocompleteMultiSelect",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/select/select..stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MultiSelect",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/select/select..stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SingleSelect",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/select/select.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SelectComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/select/selected-option.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SelectedOptionComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {

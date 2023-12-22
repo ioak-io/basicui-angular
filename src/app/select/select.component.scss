@@ -1,0 +1,70 @@
+  /* single-select styles */
+  select:hover {
+    border: 1px solid #c3e5f4;
+    background-color: #f1f8fe;
+    border-radius: 4px;
+  }
+  select, input {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border: 1px solid #dad8d8;
+    background-color: #f1f0f08a;
+    border-radius: 3px;
+    width: 100%;
+    outline: none;
+    font-size: 12px;
+    position: relative;
+    text-indent: 5px;
+  }
+  select[single] {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+  }
+  
+  /* Multi-select styles */
+  select[multiple] {
+    background-color: white;
+    height: 30px;
+  }
+  select[multiple] option{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    
+  }
+  select[multiple] option:hover{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #c3e5f4;
+    background-color: #f1f8fe;
+  }
+  .positioned-select {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%;
+  }
+  .positioned-select[multiple] {
+    height: 150px;
+  }
+
+  /* auto complete-select styles */
+  .auto-select{
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 3px;
+    border: 1px solid #dad8d8;
+    background-color: #f1f0f08a;
+    width: 100%;
+    outline: none;
+  }
+  .auto-select-option {
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  .auto-select:hover {
+    border: 1px solid #c3e5f4;
+    background-color: #f1f8fe;
+    border-radius: 3px;
+  }

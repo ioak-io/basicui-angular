@@ -1,0 +1,29 @@
+
+
+  <div class="custom-select" *ngIf="selectType === 'single'">
+    <select *ngIf="selectedValue !== undefined" class="positioned-select">
+      <option> {{ selectedValue }}</option>
+      <option *ngFor="let option of options" [value]="option.value">{{ option.label }}</option>
+    </select>
+  </div>
+
+  <!-- <div class="custom-select" *ngIf="selectType === 'multi'">
+    <select multiple>
+      <option *ngFor="let option of options" [value]="option.value">{{ option.label }}</option>
+    </select>
+  </div> -->
+  
+  <div class="custom-select" *ngIf="selectType === 'autocomplete'">
+    <input type="text" placeholder="Autocomplete dropdown" list="autocompleteOptions" class="auto-select" style="width: 100%; ">
+    <datalist id="autocompleteOptions">
+      <option *ngFor="let option of options" [value]="option.label" style="width: 100%;">{{ option.label }}</option>
+    </datalist>
+  </div>
+  
+  <!-- <div class="custom-select" *ngIf="selectType === 'autocomplete-multi'">
+    <input type="text" placeholder="Autocomplete dropdown" list="autocompleteOptions" class="auto-select" style="width: 100%;">
+    <datalist id="autocompleteOptions">
+      <option *ngFor="let option of options" [value]="option.label" style="width: 100%;">{{ option.label }}</option>
+    </datalist>
+  </div>-->
+  

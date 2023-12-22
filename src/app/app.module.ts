@@ -9,11 +9,15 @@ import { AppComponent } from './app.component';
 //import InboxScreenComponent from './components/inbox-screen.component';
 //import PureInboxScreenComponent from './components/pure-inbox-screen.component';
 //import { AvatarComponent } from './avatar/avatar.component';
+import { FormsModule } from '@angular/forms';
+import { SelectComponent } from './select/select.component';
+
 
 @NgModule({
-  declarations: [AppComponent /*InboxScreenComponent, PureInboxScreenComponent,*/ /*AvatarComponent*/],
+  declarations: [AppComponent /*InboxScreenComponent, PureInboxScreenComponent,*/ /*AvatarComponent*/, SelectComponent],
   imports: [
     BrowserModule,
+    FormsModule,
     //TaskModule,
     NgxsModule.forRoot([], { developmentMode: !environment.production, }),
     NgxsReduxDevtoolsPluginModule.forRoot(),

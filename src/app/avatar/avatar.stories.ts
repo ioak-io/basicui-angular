@@ -8,7 +8,7 @@ export default {
 
 const avatarUrl =
 'https://res.cloudinary.com/dvujyxh7e/image/upload/c_scale,w_128/v1593253478/trung-vo_bioxmc.png';
-'https://cdn.pixabay.com/photo/2014/07/21/11/51/rose-398576_960_720.png';
+//'https://cdn.pixabay.com/photo/2014/07/21/11/51/rose-398576_960_720.png';
 
 const Template: Story<AvatarComponent> = (args: AvatarComponent) => ({
   component: AvatarComponent,
