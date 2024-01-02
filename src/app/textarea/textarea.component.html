@@ -1,0 +1,17 @@
+
+<div>
+    <label [for]="textareaId" class="label">{{ label }}</label>
+    <textarea class="textarea-input" 
+              [id]="textareaId" 
+              [placeholder]="placeholder" 
+              [value]="value" (input)="handleChange($event)" [class.error]="isError" >
+    </textarea>
+    
+    <div *ngIf="isSuccess" class="success-message">{{ successMessage }}</div>
+    <div *ngIf="isWarning" class="warning-message">{{ warningMessage }}</div>
+    <div *ngIf="isTooltip" class="tooltip-message">{{ tooltipMessage }}</div>
+    <div *ngIf="isError" class="error-message">{{ errorMessage }}</div>
+
+</div>
+
+
