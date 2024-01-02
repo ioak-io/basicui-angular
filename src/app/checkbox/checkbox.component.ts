@@ -6,12 +6,14 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./checkbox.component.scss']
 })
 export class CheckboxComponent {
+  @Input() label: string = '';
   @Input() isChecked: boolean = false;
-  @Output() checkedChange = new EventEmitter<boolean>();
-  @Input() label!: string;
+  @Input() isError: boolean = false;
+  @Input() isTooltip: boolean = false;
+  @Output() isCheckedChange = new EventEmitter<boolean>();
 
-  onCheckboxChange(event: Event) {
+  toggleCheckbox(event: Event) {
     this.isChecked = (event.target as HTMLInputElement).checked;
-    this.checkedChange.emit(this.isChecked);
+    this.isCheckedChange.emit(this.isChecked);
   }
 }

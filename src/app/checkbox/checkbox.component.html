@@ -1,3 +1,7 @@
-<label [for]="label">
-  <input type="checkbox" [checked]="isChecked" (change)="onCheckboxChange($event)" /> {{label}}
+<!--<label [for]="label">
+  <input type="checkbox" [checked]="isChecked" (change)="onCheckboxChange($event)" />{{label}}
+</label>-->
+<label class="basicui-checkbox" [class.error]="isError" [class.tooltip]="isTooltip">
+  <input type="checkbox" class="checkbox-input" [checked]="isChecked" (change)="toggleCheckbox($event)" />
+  <span class="checkbox-label">{{label}}</span>
 </label>
