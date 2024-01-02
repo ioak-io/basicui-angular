@@ -1,0 +1,11 @@
+ <!-- <div>
+    <label for="" class="basicui-radio">
+        <input type="radio" class="radio-input">
+        <span class="radio-label">{{label}}</span>
+    </label>
+</div> -->
+
+<label class="basicui-radio" [class.error]="isError" [class.primary]="isPrimary">
+    <input type="radio" class="radio-input" [checked]="isChecked" (change)="toggleRadio($event)" />
+    <span class="radio-label">{{label}}</span>
+</label>

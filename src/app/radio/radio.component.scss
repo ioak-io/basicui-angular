@@ -1,0 +1,52 @@
+/*.basicui-radio {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+.radio-input{
+    margin: 0;
+    padding: 0;
+    height: 18px;
+    width: 18px;
+    outline: 0;
+    border: 1px solid #a2a2a2;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    position: static;
+    cursor: pointer;
+}
+.radio-label{
+    margin-left: 7px;
+    font-size: 12px;
+    
+}*/
+.basicui-radio {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+  }
+.radio-input{
+    outline: 0;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    accent-color: #000;
+}
+.radio-label{
+    margin-left: 7px;
+    font-size: 12px;
+    font-family: system-ui;
+    
+}
+.basicui-radio.primary .radio-input {
+    accent-color: #1976d2; 
+  }
+.basicui-radio.error .radio-input{
+    accent-color: #e53935; 
+}
