@@ -80,12 +80,12 @@
         },
         {
             "name": "ButtonProps",
-            "id": "interface-ButtonProps-50c271fefdab2f435e5f14e78170a981159bdf6689f84cd62044f37b4000f4011a2c988d56e4915b72f7bc74a4529b3a13a0d7765e099a6fa334a33058fa5144",
+            "id": "interface-ButtonProps-cb296cf42e51d7c0934a2634cb620da7e6e870cebe8f525a38160cb61817765cee014be6078aacb4a65a3c9cc5863c5539e39212e4dace694624aab9e96cb3b2",
             "file": "src/app/button/button.stories.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import {Meta, Story } from '@storybook/angular';\r\nimport { ButtonComponent } from './button.component';\r\n\r\nexport default{\r\n    title: 'Components/Button',\r\n    component: ButtonComponent\r\n} as Meta;\r\n\r\ninterface ButtonProps extends ButtonComponent{\r\n    label: string;\r\n}\r\n\r\nconst Template: Story<ButtonComponent> =({label, className}: Partial<ButtonProps>) =>({\r\n    component: ButtonComponent,\r\n    moduleMetadata: {\r\n        declarations: [ButtonComponent],\r\n        import:[]\r\n    },\r\n    template:`<app-button className='${className}'>${label}</app-button>`\r\n});\r\nexport const Primary: Story<ButtonProps> = Template.bind({});\r\n    Primary.args = {\r\n        className: 'btn-primary',\r\n        label: 'Primary'\r\n    };\r\nexport const Secondary: Story<ButtonProps> = Template.bind({});\r\nSecondary.args = {\r\n    className: 'btn-secondary',\r\n    label: 'Secondary'\r\n};\r\nexport const Empty: Story<ButtonProps> = Template.bind({});\r\nEmpty.args = {\r\n    icon:'times',\r\n    className: 'btn-empty',\r\n    label: 'Cancel'\r\n};",
+            "sourceCode": "import {Meta, Story } from '@storybook/angular';\r\nimport { ButtonComponent } from './button.component';\r\n\r\nexport default{\r\n    title: 'Form Elements/Button',\r\n    component: ButtonComponent\r\n} as Meta;\r\n\r\ninterface ButtonProps extends ButtonComponent{\r\n    label: string;\r\n}\r\n\r\nconst Template: Story<ButtonComponent> =({label, className}: Partial<ButtonProps>) =>({\r\n    component: ButtonComponent,\r\n    moduleMetadata: {\r\n        declarations: [ButtonComponent],\r\n        import:[]\r\n    },\r\n    template:`<app-button className='${className}'>${label}</app-button>`\r\n});\r\nexport const Primary: Story<ButtonProps> = Template.bind({});\r\n    Primary.args = {\r\n        className: 'btn-primary',\r\n        label: 'Primary'\r\n    };\r\nexport const Secondary: Story<ButtonProps> = Template.bind({});\r\nSecondary.args = {\r\n    className: 'btn-secondary',\r\n    label: 'Secondary'\r\n};\r\nexport const Empty: Story<ButtonProps> = Template.bind({});\r\nEmpty.args = {\r\n    icon:'times',\r\n    className: 'btn-empty',\r\n    label: 'Cancel'\r\n};",
             "properties": [
                 {
                     "name": "label",
@@ -783,7 +783,7 @@
         },
         {
             "name": "IconButtonComponent",
-            "id": "component-IconButtonComponent-d516573186619d35c2fbcb337f736b1bf0d4e8b5a342850054be610edd5712f1f0d409c5ac0128b297f73b71cf1ab60af2d3cc70f4e3302333763a07ad2938d9",
+            "id": "component-IconButtonComponent-45d335914fb0f393681a0fd9f687ff3635d4b5cb1ca4a2bee82fb0494e47ae6ab43b0d55df31ee98c99ac58ef3a500c6f2bf1e2d0a3809067380ef67186f9bb7",
             "file": "src/app/icon-button/icon-button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -799,80 +799,87 @@
                 "./icon-button.component.html"
             ],
             "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [
+            "inputsClass": [
                 {
-                    "name": "isDefaultfillvariant",
-                    "defaultValue": "false",
+                    "name": "children",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "boolean",
-                    "optional": false,
-                    "description": "",
-                    "line": 11
+                    "line": 18,
+                    "type": "any",
+                    "decorators": []
                 },
                 {
-                    "name": "isDefaultoutlinevariant",
+                    "name": "circle",
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
+                    "line": 19,
                     "type": "boolean",
-                    "optional": false,
-                    "description": "",
-                    "line": 10
+                    "decorators": []
                 },
                 {
-                    "name": "isDefaulttransparentvariant",
+                    "name": "loading",
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
+                    "line": 20,
                     "type": "boolean",
-                    "optional": false,
-                    "description": "",
-                    "line": 12
+                    "decorators": []
                 },
                 {
-                    "name": "isPrimary",
-                    "defaultValue": "false",
+                    "name": "onClick",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "boolean",
-                    "optional": false,
-                    "description": "",
-                    "line": 13
+                    "line": 13,
+                    "type": "any",
+                    "decorators": []
                 },
                 {
-                    "name": "isPrimaryfillvariant",
-                    "defaultValue": "false",
+                    "name": "onReset",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "boolean",
-                    "optional": false,
-                    "description": "",
-                    "line": 15
+                    "line": 15,
+                    "type": "any",
+                    "decorators": []
                 },
                 {
-                    "name": "isPrimaryoutlinevariant",
-                    "defaultValue": "false",
+                    "name": "onSubmit",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "boolean",
-                    "optional": false,
-                    "description": "",
-                    "line": 14
+                    "line": 14,
+                    "type": "any",
+                    "decorators": []
                 },
                 {
-                    "name": "isPrimarytransparentvariant",
-                    "defaultValue": "false",
+                    "name": "theme",
+                    "defaultValue": "ThemeType.default",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "boolean",
-                    "optional": false,
-                    "description": "",
-                    "line": 16
+                    "line": 12,
+                    "type": "ThemeType",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "\"button\" | \"submit\" | \"reset\"",
+                    "decorators": []
+                },
+                {
+                    "name": "variant",
+                    "defaultValue": "ButtonVariantType.default",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "ButtonVariantType",
+                    "decorators": []
                 }
             ],
+            "outputsClass": [],
+            "propertiesClass": [],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
@@ -881,16 +888,16 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n    selector:'app-icon-button',\r\n    templateUrl:'./icon-button.component.html',\r\n    styleUrls:['./icon-button.component.scss'],\r\n})\r\n\r\nexport class IconButtonComponent{\r\n    isDefaultoutlinevariant: boolean = false;\r\n    isDefaultfillvariant: boolean = false;\r\n    isDefaulttransparentvariant: boolean = false;\r\n    isPrimary: boolean = false;\r\n    isPrimaryoutlinevariant: boolean = false;\r\n    isPrimaryfillvariant: boolean = false;\r\n    isPrimarytransparentvariant: boolean = false;\r\n\r\n\r\n}",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport ButtonVariantType  from '../types/ButtonVariantType';\r\nimport ThemeType from '../types/ThemeType';\r\n\r\n@Component({\r\n  selector: 'app-icon-button',\r\n  templateUrl: './icon-button.component.html',\r\n  styleUrls: ['./icon-button.component.scss']\r\n})\r\nexport class IconButtonComponent {\r\n  @Input() theme: ThemeType = ThemeType.default;\r\n  @Input() onClick?: any;\r\n  @Input() onSubmit?: any;\r\n  @Input() onReset?: any;\r\n  @Input() type: 'button' | 'submit' | 'reset' = 'button';\r\n  @Input() variant: ButtonVariantType = ButtonVariantType.default;\r\n  @Input() children: any;\r\n  @Input() circle = false;\r\n  @Input() loading = false;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n/*import { Component, Input } from '@angular/core';\r\nimport ButtonVariantType from '../types/ButtonVariantType';\r\nimport  ThemeType from '../types/ThemeType';\r\n\r\n@Component({\r\n  selector: 'app-icon-button',\r\n  templateUrl: './icon-button.component.html',\r\n  styleUrls: ['./icon-button.component.scss']\r\n})\r\nexport class IconButtonComponent {\r\n  [x: string]: any;\r\n  @Input() theme?: ThemeType;\r\n  @Input() variant?: ButtonVariantType;\r\n  @Input() type?: string;\r\n  circle?: boolean;\r\n  @Input() loading?: boolean;\r\n\r\n  onClick(): void {\r\n    console.log('Button Clicked!');\r\n  }\r\n}*/\r\n\r\n/*import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport  ThemeType  from '../types/ThemeType';\r\nimport ButtonVariantType  from '../types/ButtonVariantType';\r\n\r\n@Component({\r\n  selector: 'app-icon-button',\r\n  templateUrl: './icon-button.component.html',\r\n  styleUrls: ['./icon-button.component.scss']\r\n})\r\nexport class IconButtonComponent {\r\n  @Input() type!: 'button';\r\n  @Input() theme: ThemeType = ThemeType.default;\r\n  @Input() variant: ButtonVariantType = ButtonVariantType.default;\r\n  @Input() loading: boolean = false;\r\n  @Input() circle: boolean = false;\r\n  @Output() onClick: EventEmitter<void> = new EventEmitter<void>();\r\n\r\n  handleClick(): void {\r\n    this.onClick.emit();\r\n  }\r\n}*/",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '~material-design-icons/iconfont/material-icons.css';\r\n.material-icons{\r\n    font-size: 15px;\r\n}\r\nbutton{\r\n    height: 32px;\r\n    width: 32px;\r\n    border: none;\r\n    border: 1px solid #e6e7e7;\r\n    border-radius: 50%;\r\n    background-color: #e6e7e7;\r\n    align-items: center;\r\n    cursor: pointer;\r\n}\r\nbutton:hover{\r\n    background-color: #c3c3c3;\r\n}\r\n\r\n.default-outline-variant{\r\n    border: 1px solid #dadada;\r\n    background-color:white;\r\n    border-radius: 2px;\r\n    height: 32px;\r\n    width: 32px;\r\n}\r\n.default-outline-variant:hover{\r\n    background-color:white;\r\n    border: 1px solid #a1a1a1;\r\n}\r\n.default-fill-variant{\r\n    border: 1px solid #dadada;\r\n    background-color:white;\r\n    border-radius: 2px;\r\n    height: 32px;\r\n    width: 32px;\r\n}\r\n.default-fill-variant:hover{\r\n    background-color:#d1d1d1;\r\n    border: 1px solid #d1d1d1;\r\n}\r\n.default-transparent-variant{\r\n    height: 32px;\r\n    width: 32px;\r\n    border: 1px solid #000;\r\n    border-radius: 2px;\r\n    background-color: #e6e7e7;\r\n}\r\n.default-transparent-variant:hover{\r\n    background-color: #c3c3c3;\r\n}\r\n.primary{\r\n    background-color: #1492db;\r\n    border: 1px solid #1492db;\r\n    height: 32px;\r\n    width: 32px;\r\n    border-radius: 2px;\r\n    color: white;\r\n}\r\n.primary:hover{\r\n    background-color: #0669ac;\r\n}\r\n.primary-outline-variant{\r\n    background-color: #ffffff;\r\n    border: 1px solid #5cbcf4;\r\n    border-radius: 2px;\r\n}\r\n.primary-outline-variant:hover{\r\n    background-color: #ffffff;\r\n    border: 1px solid #0480d2;\r\n}\r\n.primary-fill-variant{\r\n    background-color: #ffffff;\r\n    border: 1px solid #0480d2;\r\n    border-radius: 2px;\r\n}\r\n.primary-fill-variant:hover{\r\n    background-color: #0588df;\r\n    border: 1px solid #0588df;\r\n    color: white;\r\n}\r\n.primary-transparent-variant{\r\n    background-color: #d9eaf8;\r\n    border: 1px solid #0480d2;\r\n    border-radius: 2px;\r\n}\r\n.primary-transparent-variant:hover{\r\n    border: 1px solid #0480d2;\r\n    background-color: #c9e6fc;\r\n}",
+                    "data": "@import '../styles/index.css';\r\n\r\n.basicui-button--loading svg {\r\n    display: none;\r\n}\r\n.basicui-button--loading .basicui-button__svg--loading {\r\n    display: block;\r\n    animation: animate_button_loading 2s linear infinite both;\r\n}\r\n\r\n/*@import '~material-design-icons/iconfont/material-icons.css';\r\n.material-icons{\r\n    font-size: 15px;\r\n}*/\r\n/*button{\r\n    height: 32px;\r\n    width: 32px;\r\n    border: none;\r\n    border: 1px solid #e6e7e7;\r\n    border-radius: 50%;\r\n    background-color: #e6e7e7;\r\n    align-items: center;\r\n    cursor: pointer;\r\n}\r\nbutton:hover{\r\n    background-color: #c3c3c3;\r\n}\r\n\r\n.default-outline-variant{\r\n    border: 1px solid #dadada;\r\n    background-color:white;\r\n    border-radius: 2px;\r\n    height: 32px;\r\n    width: 32px;\r\n}\r\n.default-outline-variant:hover{\r\n    background-color:white;\r\n    border: 1px solid #a1a1a1;\r\n}\r\n.default-fill-variant{\r\n    border: 1px solid #dadada;\r\n    background-color:white;\r\n    border-radius: 2px;\r\n    height: 32px;\r\n    width: 32px;\r\n}\r\n.default-fill-variant:hover{\r\n    background-color:#d1d1d1;\r\n    border: 1px solid #d1d1d1;\r\n}\r\n.default-transparent-variant{\r\n    height: 32px;\r\n    width: 32px;\r\n    border: 1px solid #000;\r\n    border-radius: 2px;\r\n    background-color: #e6e7e7;\r\n}\r\n.default-transparent-variant:hover{\r\n    background-color: #c3c3c3;\r\n}\r\n.primary{\r\n    background-color: #1492db;\r\n    border: 1px solid #1492db;\r\n    height: 32px;\r\n    width: 32px;\r\n    border-radius: 2px;\r\n    color: white;\r\n}\r\n.primary:hover{\r\n    background-color: #0669ac;\r\n}\r\n.primary-outline-variant{\r\n    background-color: #ffffff;\r\n    border: 1px solid #5cbcf4;\r\n    border-radius: 2px;\r\n}\r\n.primary-outline-variant:hover{\r\n    background-color: #ffffff;\r\n    border: 1px solid #0480d2;\r\n}\r\n.primary-fill-variant{\r\n    background-color: #ffffff;\r\n    border: 1px solid #0480d2;\r\n    border-radius: 2px;\r\n}\r\n.primary-fill-variant:hover{\r\n    background-color: #0588df;\r\n    border: 1px solid #0588df;\r\n    color: white;\r\n}\r\n.primary-transparent-variant{\r\n    background-color: #d9eaf8;\r\n    border: 1px solid #0480d2;\r\n    border-radius: 2px;\r\n}\r\n.primary-transparent-variant:hover{\r\n    border: 1px solid #0480d2;\r\n    background-color: #c9e6fc;\r\n}*/",
                     "styleUrl": "./icon-button.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<!-- <button>\r\n    <i class=\"material-icons\">check</i>\r\n</button> -->\r\n\r\n<button [ngClass]=\"{'primary': isPrimary,\r\n        'default-outline-variant': isDefaultoutlinevariant, \r\n        'default-fill-variant': isDefaultfillvariant,\r\n        'default-transparent-variant': isDefaulttransparentvariant,\r\n        'primary-outline-variant': isPrimaryoutlinevariant, \r\n        'primary-fill-variant': isPrimaryfillvariant,\r\n        'primary-transparent-variant': isPrimarytransparentvariant}\">\r\n    <i class=\"material-icons\">check</i>\r\n  </button>"
+            "templateData": "\r\n<button [ngClass]=\"{\r\n    'basicui-button': true,\r\n    'basicui-icon-button': true,\r\n    'basicui-icon-button--circle': circle,\r\n    'basicui-button--theme-default': theme === 'default',\r\n    'basicui-button--theme-primary': theme === 'primary',\r\n    'basicui-button--variant-default': variant === 'default',\r\n    'basicui-button--variant-fill': variant === 'fill',\r\n    'basicui-button--variant-outline': variant === 'outline',\r\n    'basicui-button--variant-transparent': variant === 'transparent',\r\n    'basicui-button--loading': loading\r\n  }\"\r\n  [type]=\"type\"\r\n  (click)=\"onClick && onClick()\"\r\n  (submit)=\"onSubmit && onSubmit()\"\r\n  (reset)=\"onReset && onReset()\">\r\n  <ng-container *ngIf=\"loading\">\r\n    <svg class=\"basicui-button__svg--loading\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\r\n      <path d=\"M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z\"> \r\n      </path>\r\n    </svg>\r\n  </ng-container>\r\n  <ng-container *ngIf=\"!loading\">\r\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" aria-hidden=\"true\">\r\n      <path d=\"M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z\"></path>\r\n    </svg>\r\n  </ng-container>\r\n  </button>\r\n\r\n\r\n  \r\n  <!--<button \r\n    type=\"button\"\r\n    (click)=\"handleClick()\" \r\n    [ngClass]=\"{\r\n      'basicui-button': true,\r\n      'basicui-icon-button': true,\r\n      'basicui-icon-button--circle': circle,\r\n      'basicui-icon-button--theme-default': theme,\r\n      'basicui-icon-button--variant-default': variant }\">\r\n    <ng-container *ngIf=\"loading\">\r\n      <svg class=\"basicui-button__svg--loading\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\r\n        <path d=\"M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z\"> \r\n        </path>\r\n      </svg>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"!loading\">\r\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" aria-hidden=\"true\">\r\n        <path d=\"M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z\"></path>\r\n      </svg>\r\n    </ng-container>\r\n  </button>-->"
         },
         {
             "name": "InputComponent",
@@ -1943,13 +1950,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-b19ddc87e9f1cee8b3b3a87b3bba07273252d85c099ab5e23a87cef74b34e44cc9e70a36b65c30ea637653c91d9b1352a82259f9f5c678ad829e8251ca387a5a",
+            "id": "module-AppModule-d1e7e605cd000fcf0ad4779655448ef691db690a95ccc1cca1d3384fdfca8ab03966de28e080a3d65f6a3f3391cfabddd574b7bb4f9796347e547582b46da6cc",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { BrowserModule } from '@angular/platform-browser';\r\nimport { NgModule } from '@angular/core';\r\n//import { TaskModule } from './components/task.module';\r\nimport { NgxsModule } from '@ngxs/store';\r\nimport { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';\r\nimport { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';\r\nimport { environment } from '../environments/environment';\r\nimport { AppComponent } from './app.component';\r\n//import InboxScreenComponent from './components/inbox-screen.component';\r\n//import PureInboxScreenComponent from './components/pure-inbox-screen.component';\r\n//import { AvatarComponent } from './avatar/avatar.component';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { SelectComponent } from './select/select.component';\r\n\r\n\r\n@NgModule({\r\n  declarations: [AppComponent /*InboxScreenComponent, PureInboxScreenComponent,*/ /*AvatarComponent*/, SelectComponent],\r\n  imports: [\r\n    BrowserModule,\r\n    FormsModule,\r\n    //TaskModule,\r\n    NgxsModule.forRoot([], { developmentMode: !environment.production, }),\r\n    NgxsReduxDevtoolsPluginModule.forRoot(),\r\n    NgxsLoggerPluginModule.forRoot({ disabled: environment.production, }),\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {}\r\n",
+            "sourceCode": "import { BrowserModule } from '@angular/platform-browser';\r\nimport { NgModule } from '@angular/core';\r\n//import { TaskModule } from './components/task.module';\r\nimport { NgxsModule } from '@ngxs/store';\r\nimport { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';\r\nimport { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';\r\nimport { environment } from '../environments/environment';\r\nimport { AppComponent } from './app.component';\r\n//import InboxScreenComponent from './components/inbox-screen.component';\r\n//import PureInboxScreenComponent from './components/pure-inbox-screen.component';\r\n//import { AvatarComponent } from './avatar/avatar.component';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { SelectComponent } from './select/select.component';\r\nimport { IconButtonComponent } from './icon-button/icon-button.component';\r\n\r\n\r\n@NgModule({\r\n  declarations: [AppComponent /*InboxScreenComponent, PureInboxScreenComponent,*/ /*AvatarComponent*/, SelectComponent, IconButtonComponent],\r\n  imports: [\r\n    BrowserModule,\r\n    FormsModule,\r\n    //TaskModule,\r\n    NgxsModule.forRoot([], { developmentMode: !environment.production, }),\r\n    NgxsReduxDevtoolsPluginModule.forRoot(),\r\n    NgxsLoggerPluginModule.forRoot({ disabled: environment.production, }),\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1960,6 +1967,9 @@
                     "elements": [
                         {
                             "name": "AppComponent"
+                        },
+                        {
+                            "name": "IconButtonComponent"
                         },
                         {
                             "name": "SelectComponent"
@@ -2087,7 +2097,7 @@
                 "name": "Autocomplete",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/select/select..stories.ts",
+                "file": "src/app/select/select.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2231,7 +2241,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "() => ({\r\n    component: IconButtonComponent,\r\n    props: {\r\n\r\n    },\r\n})"
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "DefaultThemeWithFillVariant",
@@ -2241,7 +2251,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "() => ({\r\n    component: IconButtonComponent,\r\n    props: {\r\n        isDefaultfillvariant: true,\r\n    },\r\n})"
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "DefaultThemeWithOutlineVariant",
@@ -2251,7 +2261,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "() => ({\r\n    component: IconButtonComponent,\r\n    props: {\r\n        isDefaultoutlinevariant: true,\r\n    },\r\n})"
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "DefaultThemeWithTransparentVariant",
@@ -2261,7 +2271,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "() => ({\r\n    component: IconButtonComponent,\r\n    props: {\r\n        isDefaulttransparentvariant: true,\r\n    },\r\n})"
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Empty",
@@ -2431,7 +2441,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "() => ({\r\n    component: IconButtonComponent,\r\n    props: {\r\n        isPrimaryfillvariant: true,\r\n    },\r\n})"
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "PrimaryThemeWithOutlineVariant",
@@ -2441,7 +2451,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "() => ({\r\n    component: IconButtonComponent,\r\n    props: {\r\n        isPrimaryoutlinevariant: true,\r\n    },\r\n})"
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "PrimaryThemeWithPrimaryVariant",
@@ -2451,7 +2461,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "() => ({\r\n    component: IconButtonComponent,\r\n    props: {\r\n        isPrimary: true,\r\n    },\r\n})"
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "PrimaryThemeWithTransparentVariant",
@@ -2461,7 +2471,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "() => ({\r\n    component: IconButtonComponent,\r\n    props: {\r\n        isPrimarytransparentvariant: true,\r\n    },\r\n})"
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "RadioWithError",
@@ -2517,7 +2527,7 @@
                 "name": "SingleSelect",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/select/select..stories.ts",
+                "file": "src/app/select/select.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2637,6 +2647,16 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/icon-button/icon-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<IconButtonComponent>",
+                "defaultValue": "(args: IconButtonComponent) => ({\r\n  component: IconButtonComponent,\r\n  props: args\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/input/input.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2696,14 +2716,242 @@
         ],
         "functions": [],
         "typealiases": [],
-        "enumerations": [],
+        "enumerations": [
+            {
+                "name": "AlignmentType",
+                "childs": [
+                    {
+                        "name": "default",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "default"
+                    },
+                    {
+                        "name": "left",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "left"
+                    },
+                    {
+                        "name": "center",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "center"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "src/app/types/AlignmentType.ts"
+            },
+            {
+                "name": "ButtonVariantType",
+                "childs": [
+                    {
+                        "name": "default",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "default"
+                    },
+                    {
+                        "name": "outline",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "outline"
+                    },
+                    {
+                        "name": "fill",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "fill"
+                    },
+                    {
+                        "name": "transparent",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "transparent"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "src/app/types/ButtonVariantType.ts"
+            },
+            {
+                "name": "ModalPlacement",
+                "childs": [
+                    {
+                        "name": "default",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "default"
+                    },
+                    {
+                        "name": "top",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "top"
+                    },
+                    {
+                        "name": "bottom",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "bottom"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "src/app/types/ModalPlacement.ts"
+            },
+            {
+                "name": "ModalSizeType",
+                "childs": [
+                    {
+                        "name": "default",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "default"
+                    },
+                    {
+                        "name": "small",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "small"
+                    },
+                    {
+                        "name": "large",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "large"
+                    },
+                    {
+                        "name": "xlarge",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "xlarge"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "src/app/types/ModalSizeType.ts"
+            },
+            {
+                "name": "TabHeaderAlignmentType",
+                "childs": [
+                    {
+                        "name": "default",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "default"
+                    },
+                    {
+                        "name": "column",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "column"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "src/app/types/TabHeaderAlignmentType.ts"
+            },
+            {
+                "name": "TabShapeType",
+                "childs": [
+                    {
+                        "name": "default",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "default"
+                    },
+                    {
+                        "name": "round",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "round"
+                    },
+                    {
+                        "name": "rectangle",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "rectangle"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "src/app/types/TabShapeType.ts"
+            },
+            {
+                "name": "ThemeType",
+                "childs": [
+                    {
+                        "name": "default",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "default"
+                    },
+                    {
+                        "name": "primary",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "primary"
+                    },
+                    {
+                        "name": "secondary",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "secondary"
+                    },
+                    {
+                        "name": "success",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "success"
+                    },
+                    {
+                        "name": "warning",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "warning"
+                    },
+                    {
+                        "name": "danger",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "danger"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "src/app/types/ThemeType.ts"
+            }
+        ],
         "groupedVariables": {
-            "src/app/select/select..stories.ts": [
+            "src/app/select/select.stories.ts": [
                 {
                     "name": "Autocomplete",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/select/select..stories.ts",
+                    "file": "src/app/select/select.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -2713,7 +2961,7 @@
                     "name": "SingleSelect",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/select/select..stories.ts",
+                    "file": "src/app/select/select.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -3037,7 +3285,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "() => ({\r\n    component: IconButtonComponent,\r\n    props: {\r\n\r\n    },\r\n})"
+                    "defaultValue": "Template.bind({})"
                 },
                 {
                     "name": "DefaultThemeWithFillVariant",
@@ -3047,7 +3295,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "() => ({\r\n    component: IconButtonComponent,\r\n    props: {\r\n        isDefaultfillvariant: true,\r\n    },\r\n})"
+                    "defaultValue": "Template.bind({})"
                 },
                 {
                     "name": "DefaultThemeWithOutlineVariant",
@@ -3057,7 +3305,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "() => ({\r\n    component: IconButtonComponent,\r\n    props: {\r\n        isDefaultoutlinevariant: true,\r\n    },\r\n})"
+                    "defaultValue": "Template.bind({})"
                 },
                 {
                     "name": "DefaultThemeWithTransparentVariant",
@@ -3067,7 +3315,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "() => ({\r\n    component: IconButtonComponent,\r\n    props: {\r\n        isDefaulttransparentvariant: true,\r\n    },\r\n})"
+                    "defaultValue": "Template.bind({})"
                 },
                 {
                     "name": "PrimaryThemeWithFillVariant",
@@ -3077,7 +3325,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "() => ({\r\n    component: IconButtonComponent,\r\n    props: {\r\n        isPrimaryfillvariant: true,\r\n    },\r\n})"
+                    "defaultValue": "Template.bind({})"
                 },
                 {
                     "name": "PrimaryThemeWithOutlineVariant",
@@ -3087,7 +3335,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "() => ({\r\n    component: IconButtonComponent,\r\n    props: {\r\n        isPrimaryoutlinevariant: true,\r\n    },\r\n})"
+                    "defaultValue": "Template.bind({})"
                 },
                 {
                     "name": "PrimaryThemeWithPrimaryVariant",
@@ -3097,7 +3345,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "() => ({\r\n    component: IconButtonComponent,\r\n    props: {\r\n        isPrimary: true,\r\n    },\r\n})"
+                    "defaultValue": "Template.bind({})"
                 },
                 {
                     "name": "PrimaryThemeWithTransparentVariant",
@@ -3107,7 +3355,17 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "() => ({\r\n    component: IconButtonComponent,\r\n    props: {\r\n        isPrimarytransparentvariant: true,\r\n    },\r\n})"
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/icon-button/icon-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<IconButtonComponent>",
+                    "defaultValue": "(args: IconButtonComponent) => ({\r\n  component: IconButtonComponent,\r\n  props: args\r\n})"
                 }
             ],
             "src/app/button/button.stories.ts": [
@@ -3350,12 +3608,254 @@
             ]
         },
         "groupedFunctions": {},
-        "groupedEnumerations": {},
+        "groupedEnumerations": {
+            "src/app/types/AlignmentType.ts": [
+                {
+                    "name": "AlignmentType",
+                    "childs": [
+                        {
+                            "name": "default",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "default"
+                        },
+                        {
+                            "name": "left",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "left"
+                        },
+                        {
+                            "name": "center",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "center"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "file": "src/app/types/AlignmentType.ts"
+                }
+            ],
+            "src/app/types/ButtonVariantType.ts": [
+                {
+                    "name": "ButtonVariantType",
+                    "childs": [
+                        {
+                            "name": "default",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "default"
+                        },
+                        {
+                            "name": "outline",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "outline"
+                        },
+                        {
+                            "name": "fill",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "fill"
+                        },
+                        {
+                            "name": "transparent",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "transparent"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "file": "src/app/types/ButtonVariantType.ts"
+                }
+            ],
+            "src/app/types/ModalPlacement.ts": [
+                {
+                    "name": "ModalPlacement",
+                    "childs": [
+                        {
+                            "name": "default",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "default"
+                        },
+                        {
+                            "name": "top",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "top"
+                        },
+                        {
+                            "name": "bottom",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "bottom"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "file": "src/app/types/ModalPlacement.ts"
+                }
+            ],
+            "src/app/types/ModalSizeType.ts": [
+                {
+                    "name": "ModalSizeType",
+                    "childs": [
+                        {
+                            "name": "default",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "default"
+                        },
+                        {
+                            "name": "small",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "small"
+                        },
+                        {
+                            "name": "large",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "large"
+                        },
+                        {
+                            "name": "xlarge",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "xlarge"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "file": "src/app/types/ModalSizeType.ts"
+                }
+            ],
+            "src/app/types/TabHeaderAlignmentType.ts": [
+                {
+                    "name": "TabHeaderAlignmentType",
+                    "childs": [
+                        {
+                            "name": "default",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "default"
+                        },
+                        {
+                            "name": "column",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "column"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "file": "src/app/types/TabHeaderAlignmentType.ts"
+                }
+            ],
+            "src/app/types/TabShapeType.ts": [
+                {
+                    "name": "TabShapeType",
+                    "childs": [
+                        {
+                            "name": "default",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "default"
+                        },
+                        {
+                            "name": "round",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "round"
+                        },
+                        {
+                            "name": "rectangle",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "rectangle"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "file": "src/app/types/TabShapeType.ts"
+                }
+            ],
+            "src/app/types/ThemeType.ts": [
+                {
+                    "name": "ThemeType",
+                    "childs": [
+                        {
+                            "name": "default",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "default"
+                        },
+                        {
+                            "name": "primary",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "primary"
+                        },
+                        {
+                            "name": "secondary",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "secondary"
+                        },
+                        {
+                            "name": "success",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "success"
+                        },
+                        {
+                            "name": "warning",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "warning"
+                        },
+                        {
+                            "name": "danger",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "danger"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "file": "src/app/types/ThemeType.ts"
+                }
+            ]
+        },
         "groupedTypeAliases": {}
     },
     "routes": [],
     "coverage": {
-        "count": 1,
+        "count": 0,
         "status": "low",
         "files": [
             {
@@ -3568,7 +4068,7 @@
                 "linktype": "component",
                 "name": "IconButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/8",
+                "coverageCount": "0/10",
                 "status": "low"
             },
             {
@@ -3647,6 +4147,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "PrimaryThemeWithTransparentVariant",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/icon-button/icon-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -3846,7 +4356,16 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/select/select..stories.ts",
+                "filePath": "src/app/select/select.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SelectComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/select/select.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -3856,22 +4375,13 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/select/select..stories.ts",
+                "filePath": "src/app/select/select.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "SingleSelect",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/select/select.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "SelectComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/5",
                 "status": "low"
             },
             {

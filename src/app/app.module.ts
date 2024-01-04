@@ -11,10 +11,11 @@ import { AppComponent } from './app.component';
 //import { AvatarComponent } from './avatar/avatar.component';
 import { FormsModule } from '@angular/forms';
 import { SelectComponent } from './select/select.component';
+import { IconButtonComponent } from './icon-button/icon-button.component';
 
 
 @NgModule({
-  declarations: [AppComponent /*InboxScreenComponent, PureInboxScreenComponent,*/ /*AvatarComponent*/, SelectComponent],
+  declarations: [AppComponent /*InboxScreenComponent, PureInboxScreenComponent,*/ /*AvatarComponent*/, SelectComponent, IconButtonComponent],
   imports: [
     BrowserModule,
     FormsModule,
