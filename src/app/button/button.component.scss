@@ -1,3 +1,4 @@
+@import '../styles/index.css';
 $primary: #0052cc;
 $success: #0b875b;
 $danger: #e13c3c;
@@ -240,4 +241,54 @@ $jira-bg: rgb(222, 235, 255);
 ::selection {
   color: #fff;
   background: #1890ff;
+}
+
+.btn-outline{
+  border: 1px solid #000;
+  font-weight: 500;
+    background: rgba(235, 236, 240, var(--bg-opacity));
+    padding: 10px;
+    font-size: 14.5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    border-radius: 5px;
+    vertical-align: middle;
+    line-height: 1;
+    white-space: nowrap;
+    transition-property: all;
+    transition-duration: 100ms;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
+
+.btn-outline {
+  background: rgba(235, 236, 240, var(--bg-opacity));
+  outline: none;
+  @apply text-textDark;
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+
+  &:not(:disabled) {
+    &:hover {
+      @apply bg-backgroundLight;
+    }
+    &:active {
+      @apply bg-backgroundLightPrimary;
+      color: $primary;
+    }
+    &.is-active {
+      background-color: $jira-bg;
+      @apply text-textDark;
+    }
+  }
 }

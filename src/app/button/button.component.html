@@ -1,7 +1,18 @@
 <button 
     [type]="type"
-    [ngClass]="['btn', className, isActive ? 'is-active':'',content?.innerHTML?.trim()? '': 'icon-only']"
-    [disabled]="disabled">
+    [ngClass]="{
+        'basicui-button': true,
+        'basicui-button--theme-default': theme === 'default',
+        'basicui-button--theme-primary': theme === 'primary',
+        'basicui-button--theme-danger': theme === 'danger',
+        'basicui-button--variant-default': variant === 'default',
+        'basicui-button--variant-fill': variant === 'fill',
+        'basicui-button--variant-outline': variant === 'outline',
+        'basicui-button--variant-transparent': variant === 'transparent',
+        'basicui-button--loading': loading
+      }"
+    [disabled]="disabled"
+    >
 
     <svg-icon *ngIf="!isWorking && icon"
         [name]="icon"
@@ -15,5 +26,5 @@
     <span #content
         [class.with-padding]="isWorking || icon">
         <ng-content></ng-content>
-    </span>
+    </span>{{label}}
 </button>

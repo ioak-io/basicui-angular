@@ -484,7 +484,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-a63efdaa82e405d1dfe71a51ce55c5c73e59817d34ee3c94313c5c9d6050c4b07e94fb0eb24d75dcfb5a69393042eb4df802cb7047c8c0c8dba8fc4e2ba05123-1",
+            "id": "component-ButtonComponent-dc74f065988b4900e0460e13b9053bfeafd649aaedd16ea4a608c9fd69c0ad8ce6a553a4503c17f3a3e61ee4b590639af30705b06dfb37d7821d01628441d923-1",
             "file": "src/app/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -552,6 +552,14 @@
                     "decorators": []
                 },
                 {
+                    "name": "theme",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
                     "name": "type",
                     "defaultValue": "'button'",
                     "deprecated": false,
@@ -563,7 +571,18 @@
             ],
             "outputsClass": [],
             "propertiesClass": [],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnChanges",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -571,11 +590,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import{ Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'app-button',\r\n    templateUrl: './button.component.html',\r\n    styleUrls: ['./button.component.scss']\r\n})\r\n\r\nexport class ButtonComponent{\r\n    @Input() type= 'button';\r\n    @Input() className ='btn-primary';\r\n    @Input() icon!: string;\r\n    @Input() iconSize =18;\r\n    @Input() isWorking!: boolean;\r\n    @Input() isActive!: boolean;\r\n    @Input() disabled!: boolean;\r\n\r\n    constructor() {}\r\n}",
+            "sourceCode": "import{ Component, Input, OnChanges } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'app-button',\r\n    templateUrl: './button.component.html',\r\n    styleUrls: ['./button.component.scss']\r\n})\r\n\r\nexport class ButtonComponent implements OnChanges{\r\n    @Input() type= 'button';\r\n    @Input() className ='btn-primary';\r\n    @Input() icon!: string;\r\n    @Input() iconSize =18;\r\n    @Input() isWorking!: boolean;\r\n    @Input() isActive!: boolean;\r\n    @Input() disabled!: boolean;\r\n    @Input() theme!: boolean;\r\n\r\n    constructor() {}\r\n\r\n    ngOnChanges(){\r\n        console.log(this.className)\r\n    }\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "$primary: #0052cc;\r\n$success: #0b875b;\r\n$danger: #e13c3c;\r\n$warning: #f89c1c;\r\n$info: #0fb9b1;\r\n$secondary: #f4f5f7;\r\n$jira-bg: rgb(222, 235, 255);\r\n\r\n.btn {\r\n  @apply text-btn inline-flex items-center justify-center h-8 align-middle leading-none whitespace-nowrap rounded-sm transition-all duration-100 appearance-none cursor-pointer select-none px-3;\r\n\r\n  &.icon-only {\r\n    @apply px-2;\r\n\r\n    .with-padding {\r\n      padding: 0;\r\n    }\r\n  }\r\n\r\n  &.disabled {\r\n    @apply opacity-50 cursor-default pointer-events-none;\r\n  }\r\n\r\n  &:focus,\r\n  &:active {\r\n    outline-color: #1890ff;\r\n  }\r\n\r\n  &.no-padding-left {\r\n    padding-left: 0;\r\n  }\r\n\r\n  &.no-padding-right {\r\n    padding-right: 0;\r\n  }\r\n}\r\n\r\n@mixin buttonBackground($btn-variant, $background) {\r\n  $background-dark: darken($background, 10%);\r\n  $background-light: lighten($background, 10%);\r\n\r\n  .btn-#{$btn-variant} {\r\n    border: aliceblue;\r\n    color: white;\r\n    font-weight: 500;\r\n    background: $background;\r\n    padding: 10px;\r\n    font-size: 14.5px;\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 2rem;\r\n    border-radius: 5px;\r\n    vertical-align: middle;\r\n  line-height: 1;\r\n  white-space: nowrap;\r\n  transition-property: all;\r\n  transition-duration: 100ms;\r\n  -webkit-appearance: none;\r\n  -moz-appearance: none;\r\n  appearance: none;\r\n  cursor: pointer;\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  user-select: none;\r\n  padding-left: 0.75rem;\r\n  padding-right: 0.75rem;\r\n\r\n    &:disabled {\r\n      cursor: not-allowed;\r\n      background-color: lighten($background, 30%);\r\n    }\r\n\r\n    &:not(:disabled) {\r\n      &:hover {\r\n        background: $background-light;\r\n      }\r\n      &:active {\r\n        background: $background-dark;\r\n      }\r\n      &.active {\r\n        background: $background-dark !important;\r\n      }\r\n    }\r\n  }\r\n}\r\n@include buttonBackground(primary, $primary);\r\n@include buttonBackground(success, $success);\r\n\r\n.btn-secondary {\r\n  @apply text-textDark font-normal;\r\n  background: $secondary;\r\n  \r\n\r\n  &:not(:disabled) {\r\n    &:hover {\r\n      @apply bg-backgroundLight;\r\n    }\r\n\r\n    &:active {\r\n      @apply bg-backgroundLightPrimary;\r\n      color: $primary;\r\n    }\r\n  }\r\n}\r\n.btn-secondary{\r\n  border: aliceblue;\r\n  font-weight: 500;\r\n    background: #f4f5f7;\r\n    padding: 10px;\r\n    font-size: 14.5px;\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 2rem;\r\n    border-radius: 5px;\r\n    vertical-align: middle;\r\n    line-height: 1;\r\n    white-space: nowrap;\r\n    transition-property: all;\r\n    transition-duration: 100ms;\r\n    -webkit-appearance: none;\r\n    appearance: none;\r\n    cursor: pointer;\r\n    -webkit-user-select: none;\r\n    user-select: none;\r\n    padding-left: 0.75rem;\r\n    padding-right: 0.75rem;\r\n}\r\n.btn-empty {\r\n  background: rgba(235, 236, 240, var(--bg-opacity));\r\n  outline: none;\r\n  @apply text-textDark;\r\n\r\n  &:focus,\r\n  &:active {\r\n    outline: none;\r\n  }\r\n\r\n  &:not(:disabled) {\r\n    &:hover {\r\n      @apply bg-backgroundLight;\r\n    }\r\n    &:active {\r\n      @apply bg-backgroundLightPrimary;\r\n      color: $primary;\r\n    }\r\n    &.is-active {\r\n      background-color: $jira-bg;\r\n      @apply text-textDark;\r\n    }\r\n  }\r\n}\r\n\r\n.with-padding {\r\n  @apply pl-2;\r\n}\r\n\r\n.is-active {\r\n  @apply text-textLink bg-backgroundLightPrimary;\r\n}\r\n.btn-empty{\r\n  border: aliceblue;\r\n  font-weight: 500;\r\n    background: rgba(235, 236, 240, var(--bg-opacity));\r\n    padding: 10px;\r\n    font-size: 14.5px;\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 2rem;\r\n    border-radius: 5px;\r\n    vertical-align: middle;\r\n    line-height: 1;\r\n    white-space: nowrap;\r\n    transition-property: all;\r\n    transition-duration: 100ms;\r\n    -webkit-appearance: none;\r\n    appearance: none;\r\n    cursor: pointer;\r\n    -webkit-user-select: none;\r\n    user-select: none;\r\n    padding-left: 0.75rem;\r\n    padding-right: 0.75rem;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n.btn btn-primary{\r\n  padding: 10px;\r\n}\r\n\r\n\r\n.btn-primary[_ngcontent-qxv-c49] {\r\n  color: white;\r\n  font-weight: 500;\r\n  background: #0052cc;\r\n  padding: 10px;\r\n}\r\n\r\n\r\n.btn[_ngcontent-hxx-c42] {\r\n  font-size: 14.5px;\r\n  display: inline-flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  height: 2rem;\r\n  vertical-align: middle;\r\n  line-height: 1;\r\n  white-space: nowrap;\r\n  border-radius: 0.125rem;\r\n  transition-property: all;\r\n  transition-duration: 100ms;\r\n  -webkit-appearance: none;\r\n  -moz-appearance: none;\r\n  appearance: none;\r\n  cursor: pointer;\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  user-select: none;\r\n  padding-left: 0.75rem;\r\n  padding-right: 0.75rem;\r\n}\r\n.button, input, optgroup, select, textarea {\r\n  padding: 0;\r\n  line-height: inherit;\r\n  color: inherit;\r\n}\r\n.button, select {\r\n  text-transform: none;\r\n}\r\n.button, input {\r\n  overflow: visible;\r\n}\r\n::selection {\r\n  color: #fff;\r\n  background: #1890ff;\r\n}",
+                    "data": "$primary: #0052cc;\r\n$success: #0b875b;\r\n$danger: #e13c3c;\r\n$warning: #f89c1c;\r\n$info: #0fb9b1;\r\n$secondary: #f4f5f7;\r\n$jira-bg: rgb(222, 235, 255);\r\n\r\n.btn {\r\n  @apply text-btn inline-flex items-center justify-center h-8 align-middle leading-none whitespace-nowrap rounded-sm transition-all duration-100 appearance-none cursor-pointer select-none px-3;\r\n\r\n  &.icon-only {\r\n    @apply px-2;\r\n\r\n    .with-padding {\r\n      padding: 0;\r\n    }\r\n  }\r\n\r\n  &.disabled {\r\n    @apply opacity-50 cursor-default pointer-events-none;\r\n  }\r\n\r\n  &:focus,\r\n  &:active {\r\n    outline-color: #1890ff;\r\n  }\r\n\r\n  &.no-padding-left {\r\n    padding-left: 0;\r\n  }\r\n\r\n  &.no-padding-right {\r\n    padding-right: 0;\r\n  }\r\n}\r\n\r\n@mixin buttonBackground($btn-variant, $background) {\r\n  $background-dark: darken($background, 10%);\r\n  $background-light: lighten($background, 10%);\r\n\r\n  .btn-#{$btn-variant} {\r\n    border: aliceblue;\r\n    color: white;\r\n    font-weight: 500;\r\n    background: $background;\r\n    padding: 10px;\r\n    font-size: 14.5px;\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 2rem;\r\n    border-radius: 5px;\r\n    vertical-align: middle;\r\n  line-height: 1;\r\n  white-space: nowrap;\r\n  transition-property: all;\r\n  transition-duration: 100ms;\r\n  -webkit-appearance: none;\r\n  -moz-appearance: none;\r\n  appearance: none;\r\n  cursor: pointer;\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  user-select: none;\r\n  padding-left: 0.75rem;\r\n  padding-right: 0.75rem;\r\n\r\n    &:disabled {\r\n      cursor: not-allowed;\r\n      background-color: lighten($background, 30%);\r\n    }\r\n\r\n    &:not(:disabled) {\r\n      &:hover {\r\n        background: $background-light;\r\n      }\r\n      &:active {\r\n        background: $background-dark;\r\n      }\r\n      &.active {\r\n        background: $background-dark !important;\r\n      }\r\n    }\r\n  }\r\n}\r\n@include buttonBackground(primary, $primary);\r\n@include buttonBackground(success, $success);\r\n\r\n.btn-secondary {\r\n  @apply text-textDark font-normal;\r\n  background: $secondary;\r\n  \r\n\r\n  &:not(:disabled) {\r\n    &:hover {\r\n      @apply bg-backgroundLight;\r\n    }\r\n\r\n    &:active {\r\n      @apply bg-backgroundLightPrimary;\r\n      color: $primary;\r\n    }\r\n  }\r\n}\r\n.btn-secondary{\r\n  border: aliceblue;\r\n  font-weight: 500;\r\n    background: #f4f5f7;\r\n    padding: 10px;\r\n    font-size: 14.5px;\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 2rem;\r\n    border-radius: 5px;\r\n    vertical-align: middle;\r\n    line-height: 1;\r\n    white-space: nowrap;\r\n    transition-property: all;\r\n    transition-duration: 100ms;\r\n    -webkit-appearance: none;\r\n    appearance: none;\r\n    cursor: pointer;\r\n    -webkit-user-select: none;\r\n    user-select: none;\r\n    padding-left: 0.75rem;\r\n    padding-right: 0.75rem;\r\n}\r\n.btn-empty {\r\n  background: rgba(235, 236, 240, var(--bg-opacity));\r\n  outline: none;\r\n  @apply text-textDark;\r\n\r\n  &:focus,\r\n  &:active {\r\n    outline: none;\r\n  }\r\n\r\n  &:not(:disabled) {\r\n    &:hover {\r\n      @apply bg-backgroundLight;\r\n    }\r\n    &:active {\r\n      @apply bg-backgroundLightPrimary;\r\n      color: $primary;\r\n    }\r\n    &.is-active {\r\n      background-color: $jira-bg;\r\n      @apply text-textDark;\r\n    }\r\n  }\r\n}\r\n\r\n.with-padding {\r\n  @apply pl-2;\r\n}\r\n\r\n.is-active {\r\n  @apply text-textLink bg-backgroundLightPrimary;\r\n}\r\n.btn-empty{\r\n  border: aliceblue;\r\n  font-weight: 500;\r\n    background: rgba(235, 236, 240, var(--bg-opacity));\r\n    padding: 10px;\r\n    font-size: 14.5px;\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 2rem;\r\n    border-radius: 5px;\r\n    vertical-align: middle;\r\n    line-height: 1;\r\n    white-space: nowrap;\r\n    transition-property: all;\r\n    transition-duration: 100ms;\r\n    -webkit-appearance: none;\r\n    appearance: none;\r\n    cursor: pointer;\r\n    -webkit-user-select: none;\r\n    user-select: none;\r\n    padding-left: 0.75rem;\r\n    padding-right: 0.75rem;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n.btn btn-primary{\r\n  padding: 10px;\r\n}\r\n\r\n\r\n.btn-primary[_ngcontent-qxv-c49] {\r\n  color: white;\r\n  font-weight: 500;\r\n  background: #0052cc;\r\n  padding: 10px;\r\n}\r\n\r\n\r\n.btn[_ngcontent-hxx-c42] {\r\n  font-size: 14.5px;\r\n  display: inline-flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  height: 2rem;\r\n  vertical-align: middle;\r\n  line-height: 1;\r\n  white-space: nowrap;\r\n  border-radius: 0.125rem;\r\n  transition-property: all;\r\n  transition-duration: 100ms;\r\n  -webkit-appearance: none;\r\n  -moz-appearance: none;\r\n  appearance: none;\r\n  cursor: pointer;\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  user-select: none;\r\n  padding-left: 0.75rem;\r\n  padding-right: 0.75rem;\r\n}\r\n.button, input, optgroup, select, textarea {\r\n  padding: 0;\r\n  line-height: inherit;\r\n  color: inherit;\r\n}\r\n.button, select {\r\n  text-transform: none;\r\n}\r\n.button, input {\r\n  overflow: visible;\r\n}\r\n::selection {\r\n  color: #fff;\r\n  background: #1890ff;\r\n}\r\n\r\n.btn-outline{\r\n  border: 1px solid #000;\r\n  font-weight: 500;\r\n    background: rgba(235, 236, 240, var(--bg-opacity));\r\n    padding: 10px;\r\n    font-size: 14.5px;\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 2rem;\r\n    border-radius: 5px;\r\n    vertical-align: middle;\r\n    line-height: 1;\r\n    white-space: nowrap;\r\n    transition-property: all;\r\n    transition-duration: 100ms;\r\n    -webkit-appearance: none;\r\n    appearance: none;\r\n    cursor: pointer;\r\n    -webkit-user-select: none;\r\n    user-select: none;\r\n    padding-left: 0.75rem;\r\n    padding-right: 0.75rem;\r\n}\r\n\r\n.btn-outline {\r\n  background: rgba(235, 236, 240, var(--bg-opacity));\r\n  outline: none;\r\n  @apply text-textDark;\r\n\r\n  &:focus,\r\n  &:active {\r\n    outline: none;\r\n  }\r\n\r\n  &:not(:disabled) {\r\n    &:hover {\r\n      @apply bg-backgroundLight;\r\n    }\r\n    &:active {\r\n      @apply bg-backgroundLightPrimary;\r\n      color: $primary;\r\n    }\r\n    &.is-active {\r\n      background-color: $jira-bg;\r\n      @apply text-textDark;\r\n    }\r\n  }\r\n}",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -586,8 +605,11 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 16
+                "line": 17
             },
+            "implements": [
+                "OnChanges"
+            ],
             "isDuplicate": true,
             "duplicateId": 1,
             "duplicateName": "ButtonComponent-1",
@@ -2640,8 +2662,8 @@
                 "file": "src/app/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<ButtonComponent>",
-                "defaultValue": "({label, className}: Partial<ButtonProps>) =>({\r\n    component: ButtonComponent,\r\n    moduleMetadata: {\r\n        declarations: [ButtonComponent],\r\n        import:[]\r\n    },\r\n    template:`<app-button className='${className}'>${label}</app-button>`\r\n})"
+                "type": "Story<BreadcrumbsComponent>",
+                "defaultValue": "(args :BreadcrumbsComponent) => ({\r\n    component: BreadcrumbsComponent,\r\n    props: args\r\n})"
             },
             {
                 "name": "Template",
@@ -3370,7 +3392,37 @@
             ],
             "src/app/button/button.stories.ts": [
                 {
+                    "name": "DefaultThemeWithDefaultVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ButtonProps>",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "DefaultThemeWithOutlineVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ButtonProps>",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
                     "name": "Empty",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ButtonProps>",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Outline",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/button/button.stories.ts",
@@ -3407,7 +3459,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<ButtonComponent>",
-                    "defaultValue": "({label, className}: Partial<ButtonProps>) =>({\r\n    component: ButtonComponent,\r\n    moduleMetadata: {\r\n        declarations: [ButtonComponent],\r\n        import:[]\r\n    },\r\n    template:`<app-button className='${className}'>${label}</app-button>`\r\n})"
+                    "defaultValue": "({label, className,disabled}: Partial<ButtonProps>) =>({\r\n    component: ButtonComponent,\r\n    moduleMetadata: {\r\n        declarations: [ButtonComponent],\r\n        import:[]\r\n    },\r\n    template:`<app-button [disabled]='${disabled}' className='${className}'>${label}</app-button>`\r\n})"
                 }
             ],
             "src/environments/environment.prod.ts": [

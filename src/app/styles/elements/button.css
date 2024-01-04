@@ -1,6 +1,7 @@
 @import './button-default.css';
 @import './button-primary.css';
 @import './button-danger.css';
+@import '../theme/index.css';
 
 .basicui-button {
     display: grid;
