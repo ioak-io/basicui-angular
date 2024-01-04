@@ -2,7 +2,7 @@ import { moduleMetadata } from "@storybook/angular";
 import { SwitchComponent } from "./switch.component";
 
 export default{
-    title: 'Components/Switch',
+    title: 'Form Elements/Switch',
     decorations: [
         moduleMetadata({
             declarations: [SwitchComponent],

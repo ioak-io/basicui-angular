@@ -2,7 +2,7 @@ import { moduleMetadata } from "@storybook/angular";
 import { TextareaComponent } from "./textarea.component";
 
 export default{
-    title:'Components/Textarea',
+    title:'Form Elements/Textarea',
     decorations: [
         moduleMetadata({
             declarations:[TextareaComponent],

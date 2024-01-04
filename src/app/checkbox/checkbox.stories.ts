@@ -2,7 +2,7 @@ import { moduleMetadata } from "@storybook/angular";
 import { CheckboxComponent } from './checkbox.component';
 
 export default{
-    title: 'Components/Checkbox',
+    title: 'Form Elements/Checkbox',
     decorators: [
         moduleMetadata({
             declarations: [CheckboxComponent],

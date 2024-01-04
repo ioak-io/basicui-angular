@@ -2,7 +2,7 @@ import { moduleMetadata } from "@storybook/angular";
 import { RadioComponent } from './radio.component';
 
 export default{
-    title: 'Components/Radio',
+    title: 'Form Elements/Radio',
     decorators: [
         moduleMetadata({
             declarations: [RadioComponent],

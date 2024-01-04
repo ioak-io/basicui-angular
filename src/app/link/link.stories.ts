@@ -3,7 +3,7 @@ import { LinkComponent } from "./link.component";
 
 
 export default{
-    title: 'Components/Link',
+    title: 'Form Elements/Link',
     decorations:[
         moduleMetadata({
             declarations: [LinkComponent],

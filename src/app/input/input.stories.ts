@@ -4,7 +4,7 @@ import { moduleMetadata } from '@storybook/angular';
 import { ReactiveFormsModule } from '@angular/forms';
 
 export default{
-    title: 'Components/Input',
+    title: 'Form Elements/Input',
     component: InputComponent,
     decorators: [
         moduleMetadata({

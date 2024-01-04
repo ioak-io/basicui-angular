@@ -1,60 +1,167 @@
-import { moduleMetadata } from '@storybook/angular';
-import { IconButtonComponent } from './icon-button.component';
 
-export default{
-    title:'Components/IconButton',
-    decorators:[
-        moduleMetadata({
-            declarations:[IconButtonComponent],
-        }),
-    ],
+import { moduleMetadata } from '@storybook/angular';
+import { Meta, Story } from '@storybook/angular/types-6-0';
+import { IconButtonComponent } from './icon-button.component';
+import ButtonVariantType  from '../types/ButtonVariantType';
+import ThemeType from '../types/ThemeType';
+
+export default {
+  title: 'Form Elements/Icon Button',
+  component: IconButtonComponent,
+  decorators: [
+    moduleMetadata({
+      declarations: [IconButtonComponent]
+    })
+  ]
+} as Meta;
+
+const Template: Story<IconButtonComponent> = (args: IconButtonComponent) => ({
+  component: IconButtonComponent,
+  props: args
+});
+
+export const DefaultThemeWithDefaultVariant = Template.bind({});
+DefaultThemeWithDefaultVariant.args = {
+  theme: ThemeType.default,
+  variant: ButtonVariantType.default,
+  circle: true,
+};
+export const DefaultThemeWithFillVariant = Template.bind({});
+DefaultThemeWithFillVariant.args = {
+  theme: ThemeType.default,
+  variant: ButtonVariantType.fill,
+  circle: false,
+};
+export const DefaultThemeWithOutlineVariant = Template.bind({});
+DefaultThemeWithOutlineVariant.args = {
+  theme: ThemeType.default,
+  variant: ButtonVariantType.outline,
+  circle: false,
+};
+export const DefaultThemeWithTransparentVariant = Template.bind({});
+DefaultThemeWithTransparentVariant.args = {
+  theme: ThemeType.default,
+  variant: ButtonVariantType.transparent,
+  circle: false,
+};
+export const PrimaryThemeWithPrimaryVariant = Template.bind({});
+PrimaryThemeWithPrimaryVariant.args = {
+  theme: ThemeType.primary,
+  variant: ButtonVariantType.default,
+  circle: false,
+};
+export const PrimaryThemeWithFillVariant = Template.bind({});
+PrimaryThemeWithFillVariant.args = {
+  theme: ThemeType.primary,
+  variant: ButtonVariantType.fill,
+  circle: false,
+};
+export const PrimaryThemeWithOutlineVariant = Template.bind({});
+PrimaryThemeWithOutlineVariant.args = {
+  theme: ThemeType.primary,
+  variant: ButtonVariantType.outline,
+  circle: false,
+};
+export const PrimaryThemeWithTransparentVariant = Template.bind({});
+PrimaryThemeWithTransparentVariant.args = {
+  theme: ThemeType.primary,
+  variant: ButtonVariantType.transparent,
+  circle: false,
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*import { moduleMetadata } from '@storybook/angular';
+import { IconButtonComponent } from './icon-button.component';
+import ButtonVariantType  from '../types/ButtonVariantType';
+import ThemeType from '../types/ThemeType';
+
+export default {
+  title: 'Form Elements/Icon Button',
+  component: IconButtonComponent,
+  decorators: [
+    moduleMetadata({
+      declarations: [IconButtonComponent],
+    }),
+  ],
 };
 
 export const DefaultThemeWithDefaultVariant = () => ({
-    component: IconButtonComponent,
-    props: {
-
-    },
+  component: IconButtonComponent,
+  props: {
+    theme: ThemeType.default,
+    variant: ButtonVariantType.default,
+    loading: false,
+    circle: 'true'
+  },
 });
+
 export const DefaultThemeWithOutlineVariant = () => ({
-    component: IconButtonComponent,
-    props: {
-        isDefaultoutlinevariant: true,
-    },
+  component: IconButtonComponent,
+  props: {
+    theme: ThemeType.default,
+    variant: ButtonVariantType.outline,
+    loading: true,
+  },
 });
 export const DefaultThemeWithFillVariant = () => ({
     component: IconButtonComponent,
     props: {
-        isDefaultfillvariant: true,
+      theme: ThemeType.default,
+      variant: ButtonVariantType.fill,
+      loading: true,
     },
-});
-export const DefaultThemeWithTransparentVariant = () => ({
+  });
+  export const DefaultThemeWithTransparentVariant = () => ({
     component: IconButtonComponent,
     props: {
-        isDefaulttransparentvariant: true,
+      theme: ThemeType.default,
+      variant: ButtonVariantType.transparent,
+      loading: true,
     },
-});
-export const PrimaryThemeWithPrimaryVariant = () => ({
+  });
+  export const PrimaryThemeWithPrimaryVariant = () => ({
     component: IconButtonComponent,
     props: {
-        isPrimary: true,
+      theme: ThemeType.primary,
+      variant: ButtonVariantType.default,
+      loading: true,
     },
-});
-export const PrimaryThemeWithOutlineVariant = () => ({
+  });
+  export const PrimaryThemeWithOutlineVariant = () => ({
     component: IconButtonComponent,
     props: {
-        isPrimaryoutlinevariant: true,
+      theme: ThemeType.primary,
+      variant: ButtonVariantType.outline,
+      loading: true,
     },
-});
-export const PrimaryThemeWithFillVariant = () => ({
+  });
+  export const PrimaryThemeWithFillVariant = () => ({
     component: IconButtonComponent,
     props: {
-        isPrimaryfillvariant: true,
+      theme: ThemeType.primary,
+      variant: ButtonVariantType.fill,
+      loading: true,
     },
-});
-export const PrimaryThemeWithTransparentVariant = () => ({
+  });
+  export const PrimaryThemeWithTransparentVariant = () => ({
     component: IconButtonComponent,
     props: {
-        isPrimarytransparentvariant: true,
+      theme: ThemeType.primary,
+      variant: ButtonVariantType.transparent,
+      loading: true,
     },
-});
+  });*/

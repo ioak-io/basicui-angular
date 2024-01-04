@@ -155,7 +155,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-518c8ece5857b4cee55b3a6031acd6222bd7c7a2033789d86106eca6a33a37b15ca469dd4ceb74ad376432ac6e8591be195cf9fd94acb3012087de37e000a44e",
+            "id": "component-AppComponent-b490eac42952a7db44e6b4372f78ce192d53452b2665d658805d6dd93f5eb2f1dfd94165477dbc3ef7852c6b1e70d7f5bd45cabd2ef8471184c64c51cd0634cf",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -163,23 +163,26 @@
             "outputs": [],
             "providers": [],
             "selector": "app-root",
-            "styleUrls": [],
+            "styleUrls": [
+                "./app.component.scss"
+            ],
             "styles": [],
-            "template": "<app-inbox-screen></app-inbox-screen>",
-            "templateUrl": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
             "propertiesClass": [
                 {
                     "name": "title",
-                    "defaultValue": "'task'",
+                    "defaultValue": "'basicui-angular'",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 11
+                    "line": 10
                 }
             ],
             "methodsClass": [],
@@ -190,10 +193,16 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  //templateUrl: './app.component.html',\r\n  //styleUrls: ['./app.component.scss']\r\n  template:`<app-inbox-screen></app-inbox-screen>`, //screen out of components\r\n})\r\nexport class AppComponent {\r\n  //title = 'basicui-angular';\r\n  title = 'task'; //screen out of components\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.scss']\r\n  //template:`<app-inbox-screen></app-inbox-screen>`, //screen out of components\r\n})\r\nexport class AppComponent {\r\n  title = 'basicui-angular';\r\n  //title = 'task'; //screen out of components\r\n}\r\n",
             "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": ""
+            "styleUrlsData": [
+                {
+                    "data": "@import './core/styles/custom.scss';\r\n\r\n#app-frame {\r\n  position: absolute;\r\n  width: 100vw;\r\n  height: 100vh;\r\n  overflow: hidden;\r\n  display: flex;\r\n  flex-direction: column;\r\n\r\n  > nz-spin {\r\n    @apply flex;\r\n    flex-grow: 1;\r\n\r\n    > .ant-spin-container {\r\n      @apply flex;\r\n      flex-grow: 1;\r\n    }\r\n  }\r\n}\r\n\r\napp-project {\r\n  @apply flex;\r\n  flex-grow: 1;\r\n  flex-direction: column;\r\n  /* for Firefox */\r\n  min-height: 0;\r\n}\r\n\r\nboard-dnd {\r\n  @apply flex;\r\n  flex-grow: 1;\r\n}\r\n\r\n.global-spinner {\r\n  @apply min-h-screen;\r\n  .ant-spin {\r\n    max-height: unset !important;\r\n  }\r\n}\r\n\r\n//ng-zorro override\r\nbody {\r\n  overflow: hidden;\r\n}\r\n\r\nbody,\r\n.ant-modal {\r\n  @apply text-textDark;\r\n}\r\n\r\n.ant-modal-body {\r\n  padding: 0;\r\n}",
+                    "styleUrl": "./app.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->\r\n<!-- * * * * * * * to get started with your project! * * * * * * * * -->\r\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\r\n\r\n<style>\r\n  :host {\r\n    font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\";\r\n    font-size: 14px;\r\n    color: #333;\r\n    box-sizing: border-box;\r\n    -webkit-font-smoothing: antialiased;\r\n    -moz-osx-font-smoothing: grayscale;\r\n  }\r\n\r\n  h1,\r\n  h2,\r\n  h3,\r\n  h4,\r\n  h5,\r\n  h6 {\r\n    margin: 8px 0;\r\n  }\r\n\r\n  p {\r\n    margin: 0;\r\n  }\r\n\r\n  .spacer {\r\n    flex: 1;\r\n  }\r\n\r\n  .toolbar {\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    height: 60px;\r\n    display: flex;\r\n    align-items: center;\r\n    background-color: #1976d2;\r\n    color: white;\r\n    font-weight: 600;\r\n  }\r\n\r\n  .toolbar img {\r\n    margin: 0 16px;\r\n  }\r\n\r\n  .toolbar #twitter-logo {\r\n    height: 40px;\r\n    margin: 0 8px;\r\n  }\r\n\r\n  .toolbar #youtube-logo {\r\n    height: 40px;\r\n    margin: 0 16px;\r\n  }\r\n\r\n  .toolbar #twitter-logo:hover,\r\n  .toolbar #youtube-logo:hover {\r\n    opacity: 0.8;\r\n  }\r\n\r\n  .content {\r\n    display: flex;\r\n    margin: 82px auto 32px;\r\n    padding: 0 16px;\r\n    max-width: 960px;\r\n    flex-direction: column;\r\n    align-items: center;\r\n  }\r\n\r\n  svg.material-icons {\r\n    height: 24px;\r\n    width: auto;\r\n  }\r\n\r\n  svg.material-icons:not(:last-child) {\r\n    margin-right: 8px;\r\n  }\r\n\r\n  .card svg.material-icons path {\r\n    fill: #888;\r\n  }\r\n\r\n  .card-container {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    justify-content: center;\r\n    margin-top: 16px;\r\n  }\r\n\r\n  .card {\r\n    all: unset;\r\n    border-radius: 4px;\r\n    border: 1px solid #eee;\r\n    background-color: #fafafa;\r\n    height: 40px;\r\n    width: 200px;\r\n    margin: 0 8px 16px;\r\n    padding: 16px;\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    align-items: center;\r\n    transition: all 0.2s ease-in-out;\r\n    line-height: 24px;\r\n  }\r\n\r\n  .card-container .card:not(:last-child) {\r\n    margin-right: 0;\r\n  }\r\n\r\n  .card.card-small {\r\n    height: 16px;\r\n    width: 168px;\r\n  }\r\n\r\n  .card-container .card:not(.highlight-card) {\r\n    cursor: pointer;\r\n  }\r\n\r\n  .card-container .card:not(.highlight-card):hover {\r\n    transform: translateY(-3px);\r\n    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);\r\n  }\r\n\r\n  .card-container .card:not(.highlight-card):hover .material-icons path {\r\n    fill: rgb(105, 103, 103);\r\n  }\r\n\r\n  .card.highlight-card {\r\n    background-color: #1976d2;\r\n    color: white;\r\n    font-weight: 600;\r\n    border: none;\r\n    width: auto;\r\n    min-width: 30%;\r\n    position: relative;\r\n  }\r\n\r\n  .card.card.highlight-card span {\r\n    margin-left: 60px;\r\n  }\r\n\r\n  svg#rocket {\r\n    width: 80px;\r\n    position: absolute;\r\n    left: -10px;\r\n    top: -24px;\r\n  }\r\n\r\n  svg#rocket-smoke {\r\n    height: calc(100vh - 95px);\r\n    position: absolute;\r\n    top: 10px;\r\n    right: 180px;\r\n    z-index: -10;\r\n  }\r\n\r\n  a,\r\n  a:visited,\r\n  a:hover {\r\n    color: #1976d2;\r\n    text-decoration: none;\r\n  }\r\n\r\n  a:hover {\r\n    color: #125699;\r\n  }\r\n\r\n  .terminal {\r\n    position: relative;\r\n    width: 80%;\r\n    max-width: 600px;\r\n    border-radius: 6px;\r\n    padding-top: 45px;\r\n    margin-top: 8px;\r\n    overflow: hidden;\r\n    background-color: rgb(15, 15, 16);\r\n  }\r\n\r\n  .terminal::before {\r\n    content: \"\\2022 \\2022 \\2022\";\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    height: 4px;\r\n    background: rgb(58, 58, 58);\r\n    color: #c2c3c4;\r\n    width: 100%;\r\n    font-size: 2rem;\r\n    line-height: 0;\r\n    padding: 14px 0;\r\n    text-indent: 4px;\r\n  }\r\n\r\n  .terminal pre {\r\n    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;\r\n    color: white;\r\n    padding: 0 1rem 1rem;\r\n    margin: 0;\r\n  }\r\n\r\n  .circle-link {\r\n    height: 40px;\r\n    width: 40px;\r\n    border-radius: 40px;\r\n    margin: 8px;\r\n    background-color: white;\r\n    border: 1px solid #eeeeee;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    cursor: pointer;\r\n    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\r\n    transition: 1s ease-out;\r\n  }\r\n\r\n  .circle-link:hover {\r\n    transform: translateY(-0.25rem);\r\n    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);\r\n  }\r\n\r\n  footer {\r\n    margin-top: 8px;\r\n    display: flex;\r\n    align-items: center;\r\n    line-height: 20px;\r\n  }\r\n\r\n  footer a {\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n\r\n  .github-star-badge {\r\n    color: #24292e;\r\n    display: flex;\r\n    align-items: center;\r\n    font-size: 12px;\r\n    padding: 3px 10px;\r\n    border: 1px solid rgba(27,31,35,.2);\r\n    border-radius: 3px;\r\n    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);\r\n    margin-left: 4px;\r\n    font-weight: 600;\r\n  }\r\n\r\n  .github-star-badge:hover {\r\n    background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);\r\n    border-color: rgba(27,31,35,.35);\r\n    background-position: -.5em;\r\n  }\r\n\r\n  .github-star-badge .material-icons {\r\n    height: 16px;\r\n    width: 16px;\r\n    margin-right: 4px;\r\n  }\r\n\r\n  svg#clouds {\r\n    position: fixed;\r\n    bottom: -160px;\r\n    left: -230px;\r\n    z-index: -10;\r\n    width: 1920px;\r\n  }\r\n\r\n  /* Responsive Styles */\r\n  @media screen and (max-width: 767px) {\r\n    .card-container > *:not(.circle-link) ,\r\n    .terminal {\r\n      width: 100%;\r\n    }\r\n\r\n    .card:not(.highlight-card) {\r\n      height: 16px;\r\n      margin: 8px 0;\r\n    }\r\n\r\n    .card.highlight-card span {\r\n      margin-left: 72px;\r\n    }\r\n\r\n    svg#rocket-smoke {\r\n      right: 120px;\r\n      transform: rotate(-5deg);\r\n    }\r\n  }\r\n\r\n  @media screen and (max-width: 575px) {\r\n    svg#rocket-smoke {\r\n      display: none;\r\n      visibility: hidden;\r\n    }\r\n  }\r\n</style>\r\n\r\n<!-- Toolbar -->\r\n<div class=\"toolbar\" role=\"banner\">\r\n  <img\r\n    width=\"40\"\r\n    alt=\"Angular Logo\"\r\n    src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==\"\r\n  />\r\n  <span>Welcome</span>\r\n    <div class=\"spacer\"></div>\r\n    <a aria-label=\"Angular on twitter\" target=\"_blank\" rel=\"noopener\" href=\"https://twitter.com/angular\" title=\"Twitter\">\r\n      <svg id=\"twitter-logo\" height=\"24\" data-name=\"Logo\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 400\">\r\n        <rect width=\"400\" height=\"400\" fill=\"none\"/>\r\n        <path d=\"M153.62,301.59c94.34,0,145.94-78.16,145.94-145.94,0-2.22,0-4.43-.15-6.63A104.36,104.36,0,0,0,325,122.47a102.38,102.38,0,0,1-29.46,8.07,51.47,51.47,0,0,0,22.55-28.37,102.79,102.79,0,0,1-32.57,12.45,51.34,51.34,0,0,0-87.41,46.78A145.62,145.62,0,0,1,92.4,107.81a51.33,51.33,0,0,0,15.88,68.47A50.91,50.91,0,0,1,85,169.86c0,.21,0,.43,0,.65a51.31,51.31,0,0,0,41.15,50.28,51.21,51.21,0,0,1-23.16.88,51.35,51.35,0,0,0,47.92,35.62,102.92,102.92,0,0,1-63.7,22A104.41,104.41,0,0,1,75,278.55a145.21,145.21,0,0,0,78.62,23\" fill=\"#fff\"/>\r\n      </svg>\r\n    </a>\r\n    <a aria-label=\"Angular on YouTube\" target=\"_blank\" rel=\"noopener\" href=\"https://youtube.com/angular\" title=\"YouTube\">\r\n      <svg id=\"youtube-logo\" height=\"24\" width=\"24\" data-name=\"Logo\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"#fff\">\r\n        <path d=\"M0 0h24v24H0V0z\" fill=\"none\"/>\r\n        <path d=\"M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM10 15V9l5.2 3-5.2 3z\"/>\r\n      </svg>\r\n    </a>\r\n</div>\r\n\r\n<div class=\"content\" role=\"main\">\r\n\r\n  <!-- Highlight Card -->\r\n  <div class=\"card highlight-card card-small\">\r\n\r\n    <svg id=\"rocket\" xmlns=\"http://www.w3.org/2000/svg\" width=\"101.678\" height=\"101.678\" viewBox=\"0 0 101.678 101.678\">\r\n      <title>Rocket Ship</title>\r\n      <g id=\"Group_83\" data-name=\"Group 83\" transform=\"translate(-141 -696)\">\r\n        <circle id=\"Ellipse_8\" data-name=\"Ellipse 8\" cx=\"50.839\" cy=\"50.839\" r=\"50.839\" transform=\"translate(141 696)\" fill=\"#dd0031\"/>\r\n        <g id=\"Group_47\" data-name=\"Group 47\" transform=\"translate(165.185 720.185)\">\r\n          <path id=\"Path_33\" data-name=\"Path 33\" d=\"M3.4,42.615a3.084,3.084,0,0,0,3.553,3.553,21.419,21.419,0,0,0,12.215-6.107L9.511,30.4A21.419,21.419,0,0,0,3.4,42.615Z\" transform=\"translate(0.371 3.363)\" fill=\"#fff\"/>\r\n          <path id=\"Path_34\" data-name=\"Path 34\" d=\"M53.3,3.221A3.09,3.09,0,0,0,50.081,0,48.227,48.227,0,0,0,18.322,13.437c-6-1.666-14.991-1.221-18.322,7.218A33.892,33.892,0,0,1,9.439,25.1l-.333.666a3.013,3.013,0,0,0,.555,3.553L23.985,43.641a2.9,2.9,0,0,0,3.553.555l.666-.333A33.892,33.892,0,0,1,32.647,53.3c8.55-3.664,8.884-12.326,7.218-18.322A48.227,48.227,0,0,0,53.3,3.221ZM34.424,9.772a6.439,6.439,0,1,1,9.106,9.106,6.368,6.368,0,0,1-9.106,0A6.467,6.467,0,0,1,34.424,9.772Z\" transform=\"translate(0 0.005)\" fill=\"#fff\"/>\r\n        </g>\r\n      </g>\r\n    </svg>\r\n\r\n    <span>{{ title }} app is running!</span>\r\n\r\n    <svg id=\"rocket-smoke\" xmlns=\"http://www.w3.org/2000/svg\" width=\"516.119\" height=\"1083.632\" viewBox=\"0 0 516.119 1083.632\">\r\n      <title>Rocket Ship Smoke</title>\r\n      <path id=\"Path_40\" data-name=\"Path 40\" d=\"M644.6,141S143.02,215.537,147.049,870.207s342.774,201.755,342.774,201.755S404.659,847.213,388.815,762.2c-27.116-145.51-11.551-384.124,271.9-609.1C671.15,139.365,644.6,141,644.6,141Z\" transform=\"translate(-147.025 -140.939)\" fill=\"#f5f5f5\"/>\r\n    </svg>\r\n\r\n  </div>\r\n\r\n  <!-- Resources -->\r\n  <h2>Resources</h2>\r\n  <p>Here are some links to help you get started:</p>\r\n\r\n  <div class=\"card-container\">\r\n    <a class=\"card\" target=\"_blank\" rel=\"noopener\" href=\"https://angular.io/tutorial\">\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z\"/></svg>\r\n      <span>Learn Angular</span>\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z\"/></svg>    </a>\r\n\r\n    <a class=\"card\" target=\"_blank\" rel=\"noopener\" href=\"https://angular.io/cli\">\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z\"/></svg>\r\n      <span>CLI Documentation</span>\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z\"/></svg>\r\n    </a>\r\n\r\n    <a class=\"card\" target=\"_blank\" rel=\"noopener\" href=\"https://material.angular.io\">\r\n      <svg xmlns=\"http://www.w3.org/2000/svg\" style=\"margin-right: 8px\" width=\"21.813\" height=\"23.453\" viewBox=\"0 0 179.2 192.7\"><path fill=\"#ffa726\" d=\"M89.4 0 0 32l13.5 118.4 75.9 42.3 76-42.3L179.2 32 89.4 0z\"/><path fill=\"#fb8c00\" d=\"M89.4 0v192.7l76-42.3L179.2 32 89.4 0z\"/><path fill=\"#ffe0b2\" d=\"m102.9 146.3-63.3-30.5 36.3-22.4 63.7 30.6-36.7 22.3z\"/><path fill=\"#fff3e0\" d=\"M102.9 122.8 39.6 92.2l36.3-22.3 63.7 30.6-36.7 22.3z\"/><path fill=\"#fff\" d=\"M102.9 99.3 39.6 68.7l36.3-22.4 63.7 30.6-36.7 22.4z\"/></svg>\r\n      <span>Angular Material</span>\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z\"/></svg>\r\n    </a>\r\n\r\n    <a class=\"card\" target=\"_blank\" rel=\"noopener\" href=\"https://blog.angular.io/\">\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z\"/></svg>\r\n      <span>Angular Blog</span>\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z\"/></svg>\r\n    </a>\r\n\r\n    <a class=\"card\" target=\"_blank\" rel=\"noopener\" href=\"https://angular.io/devtools/\">\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" enable-background=\"new 0 0 24 24\" height=\"24px\" viewBox=\"0 0 24 24\" width=\"24px\" fill=\"#000000\"><g><rect fill=\"none\" height=\"24\" width=\"24\"/></g><g><g><path d=\"M14.73,13.31C15.52,12.24,16,10.93,16,9.5C16,5.91,13.09,3,9.5,3S3,5.91,3,9.5C3,13.09,5.91,16,9.5,16 c1.43,0,2.74-0.48,3.81-1.27L19.59,21L21,19.59L14.73,13.31z M9.5,14C7.01,14,5,11.99,5,9.5S7.01,5,9.5,5S14,7.01,14,9.5 S11.99,14,9.5,14z\"/><polygon points=\"10.29,8.44 9.5,6 8.71,8.44 6.25,8.44 8.26,10.03 7.49,12.5 9.5,10.97 11.51,12.5 10.74,10.03 12.75,8.44\"/></g></g></svg>\r\n      <span>Angular DevTools</span>\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z\"/></svg>\r\n    </a>\r\n\r\n  </div>\r\n\r\n  <!-- Next Steps -->\r\n  <h2>Next Steps</h2>\r\n  <p>What do you want to do next with your app?</p>\r\n\r\n  <input type=\"hidden\" #selection>\r\n\r\n  <div class=\"card-container\">\r\n    <button class=\"card card-small\" (click)=\"selection.value = 'component'\" tabindex=\"0\">\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\"/></svg>\r\n      <span>New Component</span>\r\n    </button>\r\n\r\n    <button class=\"card card-small\" (click)=\"selection.value = 'material'\" tabindex=\"0\">\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\"/></svg>\r\n      <span>Angular Material</span>\r\n    </button>\r\n\r\n    <button class=\"card card-small\" (click)=\"selection.value = 'pwa'\" tabindex=\"0\">\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\"/></svg>\r\n      <span>Add PWA Support</span>\r\n    </button>\r\n\r\n    <button class=\"card card-small\" (click)=\"selection.value = 'dependency'\" tabindex=\"0\">\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\"/></svg>\r\n      <span>Add Dependency</span>\r\n    </button>\r\n\r\n    <button class=\"card card-small\" (click)=\"selection.value = 'test'\" tabindex=\"0\">\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\"/></svg>\r\n      <span>Run and Watch Tests</span>\r\n    </button>\r\n\r\n    <button class=\"card card-small\" (click)=\"selection.value = 'build'\" tabindex=\"0\">\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\"/></svg>\r\n      <span>Build for Production</span>\r\n    </button>\r\n  </div>\r\n\r\n  <!-- Terminal -->\r\n  <div class=\"terminal\" [ngSwitch]=\"selection.value\">\r\n      <pre *ngSwitchDefault>ng generate component xyz</pre>\r\n      <pre *ngSwitchCase=\"'material'\">ng add @angular/material</pre>\r\n      <pre *ngSwitchCase=\"'pwa'\">ng add @angular/pwa</pre>\r\n      <pre *ngSwitchCase=\"'dependency'\">ng add _____</pre>\r\n      <pre *ngSwitchCase=\"'test'\">ng test</pre>\r\n      <pre *ngSwitchCase=\"'build'\">ng build</pre>\r\n  </div>\r\n\r\n  <!-- Links -->\r\n  <div class=\"card-container\">\r\n    <a class=\"circle-link\" title=\"Find a Local Meetup\" href=\"https://www.meetup.com/find/?keywords=angular\" target=\"_blank\" rel=\"noopener\">\r\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24.607\" height=\"23.447\" viewBox=\"0 0 24.607 23.447\">\r\n        <title>Meetup Logo</title>\r\n        <path id=\"logo--mSwarm\" d=\"M21.221,14.95A4.393,4.393,0,0,1,17.6,19.281a4.452,4.452,0,0,1-.8.069c-.09,0-.125.035-.154.117a2.939,2.939,0,0,1-2.506,2.091,2.868,2.868,0,0,1-2.248-.624.168.168,0,0,0-.245-.005,3.926,3.926,0,0,1-2.589.741,4.015,4.015,0,0,1-3.7-3.347,2.7,2.7,0,0,1-.043-.38c0-.106-.042-.146-.143-.166a3.524,3.524,0,0,1-1.516-.69A3.623,3.623,0,0,1,2.23,14.557a3.66,3.66,0,0,1,1.077-3.085.138.138,0,0,0,.026-.2,3.348,3.348,0,0,1-.451-1.821,3.46,3.46,0,0,1,2.749-3.28.44.44,0,0,0,.355-.281,5.072,5.072,0,0,1,3.863-3,5.028,5.028,0,0,1,3.555.666.31.31,0,0,0,.271.03A4.5,4.5,0,0,1,18.3,4.7a4.4,4.4,0,0,1,1.334,2.751,3.658,3.658,0,0,1,.022.706.131.131,0,0,0,.1.157,2.432,2.432,0,0,1,1.574,1.645,2.464,2.464,0,0,1-.7,2.616c-.065.064-.051.1-.014.166A4.321,4.321,0,0,1,21.221,14.95ZM13.4,14.607a2.09,2.09,0,0,0,1.409,1.982,4.7,4.7,0,0,0,1.275.221,1.807,1.807,0,0,0,.9-.151.542.542,0,0,0,.321-.545.558.558,0,0,0-.359-.534,1.2,1.2,0,0,0-.254-.078c-.262-.047-.526-.086-.787-.138a.674.674,0,0,1-.617-.75,3.394,3.394,0,0,1,.218-1.109c.217-.658.509-1.286.79-1.918a15.609,15.609,0,0,0,.745-1.86,1.95,1.95,0,0,0,.06-1.073,1.286,1.286,0,0,0-1.051-1.033,1.977,1.977,0,0,0-1.521.2.339.339,0,0,1-.446-.042c-.1-.092-.2-.189-.307-.284a1.214,1.214,0,0,0-1.643-.061,7.563,7.563,0,0,1-.614.512A.588.588,0,0,1,10.883,8c-.215-.115-.437-.215-.659-.316a2.153,2.153,0,0,0-.695-.248A2.091,2.091,0,0,0,7.541,8.562a9.915,9.915,0,0,0-.405.986c-.559,1.545-1.015,3.123-1.487,4.7a1.528,1.528,0,0,0,.634,1.777,1.755,1.755,0,0,0,1.5.211,1.35,1.35,0,0,0,.824-.858c.543-1.281,1.032-2.584,1.55-3.875.142-.355.28-.712.432-1.064a.548.548,0,0,1,.851-.24.622.622,0,0,1,.185.539,2.161,2.161,0,0,1-.181.621c-.337.852-.68,1.7-1.018,2.552a2.564,2.564,0,0,0-.173.528.624.624,0,0,0,.333.71,1.073,1.073,0,0,0,.814.034,1.22,1.22,0,0,0,.657-.655q.758-1.488,1.511-2.978.35-.687.709-1.37a1.073,1.073,0,0,1,.357-.434.43.43,0,0,1,.463-.016.373.373,0,0,1,.153.387.7.7,0,0,1-.057.236c-.065.157-.127.316-.2.469-.42.883-.846,1.763-1.262,2.648A2.463,2.463,0,0,0,13.4,14.607Zm5.888,6.508a1.09,1.09,0,0,0-2.179.006,1.09,1.09,0,0,0,2.179-.006ZM1.028,12.139a1.038,1.038,0,1,0,.01-2.075,1.038,1.038,0,0,0-.01,2.075ZM13.782.528a1.027,1.027,0,1,0-.011,2.055A1.027,1.027,0,0,0,13.782.528ZM22.21,6.95a.882.882,0,0,0-1.763.011A.882.882,0,0,0,22.21,6.95ZM4.153,4.439a.785.785,0,1,0,.787-.78A.766.766,0,0,0,4.153,4.439Zm8.221,18.22a.676.676,0,1,0-.677.666A.671.671,0,0,0,12.374,22.658ZM22.872,12.2a.674.674,0,0,0-.665.665.656.656,0,0,0,.655.643.634.634,0,0,0,.655-.644A.654.654,0,0,0,22.872,12.2ZM7.171-.123A.546.546,0,0,0,6.613.43a.553.553,0,1,0,1.106,0A.539.539,0,0,0,7.171-.123ZM24.119,9.234a.507.507,0,0,0-.493.488.494.494,0,0,0,.494.494.48.48,0,0,0,.487-.483A.491.491,0,0,0,24.119,9.234Zm-19.454,9.7a.5.5,0,0,0-.488-.488.491.491,0,0,0-.487.5.483.483,0,0,0,.491.479A.49.49,0,0,0,4.665,18.936Z\" transform=\"translate(0 0.123)\" fill=\"#f64060\"/>\r\n      </svg>\r\n    </a>\r\n\r\n    <a class=\"circle-link\" title=\"Join the Conversation on Discord\" href=\"https://discord.gg/angular\" target=\"_blank\" rel=\"noopener\">\r\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"26\" height=\"26\" viewBox=\"0 0 245 240\">\r\n        <title>Discord Logo</title>\r\n        <path d=\"M104.4 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1.1-6.1-4.5-11.1-10.2-11.1zM140.9 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1s-4.5-11.1-10.2-11.1z\"/>\r\n        <path d=\"M189.5 20h-134C44.2 20 35 29.2 35 40.6v135.2c0 11.4 9.2 20.6 20.5 20.6h113.4l-5.3-18.5 12.8 11.9 12.1 11.2 21.5 19V40.6c0-11.4-9.2-20.6-20.5-20.6zm-38.6 130.6s-3.6-4.3-6.6-8.1c13.1-3.7 18.1-11.9 18.1-11.9-4.1 2.7-8 4.6-11.5 5.9-5 2.1-9.8 3.5-14.5 4.3-9.6 1.8-18.4 1.3-25.9-.1-5.7-1.1-10.6-2.7-14.7-4.3-2.3-.9-4.8-2-7.3-3.4-.3-.2-.6-.3-.9-.5-.2-.1-.3-.2-.4-.3-1.8-1-2.8-1.7-2.8-1.7s4.8 8 17.5 11.8c-3 3.8-6.7 8.3-6.7 8.3-22.1-.7-30.5-15.2-30.5-15.2 0-32.2 14.4-58.3 14.4-58.3 14.4-10.8 28.1-10.5 28.1-10.5l1 1.2c-18 5.2-26.3 13.1-26.3 13.1s2.2-1.2 5.9-2.9c10.7-4.7 19.2-6 22.7-6.3.6-.1 1.1-.2 1.7-.2 6.1-.8 13-1 20.2-.2 9.5 1.1 19.7 3.9 30.1 9.6 0 0-7.9-7.5-24.9-12.7l1.4-1.6s13.7-.3 28.1 10.5c0 0 14.4 26.1 14.4 58.3 0 0-8.5 14.5-30.6 15.2z\"/>\r\n      </svg>\r\n    </a>\r\n  </div>\r\n\r\n  <!-- Footer -->\r\n  <footer>\r\n      Love Angular?&nbsp;\r\n      <a href=\"https://github.com/angular/angular\" target=\"_blank\" rel=\"noopener\"> Give our repo a star.\r\n        <div class=\"github-star-badge\">\r\n            <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M0 0h24v24H0z\" fill=\"none\"/><path d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\"/></svg>\r\n          Star\r\n        </div>\r\n      </a>\r\n      <a href=\"https://github.com/angular/angular\" target=\"_blank\" rel=\"noopener\">\r\n        <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z\" fill=\"#1976d2\"/><path d=\"M0 0h24v24H0z\" fill=\"none\"/></svg>\r\n      </a>\r\n  </footer>\r\n\r\n  <svg id=\"clouds\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2611.084\" height=\"485.677\" viewBox=\"0 0 2611.084 485.677\">\r\n    <title>Gray Clouds Background</title>\r\n    <path id=\"Path_39\" data-name=\"Path 39\" d=\"M2379.709,863.793c10-93-77-171-168-149-52-114-225-105-264,15-75,3-140,59-152,133-30,2.83-66.725,9.829-93.5,26.25-26.771-16.421-63.5-23.42-93.5-26.25-12-74-77-130-152-133-39-120-212-129-264-15-54.084-13.075-106.753,9.173-138.488,48.9-31.734-39.726-84.4-61.974-138.487-48.9-52-114-225-105-264,15a162.027,162.027,0,0,0-103.147,43.044c-30.633-45.365-87.1-72.091-145.206-58.044-52-114-225-105-264,15-75,3-140,59-152,133-53,5-127,23-130,83-2,42,35,72,70,86,49,20,106,18,157,5a165.625,165.625,0,0,0,120,0c47,94,178,113,251,33,61.112,8.015,113.854-5.72,150.492-29.764a165.62,165.62,0,0,0,110.861-3.236c47,94,178,113,251,33,31.385,4.116,60.563,2.495,86.487-3.311,25.924,5.806,55.1,7.427,86.488,3.311,73,80,204,61,251-33a165.625,165.625,0,0,0,120,0c51,13,108,15,157-5a147.188,147.188,0,0,0,33.5-18.694,147.217,147.217,0,0,0,33.5,18.694c49,20,106,18,157,5a165.625,165.625,0,0,0,120,0c47,94,178,113,251,33C2446.709,1093.793,2554.709,922.793,2379.709,863.793Z\" transform=\"translate(142.69 -634.312)\" fill=\"#eee\"/>\r\n  </svg>\r\n\r\n</div>\r\n\r\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\r\n\r\n<router-outlet></router-outlet>\r\n"
         },
         {
             "name": "AvatarComponent",
@@ -586,7 +595,7 @@
         },
         {
             "name": "CheckboxComponent",
-            "id": "component-CheckboxComponent-883f74174a5c1cbfe2abf8d494902ffc5a6332928027800950b84f5459debac81eb22426f10734431734fcdbd8629397efbd53954f81d75647c2ddaf77d79d67",
+            "id": "component-CheckboxComponent-150fa0684b25e025d32aa7f2334f9fe2cc7e1621bef5ff3966466f329f9c437f8f2b611c89769f79131e28710abba50a89b7bdfda7e2bef197d86ef65762aa46",
             "file": "src/app/checkbox/checkbox.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -608,33 +617,52 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 9,
+                    "line": 10,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "isError",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "isTooltip",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
                     "type": "boolean",
                     "decorators": []
                 },
                 {
                     "name": "label",
+                    "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "line": 9,
                     "type": "string",
                     "decorators": []
                 }
             ],
             "outputsClass": [
                 {
-                    "name": "checkedChange",
+                    "name": "isCheckedChange",
                     "defaultValue": "new EventEmitter<boolean>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 10,
+                    "line": 13,
                     "type": "EventEmitter"
                 }
             ],
             "propertiesClass": [],
             "methodsClass": [
                 {
-                    "name": "onCheckboxChange",
+                    "name": "toggleCheckbox",
                     "args": [
                         {
                             "name": "event",
@@ -646,7 +674,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 13,
+                    "line": 15,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -669,16 +697,16 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-checkbox',\r\n  templateUrl: './checkbox.component.html',\r\n  styleUrls: ['./checkbox.component.scss']\r\n})\r\nexport class CheckboxComponent {\r\n  @Input() isChecked: boolean = false;\r\n  @Output() checkedChange = new EventEmitter<boolean>();\r\n  @Input() label!: string;\r\n\r\n  onCheckboxChange(event: Event) {\r\n    this.isChecked = (event.target as HTMLInputElement).checked;\r\n    this.checkedChange.emit(this.isChecked);\r\n  }\r\n}",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-checkbox',\r\n  templateUrl: './checkbox.component.html',\r\n  styleUrls: ['./checkbox.component.scss']\r\n})\r\nexport class CheckboxComponent {\r\n  @Input() label: string = '';\r\n  @Input() isChecked: boolean = false;\r\n  @Input() isError: boolean = false;\r\n  @Input() isTooltip: boolean = false;\r\n  @Output() isCheckedChange = new EventEmitter<boolean>();\r\n\r\n  toggleCheckbox(event: Event) {\r\n    this.isChecked = (event.target as HTMLInputElement).checked;\r\n    this.isCheckedChange.emit(this.isChecked);\r\n  }\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".checkboxes:hover {\r\n  padding: 10px;\r\n}\r\n.checkboxes input{\r\n  margin-right: 5px;\r\n}\r\n  /*.input{\r\n  width: 100%;\r\n  padding: 15px 0px 15px 35px;\r\n  margin: 8px 0;\r\n  display: inline-block;\r\n  border: 1px solid #ccc;\r\n  border-radius: 4px;\r\n  box-sizing: border-box;\r\n\r\n  &::placeholder {\r\n    font-size: 18px;\r\n    text-align:left;\r\n    \r\n  }\r\n}*/\r\n.input{\r\n  &.form-input{\r\n    accent-color: #9d3039;\r\n  }\r\n  &.specific-checkbox {\r\n    color: blue;\r\n}\r\n}\r\n.checkbox-background{\r\ndisplay: flex;  \r\npadding: 1.5rem; //width: fit-content; \r\n//background-color: white; \r\n//border-radius: 4px;\r\n}\r\n.tooltip {\r\n  position: relative;\r\n  display: inline-block;\r\n  border-bottom: 1px dotted black;\r\n}\r\n.tooltip .tooltiptext {\r\n  visibility: hidden;\r\n  width: 120px;\r\n  background-color: black;\r\n  color: #fff;\r\n  text-align: center;\r\n  border-radius: 6px;\r\n  padding: 5px 0;\r\n\r\n  /* Position the tooltip */\r\n  position: absolute;\r\n  z-index: 1;\r\n}\r\n\r\n.tooltip:hover .tooltiptext {\r\n  visibility: visible;\r\n}",
+                    "data": "\r\n.basicui-checkbox {\r\n  display: inline-block;\r\n  cursor: pointer;\r\n  position: relative;\r\n}\r\n.checkbox-input{\r\n  outline: 0;\r\n  height: 18px;\r\n  width: 18px;\r\n  border-radius: 50%;\r\n  vertical-align: middle;\r\n  margin: 0;\r\n  padding: 0;\r\n  cursor: pointer;\r\n}\r\n.checkbox-label{\r\n  margin-left: 7px;\r\n  font-size: 13px;\r\n  font-family: system-ui;\r\n}\r\n.basicui-checkbox.tooltip .checkbox-input {\r\n  accent-color: black;\r\n}\r\n.basicui-checkbox.error .checkbox-input{\r\n  accent-color: #e53935; \r\n}",
                     "styleUrl": "./checkbox.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<label [for]=\"label\">\r\n  <input type=\"checkbox\" [checked]=\"isChecked\" (change)=\"onCheckboxChange($event)\" /> {{label}}\r\n</label>\r\n"
+            "templateData": "<!--<label [for]=\"label\">\r\n  <input type=\"checkbox\" [checked]=\"isChecked\" (change)=\"onCheckboxChange($event)\" />{{label}}\r\n</label>-->\r\n<label class=\"basicui-checkbox\" [class.error]=\"isError\" [class.tooltip]=\"isTooltip\">\r\n  <input type=\"checkbox\" class=\"checkbox-input\" [checked]=\"isChecked\" (change)=\"toggleCheckbox($event)\" />\r\n  <span class=\"checkbox-label\">{{label}}</span>\r\n</label>"
         },
         {
             "name": "HeaderComponent",
@@ -752,6 +780,117 @@
                 }
             ],
             "stylesData": ""
+        },
+        {
+            "name": "IconButtonComponent",
+            "id": "component-IconButtonComponent-d516573186619d35c2fbcb337f736b1bf0d4e8b5a342850054be610edd5712f1f0d409c5ac0128b297f73b71cf1ab60af2d3cc70f4e3302333763a07ad2938d9",
+            "file": "src/app/icon-button/icon-button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-icon-button",
+            "styleUrls": [
+                "./icon-button.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./icon-button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "isDefaultfillvariant",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "isDefaultoutlinevariant",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "isDefaulttransparentvariant",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "isPrimary",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                },
+                {
+                    "name": "isPrimaryfillvariant",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "isPrimaryoutlinevariant",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                },
+                {
+                    "name": "isPrimarytransparentvariant",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n    selector:'app-icon-button',\r\n    templateUrl:'./icon-button.component.html',\r\n    styleUrls:['./icon-button.component.scss'],\r\n})\r\n\r\nexport class IconButtonComponent{\r\n    isDefaultoutlinevariant: boolean = false;\r\n    isDefaultfillvariant: boolean = false;\r\n    isDefaulttransparentvariant: boolean = false;\r\n    isPrimary: boolean = false;\r\n    isPrimaryoutlinevariant: boolean = false;\r\n    isPrimaryfillvariant: boolean = false;\r\n    isPrimarytransparentvariant: boolean = false;\r\n\r\n\r\n}",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '~material-design-icons/iconfont/material-icons.css';\r\n.material-icons{\r\n    font-size: 15px;\r\n}\r\nbutton{\r\n    height: 32px;\r\n    width: 32px;\r\n    border: none;\r\n    border: 1px solid #e6e7e7;\r\n    border-radius: 50%;\r\n    background-color: #e6e7e7;\r\n    align-items: center;\r\n    cursor: pointer;\r\n}\r\nbutton:hover{\r\n    background-color: #c3c3c3;\r\n}\r\n\r\n.default-outline-variant{\r\n    border: 1px solid #dadada;\r\n    background-color:white;\r\n    border-radius: 2px;\r\n    height: 32px;\r\n    width: 32px;\r\n}\r\n.default-outline-variant:hover{\r\n    background-color:white;\r\n    border: 1px solid #a1a1a1;\r\n}\r\n.default-fill-variant{\r\n    border: 1px solid #dadada;\r\n    background-color:white;\r\n    border-radius: 2px;\r\n    height: 32px;\r\n    width: 32px;\r\n}\r\n.default-fill-variant:hover{\r\n    background-color:#d1d1d1;\r\n    border: 1px solid #d1d1d1;\r\n}\r\n.default-transparent-variant{\r\n    height: 32px;\r\n    width: 32px;\r\n    border: 1px solid #000;\r\n    border-radius: 2px;\r\n    background-color: #e6e7e7;\r\n}\r\n.default-transparent-variant:hover{\r\n    background-color: #c3c3c3;\r\n}\r\n.primary{\r\n    background-color: #1492db;\r\n    border: 1px solid #1492db;\r\n    height: 32px;\r\n    width: 32px;\r\n    border-radius: 2px;\r\n    color: white;\r\n}\r\n.primary:hover{\r\n    background-color: #0669ac;\r\n}\r\n.primary-outline-variant{\r\n    background-color: #ffffff;\r\n    border: 1px solid #5cbcf4;\r\n    border-radius: 2px;\r\n}\r\n.primary-outline-variant:hover{\r\n    background-color: #ffffff;\r\n    border: 1px solid #0480d2;\r\n}\r\n.primary-fill-variant{\r\n    background-color: #ffffff;\r\n    border: 1px solid #0480d2;\r\n    border-radius: 2px;\r\n}\r\n.primary-fill-variant:hover{\r\n    background-color: #0588df;\r\n    border: 1px solid #0588df;\r\n    color: white;\r\n}\r\n.primary-transparent-variant{\r\n    background-color: #d9eaf8;\r\n    border: 1px solid #0480d2;\r\n    border-radius: 2px;\r\n}\r\n.primary-transparent-variant:hover{\r\n    border: 1px solid #0480d2;\r\n    background-color: #c9e6fc;\r\n}",
+                    "styleUrl": "./icon-button.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<!-- <button>\r\n    <i class=\"material-icons\">check</i>\r\n</button> -->\r\n\r\n<button [ngClass]=\"{'primary': isPrimary,\r\n        'default-outline-variant': isDefaultoutlinevariant, \r\n        'default-fill-variant': isDefaultfillvariant,\r\n        'default-transparent-variant': isDefaulttransparentvariant,\r\n        'primary-outline-variant': isPrimaryoutlinevariant, \r\n        'primary-fill-variant': isPrimaryfillvariant,\r\n        'primary-transparent-variant': isPrimarytransparentvariant}\">\r\n    <i class=\"material-icons\">check</i>\r\n  </button>"
         },
         {
             "name": "InputComponent",
@@ -938,6 +1077,132 @@
             "templateData": "<div [ngClass]=\"['input-container', containerClassName]\">\r\n    <div *ngIf=\"icon\"\r\n         class=\"input-icon-container\"\r\n         [style.width.px]=\"iconContainerWidth\">\r\n        <svg-icon [name]=\"icon\"\r\n                  [size]=\"iconSize\">\r\n        </svg-icon>\r\n    </div>\r\n    <div>\r\n        <label [for]=\"label\" style=\"font-size: 23px;\">{{label}}</label>\r\n        <br>\r\n    </div>\r\n    <input \r\n        [type]=\"type\"\r\n        [placeholder]=\"placeholder\"\r\n        [ngClass]=\"['input', 'form-input']\" \r\n        [style.padding-left.px]=\"icon ? iconContainerWidth : 20\"\r\n        [style.padding-right.px]=\"isShowClearButton ? iconContainerWidth : 10\" />\r\n        <!--<input type=\"submit\" value=\"Submit\" style=\"background-color:#04AA6D; padding: 8px 16px; color: white; font-size: 25px; border: 1px solid #ccc; border-radius: 4px;\"> -->\r\n    \r\n\r\n    <div *ngIf=\"isShowClearButton\"\r\n         class=\"input-icon-container right\"\r\n         [style.width.px]=\"iconContainerWidth\">\r\n        <i nz-icon\r\n           nzType=\"close\"\r\n           nzTheme=\"outline\"\r\n           (click)=\"clear()\"></i>\r\n    </div>\r\n</div>"
         },
         {
+            "name": "LabelComponent",
+            "id": "component-LabelComponent-0da826f671d63d3c006ceff8686351415e9e8ea951a11c10b4c474f80e89f0505d3231f17aaa17847bed7846de2dbef2b9a250152223da91840da923533f3dde",
+            "file": "src/app/label/label.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-label",
+            "styleUrls": [
+                "./label.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./label.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'app-label',\r\n    templateUrl:'./label.component.html',\r\n    styleUrls:['./label.component.scss'],\r\n})\r\nexport class LabelComponent{\r\n    @Input() label!: string;\r\n}",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "label{\r\n    color: gray;\r\n    font-family: system-ui;\r\n    font-size: 12px;\r\n    font-weight: 350;\r\n}",
+                    "styleUrl": "./label.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<label for=\"\">{{label}}</label>"
+        },
+        {
+            "name": "LinkComponent",
+            "id": "component-LinkComponent-f8518b0d6c28484b170f74c1f15c51f076e442df28c90d20703af95993c0d4bec458438127bf91790e0b2c19fc2abe1119747aedb03bf2010bcd0086c91d720d",
+            "file": "src/app/link/link.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-link",
+            "styleUrls": [
+                "./link.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./link.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "isDefaultnounderline",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "isPrimary",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "isPrimarynoglow",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "isPrimarynounderline",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n    selector:'app-link',\r\n    templateUrl:'./link.component.html',\r\n    styleUrls:['./link.component.scss'],\r\n})\r\n\r\nexport class LinkComponent{\r\n    @Input() isPrimary: boolean = false;\r\n    @Input() isPrimarynoglow: boolean = false;\r\n    @Input() isPrimarynounderline: boolean = false;\r\n    @Input() isDefaultnounderline: boolean = false;\r\n}",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '~material-design-icons/iconfont/material-icons.css';\r\n.link{\r\n    vertical-align: middle;\r\n    display: inline;\r\n    font-size: 12px;\r\n    font-family: system-ui;\r\n    color: #6b6b6b;\r\n    cursor: pointer;\r\n    font-weight: 350;\r\n}\r\n.link:hover{\r\n    text-decoration: underline;\r\n}\r\n.link.default-no-underline{\r\n    text-decoration: none;\r\n}\r\n.link.primary{\r\n    color: #1492db;\r\n    font-size: 13px;\r\n    font-weight: 350;\r\n}\r\n.link.primary-no-glow{\r\n    color: #08609c;\r\n}\r\n.link.primary-no-underline{\r\n    text-decoration: none;\r\n}\r\n.link.primary-no-underline:hover{\r\n    text-decoration: none;\r\n    color: #08609c;\r\n}\r\n\r\n.material-icons{\r\n    margin-right: 5px;\r\n    vertical-align: middle;\r\n    font-size: 16px;\r\n}\r\n",
+                    "styleUrl": "./link.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "\r\n<div>\r\n    <a class=\"link\" [ngClass]=\"{ 'default-no-underline':isDefaultnounderline, 'primary': isPrimary, 'primary-no-glow':isPrimarynoglow, 'primary-no-underline':isPrimarynounderline }\">\r\n        <i class=\"material-icons\">wb_sunny</i>\r\n        <span>Lorem ipsum</span>\r\n    </a>\r\n  </div>\r\n  "
+        },
+        {
             "name": "PageComponent",
             "id": "component-PageComponent-1fc7c24c98b4f0b0f413d91f5a6126f11ad55647457f5a7f372b7f83fe8ecd6dbe67b5ca4b826ed20b9bfbc04d5606b15f82a203b1311f98b18bd28ec9f4fc7c",
             "file": "src/stories/page.component.ts",
@@ -1018,8 +1283,123 @@
             "stylesData": ""
         },
         {
+            "name": "RadioComponent",
+            "id": "component-RadioComponent-470ca39bb57db121b7906e0ec042282d31acfd712b93aae8ce306be4910e1d0987f15be245aa6e632b8efce86803cc6d53ce90cb0f8807d767461e87528ff731",
+            "file": "src/app/radio/radio.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-radio",
+            "styleUrls": [
+                "./radio.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./radio.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "isChecked",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "isError",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "isPrimary",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "isCheckedChange",
+                    "defaultValue": "new EventEmitter<boolean>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "toggleRadio",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 16,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n    selector:'app-radio',\r\n    templateUrl:'./radio.component.html',\r\n    styleUrls:['./radio.component.scss'],\r\n})\r\n\r\nexport class RadioComponent {\r\n    @Input() label: string = '';\r\n    @Input() isChecked: boolean = false;\r\n    @Input() isError: boolean = false;\r\n    @Input() isPrimary: boolean = false;\r\n    @Output() isCheckedChange = new EventEmitter<boolean>();\r\n  \r\n    toggleRadio(event: Event) {\r\n      this.isChecked = (event.target as HTMLInputElement).checked;\r\n      this.isCheckedChange.emit(this.isChecked);\r\n    }\r\n  }",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "/*.basicui-radio {\r\n    cursor: pointer;\r\n    position: relative;\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n}\r\n.radio-input{\r\n    margin: 0;\r\n    padding: 0;\r\n    height: 18px;\r\n    width: 18px;\r\n    outline: 0;\r\n    border: 1px solid #a2a2a2;\r\n    border-radius: 50%;\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    position: static;\r\n    cursor: pointer;\r\n}\r\n.radio-label{\r\n    margin-left: 7px;\r\n    font-size: 12px;\r\n    \r\n}*/\r\n.basicui-radio {\r\n    display: inline-block;\r\n    cursor: pointer;\r\n    position: relative;\r\n  }\r\n.radio-input{\r\n    outline: 0;\r\n    height: 18px;\r\n    width: 18px;\r\n    border-radius: 50%;\r\n    vertical-align: middle;\r\n    margin: 0;\r\n    padding: 0;\r\n    cursor: pointer;\r\n    accent-color: #000;\r\n}\r\n.radio-label{\r\n    margin-left: 7px;\r\n    font-size: 12px;\r\n    font-family: system-ui;\r\n    \r\n}\r\n.basicui-radio.primary .radio-input {\r\n    accent-color: #1976d2; \r\n  }\r\n.basicui-radio.error .radio-input{\r\n    accent-color: #e53935; \r\n}",
+                    "styleUrl": "./radio.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": " <!-- <div>\r\n    <label for=\"\" class=\"basicui-radio\">\r\n        <input type=\"radio\" class=\"radio-input\">\r\n        <span class=\"radio-label\">{{label}}</span>\r\n    </label>\r\n</div> -->\r\n\r\n<label class=\"basicui-radio\" [class.error]=\"isError\" [class.primary]=\"isPrimary\">\r\n    <input type=\"radio\" class=\"radio-input\" [checked]=\"isChecked\" (change)=\"toggleRadio($event)\" />\r\n    <span class=\"radio-label\">{{label}}</span>\r\n</label>"
+        },
+        {
             "name": "SelectComponent",
-            "id": "component-SelectComponent-a50d16a9d63284d46fc1688b42e6c640504a1717c765bf1506c6c8ffc74e2b5779dfd245a9cc7e353b42e84b2152fcc4b5e4ffeb102c7a440d5eb2350e30dfe7",
+            "id": "component-SelectComponent-85974cae77ea4f38306c73343491aeefb45d5f10fa830ba6803a157352d761f6f68ac45cbabcdd526ac9d5a99b8f7e5520c0ca19ef4a3a8abb8e4e929bc3d493",
             "file": "src/app/select/select.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1041,7 +1421,7 @@
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "line": 12,
                     "type": "literal type[]",
                     "decorators": []
                 },
@@ -1050,7 +1430,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 9,
+                    "line": 10,
                     "type": "string",
                     "decorators": []
                 },
@@ -1059,8 +1439,8 @@
                     "defaultValue": "'single'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 10,
-                    "type": "\"single\" | \"multi\" | \"autocomplete\"",
+                    "line": 11,
+                    "type": "\"single\" | \"autocomplete\"",
                     "decorators": []
                 }
             ],
@@ -1074,14 +1454,83 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 12
-                },
+                    "line": 13
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-select',\r\n  templateUrl: './select.component.html',\r\n  styleUrls: ['./select.component.scss']\r\n})\r\nexport class SelectComponent {\r\n[x: string]: any;\r\n  @Input() placeholder = '';\r\n  @Input() selectType: 'single' | 'autocomplete' = 'single';\r\n  @Input() options: { value: string, label: string }[] = [];\r\n  selectedValue: string = '';\r\n  //selectedValues: string[] = [];\r\n  \r\n}",
+            "assetsDirs": [],
+            "styleUrlsData": [
                 {
-                    "name": "selectedValues",
+                    "data": "  /* single-select styles */\r\n  select:hover {\r\n    border: 1px solid #c3e5f4;\r\n    background-color: #f1f8fe;\r\n    border-radius: 4px;\r\n  }\r\n  select, input {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\n    border: 1px solid #dad8d8;\r\n    background-color: #f1f0f08a;\r\n    border-radius: 3px;\r\n    width: 100%;\r\n    outline: none;\r\n    font-size: 12px;\r\n    position: relative;\r\n    text-indent: 5px;\r\n  }\r\n  select[single] {\r\n    position: absolute;\r\n    top: 50px;\r\n    left: 50px;\r\n  }\r\n  \r\n  /* Multi-select styles */\r\n  select[multiple] {\r\n    background-color: white;\r\n    height: 30px;\r\n  }\r\n  select[multiple] option{\r\n    padding-top: 10px;\r\n    padding-bottom: 10px;\r\n    padding-left: 10px;\r\n    \r\n  }\r\n  select[multiple] option:hover{\r\n    padding-top: 10px;\r\n    padding-bottom: 10px;\r\n    border: 1px solid #c3e5f4;\r\n    background-color: #f1f8fe;\r\n  }\r\n  .positioned-select {\r\n    border: 1px solid #ccc;\r\n    border-radius: 4px;\r\n    font-size: 14px;\r\n    width: 100%;\r\n  }\r\n  .positioned-select[multiple] {\r\n    height: 150px;\r\n  }\r\n\r\n  /* auto complete-select styles */\r\n  .auto-select{\r\n    padding: 5px;\r\n    font-size: 14px;\r\n    border-radius: 3px;\r\n    border: 1px solid #dad8d8;\r\n    background-color: #f1f0f08a;\r\n    width: 100%;\r\n    outline: none;\r\n  }\r\n  .auto-select-option {\r\n    padding: 8px 16px;\r\n    cursor: pointer;\r\n  }\r\n  .auto-select:hover {\r\n    border: 1px solid #c3e5f4;\r\n    background-color: #f1f8fe;\r\n    border-radius: 3px;\r\n  }\r\n",
+                    "styleUrl": "./select.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "\r\n\r\n  <div class=\"custom-select\" *ngIf=\"selectType === 'single'\">\r\n    <select *ngIf=\"selectedValue !== undefined\" class=\"positioned-select\">\r\n      <option> {{ selectedValue }}</option>\r\n      <option *ngFor=\"let option of options\" [value]=\"option.value\">{{ option.label }}</option>\r\n    </select>\r\n  </div>\r\n\r\n  <!-- <div class=\"custom-select\" *ngIf=\"selectType === 'multi'\">\r\n    <select multiple>\r\n      <option *ngFor=\"let option of options\" [value]=\"option.value\">{{ option.label }}</option>\r\n    </select>\r\n  </div> -->\r\n  \r\n  <div class=\"custom-select\" *ngIf=\"selectType === 'autocomplete'\">\r\n    <input type=\"text\" placeholder=\"Autocomplete dropdown\" list=\"autocompleteOptions\" class=\"auto-select\" style=\"width: 100%; \">\r\n    <datalist id=\"autocompleteOptions\">\r\n      <option *ngFor=\"let option of options\" [value]=\"option.label\" style=\"width: 100%;\">{{ option.label }}</option>\r\n    </datalist>\r\n  </div>\r\n  \r\n  <!-- <div class=\"custom-select\" *ngIf=\"selectType === 'autocomplete-multi'\">\r\n    <input type=\"text\" placeholder=\"Autocomplete dropdown\" list=\"autocompleteOptions\" class=\"auto-select\" style=\"width: 100%;\">\r\n    <datalist id=\"autocompleteOptions\">\r\n      <option *ngFor=\"let option of options\" [value]=\"option.label\" style=\"width: 100%;\">{{ option.label }}</option>\r\n    </datalist>\r\n  </div>-->\r\n  "
+        },
+        {
+            "name": "SelectNativeComponent",
+            "id": "component-SelectNativeComponent-d656f440ed21ebdb0d4bf21fcc17b63ab341072e8c7185580dcdfb8c834b47e8eff469d11143ed388b636758238e3d0264b435ca28432b7ddea767e09afb8bfe",
+            "file": "src/app/select-native/select-native.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-select-native",
+            "styleUrls": [
+                "./select-native.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./select-native.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "options",
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "string[]",
+                    "line": 12,
+                    "type": "literal type[]",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "selectType",
+                    "defaultValue": "'single'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "\"single\" | \"autocomplete\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "selectedValue",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
                     "optional": false,
                     "description": "",
                     "line": 13
@@ -1095,63 +1544,16 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-select',\r\n  templateUrl: './select.component.html',\r\n  styleUrls: ['./select.component.scss']\r\n})\r\nexport class SelectComponent {\r\n  @Input() placeholder = '';\r\n  @Input() selectType: 'single' | 'multi' | 'autocomplete' = 'single';\r\n  @Input() options: { value: string, label: string }[] = [];\r\n  selectedValue: string = '';\r\n  selectedValues: string[] = [];\r\n  \r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n/*import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-select',\r\n  templateUrl: './select.component.html',\r\n  styleUrls: ['./select.component.scss']\r\n})\r\nexport class SelectComponent {\r\n[x: string]: any;\r\n  @Input() options: { value: any, label: string }[] = [];\r\n  selectedValue: { value: any, label: string };\r\n  @Input() value: any;\r\n  @Input() text : string | undefined;\r\n  @Input() type: string | undefined;\r\n  @Input() name: string | undefined;\r\n\r\n  constructor() {\r\n    this.selectedValue = this.options[0]; \r\n  }\r\n}*/",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-select-native',\r\n  templateUrl: './select-native.component.html',\r\n  styleUrls: ['./select-native.component.scss']\r\n})\r\nexport class SelectNativeComponent {\r\n[x: string]: any;\r\n  @Input() placeholder = '';\r\n  @Input() selectType: 'single' | 'autocomplete' = 'single';\r\n  @Input() options: { value: string, label: string }[] = [];\r\n  selectedValue: string = '';\r\n  //selectedValues: string[] = [];\r\n  \r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "select:hover{\r\n    border: 1px solid black;\r\n}\r\nselect {\r\n    padding: 8px;\r\n    border: 1px solid #ccc;\r\n    border-radius: 4px;\r\n    width: 100%;\r\n    outline: none;\r\n  }\r\n  select option:hover{\r\n    color: #333;\r\n    border: 1px solid #f5f0f0;\r\n    padding: 5px;\r\n    margin: 5px;\r\n  }\r\n  select option{\r\n    //color: #333;\r\n    padding: 5px;\r\n    margin: 5px;\r\n  }\r\n  .custom-select div {\r\n    padding: 4px;\r\n    cursor: pointer;\r\n  }\r\n  .selected {\r\n    background-color: #216787; /* Change this to your desired selected color */\r\n  }\r\n  .auto-select:hover{\r\n    //background-color: #cce4f5;\r\n    border: 1px solid black;\r\n  }\r\n  .auto-select{\r\n    padding: 5px;\r\n    font-size: 14px;\r\n    border-radius: 4px;\r\n    border: 1px solid #000;\r\n    background-color: #fff;\r\n    width: 100%;\r\n    outline: none;\r\n  }\r\n  .datalist-styling {\r\n    border: 1px solid #ccc;\r\n    padding: 5px;\r\n    background-color: #f7f7f7;\r\n    width: 100%;\r\n  }\r\n  .datalist-styling option {\r\n    background-color: #fff;\r\n    padding: 5px;\r\n  }\r\n  \r\n  ",
-                    "styleUrl": "./select.component.scss"
+                    "data": "  /* single-select styles */\r\n  select:hover {\r\n    border: 1px solid #c3e5f4;\r\n    background-color: #f1f8fe;\r\n    border-radius: 4px;\r\n  }\r\n  select, input {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\n    border: 1px solid #dad8d8;\r\n    background-color: #f1f0f08a;\r\n    border-radius: 3px;\r\n    width: 100%;\r\n    outline: none;\r\n    font-size: 12px;\r\n    position: relative;\r\n    text-indent: 5px;\r\n  }\r\n  select[single] {\r\n    position: absolute;\r\n    top: 50px;\r\n    left: 50px;\r\n  }\r\n  .positioned-select {\r\n    border: 1px solid #ccc;\r\n    border-radius: 4px;\r\n    font-size: 14px;\r\n    width: 100%;\r\n  }\r\n  \r\n  /* Multi-select styles */\r\n  .multiple{\r\n    background-color: #f6f6f6;;\r\n    padding: 0;\r\n    height: auto;\r\n    width: 100%;\r\n    font-size: 12px;\r\n    border-radius: 0%;\r\n  }\r\n  .multiple:hover{\r\n    border: 1px solid #c3e5f4;\r\n    background-color: #f1f8fe;\r\n    \r\n  }\r\n  .multiple option:checked {\r\n    background-color: #d0d1d1;\r\n}\r\n  \r\n",
+                    "styleUrl": "./select-native.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": " <div class=\"custom-select\" *ngIf=\"selectType === 'single'\">\r\n    <select *ngIf=\"selectedValue !== undefined\">\r\n      <option> {{ selectedValue }}</option> \r\n      <option *ngFor=\"let option of options\">\r\n        <span *ngIf=\"option.value !== selectedValue\">{{ option.label }}</span>\r\n      </option>\r\n    </select>\r\n  </div>\r\n\r\n  <div class=\"custom-select\" *ngIf=\"selectType === 'multi'\">\r\n    <select multiple>\r\n      <option *ngFor=\"let option of options\" [value]=\"option.value\">{{ option.label }}</option>\r\n    </select>\r\n  </div>\r\n  \r\n  <div class=\"custom-select\" *ngIf=\"selectType === 'autocomplete'\">\r\n    <input type=\"text\" placeholder=\"Autocomplete dropdown\" list=\"autocompleteOptions\" class=\"auto-select\" style=\"width: 100%; \">\r\n    <datalist id=\"autocompleteOptions\">\r\n      <option *ngFor=\"let option of options\" [value]=\"option.label\" style=\"width: 100%;\">{{ option.label }}</option>\r\n    </datalist>\r\n  </div>\r\n  \r\n  <div class=\"custom-select\" *ngIf=\"selectType === 'autocomplete-multi'\">\r\n    <input type=\"text\" placeholder=\"Autocomplete dropdown\" list=\"autocompleteOptions\" class=\"auto-select\" style=\"width: 100%;\">\r\n    <datalist id=\"autocompleteOptions\">\r\n      <option *ngFor=\"let option of options\" [value]=\"option.label\" style=\"width: 100%;\">{{ option.label }}</option>\r\n    </datalist>\r\n  </div>\r\n\r\n  <!--<div class=\"custom-select\">\r\n    <select>\r\n      <option *ngFor=\"let option of options\" [value]=\"option.value\" selected>\r\n        {{ option.label }}\r\n      </option>\r\n    </select>\r\n  </div>-->\r\n  <!-- <div class=\"selected-label\">\r\n    selected value:  {{ selectedValue }}\r\n  </div> -->\r\n  "
-        },
-        {
-            "name": "SelectedOptionComponent",
-            "id": "component-SelectedOptionComponent-31b93162b0d01064c0ad266398c05efbc609016cf92076c1978f0008d359b93c107effa3634b927891b0a4ff51629aa9e121835b31b17db1bb5fd8316e04547c",
-            "file": "src/app/select/selected-option.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-select",
-            "styleUrls": [
-                "./selected-option.component.scss"
-            ],
-            "styles": [],
-            "template": "<div class=\"selected-option\">\n  Selected Option: {{ selectedValue }}\n</div>\n",
-            "templateUrl": [],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "selectedValue",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 13,
-                    "type": "any",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-select',\r\n  template: `\r\n    <div class=\"selected-option\">\r\n      Selected Option: {{ selectedValue }}\r\n    </div>\r\n  `,\r\n  styleUrls: ['./selected-option.component.scss']\r\n})\r\nexport class SelectedOptionComponent {\r\n  @Input() selectedValue: any;\r\n}",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": ".selected-option {\r\n    font-size: 16px;\r\n    padding: 8px;\r\n    background-color: #f0f0f0;\r\n    border: 1px solid #ccc;\r\n    border-radius: 4px;\r\n  }",
-                    "styleUrl": "./selected-option.component.scss"
-                }
-            ],
-            "stylesData": ""
+            "templateData": "\r\n\r\n  <div class=\"custom-select\" *ngIf=\"selectType === 'single'\">\r\n    <select *ngIf=\"selectedValue !== undefined\" class=\"positioned-select\">\r\n      <option> {{ selectedValue }}</option>\r\n      <option *ngFor=\"let option of options\" [value]=\"option.value\">{{ option.label }}</option>\r\n    </select>\r\n  </div>\r\n\r\n  <div class=\"custom-select\" *ngIf=\"selectType === 'multi'\">\r\n    <select multiple class=\"multiple\">\r\n      <option *ngFor=\"let option of options\" [value]=\"option.value\" >{{ option.label }}</option>\r\n    </select>\r\n  </div>\r\n  "
         },
         {
             "name": "SvgIconComponent",
@@ -1242,18 +1644,312 @@
                 }
             },
             "templateData": "<svg version=\"1.1\"\r\n     [style.width.px]=\"size\"\r\n     [style.height.px]=\"size\"\r\n     [style.fill]=\"fill\"\r\n     xmlns=\"http://www.w3.org/2000/svg\"\r\n     xmlns:xlink=\"http://www.w3.org/1999/xlink\">\r\n    <use [attr.xlink:href]=\"iconUrl\"></use>\r\n</svg>"
+        },
+        {
+            "name": "SwitchComponent",
+            "id": "component-SwitchComponent-f689243ca10b65f28c1fe024127d62b5d573fd8d9022937b278273350f3ee5ae15ef16ecbfb6d077f79c1ca01f9947f5a1e7d4d727f3b941a899abaff8a92158",
+            "file": "src/app/switch/switch.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-switch",
+            "styleUrls": [
+                "./switch.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./switch.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "isChecked",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "isError",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "isPrimary",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "isCheckedChange",
+                    "defaultValue": "new EventEmitter<boolean>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "toggleSwitch",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-switch',\r\n  templateUrl: './switch.component.html',\r\n  styleUrls: ['./switch.component.scss']\r\n})\r\nexport class SwitchComponent {\r\n  @Input() isChecked: boolean = false;\r\n  @Input() isError: boolean = false;\r\n  @Input() isPrimary: boolean = false;\r\n  @Output() isCheckedChange = new EventEmitter<boolean>();\r\n\r\n  toggleSwitch(event: Event) {\r\n    this.isChecked = (event.target as HTMLInputElement).checked;\r\n    this.isCheckedChange.emit(this.isChecked);\r\n  }\r\n}",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".switch {\r\n    position: relative;\r\n    display: inline-block;\r\n    width: 32px;\r\n    height: 16px;\r\n  }\r\n  .switch input {\r\n    opacity: 0;\r\n    width: 0;\r\n    height: 0;\r\n  }\r\n  .slider {\r\n    position: absolute;\r\n    cursor: pointer;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    background-color: #ccc;\r\n    border-radius: 34px;\r\n    transition: 250ms;\r\n  }\r\n  .slider:before {\r\n    position: absolute;\r\n    content: \"\";\r\n    height: 12px;\r\n    width: 12px;\r\n    left: 3px;\r\n    bottom: 2px;\r\n    background-color: white;\r\n    border-radius: 50%;\r\n    transition: 250ms;\r\n  }\r\n  \r\n  input:checked + .slider {\r\n    background-color: #2196F3;\r\n  }\r\n  input:checked + .slider:before {\r\n    transform: translateX(14px);\r\n  }\r\n  .switch.error input:checked + .slider {\r\n    background-color: #e53935; /* Change background color for error */\r\n  }\r\n  \r\n  /* Primary style for switch */\r\n  .switch.primary input:checked + .slider {\r\n    background-color: #2196F3; /* Change background color for primary */\r\n  }",
+                    "styleUrl": "./switch.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<label class=\"switch\" [class.error]=\"isError\" [class.primary]=\"isPrimary\">\r\n    <input type=\"checkbox\" [checked]=\"isChecked\" (change)=\"toggleSwitch($event)\" />\r\n    <span class=\"slider\"></span>\r\n  </label>"
+        },
+        {
+            "name": "TextareaComponent",
+            "id": "component-TextareaComponent-84f04738a7b78a7f5d30b26c61c9ef309a7893f7a128e04cd8f2093c488212046080c3f80b4476aeea0bab4a28a60c0f592f8824a2538d951ee6c6aaa38970b7",
+            "file": "src/app/textarea/textarea.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-textarea",
+            "styleUrls": [
+                "./textarea.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./textarea.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "errorMessage",
+                    "defaultValue": "'Please enter valid text'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "isError",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "isSuccess",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "isTooltip",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "isWarning",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Textarea Label'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "'Enter text here'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "successMessage",
+                    "defaultValue": "'Please eneter valid text'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "tooltipMessage",
+                    "defaultValue": "'Please eneter valid text'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "warningMessage",
+                    "defaultValue": "'Please eneter valid text'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "valueChange",
+                    "defaultValue": "new EventEmitter<string>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "textareaId",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 25
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "handleChange",
+                    "args": [
+                        {
+                            "name": "$event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 10,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "$event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-textarea',\r\n  templateUrl: './textarea.component.html',\r\n  styleUrls: ['./textarea.component.scss']\r\n})\r\nexport class TextareaComponent {\r\nhandleChange($event: Event) {\r\nthrow new Error('Method not implemented.');\r\n}\r\n  @Input() label: string = 'Textarea Label';\r\n  @Input() placeholder: string = 'Enter text here';\r\n  @Input() value: string = '';\r\n  @Input() isError: boolean = false;\r\n  @Input() isWarning: boolean = false;\r\n  @Input() isSuccess: boolean = false;\r\n  @Input() isTooltip: boolean = false;\r\n  @Input() errorMessage: string = 'Please enter valid text';\r\n  @Input() successMessage: string = 'Please eneter valid text'; \r\n  @Input() warningMessage: string = 'Please eneter valid text'; \r\n  @Input() tooltipMessage: string = 'Please eneter valid text'; \r\n  @Output() valueChange = new EventEmitter<string>();\r\n  textareaId: any;\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "label {\r\n    display: block;\r\n    font-size: 12px;\r\n    font-family: 'Roboto', sans-serif;\r\n    margin-bottom: 4px;\r\n    color: #726e6ea3;\r\n    \r\n}\r\n.textarea-input:hover{\r\n    border: 1px solid #c3e5f4;\r\n    background-color: #f1f8fe;\r\n}\r\n.textarea-input{\r\n    font-family: 'Roboto', sans-serif;\r\n    resize: vertical;\r\n    width: 100%;\r\n    padding: 6px;\r\n    line-height: 1.5;\r\n    height: 55px;\r\n    font-size: 12px;\r\n    font-weight: 400;\r\n    text-overflow: ellipsis;\r\n    outline: none;\r\n    border: 1px solid #dad8d8;\r\n    background-color: #f1f0f08a;\r\n    border-radius: 2px;\r\n    display: flex;\r\n    align-items: center;\r\n    transition: 250ms border-color ease-in-out, 250ms background-color ease-in-out, 250ms color ease-in-out;\r\n}\r\n\r\n  .error-message {\r\n    color: #fc374bc4;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .success-message{\r\n    color: #14db5a;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .warning-message{\r\n    color: #db9214;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .tooltip-message{\r\n    color: #908e8e;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }",
+                    "styleUrl": "./textarea.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "\r\n<div>\r\n    <label [for]=\"textareaId\" class=\"label\">{{ label }}</label>\r\n    <textarea class=\"textarea-input\" \r\n              [id]=\"textareaId\" \r\n              [placeholder]=\"placeholder\" \r\n              [value]=\"value\" (input)=\"handleChange($event)\" [class.error]=\"isError\" >\r\n    </textarea>\r\n    \r\n    <div *ngIf=\"isSuccess\" class=\"success-message\">{{ successMessage }}</div>\r\n    <div *ngIf=\"isWarning\" class=\"warning-message\">{{ warningMessage }}</div>\r\n    <div *ngIf=\"isTooltip\" class=\"tooltip-message\">{{ tooltipMessage }}</div>\r\n    <div *ngIf=\"isError\" class=\"error-message\">{{ errorMessage }}</div>\r\n\r\n</div>\r\n\r\n\r\n"
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-6dff4dc5724ee45157f4898fa0f01dc14219d755bc8ce9fb8a4c86b823e89f2408436284880a252db17d9ebb1c19e1a0ad215cbe70387e2eb59ede90c121613a",
+            "id": "module-AppModule-b19ddc87e9f1cee8b3b3a87b3bba07273252d85c099ab5e23a87cef74b34e44cc9e70a36b65c30ea637653c91d9b1352a82259f9f5c678ad829e8251ca387a5a",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { BrowserModule } from '@angular/platform-browser';\r\nimport { NgModule } from '@angular/core';\r\n//import { TaskModule } from './components/task.module';\r\nimport { NgxsModule } from '@ngxs/store';\r\nimport { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';\r\nimport { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';\r\nimport { environment } from '../environments/environment';\r\nimport { AppComponent } from './app.component';\r\n//import InboxScreenComponent from './components/inbox-screen.component';\r\n//import PureInboxScreenComponent from './components/pure-inbox-screen.component';\r\n//import { AvatarComponent } from './avatar/avatar.component';\r\nimport { FormsModule } from '@angular/forms';\r\n\r\n@NgModule({\r\n  declarations: [AppComponent /*InboxScreenComponent, PureInboxScreenComponent,*/ /*AvatarComponent*/],\r\n  imports: [\r\n    BrowserModule,\r\n    FormsModule,\r\n    //TaskModule,\r\n    NgxsModule.forRoot([], { developmentMode: !environment.production, }),\r\n    NgxsReduxDevtoolsPluginModule.forRoot(),\r\n    NgxsLoggerPluginModule.forRoot({ disabled: environment.production, }),\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {}\r\n",
+            "sourceCode": "import { BrowserModule } from '@angular/platform-browser';\r\nimport { NgModule } from '@angular/core';\r\n//import { TaskModule } from './components/task.module';\r\nimport { NgxsModule } from '@ngxs/store';\r\nimport { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';\r\nimport { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';\r\nimport { environment } from '../environments/environment';\r\nimport { AppComponent } from './app.component';\r\n//import InboxScreenComponent from './components/inbox-screen.component';\r\n//import PureInboxScreenComponent from './components/pure-inbox-screen.component';\r\n//import { AvatarComponent } from './avatar/avatar.component';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { SelectComponent } from './select/select.component';\r\n\r\n\r\n@NgModule({\r\n  declarations: [AppComponent /*InboxScreenComponent, PureInboxScreenComponent,*/ /*AvatarComponent*/, SelectComponent],\r\n  imports: [\r\n    BrowserModule,\r\n    FormsModule,\r\n    //TaskModule,\r\n    NgxsModule.forRoot([], { developmentMode: !environment.production, }),\r\n    NgxsReduxDevtoolsPluginModule.forRoot(),\r\n    NgxsLoggerPluginModule.forRoot({ disabled: environment.production, }),\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1264,6 +1960,9 @@
                     "elements": [
                         {
                             "name": "AppComponent"
+                        },
+                        {
+                            "name": "SelectComponent"
                         }
                     ]
                 },
@@ -1395,16 +2094,6 @@
                 "defaultValue": "() => ({\r\n  component: SelectComponent,\r\n  props: {\r\n    selectType: 'autocomplete',\r\n    options: [\r\n      { value: '1', label: 'Lorem ipsum' },\r\n      { value: '2', label: 'Dolor sit' },\r\n      { value: '3', label: 'Another long text another long text' },\r\n    ],\r\n    selectedValue: 'Dolor sit', \r\n    placeholder: 'Enter select option'\r\n  },\r\n})"
             },
             {
-                "name": "AutocompleteMultiSelect",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/select/select..stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n  component: SelectComponent,\r\n  props: {\r\n    selectType: 'autocomplete-multi',\r\n    options: [\r\n      { value: '1', label: 'Lorem ipsum' },\r\n      { value: '2', label: 'Dolor sit' },\r\n      { value: '3', label: 'Another long text another long text' },\r\n    ],\r\n    selectedValues: ['Dolor sit', 'Lorem ipsum', 'Another long text another long text'],\r\n  },\r\n})"
-            },
-            {
                 "name": "avatarUrl",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1422,7 +2111,47 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "() => ({\r\n  template: `\r\n    <app-checkbox></app-checkbox>\r\n    Article description\r\n  `,\r\n  \r\n})"
+                "defaultValue": "() =>({\r\n    component: CheckboxComponent,\r\n    props: {\r\n        label:'Article Description',\r\n        isChecked: false,\r\n        isError: false,\r\n        isTooltip: false,\r\n    },\r\n})"
+            },
+            {
+                "name": "BasicLabel",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/label/label.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() =>({\r\n    component: LabelComponent,\r\n    props: {\r\n        label: 'Lorem ipsum Dolor sit'\r\n    },\r\n})"
+            },
+            {
+                "name": "BasicRadio",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/radio/radio.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() =>({\r\n    component: RadioComponent,\r\n    props: {\r\n        label:'Article Description',\r\n        isChecked: false,\r\n        isError: false,\r\n        isPrimary: false,\r\n    },\r\n})"
+            },
+            {
+                "name": "BasicSwitch",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/switch/switch.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    component: SwitchComponent,\r\n    props: {\r\n      isChecked: false,\r\n    },\r\n})"
+            },
+            {
+                "name": "BasicTextarea",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/textarea/textarea.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    component: TextareaComponent,\r\n    props: {\r\n        label: 'Article Description',\r\n        placeholder: 'Lorem ipsum dolor sit',\r\n        value:'',\r\n    },\r\n})"
             },
             {
                 "name": "CheckboxWithError",
@@ -1432,17 +2161,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "() => ({\r\n    template: `\r\n      <app-checkbox class=\"custom-checkbox\" style= accent-color:red;></app-checkbox>\r\n      <label for='' style= color:#f4e7e7; onMouseOver=\"this.style.color='red'\"\r\n      onMouseOut=\"this.style.color='red'\" >Danger Theme</label>\r\n    `,\r\n  })"
+                "defaultValue": "() => ({\r\n    component: CheckboxComponent,\r\n    props: {\r\n        label:'Danger theme',\r\n        isChecked: false,\r\n        isError: true,\r\n        isTooltip: false,\r\n    },\r\n})"
             },
             {
-                "name": "CheckboxWithToolitip",
+                "name": "CheckboxWithTooltip",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/checkbox/checkbox.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "() => ({\r\n  template: `\r\n    <app-checkbox class=\"custom-checkbox\" style= accent-color:black;></app-checkbox>\r\n    <label for=''>Article description</label>\r\n\r\n  `,\r\n})"
+                "defaultValue": "() => ({\r\n    component: CheckboxComponent,\r\n    props: {\r\n        label:'Article Description',\r\n        isChecked: false,\r\n        isError: false,\r\n        isTooltip: true,\r\n    },\r\n})"
             },
             {
                 "name": "config",
@@ -1463,6 +2192,76 @@
                 "deprecationMessage": "",
                 "type": "Story<BreadcrumbsComponent>",
                 "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "DefaultLink",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/link/link.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    component: LinkComponent,\r\n    props: {\r\n        isPrimary: false,\r\n    },\r\n})"
+            },
+            {
+                "name": "DefaultLinkWithNoGlow",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/link/link.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    component: LinkComponent,\r\n    props: {\r\n\r\n    },\r\n})"
+            },
+            {
+                "name": "DefaultLinkWithNoUnderline",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/link/link.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    component: LinkComponent,\r\n    props: {\r\n        isDefaultnounderline: true,\r\n    },\r\n})"
+            },
+            {
+                "name": "DefaultThemeWithDefaultVariant",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/icon-button/icon-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    component: IconButtonComponent,\r\n    props: {\r\n\r\n    },\r\n})"
+            },
+            {
+                "name": "DefaultThemeWithFillVariant",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/icon-button/icon-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    component: IconButtonComponent,\r\n    props: {\r\n        isDefaultfillvariant: true,\r\n    },\r\n})"
+            },
+            {
+                "name": "DefaultThemeWithOutlineVariant",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/icon-button/icon-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    component: IconButtonComponent,\r\n    props: {\r\n        isDefaultoutlinevariant: true,\r\n    },\r\n})"
+            },
+            {
+                "name": "DefaultThemeWithTransparentVariant",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/icon-button/icon-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    component: IconButtonComponent,\r\n    props: {\r\n        isDefaulttransparentvariant: true,\r\n    },\r\n})"
             },
             {
                 "name": "Empty",
@@ -1565,14 +2364,14 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "MultiSelect",
+                "name": "MultiSelectNative",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/select/select..stories.ts",
+                "file": "src/app/select-native/select-native.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "() => ({\r\n  component: SelectComponent,\r\n  props: {\r\n    selectType: 'multi',\r\n    options: [\r\n      { value: '1', label: 'Lorem ipsum' },\r\n      { value: '2', label: 'Dolor sit' },\r\n      { value: '3', label: 'Another long text another long text' },\r\n      \r\n    ],\r\n    selectedValue: 'Dolor sit',\r\n    selectedValues: ['Lorem ipsum','Dolor sit'],\r\n  },\r\n})"
+                "defaultValue": "() => ({\r\n  component: SelectNativeComponent,\r\n  props: {\r\n    selectType: 'multi',\r\n    options: [\r\n      { value: '1', label: 'Lorem ipsum' },\r\n      { value: '2', label: 'Dolor sit' },\r\n      { value: '3', label: 'Another long text another long text' },\r\n      \r\n    ],\r\n    selectedValue: 'Dolor sit',\r\n    selectedValues: ['Lorem ipsum','Dolor sit'],\r\n  },\r\n})"
             },
             {
                 "name": "Primary",
@@ -1593,6 +2392,96 @@
                 "deprecationMessage": "",
                 "type": "Story<ButtonProps>",
                 "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "PrimaryLink",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/link/link.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    component: LinkComponent,\r\n    props: {\r\n        isPrimary: true,\r\n    },\r\n})"
+            },
+            {
+                "name": "PrimaryLinkWithNoGlow",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/link/link.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    component: LinkComponent,\r\n    props: {\r\n        isPrimarynoglow: true,\r\n    },\r\n})"
+            },
+            {
+                "name": "PrimaryLinkWithNoUnderline",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/link/link.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    component: LinkComponent,\r\n    props: {\r\n        isPrimary: true,\r\n        isPrimarynounderline: true,\r\n    },\r\n})"
+            },
+            {
+                "name": "PrimaryThemeWithFillVariant",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/icon-button/icon-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    component: IconButtonComponent,\r\n    props: {\r\n        isPrimaryfillvariant: true,\r\n    },\r\n})"
+            },
+            {
+                "name": "PrimaryThemeWithOutlineVariant",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/icon-button/icon-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    component: IconButtonComponent,\r\n    props: {\r\n        isPrimaryoutlinevariant: true,\r\n    },\r\n})"
+            },
+            {
+                "name": "PrimaryThemeWithPrimaryVariant",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/icon-button/icon-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    component: IconButtonComponent,\r\n    props: {\r\n        isPrimary: true,\r\n    },\r\n})"
+            },
+            {
+                "name": "PrimaryThemeWithTransparentVariant",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/icon-button/icon-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    component: IconButtonComponent,\r\n    props: {\r\n        isPrimarytransparentvariant: true,\r\n    },\r\n})"
+            },
+            {
+                "name": "RadioWithError",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/radio/radio.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    component: RadioComponent,\r\n    props: {\r\n        label:'Article Description',\r\n        isChecked: false,\r\n        isError: true,\r\n        isPrimary: false,\r\n    },\r\n})"
+            },
+            {
+                "name": "RadioWithPrimary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/radio/radio.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    component: RadioComponent,\r\n    props: {\r\n        label:'Article Description',\r\n        isChecked: false,\r\n        isError: false,\r\n        isPrimary: true,\r\n    },\r\n})"
             },
             {
                 "name": "Rounded",
@@ -1632,7 +2521,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "() => ({\r\n  component: SelectComponent,\r\n  props: {\r\n    selectType: 'single',\r\n    options: [\r\n      { value: '1', label: 'Lorem ipsum' },\r\n      { value: '2', label: 'Another long text another long text' },\r\n      { value: '3', label: 'Dolor sit' },\r\n    \r\n    ],\r\n    selectedValue: 'Dolor sit', \r\n  },\r\n})"
+                "defaultValue": "() => ({\r\n  component: SelectComponent,\r\n  props: {\r\n    selectType: 'single',\r\n    options: [\r\n      { value: '1', label: 'Lorem ipsum' },\r\n      { value: '2', label: 'Another long text another long text' },\r\n      { value: '3', label: 'Dolor sit' },\r\n    ],\r\n    selectedValue: 'Dolor sit', \r\n  },\r\n})"
+            },
+            {
+                "name": "SingleSelectNative",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/select-native/select-native.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: SelectNativeComponent,\r\n  props: {\r\n    selectType: 'single',\r\n    options: [\r\n      { value: '1', label: 'Lorem ipsum' },\r\n      { value: '2', label: 'Another long text another long text' },\r\n      { value: '3', label: 'Dolor sit' },\r\n    ],\r\n    selectedValue: 'Dolor sit', \r\n  },\r\n})"
             },
             {
                 "name": "Small",
@@ -1653,6 +2552,26 @@
                 "deprecationMessage": "",
                 "type": "Story<AvatarComponent>",
                 "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "SwitchWithError",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/switch/switch.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    component: SwitchComponent,\r\n    props: {\r\n      isChecked: false,\r\n      isError: true\r\n    },\r\n})"
+            },
+            {
+                "name": "SwitchWithPrimary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/switch/switch.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    component: SwitchComponent,\r\n    props: {\r\n      isChecked: false,\r\n      isPrimary: true\r\n    },\r\n})"
             },
             {
                 "name": "Template",
@@ -1723,6 +2642,56 @@
                 "deprecationMessage": "",
                 "type": "Story<InputComponent>",
                 "defaultValue": "(args:InputComponent) =>({\r\n    component: InputComponent,\r\n    props:args\r\n})"
+            },
+            {
+                "name": "TextareaWithError",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/textarea/textarea.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    component: TextareaComponent,\r\n    props: {\r\n      label: 'Article Description',\r\n      placeholder: 'Lorem ipsum dolor sit',\r\n      value: '',\r\n      isError: true,\r\n      errorMessage: 'Quisque tincidunt vitae purus id feugiat',\r\n    },\r\n  })"
+            },
+            {
+                "name": "TextareaWithSuccess",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/textarea/textarea.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    component: TextareaComponent,\r\n    props: {\r\n        label: 'Article Description',\r\n        placeholder: 'Lorem ipsum dolor sit',\r\n        isSuccess: true,\r\n        value: '',\r\n        successMessage: 'Quisque tincidunt vitae purus id feugiat',\r\n    },\r\n})"
+            },
+            {
+                "name": "TextareaWithTooltip",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/textarea/textarea.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    component: TextareaComponent,\r\n    props: {\r\n        label: 'Article Description',\r\n        placeholder: 'Lorem ipsum dolor sit',\r\n        isTooltip: true,\r\n        value: '',\r\n        tooltipMessage: 'Quisque tincidunt vitae purus id feugiat',\r\n    },\r\n})"
+            },
+            {
+                "name": "TextareaWithTooltipAndError",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/textarea/textarea.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    component: TextareaComponent,\r\n    props: {\r\n        label: 'Article Description',\r\n        placeholder: 'Lorem ipsum dolor sit',\r\n        isTooltip: true,\r\n        isError: true,\r\n        tooltipMessage: 'Ipsum dolor sit',\r\n        errorMessage: 'Quisque tincidunt vitae purus id feugiat',\r\n    },\r\n})"
+            },
+            {
+                "name": "TextareaWithWarning",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/textarea/textarea.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    component: TextareaComponent,\r\n    props: {\r\n        label: 'Article Description',\r\n        placeholder: 'Lorem ipsum dolor sit',\r\n        isWarning: true,\r\n        value: '',\r\n        warningMessage: 'Quisque tincidunt vitae purus id feugiat',\r\n    },\r\n})"
             }
         ],
         "functions": [],
@@ -1741,26 +2710,6 @@
                     "defaultValue": "() => ({\r\n  component: SelectComponent,\r\n  props: {\r\n    selectType: 'autocomplete',\r\n    options: [\r\n      { value: '1', label: 'Lorem ipsum' },\r\n      { value: '2', label: 'Dolor sit' },\r\n      { value: '3', label: 'Another long text another long text' },\r\n    ],\r\n    selectedValue: 'Dolor sit', \r\n    placeholder: 'Enter select option'\r\n  },\r\n})"
                 },
                 {
-                    "name": "AutocompleteMultiSelect",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/select/select..stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  component: SelectComponent,\r\n  props: {\r\n    selectType: 'autocomplete-multi',\r\n    options: [\r\n      { value: '1', label: 'Lorem ipsum' },\r\n      { value: '2', label: 'Dolor sit' },\r\n      { value: '3', label: 'Another long text another long text' },\r\n    ],\r\n    selectedValues: ['Dolor sit', 'Lorem ipsum', 'Another long text another long text'],\r\n  },\r\n})"
-                },
-                {
-                    "name": "MultiSelect",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/select/select..stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  component: SelectComponent,\r\n  props: {\r\n    selectType: 'multi',\r\n    options: [\r\n      { value: '1', label: 'Lorem ipsum' },\r\n      { value: '2', label: 'Dolor sit' },\r\n      { value: '3', label: 'Another long text another long text' },\r\n      \r\n    ],\r\n    selectedValue: 'Dolor sit',\r\n    selectedValues: ['Lorem ipsum','Dolor sit'],\r\n  },\r\n})"
-                },
-                {
                     "name": "SingleSelect",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -1768,7 +2717,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "() => ({\r\n  component: SelectComponent,\r\n  props: {\r\n    selectType: 'single',\r\n    options: [\r\n      { value: '1', label: 'Lorem ipsum' },\r\n      { value: '2', label: 'Another long text another long text' },\r\n      { value: '3', label: 'Dolor sit' },\r\n    \r\n    ],\r\n    selectedValue: 'Dolor sit', \r\n  },\r\n})"
+                    "defaultValue": "() => ({\r\n  component: SelectComponent,\r\n  props: {\r\n    selectType: 'single',\r\n    options: [\r\n      { value: '1', label: 'Lorem ipsum' },\r\n      { value: '2', label: 'Another long text another long text' },\r\n      { value: '3', label: 'Dolor sit' },\r\n    ],\r\n    selectedValue: 'Dolor sit', \r\n  },\r\n})"
                 }
             ],
             "src/app/avatar/avatar.stories.ts": [
@@ -1822,7 +2771,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "() => ({\r\n  template: `\r\n    <app-checkbox></app-checkbox>\r\n    Article description\r\n  `,\r\n  \r\n})"
+                    "defaultValue": "() =>({\r\n    component: CheckboxComponent,\r\n    props: {\r\n        label:'Article Description',\r\n        isChecked: false,\r\n        isError: false,\r\n        isTooltip: false,\r\n    },\r\n})"
                 },
                 {
                     "name": "CheckboxWithError",
@@ -1832,17 +2781,155 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "() => ({\r\n    template: `\r\n      <app-checkbox class=\"custom-checkbox\" style= accent-color:red;></app-checkbox>\r\n      <label for='' style= color:#f4e7e7; onMouseOver=\"this.style.color='red'\"\r\n      onMouseOut=\"this.style.color='red'\" >Danger Theme</label>\r\n    `,\r\n  })"
+                    "defaultValue": "() => ({\r\n    component: CheckboxComponent,\r\n    props: {\r\n        label:'Danger theme',\r\n        isChecked: false,\r\n        isError: true,\r\n        isTooltip: false,\r\n    },\r\n})"
                 },
                 {
-                    "name": "CheckboxWithToolitip",
+                    "name": "CheckboxWithTooltip",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/checkbox/checkbox.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "() => ({\r\n  template: `\r\n    <app-checkbox class=\"custom-checkbox\" style= accent-color:black;></app-checkbox>\r\n    <label for=''>Article description</label>\r\n\r\n  `,\r\n})"
+                    "defaultValue": "() => ({\r\n    component: CheckboxComponent,\r\n    props: {\r\n        label:'Article Description',\r\n        isChecked: false,\r\n        isError: false,\r\n        isTooltip: true,\r\n    },\r\n})"
+                }
+            ],
+            "src/app/label/label.stories.ts": [
+                {
+                    "name": "BasicLabel",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/label/label.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() =>({\r\n    component: LabelComponent,\r\n    props: {\r\n        label: 'Lorem ipsum Dolor sit'\r\n    },\r\n})"
+                }
+            ],
+            "src/app/radio/radio.stories.ts": [
+                {
+                    "name": "BasicRadio",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/radio/radio.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() =>({\r\n    component: RadioComponent,\r\n    props: {\r\n        label:'Article Description',\r\n        isChecked: false,\r\n        isError: false,\r\n        isPrimary: false,\r\n    },\r\n})"
+                },
+                {
+                    "name": "RadioWithError",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/radio/radio.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    component: RadioComponent,\r\n    props: {\r\n        label:'Article Description',\r\n        isChecked: false,\r\n        isError: true,\r\n        isPrimary: false,\r\n    },\r\n})"
+                },
+                {
+                    "name": "RadioWithPrimary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/radio/radio.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    component: RadioComponent,\r\n    props: {\r\n        label:'Article Description',\r\n        isChecked: false,\r\n        isError: false,\r\n        isPrimary: true,\r\n    },\r\n})"
+                }
+            ],
+            "src/app/switch/switch.stories.ts": [
+                {
+                    "name": "BasicSwitch",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/switch/switch.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    component: SwitchComponent,\r\n    props: {\r\n      isChecked: false,\r\n    },\r\n})"
+                },
+                {
+                    "name": "SwitchWithError",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/switch/switch.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    component: SwitchComponent,\r\n    props: {\r\n      isChecked: false,\r\n      isError: true\r\n    },\r\n})"
+                },
+                {
+                    "name": "SwitchWithPrimary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/switch/switch.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    component: SwitchComponent,\r\n    props: {\r\n      isChecked: false,\r\n      isPrimary: true\r\n    },\r\n})"
+                }
+            ],
+            "src/app/textarea/textarea.stories.ts": [
+                {
+                    "name": "BasicTextarea",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/textarea/textarea.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    component: TextareaComponent,\r\n    props: {\r\n        label: 'Article Description',\r\n        placeholder: 'Lorem ipsum dolor sit',\r\n        value:'',\r\n    },\r\n})"
+                },
+                {
+                    "name": "TextareaWithError",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/textarea/textarea.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    component: TextareaComponent,\r\n    props: {\r\n      label: 'Article Description',\r\n      placeholder: 'Lorem ipsum dolor sit',\r\n      value: '',\r\n      isError: true,\r\n      errorMessage: 'Quisque tincidunt vitae purus id feugiat',\r\n    },\r\n  })"
+                },
+                {
+                    "name": "TextareaWithSuccess",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/textarea/textarea.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    component: TextareaComponent,\r\n    props: {\r\n        label: 'Article Description',\r\n        placeholder: 'Lorem ipsum dolor sit',\r\n        isSuccess: true,\r\n        value: '',\r\n        successMessage: 'Quisque tincidunt vitae purus id feugiat',\r\n    },\r\n})"
+                },
+                {
+                    "name": "TextareaWithTooltip",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/textarea/textarea.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    component: TextareaComponent,\r\n    props: {\r\n        label: 'Article Description',\r\n        placeholder: 'Lorem ipsum dolor sit',\r\n        isTooltip: true,\r\n        value: '',\r\n        tooltipMessage: 'Quisque tincidunt vitae purus id feugiat',\r\n    },\r\n})"
+                },
+                {
+                    "name": "TextareaWithTooltipAndError",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/textarea/textarea.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    component: TextareaComponent,\r\n    props: {\r\n        label: 'Article Description',\r\n        placeholder: 'Lorem ipsum dolor sit',\r\n        isTooltip: true,\r\n        isError: true,\r\n        tooltipMessage: 'Ipsum dolor sit',\r\n        errorMessage: 'Quisque tincidunt vitae purus id feugiat',\r\n    },\r\n})"
+                },
+                {
+                    "name": "TextareaWithWarning",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/textarea/textarea.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    component: TextareaComponent,\r\n    props: {\r\n        label: 'Article Description',\r\n        placeholder: 'Lorem ipsum dolor sit',\r\n        isWarning: true,\r\n        value: '',\r\n        warningMessage: 'Quisque tincidunt vitae purus id feugiat',\r\n    },\r\n})"
                 }
             ],
             ".storybook/main.ts": [
@@ -1877,6 +2964,150 @@
                     "deprecationMessage": "",
                     "type": "Story<BreadcrumbsComponent>",
                     "defaultValue": "(args :BreadcrumbsComponent) => ({\r\n    component: BreadcrumbsComponent,\r\n    props: args\r\n})"
+                }
+            ],
+            "src/app/link/link.stories.ts": [
+                {
+                    "name": "DefaultLink",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/link/link.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    component: LinkComponent,\r\n    props: {\r\n        isPrimary: false,\r\n    },\r\n})"
+                },
+                {
+                    "name": "DefaultLinkWithNoGlow",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/link/link.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    component: LinkComponent,\r\n    props: {\r\n\r\n    },\r\n})"
+                },
+                {
+                    "name": "DefaultLinkWithNoUnderline",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/link/link.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    component: LinkComponent,\r\n    props: {\r\n        isDefaultnounderline: true,\r\n    },\r\n})"
+                },
+                {
+                    "name": "PrimaryLink",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/link/link.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    component: LinkComponent,\r\n    props: {\r\n        isPrimary: true,\r\n    },\r\n})"
+                },
+                {
+                    "name": "PrimaryLinkWithNoGlow",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/link/link.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    component: LinkComponent,\r\n    props: {\r\n        isPrimarynoglow: true,\r\n    },\r\n})"
+                },
+                {
+                    "name": "PrimaryLinkWithNoUnderline",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/link/link.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    component: LinkComponent,\r\n    props: {\r\n        isPrimary: true,\r\n        isPrimarynounderline: true,\r\n    },\r\n})"
+                }
+            ],
+            "src/app/icon-button/icon-button.stories.ts": [
+                {
+                    "name": "DefaultThemeWithDefaultVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/icon-button/icon-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    component: IconButtonComponent,\r\n    props: {\r\n\r\n    },\r\n})"
+                },
+                {
+                    "name": "DefaultThemeWithFillVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/icon-button/icon-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    component: IconButtonComponent,\r\n    props: {\r\n        isDefaultfillvariant: true,\r\n    },\r\n})"
+                },
+                {
+                    "name": "DefaultThemeWithOutlineVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/icon-button/icon-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    component: IconButtonComponent,\r\n    props: {\r\n        isDefaultoutlinevariant: true,\r\n    },\r\n})"
+                },
+                {
+                    "name": "DefaultThemeWithTransparentVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/icon-button/icon-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    component: IconButtonComponent,\r\n    props: {\r\n        isDefaulttransparentvariant: true,\r\n    },\r\n})"
+                },
+                {
+                    "name": "PrimaryThemeWithFillVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/icon-button/icon-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    component: IconButtonComponent,\r\n    props: {\r\n        isPrimaryfillvariant: true,\r\n    },\r\n})"
+                },
+                {
+                    "name": "PrimaryThemeWithOutlineVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/icon-button/icon-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    component: IconButtonComponent,\r\n    props: {\r\n        isPrimaryoutlinevariant: true,\r\n    },\r\n})"
+                },
+                {
+                    "name": "PrimaryThemeWithPrimaryVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/icon-button/icon-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    component: IconButtonComponent,\r\n    props: {\r\n        isPrimary: true,\r\n    },\r\n})"
+                },
+                {
+                    "name": "PrimaryThemeWithTransparentVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/icon-button/icon-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    component: IconButtonComponent,\r\n    props: {\r\n        isPrimarytransparentvariant: true,\r\n    },\r\n})"
                 }
             ],
             "src/app/button/button.stories.ts": [
@@ -2094,6 +3325,28 @@
                     "type": "Story<Page>",
                     "defaultValue": "(args: Page) => ({\r\n  props: args,\r\n})"
                 }
+            ],
+            "src/app/select-native/select-native.stories.ts": [
+                {
+                    "name": "MultiSelectNative",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/select-native/select-native.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: SelectNativeComponent,\r\n  props: {\r\n    selectType: 'multi',\r\n    options: [\r\n      { value: '1', label: 'Lorem ipsum' },\r\n      { value: '2', label: 'Dolor sit' },\r\n      { value: '3', label: 'Another long text another long text' },\r\n      \r\n    ],\r\n    selectedValue: 'Dolor sit',\r\n    selectedValues: ['Lorem ipsum','Dolor sit'],\r\n  },\r\n})"
+                },
+                {
+                    "name": "SingleSelectNative",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/select-native/select-native.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: SelectNativeComponent,\r\n  props: {\r\n    selectType: 'single',\r\n    options: [\r\n      { value: '1', label: 'Lorem ipsum' },\r\n      { value: '2', label: 'Another long text another long text' },\r\n      { value: '3', label: 'Dolor sit' },\r\n    ],\r\n    selectedValue: 'Dolor sit', \r\n  },\r\n})"
+                }
             ]
         },
         "groupedFunctions": {},
@@ -2266,7 +3519,7 @@
                 "linktype": "component",
                 "name": "CheckboxComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
@@ -2294,7 +3547,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "CheckboxWithToolitip",
+                "name": "CheckboxWithTooltip",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -2305,6 +3558,95 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "FirstSampleComponents",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/icon-button/icon-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "IconButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/icon-button/icon-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DefaultThemeWithDefaultVariant",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/icon-button/icon-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DefaultThemeWithFillVariant",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/icon-button/icon-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DefaultThemeWithOutlineVariant",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/icon-button/icon-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DefaultThemeWithTransparentVariant",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/icon-button/icon-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PrimaryThemeWithFillVariant",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/icon-button/icon-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PrimaryThemeWithOutlineVariant",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/icon-button/icon-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PrimaryThemeWithPrimaryVariant",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/icon-button/icon-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PrimaryThemeWithTransparentVariant",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -2348,31 +3690,167 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/label/label.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LabelComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/label/label.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "BasicLabel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/link/link.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LinkComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/link/link.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DefaultLink",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/link/link.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DefaultLinkWithNoGlow",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/link/link.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DefaultLinkWithNoUnderline",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/link/link.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PrimaryLink",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/link/link.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PrimaryLinkWithNoGlow",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/link/link.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PrimaryLinkWithNoUnderline",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/radio/radio.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RadioComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/radio/radio.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "BasicRadio",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/radio/radio.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "RadioWithError",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/radio/radio.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "RadioWithPrimary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/select-native/select-native.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SelectNativeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/select-native/select-native.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MultiSelectNative",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/select-native/select-native.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SingleSelectNative",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/select/select..stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Autocomplete",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/select/select..stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "AutocompleteMultiSelect",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/select/select..stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "MultiSelect",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -2393,16 +3871,7 @@
                 "linktype": "component",
                 "name": "SelectComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/select/selected-option.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "SelectedOptionComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -2412,6 +3881,114 @@
                 "name": "SvgIconComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/switch/switch.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SwitchComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/switch/switch.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "BasicSwitch",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/switch/switch.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SwitchWithError",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/switch/switch.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SwitchWithPrimary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/textarea/textarea.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TextareaComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/15",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/textarea/textarea.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "BasicTextarea",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/textarea/textarea.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TextareaWithError",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/textarea/textarea.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TextareaWithSuccess",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/textarea/textarea.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TextareaWithTooltip",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/textarea/textarea.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TextareaWithTooltipAndError",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/textarea/textarea.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TextareaWithWarning",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {

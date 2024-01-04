@@ -25,6 +25,7 @@
     "@ngxs/devtools-plugin": "^3.8.2",
     "@ngxs/logger-plugin": "^3.8.2",
     "@ngxs/store": "^3.8.2",
+    "material-design-icons": "^3.0.1",
     "nvm": "^0.0.4",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

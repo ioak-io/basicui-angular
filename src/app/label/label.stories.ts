@@ -2,7 +2,7 @@ import { moduleMetadata } from "@storybook/angular";
 import { LabelComponent } from './label.component'
 
 export default{
-    title: 'Components/Label',
+    title: 'Form Elements/Label',
     decorators:[
         moduleMetadata({
             declarations: [LabelComponent],

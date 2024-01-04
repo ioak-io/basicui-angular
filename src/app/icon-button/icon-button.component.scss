@@ -1,8 +1,25 @@
-@import '~material-design-icons/iconfont/material-icons.css';
+@import '../styles/index.css';
+
+.basicui-button--loading svg {
+    display: none;
+}
+.basicui-button--loading .basicui-button__svg--loading {
+    display: block;
+    animation: animate_button_loading 2s linear infinite both;
+}
+
+
+
+
+
+
+
+
+/*@import '~material-design-icons/iconfont/material-icons.css';
 .material-icons{
     font-size: 15px;
-}
-button{
+}*/
+/*button{
     height: 32px;
     width: 32px;
     border: none;
@@ -86,4 +103,4 @@ button:hover{
 .primary-transparent-variant:hover{
     border: 1px solid #0480d2;
     background-color: #c9e6fc;
-}
+}*/
