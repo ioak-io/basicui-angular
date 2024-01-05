@@ -75,17 +75,18 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 165,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "ButtonProps",
-            "id": "interface-ButtonProps-cb296cf42e51d7c0934a2634cb620da7e6e870cebe8f525a38160cb61817765cee014be6078aacb4a65a3c9cc5863c5539e39212e4dace694624aab9e96cb3b2",
+            "id": "interface-ButtonProps-cf67b2da060ee16d6828ac98739382cba86bae503cc764d4ccf6c89e10dd9b5f953d354496ac8d2d023ecc164778d571d19f46bb3745cee56f8a0f36d3fe0f2d",
             "file": "src/app/button/button.stories.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import {Meta, Story } from '@storybook/angular';\r\nimport { ButtonComponent } from './button.component';\r\n\r\nexport default{\r\n    title: 'Form Elements/Button',\r\n    component: ButtonComponent\r\n} as Meta;\r\n\r\ninterface ButtonProps extends ButtonComponent{\r\n    label: string;\r\n}\r\n\r\nconst Template: Story<ButtonComponent> =({label, className}: Partial<ButtonProps>) =>({\r\n    component: ButtonComponent,\r\n    moduleMetadata: {\r\n        declarations: [ButtonComponent],\r\n        import:[]\r\n    },\r\n    template:`<app-button className='${className}'>${label}</app-button>`\r\n});\r\nexport const Primary: Story<ButtonProps> = Template.bind({});\r\n    Primary.args = {\r\n        className: 'btn-primary',\r\n        label: 'Primary'\r\n    };\r\nexport const Secondary: Story<ButtonProps> = Template.bind({});\r\nSecondary.args = {\r\n    className: 'btn-secondary',\r\n    label: 'Secondary'\r\n};\r\nexport const Empty: Story<ButtonProps> = Template.bind({});\r\nEmpty.args = {\r\n    icon:'times',\r\n    className: 'btn-empty',\r\n    label: 'Cancel'\r\n};",
+            "sourceCode": "import {Meta, Story } from '@storybook/angular';\r\nimport { ButtonComponent } from './button.component';\r\nimport ButtonVariantType from '../types/ButtonVariantType';\r\nimport  ThemeType  from \"../types/ThemeType\";\r\n\r\nexport default{\r\n    title: 'Form Elements/Button',\r\n    component: ButtonComponent\r\n} as Meta;\r\n\r\ninterface ButtonProps extends ButtonComponent{\r\n    label: string;\r\n}\r\n\r\n// const Template: Story<ButtonComponent> =({label, className,disabled}: Partial<ButtonProps>) =>({\r\n//     component: ButtonComponent,\r\n//     moduleMetadata: {\r\n//         declarations: [ButtonComponent],\r\n//         import:[]\r\n//     },\r\n//     template:`<app-button [disabled]='${disabled}' class='${className}'>${label}</app-button>`\r\n// });\r\n\r\nconst Template: Story<ButtonComponent> = (args: ButtonComponent) => ({\r\n    component: ButtonComponent,\r\n    props: args\r\n});\r\n\r\n// export const Primary: Story<ButtonProps> = Template.bind({});\r\n//     Primary.args = {\r\n//         className: 'btn-primary',\r\n//         label: 'Primary',\r\n//         disabled: false\r\n//     };\r\n// export const Secondary: Story<ButtonProps> = Template.bind({});\r\n// Secondary.args = {\r\n//     className: 'btn-secondary',\r\n//     label: 'Secondary'\r\n// };\r\n// export const Empty: Story<ButtonProps> = Template.bind({});\r\n// Empty.args = {\r\n//     icon:'times',\r\n//     className: 'btn-empty',\r\n//     label: 'Cancel'\r\n// };\r\n// export const Outline: Story<ButtonProps> = Template.bind({});\r\n// Outline.args = {\r\n//     icon:'times',\r\n//     className: 'btn-outline',\r\n//     label: 'Outline'\r\n// };\r\n\r\n// export const DefaultThemeWithDefaultVariant: Story<ButtonProps> = Template.bind({});\r\n// DefaultThemeWithDefaultVariant.args = {\r\n//     icon:'times',\r\n//     // className: 'Default-Theme-With-Default-Variant',\r\n//     label: 'Default Theme With Default Variant',\r\n//     disabled: false,\r\n//     theme: ThemeType.default,\r\n//     variant: ButtonVariantType.default,\r\n// };\r\n\r\n// Reuse that template for creating different stories\r\nexport const DefaultThemeWithDefaultVariant : Story<ButtonProps> = Template.bind({});\r\nDefaultThemeWithDefaultVariant.args = {\r\n  theme: ThemeType.default,\r\n  variant: ButtonVariantType.default,\r\n  disabled: true\r\n};\r\n\r\nexport const DefaultThemeWithOutlineVariant: Story<ButtonProps>  = Template.bind({});\r\nDefaultThemeWithOutlineVariant.args = {\r\n  theme: ThemeType.default,\r\n  variant: ButtonVariantType.outline,\r\n};\r\n\r\nexport const DefaultThemeWithFillVariant: Story<ButtonProps>  = Template.bind({});\r\nDefaultThemeWithFillVariant.args = {\r\n  theme: ThemeType.default,\r\n  variant: ButtonVariantType.fill,\r\n};\r\n\r\nexport const DefaultThemeWithTransparentVariant: Story<ButtonProps>  = Template.bind({});\r\nDefaultThemeWithTransparentVariant.args = {\r\n  theme: ThemeType.default,\r\n  variant: ButtonVariantType.transparent,\r\n};\r\n\r\n// Primary theme\r\nexport const PrimaryThemeWithPrimaryVariant: Story<ButtonProps>  = Template.bind({});\r\nPrimaryThemeWithPrimaryVariant.args = {\r\n  theme: ThemeType.primary,\r\n  variant: ButtonVariantType.default,\r\n};\r\n\r\nexport const PrimaryThemeWithOutlineVariant: Story<ButtonProps>  = Template.bind({});\r\nPrimaryThemeWithOutlineVariant.args = {\r\n  theme: ThemeType.primary,\r\n  variant: ButtonVariantType.outline,\r\n};\r\n\r\nexport const PrimaryThemeWithFillVariant: Story<ButtonProps>  = Template.bind({});\r\nPrimaryThemeWithFillVariant.args = {\r\n  theme: ThemeType.primary,\r\n  variant: ButtonVariantType.fill,\r\n};\r\n\r\nexport const PrimaryThemeWithTransparentVariant: Story<ButtonProps>  = Template.bind({});\r\nPrimaryThemeWithTransparentVariant.args = {\r\n  theme: ThemeType.primary,\r\n  variant: ButtonVariantType.transparent,\r\n};\r\n\r\n\r\n// Danger theme\r\nexport const DangerThemeWithDangerVariant: Story<ButtonProps>  = Template.bind({});\r\nDangerThemeWithDangerVariant.args = {\r\n  theme: ThemeType.danger,\r\n  variant: ButtonVariantType.default,\r\n};\r\n\r\nexport const DangerThemeWithOutlineVariant: Story<ButtonProps>  = Template.bind({});\r\nDangerThemeWithOutlineVariant.args = {\r\n  theme: ThemeType.danger,\r\n  variant: ButtonVariantType.outline,\r\n};\r\n\r\nexport const DangerThemeWithFillVariant: Story<ButtonProps>  = Template.bind({});\r\nDangerThemeWithFillVariant.args = {\r\n  theme: ThemeType.danger,\r\n  variant: ButtonVariantType.fill,\r\n};\r\n\r\nexport const DangerThemeWithTransparentVariant: Story<ButtonProps> = Template.bind({});\r\nDangerThemeWithTransparentVariant.args = {\r\n  theme: ThemeType.danger,\r\n  variant: ButtonVariantType.transparent\r\n};\r\n",
             "properties": [
                 {
                     "name": "label",
@@ -94,13 +95,15 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 10
+                    "line": 12
                 }
             ],
             "indexSignatures": [],
-            "kind": 165,
+            "kind": 171,
             "methods": [],
-            "extends": "ButtonComponent"
+            "extends": [
+                "ButtonComponent"
+            ]
         },
         {
             "name": "EnvironmentModel",
@@ -131,8 +134,9 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 165,
-            "methods": []
+            "kind": 171,
+            "methods": [],
+            "extends": []
         },
         {
             "name": "User",
@@ -144,7 +148,8 @@
             "sourceCode": "export interface User {}\r\n",
             "properties": [],
             "indexSignatures": [],
-            "methods": []
+            "methods": [],
+            "extends": []
         }
     ],
     "injectables": [],
@@ -171,6 +176,7 @@
                 "./app.component.html"
             ],
             "viewProviders": [],
+            "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
             "propertiesClass": [
@@ -190,6 +196,8 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
+            "standalone": false,
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
@@ -202,6 +210,7 @@
                 }
             ],
             "stylesData": "",
+            "extends": [],
             "templateData": "<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->\r\n<!-- * * * * * * * to get started with your project! * * * * * * * * -->\r\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\r\n\r\n<style>\r\n  :host {\r\n    font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\";\r\n    font-size: 14px;\r\n    color: #333;\r\n    box-sizing: border-box;\r\n    -webkit-font-smoothing: antialiased;\r\n    -moz-osx-font-smoothing: grayscale;\r\n  }\r\n\r\n  h1,\r\n  h2,\r\n  h3,\r\n  h4,\r\n  h5,\r\n  h6 {\r\n    margin: 8px 0;\r\n  }\r\n\r\n  p {\r\n    margin: 0;\r\n  }\r\n\r\n  .spacer {\r\n    flex: 1;\r\n  }\r\n\r\n  .toolbar {\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    height: 60px;\r\n    display: flex;\r\n    align-items: center;\r\n    background-color: #1976d2;\r\n    color: white;\r\n    font-weight: 600;\r\n  }\r\n\r\n  .toolbar img {\r\n    margin: 0 16px;\r\n  }\r\n\r\n  .toolbar #twitter-logo {\r\n    height: 40px;\r\n    margin: 0 8px;\r\n  }\r\n\r\n  .toolbar #youtube-logo {\r\n    height: 40px;\r\n    margin: 0 16px;\r\n  }\r\n\r\n  .toolbar #twitter-logo:hover,\r\n  .toolbar #youtube-logo:hover {\r\n    opacity: 0.8;\r\n  }\r\n\r\n  .content {\r\n    display: flex;\r\n    margin: 82px auto 32px;\r\n    padding: 0 16px;\r\n    max-width: 960px;\r\n    flex-direction: column;\r\n    align-items: center;\r\n  }\r\n\r\n  svg.material-icons {\r\n    height: 24px;\r\n    width: auto;\r\n  }\r\n\r\n  svg.material-icons:not(:last-child) {\r\n    margin-right: 8px;\r\n  }\r\n\r\n  .card svg.material-icons path {\r\n    fill: #888;\r\n  }\r\n\r\n  .card-container {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    justify-content: center;\r\n    margin-top: 16px;\r\n  }\r\n\r\n  .card {\r\n    all: unset;\r\n    border-radius: 4px;\r\n    border: 1px solid #eee;\r\n    background-color: #fafafa;\r\n    height: 40px;\r\n    width: 200px;\r\n    margin: 0 8px 16px;\r\n    padding: 16px;\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    align-items: center;\r\n    transition: all 0.2s ease-in-out;\r\n    line-height: 24px;\r\n  }\r\n\r\n  .card-container .card:not(:last-child) {\r\n    margin-right: 0;\r\n  }\r\n\r\n  .card.card-small {\r\n    height: 16px;\r\n    width: 168px;\r\n  }\r\n\r\n  .card-container .card:not(.highlight-card) {\r\n    cursor: pointer;\r\n  }\r\n\r\n  .card-container .card:not(.highlight-card):hover {\r\n    transform: translateY(-3px);\r\n    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);\r\n  }\r\n\r\n  .card-container .card:not(.highlight-card):hover .material-icons path {\r\n    fill: rgb(105, 103, 103);\r\n  }\r\n\r\n  .card.highlight-card {\r\n    background-color: #1976d2;\r\n    color: white;\r\n    font-weight: 600;\r\n    border: none;\r\n    width: auto;\r\n    min-width: 30%;\r\n    position: relative;\r\n  }\r\n\r\n  .card.card.highlight-card span {\r\n    margin-left: 60px;\r\n  }\r\n\r\n  svg#rocket {\r\n    width: 80px;\r\n    position: absolute;\r\n    left: -10px;\r\n    top: -24px;\r\n  }\r\n\r\n  svg#rocket-smoke {\r\n    height: calc(100vh - 95px);\r\n    position: absolute;\r\n    top: 10px;\r\n    right: 180px;\r\n    z-index: -10;\r\n  }\r\n\r\n  a,\r\n  a:visited,\r\n  a:hover {\r\n    color: #1976d2;\r\n    text-decoration: none;\r\n  }\r\n\r\n  a:hover {\r\n    color: #125699;\r\n  }\r\n\r\n  .terminal {\r\n    position: relative;\r\n    width: 80%;\r\n    max-width: 600px;\r\n    border-radius: 6px;\r\n    padding-top: 45px;\r\n    margin-top: 8px;\r\n    overflow: hidden;\r\n    background-color: rgb(15, 15, 16);\r\n  }\r\n\r\n  .terminal::before {\r\n    content: \"\\2022 \\2022 \\2022\";\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    height: 4px;\r\n    background: rgb(58, 58, 58);\r\n    color: #c2c3c4;\r\n    width: 100%;\r\n    font-size: 2rem;\r\n    line-height: 0;\r\n    padding: 14px 0;\r\n    text-indent: 4px;\r\n  }\r\n\r\n  .terminal pre {\r\n    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;\r\n    color: white;\r\n    padding: 0 1rem 1rem;\r\n    margin: 0;\r\n  }\r\n\r\n  .circle-link {\r\n    height: 40px;\r\n    width: 40px;\r\n    border-radius: 40px;\r\n    margin: 8px;\r\n    background-color: white;\r\n    border: 1px solid #eeeeee;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    cursor: pointer;\r\n    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\r\n    transition: 1s ease-out;\r\n  }\r\n\r\n  .circle-link:hover {\r\n    transform: translateY(-0.25rem);\r\n    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);\r\n  }\r\n\r\n  footer {\r\n    margin-top: 8px;\r\n    display: flex;\r\n    align-items: center;\r\n    line-height: 20px;\r\n  }\r\n\r\n  footer a {\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n\r\n  .github-star-badge {\r\n    color: #24292e;\r\n    display: flex;\r\n    align-items: center;\r\n    font-size: 12px;\r\n    padding: 3px 10px;\r\n    border: 1px solid rgba(27,31,35,.2);\r\n    border-radius: 3px;\r\n    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);\r\n    margin-left: 4px;\r\n    font-weight: 600;\r\n  }\r\n\r\n  .github-star-badge:hover {\r\n    background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);\r\n    border-color: rgba(27,31,35,.35);\r\n    background-position: -.5em;\r\n  }\r\n\r\n  .github-star-badge .material-icons {\r\n    height: 16px;\r\n    width: 16px;\r\n    margin-right: 4px;\r\n  }\r\n\r\n  svg#clouds {\r\n    position: fixed;\r\n    bottom: -160px;\r\n    left: -230px;\r\n    z-index: -10;\r\n    width: 1920px;\r\n  }\r\n\r\n  /* Responsive Styles */\r\n  @media screen and (max-width: 767px) {\r\n    .card-container > *:not(.circle-link) ,\r\n    .terminal {\r\n      width: 100%;\r\n    }\r\n\r\n    .card:not(.highlight-card) {\r\n      height: 16px;\r\n      margin: 8px 0;\r\n    }\r\n\r\n    .card.highlight-card span {\r\n      margin-left: 72px;\r\n    }\r\n\r\n    svg#rocket-smoke {\r\n      right: 120px;\r\n      transform: rotate(-5deg);\r\n    }\r\n  }\r\n\r\n  @media screen and (max-width: 575px) {\r\n    svg#rocket-smoke {\r\n      display: none;\r\n      visibility: hidden;\r\n    }\r\n  }\r\n</style>\r\n\r\n<!-- Toolbar -->\r\n<div class=\"toolbar\" role=\"banner\">\r\n  <img\r\n    width=\"40\"\r\n    alt=\"Angular Logo\"\r\n    src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==\"\r\n  />\r\n  <span>Welcome</span>\r\n    <div class=\"spacer\"></div>\r\n    <a aria-label=\"Angular on twitter\" target=\"_blank\" rel=\"noopener\" href=\"https://twitter.com/angular\" title=\"Twitter\">\r\n      <svg id=\"twitter-logo\" height=\"24\" data-name=\"Logo\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 400\">\r\n        <rect width=\"400\" height=\"400\" fill=\"none\"/>\r\n        <path d=\"M153.62,301.59c94.34,0,145.94-78.16,145.94-145.94,0-2.22,0-4.43-.15-6.63A104.36,104.36,0,0,0,325,122.47a102.38,102.38,0,0,1-29.46,8.07,51.47,51.47,0,0,0,22.55-28.37,102.79,102.79,0,0,1-32.57,12.45,51.34,51.34,0,0,0-87.41,46.78A145.62,145.62,0,0,1,92.4,107.81a51.33,51.33,0,0,0,15.88,68.47A50.91,50.91,0,0,1,85,169.86c0,.21,0,.43,0,.65a51.31,51.31,0,0,0,41.15,50.28,51.21,51.21,0,0,1-23.16.88,51.35,51.35,0,0,0,47.92,35.62,102.92,102.92,0,0,1-63.7,22A104.41,104.41,0,0,1,75,278.55a145.21,145.21,0,0,0,78.62,23\" fill=\"#fff\"/>\r\n      </svg>\r\n    </a>\r\n    <a aria-label=\"Angular on YouTube\" target=\"_blank\" rel=\"noopener\" href=\"https://youtube.com/angular\" title=\"YouTube\">\r\n      <svg id=\"youtube-logo\" height=\"24\" width=\"24\" data-name=\"Logo\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"#fff\">\r\n        <path d=\"M0 0h24v24H0V0z\" fill=\"none\"/>\r\n        <path d=\"M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM10 15V9l5.2 3-5.2 3z\"/>\r\n      </svg>\r\n    </a>\r\n</div>\r\n\r\n<div class=\"content\" role=\"main\">\r\n\r\n  <!-- Highlight Card -->\r\n  <div class=\"card highlight-card card-small\">\r\n\r\n    <svg id=\"rocket\" xmlns=\"http://www.w3.org/2000/svg\" width=\"101.678\" height=\"101.678\" viewBox=\"0 0 101.678 101.678\">\r\n      <title>Rocket Ship</title>\r\n      <g id=\"Group_83\" data-name=\"Group 83\" transform=\"translate(-141 -696)\">\r\n        <circle id=\"Ellipse_8\" data-name=\"Ellipse 8\" cx=\"50.839\" cy=\"50.839\" r=\"50.839\" transform=\"translate(141 696)\" fill=\"#dd0031\"/>\r\n        <g id=\"Group_47\" data-name=\"Group 47\" transform=\"translate(165.185 720.185)\">\r\n          <path id=\"Path_33\" data-name=\"Path 33\" d=\"M3.4,42.615a3.084,3.084,0,0,0,3.553,3.553,21.419,21.419,0,0,0,12.215-6.107L9.511,30.4A21.419,21.419,0,0,0,3.4,42.615Z\" transform=\"translate(0.371 3.363)\" fill=\"#fff\"/>\r\n          <path id=\"Path_34\" data-name=\"Path 34\" d=\"M53.3,3.221A3.09,3.09,0,0,0,50.081,0,48.227,48.227,0,0,0,18.322,13.437c-6-1.666-14.991-1.221-18.322,7.218A33.892,33.892,0,0,1,9.439,25.1l-.333.666a3.013,3.013,0,0,0,.555,3.553L23.985,43.641a2.9,2.9,0,0,0,3.553.555l.666-.333A33.892,33.892,0,0,1,32.647,53.3c8.55-3.664,8.884-12.326,7.218-18.322A48.227,48.227,0,0,0,53.3,3.221ZM34.424,9.772a6.439,6.439,0,1,1,9.106,9.106,6.368,6.368,0,0,1-9.106,0A6.467,6.467,0,0,1,34.424,9.772Z\" transform=\"translate(0 0.005)\" fill=\"#fff\"/>\r\n        </g>\r\n      </g>\r\n    </svg>\r\n\r\n    <span>{{ title }} app is running!</span>\r\n\r\n    <svg id=\"rocket-smoke\" xmlns=\"http://www.w3.org/2000/svg\" width=\"516.119\" height=\"1083.632\" viewBox=\"0 0 516.119 1083.632\">\r\n      <title>Rocket Ship Smoke</title>\r\n      <path id=\"Path_40\" data-name=\"Path 40\" d=\"M644.6,141S143.02,215.537,147.049,870.207s342.774,201.755,342.774,201.755S404.659,847.213,388.815,762.2c-27.116-145.51-11.551-384.124,271.9-609.1C671.15,139.365,644.6,141,644.6,141Z\" transform=\"translate(-147.025 -140.939)\" fill=\"#f5f5f5\"/>\r\n    </svg>\r\n\r\n  </div>\r\n\r\n  <!-- Resources -->\r\n  <h2>Resources</h2>\r\n  <p>Here are some links to help you get started:</p>\r\n\r\n  <div class=\"card-container\">\r\n    <a class=\"card\" target=\"_blank\" rel=\"noopener\" href=\"https://angular.io/tutorial\">\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z\"/></svg>\r\n      <span>Learn Angular</span>\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z\"/></svg>    </a>\r\n\r\n    <a class=\"card\" target=\"_blank\" rel=\"noopener\" href=\"https://angular.io/cli\">\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z\"/></svg>\r\n      <span>CLI Documentation</span>\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z\"/></svg>\r\n    </a>\r\n\r\n    <a class=\"card\" target=\"_blank\" rel=\"noopener\" href=\"https://material.angular.io\">\r\n      <svg xmlns=\"http://www.w3.org/2000/svg\" style=\"margin-right: 8px\" width=\"21.813\" height=\"23.453\" viewBox=\"0 0 179.2 192.7\"><path fill=\"#ffa726\" d=\"M89.4 0 0 32l13.5 118.4 75.9 42.3 76-42.3L179.2 32 89.4 0z\"/><path fill=\"#fb8c00\" d=\"M89.4 0v192.7l76-42.3L179.2 32 89.4 0z\"/><path fill=\"#ffe0b2\" d=\"m102.9 146.3-63.3-30.5 36.3-22.4 63.7 30.6-36.7 22.3z\"/><path fill=\"#fff3e0\" d=\"M102.9 122.8 39.6 92.2l36.3-22.3 63.7 30.6-36.7 22.3z\"/><path fill=\"#fff\" d=\"M102.9 99.3 39.6 68.7l36.3-22.4 63.7 30.6-36.7 22.4z\"/></svg>\r\n      <span>Angular Material</span>\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z\"/></svg>\r\n    </a>\r\n\r\n    <a class=\"card\" target=\"_blank\" rel=\"noopener\" href=\"https://blog.angular.io/\">\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z\"/></svg>\r\n      <span>Angular Blog</span>\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z\"/></svg>\r\n    </a>\r\n\r\n    <a class=\"card\" target=\"_blank\" rel=\"noopener\" href=\"https://angular.io/devtools/\">\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" enable-background=\"new 0 0 24 24\" height=\"24px\" viewBox=\"0 0 24 24\" width=\"24px\" fill=\"#000000\"><g><rect fill=\"none\" height=\"24\" width=\"24\"/></g><g><g><path d=\"M14.73,13.31C15.52,12.24,16,10.93,16,9.5C16,5.91,13.09,3,9.5,3S3,5.91,3,9.5C3,13.09,5.91,16,9.5,16 c1.43,0,2.74-0.48,3.81-1.27L19.59,21L21,19.59L14.73,13.31z M9.5,14C7.01,14,5,11.99,5,9.5S7.01,5,9.5,5S14,7.01,14,9.5 S11.99,14,9.5,14z\"/><polygon points=\"10.29,8.44 9.5,6 8.71,8.44 6.25,8.44 8.26,10.03 7.49,12.5 9.5,10.97 11.51,12.5 10.74,10.03 12.75,8.44\"/></g></g></svg>\r\n      <span>Angular DevTools</span>\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z\"/></svg>\r\n    </a>\r\n\r\n  </div>\r\n\r\n  <!-- Next Steps -->\r\n  <h2>Next Steps</h2>\r\n  <p>What do you want to do next with your app?</p>\r\n\r\n  <input type=\"hidden\" #selection>\r\n\r\n  <div class=\"card-container\">\r\n    <button class=\"card card-small\" (click)=\"selection.value = 'component'\" tabindex=\"0\">\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\"/></svg>\r\n      <span>New Component</span>\r\n    </button>\r\n\r\n    <button class=\"card card-small\" (click)=\"selection.value = 'material'\" tabindex=\"0\">\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\"/></svg>\r\n      <span>Angular Material</span>\r\n    </button>\r\n\r\n    <button class=\"card card-small\" (click)=\"selection.value = 'pwa'\" tabindex=\"0\">\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\"/></svg>\r\n      <span>Add PWA Support</span>\r\n    </button>\r\n\r\n    <button class=\"card card-small\" (click)=\"selection.value = 'dependency'\" tabindex=\"0\">\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\"/></svg>\r\n      <span>Add Dependency</span>\r\n    </button>\r\n\r\n    <button class=\"card card-small\" (click)=\"selection.value = 'test'\" tabindex=\"0\">\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\"/></svg>\r\n      <span>Run and Watch Tests</span>\r\n    </button>\r\n\r\n    <button class=\"card card-small\" (click)=\"selection.value = 'build'\" tabindex=\"0\">\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\"/></svg>\r\n      <span>Build for Production</span>\r\n    </button>\r\n  </div>\r\n\r\n  <!-- Terminal -->\r\n  <div class=\"terminal\" [ngSwitch]=\"selection.value\">\r\n      <pre *ngSwitchDefault>ng generate component xyz</pre>\r\n      <pre *ngSwitchCase=\"'material'\">ng add @angular/material</pre>\r\n      <pre *ngSwitchCase=\"'pwa'\">ng add @angular/pwa</pre>\r\n      <pre *ngSwitchCase=\"'dependency'\">ng add _____</pre>\r\n      <pre *ngSwitchCase=\"'test'\">ng test</pre>\r\n      <pre *ngSwitchCase=\"'build'\">ng build</pre>\r\n  </div>\r\n\r\n  <!-- Links -->\r\n  <div class=\"card-container\">\r\n    <a class=\"circle-link\" title=\"Find a Local Meetup\" href=\"https://www.meetup.com/find/?keywords=angular\" target=\"_blank\" rel=\"noopener\">\r\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24.607\" height=\"23.447\" viewBox=\"0 0 24.607 23.447\">\r\n        <title>Meetup Logo</title>\r\n        <path id=\"logo--mSwarm\" d=\"M21.221,14.95A4.393,4.393,0,0,1,17.6,19.281a4.452,4.452,0,0,1-.8.069c-.09,0-.125.035-.154.117a2.939,2.939,0,0,1-2.506,2.091,2.868,2.868,0,0,1-2.248-.624.168.168,0,0,0-.245-.005,3.926,3.926,0,0,1-2.589.741,4.015,4.015,0,0,1-3.7-3.347,2.7,2.7,0,0,1-.043-.38c0-.106-.042-.146-.143-.166a3.524,3.524,0,0,1-1.516-.69A3.623,3.623,0,0,1,2.23,14.557a3.66,3.66,0,0,1,1.077-3.085.138.138,0,0,0,.026-.2,3.348,3.348,0,0,1-.451-1.821,3.46,3.46,0,0,1,2.749-3.28.44.44,0,0,0,.355-.281,5.072,5.072,0,0,1,3.863-3,5.028,5.028,0,0,1,3.555.666.31.31,0,0,0,.271.03A4.5,4.5,0,0,1,18.3,4.7a4.4,4.4,0,0,1,1.334,2.751,3.658,3.658,0,0,1,.022.706.131.131,0,0,0,.1.157,2.432,2.432,0,0,1,1.574,1.645,2.464,2.464,0,0,1-.7,2.616c-.065.064-.051.1-.014.166A4.321,4.321,0,0,1,21.221,14.95ZM13.4,14.607a2.09,2.09,0,0,0,1.409,1.982,4.7,4.7,0,0,0,1.275.221,1.807,1.807,0,0,0,.9-.151.542.542,0,0,0,.321-.545.558.558,0,0,0-.359-.534,1.2,1.2,0,0,0-.254-.078c-.262-.047-.526-.086-.787-.138a.674.674,0,0,1-.617-.75,3.394,3.394,0,0,1,.218-1.109c.217-.658.509-1.286.79-1.918a15.609,15.609,0,0,0,.745-1.86,1.95,1.95,0,0,0,.06-1.073,1.286,1.286,0,0,0-1.051-1.033,1.977,1.977,0,0,0-1.521.2.339.339,0,0,1-.446-.042c-.1-.092-.2-.189-.307-.284a1.214,1.214,0,0,0-1.643-.061,7.563,7.563,0,0,1-.614.512A.588.588,0,0,1,10.883,8c-.215-.115-.437-.215-.659-.316a2.153,2.153,0,0,0-.695-.248A2.091,2.091,0,0,0,7.541,8.562a9.915,9.915,0,0,0-.405.986c-.559,1.545-1.015,3.123-1.487,4.7a1.528,1.528,0,0,0,.634,1.777,1.755,1.755,0,0,0,1.5.211,1.35,1.35,0,0,0,.824-.858c.543-1.281,1.032-2.584,1.55-3.875.142-.355.28-.712.432-1.064a.548.548,0,0,1,.851-.24.622.622,0,0,1,.185.539,2.161,2.161,0,0,1-.181.621c-.337.852-.68,1.7-1.018,2.552a2.564,2.564,0,0,0-.173.528.624.624,0,0,0,.333.71,1.073,1.073,0,0,0,.814.034,1.22,1.22,0,0,0,.657-.655q.758-1.488,1.511-2.978.35-.687.709-1.37a1.073,1.073,0,0,1,.357-.434.43.43,0,0,1,.463-.016.373.373,0,0,1,.153.387.7.7,0,0,1-.057.236c-.065.157-.127.316-.2.469-.42.883-.846,1.763-1.262,2.648A2.463,2.463,0,0,0,13.4,14.607Zm5.888,6.508a1.09,1.09,0,0,0-2.179.006,1.09,1.09,0,0,0,2.179-.006ZM1.028,12.139a1.038,1.038,0,1,0,.01-2.075,1.038,1.038,0,0,0-.01,2.075ZM13.782.528a1.027,1.027,0,1,0-.011,2.055A1.027,1.027,0,0,0,13.782.528ZM22.21,6.95a.882.882,0,0,0-1.763.011A.882.882,0,0,0,22.21,6.95ZM4.153,4.439a.785.785,0,1,0,.787-.78A.766.766,0,0,0,4.153,4.439Zm8.221,18.22a.676.676,0,1,0-.677.666A.671.671,0,0,0,12.374,22.658ZM22.872,12.2a.674.674,0,0,0-.665.665.656.656,0,0,0,.655.643.634.634,0,0,0,.655-.644A.654.654,0,0,0,22.872,12.2ZM7.171-.123A.546.546,0,0,0,6.613.43a.553.553,0,1,0,1.106,0A.539.539,0,0,0,7.171-.123ZM24.119,9.234a.507.507,0,0,0-.493.488.494.494,0,0,0,.494.494.48.48,0,0,0,.487-.483A.491.491,0,0,0,24.119,9.234Zm-19.454,9.7a.5.5,0,0,0-.488-.488.491.491,0,0,0-.487.5.483.483,0,0,0,.491.479A.49.49,0,0,0,4.665,18.936Z\" transform=\"translate(0 0.123)\" fill=\"#f64060\"/>\r\n      </svg>\r\n    </a>\r\n\r\n    <a class=\"circle-link\" title=\"Join the Conversation on Discord\" href=\"https://discord.gg/angular\" target=\"_blank\" rel=\"noopener\">\r\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"26\" height=\"26\" viewBox=\"0 0 245 240\">\r\n        <title>Discord Logo</title>\r\n        <path d=\"M104.4 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1.1-6.1-4.5-11.1-10.2-11.1zM140.9 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1s-4.5-11.1-10.2-11.1z\"/>\r\n        <path d=\"M189.5 20h-134C44.2 20 35 29.2 35 40.6v135.2c0 11.4 9.2 20.6 20.5 20.6h113.4l-5.3-18.5 12.8 11.9 12.1 11.2 21.5 19V40.6c0-11.4-9.2-20.6-20.5-20.6zm-38.6 130.6s-3.6-4.3-6.6-8.1c13.1-3.7 18.1-11.9 18.1-11.9-4.1 2.7-8 4.6-11.5 5.9-5 2.1-9.8 3.5-14.5 4.3-9.6 1.8-18.4 1.3-25.9-.1-5.7-1.1-10.6-2.7-14.7-4.3-2.3-.9-4.8-2-7.3-3.4-.3-.2-.6-.3-.9-.5-.2-.1-.3-.2-.4-.3-1.8-1-2.8-1.7-2.8-1.7s4.8 8 17.5 11.8c-3 3.8-6.7 8.3-6.7 8.3-22.1-.7-30.5-15.2-30.5-15.2 0-32.2 14.4-58.3 14.4-58.3 14.4-10.8 28.1-10.5 28.1-10.5l1 1.2c-18 5.2-26.3 13.1-26.3 13.1s2.2-1.2 5.9-2.9c10.7-4.7 19.2-6 22.7-6.3.6-.1 1.1-.2 1.7-.2 6.1-.8 13-1 20.2-.2 9.5 1.1 19.7 3.9 30.1 9.6 0 0-7.9-7.5-24.9-12.7l1.4-1.6s13.7-.3 28.1 10.5c0 0 14.4 26.1 14.4 58.3 0 0-8.5 14.5-30.6 15.2z\"/>\r\n      </svg>\r\n    </a>\r\n  </div>\r\n\r\n  <!-- Footer -->\r\n  <footer>\r\n      Love Angular?&nbsp;\r\n      <a href=\"https://github.com/angular/angular\" target=\"_blank\" rel=\"noopener\"> Give our repo a star.\r\n        <div class=\"github-star-badge\">\r\n            <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M0 0h24v24H0z\" fill=\"none\"/><path d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\"/></svg>\r\n          Star\r\n        </div>\r\n      </a>\r\n      <a href=\"https://github.com/angular/angular\" target=\"_blank\" rel=\"noopener\">\r\n        <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z\" fill=\"#1976d2\"/><path d=\"M0 0h24v24H0z\" fill=\"none\"/></svg>\r\n      </a>\r\n  </footer>\r\n\r\n  <svg id=\"clouds\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2611.084\" height=\"485.677\" viewBox=\"0 0 2611.084 485.677\">\r\n    <title>Gray Clouds Background</title>\r\n    <path id=\"Path_39\" data-name=\"Path 39\" d=\"M2379.709,863.793c10-93-77-171-168-149-52-114-225-105-264,15-75,3-140,59-152,133-30,2.83-66.725,9.829-93.5,26.25-26.771-16.421-63.5-23.42-93.5-26.25-12-74-77-130-152-133-39-120-212-129-264-15-54.084-13.075-106.753,9.173-138.488,48.9-31.734-39.726-84.4-61.974-138.487-48.9-52-114-225-105-264,15a162.027,162.027,0,0,0-103.147,43.044c-30.633-45.365-87.1-72.091-145.206-58.044-52-114-225-105-264,15-75,3-140,59-152,133-53,5-127,23-130,83-2,42,35,72,70,86,49,20,106,18,157,5a165.625,165.625,0,0,0,120,0c47,94,178,113,251,33,61.112,8.015,113.854-5.72,150.492-29.764a165.62,165.62,0,0,0,110.861-3.236c47,94,178,113,251,33,31.385,4.116,60.563,2.495,86.487-3.311,25.924,5.806,55.1,7.427,86.488,3.311,73,80,204,61,251-33a165.625,165.625,0,0,0,120,0c51,13,108,15,157-5a147.188,147.188,0,0,0,33.5-18.694,147.217,147.217,0,0,0,33.5,18.694c49,20,106,18,157,5a165.625,165.625,0,0,0,120,0c47,94,178,113,251,33C2446.709,1093.793,2554.709,922.793,2379.709,863.793Z\" transform=\"translate(142.69 -634.312)\" fill=\"#eee\"/>\r\n  </svg>\r\n\r\n</div>\r\n\r\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\r\n\r\n<router-outlet></router-outlet>\r\n"
         },
         {
@@ -222,6 +231,7 @@
                 "./avatar.component.html"
             ],
             "viewProviders": [],
+            "hostDirectives": [],
             "inputsClass": [
                 {
                     "name": "avatarUrl",
@@ -275,6 +285,8 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
+            "standalone": false,
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
@@ -287,6 +299,7 @@
                 }
             ],
             "stylesData": "",
+            "extends": [],
             "accessors": {
                 "style": {
                     "name": "style",
@@ -318,6 +331,7 @@
                 "./breadcrumbs.component.html"
             ],
             "viewProviders": [],
+            "hostDirectives": [],
             "inputsClass": [
                 {
                     "name": "items",
@@ -336,6 +350,8 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
+            "standalone": false,
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
@@ -356,6 +372,7 @@
                 "args": [],
                 "line": 9
             },
+            "extends": [],
             "templateData": "<div class=\"text-textMedium text-15\">\r\n    <span *ngFor=\"let item of items; let idx = index\">\r\n        <span class=\"relative mx-2 font-lg\"\r\n              *ngIf=\"idx !== 0\">/</span>\r\n        {{ item }}\r\n    </span>\r\n</div>"
         },
         {
@@ -375,6 +392,7 @@
             "template": "<button   type=\"button\"\n   (click)=\"onClick.emit($event)\"\n   [ngClass]=\"classes\"\n   [ngStyle]=\"{ 'background-color': backgroundColor }\"\n >\n   {{ label }}\n </button>",
             "templateUrl": [],
             "viewProviders": [],
+            "hostDirectives": [],
             "inputsClass": [
                 {
                     "name": "backgroundColor",
@@ -395,17 +413,17 @@
                         {
                             "pos": 747,
                             "end": 761,
-                            "flags": 4227072,
+                            "flags": 16842752,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
-                            "kind": 325,
+                            "kind": 334,
                             "tagName": {
                                 "pos": 748,
                                 "end": 756,
-                                "flags": 4227072,
+                                "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
-                                "kind": 79,
+                                "kind": 80,
                                 "escapedText": "required"
                             },
                             "comment": ""
@@ -458,6 +476,8 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
+            "standalone": false,
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
@@ -470,6 +490,7 @@
                 }
             ],
             "stylesData": "",
+            "extends": [],
             "accessors": {
                 "classes": {
                     "name": "classes",
@@ -484,7 +505,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-dc74f065988b4900e0460e13b9053bfeafd649aaedd16ea4a608c9fd69c0ad8ce6a553a4503c17f3a3e61ee4b590639af30705b06dfb37d7821d01628441d923-1",
+            "id": "component-ButtonComponent-a69a3359c887d0f507c7e75337cb4e31acab7f624675e18f327705e8a38cfca0439b32f51e0367f5bc33f8ad1e81385ae14ae106e09756d27286561bcd5aa3c1-1",
             "file": "src/app/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -500,13 +521,14 @@
                 "./button.component.html"
             ],
             "viewProviders": [],
+            "hostDirectives": [],
             "inputsClass": [
                 {
                     "name": "className",
                     "defaultValue": "'btn-primary'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "line": 13,
                     "type": "string",
                     "decorators": []
                 },
@@ -514,7 +536,7 @@
                     "name": "disabled",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 18,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -522,7 +544,7 @@
                     "name": "icon",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 14,
                     "type": "string",
                     "decorators": []
                 },
@@ -531,7 +553,7 @@
                     "defaultValue": "18",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 15,
                     "type": "number",
                     "decorators": []
                 },
@@ -539,7 +561,7 @@
                     "name": "isActive",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 17,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -547,16 +569,25 @@
                     "name": "isWorking",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 14,
+                    "line": 16,
                     "type": "boolean",
                     "decorators": []
                 },
                 {
-                    "name": "theme",
+                    "name": "label",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
-                    "type": "boolean",
+                    "line": 21,
+                    "type": "any",
+                    "decorators": []
+                },
+                {
+                    "name": "theme",
+                    "defaultValue": "ThemeType.default",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "ThemeType",
                     "decorators": []
                 },
                 {
@@ -564,37 +595,37 @@
                     "defaultValue": "'button'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 10,
+                    "line": 12,
                     "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "variant",
+                    "defaultValue": "ButtonVariantType.default",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "ButtonVariantType",
                     "decorators": []
                 }
             ],
             "outputsClass": [],
             "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnChanges",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 21,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
+            "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
+            "standalone": false,
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import{ Component, Input, OnChanges } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'app-button',\r\n    templateUrl: './button.component.html',\r\n    styleUrls: ['./button.component.scss']\r\n})\r\n\r\nexport class ButtonComponent implements OnChanges{\r\n    @Input() type= 'button';\r\n    @Input() className ='btn-primary';\r\n    @Input() icon!: string;\r\n    @Input() iconSize =18;\r\n    @Input() isWorking!: boolean;\r\n    @Input() isActive!: boolean;\r\n    @Input() disabled!: boolean;\r\n    @Input() theme!: boolean;\r\n\r\n    constructor() {}\r\n\r\n    ngOnChanges(){\r\n        console.log(this.className)\r\n    }\r\n}",
+            "sourceCode": "import{ Component, Input } from '@angular/core';\r\nimport ButtonVariantType from '../types/ButtonVariantType';\r\nimport  ThemeType  from \"../types/ThemeType\";\r\n\r\n@Component({\r\n    selector: 'app-button',\r\n    templateUrl: './button.component.html',\r\n    styleUrls: ['./button.component.scss']\r\n})\r\n\r\nexport class ButtonComponent {\r\n    @Input() type= 'button';\r\n    @Input() className ='btn-primary';\r\n    @Input() icon!: string;\r\n    @Input() iconSize =18;\r\n    @Input() isWorking!: boolean;\r\n    @Input() isActive!: boolean;\r\n    @Input() disabled!: boolean;\r\n    @Input() theme: ThemeType = ThemeType.default;\r\n    @Input() variant: ButtonVariantType = ButtonVariantType.default;\r\n    @Input() label!: any;\r\n    constructor() {}\r\n\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "$primary: #0052cc;\r\n$success: #0b875b;\r\n$danger: #e13c3c;\r\n$warning: #f89c1c;\r\n$info: #0fb9b1;\r\n$secondary: #f4f5f7;\r\n$jira-bg: rgb(222, 235, 255);\r\n\r\n.btn {\r\n  @apply text-btn inline-flex items-center justify-center h-8 align-middle leading-none whitespace-nowrap rounded-sm transition-all duration-100 appearance-none cursor-pointer select-none px-3;\r\n\r\n  &.icon-only {\r\n    @apply px-2;\r\n\r\n    .with-padding {\r\n      padding: 0;\r\n    }\r\n  }\r\n\r\n  &.disabled {\r\n    @apply opacity-50 cursor-default pointer-events-none;\r\n  }\r\n\r\n  &:focus,\r\n  &:active {\r\n    outline-color: #1890ff;\r\n  }\r\n\r\n  &.no-padding-left {\r\n    padding-left: 0;\r\n  }\r\n\r\n  &.no-padding-right {\r\n    padding-right: 0;\r\n  }\r\n}\r\n\r\n@mixin buttonBackground($btn-variant, $background) {\r\n  $background-dark: darken($background, 10%);\r\n  $background-light: lighten($background, 10%);\r\n\r\n  .btn-#{$btn-variant} {\r\n    border: aliceblue;\r\n    color: white;\r\n    font-weight: 500;\r\n    background: $background;\r\n    padding: 10px;\r\n    font-size: 14.5px;\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 2rem;\r\n    border-radius: 5px;\r\n    vertical-align: middle;\r\n  line-height: 1;\r\n  white-space: nowrap;\r\n  transition-property: all;\r\n  transition-duration: 100ms;\r\n  -webkit-appearance: none;\r\n  -moz-appearance: none;\r\n  appearance: none;\r\n  cursor: pointer;\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  user-select: none;\r\n  padding-left: 0.75rem;\r\n  padding-right: 0.75rem;\r\n\r\n    &:disabled {\r\n      cursor: not-allowed;\r\n      background-color: lighten($background, 30%);\r\n    }\r\n\r\n    &:not(:disabled) {\r\n      &:hover {\r\n        background: $background-light;\r\n      }\r\n      &:active {\r\n        background: $background-dark;\r\n      }\r\n      &.active {\r\n        background: $background-dark !important;\r\n      }\r\n    }\r\n  }\r\n}\r\n@include buttonBackground(primary, $primary);\r\n@include buttonBackground(success, $success);\r\n\r\n.btn-secondary {\r\n  @apply text-textDark font-normal;\r\n  background: $secondary;\r\n  \r\n\r\n  &:not(:disabled) {\r\n    &:hover {\r\n      @apply bg-backgroundLight;\r\n    }\r\n\r\n    &:active {\r\n      @apply bg-backgroundLightPrimary;\r\n      color: $primary;\r\n    }\r\n  }\r\n}\r\n.btn-secondary{\r\n  border: aliceblue;\r\n  font-weight: 500;\r\n    background: #f4f5f7;\r\n    padding: 10px;\r\n    font-size: 14.5px;\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 2rem;\r\n    border-radius: 5px;\r\n    vertical-align: middle;\r\n    line-height: 1;\r\n    white-space: nowrap;\r\n    transition-property: all;\r\n    transition-duration: 100ms;\r\n    -webkit-appearance: none;\r\n    appearance: none;\r\n    cursor: pointer;\r\n    -webkit-user-select: none;\r\n    user-select: none;\r\n    padding-left: 0.75rem;\r\n    padding-right: 0.75rem;\r\n}\r\n.btn-empty {\r\n  background: rgba(235, 236, 240, var(--bg-opacity));\r\n  outline: none;\r\n  @apply text-textDark;\r\n\r\n  &:focus,\r\n  &:active {\r\n    outline: none;\r\n  }\r\n\r\n  &:not(:disabled) {\r\n    &:hover {\r\n      @apply bg-backgroundLight;\r\n    }\r\n    &:active {\r\n      @apply bg-backgroundLightPrimary;\r\n      color: $primary;\r\n    }\r\n    &.is-active {\r\n      background-color: $jira-bg;\r\n      @apply text-textDark;\r\n    }\r\n  }\r\n}\r\n\r\n.with-padding {\r\n  @apply pl-2;\r\n}\r\n\r\n.is-active {\r\n  @apply text-textLink bg-backgroundLightPrimary;\r\n}\r\n.btn-empty{\r\n  border: aliceblue;\r\n  font-weight: 500;\r\n    background: rgba(235, 236, 240, var(--bg-opacity));\r\n    padding: 10px;\r\n    font-size: 14.5px;\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 2rem;\r\n    border-radius: 5px;\r\n    vertical-align: middle;\r\n    line-height: 1;\r\n    white-space: nowrap;\r\n    transition-property: all;\r\n    transition-duration: 100ms;\r\n    -webkit-appearance: none;\r\n    appearance: none;\r\n    cursor: pointer;\r\n    -webkit-user-select: none;\r\n    user-select: none;\r\n    padding-left: 0.75rem;\r\n    padding-right: 0.75rem;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n.btn btn-primary{\r\n  padding: 10px;\r\n}\r\n\r\n\r\n.btn-primary[_ngcontent-qxv-c49] {\r\n  color: white;\r\n  font-weight: 500;\r\n  background: #0052cc;\r\n  padding: 10px;\r\n}\r\n\r\n\r\n.btn[_ngcontent-hxx-c42] {\r\n  font-size: 14.5px;\r\n  display: inline-flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  height: 2rem;\r\n  vertical-align: middle;\r\n  line-height: 1;\r\n  white-space: nowrap;\r\n  border-radius: 0.125rem;\r\n  transition-property: all;\r\n  transition-duration: 100ms;\r\n  -webkit-appearance: none;\r\n  -moz-appearance: none;\r\n  appearance: none;\r\n  cursor: pointer;\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  user-select: none;\r\n  padding-left: 0.75rem;\r\n  padding-right: 0.75rem;\r\n}\r\n.button, input, optgroup, select, textarea {\r\n  padding: 0;\r\n  line-height: inherit;\r\n  color: inherit;\r\n}\r\n.button, select {\r\n  text-transform: none;\r\n}\r\n.button, input {\r\n  overflow: visible;\r\n}\r\n::selection {\r\n  color: #fff;\r\n  background: #1890ff;\r\n}\r\n\r\n.btn-outline{\r\n  border: 1px solid #000;\r\n  font-weight: 500;\r\n    background: rgba(235, 236, 240, var(--bg-opacity));\r\n    padding: 10px;\r\n    font-size: 14.5px;\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 2rem;\r\n    border-radius: 5px;\r\n    vertical-align: middle;\r\n    line-height: 1;\r\n    white-space: nowrap;\r\n    transition-property: all;\r\n    transition-duration: 100ms;\r\n    -webkit-appearance: none;\r\n    appearance: none;\r\n    cursor: pointer;\r\n    -webkit-user-select: none;\r\n    user-select: none;\r\n    padding-left: 0.75rem;\r\n    padding-right: 0.75rem;\r\n}\r\n\r\n.btn-outline {\r\n  background: rgba(235, 236, 240, var(--bg-opacity));\r\n  outline: none;\r\n  @apply text-textDark;\r\n\r\n  &:focus,\r\n  &:active {\r\n    outline: none;\r\n  }\r\n\r\n  &:not(:disabled) {\r\n    &:hover {\r\n      @apply bg-backgroundLight;\r\n    }\r\n    &:active {\r\n      @apply bg-backgroundLightPrimary;\r\n      color: $primary;\r\n    }\r\n    &.is-active {\r\n      background-color: $jira-bg;\r\n      @apply text-textDark;\r\n    }\r\n  }\r\n}",
+                    "data": "@import '../styles/index.css';\r\n$primary: #0052cc;\r\n$success: #0b875b;\r\n$danger: #e13c3c;\r\n$warning: #f89c1c;\r\n$info: #0fb9b1;\r\n$secondary: #f4f5f7;\r\n$jira-bg: rgb(222, 235, 255);\r\n\r\n.btn {\r\n  @apply text-btn inline-flex items-center justify-center h-8 align-middle leading-none whitespace-nowrap rounded-sm transition-all duration-100 appearance-none cursor-pointer select-none px-3;\r\n\r\n  &.icon-only {\r\n    @apply px-2;\r\n\r\n    .with-padding {\r\n      padding: 0;\r\n    }\r\n  }\r\n\r\n  &.disabled {\r\n    @apply opacity-50 cursor-default pointer-events-none;\r\n  }\r\n\r\n  &:focus,\r\n  &:active {\r\n    outline-color: #1890ff;\r\n  }\r\n\r\n  &.no-padding-left {\r\n    padding-left: 0;\r\n  }\r\n\r\n  &.no-padding-right {\r\n    padding-right: 0;\r\n  }\r\n}\r\n\r\n@mixin buttonBackground($btn-variant, $background) {\r\n  $background-dark: darken($background, 10%);\r\n  $background-light: lighten($background, 10%);\r\n\r\n  .btn-#{$btn-variant} {\r\n    border: aliceblue;\r\n    color: white;\r\n    font-weight: 500;\r\n    background: $background;\r\n    padding: 10px;\r\n    font-size: 14.5px;\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 2rem;\r\n    border-radius: 5px;\r\n    vertical-align: middle;\r\n  line-height: 1;\r\n  white-space: nowrap;\r\n  transition-property: all;\r\n  transition-duration: 100ms;\r\n  -webkit-appearance: none;\r\n  -moz-appearance: none;\r\n  appearance: none;\r\n  cursor: pointer;\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  user-select: none;\r\n  padding-left: 0.75rem;\r\n  padding-right: 0.75rem;\r\n\r\n    &:disabled {\r\n      cursor: not-allowed;\r\n      background-color: lighten($background, 30%);\r\n    }\r\n\r\n    &:not(:disabled) {\r\n      &:hover {\r\n        background: $background-light;\r\n      }\r\n      &:active {\r\n        background: $background-dark;\r\n      }\r\n      &.active {\r\n        background: $background-dark !important;\r\n      }\r\n    }\r\n  }\r\n}\r\n@include buttonBackground(primary, $primary);\r\n@include buttonBackground(success, $success);\r\n\r\n.btn-secondary {\r\n  @apply text-textDark font-normal;\r\n  background: $secondary;\r\n  \r\n\r\n  &:not(:disabled) {\r\n    &:hover {\r\n      @apply bg-backgroundLight;\r\n    }\r\n\r\n    &:active {\r\n      @apply bg-backgroundLightPrimary;\r\n      color: $primary;\r\n    }\r\n  }\r\n}\r\n.btn-secondary{\r\n  border: aliceblue;\r\n  font-weight: 500;\r\n    background: #f4f5f7;\r\n    padding: 10px;\r\n    font-size: 14.5px;\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 2rem;\r\n    border-radius: 5px;\r\n    vertical-align: middle;\r\n    line-height: 1;\r\n    white-space: nowrap;\r\n    transition-property: all;\r\n    transition-duration: 100ms;\r\n    -webkit-appearance: none;\r\n    appearance: none;\r\n    cursor: pointer;\r\n    -webkit-user-select: none;\r\n    user-select: none;\r\n    padding-left: 0.75rem;\r\n    padding-right: 0.75rem;\r\n}\r\n.btn-empty {\r\n  background: rgba(235, 236, 240, var(--bg-opacity));\r\n  outline: none;\r\n  @apply text-textDark;\r\n\r\n  &:focus,\r\n  &:active {\r\n    outline: none;\r\n  }\r\n\r\n  &:not(:disabled) {\r\n    &:hover {\r\n      @apply bg-backgroundLight;\r\n    }\r\n    &:active {\r\n      @apply bg-backgroundLightPrimary;\r\n      color: $primary;\r\n    }\r\n    &.is-active {\r\n      background-color: $jira-bg;\r\n      @apply text-textDark;\r\n    }\r\n  }\r\n}\r\n\r\n.with-padding {\r\n  @apply pl-2;\r\n}\r\n\r\n.is-active {\r\n  @apply text-textLink bg-backgroundLightPrimary;\r\n}\r\n.btn-empty{\r\n  border: aliceblue;\r\n  font-weight: 500;\r\n    background: rgba(235, 236, 240, var(--bg-opacity));\r\n    padding: 10px;\r\n    font-size: 14.5px;\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 2rem;\r\n    border-radius: 5px;\r\n    vertical-align: middle;\r\n    line-height: 1;\r\n    white-space: nowrap;\r\n    transition-property: all;\r\n    transition-duration: 100ms;\r\n    -webkit-appearance: none;\r\n    appearance: none;\r\n    cursor: pointer;\r\n    -webkit-user-select: none;\r\n    user-select: none;\r\n    padding-left: 0.75rem;\r\n    padding-right: 0.75rem;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n.btn btn-primary{\r\n  padding: 10px;\r\n}\r\n\r\n\r\n.btn-primary[_ngcontent-qxv-c49] {\r\n  color: white;\r\n  font-weight: 500;\r\n  background: #0052cc;\r\n  padding: 10px;\r\n}\r\n\r\n\r\n.btn[_ngcontent-hxx-c42] {\r\n  font-size: 14.5px;\r\n  display: inline-flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  height: 2rem;\r\n  vertical-align: middle;\r\n  line-height: 1;\r\n  white-space: nowrap;\r\n  border-radius: 0.125rem;\r\n  transition-property: all;\r\n  transition-duration: 100ms;\r\n  -webkit-appearance: none;\r\n  -moz-appearance: none;\r\n  appearance: none;\r\n  cursor: pointer;\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  user-select: none;\r\n  padding-left: 0.75rem;\r\n  padding-right: 0.75rem;\r\n}\r\n.button, input, optgroup, select, textarea {\r\n  padding: 0;\r\n  line-height: inherit;\r\n  color: inherit;\r\n}\r\n.button, select {\r\n  text-transform: none;\r\n}\r\n.button, input {\r\n  overflow: visible;\r\n}\r\n::selection {\r\n  color: #fff;\r\n  background: #1890ff;\r\n}\r\n\r\n.btn-outline{\r\n  border: 1px solid #000;\r\n  font-weight: 500;\r\n    background: rgba(235, 236, 240, var(--bg-opacity));\r\n    padding: 10px;\r\n    font-size: 14.5px;\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 2rem;\r\n    border-radius: 5px;\r\n    vertical-align: middle;\r\n    line-height: 1;\r\n    white-space: nowrap;\r\n    transition-property: all;\r\n    transition-duration: 100ms;\r\n    -webkit-appearance: none;\r\n    appearance: none;\r\n    cursor: pointer;\r\n    -webkit-user-select: none;\r\n    user-select: none;\r\n    padding-left: 0.75rem;\r\n    padding-right: 0.75rem;\r\n}\r\n\r\n.btn-outline {\r\n  background: rgba(235, 236, 240, var(--bg-opacity));\r\n  outline: none;\r\n  @apply text-textDark;\r\n\r\n  &:focus,\r\n  &:active {\r\n    outline: none;\r\n  }\r\n\r\n  &:not(:disabled) {\r\n    &:hover {\r\n      @apply bg-backgroundLight;\r\n    }\r\n    &:active {\r\n      @apply bg-backgroundLightPrimary;\r\n      color: $primary;\r\n    }\r\n    &.is-active {\r\n      background-color: $jira-bg;\r\n      @apply text-textDark;\r\n    }\r\n  }\r\n}",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -605,15 +636,13 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 17
+                "line": 21
             },
-            "implements": [
-                "OnChanges"
-            ],
+            "extends": [],
             "isDuplicate": true,
             "duplicateId": 1,
             "duplicateName": "ButtonComponent-1",
-            "templateData": "<button \r\n    [type]=\"type\"\r\n    [ngClass]=\"['btn', className, isActive ? 'is-active':'',content?.innerHTML?.trim()? '': 'icon-only']\"\r\n    [disabled]=\"disabled\">\r\n\r\n    <svg-icon *ngIf=\"!isWorking && icon\"\r\n        [name]=\"icon\"\r\n        [size]=\"iconSize\">\r\n    </svg-icon>\r\n    <svg-icon *ngIf=\"isWorking\"\r\n        name=\"spin\"\r\n        class=\"spinner\"\r\n        [size]=\"iconSize\">\r\n    </svg-icon>\r\n    <span #content\r\n        [class.with-padding]=\"isWorking || icon\">\r\n        <ng-content></ng-content>\r\n    </span>\r\n</button>"
+            "templateData": "<button \r\n    [type]=\"type\"\r\n    [ngClass]=\"{\r\n        'basicui-button': true,\r\n        'basicui-button--theme-default': theme === 'default',\r\n        'basicui-button--theme-primary': theme === 'primary',\r\n        'basicui-button--theme-danger': theme === 'danger',\r\n        'basicui-button--variant-default': variant === 'default',\r\n        'basicui-button--variant-fill': variant === 'fill',\r\n        'basicui-button--variant-outline': variant === 'outline',\r\n        'basicui-button--variant-transparent': variant === 'transparent',\r\n        'basicui-button--loading': loading\r\n      }\"\r\n    [disabled]=\"disabled\"\r\n    >\r\n\r\n    <svg-icon *ngIf=\"!isWorking && icon\"\r\n        [name]=\"icon\"\r\n        [size]=\"iconSize\">\r\n    </svg-icon>\r\n    <svg-icon *ngIf=\"isWorking\"\r\n        name=\"spin\"\r\n        class=\"spinner\"\r\n        [size]=\"iconSize\">\r\n    </svg-icon>\r\n    <span #content\r\n        [class.with-padding]=\"isWorking || icon\">\r\n        <ng-content></ng-content>\r\n    </span>{{label}}\r\n</button>"
         },
         {
             "name": "CheckboxComponent",
@@ -633,6 +662,7 @@
                 "./checkbox.component.html"
             ],
             "viewProviders": [],
+            "hostDirectives": [],
             "inputsClass": [
                 {
                     "name": "isChecked",
@@ -716,6 +746,8 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
+            "standalone": false,
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
@@ -728,6 +760,7 @@
                 }
             ],
             "stylesData": "",
+            "extends": [],
             "templateData": "<!--<label [for]=\"label\">\r\n  <input type=\"checkbox\" [checked]=\"isChecked\" (change)=\"onCheckboxChange($event)\" />{{label}}\r\n</label>-->\r\n<label class=\"basicui-checkbox\" [class.error]=\"isError\" [class.tooltip]=\"isTooltip\">\r\n  <input type=\"checkbox\" class=\"checkbox-input\" [checked]=\"isChecked\" (change)=\"toggleCheckbox($event)\" />\r\n  <span class=\"checkbox-label\">{{label}}</span>\r\n</label>"
         },
         {
@@ -747,6 +780,7 @@
             "template": "<header>    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            primary\n            size=\"small\"\n            primary=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>",
             "templateUrl": [],
             "viewProviders": [],
+            "hostDirectives": [],
             "inputsClass": [
                 {
                     "name": "user",
@@ -790,6 +824,8 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
+            "standalone": false,
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
@@ -801,7 +837,8 @@
                     "styleUrl": "./header.css"
                 }
             ],
-            "stylesData": ""
+            "stylesData": "",
+            "extends": []
         },
         {
             "name": "IconButtonComponent",
@@ -821,6 +858,7 @@
                 "./icon-button.component.html"
             ],
             "viewProviders": [],
+            "hostDirectives": [],
             "inputsClass": [
                 {
                     "name": "children",
@@ -907,6 +945,8 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
+            "standalone": false,
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
@@ -914,11 +954,12 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../styles/index.css';\r\n\r\n.basicui-button--loading svg {\r\n    display: none;\r\n}\r\n.basicui-button--loading .basicui-button__svg--loading {\r\n    display: block;\r\n    animation: animate_button_loading 2s linear infinite both;\r\n}\r\n\r\n/*@import '~material-design-icons/iconfont/material-icons.css';\r\n.material-icons{\r\n    font-size: 15px;\r\n}*/\r\n/*button{\r\n    height: 32px;\r\n    width: 32px;\r\n    border: none;\r\n    border: 1px solid #e6e7e7;\r\n    border-radius: 50%;\r\n    background-color: #e6e7e7;\r\n    align-items: center;\r\n    cursor: pointer;\r\n}\r\nbutton:hover{\r\n    background-color: #c3c3c3;\r\n}\r\n\r\n.default-outline-variant{\r\n    border: 1px solid #dadada;\r\n    background-color:white;\r\n    border-radius: 2px;\r\n    height: 32px;\r\n    width: 32px;\r\n}\r\n.default-outline-variant:hover{\r\n    background-color:white;\r\n    border: 1px solid #a1a1a1;\r\n}\r\n.default-fill-variant{\r\n    border: 1px solid #dadada;\r\n    background-color:white;\r\n    border-radius: 2px;\r\n    height: 32px;\r\n    width: 32px;\r\n}\r\n.default-fill-variant:hover{\r\n    background-color:#d1d1d1;\r\n    border: 1px solid #d1d1d1;\r\n}\r\n.default-transparent-variant{\r\n    height: 32px;\r\n    width: 32px;\r\n    border: 1px solid #000;\r\n    border-radius: 2px;\r\n    background-color: #e6e7e7;\r\n}\r\n.default-transparent-variant:hover{\r\n    background-color: #c3c3c3;\r\n}\r\n.primary{\r\n    background-color: #1492db;\r\n    border: 1px solid #1492db;\r\n    height: 32px;\r\n    width: 32px;\r\n    border-radius: 2px;\r\n    color: white;\r\n}\r\n.primary:hover{\r\n    background-color: #0669ac;\r\n}\r\n.primary-outline-variant{\r\n    background-color: #ffffff;\r\n    border: 1px solid #5cbcf4;\r\n    border-radius: 2px;\r\n}\r\n.primary-outline-variant:hover{\r\n    background-color: #ffffff;\r\n    border: 1px solid #0480d2;\r\n}\r\n.primary-fill-variant{\r\n    background-color: #ffffff;\r\n    border: 1px solid #0480d2;\r\n    border-radius: 2px;\r\n}\r\n.primary-fill-variant:hover{\r\n    background-color: #0588df;\r\n    border: 1px solid #0588df;\r\n    color: white;\r\n}\r\n.primary-transparent-variant{\r\n    background-color: #d9eaf8;\r\n    border: 1px solid #0480d2;\r\n    border-radius: 2px;\r\n}\r\n.primary-transparent-variant:hover{\r\n    border: 1px solid #0480d2;\r\n    background-color: #c9e6fc;\r\n}*/",
+                    "data": "@import '../styles/index.css';\r\n\r\n.basicui-button--loading svg {\r\n    display: none;\r\n}\r\n.basicui-button--loading .basicui-button__svg--loading {\r\n    display: block;\r\n    animation: animate_button_loading 2s linear infinite both;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n/*@import '~material-design-icons/iconfont/material-icons.css';\r\n.material-icons{\r\n    font-size: 15px;\r\n}*/\r\n/*button{\r\n    height: 32px;\r\n    width: 32px;\r\n    border: none;\r\n    border: 1px solid #e6e7e7;\r\n    border-radius: 50%;\r\n    background-color: #e6e7e7;\r\n    align-items: center;\r\n    cursor: pointer;\r\n}\r\nbutton:hover{\r\n    background-color: #c3c3c3;\r\n}\r\n\r\n.default-outline-variant{\r\n    border: 1px solid #dadada;\r\n    background-color:white;\r\n    border-radius: 2px;\r\n    height: 32px;\r\n    width: 32px;\r\n}\r\n.default-outline-variant:hover{\r\n    background-color:white;\r\n    border: 1px solid #a1a1a1;\r\n}\r\n.default-fill-variant{\r\n    border: 1px solid #dadada;\r\n    background-color:white;\r\n    border-radius: 2px;\r\n    height: 32px;\r\n    width: 32px;\r\n}\r\n.default-fill-variant:hover{\r\n    background-color:#d1d1d1;\r\n    border: 1px solid #d1d1d1;\r\n}\r\n.default-transparent-variant{\r\n    height: 32px;\r\n    width: 32px;\r\n    border: 1px solid #000;\r\n    border-radius: 2px;\r\n    background-color: #e6e7e7;\r\n}\r\n.default-transparent-variant:hover{\r\n    background-color: #c3c3c3;\r\n}\r\n.primary{\r\n    background-color: #1492db;\r\n    border: 1px solid #1492db;\r\n    height: 32px;\r\n    width: 32px;\r\n    border-radius: 2px;\r\n    color: white;\r\n}\r\n.primary:hover{\r\n    background-color: #0669ac;\r\n}\r\n.primary-outline-variant{\r\n    background-color: #ffffff;\r\n    border: 1px solid #5cbcf4;\r\n    border-radius: 2px;\r\n}\r\n.primary-outline-variant:hover{\r\n    background-color: #ffffff;\r\n    border: 1px solid #0480d2;\r\n}\r\n.primary-fill-variant{\r\n    background-color: #ffffff;\r\n    border: 1px solid #0480d2;\r\n    border-radius: 2px;\r\n}\r\n.primary-fill-variant:hover{\r\n    background-color: #0588df;\r\n    border: 1px solid #0588df;\r\n    color: white;\r\n}\r\n.primary-transparent-variant{\r\n    background-color: #d9eaf8;\r\n    border: 1px solid #0480d2;\r\n    border-radius: 2px;\r\n}\r\n.primary-transparent-variant:hover{\r\n    border: 1px solid #0480d2;\r\n    background-color: #c9e6fc;\r\n}*/",
                     "styleUrl": "./icon-button.component.scss"
                 }
             ],
             "stylesData": "",
+            "extends": [],
             "templateData": "\r\n<button [ngClass]=\"{\r\n    'basicui-button': true,\r\n    'basicui-icon-button': true,\r\n    'basicui-icon-button--circle': circle,\r\n    'basicui-button--theme-default': theme === 'default',\r\n    'basicui-button--theme-primary': theme === 'primary',\r\n    'basicui-button--variant-default': variant === 'default',\r\n    'basicui-button--variant-fill': variant === 'fill',\r\n    'basicui-button--variant-outline': variant === 'outline',\r\n    'basicui-button--variant-transparent': variant === 'transparent',\r\n    'basicui-button--loading': loading\r\n  }\"\r\n  [type]=\"type\"\r\n  (click)=\"onClick && onClick()\"\r\n  (submit)=\"onSubmit && onSubmit()\"\r\n  (reset)=\"onReset && onReset()\">\r\n  <ng-container *ngIf=\"loading\">\r\n    <svg class=\"basicui-button__svg--loading\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\r\n      <path d=\"M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z\"> \r\n      </path>\r\n    </svg>\r\n  </ng-container>\r\n  <ng-container *ngIf=\"!loading\">\r\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" aria-hidden=\"true\">\r\n      <path d=\"M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z\"></path>\r\n    </svg>\r\n  </ng-container>\r\n  </button>\r\n\r\n\r\n  \r\n  <!--<button \r\n    type=\"button\"\r\n    (click)=\"handleClick()\" \r\n    [ngClass]=\"{\r\n      'basicui-button': true,\r\n      'basicui-icon-button': true,\r\n      'basicui-icon-button--circle': circle,\r\n      'basicui-icon-button--theme-default': theme,\r\n      'basicui-icon-button--variant-default': variant }\">\r\n    <ng-container *ngIf=\"loading\">\r\n      <svg class=\"basicui-button__svg--loading\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\r\n        <path d=\"M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z\"> \r\n        </path>\r\n      </svg>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"!loading\">\r\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" aria-hidden=\"true\">\r\n        <path d=\"M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z\"></path>\r\n      </svg>\r\n    </ng-container>\r\n  </button>-->"
         },
         {
@@ -939,6 +980,7 @@
                 "./input.component.html"
             ],
             "viewProviders": [],
+            "hostDirectives": [],
             "inputsClass": [
                 {
                     "name": "containerClassName",
@@ -1060,6 +1102,8 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
+            "standalone": false,
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
@@ -1080,6 +1124,7 @@
                 "args": [],
                 "line": 30
             },
+            "extends": [],
             "implements": [
                 "OnInit"
             ],
@@ -1123,6 +1168,7 @@
                 "./label.component.html"
             ],
             "viewProviders": [],
+            "hostDirectives": [],
             "inputsClass": [
                 {
                     "name": "label",
@@ -1140,6 +1186,8 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
+            "standalone": false,
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
@@ -1152,6 +1200,7 @@
                 }
             ],
             "stylesData": "",
+            "extends": [],
             "templateData": "<label for=\"\">{{label}}</label>"
         },
         {
@@ -1172,6 +1221,7 @@
                 "./link.component.html"
             ],
             "viewProviders": [],
+            "hostDirectives": [],
             "inputsClass": [
                 {
                     "name": "isDefaultnounderline",
@@ -1217,6 +1267,8 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
+            "standalone": false,
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
@@ -1229,6 +1281,7 @@
                 }
             ],
             "stylesData": "",
+            "extends": [],
             "templateData": "\r\n<div>\r\n    <a class=\"link\" [ngClass]=\"{ 'default-no-underline':isDefaultnounderline, 'primary': isPrimary, 'primary-no-glow':isPrimarynoglow, 'primary-no-underline':isPrimarynounderline }\">\r\n        <i class=\"material-icons\">wb_sunny</i>\r\n        <span>Lorem ipsum</span>\r\n    </a>\r\n  </div>\r\n  "
         },
         {
@@ -1248,6 +1301,7 @@
             "template": "<article>    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"doLogout()\"\n      (onLogin)=\"doLogin()\"\n      (onCreateAccount)=\"doCreateAccount()\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>",
             "templateUrl": [],
             "viewProviders": [],
+            "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
             "propertiesClass": [
@@ -1298,6 +1352,8 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
+            "standalone": false,
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
@@ -1309,7 +1365,8 @@
                     "styleUrl": "./page.css"
                 }
             ],
-            "stylesData": ""
+            "stylesData": "",
+            "extends": []
         },
         {
             "name": "RadioComponent",
@@ -1329,6 +1386,7 @@
                 "./radio.component.html"
             ],
             "viewProviders": [],
+            "hostDirectives": [],
             "inputsClass": [
                 {
                     "name": "isChecked",
@@ -1412,6 +1470,8 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
+            "standalone": false,
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
@@ -1424,6 +1484,7 @@
                 }
             ],
             "stylesData": "",
+            "extends": [],
             "templateData": " <!-- <div>\r\n    <label for=\"\" class=\"basicui-radio\">\r\n        <input type=\"radio\" class=\"radio-input\">\r\n        <span class=\"radio-label\">{{label}}</span>\r\n    </label>\r\n</div> -->\r\n\r\n<label class=\"basicui-radio\" [class.error]=\"isError\" [class.primary]=\"isPrimary\">\r\n    <input type=\"radio\" class=\"radio-input\" [checked]=\"isChecked\" (change)=\"toggleRadio($event)\" />\r\n    <span class=\"radio-label\">{{label}}</span>\r\n</label>"
         },
         {
@@ -1444,6 +1505,7 @@
                 "./select.component.html"
             ],
             "viewProviders": [],
+            "hostDirectives": [],
             "inputsClass": [
                 {
                     "name": "options",
@@ -1491,6 +1553,8 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
+            "standalone": false,
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
@@ -1503,86 +1567,8 @@
                 }
             ],
             "stylesData": "",
+            "extends": [],
             "templateData": "\r\n\r\n  <div class=\"custom-select\" *ngIf=\"selectType === 'single'\">\r\n    <select *ngIf=\"selectedValue !== undefined\" class=\"positioned-select\">\r\n      <option> {{ selectedValue }}</option>\r\n      <option *ngFor=\"let option of options\" [value]=\"option.value\">{{ option.label }}</option>\r\n    </select>\r\n  </div>\r\n\r\n  <!-- <div class=\"custom-select\" *ngIf=\"selectType === 'multi'\">\r\n    <select multiple>\r\n      <option *ngFor=\"let option of options\" [value]=\"option.value\">{{ option.label }}</option>\r\n    </select>\r\n  </div> -->\r\n  \r\n  <div class=\"custom-select\" *ngIf=\"selectType === 'autocomplete'\">\r\n    <input type=\"text\" placeholder=\"Autocomplete dropdown\" list=\"autocompleteOptions\" class=\"auto-select\" style=\"width: 100%; \">\r\n    <datalist id=\"autocompleteOptions\">\r\n      <option *ngFor=\"let option of options\" [value]=\"option.label\" style=\"width: 100%;\">{{ option.label }}</option>\r\n    </datalist>\r\n  </div>\r\n  \r\n  <!-- <div class=\"custom-select\" *ngIf=\"selectType === 'autocomplete-multi'\">\r\n    <input type=\"text\" placeholder=\"Autocomplete dropdown\" list=\"autocompleteOptions\" class=\"auto-select\" style=\"width: 100%;\">\r\n    <datalist id=\"autocompleteOptions\">\r\n      <option *ngFor=\"let option of options\" [value]=\"option.label\" style=\"width: 100%;\">{{ option.label }}</option>\r\n    </datalist>\r\n  </div>-->\r\n  "
-        },
-        {
-            "name": "SelectNativeComponent",
-            "id": "component-SelectNativeComponent-d656f440ed21ebdb0d4bf21fcc17b63ab341072e8c7185580dcdfb8c834b47e8eff469d11143ed388b636758238e3d0264b435ca28432b7ddea767e09afb8bfe",
-            "file": "src/app/select-native/select-native.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-select-native",
-            "styleUrls": [
-                "./select-native.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./select-native.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "options",
-                    "defaultValue": "[]",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 12,
-                    "type": "literal type[]",
-                    "decorators": []
-                },
-                {
-                    "name": "placeholder",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 10,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "selectType",
-                    "defaultValue": "'single'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 11,
-                    "type": "\"single\" | \"autocomplete\"",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "selectedValue",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 13
-                }
-            ],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-select-native',\r\n  templateUrl: './select-native.component.html',\r\n  styleUrls: ['./select-native.component.scss']\r\n})\r\nexport class SelectNativeComponent {\r\n[x: string]: any;\r\n  @Input() placeholder = '';\r\n  @Input() selectType: 'single' | 'autocomplete' = 'single';\r\n  @Input() options: { value: string, label: string }[] = [];\r\n  selectedValue: string = '';\r\n  //selectedValues: string[] = [];\r\n  \r\n}",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "  /* single-select styles */\r\n  select:hover {\r\n    border: 1px solid #c3e5f4;\r\n    background-color: #f1f8fe;\r\n    border-radius: 4px;\r\n  }\r\n  select, input {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\n    border: 1px solid #dad8d8;\r\n    background-color: #f1f0f08a;\r\n    border-radius: 3px;\r\n    width: 100%;\r\n    outline: none;\r\n    font-size: 12px;\r\n    position: relative;\r\n    text-indent: 5px;\r\n  }\r\n  select[single] {\r\n    position: absolute;\r\n    top: 50px;\r\n    left: 50px;\r\n  }\r\n  .positioned-select {\r\n    border: 1px solid #ccc;\r\n    border-radius: 4px;\r\n    font-size: 14px;\r\n    width: 100%;\r\n  }\r\n  \r\n  /* Multi-select styles */\r\n  .multiple{\r\n    background-color: #f6f6f6;;\r\n    padding: 0;\r\n    height: auto;\r\n    width: 100%;\r\n    font-size: 12px;\r\n    border-radius: 0%;\r\n  }\r\n  .multiple:hover{\r\n    border: 1px solid #c3e5f4;\r\n    background-color: #f1f8fe;\r\n    \r\n  }\r\n  .multiple option:checked {\r\n    background-color: #d0d1d1;\r\n}\r\n  \r\n",
-                    "styleUrl": "./select-native.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "templateData": "\r\n\r\n  <div class=\"custom-select\" *ngIf=\"selectType === 'single'\">\r\n    <select *ngIf=\"selectedValue !== undefined\" class=\"positioned-select\">\r\n      <option> {{ selectedValue }}</option>\r\n      <option *ngFor=\"let option of options\" [value]=\"option.value\">{{ option.label }}</option>\r\n    </select>\r\n  </div>\r\n\r\n  <div class=\"custom-select\" *ngIf=\"selectType === 'multi'\">\r\n    <select multiple class=\"multiple\">\r\n      <option *ngFor=\"let option of options\" [value]=\"option.value\" >{{ option.label }}</option>\r\n    </select>\r\n  </div>\r\n  "
         },
         {
             "name": "SvgIconComponent",
@@ -1600,6 +1586,7 @@
                 "./svg-icon.component.html"
             ],
             "viewProviders": [],
+            "hostDirectives": [],
             "inputsClass": [
                 {
                     "name": "fill",
@@ -1646,6 +1633,8 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
+            "standalone": false,
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
@@ -1661,6 +1650,7 @@
                 "args": [],
                 "line": 11
             },
+            "extends": [],
             "accessors": {
                 "iconUrl": {
                     "name": "iconUrl",
@@ -1692,6 +1682,7 @@
                 "./switch.component.html"
             ],
             "viewProviders": [],
+            "hostDirectives": [],
             "inputsClass": [
                 {
                     "name": "isChecked",
@@ -1766,6 +1757,8 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
+            "standalone": false,
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
@@ -1778,6 +1771,7 @@
                 }
             ],
             "stylesData": "",
+            "extends": [],
             "templateData": "<label class=\"switch\" [class.error]=\"isError\" [class.primary]=\"isPrimary\">\r\n    <input type=\"checkbox\" [checked]=\"isChecked\" (change)=\"toggleSwitch($event)\" />\r\n    <span class=\"slider\"></span>\r\n  </label>"
         },
         {
@@ -1798,6 +1792,7 @@
                 "./textarea.component.html"
             ],
             "viewProviders": [],
+            "hostDirectives": [],
             "inputsClass": [
                 {
                     "name": "errorMessage",
@@ -1954,6 +1949,8 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
+            "standalone": false,
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
@@ -1966,6 +1963,7 @@
                 }
             ],
             "stylesData": "",
+            "extends": [],
             "templateData": "\r\n<div>\r\n    <label [for]=\"textareaId\" class=\"label\">{{ label }}</label>\r\n    <textarea class=\"textarea-input\" \r\n              [id]=\"textareaId\" \r\n              [placeholder]=\"placeholder\" \r\n              [value]=\"value\" (input)=\"handleChange($event)\" [class.error]=\"isError\" >\r\n    </textarea>\r\n    \r\n    <div *ngIf=\"isSuccess\" class=\"success-message\">{{ successMessage }}</div>\r\n    <div *ngIf=\"isWarning\" class=\"warning-message\">{{ warningMessage }}</div>\r\n    <div *ngIf=\"isTooltip\" class=\"tooltip-message\">{{ tooltipMessage }}</div>\r\n    <div *ngIf=\"isError\" class=\"error-message\">{{ errorMessage }}</div>\r\n\r\n</div>\r\n\r\n\r\n"
         }
     ],
@@ -2206,14 +2204,44 @@
                 "defaultValue": "() => ({\r\n    component: CheckboxComponent,\r\n    props: {\r\n        label:'Article Description',\r\n        isChecked: false,\r\n        isError: false,\r\n        isTooltip: true,\r\n    },\r\n})"
             },
             {
-                "name": "config",
+                "name": "DangerThemeWithDangerVariant",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": ".storybook/main.ts",
+                "file": "src/app/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "StorybookConfig",
-                "defaultValue": "{\r\n  stories: ['../src/app/components/**/*.stories.ts'],\r\n  addons: [\r\n    '@storybook/addon-links',\r\n    '@storybook/addon-essentials',\r\n    '@storybook/addon-interactions',\r\n   '@storybook/addon-a11y',\r\n  ],\r\n  framework: {\r\n    name: '@storybook/angular',\r\n    options: {},\r\n  },\r\n  docs: {\r\n    autodocs: 'tag',\r\n  },\r\n}"
+                "type": "Story<ButtonProps>",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "DangerThemeWithFillVariant",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonProps>",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "DangerThemeWithOutlineVariant",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonProps>",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "DangerThemeWithTransparentVariant",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonProps>",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Default",
@@ -2259,10 +2287,30 @@
                 "name": "DefaultThemeWithDefaultVariant",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonProps>",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "DefaultThemeWithDefaultVariant",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/icon-button/icon-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "DefaultThemeWithFillVariant",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonProps>",
                 "defaultValue": "Template.bind({})"
             },
             {
@@ -2279,6 +2327,16 @@
                 "name": "DefaultThemeWithOutlineVariant",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonProps>",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "DefaultThemeWithOutlineVariant",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/icon-button/icon-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2289,20 +2347,20 @@
                 "name": "DefaultThemeWithTransparentVariant",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/icon-button/icon-button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Empty",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<ButtonProps>",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "DefaultThemeWithTransparentVariant",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/icon-button/icon-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
                 "defaultValue": "Template.bind({})"
             },
             {
@@ -2396,16 +2454,6 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "MultiSelectNative",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/select-native/select-native.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n  component: SelectNativeComponent,\r\n  props: {\r\n    selectType: 'multi',\r\n    options: [\r\n      { value: '1', label: 'Lorem ipsum' },\r\n      { value: '2', label: 'Dolor sit' },\r\n      { value: '3', label: 'Another long text another long text' },\r\n      \r\n    ],\r\n    selectedValue: 'Dolor sit',\r\n    selectedValues: ['Lorem ipsum','Dolor sit'],\r\n  },\r\n})"
-            },
-            {
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2413,16 +2461,6 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<ButtonProps>",
                 "defaultValue": "Template.bind({})"
             },
             {
@@ -2459,10 +2497,30 @@
                 "name": "PrimaryThemeWithFillVariant",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonProps>",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "PrimaryThemeWithFillVariant",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/icon-button/icon-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "PrimaryThemeWithOutlineVariant",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonProps>",
                 "defaultValue": "Template.bind({})"
             },
             {
@@ -2479,10 +2537,30 @@
                 "name": "PrimaryThemeWithPrimaryVariant",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonProps>",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "PrimaryThemeWithPrimaryVariant",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/icon-button/icon-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "PrimaryThemeWithTransparentVariant",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonProps>",
                 "defaultValue": "Template.bind({})"
             },
             {
@@ -2536,16 +2614,6 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Secondary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<ButtonProps>",
-                "defaultValue": "Template.bind({})"
-            },
-            {
                 "name": "SingleSelect",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2554,16 +2622,6 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "() => ({\r\n  component: SelectComponent,\r\n  props: {\r\n    selectType: 'single',\r\n    options: [\r\n      { value: '1', label: 'Lorem ipsum' },\r\n      { value: '2', label: 'Another long text another long text' },\r\n      { value: '3', label: 'Dolor sit' },\r\n    ],\r\n    selectedValue: 'Dolor sit', \r\n  },\r\n})"
-            },
-            {
-                "name": "SingleSelectNative",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/select-native/select-native.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n  component: SelectNativeComponent,\r\n  props: {\r\n    selectType: 'single',\r\n    options: [\r\n      { value: '1', label: 'Lorem ipsum' },\r\n      { value: '2', label: 'Another long text another long text' },\r\n      { value: '3', label: 'Dolor sit' },\r\n    ],\r\n    selectedValue: 'Dolor sit', \r\n  },\r\n})"
             },
             {
                 "name": "Small",
@@ -2662,8 +2720,8 @@
                 "file": "src/app/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<BreadcrumbsComponent>",
-                "defaultValue": "(args :BreadcrumbsComponent) => ({\r\n    component: BreadcrumbsComponent,\r\n    props: args\r\n})"
+                "type": "Story<ButtonComponent>",
+                "defaultValue": "(args: ButtonComponent) => ({\r\n    component: ButtonComponent,\r\n    props: args\r\n})"
             },
             {
                 "name": "Template",
@@ -3202,16 +3260,136 @@
                     "defaultValue": "() => ({\r\n    component: TextareaComponent,\r\n    props: {\r\n        label: 'Article Description',\r\n        placeholder: 'Lorem ipsum dolor sit',\r\n        isWarning: true,\r\n        value: '',\r\n        warningMessage: 'Quisque tincidunt vitae purus id feugiat',\r\n    },\r\n})"
                 }
             ],
-            ".storybook/main.ts": [
+            "src/app/button/button.stories.ts": [
                 {
-                    "name": "config",
+                    "name": "DangerThemeWithDangerVariant",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": ".storybook/main.ts",
+                    "file": "src/app/button/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "StorybookConfig",
-                    "defaultValue": "{\r\n  stories: ['../src/app/components/**/*.stories.ts'],\r\n  addons: [\r\n    '@storybook/addon-links',\r\n    '@storybook/addon-essentials',\r\n    '@storybook/addon-interactions',\r\n   '@storybook/addon-a11y',\r\n  ],\r\n  framework: {\r\n    name: '@storybook/angular',\r\n    options: {},\r\n  },\r\n  docs: {\r\n    autodocs: 'tag',\r\n  },\r\n}"
+                    "type": "Story<ButtonProps>",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "DangerThemeWithFillVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ButtonProps>",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "DangerThemeWithOutlineVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ButtonProps>",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "DangerThemeWithTransparentVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ButtonProps>",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "DefaultThemeWithDefaultVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ButtonProps>",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "DefaultThemeWithFillVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ButtonProps>",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "DefaultThemeWithOutlineVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ButtonProps>",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "DefaultThemeWithTransparentVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ButtonProps>",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "PrimaryThemeWithFillVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ButtonProps>",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "PrimaryThemeWithOutlineVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ButtonProps>",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "PrimaryThemeWithPrimaryVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ButtonProps>",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "PrimaryThemeWithTransparentVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ButtonProps>",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ButtonComponent>",
+                    "defaultValue": "(args: ButtonComponent) => ({\r\n    component: ButtonComponent,\r\n    props: args\r\n})"
                 }
             ],
             "src/app/breadcrumbs/breadcrumbs.stories.ts": [
@@ -3390,78 +3568,6 @@
                     "defaultValue": "(args: IconButtonComponent) => ({\r\n  component: IconButtonComponent,\r\n  props: args\r\n})"
                 }
             ],
-            "src/app/button/button.stories.ts": [
-                {
-                    "name": "DefaultThemeWithDefaultVariant",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<ButtonProps>",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "DefaultThemeWithOutlineVariant",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<ButtonProps>",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Empty",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<ButtonProps>",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Outline",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<ButtonProps>",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<ButtonProps>",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<ButtonProps>",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<ButtonComponent>",
-                    "defaultValue": "({label, className,disabled}: Partial<ButtonProps>) =>({\r\n    component: ButtonComponent,\r\n    moduleMetadata: {\r\n        declarations: [ButtonComponent],\r\n        import:[]\r\n    },\r\n    template:`<app-button [disabled]='${disabled}' className='${className}'>${label}</app-button>`\r\n})"
-                }
-            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -3634,28 +3740,6 @@
                     "deprecationMessage": "",
                     "type": "Story<Page>",
                     "defaultValue": "(args: Page) => ({\r\n  props: args,\r\n})"
-                }
-            ],
-            "src/app/select-native/select-native.stories.ts": [
-                {
-                    "name": "MultiSelectNative",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/select-native/select-native.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  component: SelectNativeComponent,\r\n  props: {\r\n    selectType: 'multi',\r\n    options: [\r\n      { value: '1', label: 'Lorem ipsum' },\r\n      { value: '2', label: 'Dolor sit' },\r\n      { value: '3', label: 'Another long text another long text' },\r\n      \r\n    ],\r\n    selectedValue: 'Dolor sit',\r\n    selectedValues: ['Lorem ipsum','Dolor sit'],\r\n  },\r\n})"
-                },
-                {
-                    "name": "SingleSelectNative",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/select-native/select-native.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  component: SelectNativeComponent,\r\n  props: {\r\n    selectType: 'single',\r\n    options: [\r\n      { value: '1', label: 'Lorem ipsum' },\r\n      { value: '2', label: 'Another long text another long text' },\r\n      { value: '3', label: 'Dolor sit' },\r\n    ],\r\n    selectedValue: 'Dolor sit', \r\n  },\r\n})"
                 }
             ]
         },
@@ -3911,16 +3995,6 @@
         "status": "low",
         "files": [
             {
-                "filePath": ".storybook/main.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "config",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
                 "filePath": "src/app/app.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -4013,7 +4087,7 @@
                 "linktype": "component",
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/9",
+                "coverageCount": "0/12",
                 "status": "low"
             },
             {
@@ -4030,7 +4104,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Empty",
+                "name": "DangerThemeWithDangerVariant",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -4040,7 +4114,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Primary",
+                "name": "DangerThemeWithFillVariant",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -4050,7 +4124,97 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Secondary",
+                "name": "DangerThemeWithOutlineVariant",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DangerThemeWithTransparentVariant",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DefaultThemeWithDefaultVariant",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DefaultThemeWithFillVariant",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DefaultThemeWithOutlineVariant",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DefaultThemeWithTransparentVariant",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PrimaryThemeWithFillVariant",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PrimaryThemeWithOutlineVariant",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PrimaryThemeWithPrimaryVariant",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PrimaryThemeWithTransparentVariant",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -4374,35 +4538,6 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "RadioWithPrimary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/select-native/select-native.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "SelectNativeComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/5",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/select-native/select-native.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "MultiSelectNative",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/select-native/select-native.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "SingleSelectNative",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
