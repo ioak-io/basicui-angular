@@ -1,6 +1,5 @@
 
-import { moduleMetadata } from '@storybook/angular';
-import { Meta, Story } from '@storybook/angular/types-6-0';
+import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { IconButtonComponent } from './icon-button.component';
 import ButtonVariantType  from '../types/ButtonVariantType';
 import ThemeType from '../types/ThemeType';
