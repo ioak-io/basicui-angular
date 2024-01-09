@@ -2294,16 +2294,6 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "DefaultThemeWithDefaultVariant",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/icon-button/icon-button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
                 "name": "DefaultThemeWithFillVariant",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2311,16 +2301,6 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<ButtonProps>",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "DefaultThemeWithFillVariant",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/icon-button/icon-button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
                 "defaultValue": "Template.bind({})"
             },
             {
@@ -2334,16 +2314,6 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "DefaultThemeWithOutlineVariant",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/icon-button/icon-button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
                 "name": "DefaultThemeWithTransparentVariant",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2351,16 +2321,6 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<ButtonProps>",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "DefaultThemeWithTransparentVariant",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/icon-button/icon-button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
                 "defaultValue": "Template.bind({})"
             },
             {
@@ -2454,6 +2414,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Playground",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/icon-button/icon-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2504,16 +2474,6 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "PrimaryThemeWithFillVariant",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/icon-button/icon-button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
                 "name": "PrimaryThemeWithOutlineVariant",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2521,16 +2481,6 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<ButtonProps>",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "PrimaryThemeWithOutlineVariant",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/icon-button/icon-button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
                 "defaultValue": "Template.bind({})"
             },
             {
@@ -2544,16 +2494,6 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "PrimaryThemeWithPrimaryVariant",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/icon-button/icon-button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
                 "name": "PrimaryThemeWithTransparentVariant",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2561,16 +2501,6 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<ButtonProps>",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "PrimaryThemeWithTransparentVariant",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/icon-button/icon-button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
                 "defaultValue": "Template.bind({})"
             },
             {
@@ -3476,98 +3406,6 @@
                     "defaultValue": "() => ({\r\n    component: LinkComponent,\r\n    props: {\r\n        isPrimary: true,\r\n        isPrimarynounderline: true,\r\n    },\r\n})"
                 }
             ],
-            "src/app/icon-button/icon-button.stories.ts": [
-                {
-                    "name": "DefaultThemeWithDefaultVariant",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/icon-button/icon-button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "DefaultThemeWithFillVariant",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/icon-button/icon-button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "DefaultThemeWithOutlineVariant",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/icon-button/icon-button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "DefaultThemeWithTransparentVariant",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/icon-button/icon-button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "PrimaryThemeWithFillVariant",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/icon-button/icon-button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "PrimaryThemeWithOutlineVariant",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/icon-button/icon-button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "PrimaryThemeWithPrimaryVariant",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/icon-button/icon-button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "PrimaryThemeWithTransparentVariant",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/icon-button/icon-button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/icon-button/icon-button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<IconButtonComponent>",
-                    "defaultValue": "(args: IconButtonComponent) => ({\r\n  component: IconButtonComponent,\r\n  props: args\r\n})"
-                }
-            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -3740,6 +3578,28 @@
                     "deprecationMessage": "",
                     "type": "Story<Page>",
                     "defaultValue": "(args: Page) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/app/icon-button/icon-button.stories.ts": [
+                {
+                    "name": "Playground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/icon-button/icon-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/icon-button/icon-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<IconButtonComponent>",
+                    "defaultValue": "(args: IconButtonComponent) => ({\r\n  component: IconButtonComponent,\r\n  props: args\r\n})"
                 }
             ]
         },
@@ -3991,7 +3851,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 0,
+        "count": 1,
         "status": "low",
         "files": [
             {
@@ -4292,77 +4152,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "DefaultThemeWithDefaultVariant",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/icon-button/icon-button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "DefaultThemeWithFillVariant",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/icon-button/icon-button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "DefaultThemeWithOutlineVariant",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/icon-button/icon-button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "DefaultThemeWithTransparentVariant",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/icon-button/icon-button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "PrimaryThemeWithFillVariant",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/icon-button/icon-button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "PrimaryThemeWithOutlineVariant",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/icon-button/icon-button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "PrimaryThemeWithPrimaryVariant",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/icon-button/icon-button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "PrimaryThemeWithTransparentVariant",
+                "name": "Playground",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
