@@ -11,10 +11,13 @@ module.exports = {
     '@storybook/addon-controls',
     '@storybook/addon-outline',
     "storybook-dark-mode",
-    
   ],
+  
   "framework": "@storybook/angular",
   "core": {
     "builder": "@storybook/builder-webpack5"
+  },
+  docs: {
+    autodocs: true
   }
 }
