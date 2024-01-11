@@ -1,33 +1,24 @@
-import { moduleMetadata } from "@storybook/angular";
-import { SwitchComponent } from "./switch.component";
+import {Meta, StoryObj, moduleMetadata } from '@storybook/angular';
+import { SwitchComponent } from './switch.component';
+import  ThemeType  from "../types/ThemeType";
 
-export default{
-    title: 'Form Elements/Switch',
-    decorations: [
-        moduleMetadata({
-            declarations: [SwitchComponent],
-        }),
-    ],
+const meta: Meta<typeof SwitchComponent> = {
+  
+  title: 'Form Elements/Switch',
+  component: SwitchComponent,
+  tags:["autodocs"],
+  argTypes: {
+  },
+} as Meta;
+
+export default meta;
+  type Story = StoryObj<typeof SwitchComponent>;
+
+export const Playground:  Story = {
+  render:() => ({
+    props:{
+      isChecked: true,
+      theme: ThemeType.primary,
+    },
+  }),
 };
-
-export const BasicSwitch = () => ({
-    component: SwitchComponent,
-    props: {
-      isChecked: false,
-    },
-});
-
-export const SwitchWithPrimary = () => ({
-    component: SwitchComponent,
-    props: {
-      isChecked: false,
-      isPrimary: true
-    },
-});
-export const SwitchWithError = () => ({
-    component: SwitchComponent,
-    props: {
-      isChecked: false,
-      isError: true
-    },
-});

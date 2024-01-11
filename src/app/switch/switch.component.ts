@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import ThemeType from '../types/ThemeType';
 
 @Component({
   selector: 'app-switch',
@@ -7,8 +8,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class SwitchComponent {
   @Input() isChecked: boolean = false;
-  @Input() isError: boolean = false;
-  @Input() isPrimary: boolean = false;
+  @Input() theme: ThemeType = ThemeType.default;
   @Output() isCheckedChange = new EventEmitter<boolean>();
 
   toggleSwitch(event: Event) {

@@ -19,7 +19,9 @@ export class InputComponent implements OnInit {
     @Input() label!: string;
     @Input() for : string | undefined;
     @Input() text : string | undefined;
-    @Input() type: string | undefined;
+    @Input() type!: string;
+    @Input() isInfo: boolean = false;
+    @Input() infoMessage: string = 'Please enter valid text';
 
     get iconContainerWidth(): number {
         return this.iconSize * 2;

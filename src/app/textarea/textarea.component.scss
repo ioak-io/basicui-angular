@@ -1,4 +1,26 @@
-label {
+@import '../styles/index.css';
+
+.label{
+    color: rgba(112, 112, 112, 0.97);
+    font-family: system-ui;
+    font-size: 13px;
+    font-weight: 300;
+    margin-bottom: 4px;
+}
+.basicui-textarea textarea{
+  resize: vertical;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  height: 73px;
+  font-family: 'Roboto', sans-serif;
+  border: 1px solid #e2e1e1;
+  background-color: #f6f6f6;
+}
+.basicui-textarea textarea:hover{
+  background-color: rgb(232, 248, 254);
+  border: 1px solid rgb(195, 233, 249);
+}
+/*label {
     display: block;
     font-size: 12px;
     font-family: 'Roboto', sans-serif;
@@ -48,4 +70,4 @@ label {
     color: #908e8e;
     font-size: 10px;
     margin-top: 5px;
-  }
+  }*/

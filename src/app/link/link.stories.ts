@@ -1,50 +1,24 @@
-import { moduleMetadata } from "@storybook/angular";
-import { LinkComponent } from "./link.component";
+import {Meta, StoryObj, moduleMetadata } from '@storybook/angular';
+import { LinkComponent } from './link.component';
+import  ThemeType  from "../types/ThemeType";
 
-
-export default{
+const meta: Meta<typeof LinkComponent> = {
+  
     title: 'Form Elements/Link',
-    decorations:[
-        moduleMetadata({
-            declarations: [LinkComponent],
-        }),
-    ],
-};
+    component: LinkComponent,
+    tags:["autodocs"],
+    argTypes: {
+    },
+  } as Meta;
+  
+  export default meta;
+  type Story = StoryObj<typeof LinkComponent>;
 
-export const DefaultLink = () => ({
-    component: LinkComponent,
-    props: {
-        isPrimary: false,
-    },
-});
-export const DefaultLinkWithNoUnderline = () => ({
-    component: LinkComponent,
-    props: {
-        isDefaultnounderline: true,
-    },
-});
-export const DefaultLinkWithNoGlow = () => ({
-    component: LinkComponent,
-    props: {
-
-    },
-});
-export const PrimaryLink = () => ({
-    component: LinkComponent,
-    props: {
-        isPrimary: true,
-    },
-});
-export const PrimaryLinkWithNoUnderline = () => ({
-    component: LinkComponent,
-    props: {
-        isPrimary: true,
-        isPrimarynounderline: true,
-    },
-});
-export const PrimaryLinkWithNoGlow = () => ({
-    component: LinkComponent,
-    props: {
-        isPrimarynoglow: true,
-    },
-});
+  export const Playground:  Story = {
+    render:() => ({
+      props:{
+        theme: ThemeType.primary,
+        label: 'Lorem ipsum',
+      },
+    }),
+  };

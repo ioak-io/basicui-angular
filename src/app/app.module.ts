@@ -12,10 +12,13 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { SelectComponent } from './select/select.component';
 import { IconButtonComponent } from './icon-button/icon-button.component';
+import { LinkComponent } from './link/link.component';
+import { RadioComponent } from './radio/radio.component';
+import { TextareaComponent } from './textarea/textarea.component';
 
 
 @NgModule({
-  declarations: [AppComponent /*InboxScreenComponent, PureInboxScreenComponent,*/ /*AvatarComponent*/, SelectComponent, IconButtonComponent],
+  declarations: [AppComponent, LinkComponent, TextareaComponent, RadioComponent /*InboxScreenComponent, PureInboxScreenComponent,*/ /*AvatarComponent*/, SelectComponent, IconButtonComponent],
   imports: [
     BrowserModule,
     FormsModule,

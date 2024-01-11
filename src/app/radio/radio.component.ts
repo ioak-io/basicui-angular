@@ -1,4 +1,5 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, Input, Output} from '@angular/core';
+import ThemeType from '../types/ThemeType';
 
 @Component({
     selector:'app-radio',
@@ -8,13 +9,15 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 export class RadioComponent {
     @Input() label: string = '';
+    @Input() type!: string;
+    @Input() theme: ThemeType = ThemeType.default;
     @Input() isChecked: boolean = false;
-    @Input() isError: boolean = false;
-    @Input() isPrimary: boolean = false;
     @Output() isCheckedChange = new EventEmitter<boolean>();
-  
-    toggleRadio(event: Event) {
-      this.isChecked = (event.target as HTMLInputElement).checked;
-      this.isCheckedChange.emit(this.isChecked);
+    @Input() name?: string;
+    @Input() id?: string;
+    @Input() value?: any;
+    @Output() radioChange = new EventEmitter<string>();
+    onChange(value: string): void {
+      this.radioChange.emit(value);
     }
-  }
+}

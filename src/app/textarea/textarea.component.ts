@@ -1,5 +1,5 @@
 
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-textarea',
@@ -7,11 +7,9 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./textarea.component.scss']
 })
 export class TextareaComponent {
-handleChange($event: Event) {
-throw new Error('Method not implemented.');
-}
-  @Input() label: string = 'Textarea Label';
-  @Input() placeholder: string = 'Enter text here';
+
+  @Input() label!: string;
+  @Input() placeholder!: string;
   @Input() value: string = '';
   @Input() isError: boolean = false;
   @Input() isWarning: boolean = false;
@@ -21,7 +19,6 @@ throw new Error('Method not implemented.');
   @Input() successMessage: string = 'Please eneter valid text'; 
   @Input() warningMessage: string = 'Please eneter valid text'; 
   @Input() tooltipMessage: string = 'Please eneter valid text'; 
-  @Output() valueChange = new EventEmitter<string>();
-  textareaId: any;
+
 
 }

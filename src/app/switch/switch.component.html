@@ -1,4 +1,6 @@
-<label class="switch" [class.error]="isError" [class.primary]="isPrimary">
+<label class="switch" 
+      [class.basicui-radio--theme-default]="theme === 'default'"
+      [class.basicui-radio--theme-default]="theme === 'primary'">
     <input type="checkbox" [checked]="isChecked" (change)="toggleSwitch($event)" />
     <span class="slider"></span>
   </label>
