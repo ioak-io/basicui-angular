@@ -80,32 +80,6 @@
             "extends": []
         },
         {
-            "name": "ButtonProps",
-            "id": "interface-ButtonProps-cf67b2da060ee16d6828ac98739382cba86bae503cc764d4ccf6c89e10dd9b5f953d354496ac8d2d023ecc164778d571d19f46bb3745cee56f8a0f36d3fe0f2d",
-            "file": "src/app/button/button.stories.ts",
-            "deprecated": false,
-            "deprecationMessage": "",
-            "type": "interface",
-            "sourceCode": "import {Meta, Story } from '@storybook/angular';\r\nimport { ButtonComponent } from './button.component';\r\nimport ButtonVariantType from '../types/ButtonVariantType';\r\nimport  ThemeType  from \"../types/ThemeType\";\r\n\r\nexport default{\r\n    title: 'Form Elements/Button',\r\n    component: ButtonComponent\r\n} as Meta;\r\n\r\ninterface ButtonProps extends ButtonComponent{\r\n    label: string;\r\n}\r\n\r\n// const Template: Story<ButtonComponent> =({label, className,disabled}: Partial<ButtonProps>) =>({\r\n//     component: ButtonComponent,\r\n//     moduleMetadata: {\r\n//         declarations: [ButtonComponent],\r\n//         import:[]\r\n//     },\r\n//     template:`<app-button [disabled]='${disabled}' class='${className}'>${label}</app-button>`\r\n// });\r\n\r\nconst Template: Story<ButtonComponent> = (args: ButtonComponent) => ({\r\n    component: ButtonComponent,\r\n    props: args\r\n});\r\n\r\n// export const Primary: Story<ButtonProps> = Template.bind({});\r\n//     Primary.args = {\r\n//         className: 'btn-primary',\r\n//         label: 'Primary',\r\n//         disabled: false\r\n//     };\r\n// export const Secondary: Story<ButtonProps> = Template.bind({});\r\n// Secondary.args = {\r\n//     className: 'btn-secondary',\r\n//     label: 'Secondary'\r\n// };\r\n// export const Empty: Story<ButtonProps> = Template.bind({});\r\n// Empty.args = {\r\n//     icon:'times',\r\n//     className: 'btn-empty',\r\n//     label: 'Cancel'\r\n// };\r\n// export const Outline: Story<ButtonProps> = Template.bind({});\r\n// Outline.args = {\r\n//     icon:'times',\r\n//     className: 'btn-outline',\r\n//     label: 'Outline'\r\n// };\r\n\r\n// export const DefaultThemeWithDefaultVariant: Story<ButtonProps> = Template.bind({});\r\n// DefaultThemeWithDefaultVariant.args = {\r\n//     icon:'times',\r\n//     // className: 'Default-Theme-With-Default-Variant',\r\n//     label: 'Default Theme With Default Variant',\r\n//     disabled: false,\r\n//     theme: ThemeType.default,\r\n//     variant: ButtonVariantType.default,\r\n// };\r\n\r\n// Reuse that template for creating different stories\r\nexport const DefaultThemeWithDefaultVariant : Story<ButtonProps> = Template.bind({});\r\nDefaultThemeWithDefaultVariant.args = {\r\n  theme: ThemeType.default,\r\n  variant: ButtonVariantType.default,\r\n  disabled: true\r\n};\r\n\r\nexport const DefaultThemeWithOutlineVariant: Story<ButtonProps>  = Template.bind({});\r\nDefaultThemeWithOutlineVariant.args = {\r\n  theme: ThemeType.default,\r\n  variant: ButtonVariantType.outline,\r\n};\r\n\r\nexport const DefaultThemeWithFillVariant: Story<ButtonProps>  = Template.bind({});\r\nDefaultThemeWithFillVariant.args = {\r\n  theme: ThemeType.default,\r\n  variant: ButtonVariantType.fill,\r\n};\r\n\r\nexport const DefaultThemeWithTransparentVariant: Story<ButtonProps>  = Template.bind({});\r\nDefaultThemeWithTransparentVariant.args = {\r\n  theme: ThemeType.default,\r\n  variant: ButtonVariantType.transparent,\r\n};\r\n\r\n// Primary theme\r\nexport const PrimaryThemeWithPrimaryVariant: Story<ButtonProps>  = Template.bind({});\r\nPrimaryThemeWithPrimaryVariant.args = {\r\n  theme: ThemeType.primary,\r\n  variant: ButtonVariantType.default,\r\n};\r\n\r\nexport const PrimaryThemeWithOutlineVariant: Story<ButtonProps>  = Template.bind({});\r\nPrimaryThemeWithOutlineVariant.args = {\r\n  theme: ThemeType.primary,\r\n  variant: ButtonVariantType.outline,\r\n};\r\n\r\nexport const PrimaryThemeWithFillVariant: Story<ButtonProps>  = Template.bind({});\r\nPrimaryThemeWithFillVariant.args = {\r\n  theme: ThemeType.primary,\r\n  variant: ButtonVariantType.fill,\r\n};\r\n\r\nexport const PrimaryThemeWithTransparentVariant: Story<ButtonProps>  = Template.bind({});\r\nPrimaryThemeWithTransparentVariant.args = {\r\n  theme: ThemeType.primary,\r\n  variant: ButtonVariantType.transparent,\r\n};\r\n\r\n\r\n// Danger theme\r\nexport const DangerThemeWithDangerVariant: Story<ButtonProps>  = Template.bind({});\r\nDangerThemeWithDangerVariant.args = {\r\n  theme: ThemeType.danger,\r\n  variant: ButtonVariantType.default,\r\n};\r\n\r\nexport const DangerThemeWithOutlineVariant: Story<ButtonProps>  = Template.bind({});\r\nDangerThemeWithOutlineVariant.args = {\r\n  theme: ThemeType.danger,\r\n  variant: ButtonVariantType.outline,\r\n};\r\n\r\nexport const DangerThemeWithFillVariant: Story<ButtonProps>  = Template.bind({});\r\nDangerThemeWithFillVariant.args = {\r\n  theme: ThemeType.danger,\r\n  variant: ButtonVariantType.fill,\r\n};\r\n\r\nexport const DangerThemeWithTransparentVariant: Story<ButtonProps> = Template.bind({});\r\nDangerThemeWithTransparentVariant.args = {\r\n  theme: ThemeType.danger,\r\n  variant: ButtonVariantType.transparent\r\n};\r\n",
-            "properties": [
-                {
-                    "name": "label",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 12
-                }
-            ],
-            "indexSignatures": [],
-            "kind": 171,
-            "methods": [],
-            "extends": [
-                "ButtonComponent"
-            ]
-        },
-        {
             "name": "EnvironmentModel",
             "id": "interface-EnvironmentModel-1787be42b6b500b3da8e48fa28a4cf2ab51b2887ccb07f0021c54b3e4539f865ef291afbcb81d31f6cfe1b4195d375c9d3c60f844601bc7c815dba76ecfe46b6",
             "file": "src/environments/environment-model.ts",
@@ -505,7 +479,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-a69a3359c887d0f507c7e75337cb4e31acab7f624675e18f327705e8a38cfca0439b32f51e0367f5bc33f8ad1e81385ae14ae106e09756d27286561bcd5aa3c1-1",
+            "id": "component-ButtonComponent-0359c67eab4baa63fe0fc0111889e66de58a400878aeef5ba7f73dd4f3e445190036f801e9c2d06f0f9f5e222fb2a5db2d99ef386e7958316c0222a53ec6a2da-1",
             "file": "src/app/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -524,41 +498,16 @@
             "hostDirectives": [],
             "inputsClass": [
                 {
-                    "name": "className",
-                    "defaultValue": "'btn-primary'",
+                    "name": "label",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 16,
                     "type": "string",
                     "decorators": []
                 },
                 {
-                    "name": "disabled",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 18,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "icon",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 14,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "iconSize",
-                    "defaultValue": "18",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 15,
-                    "type": "number",
-                    "decorators": []
-                },
-                {
-                    "name": "isActive",
+                    "name": "loading",
+                    "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 17,
@@ -566,18 +515,26 @@
                     "decorators": []
                 },
                 {
-                    "name": "isWorking",
+                    "name": "onClick",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
-                    "type": "boolean",
+                    "line": 18,
+                    "type": "any",
                     "decorators": []
                 },
                 {
-                    "name": "label",
+                    "name": "onReset",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 20,
+                    "type": "any",
+                    "decorators": []
+                },
+                {
+                    "name": "onSubmit",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
                     "type": "any",
                     "decorators": []
                 },
@@ -586,7 +543,7 @@
                     "defaultValue": "ThemeType.default",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 14,
                     "type": "ThemeType",
                     "decorators": []
                 },
@@ -595,8 +552,8 @@
                     "defaultValue": "'button'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
-                    "type": "string",
+                    "line": 13,
+                    "type": "\"button\" | \"submit\" | \"reset\"",
                     "decorators": []
                 },
                 {
@@ -604,7 +561,7 @@
                     "defaultValue": "ButtonVariantType.default",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20,
+                    "line": 15,
                     "type": "ButtonVariantType",
                     "decorators": []
                 }
@@ -621,32 +578,24 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import{ Component, Input } from '@angular/core';\r\nimport ButtonVariantType from '../types/ButtonVariantType';\r\nimport  ThemeType  from \"../types/ThemeType\";\r\n\r\n@Component({\r\n    selector: 'app-button',\r\n    templateUrl: './button.component.html',\r\n    styleUrls: ['./button.component.scss']\r\n})\r\n\r\nexport class ButtonComponent {\r\n    @Input() type= 'button';\r\n    @Input() className ='btn-primary';\r\n    @Input() icon!: string;\r\n    @Input() iconSize =18;\r\n    @Input() isWorking!: boolean;\r\n    @Input() isActive!: boolean;\r\n    @Input() disabled!: boolean;\r\n    @Input() theme: ThemeType = ThemeType.default;\r\n    @Input() variant: ButtonVariantType = ButtonVariantType.default;\r\n    @Input() label!: any;\r\n    constructor() {}\r\n\r\n}",
+            "sourceCode": "import{ Component, Input } from '@angular/core';\r\nimport ButtonVariantType from '../types/ButtonVariantType';\r\nimport  ThemeType  from \"../types/ThemeType\";\r\n\r\n@Component({\r\n    selector: 'app-button',\r\n    templateUrl: './button.component.html',\r\n    styleUrls: ['./button.component.scss']\r\n})\r\n\r\nexport class ButtonComponent {\r\n    @Input() type: 'button' | 'submit' | 'reset' = 'button';\r\n    @Input() theme: ThemeType = ThemeType.default;\r\n    @Input() variant: ButtonVariantType = ButtonVariantType.default;\r\n    @Input() label!: string;\r\n    @Input() loading = false;\r\n    @Input() onClick?: any;\r\n  @Input() onSubmit?: any;\r\n  @Input() onReset?: any;\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../styles/index.css';\r\n$primary: #0052cc;\r\n$success: #0b875b;\r\n$danger: #e13c3c;\r\n$warning: #f89c1c;\r\n$info: #0fb9b1;\r\n$secondary: #f4f5f7;\r\n$jira-bg: rgb(222, 235, 255);\r\n\r\n.btn {\r\n  @apply text-btn inline-flex items-center justify-center h-8 align-middle leading-none whitespace-nowrap rounded-sm transition-all duration-100 appearance-none cursor-pointer select-none px-3;\r\n\r\n  &.icon-only {\r\n    @apply px-2;\r\n\r\n    .with-padding {\r\n      padding: 0;\r\n    }\r\n  }\r\n\r\n  &.disabled {\r\n    @apply opacity-50 cursor-default pointer-events-none;\r\n  }\r\n\r\n  &:focus,\r\n  &:active {\r\n    outline-color: #1890ff;\r\n  }\r\n\r\n  &.no-padding-left {\r\n    padding-left: 0;\r\n  }\r\n\r\n  &.no-padding-right {\r\n    padding-right: 0;\r\n  }\r\n}\r\n\r\n@mixin buttonBackground($btn-variant, $background) {\r\n  $background-dark: darken($background, 10%);\r\n  $background-light: lighten($background, 10%);\r\n\r\n  .btn-#{$btn-variant} {\r\n    border: aliceblue;\r\n    color: white;\r\n    font-weight: 500;\r\n    background: $background;\r\n    padding: 10px;\r\n    font-size: 14.5px;\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 2rem;\r\n    border-radius: 5px;\r\n    vertical-align: middle;\r\n  line-height: 1;\r\n  white-space: nowrap;\r\n  transition-property: all;\r\n  transition-duration: 100ms;\r\n  -webkit-appearance: none;\r\n  -moz-appearance: none;\r\n  appearance: none;\r\n  cursor: pointer;\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  user-select: none;\r\n  padding-left: 0.75rem;\r\n  padding-right: 0.75rem;\r\n\r\n    &:disabled {\r\n      cursor: not-allowed;\r\n      background-color: lighten($background, 30%);\r\n    }\r\n\r\n    &:not(:disabled) {\r\n      &:hover {\r\n        background: $background-light;\r\n      }\r\n      &:active {\r\n        background: $background-dark;\r\n      }\r\n      &.active {\r\n        background: $background-dark !important;\r\n      }\r\n    }\r\n  }\r\n}\r\n@include buttonBackground(primary, $primary);\r\n@include buttonBackground(success, $success);\r\n\r\n.btn-secondary {\r\n  @apply text-textDark font-normal;\r\n  background: $secondary;\r\n  \r\n\r\n  &:not(:disabled) {\r\n    &:hover {\r\n      @apply bg-backgroundLight;\r\n    }\r\n\r\n    &:active {\r\n      @apply bg-backgroundLightPrimary;\r\n      color: $primary;\r\n    }\r\n  }\r\n}\r\n.btn-secondary{\r\n  border: aliceblue;\r\n  font-weight: 500;\r\n    background: #f4f5f7;\r\n    padding: 10px;\r\n    font-size: 14.5px;\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 2rem;\r\n    border-radius: 5px;\r\n    vertical-align: middle;\r\n    line-height: 1;\r\n    white-space: nowrap;\r\n    transition-property: all;\r\n    transition-duration: 100ms;\r\n    -webkit-appearance: none;\r\n    appearance: none;\r\n    cursor: pointer;\r\n    -webkit-user-select: none;\r\n    user-select: none;\r\n    padding-left: 0.75rem;\r\n    padding-right: 0.75rem;\r\n}\r\n.btn-empty {\r\n  background: rgba(235, 236, 240, var(--bg-opacity));\r\n  outline: none;\r\n  @apply text-textDark;\r\n\r\n  &:focus,\r\n  &:active {\r\n    outline: none;\r\n  }\r\n\r\n  &:not(:disabled) {\r\n    &:hover {\r\n      @apply bg-backgroundLight;\r\n    }\r\n    &:active {\r\n      @apply bg-backgroundLightPrimary;\r\n      color: $primary;\r\n    }\r\n    &.is-active {\r\n      background-color: $jira-bg;\r\n      @apply text-textDark;\r\n    }\r\n  }\r\n}\r\n\r\n.with-padding {\r\n  @apply pl-2;\r\n}\r\n\r\n.is-active {\r\n  @apply text-textLink bg-backgroundLightPrimary;\r\n}\r\n.btn-empty{\r\n  border: aliceblue;\r\n  font-weight: 500;\r\n    background: rgba(235, 236, 240, var(--bg-opacity));\r\n    padding: 10px;\r\n    font-size: 14.5px;\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 2rem;\r\n    border-radius: 5px;\r\n    vertical-align: middle;\r\n    line-height: 1;\r\n    white-space: nowrap;\r\n    transition-property: all;\r\n    transition-duration: 100ms;\r\n    -webkit-appearance: none;\r\n    appearance: none;\r\n    cursor: pointer;\r\n    -webkit-user-select: none;\r\n    user-select: none;\r\n    padding-left: 0.75rem;\r\n    padding-right: 0.75rem;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n.btn btn-primary{\r\n  padding: 10px;\r\n}\r\n\r\n\r\n.btn-primary[_ngcontent-qxv-c49] {\r\n  color: white;\r\n  font-weight: 500;\r\n  background: #0052cc;\r\n  padding: 10px;\r\n}\r\n\r\n\r\n.btn[_ngcontent-hxx-c42] {\r\n  font-size: 14.5px;\r\n  display: inline-flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  height: 2rem;\r\n  vertical-align: middle;\r\n  line-height: 1;\r\n  white-space: nowrap;\r\n  border-radius: 0.125rem;\r\n  transition-property: all;\r\n  transition-duration: 100ms;\r\n  -webkit-appearance: none;\r\n  -moz-appearance: none;\r\n  appearance: none;\r\n  cursor: pointer;\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  user-select: none;\r\n  padding-left: 0.75rem;\r\n  padding-right: 0.75rem;\r\n}\r\n.button, input, optgroup, select, textarea {\r\n  padding: 0;\r\n  line-height: inherit;\r\n  color: inherit;\r\n}\r\n.button, select {\r\n  text-transform: none;\r\n}\r\n.button, input {\r\n  overflow: visible;\r\n}\r\n::selection {\r\n  color: #fff;\r\n  background: #1890ff;\r\n}\r\n\r\n.btn-outline{\r\n  border: 1px solid #000;\r\n  font-weight: 500;\r\n    background: rgba(235, 236, 240, var(--bg-opacity));\r\n    padding: 10px;\r\n    font-size: 14.5px;\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 2rem;\r\n    border-radius: 5px;\r\n    vertical-align: middle;\r\n    line-height: 1;\r\n    white-space: nowrap;\r\n    transition-property: all;\r\n    transition-duration: 100ms;\r\n    -webkit-appearance: none;\r\n    appearance: none;\r\n    cursor: pointer;\r\n    -webkit-user-select: none;\r\n    user-select: none;\r\n    padding-left: 0.75rem;\r\n    padding-right: 0.75rem;\r\n}\r\n\r\n.btn-outline {\r\n  background: rgba(235, 236, 240, var(--bg-opacity));\r\n  outline: none;\r\n  @apply text-textDark;\r\n\r\n  &:focus,\r\n  &:active {\r\n    outline: none;\r\n  }\r\n\r\n  &:not(:disabled) {\r\n    &:hover {\r\n      @apply bg-backgroundLight;\r\n    }\r\n    &:active {\r\n      @apply bg-backgroundLightPrimary;\r\n      color: $primary;\r\n    }\r\n    &.is-active {\r\n      background-color: $jira-bg;\r\n      @apply text-textDark;\r\n    }\r\n  }\r\n}",
+                    "data": "@import '../styles/index.css';\r\n",
                     "styleUrl": "./button.component.scss"
                 }
             ],
             "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 21
-            },
             "extends": [],
             "isDuplicate": true,
             "duplicateId": 1,
             "duplicateName": "ButtonComponent-1",
-            "templateData": "<button \r\n    [type]=\"type\"\r\n    [ngClass]=\"{\r\n        'basicui-button': true,\r\n        'basicui-button--theme-default': theme === 'default',\r\n        'basicui-button--theme-primary': theme === 'primary',\r\n        'basicui-button--theme-danger': theme === 'danger',\r\n        'basicui-button--variant-default': variant === 'default',\r\n        'basicui-button--variant-fill': variant === 'fill',\r\n        'basicui-button--variant-outline': variant === 'outline',\r\n        'basicui-button--variant-transparent': variant === 'transparent',\r\n        'basicui-button--loading': loading\r\n      }\"\r\n    [disabled]=\"disabled\"\r\n    >\r\n\r\n    <svg-icon *ngIf=\"!isWorking && icon\"\r\n        [name]=\"icon\"\r\n        [size]=\"iconSize\">\r\n    </svg-icon>\r\n    <svg-icon *ngIf=\"isWorking\"\r\n        name=\"spin\"\r\n        class=\"spinner\"\r\n        [size]=\"iconSize\">\r\n    </svg-icon>\r\n    <span #content\r\n        [class.with-padding]=\"isWorking || icon\">\r\n        <ng-content></ng-content>\r\n    </span>{{label}}\r\n</button>"
+            "templateData": "\r\n<button \r\n    [ngClass]=\"{\r\n        'basicui-button': true,\r\n        'basicui-button--theme-default': theme === 'default',\r\n        'basicui-button--theme-primary': theme === 'primary',\r\n        'basicui-button--variant-default': variant === 'default',\r\n        'basicui-button--variant-fill': variant === 'fill',\r\n        'basicui-button--variant-outline': variant === 'outline',\r\n        'basicui-button--variant-transparent': variant === 'transparent',\r\n        'basicui-button--loading': loading\r\n      }\"\r\n    [type]=\"type\"\r\n    (click)=\"onClick && onClick()\"\r\n    (submit)=\"onSubmit && onSubmit()\"\r\n    (reset)=\"onReset && onReset()\">\r\n    <ng-container *ngIf=\"loading\">{{label}}</ng-container>\r\n    <ng-container *ngIf=\"!loading\">{{label}}</ng-container>\r\n</button>"
         },
         {
             "name": "CheckboxComponent",
-            "id": "component-CheckboxComponent-150fa0684b25e025d32aa7f2334f9fe2cc7e1621bef5ff3966466f329f9c437f8f2b611c89769f79131e28710abba50a89b7bdfda7e2bef197d86ef65762aa46",
+            "id": "component-CheckboxComponent-867ec9f880e5610b26c43952c2b63a12298c5189a6220bdc0280bdf9dc55191a7c1a0fc5ede4e4c5ab64aa21dea489197e93ed4d526c0946596bb88720667c35",
             "file": "src/app/checkbox/checkbox.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -669,7 +618,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 10,
+                    "line": 13,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -678,7 +627,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "line": 14,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -687,7 +636,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 15,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -696,7 +645,24 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 9,
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "theme",
+                    "defaultValue": "ThemeType.default",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "ThemeType",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
                     "type": "string",
                     "decorators": []
                 }
@@ -707,7 +673,7 @@
                     "defaultValue": "new EventEmitter<boolean>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 16,
                     "type": "EventEmitter"
                 }
             ],
@@ -726,7 +692,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 15,
+                    "line": 18,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -751,17 +717,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-checkbox',\r\n  templateUrl: './checkbox.component.html',\r\n  styleUrls: ['./checkbox.component.scss']\r\n})\r\nexport class CheckboxComponent {\r\n  @Input() label: string = '';\r\n  @Input() isChecked: boolean = false;\r\n  @Input() isError: boolean = false;\r\n  @Input() isTooltip: boolean = false;\r\n  @Output() isCheckedChange = new EventEmitter<boolean>();\r\n\r\n  toggleCheckbox(event: Event) {\r\n    this.isChecked = (event.target as HTMLInputElement).checked;\r\n    this.isCheckedChange.emit(this.isChecked);\r\n  }\r\n}",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport ThemeType from '../types/ThemeType';\r\n\r\n@Component({\r\n  selector: 'app-checkbox',\r\n  templateUrl: './checkbox.component.html',\r\n  styleUrls: ['./checkbox.component.scss']\r\n})\r\nexport class CheckboxComponent {\r\n  @Input() label: string = '';\r\n  @Input() theme: ThemeType = ThemeType.default;\r\n  @Input() type!: string;\r\n  @Input() isChecked: boolean = false;\r\n  @Input() isError: boolean = false;\r\n  @Input() isTooltip: boolean = false;\r\n  @Output() isCheckedChange = new EventEmitter<boolean>();\r\n\r\n  toggleCheckbox(event: Event) {\r\n    this.isChecked = (event.target as HTMLInputElement).checked;\r\n    this.isCheckedChange.emit(this.isChecked);\r\n  }\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\r\n.basicui-checkbox {\r\n  display: inline-block;\r\n  cursor: pointer;\r\n  position: relative;\r\n}\r\n.checkbox-input{\r\n  outline: 0;\r\n  height: 18px;\r\n  width: 18px;\r\n  border-radius: 50%;\r\n  vertical-align: middle;\r\n  margin: 0;\r\n  padding: 0;\r\n  cursor: pointer;\r\n}\r\n.checkbox-label{\r\n  margin-left: 7px;\r\n  font-size: 13px;\r\n  font-family: system-ui;\r\n}\r\n.basicui-checkbox.tooltip .checkbox-input {\r\n  accent-color: black;\r\n}\r\n.basicui-checkbox.error .checkbox-input{\r\n  accent-color: #e53935; \r\n}",
+                    "data": "@import '../styles/index.css';\r\n\r\n.basicui-checkbox {\r\n  cursor: pointer;\r\n  position: relative;\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n}\r\n\r\n.basicui-checkbox__input {\r\n  margin: 0;\r\n  padding: 0;\r\n  width: var(--basicui-checkbox-height);\r\n  height: var(--basicui-checkbox-height);\r\n  border: var(--basicui-checkbox-border-thickness) solid var(--basicui-checkbox-border-color);\r\n  background-color: var(--basicui-checkbox-background-color);\r\n  outline: 0;\r\n  cursor: pointer;\r\n  border-radius: var(--basicui-checkbox-border-radius);\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  /* position: static; */\r\n  transition: 250ms border-color ease-in-out, 250ms background-color ease-in-out, 250ms color ease-in-out;\r\n}\r\n\r\n.basicui-checkbox__input:checked {\r\n  background-color: var(--basicui-checkbox-background-color-checked);\r\n  border-color: var(--basicui-checkbox-border-color-checked);\r\n}\r\n\r\n.basicui-checkbox__input:hover,\r\n.basicui-checkbox__input:focus,\r\n.basicui-checkbox__input:checked:hover,\r\n.basicui-checkbox__input:checked:focus {\r\n  background-color: var(--basicui-checkbox-background-color-hover);\r\n  border-color: var(--basicui-checkbox-border-color-hover);\r\n}\r\n\r\n.basicui-checkbox__input:checked:after {\r\n  content: \"\";\r\n  display: block;\r\n  position: relative;\r\n  width: var(--basicui-checkbox-checkmark-width);\r\n  height: var(--basicui-checkbox-checkmark-height);\r\n  border-bottom: 1px solid var(--basicui-checkbox-checkmark-color);\r\n  border-right: 1px solid var(--basicui-checkbox-checkmark-color);\r\n  left: var(--basicui-checkbox-checkmark-offset-left);\r\n  bottom: var(--basicui-checkbox-checkmark-offset-bottom);\r\n  transform: rotate(40deg);\r\n}\r\n\r\n.basicui-checkbox__span {\r\n  font-size: var(--basicui-checkbox-font-size);\r\n  font-weight: var(--basicui-checkbox-font-weight);\r\n  margin-left: var(--basicui-checkbox-label-offset);\r\n}",
                     "styleUrl": "./checkbox.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<!--<label [for]=\"label\">\r\n  <input type=\"checkbox\" [checked]=\"isChecked\" (change)=\"onCheckboxChange($event)\" />{{label}}\r\n</label>-->\r\n<label class=\"basicui-checkbox\" [class.error]=\"isError\" [class.tooltip]=\"isTooltip\">\r\n  <input type=\"checkbox\" class=\"checkbox-input\" [checked]=\"isChecked\" (change)=\"toggleCheckbox($event)\" />\r\n  <span class=\"checkbox-label\">{{label}}</span>\r\n</label>"
+            "templateData": "\r\n<label class=\"basicui-checkbox\" \r\n      [class.basicui-checkbox--theme-default]=\"theme === 'default'\"\r\n      [class.basicui-checkbox--theme-primary]=\"theme === 'primary'\"\r\n      [class.error]=\"isError\" [class.tooltip]=\"isTooltip\">\r\n  <input type=\"checkbox\" class=\"basicui-checkbox__input\" [checked]=\"isChecked\" (change)=\"toggleCheckbox($event)\" />\r\n  <span class=\"basicui-checkbox__span\">{{label}}</span>\r\n</label>"
         },
         {
             "name": "HeaderComponent",
@@ -964,7 +930,7 @@
         },
         {
             "name": "InputComponent",
-            "id": "component-InputComponent-8cfef5aa43318cca0ee8ff561c0f829d9036c43c9602f231522224a19bf4ce9e487e56a7457facc444b95aa0830dce11686da5fc98199be866908385cc821f83",
+            "id": "component-InputComponent-13a0c3033371b38c29e356cc21d743b9a18612ffdf00847510732b3a3701a3b03ec5b039d1ed9de63a6776d1ca85985397aee8269508c4b6a1815ec6af512856",
             "file": "src/app/input/input.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1033,6 +999,24 @@
                     "decorators": []
                 },
                 {
+                    "name": "infoMessage",
+                    "defaultValue": "'Please enter valid text'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "isInfo",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
                     "name": "label",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -1070,7 +1054,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 22,
-                    "type": "string | undefined",
+                    "type": "string",
                     "decorators": []
                 }
             ],
@@ -1083,7 +1067,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 38,
+                    "line": 40,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -1093,7 +1077,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 34,
+                    "line": 36,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -1107,11 +1091,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\nimport { FormControl } from '@angular/forms';\r\n\r\n@Component({\r\n    selector:'app-input',\r\n    templateUrl: './input.component.html',\r\n    styleUrls:['./input.component.scss']\r\n})\r\n\r\nexport class InputComponent implements OnInit {\r\n[x: string]: any;\r\n    @Input() control!: FormControl;\r\n    @Input() containerClassName='Name';\r\n    @Input() icon: string | undefined;\r\n    @Input() iconSize =16;\r\n    @Input() placeholder = '';\r\n    @Input() enableClearButton: boolean | undefined;\r\n    @Input() name: string | undefined;\r\n    @Input() label!: string;\r\n    @Input() for : string | undefined;\r\n    @Input() text : string | undefined;\r\n    @Input() type: string | undefined;\r\n\r\n    get iconContainerWidth(): number {\r\n        return this.iconSize * 2;\r\n      }\r\n    \r\n      get isShowClearButton(): boolean {\r\n        return this.enableClearButton && this.control?.value;\r\n      }\r\n    \r\n      constructor() {}\r\n\r\n      ngOnInit(): void {\r\n        this.control = this.control ?? new FormControl('');\r\n      }\r\n    \r\n      clear() {\r\n        this.control.patchValue('');\r\n      }\r\n      \r\n} \r\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\nimport { FormControl } from '@angular/forms';\r\n\r\n@Component({\r\n    selector:'app-input',\r\n    templateUrl: './input.component.html',\r\n    styleUrls:['./input.component.scss']\r\n})\r\n\r\nexport class InputComponent implements OnInit {\r\n[x: string]: any;\r\n    @Input() control!: FormControl;\r\n    @Input() containerClassName='Name';\r\n    @Input() icon: string | undefined;\r\n    @Input() iconSize =16;\r\n    @Input() placeholder = '';\r\n    @Input() enableClearButton: boolean | undefined;\r\n    @Input() name: string | undefined;\r\n    @Input() label!: string;\r\n    @Input() for : string | undefined;\r\n    @Input() text : string | undefined;\r\n    @Input() type!: string;\r\n    @Input() isInfo: boolean = false;\r\n    @Input() infoMessage: string = 'Please enter valid text';\r\n\r\n    get iconContainerWidth(): number {\r\n        return this.iconSize * 2;\r\n      }\r\n    \r\n      get isShowClearButton(): boolean {\r\n        return this.enableClearButton && this.control?.value;\r\n      }\r\n    \r\n      constructor() {}\r\n\r\n      ngOnInit(): void {\r\n        this.control = this.control ?? new FormControl('');\r\n      }\r\n    \r\n      clear() {\r\n        this.control.patchValue('');\r\n      }\r\n      \r\n} \r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".input-container {\r\n  position: relative;\r\n  display: flex;\r\n  height: 32px;\r\n  width: 100%;\r\n\r\n  &.flat {\r\n    height: 40px;\r\n    .input {\r\n      flex-grow: 1;\r\n      border: none;\r\n      border-bottom: 2px solid #0052cc;\r\n      font-size: 21px;\r\n      background: #fff;\r\n\r\n      &::placeholder {\r\n        @apply text-textLight;\r\n        font-size: 21px;\r\n      }\r\n      &:focus,\r\n      &:hover {\r\n        border: none;\r\n        border-bottom: 2px solid #0052cc;\r\n        box-shadow: none;\r\n        background: #fff;\r\n        outline: 0;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n.invalid {\r\n  &,\r\n  &:focus {\r\n    border: 1px solid #e13c3c;\r\n    box-shadow: none;\r\n  }\r\n}\r\n\r\n.input-icon-container {\r\n  position: absolute;\r\n  height: 100%;\r\n  left: 0;\r\n  top: 0;\r\n  bottom: 0;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n\r\n  &.right {\r\n    left: auto;\r\n    right: 0;\r\n    cursor: pointer;\r\n  }\r\n}\r\n  /*.input{\r\n  width: 100%;\r\n  padding: 15px 0px 15px 35px;\r\n  margin: 8px 0;\r\n  display: inline-block;\r\n  border: 1px solid #ccc;\r\n  border-radius: 4px;\r\n  box-sizing: border-box;\r\n\r\n  &::placeholder {\r\n    font-size: 18px;\r\n    text-align:left;\r\n    \r\n  }\r\n}*/\r\n",
+                    "data": "label{\r\n    color: rgb(112 112 112 / 97%);\r\n    font-family: system-ui;\r\n    font-size: 13px;\r\n    font-weight: 300;\r\n    margin-bottom: 4px;\r\n    text-transform: capitalize;\r\n}\r\n.info-message{\r\n  color: #696c6d;\r\n  font-size: 10px;\r\n  margin-top: 5px;\r\n}\r\ninput{\r\n  width: 100%;\r\n  border: 1px solid #ccc;\r\n  border-radius: 3px;\r\n  box-sizing: border-box;\r\n  padding: 0 6px;\r\n  height: 32px;\r\n  font-size: 12px;\r\n  font-weight: 400;\r\n  outline: none;\r\n  color: black;\r\n  margin-top: 4px;\r\n}\r\ninput:hover{\r\n  background-color: rgb(232, 248, 254);\r\n  border: 1px solid rgb(195, 233, 249);\r\n}\r\n\r\n  /*.input{\r\n  width: 100%;\r\n  padding: 15px 0px 15px 35px;\r\n  margin: 8px 0;\r\n  display: inline-block;\r\n  border: 1px solid #ccc;\r\n  border-radius: 4px;\r\n  box-sizing: border-box;\r\n\r\n  &::placeholder {\r\n    font-size: 18px;\r\n    text-align:left;\r\n    \r\n  }\r\n}*/\r\n",
                     "styleUrl": "./input.component.scss"
                 }
             ],
@@ -1122,7 +1106,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 30
+                "line": 32
             },
             "extends": [],
             "implements": [
@@ -1135,7 +1119,7 @@
                         "name": "iconContainerWidth",
                         "type": "number",
                         "returnType": "number",
-                        "line": 24
+                        "line": 26
                     }
                 },
                 "isShowClearButton": {
@@ -1144,11 +1128,11 @@
                         "name": "isShowClearButton",
                         "type": "boolean",
                         "returnType": "boolean",
-                        "line": 28
+                        "line": 30
                     }
                 }
             },
-            "templateData": "<div [ngClass]=\"['input-container', containerClassName]\">\r\n    <div *ngIf=\"icon\"\r\n         class=\"input-icon-container\"\r\n         [style.width.px]=\"iconContainerWidth\">\r\n        <svg-icon [name]=\"icon\"\r\n                  [size]=\"iconSize\">\r\n        </svg-icon>\r\n    </div>\r\n    <div>\r\n        <label [for]=\"label\" style=\"font-size: 23px;\">{{label}}</label>\r\n        <br>\r\n    </div>\r\n    <input \r\n        [type]=\"type\"\r\n        [placeholder]=\"placeholder\"\r\n        [ngClass]=\"['input', 'form-input']\" \r\n        [style.padding-left.px]=\"icon ? iconContainerWidth : 20\"\r\n        [style.padding-right.px]=\"isShowClearButton ? iconContainerWidth : 10\" />\r\n        <!--<input type=\"submit\" value=\"Submit\" style=\"background-color:#04AA6D; padding: 8px 16px; color: white; font-size: 25px; border: 1px solid #ccc; border-radius: 4px;\"> -->\r\n    \r\n\r\n    <div *ngIf=\"isShowClearButton\"\r\n         class=\"input-icon-container right\"\r\n         [style.width.px]=\"iconContainerWidth\">\r\n        <i nz-icon\r\n           nzType=\"close\"\r\n           nzTheme=\"outline\"\r\n           (click)=\"clear()\"></i>\r\n    </div>\r\n</div>"
+            "templateData": "<div [ngClass]=\"['input-container', containerClassName]\">\r\n    <div *ngIf=\"icon\"\r\n         class=\"input-icon-container\"\r\n         [style.width.px]=\"iconContainerWidth\">\r\n        <svg-icon [name]=\"icon\"\r\n                  [size]=\"iconSize\">\r\n        </svg-icon>\r\n    </div>\r\n    <div>\r\n        <label [for]=\"label\">{{label}}</label>\r\n        <br>\r\n    </div>\r\n    <input \r\n        [type]=\"type\"\r\n        [placeholder]=\"placeholder\"\r\n        [ngClass]=\"['input', 'form-input']\" />\r\n        <!--<input type=\"submit\" value=\"Submit\" style=\"background-color:#04AA6D; padding: 8px 16px; color: white; font-size: 25px; border: 1px solid #ccc; border-radius: 4px;\"> -->\r\n\r\n    <div *ngIf=\"isShowClearButton\"\r\n         class=\"input-icon-container right\"\r\n         [style.width.px]=\"iconContainerWidth\">\r\n        <i nz-icon\r\n           nzType=\"close\"\r\n           nzTheme=\"outline\"\r\n           (click)=\"clear()\"></i>\r\n    </div>\r\n</div>\r\n<div *ngIf=\"isInfo\" class=\"info-message\">{{ infoMessage }}</div>"
         },
         {
             "name": "LabelComponent",
@@ -1195,17 +1179,17 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "label{\r\n    color: gray;\r\n    font-family: system-ui;\r\n    font-size: 12px;\r\n    font-weight: 350;\r\n}",
+                    "data": "\r\nlabel{\r\n    color: rgb(112 112 112 / 97%);\r\n    font-family: system-ui;\r\n    font-size: 13px;\r\n    font-weight: 300;\r\n    \r\n}",
                     "styleUrl": "./label.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<label for=\"\">{{label}}</label>"
+            "templateData": "<label for=\"\">{{label}}</label>\r\n"
         },
         {
             "name": "LinkComponent",
-            "id": "component-LinkComponent-f8518b0d6c28484b170f74c1f15c51f076e442df28c90d20703af95993c0d4bec458438127bf91790e0b2c19fc2abe1119747aedb03bf2010bcd0086c91d720d",
+            "id": "component-LinkComponent-f3ac9c355243db31db56c7b384251bce13d53dd9f7d7a4a2b3abe07682e11a60fc29488a581c39cb728d292be71b4c1291ce42383c8c6607be2cf56f726ab1fc",
             "file": "src/app/link/link.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1224,8 +1208,23 @@
             "hostDirectives": [],
             "inputsClass": [
                 {
-                    "name": "isDefaultnounderline",
-                    "defaultValue": "false",
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "noGlow",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "noUnderline",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 13,
@@ -1233,30 +1232,12 @@
                     "decorators": []
                 },
                 {
-                    "name": "isPrimary",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 10,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "isPrimarynoglow",
-                    "defaultValue": "false",
+                    "name": "theme",
+                    "defaultValue": "ThemeType.default",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 11,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "isPrimarynounderline",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 12,
-                    "type": "boolean",
+                    "type": "ThemeType",
                     "decorators": []
                 }
             ],
@@ -1272,17 +1253,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n    selector:'app-link',\r\n    templateUrl:'./link.component.html',\r\n    styleUrls:['./link.component.scss'],\r\n})\r\n\r\nexport class LinkComponent{\r\n    @Input() isPrimary: boolean = false;\r\n    @Input() isPrimarynoglow: boolean = false;\r\n    @Input() isPrimarynounderline: boolean = false;\r\n    @Input() isDefaultnounderline: boolean = false;\r\n}",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport ThemeType from '../types/ThemeType';\r\n\r\n@Component({\r\n    selector:'app-link',\r\n    templateUrl:'./link.component.html',\r\n    styleUrls:['./link.component.scss'],\r\n})\r\n\r\nexport class LinkComponent{\r\n    @Input() theme: ThemeType = ThemeType.default;\r\n    @Input() label!: string;\r\n    @Input() noUnderline!: boolean;\r\n    @Input() noGlow!: boolean;\r\n\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '~material-design-icons/iconfont/material-icons.css';\r\n.link{\r\n    vertical-align: middle;\r\n    display: inline;\r\n    font-size: 12px;\r\n    font-family: system-ui;\r\n    color: #6b6b6b;\r\n    cursor: pointer;\r\n    font-weight: 350;\r\n}\r\n.link:hover{\r\n    text-decoration: underline;\r\n}\r\n.link.default-no-underline{\r\n    text-decoration: none;\r\n}\r\n.link.primary{\r\n    color: #1492db;\r\n    font-size: 13px;\r\n    font-weight: 350;\r\n}\r\n.link.primary-no-glow{\r\n    color: #08609c;\r\n}\r\n.link.primary-no-underline{\r\n    text-decoration: none;\r\n}\r\n.link.primary-no-underline:hover{\r\n    text-decoration: none;\r\n    color: #08609c;\r\n}\r\n\r\n.material-icons{\r\n    margin-right: 5px;\r\n    vertical-align: middle;\r\n    font-size: 16px;\r\n}\r\n",
+                    "data": "@import '../styles/index.css';\r\n\r\n/*.link{\r\n    vertical-align: middle;\r\n    display: inline;\r\n    font-size: 12px;\r\n    font-family: system-ui;\r\n    color: #6b6b6b;\r\n    cursor: pointer;\r\n    font-weight: 350;\r\n}\r\n.link:hover{\r\n    text-decoration: underline;\r\n}\r\n.link.default-no-underline{\r\n    text-decoration: none;\r\n}\r\n.link.primary{\r\n    color: #1492db;\r\n    font-size: 13px;\r\n    font-weight: 350;\r\n}\r\n.link.primary-no-glow{\r\n    color: #08609c;\r\n}\r\n.link.primary-no-underline{\r\n    text-decoration: none;\r\n}\r\n.link.primary-no-underline:hover{\r\n    text-decoration: none;\r\n    color: #08609c;\r\n}\r\n\r\n.material-icons{\r\n    margin-right: 5px;\r\n    vertical-align: middle;\r\n    font-size: 16px;\r\n}*/\r\n",
                     "styleUrl": "./link.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "\r\n<div>\r\n    <a class=\"link\" [ngClass]=\"{ 'default-no-underline':isDefaultnounderline, 'primary': isPrimary, 'primary-no-glow':isPrimarynoglow, 'primary-no-underline':isPrimarynounderline }\">\r\n        <i class=\"material-icons\">wb_sunny</i>\r\n        <span>Lorem ipsum</span>\r\n    </a>\r\n  </div>\r\n  "
+            "templateData": "\r\n<a [ngClass]=\"{'basicui-link': true,\r\n                    'basicui-link--theme-default': theme === 'default',\r\n                    'basicui-link--theme-primary': theme === 'primary',\r\n                    'basicui-link--no-underline' : noUnderline,\r\n                    'basicui-link--no-glow': noGlow\r\n                    }\">\r\n    <svg className=\"MuiSvgIcon-root cursor-pointer\" focusable=\"false\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z\"></path></svg>\r\n    <span>{{label}}</span>   \r\n</a>\r\n  "
         },
         {
             "name": "PageComponent",
@@ -1370,7 +1351,7 @@
         },
         {
             "name": "RadioComponent",
-            "id": "component-RadioComponent-470ca39bb57db121b7906e0ec042282d31acfd712b93aae8ce306be4910e1d0987f15be245aa6e632b8efce86803cc6d53ce90cb0f8807d767461e87528ff731",
+            "id": "component-RadioComponent-1aac70680654f0e5d15ef098bac58cc6faf94037cf4d69b3e6bc70b64fee72a8d14a7c5175a9a48c65a40e63f904a7c3586d6f72048f0dba44dc04cf4e9d6e77",
             "file": "src/app/radio/radio.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1389,29 +1370,19 @@
             "hostDirectives": [],
             "inputsClass": [
                 {
+                    "name": "id",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
                     "name": "isChecked",
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "isError",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 12,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "isPrimary",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 13,
+                    "line": 14,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -1420,8 +1391,41 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 10,
+                    "line": 11,
                     "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "theme",
+                    "defaultValue": "ThemeType.default",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "ThemeType",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "any",
                     "decorators": []
                 }
             ],
@@ -1431,18 +1435,26 @@
                     "defaultValue": "new EventEmitter<boolean>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 14,
+                    "line": 15,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "radioChange",
+                    "defaultValue": "new EventEmitter<string>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
                     "type": "EventEmitter"
                 }
             ],
             "propertiesClass": [],
             "methodsClass": [
                 {
-                    "name": "toggleRadio",
+                    "name": "onChange",
                     "args": [
                         {
-                            "name": "event",
-                            "type": "Event",
+                            "name": "value",
+                            "type": "string",
                             "deprecated": false,
                             "deprecationMessage": ""
                         }
@@ -1450,13 +1462,13 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 16,
+                    "line": 20,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "name": "event",
-                            "type": "Event",
+                            "name": "value",
+                            "type": "string",
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
@@ -1475,17 +1487,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n    selector:'app-radio',\r\n    templateUrl:'./radio.component.html',\r\n    styleUrls:['./radio.component.scss'],\r\n})\r\n\r\nexport class RadioComponent {\r\n    @Input() label: string = '';\r\n    @Input() isChecked: boolean = false;\r\n    @Input() isError: boolean = false;\r\n    @Input() isPrimary: boolean = false;\r\n    @Output() isCheckedChange = new EventEmitter<boolean>();\r\n  \r\n    toggleRadio(event: Event) {\r\n      this.isChecked = (event.target as HTMLInputElement).checked;\r\n      this.isCheckedChange.emit(this.isChecked);\r\n    }\r\n  }",
+            "sourceCode": "import { Component, EventEmitter, Input, Output} from '@angular/core';\r\nimport ThemeType from '../types/ThemeType';\r\n\r\n@Component({\r\n    selector:'app-radio',\r\n    templateUrl:'./radio.component.html',\r\n    styleUrls:['./radio.component.scss'],\r\n})\r\n\r\nexport class RadioComponent {\r\n    @Input() label: string = '';\r\n    @Input() type!: string;\r\n    @Input() theme: ThemeType = ThemeType.default;\r\n    @Input() isChecked: boolean = false;\r\n    @Output() isCheckedChange = new EventEmitter<boolean>();\r\n    @Input() name?: string;\r\n    @Input() id?: string;\r\n    @Input() value?: any;\r\n    @Output() radioChange = new EventEmitter<string>();\r\n    onChange(value: string): void {\r\n      this.radioChange.emit(value);\r\n    }\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "/*.basicui-radio {\r\n    cursor: pointer;\r\n    position: relative;\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n}\r\n.radio-input{\r\n    margin: 0;\r\n    padding: 0;\r\n    height: 18px;\r\n    width: 18px;\r\n    outline: 0;\r\n    border: 1px solid #a2a2a2;\r\n    border-radius: 50%;\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    position: static;\r\n    cursor: pointer;\r\n}\r\n.radio-label{\r\n    margin-left: 7px;\r\n    font-size: 12px;\r\n    \r\n}*/\r\n.basicui-radio {\r\n    display: inline-block;\r\n    cursor: pointer;\r\n    position: relative;\r\n  }\r\n.radio-input{\r\n    outline: 0;\r\n    height: 18px;\r\n    width: 18px;\r\n    border-radius: 50%;\r\n    vertical-align: middle;\r\n    margin: 0;\r\n    padding: 0;\r\n    cursor: pointer;\r\n    accent-color: #000;\r\n}\r\n.radio-label{\r\n    margin-left: 7px;\r\n    font-size: 12px;\r\n    font-family: system-ui;\r\n    \r\n}\r\n.basicui-radio.primary .radio-input {\r\n    accent-color: #1976d2; \r\n  }\r\n.basicui-radio.error .radio-input{\r\n    accent-color: #e53935; \r\n}",
+                    "data": "\r\n@import '../styles/index.css';\r\n\r\n.basicui-radio {\r\n    cursor: pointer;\r\n    position: relative;\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n}\r\n\r\n.basicui-radio__input {\r\n    margin: 0;\r\n    padding: 0;\r\n    width: var(--basicui-radio-height);\r\n    height: var(--basicui-radio-height);\r\n    border: var(--basicui-radio-border-thickness) solid var(--basicui-radio-border-color);\r\n    background-color: var(--basicui-radio-background-color);\r\n    outline: 0;\r\n    cursor: pointer;\r\n    border-radius: var(--basicui-radio-border-radius);\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    /* position: static; */\r\n    transition: 250ms border-color ease-in-out, 250ms background-color ease-in-out, 250ms color ease-in-out;\r\n}\r\n\r\n.basicui-radio__input:checked {\r\n    background-color: var(--basicui-radio-background-color-checked);\r\n    border-color: var(--basicui-radio-border-color-checked);\r\n}\r\n\r\n.basicui-radio__input:hover,\r\n.basicui-radio__input:focus,\r\n.basicui-radio__input:checked:hover,\r\n.basicui-radio__input:checked:focus {\r\n    background-color: var(--basicui-radio-background-color-hover);\r\n    border-color: var(--basicui-radio-border-color-hover);\r\n}\r\n\r\n.basicui-radio__input:checked:after {\r\n    content: \"\";\r\n    display: block;\r\n    position: relative;\r\n    width: var(--basicui-radio-dotmark-size);\r\n    height: var(--basicui-radio-dotmark-size);\r\n    background-color: var(--basicui-radio-dotmark-color);\r\n    left: var(--basicui-radio-dotmark-offset-left);\r\n    bottom: var(--basicui-radio-dotmark-offset-bottom);\r\n    border-radius: var(--basicui-radio-border-radius);\r\n}\r\n\r\n.basicui-radio__span {\r\n    font-size: var(--basicui-radio-font-size);\r\n    font-weight: var(--basicui-radio-font-weight);\r\n    margin-left: var(--basicui-radio-label-offset);\r\n}",
                     "styleUrl": "./radio.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": " <!-- <div>\r\n    <label for=\"\" class=\"basicui-radio\">\r\n        <input type=\"radio\" class=\"radio-input\">\r\n        <span class=\"radio-label\">{{label}}</span>\r\n    </label>\r\n</div> -->\r\n\r\n<label class=\"basicui-radio\" [class.error]=\"isError\" [class.primary]=\"isPrimary\">\r\n    <input type=\"radio\" class=\"radio-input\" [checked]=\"isChecked\" (change)=\"toggleRadio($event)\" />\r\n    <span class=\"radio-label\">{{label}}</span>\r\n</label>"
+            "templateData": " <!-- <div>\r\n    <label for=\"\" class=\"basicui-radio\">\r\n        <input type=\"radio\" class=\"radio-input\">\r\n        <span class=\"radio-label\">{{label}}</span>\r\n    </label>\r\n</div> -->\r\n\r\n<label class=\"basicui-radio\"\r\n    [class.basicui-radio--checked]=\"isChecked\"\r\n    [class.basicui-radio--theme-default]=\"theme === 'default'\"\r\n    [class.basicui-radio--theme-primary]=\"theme === 'primary'\">\r\n    <input class=\"basicui-radio__input\" type=\"radio\" [checked]=\"isChecked\" [name]=\"name\" [id]=\"id\" [value]=\"value\" (change)=\"onChange($event.target.value)\" />\r\n    <span class=\"basicui-radio__span\">{{label}}</span>\r\n</label>"
         },
         {
             "name": "SelectComponent",
@@ -1666,7 +1678,7 @@
         },
         {
             "name": "SwitchComponent",
-            "id": "component-SwitchComponent-f689243ca10b65f28c1fe024127d62b5d573fd8d9022937b278273350f3ee5ae15ef16ecbfb6d077f79c1ca01f9947f5a1e7d4d727f3b941a899abaff8a92158",
+            "id": "component-SwitchComponent-e19ee6bafd923b41f258721485ca1cee8c66881fd0b27e44e7af743ea25f1c3fff90a615107ff06e5e8f8b83a90343245aefa062ca42056431dfcd9f9e7faee0",
             "file": "src/app/switch/switch.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1689,26 +1701,17 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 9,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "isError",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "line": 10,
                     "type": "boolean",
                     "decorators": []
                 },
                 {
-                    "name": "isPrimary",
-                    "defaultValue": "false",
+                    "name": "theme",
+                    "defaultValue": "ThemeType.default",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 11,
-                    "type": "boolean",
+                    "type": "ThemeType",
                     "decorators": []
                 }
             ],
@@ -1762,7 +1765,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-switch',\r\n  templateUrl: './switch.component.html',\r\n  styleUrls: ['./switch.component.scss']\r\n})\r\nexport class SwitchComponent {\r\n  @Input() isChecked: boolean = false;\r\n  @Input() isError: boolean = false;\r\n  @Input() isPrimary: boolean = false;\r\n  @Output() isCheckedChange = new EventEmitter<boolean>();\r\n\r\n  toggleSwitch(event: Event) {\r\n    this.isChecked = (event.target as HTMLInputElement).checked;\r\n    this.isCheckedChange.emit(this.isChecked);\r\n  }\r\n}",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport ThemeType from '../types/ThemeType';\r\n\r\n@Component({\r\n  selector: 'app-switch',\r\n  templateUrl: './switch.component.html',\r\n  styleUrls: ['./switch.component.scss']\r\n})\r\nexport class SwitchComponent {\r\n  @Input() isChecked: boolean = false;\r\n  @Input() theme: ThemeType = ThemeType.default;\r\n  @Output() isCheckedChange = new EventEmitter<boolean>();\r\n\r\n  toggleSwitch(event: Event) {\r\n    this.isChecked = (event.target as HTMLInputElement).checked;\r\n    this.isCheckedChange.emit(this.isChecked);\r\n  }\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1772,11 +1775,11 @@
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<label class=\"switch\" [class.error]=\"isError\" [class.primary]=\"isPrimary\">\r\n    <input type=\"checkbox\" [checked]=\"isChecked\" (change)=\"toggleSwitch($event)\" />\r\n    <span class=\"slider\"></span>\r\n  </label>"
+            "templateData": "<label class=\"switch\" \r\n      [class.basicui-radio--theme-default]=\"theme === 'default'\"\r\n      [class.basicui-radio--theme-default]=\"theme === 'primary'\">\r\n    <input type=\"checkbox\" [checked]=\"isChecked\" (change)=\"toggleSwitch($event)\" />\r\n    <span class=\"slider\"></span>\r\n  </label>"
         },
         {
             "name": "TextareaComponent",
-            "id": "component-TextareaComponent-84f04738a7b78a7f5d30b26c61c9ef309a7893f7a128e04cd8f2093c488212046080c3f80b4476aeea0bab4a28a60c0f592f8824a2538d951ee6c6aaa38970b7",
+            "id": "component-TextareaComponent-691de77caabb1627749fd71fdeec7c44806f52d99cf03cc2147e3672c78806dcb7c72e1e0d56c7cdec1484726075861ed7a19a62dfbdb6269a259735f34be3a7",
             "file": "src/app/textarea/textarea.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1799,7 +1802,7 @@
                     "defaultValue": "'Please enter valid text'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20,
+                    "line": 18,
                     "type": "string",
                     "decorators": []
                 },
@@ -1808,7 +1811,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 14,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -1817,7 +1820,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 16,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -1826,7 +1829,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 17,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -1835,25 +1838,23 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 15,
                     "type": "boolean",
                     "decorators": []
                 },
                 {
                     "name": "label",
-                    "defaultValue": "'Textarea Label'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 11,
                     "type": "string",
                     "decorators": []
                 },
                 {
                     "name": "placeholder",
-                    "defaultValue": "'Enter text here'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 14,
+                    "line": 12,
                     "type": "string",
                     "decorators": []
                 },
@@ -1862,7 +1863,7 @@
                     "defaultValue": "'Please eneter valid text'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 19,
                     "type": "string",
                     "decorators": []
                 },
@@ -1871,7 +1872,7 @@
                     "defaultValue": "'Please eneter valid text'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 23,
+                    "line": 21,
                     "type": "string",
                     "decorators": []
                 },
@@ -1880,7 +1881,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 13,
                     "type": "string",
                     "decorators": []
                 },
@@ -1889,62 +1890,14 @@
                     "defaultValue": "'Please eneter valid text'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 22,
+                    "line": 20,
                     "type": "string",
                     "decorators": []
                 }
             ],
-            "outputsClass": [
-                {
-                    "name": "valueChange",
-                    "defaultValue": "new EventEmitter<string>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 24,
-                    "type": "EventEmitter"
-                }
-            ],
-            "propertiesClass": [
-                {
-                    "name": "textareaId",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "any",
-                    "optional": false,
-                    "description": "",
-                    "line": 25
-                }
-            ],
-            "methodsClass": [
-                {
-                    "name": "handleChange",
-                    "args": [
-                        {
-                            "name": "$event",
-                            "type": "Event",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 10,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "name": "$event",
-                            "type": "Event",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                }
-            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -1954,29 +1907,29 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-textarea',\r\n  templateUrl: './textarea.component.html',\r\n  styleUrls: ['./textarea.component.scss']\r\n})\r\nexport class TextareaComponent {\r\nhandleChange($event: Event) {\r\nthrow new Error('Method not implemented.');\r\n}\r\n  @Input() label: string = 'Textarea Label';\r\n  @Input() placeholder: string = 'Enter text here';\r\n  @Input() value: string = '';\r\n  @Input() isError: boolean = false;\r\n  @Input() isWarning: boolean = false;\r\n  @Input() isSuccess: boolean = false;\r\n  @Input() isTooltip: boolean = false;\r\n  @Input() errorMessage: string = 'Please enter valid text';\r\n  @Input() successMessage: string = 'Please eneter valid text'; \r\n  @Input() warningMessage: string = 'Please eneter valid text'; \r\n  @Input() tooltipMessage: string = 'Please eneter valid text'; \r\n  @Output() valueChange = new EventEmitter<string>();\r\n  textareaId: any;\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-textarea',\r\n  templateUrl: './textarea.component.html',\r\n  styleUrls: ['./textarea.component.scss']\r\n})\r\nexport class TextareaComponent {\r\n\r\n  @Input() label!: string;\r\n  @Input() placeholder!: string;\r\n  @Input() value: string = '';\r\n  @Input() isError: boolean = false;\r\n  @Input() isWarning: boolean = false;\r\n  @Input() isSuccess: boolean = false;\r\n  @Input() isTooltip: boolean = false;\r\n  @Input() errorMessage: string = 'Please enter valid text';\r\n  @Input() successMessage: string = 'Please eneter valid text'; \r\n  @Input() warningMessage: string = 'Please eneter valid text'; \r\n  @Input() tooltipMessage: string = 'Please eneter valid text'; \r\n\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "label {\r\n    display: block;\r\n    font-size: 12px;\r\n    font-family: 'Roboto', sans-serif;\r\n    margin-bottom: 4px;\r\n    color: #726e6ea3;\r\n    \r\n}\r\n.textarea-input:hover{\r\n    border: 1px solid #c3e5f4;\r\n    background-color: #f1f8fe;\r\n}\r\n.textarea-input{\r\n    font-family: 'Roboto', sans-serif;\r\n    resize: vertical;\r\n    width: 100%;\r\n    padding: 6px;\r\n    line-height: 1.5;\r\n    height: 55px;\r\n    font-size: 12px;\r\n    font-weight: 400;\r\n    text-overflow: ellipsis;\r\n    outline: none;\r\n    border: 1px solid #dad8d8;\r\n    background-color: #f1f0f08a;\r\n    border-radius: 2px;\r\n    display: flex;\r\n    align-items: center;\r\n    transition: 250ms border-color ease-in-out, 250ms background-color ease-in-out, 250ms color ease-in-out;\r\n}\r\n\r\n  .error-message {\r\n    color: #fc374bc4;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .success-message{\r\n    color: #14db5a;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .warning-message{\r\n    color: #db9214;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .tooltip-message{\r\n    color: #908e8e;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }",
+                    "data": "@import '../styles/index.css';\r\n\r\n.label{\r\n    color: rgba(112, 112, 112, 0.97);\r\n    font-family: system-ui;\r\n    font-size: 13px;\r\n    font-weight: 300;\r\n    margin-bottom: 4px;\r\n}\r\n.basicui-textarea textarea{\r\n  resize: vertical;\r\n  padding-top: 6px;\r\n  padding-bottom: 6px;\r\n  height: 73px;\r\n  font-family: 'Roboto', sans-serif;\r\n  border: 1px solid #e2e1e1;\r\n  background-color: #f6f6f6;\r\n}\r\n.basicui-textarea textarea:hover{\r\n  background-color: rgb(232, 248, 254);\r\n  border: 1px solid rgb(195, 233, 249);\r\n}\r\n/*label {\r\n    display: block;\r\n    font-size: 12px;\r\n    font-family: 'Roboto', sans-serif;\r\n    margin-bottom: 4px;\r\n    color: #726e6ea3;\r\n    \r\n}\r\n.textarea-input:hover{\r\n    border: 1px solid #c3e5f4;\r\n    background-color: #f1f8fe;\r\n}\r\n.textarea-input{\r\n    font-family: 'Roboto', sans-serif;\r\n    resize: vertical;\r\n    width: 100%;\r\n    padding: 6px;\r\n    line-height: 1.5;\r\n    height: 55px;\r\n    font-size: 12px;\r\n    font-weight: 400;\r\n    text-overflow: ellipsis;\r\n    outline: none;\r\n    border: 1px solid #dad8d8;\r\n    background-color: #f1f0f08a;\r\n    border-radius: 2px;\r\n    display: flex;\r\n    align-items: center;\r\n    transition: 250ms border-color ease-in-out, 250ms background-color ease-in-out, 250ms color ease-in-out;\r\n}\r\n\r\n  .error-message {\r\n    color: #fc374bc4;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .success-message{\r\n    color: #14db5a;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .warning-message{\r\n    color: #db9214;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .tooltip-message{\r\n    color: #908e8e;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }*/",
                     "styleUrl": "./textarea.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "\r\n<div>\r\n    <label [for]=\"textareaId\" class=\"label\">{{ label }}</label>\r\n    <textarea class=\"textarea-input\" \r\n              [id]=\"textareaId\" \r\n              [placeholder]=\"placeholder\" \r\n              [value]=\"value\" (input)=\"handleChange($event)\" [class.error]=\"isError\" >\r\n    </textarea>\r\n    \r\n    <div *ngIf=\"isSuccess\" class=\"success-message\">{{ successMessage }}</div>\r\n    <div *ngIf=\"isWarning\" class=\"warning-message\">{{ warningMessage }}</div>\r\n    <div *ngIf=\"isTooltip\" class=\"tooltip-message\">{{ tooltipMessage }}</div>\r\n    <div *ngIf=\"isError\" class=\"error-message\">{{ errorMessage }}</div>\r\n\r\n</div>\r\n\r\n\r\n"
+            "templateData": "\r\n<div class=\"basicui-textarea\">\r\n    <div class=\"label\">{{label}}</div>\r\n    <textarea [ngClass]=\"{'basicui-input': true }\"\r\n              [placeholder]=\"placeholder\" \r\n              [value]=\"value\"\r\n              autocomplete=\"none\">\r\n    </textarea>\r\n</div>\r\n    <div *ngIf=\"isSuccess\" class=\"success-message\">{{ successMessage }}</div>\r\n    <div *ngIf=\"isWarning\" class=\"warning-message\">{{ warningMessage }}</div>\r\n    <div *ngIf=\"isTooltip\" class=\"tooltip-message\">{{ tooltipMessage }}</div>\r\n    <div *ngIf=\"isError\" class=\"error-message\">{{ errorMessage }}</div>\r\n\r\n\r\n"
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-d1e7e605cd000fcf0ad4779655448ef691db690a95ccc1cca1d3384fdfca8ab03966de28e080a3d65f6a3f3391cfabddd574b7bb4f9796347e547582b46da6cc",
+            "id": "module-AppModule-f33ece9ca5c0ed7302fdab23a4b03bbccd212b01bbbee0cbe32a9bb42af33e307901edb1c055ef32cb34335578a65dc3a74bc3abe5f2ed7efa3a5b212ff81a4f",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { BrowserModule } from '@angular/platform-browser';\r\nimport { NgModule } from '@angular/core';\r\n//import { TaskModule } from './components/task.module';\r\nimport { NgxsModule } from '@ngxs/store';\r\nimport { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';\r\nimport { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';\r\nimport { environment } from '../environments/environment';\r\nimport { AppComponent } from './app.component';\r\n//import InboxScreenComponent from './components/inbox-screen.component';\r\n//import PureInboxScreenComponent from './components/pure-inbox-screen.component';\r\n//import { AvatarComponent } from './avatar/avatar.component';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { SelectComponent } from './select/select.component';\r\nimport { IconButtonComponent } from './icon-button/icon-button.component';\r\n\r\n\r\n@NgModule({\r\n  declarations: [AppComponent /*InboxScreenComponent, PureInboxScreenComponent,*/ /*AvatarComponent*/, SelectComponent, IconButtonComponent],\r\n  imports: [\r\n    BrowserModule,\r\n    FormsModule,\r\n    //TaskModule,\r\n    NgxsModule.forRoot([], { developmentMode: !environment.production, }),\r\n    NgxsReduxDevtoolsPluginModule.forRoot(),\r\n    NgxsLoggerPluginModule.forRoot({ disabled: environment.production, }),\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {}\r\n",
+            "sourceCode": "import { BrowserModule } from '@angular/platform-browser';\r\nimport { NgModule } from '@angular/core';\r\n//import { TaskModule } from './components/task.module';\r\nimport { NgxsModule } from '@ngxs/store';\r\nimport { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';\r\nimport { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';\r\nimport { environment } from '../environments/environment';\r\nimport { AppComponent } from './app.component';\r\n//import InboxScreenComponent from './components/inbox-screen.component';\r\n//import PureInboxScreenComponent from './components/pure-inbox-screen.component';\r\n//import { AvatarComponent } from './avatar/avatar.component';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { SelectComponent } from './select/select.component';\r\nimport { IconButtonComponent } from './icon-button/icon-button.component';\r\nimport { LinkComponent } from './link/link.component';\r\nimport { RadioComponent } from './radio/radio.component';\r\nimport { TextareaComponent } from './textarea/textarea.component';\r\n\r\n\r\n@NgModule({\r\n  declarations: [AppComponent, LinkComponent, TextareaComponent, RadioComponent /*InboxScreenComponent, PureInboxScreenComponent,*/ /*AvatarComponent*/, SelectComponent, IconButtonComponent],\r\n  imports: [\r\n    BrowserModule,\r\n    FormsModule,\r\n    //TaskModule,\r\n    NgxsModule.forRoot([], { developmentMode: !environment.production, }),\r\n    NgxsReduxDevtoolsPluginModule.forRoot(),\r\n    NgxsLoggerPluginModule.forRoot({ disabled: environment.production, }),\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1992,7 +1945,16 @@
                             "name": "IconButtonComponent"
                         },
                         {
+                            "name": "LinkComponent"
+                        },
+                        {
+                            "name": "RadioComponent"
+                        },
+                        {
                             "name": "SelectComponent"
+                        },
+                        {
+                            "name": "TextareaComponent"
                         }
                     ]
                 },
@@ -2114,14 +2076,14 @@
     "miscellaneous": {
         "variables": [
             {
-                "name": "Autocomplete",
+                "name": "AutocompleteForm",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/select/select.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n  component: SelectComponent,\r\n  props: {\r\n    selectType: 'autocomplete',\r\n    options: [\r\n      { value: '1', label: 'Lorem ipsum' },\r\n      { value: '2', label: 'Dolor sit' },\r\n      { value: '3', label: 'Another long text another long text' },\r\n    ],\r\n    selectedValue: 'Dolor sit', \r\n    placeholder: 'Enter select option'\r\n  },\r\n})"
+                "type": "Story",
+                "defaultValue": "{\r\n  render:() => ({\r\n    props:{\r\n      selectType: 'autocomplete',\r\n      options: [\r\n        { value: '1', label: 'Lorem ipsum' },\r\n        { value: '2', label: 'Dolor sit' },\r\n        { value: '3', label: 'Another long text another long text' },\r\n      ],\r\n      selectedValue: 'Dolor sit', \r\n      placeholder: 'Enter select option'\r\n    },\r\n  }),\r\n}"
             },
             {
                 "name": "avatarUrl",
@@ -2134,116 +2096,6 @@
                 "defaultValue": "'https://res.cloudinary.com/dvujyxh7e/image/upload/c_scale,w_128/v1593253478/trung-vo_bioxmc.png'"
             },
             {
-                "name": "BasicCheckbox",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/checkbox/checkbox.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() =>({\r\n    component: CheckboxComponent,\r\n    props: {\r\n        label:'Article Description',\r\n        isChecked: false,\r\n        isError: false,\r\n        isTooltip: false,\r\n    },\r\n})"
-            },
-            {
-                "name": "BasicLabel",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/label/label.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() =>({\r\n    component: LabelComponent,\r\n    props: {\r\n        label: 'Lorem ipsum Dolor sit'\r\n    },\r\n})"
-            },
-            {
-                "name": "BasicRadio",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/radio/radio.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() =>({\r\n    component: RadioComponent,\r\n    props: {\r\n        label:'Article Description',\r\n        isChecked: false,\r\n        isError: false,\r\n        isPrimary: false,\r\n    },\r\n})"
-            },
-            {
-                "name": "BasicSwitch",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/switch/switch.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n    component: SwitchComponent,\r\n    props: {\r\n      isChecked: false,\r\n    },\r\n})"
-            },
-            {
-                "name": "BasicTextarea",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/textarea/textarea.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n    component: TextareaComponent,\r\n    props: {\r\n        label: 'Article Description',\r\n        placeholder: 'Lorem ipsum dolor sit',\r\n        value:'',\r\n    },\r\n})"
-            },
-            {
-                "name": "CheckboxWithError",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/checkbox/checkbox.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n    component: CheckboxComponent,\r\n    props: {\r\n        label:'Danger theme',\r\n        isChecked: false,\r\n        isError: true,\r\n        isTooltip: false,\r\n    },\r\n})"
-            },
-            {
-                "name": "CheckboxWithTooltip",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/checkbox/checkbox.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n    component: CheckboxComponent,\r\n    props: {\r\n        label:'Article Description',\r\n        isChecked: false,\r\n        isError: false,\r\n        isTooltip: true,\r\n    },\r\n})"
-            },
-            {
-                "name": "DangerThemeWithDangerVariant",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<ButtonProps>",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "DangerThemeWithFillVariant",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<ButtonProps>",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "DangerThemeWithOutlineVariant",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<ButtonProps>",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "DangerThemeWithTransparentVariant",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<ButtonProps>",
-                "defaultValue": "Template.bind({})"
-            },
-            {
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2251,76 +2103,6 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<BreadcrumbsComponent>",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "DefaultLink",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/link/link.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n    component: LinkComponent,\r\n    props: {\r\n        isPrimary: false,\r\n    },\r\n})"
-            },
-            {
-                "name": "DefaultLinkWithNoGlow",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/link/link.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n    component: LinkComponent,\r\n    props: {\r\n\r\n    },\r\n})"
-            },
-            {
-                "name": "DefaultLinkWithNoUnderline",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/link/link.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n    component: LinkComponent,\r\n    props: {\r\n        isDefaultnounderline: true,\r\n    },\r\n})"
-            },
-            {
-                "name": "DefaultThemeWithDefaultVariant",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<ButtonProps>",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "DefaultThemeWithFillVariant",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<ButtonProps>",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "DefaultThemeWithOutlineVariant",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<ButtonProps>",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "DefaultThemeWithTransparentVariant",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<ButtonProps>",
                 "defaultValue": "Template.bind({})"
             },
             {
@@ -2352,16 +2134,6 @@
                 "deprecationMessage": "",
                 "type": "[]",
                 "defaultValue": "[\r\n  //SvgDefinitionsComponent,\r\n  SvgIconComponent,\r\n  //BreadcrumbsComponent,\r\n  ButtonComponent,\r\n  InputComponent,\r\n  AvatarComponent\r\n]"
-            },
-            {
-                "name": "Flat",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/input/input.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<InputComponent>",
-                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Large",
@@ -2414,14 +2186,194 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<>",
+                "defaultValue": "{\r\n  \r\n  title: 'Form Elements/Button',\r\n  component: ButtonComponent,\r\n  tags:[\"autodocs\"],\r\n  argTypes: {\r\n  },\r\n} as Meta"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/checkbox/checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<>",
+                "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Checkbox',\r\n    component: CheckboxComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/icon-button/icon-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<>",
+                "defaultValue": "{\r\n  \r\n  title: 'Form Elements/Icon Button',\r\n  component: IconButtonComponent,\r\n  tags:[\"autodocs\"],\r\n  argTypes: {\r\n  },\r\n} as Meta"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/input/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<>",
+                "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Input',\r\n    component: InputComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/label/label.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<>",
+                "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Lable',\r\n    component: LabelComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/link/link.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<>",
+                "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Link',\r\n    component: LinkComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/radio/radio.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<>",
+                "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Radio',\r\n    component: RadioComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/select/select.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<>",
+                "defaultValue": "{\r\n  \r\n  title: 'Form Elements/Select',\r\n  component: SelectComponent,\r\n  tags:[\"autodocs\"],\r\n  argTypes: {\r\n  },\r\n} as Meta"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/switch/switch.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<>",
+                "defaultValue": "{\r\n  \r\n  title: 'Form Elements/Switch',\r\n  component: SwitchComponent,\r\n  tags:[\"autodocs\"],\r\n  argTypes: {\r\n  },\r\n} as Meta"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/textarea/textarea.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<>",
+                "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Textarea',\r\n    component: TextareaComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
+            },
+            {
+                "name": "Playground",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  render:() => ({\r\n    props:{\r\n      label:'Lorem ipsum',\r\n      theme: ThemeType.primary,\r\n      variant: ButtonVariantType.default,\r\n    },\r\n  }),\r\n}"
+            },
+            {
+                "name": "Playground",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/checkbox/checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        theme: ThemeType.default,\r\n        label:'Lorem ipsum Dolor sit',\r\n        \r\n      },\r\n    }),\r\n  }"
+            },
+            {
                 "name": "Playground",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/icon-button/icon-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
+                "type": "Story",
+                "defaultValue": "{\r\n  render:() => ({\r\n    props:{\r\n      theme: ThemeType.primary,\r\n      variant: ButtonVariantType.default,\r\n      circle: false,\r\n    },\r\n  }),\r\n}"
+            },
+            {
+                "name": "Playground",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/input/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        placeholder: 'Dolor sit',\r\n        label: 'First Name',\r\n        isInfo: true,\r\n        value: '',\r\n        infoMessage: 'Quisque tincidunt vitae purus id feugiat',\r\n      },\r\n    }),\r\n  }"
+            },
+            {
+                "name": "Playground",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/label/label.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        label: 'Lorem ipsum Dolor sit'\r\n      },\r\n    }),\r\n  }"
+            },
+            {
+                "name": "Playground",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/link/link.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        theme: ThemeType.primary,\r\n        label: 'Lorem ipsum',\r\n      },\r\n    }),\r\n  }"
+            },
+            {
+                "name": "Playground",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/radio/radio.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        theme: ThemeType.primary,\r\n        label:'Lorem ipsum',\r\n        onChange: action('Radio changed'),\r\n      },\r\n    }),\r\n  }"
+            },
+            {
+                "name": "Playground",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/switch/switch.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  render:() => ({\r\n    props:{\r\n      isChecked: true,\r\n      theme: ThemeType.primary,\r\n    },\r\n  }),\r\n}"
+            },
+            {
+                "name": "Playground",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/textarea/textarea.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        label: 'Lorem ipsum',\r\n        placeholder: 'Dolor sit',\r\n        value:''\r\n      },\r\n    }),\r\n  }"
             },
             {
                 "name": "Primary",
@@ -2432,96 +2384,6 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "PrimaryLink",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/link/link.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n    component: LinkComponent,\r\n    props: {\r\n        isPrimary: true,\r\n    },\r\n})"
-            },
-            {
-                "name": "PrimaryLinkWithNoGlow",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/link/link.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n    component: LinkComponent,\r\n    props: {\r\n        isPrimarynoglow: true,\r\n    },\r\n})"
-            },
-            {
-                "name": "PrimaryLinkWithNoUnderline",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/link/link.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n    component: LinkComponent,\r\n    props: {\r\n        isPrimary: true,\r\n        isPrimarynounderline: true,\r\n    },\r\n})"
-            },
-            {
-                "name": "PrimaryThemeWithFillVariant",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<ButtonProps>",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "PrimaryThemeWithOutlineVariant",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<ButtonProps>",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "PrimaryThemeWithPrimaryVariant",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<ButtonProps>",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "PrimaryThemeWithTransparentVariant",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<ButtonProps>",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "RadioWithError",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/radio/radio.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n    component: RadioComponent,\r\n    props: {\r\n        label:'Article Description',\r\n        isChecked: false,\r\n        isError: true,\r\n        isPrimary: false,\r\n    },\r\n})"
-            },
-            {
-                "name": "RadioWithPrimary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/radio/radio.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n    component: RadioComponent,\r\n    props: {\r\n        label:'Article Description',\r\n        isChecked: false,\r\n        isError: false,\r\n        isPrimary: true,\r\n    },\r\n})"
             },
             {
                 "name": "Rounded",
@@ -2544,14 +2406,14 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "SingleSelect",
+                "name": "SelectForm",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/select/select.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n  component: SelectComponent,\r\n  props: {\r\n    selectType: 'single',\r\n    options: [\r\n      { value: '1', label: 'Lorem ipsum' },\r\n      { value: '2', label: 'Another long text another long text' },\r\n      { value: '3', label: 'Dolor sit' },\r\n    ],\r\n    selectedValue: 'Dolor sit', \r\n  },\r\n})"
+                "type": "Story",
+                "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        selectType: 'single',\r\n        options: [\r\n          { value: '1', label: 'Lorem ipsum' },\r\n          { value: '2', label: 'Another long text another long text' },\r\n          { value: '3', label: 'Dolor sit' },\r\n        ],\r\n        selectedValue: 'Dolor sit', \r\n      },\r\n    }),\r\n  }"
             },
             {
                 "name": "Small",
@@ -2572,26 +2434,6 @@
                 "deprecationMessage": "",
                 "type": "Story<AvatarComponent>",
                 "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "SwitchWithError",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/switch/switch.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n    component: SwitchComponent,\r\n    props: {\r\n      isChecked: false,\r\n      isError: true\r\n    },\r\n})"
-            },
-            {
-                "name": "SwitchWithPrimary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/switch/switch.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n    component: SwitchComponent,\r\n    props: {\r\n      isChecked: false,\r\n      isPrimary: true\r\n    },\r\n})"
             },
             {
                 "name": "Template",
@@ -2642,90 +2484,121 @@
                 "deprecationMessage": "",
                 "type": "Story<BreadcrumbsComponent>",
                 "defaultValue": "(args :BreadcrumbsComponent) => ({\r\n    component: BreadcrumbsComponent,\r\n    props: args\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<ButtonComponent>",
-                "defaultValue": "(args: ButtonComponent) => ({\r\n    component: ButtonComponent,\r\n    props: args\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/icon-button/icon-button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<IconButtonComponent>",
-                "defaultValue": "(args: IconButtonComponent) => ({\r\n  component: IconButtonComponent,\r\n  props: args\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/input/input.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<InputComponent>",
-                "defaultValue": "(args:InputComponent) =>({\r\n    component: InputComponent,\r\n    props:args\r\n})"
-            },
-            {
-                "name": "TextareaWithError",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/textarea/textarea.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n    component: TextareaComponent,\r\n    props: {\r\n      label: 'Article Description',\r\n      placeholder: 'Lorem ipsum dolor sit',\r\n      value: '',\r\n      isError: true,\r\n      errorMessage: 'Quisque tincidunt vitae purus id feugiat',\r\n    },\r\n  })"
-            },
-            {
-                "name": "TextareaWithSuccess",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/textarea/textarea.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n    component: TextareaComponent,\r\n    props: {\r\n        label: 'Article Description',\r\n        placeholder: 'Lorem ipsum dolor sit',\r\n        isSuccess: true,\r\n        value: '',\r\n        successMessage: 'Quisque tincidunt vitae purus id feugiat',\r\n    },\r\n})"
-            },
-            {
-                "name": "TextareaWithTooltip",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/textarea/textarea.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n    component: TextareaComponent,\r\n    props: {\r\n        label: 'Article Description',\r\n        placeholder: 'Lorem ipsum dolor sit',\r\n        isTooltip: true,\r\n        value: '',\r\n        tooltipMessage: 'Quisque tincidunt vitae purus id feugiat',\r\n    },\r\n})"
-            },
-            {
-                "name": "TextareaWithTooltipAndError",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/textarea/textarea.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n    component: TextareaComponent,\r\n    props: {\r\n        label: 'Article Description',\r\n        placeholder: 'Lorem ipsum dolor sit',\r\n        isTooltip: true,\r\n        isError: true,\r\n        tooltipMessage: 'Ipsum dolor sit',\r\n        errorMessage: 'Quisque tincidunt vitae purus id feugiat',\r\n    },\r\n})"
-            },
-            {
-                "name": "TextareaWithWarning",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/textarea/textarea.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n    component: TextareaComponent,\r\n    props: {\r\n        label: 'Article Description',\r\n        placeholder: 'Lorem ipsum dolor sit',\r\n        isWarning: true,\r\n        value: '',\r\n        warningMessage: 'Quisque tincidunt vitae purus id feugiat',\r\n    },\r\n})"
             }
         ],
         "functions": [],
-        "typealiases": [],
+        "typealiases": [
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<>",
+                "file": "src/app/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<>",
+                "file": "src/app/checkbox/checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<>",
+                "file": "src/app/icon-button/icon-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<>",
+                "file": "src/app/input/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<>",
+                "file": "src/app/label/label.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<>",
+                "file": "src/app/link/link.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<>",
+                "file": "src/app/radio/radio.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<>",
+                "file": "src/app/select/select.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<>",
+                "file": "src/app/switch/switch.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<>",
+                "file": "src/app/textarea/textarea.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            }
+        ],
         "enumerations": [
             {
                 "name": "AlignmentType",
@@ -2958,24 +2831,34 @@
         "groupedVariables": {
             "src/app/select/select.stories.ts": [
                 {
-                    "name": "Autocomplete",
+                    "name": "AutocompleteForm",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/select/select.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  component: SelectComponent,\r\n  props: {\r\n    selectType: 'autocomplete',\r\n    options: [\r\n      { value: '1', label: 'Lorem ipsum' },\r\n      { value: '2', label: 'Dolor sit' },\r\n      { value: '3', label: 'Another long text another long text' },\r\n    ],\r\n    selectedValue: 'Dolor sit', \r\n    placeholder: 'Enter select option'\r\n  },\r\n})"
+                    "type": "Story",
+                    "defaultValue": "{\r\n  render:() => ({\r\n    props:{\r\n      selectType: 'autocomplete',\r\n      options: [\r\n        { value: '1', label: 'Lorem ipsum' },\r\n        { value: '2', label: 'Dolor sit' },\r\n        { value: '3', label: 'Another long text another long text' },\r\n      ],\r\n      selectedValue: 'Dolor sit', \r\n      placeholder: 'Enter select option'\r\n    },\r\n  }),\r\n}"
                 },
                 {
-                    "name": "SingleSelect",
+                    "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/select/select.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  component: SelectComponent,\r\n  props: {\r\n    selectType: 'single',\r\n    options: [\r\n      { value: '1', label: 'Lorem ipsum' },\r\n      { value: '2', label: 'Another long text another long text' },\r\n      { value: '3', label: 'Dolor sit' },\r\n    ],\r\n    selectedValue: 'Dolor sit', \r\n  },\r\n})"
+                    "type": "Meta<>",
+                    "defaultValue": "{\r\n  \r\n  title: 'Form Elements/Select',\r\n  component: SelectComponent,\r\n  tags:[\"autodocs\"],\r\n  argTypes: {\r\n  },\r\n} as Meta"
+                },
+                {
+                    "name": "SelectForm",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/select/select.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        selectType: 'single',\r\n        options: [\r\n          { value: '1', label: 'Lorem ipsum' },\r\n          { value: '2', label: 'Another long text another long text' },\r\n          { value: '3', label: 'Dolor sit' },\r\n        ],\r\n        selectedValue: 'Dolor sit', \r\n      },\r\n    }),\r\n  }"
                 }
             ],
             "src/app/avatar/avatar.stories.ts": [
@@ -3020,308 +2903,6 @@
                     "defaultValue": "(args: AvatarComponent) => ({\r\n  component: AvatarComponent,\r\n  props: args\r\n})"
                 }
             ],
-            "src/app/checkbox/checkbox.stories.ts": [
-                {
-                    "name": "BasicCheckbox",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/checkbox/checkbox.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() =>({\r\n    component: CheckboxComponent,\r\n    props: {\r\n        label:'Article Description',\r\n        isChecked: false,\r\n        isError: false,\r\n        isTooltip: false,\r\n    },\r\n})"
-                },
-                {
-                    "name": "CheckboxWithError",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/checkbox/checkbox.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    component: CheckboxComponent,\r\n    props: {\r\n        label:'Danger theme',\r\n        isChecked: false,\r\n        isError: true,\r\n        isTooltip: false,\r\n    },\r\n})"
-                },
-                {
-                    "name": "CheckboxWithTooltip",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/checkbox/checkbox.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    component: CheckboxComponent,\r\n    props: {\r\n        label:'Article Description',\r\n        isChecked: false,\r\n        isError: false,\r\n        isTooltip: true,\r\n    },\r\n})"
-                }
-            ],
-            "src/app/label/label.stories.ts": [
-                {
-                    "name": "BasicLabel",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/label/label.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() =>({\r\n    component: LabelComponent,\r\n    props: {\r\n        label: 'Lorem ipsum Dolor sit'\r\n    },\r\n})"
-                }
-            ],
-            "src/app/radio/radio.stories.ts": [
-                {
-                    "name": "BasicRadio",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/radio/radio.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() =>({\r\n    component: RadioComponent,\r\n    props: {\r\n        label:'Article Description',\r\n        isChecked: false,\r\n        isError: false,\r\n        isPrimary: false,\r\n    },\r\n})"
-                },
-                {
-                    "name": "RadioWithError",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/radio/radio.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    component: RadioComponent,\r\n    props: {\r\n        label:'Article Description',\r\n        isChecked: false,\r\n        isError: true,\r\n        isPrimary: false,\r\n    },\r\n})"
-                },
-                {
-                    "name": "RadioWithPrimary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/radio/radio.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    component: RadioComponent,\r\n    props: {\r\n        label:'Article Description',\r\n        isChecked: false,\r\n        isError: false,\r\n        isPrimary: true,\r\n    },\r\n})"
-                }
-            ],
-            "src/app/switch/switch.stories.ts": [
-                {
-                    "name": "BasicSwitch",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/switch/switch.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    component: SwitchComponent,\r\n    props: {\r\n      isChecked: false,\r\n    },\r\n})"
-                },
-                {
-                    "name": "SwitchWithError",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/switch/switch.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    component: SwitchComponent,\r\n    props: {\r\n      isChecked: false,\r\n      isError: true\r\n    },\r\n})"
-                },
-                {
-                    "name": "SwitchWithPrimary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/switch/switch.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    component: SwitchComponent,\r\n    props: {\r\n      isChecked: false,\r\n      isPrimary: true\r\n    },\r\n})"
-                }
-            ],
-            "src/app/textarea/textarea.stories.ts": [
-                {
-                    "name": "BasicTextarea",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/textarea/textarea.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    component: TextareaComponent,\r\n    props: {\r\n        label: 'Article Description',\r\n        placeholder: 'Lorem ipsum dolor sit',\r\n        value:'',\r\n    },\r\n})"
-                },
-                {
-                    "name": "TextareaWithError",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/textarea/textarea.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    component: TextareaComponent,\r\n    props: {\r\n      label: 'Article Description',\r\n      placeholder: 'Lorem ipsum dolor sit',\r\n      value: '',\r\n      isError: true,\r\n      errorMessage: 'Quisque tincidunt vitae purus id feugiat',\r\n    },\r\n  })"
-                },
-                {
-                    "name": "TextareaWithSuccess",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/textarea/textarea.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    component: TextareaComponent,\r\n    props: {\r\n        label: 'Article Description',\r\n        placeholder: 'Lorem ipsum dolor sit',\r\n        isSuccess: true,\r\n        value: '',\r\n        successMessage: 'Quisque tincidunt vitae purus id feugiat',\r\n    },\r\n})"
-                },
-                {
-                    "name": "TextareaWithTooltip",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/textarea/textarea.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    component: TextareaComponent,\r\n    props: {\r\n        label: 'Article Description',\r\n        placeholder: 'Lorem ipsum dolor sit',\r\n        isTooltip: true,\r\n        value: '',\r\n        tooltipMessage: 'Quisque tincidunt vitae purus id feugiat',\r\n    },\r\n})"
-                },
-                {
-                    "name": "TextareaWithTooltipAndError",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/textarea/textarea.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    component: TextareaComponent,\r\n    props: {\r\n        label: 'Article Description',\r\n        placeholder: 'Lorem ipsum dolor sit',\r\n        isTooltip: true,\r\n        isError: true,\r\n        tooltipMessage: 'Ipsum dolor sit',\r\n        errorMessage: 'Quisque tincidunt vitae purus id feugiat',\r\n    },\r\n})"
-                },
-                {
-                    "name": "TextareaWithWarning",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/textarea/textarea.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    component: TextareaComponent,\r\n    props: {\r\n        label: 'Article Description',\r\n        placeholder: 'Lorem ipsum dolor sit',\r\n        isWarning: true,\r\n        value: '',\r\n        warningMessage: 'Quisque tincidunt vitae purus id feugiat',\r\n    },\r\n})"
-                }
-            ],
-            "src/app/button/button.stories.ts": [
-                {
-                    "name": "DangerThemeWithDangerVariant",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<ButtonProps>",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "DangerThemeWithFillVariant",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<ButtonProps>",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "DangerThemeWithOutlineVariant",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<ButtonProps>",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "DangerThemeWithTransparentVariant",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<ButtonProps>",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "DefaultThemeWithDefaultVariant",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<ButtonProps>",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "DefaultThemeWithFillVariant",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<ButtonProps>",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "DefaultThemeWithOutlineVariant",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<ButtonProps>",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "DefaultThemeWithTransparentVariant",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<ButtonProps>",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "PrimaryThemeWithFillVariant",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<ButtonProps>",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "PrimaryThemeWithOutlineVariant",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<ButtonProps>",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "PrimaryThemeWithPrimaryVariant",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<ButtonProps>",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "PrimaryThemeWithTransparentVariant",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<ButtonProps>",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<ButtonComponent>",
-                    "defaultValue": "(args: ButtonComponent) => ({\r\n    component: ButtonComponent,\r\n    props: args\r\n})"
-                }
-            ],
             "src/app/breadcrumbs/breadcrumbs.stories.ts": [
                 {
                     "name": "Default",
@@ -3342,68 +2923,6 @@
                     "deprecationMessage": "",
                     "type": "Story<BreadcrumbsComponent>",
                     "defaultValue": "(args :BreadcrumbsComponent) => ({\r\n    component: BreadcrumbsComponent,\r\n    props: args\r\n})"
-                }
-            ],
-            "src/app/link/link.stories.ts": [
-                {
-                    "name": "DefaultLink",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/link/link.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    component: LinkComponent,\r\n    props: {\r\n        isPrimary: false,\r\n    },\r\n})"
-                },
-                {
-                    "name": "DefaultLinkWithNoGlow",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/link/link.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    component: LinkComponent,\r\n    props: {\r\n\r\n    },\r\n})"
-                },
-                {
-                    "name": "DefaultLinkWithNoUnderline",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/link/link.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    component: LinkComponent,\r\n    props: {\r\n        isDefaultnounderline: true,\r\n    },\r\n})"
-                },
-                {
-                    "name": "PrimaryLink",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/link/link.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    component: LinkComponent,\r\n    props: {\r\n        isPrimary: true,\r\n    },\r\n})"
-                },
-                {
-                    "name": "PrimaryLinkWithNoGlow",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/link/link.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    component: LinkComponent,\r\n    props: {\r\n        isPrimarynoglow: true,\r\n    },\r\n})"
-                },
-                {
-                    "name": "PrimaryLinkWithNoUnderline",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/link/link.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    component: LinkComponent,\r\n    props: {\r\n        isPrimary: true,\r\n        isPrimarynounderline: true,\r\n    },\r\n})"
                 }
             ],
             "src/environments/environment.prod.ts": [
@@ -3440,28 +2959,6 @@
                     "deprecationMessage": "",
                     "type": "[]",
                     "defaultValue": "[\r\n  //SvgDefinitionsComponent,\r\n  SvgIconComponent,\r\n  //BreadcrumbsComponent,\r\n  ButtonComponent,\r\n  InputComponent,\r\n  AvatarComponent\r\n]"
-                }
-            ],
-            "src/app/input/input.stories.ts": [
-                {
-                    "name": "Flat",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/input/input.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<InputComponent>",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/input/input.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<InputComponent>",
-                    "defaultValue": "(args:InputComponent) =>({\r\n    component: InputComponent,\r\n    props:args\r\n})"
                 }
             ],
             "src/stories/Button.stories.ts": [
@@ -3580,7 +3077,61 @@
                     "defaultValue": "(args: Page) => ({\r\n  props: args,\r\n})"
                 }
             ],
+            "src/app/button/button.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<>",
+                    "defaultValue": "{\r\n  \r\n  title: 'Form Elements/Button',\r\n  component: ButtonComponent,\r\n  tags:[\"autodocs\"],\r\n  argTypes: {\r\n  },\r\n} as Meta"
+                },
+                {
+                    "name": "Playground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  render:() => ({\r\n    props:{\r\n      label:'Lorem ipsum',\r\n      theme: ThemeType.primary,\r\n      variant: ButtonVariantType.default,\r\n    },\r\n  }),\r\n}"
+                }
+            ],
+            "src/app/checkbox/checkbox.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/checkbox/checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<>",
+                    "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Checkbox',\r\n    component: CheckboxComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
+                },
+                {
+                    "name": "Playground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/checkbox/checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        theme: ThemeType.default,\r\n        label:'Lorem ipsum Dolor sit',\r\n        \r\n      },\r\n    }),\r\n  }"
+                }
+            ],
             "src/app/icon-button/icon-button.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/icon-button/icon-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<>",
+                    "defaultValue": "{\r\n  \r\n  title: 'Form Elements/Icon Button',\r\n  component: IconButtonComponent,\r\n  tags:[\"autodocs\"],\r\n  argTypes: {\r\n  },\r\n} as Meta"
+                },
                 {
                     "name": "Playground",
                     "ctype": "miscellaneous",
@@ -3588,18 +3139,140 @@
                     "file": "src/app/icon-button/icon-button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
+                    "type": "Story",
+                    "defaultValue": "{\r\n  render:() => ({\r\n    props:{\r\n      theme: ThemeType.primary,\r\n      variant: ButtonVariantType.default,\r\n      circle: false,\r\n    },\r\n  }),\r\n}"
+                }
+            ],
+            "src/app/input/input.stories.ts": [
                 {
-                    "name": "Template",
+                    "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/icon-button/icon-button.stories.ts",
+                    "file": "src/app/input/input.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<IconButtonComponent>",
-                    "defaultValue": "(args: IconButtonComponent) => ({\r\n  component: IconButtonComponent,\r\n  props: args\r\n})"
+                    "type": "Meta<>",
+                    "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Input',\r\n    component: InputComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
+                },
+                {
+                    "name": "Playground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/input/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        placeholder: 'Dolor sit',\r\n        label: 'First Name',\r\n        isInfo: true,\r\n        value: '',\r\n        infoMessage: 'Quisque tincidunt vitae purus id feugiat',\r\n      },\r\n    }),\r\n  }"
+                }
+            ],
+            "src/app/label/label.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/label/label.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<>",
+                    "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Lable',\r\n    component: LabelComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
+                },
+                {
+                    "name": "Playground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/label/label.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        label: 'Lorem ipsum Dolor sit'\r\n      },\r\n    }),\r\n  }"
+                }
+            ],
+            "src/app/link/link.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/link/link.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<>",
+                    "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Link',\r\n    component: LinkComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
+                },
+                {
+                    "name": "Playground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/link/link.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        theme: ThemeType.primary,\r\n        label: 'Lorem ipsum',\r\n      },\r\n    }),\r\n  }"
+                }
+            ],
+            "src/app/radio/radio.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/radio/radio.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<>",
+                    "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Radio',\r\n    component: RadioComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
+                },
+                {
+                    "name": "Playground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/radio/radio.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        theme: ThemeType.primary,\r\n        label:'Lorem ipsum',\r\n        onChange: action('Radio changed'),\r\n      },\r\n    }),\r\n  }"
+                }
+            ],
+            "src/app/switch/switch.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/switch/switch.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<>",
+                    "defaultValue": "{\r\n  \r\n  title: 'Form Elements/Switch',\r\n  component: SwitchComponent,\r\n  tags:[\"autodocs\"],\r\n  argTypes: {\r\n  },\r\n} as Meta"
+                },
+                {
+                    "name": "Playground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/switch/switch.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  render:() => ({\r\n    props:{\r\n      isChecked: true,\r\n      theme: ThemeType.primary,\r\n    },\r\n  }),\r\n}"
+                }
+            ],
+            "src/app/textarea/textarea.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/textarea/textarea.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<>",
+                    "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Textarea',\r\n    component: TextareaComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
+                },
+                {
+                    "name": "Playground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/textarea/textarea.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        label: 'Lorem ipsum',\r\n        placeholder: 'Dolor sit',\r\n        value:''\r\n      },\r\n    }),\r\n  }"
                 }
             ]
         },
@@ -3847,7 +3520,138 @@
                 }
             ]
         },
-        "groupedTypeAliases": {}
+        "groupedTypeAliases": {
+            "src/app/button/button.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<>",
+                    "file": "src/app/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/checkbox/checkbox.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<>",
+                    "file": "src/app/checkbox/checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/icon-button/icon-button.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<>",
+                    "file": "src/app/icon-button/icon-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/input/input.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<>",
+                    "file": "src/app/input/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/label/label.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<>",
+                    "file": "src/app/label/label.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/link/link.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<>",
+                    "file": "src/app/link/link.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/radio/radio.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<>",
+                    "file": "src/app/radio/radio.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/select/select.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<>",
+                    "file": "src/app/select/select.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/switch/switch.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<>",
+                    "file": "src/app/switch/switch.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/textarea/textarea.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<>",
+                    "file": "src/app/textarea/textarea.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ]
+        }
     },
     "routes": [],
     "coverage": {
@@ -3947,16 +3751,7 @@
                 "linktype": "component",
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/12",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/button/button.stories.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "ButtonProps",
-                "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {
@@ -3964,7 +3759,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "DangerThemeWithDangerVariant",
+                "name": "meta",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -3974,117 +3769,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "DangerThemeWithFillVariant",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/button/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "DangerThemeWithOutlineVariant",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/button/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "DangerThemeWithTransparentVariant",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/button/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "DefaultThemeWithDefaultVariant",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/button/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "DefaultThemeWithFillVariant",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/button/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "DefaultThemeWithOutlineVariant",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/button/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "DefaultThemeWithTransparentVariant",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/button/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "PrimaryThemeWithFillVariant",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/button/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "PrimaryThemeWithOutlineVariant",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/button/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "PrimaryThemeWithPrimaryVariant",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/button/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "PrimaryThemeWithTransparentVariant",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/button/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
+                "name": "Playground",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -4095,7 +3780,7 @@
                 "linktype": "component",
                 "name": "CheckboxComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {
@@ -4103,7 +3788,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "BasicCheckbox",
+                "name": "meta",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -4113,17 +3798,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "CheckboxWithError",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/checkbox/checkbox.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "CheckboxWithTooltip",
+                "name": "Playground",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -4152,7 +3827,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Playground",
+                "name": "meta",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -4162,7 +3837,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Template",
+                "name": "Playground",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -4173,7 +3848,7 @@
                 "linktype": "component",
                 "name": "InputComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/15",
+                "coverageCount": "0/17",
                 "status": "low"
             },
             {
@@ -4181,7 +3856,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Flat",
+                "name": "meta",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -4191,7 +3866,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Template",
+                "name": "Playground",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -4219,7 +3894,17 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "BasicLabel",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/label/label.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Playground",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -4238,7 +3923,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "DefaultLink",
+                "name": "meta",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -4248,47 +3933,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "DefaultLinkWithNoGlow",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/link/link.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "DefaultLinkWithNoUnderline",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/link/link.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "PrimaryLink",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/link/link.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "PrimaryLinkWithNoGlow",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/link/link.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "PrimaryLinkWithNoUnderline",
+                "name": "Playground",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -4299,7 +3944,7 @@
                 "linktype": "component",
                 "name": "RadioComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/11",
                 "status": "low"
             },
             {
@@ -4307,7 +3952,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "BasicRadio",
+                "name": "meta",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -4317,17 +3962,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "RadioWithError",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/radio/radio.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "RadioWithPrimary",
+                "name": "Playground",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -4346,7 +3981,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Autocomplete",
+                "name": "AutocompleteForm",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -4356,7 +3991,17 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "SingleSelect",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/select/select.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SelectForm",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -4376,7 +4021,7 @@
                 "linktype": "component",
                 "name": "SwitchComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -4384,7 +4029,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "BasicSwitch",
+                "name": "meta",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -4394,17 +4039,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "SwitchWithError",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/switch/switch.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "SwitchWithPrimary",
+                "name": "Playground",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -4415,7 +4050,7 @@
                 "linktype": "component",
                 "name": "TextareaComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/15",
+                "coverageCount": "0/12",
                 "status": "low"
             },
             {
@@ -4423,7 +4058,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "BasicTextarea",
+                "name": "meta",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -4433,47 +4068,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "TextareaWithError",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/textarea/textarea.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "TextareaWithSuccess",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/textarea/textarea.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "TextareaWithTooltip",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/textarea/textarea.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "TextareaWithTooltipAndError",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/textarea/textarea.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "TextareaWithWarning",
+                "name": "Playground",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
