@@ -1,39 +1,26 @@
-import { moduleMetadata } from "@storybook/angular";
+import {Meta, StoryObj, moduleMetadata } from '@storybook/angular';
 import { CheckboxComponent } from './checkbox.component';
+import { action } from '@storybook/addon-actions';
+import  ThemeType  from "../types/ThemeType";
 
-export default{
+const meta: Meta<typeof CheckboxComponent> = {
+  
     title: 'Form Elements/Checkbox',
-    decorators: [
-        moduleMetadata({
-            declarations: [CheckboxComponent],
-        }),
-    ],
-};
+    component: CheckboxComponent,
+    tags:["autodocs"],
+    argTypes: {
+    },
+  } as Meta;
+  
+  export default meta;
+  type Story = StoryObj<typeof CheckboxComponent>;
 
-export const BasicCheckbox = () =>({
-    component: CheckboxComponent,
-    props: {
-        label:'Article Description',
-        isChecked: false,
-        isError: false,
-        isTooltip: false,
-    },
-});
-export const CheckboxWithTooltip = () => ({
-    component: CheckboxComponent,
-    props: {
-        label:'Article Description',
-        isChecked: false,
-        isError: false,
-        isTooltip: true,
-    },
-});
-export const CheckboxWithError = () => ({
-    component: CheckboxComponent,
-    props: {
-        label:'Danger theme',
-        isChecked: false,
-        isError: true,
-        isTooltip: false,
-    },
-});
+  export const Playground:  Story = {
+    render:() => ({
+      props:{
+        theme: ThemeType.default,
+        label:'Lorem ipsum Dolor sit',
+        
+      },
+    }),
+  };

@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import ThemeType from '../types/ThemeType';
 
 @Component({
   selector: 'app-checkbox',
@@ -7,6 +8,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class CheckboxComponent {
   @Input() label: string = '';
+  @Input() theme: ThemeType = ThemeType.default;
+  @Input() type!: string;
   @Input() isChecked: boolean = false;
   @Input() isError: boolean = false;
   @Input() isTooltip: boolean = false;

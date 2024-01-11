@@ -1,27 +1,56 @@
+@import '../styles/index.css';
 
 .basicui-checkbox {
-  display: inline-block;
   cursor: pointer;
   position: relative;
-}
-.checkbox-input{
-  outline: 0;
-  height: 18px;
-  width: 18px;
-  border-radius: 50%;
+  display: inline-block;
   vertical-align: middle;
+}
+
+.basicui-checkbox__input {
   margin: 0;
   padding: 0;
+  width: var(--basicui-checkbox-height);
+  height: var(--basicui-checkbox-height);
+  border: var(--basicui-checkbox-border-thickness) solid var(--basicui-checkbox-border-color);
+  background-color: var(--basicui-checkbox-background-color);
+  outline: 0;
   cursor: pointer;
+  border-radius: var(--basicui-checkbox-border-radius);
+  display: inline-block;
+  vertical-align: middle;
+  /* position: static; */
+  transition: 250ms border-color ease-in-out, 250ms background-color ease-in-out, 250ms color ease-in-out;
 }
-.checkbox-label{
-  margin-left: 7px;
-  font-size: 13px;
-  font-family: system-ui;
+
+.basicui-checkbox__input:checked {
+  background-color: var(--basicui-checkbox-background-color-checked);
+  border-color: var(--basicui-checkbox-border-color-checked);
 }
-.basicui-checkbox.tooltip .checkbox-input {
-  accent-color: black;
+
+.basicui-checkbox__input:hover,
+.basicui-checkbox__input:focus,
+.basicui-checkbox__input:checked:hover,
+.basicui-checkbox__input:checked:focus {
+  background-color: var(--basicui-checkbox-background-color-hover);
+  border-color: var(--basicui-checkbox-border-color-hover);
 }
-.basicui-checkbox.error .checkbox-input{
-  accent-color: #e53935; 
+
+.basicui-checkbox__input:checked:after {
+  content: "";
+  display: block;
+  position: relative;
+  width: var(--basicui-checkbox-checkmark-width);
+  height: var(--basicui-checkbox-checkmark-height);
+  border-bottom: 1px solid var(--basicui-checkbox-checkmark-color);
+  border-right: 1px solid var(--basicui-checkbox-checkmark-color);
+  left: var(--basicui-checkbox-checkmark-offset-left);
+  bottom: var(--basicui-checkbox-checkmark-offset-bottom);
+  transform: rotate(40deg);
+}
+
+.basicui-checkbox__span {
+  font-size: var(--basicui-checkbox-font-size);
+  font-weight: var(--basicui-checkbox-font-weight);
+  margin-left: var(--basicui-checkbox-label-offset);
 }
