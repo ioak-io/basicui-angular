@@ -1,0 +1,15 @@
+<div class="Modal-footer">
+    <div class="basicui-modal-footer">
+        <button (click)="onClose()"
+        [ngClass]="{
+        'basicui-button': true,
+        'basicui-button--theme-primary': theme === 'primary',
+        'basicui-button--variant-default': variant === 'default'}" 
+        style="background-color: #1492db; margin-right: 10px; outline: none; border: none; color: white;">Apply</button>
+        <button (click)="onClose()"
+        [ngClass]="{
+        'basicui-button': true,
+        'basicui-button--theme-default': theme === 'default',
+        'basicui-button--variant-default': variant === 'default'}">Cancel</button>
+      </div>
+</div>

@@ -14,6 +14,7 @@ import { TextareaComponent } from './textarea/textarea.component';
 import { AccordionComponent } from './accordion/accordion.component';
 import { StoryWrapperComponent } from './modal/story-wrapper.component';
 import { ModalComponent } from './modal/modal.component';
+import { ModalFooterComponent } from './modal/modal-footer.component';
 import { TableComponent } from './table/table.component';
 import { TabsComponent } from './tabs/tabs.component';
 import Button from '../stories/button.component';
@@ -31,6 +32,7 @@ import Page from '../stories/page.component';
     AccordionComponent,
     StoryWrapperComponent,
     ModalComponent,
+    ModalFooterComponent,
     TableComponent,
     TabsComponent,
     Button,
