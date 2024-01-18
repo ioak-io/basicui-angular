@@ -11,6 +11,7 @@ import { IconButtonComponent } from './icon-button/icon-button.component';
 import { LinkComponent } from './link/link.component';
 import { RadioComponent } from './radio/radio.component';
 import { TextareaComponent } from './textarea/textarea.component';
+import { AccordionComponent } from './accordion/accordion.component';
 import Button from '../stories/button.component';
 import Header from '../stories/header.component';
 import Page from '../stories/page.component';
@@ -22,7 +23,8 @@ import Page from '../stories/page.component';
     IconButtonComponent,
     LinkComponent,
     RadioComponent, 
-    TextareaComponent, 
+    TextareaComponent,
+    AccordionComponent,
     Button,
     Header,
     Page

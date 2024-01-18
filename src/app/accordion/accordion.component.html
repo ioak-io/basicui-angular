@@ -1,0 +1,14 @@
+<div>
+    <div *ngFor="let panel of panels" class="basicui-accordion">
+      <div class="accordion-header" 
+      (click)="handleChange(panel.name)">
+        {{ panel.heading }}
+      </div>
+      
+      <div *ngIf="expanded === panel.name" class="accordion-content">
+        {{ panel.content }}
+      </div>
+    </div>
+  </div>
+
+  
