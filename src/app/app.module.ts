@@ -12,6 +12,8 @@ import { LinkComponent } from './link/link.component';
 import { RadioComponent } from './radio/radio.component';
 import { TextareaComponent } from './textarea/textarea.component';
 import { AccordionComponent } from './accordion/accordion.component';
+import { StoryWrapperComponent } from './modal/story-wrapper.component';
+import { ModalComponent } from './modal/modal.component';
 import Button from '../stories/button.component';
 import Header from '../stories/header.component';
 import Page from '../stories/page.component';
@@ -25,6 +27,8 @@ import Page from '../stories/page.component';
     RadioComponent, 
     TextareaComponent,
     AccordionComponent,
+    StoryWrapperComponent,
+    ModalComponent,
     Button,
     Header,
     Page
