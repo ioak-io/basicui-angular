@@ -1,0 +1,108 @@
+@import '../styles/index.css';
+
+.basicui-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    z-index: 100;
+}
+
+.basicui-modal__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #00000060;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: var(--basicui-modal-margin-y);
+    padding-bottom: var(--basicui-modal-margin-y);
+}
+
+.basicui-modal__base {
+    display: grid;
+    grid-auto-flow: row;
+    align-self: center;
+    z-index: 102;
+    background-color: var(--theme-white-50);
+    border-radius: var(--basicui-modal-border-radius);
+    width: 500px;
+    max-width: 90vw;
+    /* max-height: var(--basicui-modal-max-height); */
+    /* height: 100%; */
+}
+
+.basicui-dark .basicui-modal__base {
+    background-color: var(--theme-black-50);
+}
+
+.basicui-modal__base--size-small {
+    width: 300px;
+}
+
+.basicui-modal__base--size-large {
+    width: 800px;
+}
+
+.basicui-modal__base--size-xlarge {
+    width: 1140px;
+}
+
+.basicui-modal__base--placement-top {
+    align-self: flex-start;
+}
+.basicui-modal__base--placement-bottom {
+    align-self: flex-end;
+}
+.basicui-dark .basicui-modal-body{
+    background-color: #000;
+}
+.basicui-modal-body{
+    padding: 10px 10px;
+    margin-top: 10px;
+    border-radius: 6px;
+    width: 50%;
+    background-color: #fff;
+}
+.basicui-modal-header{
+    border-bottom: 1px solid #e4e4e4;
+    font-weight: 500;
+    font-size: 16px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+.basicui-modal-content{
+    border-bottom: 1px solid #e4e4e4;
+    padding: 10px 10px;
+}
+.basicui-modal-footer{
+    display: flex;
+    margin-right: 10px;
+    justify-content: flex-start;
+    align-items: center;
+}
+.basicui-modal-header__close{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.basicui-modal-header__close svg{
+    height: 16px;
+    fill: #000;
+    justify-content:flex-end;
+}
+
+.Modal-footer{
+    justify-content: flex-end;
+    display: flex;
+}

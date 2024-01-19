@@ -113,6 +113,48 @@
             "extends": []
         },
         {
+            "name": "Tab",
+            "id": "interface-Tab-40d3e856cc86ef54aa3ae1573222c94993b8de6a8a5401dd3fa6f17a98a349eb465fd048f85686151785a320d863262c9391ae0ea2267add6e5666ff8e360543",
+            "file": "src/app/tabs/tabs.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport ThemeType from '../types/ThemeType';\r\nimport TabShapeType from '../types/TabShapeType';\r\n\r\n@Component({\r\n  selector: 'app-tabs',\r\n  templateUrl: './tabs.component.html',\r\n  styleUrls:['./tabs.component.scss']\r\n})\r\nexport class TabsComponent {\r\n  @Input() theme: ThemeType = ThemeType.primary;\r\n  @Input() shape: TabShapeType = TabShapeType.default;\r\n  @Input() tabs: Tab[] = [];\r\n  @Input() activeTabId!: string;\r\n  @Input() checkmarkTabId! : string;\r\n  @Output() tabChange = new EventEmitter<string>();\r\n\r\n  changeTab(tabId: string): void {\r\n    this.activeTabId = tabId;\r\n    this.tabChange.emit(tabId);\r\n    //this.checkmarkTabId = tabId;\r\n  }\r\n}\r\nexport interface Tab {\r\n  id: string;\r\n  header: string;\r\n  content: string;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "content",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 28
+                },
+                {
+                    "name": "header",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 27
+                },
+                {
+                    "name": "id",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 26
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
             "name": "User",
             "id": "interface-User-dcc5c3137cd472dd0002d85b562efd23162e3eff53ca4438a6251e6c46e3b8299076255380d1d42f386510cb6f2cbaab49fa5b5f253be459cdc3869428c5c400",
             "file": "src/stories/User.ts",
@@ -132,6 +174,136 @@
     "classes": [],
     "directives": [],
     "components": [
+        {
+            "name": "AccordionComponent",
+            "id": "component-AccordionComponent-a036ea874151ccbc4c8aa8fc7e5b347ac3b1398e33f18107d2f7f1c0f0df873b07379f0788c9b9d23b04a400b88ed735b3b8b668c45ce09d33f6df74f7189401",
+            "file": "src/app/accordion/accordion.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-accordion",
+            "styleUrls": [
+                "./accordion.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./accordion.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "panels",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "any[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "panelChange",
+                    "defaultValue": "new EventEmitter<string>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "bordered",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                },
+                {
+                    "name": "expanded",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                },
+                {
+                    "name": "heading",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                },
+                {
+                    "name": "theme",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "handleChange",
+                    "args": [
+                        {
+                            "name": "panelName",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "panelName",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component, Input, Output, EventEmitter  } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'app-accordion',\r\n    templateUrl:'./accordion.component.html',\r\n    styleUrls:['./accordion.component.scss'],\r\n})\r\n\r\nexport class AccordionComponent {\r\n    \r\n    @Input() panels: any[] = [];\r\n    @Output() panelChange = new EventEmitter<string>();\r\n    expanded = '';\r\nheading: any;\r\ntheme: any;\r\nbordered: any;\r\n  \r\n    handleChange(panelName: string): void {\r\n      this.expanded = this.expanded === panelName ? '' : panelName;\r\n      this.panelChange.emit(this.expanded);\r\n    }\r\n  }",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "\r\n.basicui-accordion {\r\n    overflow: hidden;\r\n    border-bottom: 1px solid #dedede6b;\r\n    transition: background-color 250ms ease-in-out;\r\n}\r\n.accordion-header{\r\n    border-bottom: 1px solid #dedede6b;\r\n    height: 52px;\r\n    line-height: 45px;\r\n    align-content: center;\r\n    cursor: pointer;\r\n    padding: 0 16px;\r\n    transition: background-color 250ms ease-in-out;\r\n}\r\n.accordion-header:hover{\r\n    background-color: #3eb1f2;\r\n    border: none;\r\n    color: white;\r\n}\r\n.accordion-content{\r\n    padding: 16px 16px 16px 16px;\r\n    transition: 0.5s;\r\n    border-bottom: 1px solid #dedede6b;\r\n    -webkit-transition:5s;\r\n    font-family: system-ui;\r\n    font-size: 14px;\r\n    color: #000;\r\n    font-weight: 200;\r\n}\r\n",
+                    "styleUrl": "./accordion.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div>\r\n    <div *ngFor=\"let panel of panels\" class=\"basicui-accordion\">\r\n      <div class=\"accordion-header\" \r\n      (click)=\"handleChange(panel.name)\">\r\n        {{ panel.heading }}\r\n      </div>\r\n      \r\n      <div *ngIf=\"expanded === panel.name\" class=\"accordion-content\">\r\n        {{ panel.content }}\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  "
+        },
         {
             "name": "AppComponent",
             "id": "component-AppComponent-b490eac42952a7db44e6b4372f78ce192d53452b2665d658805d6dd93f5eb2f1dfd94165477dbc3ef7852c6b1e70d7f5bd45cabd2ef8471184c64c51cd0634cf",
@@ -730,6 +902,71 @@
             "templateData": "\r\n<label class=\"basicui-checkbox\" \r\n      [class.basicui-checkbox--theme-default]=\"theme === 'default'\"\r\n      [class.basicui-checkbox--theme-primary]=\"theme === 'primary'\"\r\n      [class.error]=\"isError\" [class.tooltip]=\"isTooltip\">\r\n  <input type=\"checkbox\" class=\"basicui-checkbox__input\" [checked]=\"isChecked\" (change)=\"toggleCheckbox($event)\" />\r\n  <span class=\"basicui-checkbox__span\">{{label}}</span>\r\n</label>"
         },
         {
+            "name": "ColorSchemesComponent",
+            "id": "component-ColorSchemesComponent-13c0e9c5a1db8c5611a261296978c1601b7964ed7ba879cc780c9f0f35ca4b29fc9d931fb873a5324b254115612a9c15e5be7c2a7bc35decca8c7ad4f0699121",
+            "file": "src/app/colorschemes/colorschemes.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-colorschemes",
+            "styleUrls": [
+                "./colorschemes.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./colorschemes.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "discriminator",
+                    "defaultValue": "\"adaptive\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "\"adaptive\" | \"black\" | \"white\" | \"black-extended\" | \"white-extended\" | \"default\" | \"default-transparent\" | \"primary\" | \"primary-transparent\" | \"danger\" | \"danger-transparent\" | \"themes-overview\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "levels",
+                    "defaultValue": "[\r\n                        '50',\r\n                        '100',\r\n                        '200',\r\n                        '300',\r\n                        '400',\r\n                        '500',\r\n                        '600',\r\n                        '700',\r\n                        '800',\r\n                        '900',\r\n                    ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 23
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-colorschemes',\r\n  templateUrl: './colorschemes.component.html',\r\n  styleUrls: ['./colorschemes.component.scss'],\r\n})\r\nexport class ColorSchemesComponent {\r\n  @Input() discriminator: \r\n        'adaptive' |\r\n        'black' |\r\n        'white' |\r\n        'black-extended' |\r\n        'white-extended' |\r\n        'default' |\r\n        'default-transparent' |\r\n        'primary' |\r\n        'primary-transparent' |\r\n        'danger' |\r\n        'danger-transparent' |\r\n        'themes-overview' = \"adaptive\";\r\n\r\n    levels: string[] = [\r\n                        '50',\r\n                        '100',\r\n                        '200',\r\n                        '300',\r\n                        '400',\r\n                        '500',\r\n                        '600',\r\n                        '700',\r\n                        '800',\r\n                        '900',\r\n                    ];\r\n}",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../styles/index.css';\r\n@import './styles/index.css';",
+                    "styleUrl": "./colorschemes.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div *ngIf=\"discriminator !== 'themes-overview'\" class=\"basicuidemo-color-scheme basicuidemo-color-scheme--{{ discriminator }}\">\r\n    <div *ngFor=\"let level of levels\" class=\"basicuidemo-color-scheme__x basicuidemo-color-scheme__{{ level }}\">\r\n      <div class=\"basicuidemo-color-scheme__x__bg\">\r\n        <div class=\"basicuidemo-color-scheme__x__bg__label\">background-color:</div>\r\n        <div class=\"basicuidemo-color-scheme__x__bg__value\">{{ 'var(--theme-' + discriminator + '-' + level + ')' }}</div>\r\n      </div>\r\n      <div class=\"basicuidemo-color-scheme__x__fg\">\r\n        <div class=\"basicuidemo-color-scheme__x__fg__label\">color:</div>\r\n        <div class=\"basicuidemo-color-scheme__x__fg__value\">{{ 'var(--theme-' + discriminator + '-' + level + 'i)' }}</div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <app-themes-overview *ngIf=\"discriminator === 'themes-overview'\"></app-themes-overview>"
+        },
+        {
             "name": "HeaderComponent",
             "id": "component-HeaderComponent-bda17aa3451a9f731685153f2587877b8267c32007f05e7abad3581336e6bc02346a1b660e8c69c4d90b4526b6e047b3ac1f4246252c9dc83985c9148aab5e97",
             "file": "src/stories/header.component.ts",
@@ -927,6 +1164,81 @@
             "stylesData": "",
             "extends": [],
             "templateData": "\r\n<button [ngClass]=\"{\r\n    'basicui-button': true,\r\n    'basicui-icon-button': true,\r\n    'basicui-icon-button--circle': circle,\r\n    'basicui-button--theme-default': theme === 'default',\r\n    'basicui-button--theme-primary': theme === 'primary',\r\n    'basicui-button--variant-default': variant === 'default',\r\n    'basicui-button--variant-fill': variant === 'fill',\r\n    'basicui-button--variant-outline': variant === 'outline',\r\n    'basicui-button--variant-transparent': variant === 'transparent',\r\n    'basicui-button--loading': loading\r\n  }\"\r\n  [type]=\"type\"\r\n  (click)=\"onClick && onClick()\"\r\n  (submit)=\"onSubmit && onSubmit()\"\r\n  (reset)=\"onReset && onReset()\">\r\n  <ng-container *ngIf=\"loading\">\r\n    <svg class=\"basicui-button__svg--loading\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\r\n      <path d=\"M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z\"> \r\n      </path>\r\n    </svg>\r\n  </ng-container>\r\n  <ng-container *ngIf=\"!loading\">\r\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" aria-hidden=\"true\">\r\n      <path d=\"M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z\"></path>\r\n    </svg>\r\n  </ng-container>\r\n  </button>\r\n\r\n\r\n  \r\n  <!--<button \r\n    type=\"button\"\r\n    (click)=\"handleClick()\" \r\n    [ngClass]=\"{\r\n      'basicui-button': true,\r\n      'basicui-icon-button': true,\r\n      'basicui-icon-button--circle': circle,\r\n      'basicui-icon-button--theme-default': theme,\r\n      'basicui-icon-button--variant-default': variant }\">\r\n    <ng-container *ngIf=\"loading\">\r\n      <svg class=\"basicui-button__svg--loading\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\r\n        <path d=\"M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z\"> \r\n        </path>\r\n      </svg>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"!loading\">\r\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" aria-hidden=\"true\">\r\n        <path d=\"M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z\"></path>\r\n      </svg>\r\n    </ng-container>\r\n  </button>-->"
+        },
+        {
+            "name": "IndexComponent",
+            "id": "component-IndexComponent-2d27c478c61cba201dc195d75001de6eec9061783a310f762ba3d5c663dcebc6ad0d00dab928fb38e824c82d811c92c11652f1a7e53fd89e5342fe6e29394355",
+            "file": "src/app/accordion/index.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-accordion",
+            "styleUrls": [],
+            "styles": [],
+            "template": "",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "panels",
+                    "defaultValue": "[\r\n    { name: 'panel1', heading: 'Etiam venenatis', content: '...' },\r\n    { name: 'panel2', heading: 'Lorem ipsum', content: '...' },\r\n    { name: 'panel3', heading: 'Curabitur condimentum risus pharetra diam', content: '...' },\r\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "handlePanelChange",
+                    "args": [
+                        {
+                            "name": "expanded",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "expanded",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-accordion',\r\n  template: ``,\r\n})\r\nexport class IndexComponent {\r\n  panels = [\r\n    { name: 'panel1', heading: 'Etiam venenatis', content: '...' },\r\n    { name: 'panel2', heading: 'Lorem ipsum', content: '...' },\r\n    { name: 'panel3', heading: 'Curabitur condimentum risus pharetra diam', content: '...' },\r\n  ];\r\n\r\n  handlePanelChange(expanded: string): void {\r\n    console.log('Expanded panel:', expanded);\r\n  }\r\n}",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
         },
         {
             "name": "InputComponent",
@@ -1266,6 +1578,172 @@
             "templateData": "\r\n<a [ngClass]=\"{'basicui-link': true,\r\n                    'basicui-link--theme-default': theme === 'default',\r\n                    'basicui-link--theme-primary': theme === 'primary',\r\n                    'basicui-link--no-underline' : noUnderline,\r\n                    'basicui-link--no-glow': noGlow\r\n                    }\">\r\n    <svg className=\"MuiSvgIcon-root cursor-pointer\" focusable=\"false\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z\"></path></svg>\r\n    <span>{{label}}</span>   \r\n</a>\r\n  "
         },
         {
+            "name": "ModalComponent",
+            "id": "component-ModalComponent-d02ad453bc3c8322a971123e45e4ed5d8a6aa3aba379738d3798b0d72fa12589b6ffab9f087402010ab96d3942132a2f68087eace6bf7c3d9b24f719b651143c",
+            "file": "src/app/modal/modal.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-modal",
+            "styleUrls": [
+                "./modal.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./modal.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "theme",
+                    "defaultValue": "ThemeType.default || ThemeType.primary",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "ThemeType",
+                    "decorators": []
+                },
+                {
+                    "name": "variant",
+                    "defaultValue": "ButtonVariantType.default",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "ButtonVariantType",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "closeModal",
+                    "defaultValue": "new EventEmitter<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "EventEmitter<void>"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "onClose",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Output, Input } from '@angular/core';\r\nimport ThemeType from '../types/ThemeType';\r\nimport ButtonVariantType from '../types/ButtonVariantType';\r\n\r\n@Component({\r\n  selector: 'app-modal',\r\n  templateUrl: './modal.component.html',\r\n  styleUrls: ['./modal.component.scss']\r\n})\r\nexport class ModalComponent {\r\n  @Input() theme: ThemeType = ThemeType.default || ThemeType.primary;\r\n  @Input() variant: ButtonVariantType = ButtonVariantType.default;\r\n  @Output() closeModal: EventEmitter<void> = new EventEmitter<void>();\r\n\r\n  onClose() {\r\n    this.closeModal.emit();\r\n  }\r\n}",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../styles/index.css';\r\n\r\n.basicui-modal {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100%;\r\n    width: 100%;\r\n    overflow: hidden;\r\n    display: grid;\r\n    align-items: center;\r\n    justify-items: center;\r\n    z-index: 100;\r\n}\r\n\r\n.basicui-modal__overlay {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100%;\r\n    width: 100%;\r\n    background-color: #00000060;\r\n    overflow: hidden;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    padding-top: var(--basicui-modal-margin-y);\r\n    padding-bottom: var(--basicui-modal-margin-y);\r\n}\r\n\r\n.basicui-modal__base {\r\n    display: grid;\r\n    grid-auto-flow: row;\r\n    align-self: center;\r\n    z-index: 102;\r\n    background-color: var(--theme-white-50);\r\n    border-radius: var(--basicui-modal-border-radius);\r\n    width: 500px;\r\n    max-width: 90vw;\r\n    /* max-height: var(--basicui-modal-max-height); */\r\n    /* height: 100%; */\r\n}\r\n\r\n.basicui-dark .basicui-modal__base {\r\n    background-color: var(--theme-black-50);\r\n}\r\n\r\n.basicui-modal__base--size-small {\r\n    width: 300px;\r\n}\r\n\r\n.basicui-modal__base--size-large {\r\n    width: 800px;\r\n}\r\n\r\n.basicui-modal__base--size-xlarge {\r\n    width: 1140px;\r\n}\r\n\r\n.basicui-modal__base--placement-top {\r\n    align-self: flex-start;\r\n}\r\n.basicui-modal__base--placement-bottom {\r\n    align-self: flex-end;\r\n}\r\n.basicui-dark .basicui-modal-body{\r\n    background-color: #000;\r\n}\r\n.basicui-modal-body{\r\n    padding: 10px 10px;\r\n    margin-top: 10px;\r\n    border-radius: 6px;\r\n    width: 50%;\r\n    background-color: #fff;\r\n}\r\n.basicui-modal-header{\r\n    border-bottom: 1px solid #e4e4e4;\r\n    font-weight: 500;\r\n    font-size: 16px;\r\n    font-family: sans-serif;\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n.basicui-modal-content{\r\n    border-bottom: 1px solid #e4e4e4;\r\n    padding: 10px 10px;\r\n}\r\n.basicui-modal-footer{\r\n    display: flex;\r\n    margin-right: 10px;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n}\r\n.basicui-modal-header__close{\r\n    background-color: transparent;\r\n    border: none;\r\n    cursor: pointer;\r\n}\r\n.basicui-modal-header__close svg{\r\n    height: 16px;\r\n    fill: #000;\r\n    justify-content:flex-end;\r\n}\r\n\r\n.Modal-footer{\r\n    justify-content: flex-end;\r\n    display: flex;\r\n}",
+                    "styleUrl": "./modal.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"basicui-modal-body\">\r\n  <div class=\"basicui-modal-header\">\r\n      <h5>Lorem ipsum dolor sit</h5>\r\n      <button (click)=\"onClose()\" class=\"basicui-modal-header__close\">\r\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 384 512\"><path d=\"M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z\"></path></svg>\r\n      </button>\r\n  </div>\r\n  <div class=\"basicui-modal-content\">\r\n      <ng-content></ng-content>\r\n  </div><br>\r\n  <div class=\"basicui-modal-footer\">\r\n    <button (click)=\"onClose()\"\r\n    [ngClass]=\"{\r\n    'basicui-button': true,\r\n    'basicui-button--theme-primary': theme === 'primary',\r\n    'basicui-button--variant-default': variant === 'default'}\" \r\n    style=\"background-color: #1492db; margin-right: 10px; outline: none; border: none; color: white;\">Apply</button>\r\n    <button (click)=\"onClose()\"\r\n    [ngClass]=\"{\r\n    'basicui-button': true,\r\n    'basicui-button--theme-default': theme === 'default',\r\n    'basicui-button--variant-default': variant === 'default'}\">Cancel</button>\r\n  </div>\r\n</div>"
+        },
+        {
+            "name": "ModalFooterComponent",
+            "id": "component-ModalFooterComponent-055e41ff60443bb93b8bb88000efb765452af6f3e9150b47c25c4405cdd2c74c792e63827ffdbe704ebc0d1f6632660d40c287372626a7b36207d0f2968e6ab8",
+            "file": "src/app/modal/modal-footer.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-modal",
+            "styleUrls": [
+                "./modal.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./modal-footer.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "theme",
+                    "defaultValue": "ThemeType.default || ThemeType.primary",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "ThemeType",
+                    "decorators": []
+                },
+                {
+                    "name": "variant",
+                    "defaultValue": "ButtonVariantType.default",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "ButtonVariantType",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "closeModal",
+                    "defaultValue": "new EventEmitter<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "EventEmitter<void>"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "onClose",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Output, Input } from '@angular/core';\r\nimport ThemeType from '../types/ThemeType';\r\nimport ButtonVariantType from '../types/ButtonVariantType';\r\n\r\n@Component({\r\n  selector: 'app-modal',\r\n  templateUrl: './modal-footer.html',\r\n  styleUrls: ['./modal.component.scss']\r\n})\r\nexport class ModalFooterComponent {\r\n  @Input() theme: ThemeType = ThemeType.default || ThemeType.primary;\r\n  @Input() variant: ButtonVariantType = ButtonVariantType.default;\r\n  @Output() closeModal: EventEmitter<void> = new EventEmitter<void>();\r\n\r\n  onClose() {\r\n    this.closeModal.emit();\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../styles/index.css';\r\n\r\n.basicui-modal {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100%;\r\n    width: 100%;\r\n    overflow: hidden;\r\n    display: grid;\r\n    align-items: center;\r\n    justify-items: center;\r\n    z-index: 100;\r\n}\r\n\r\n.basicui-modal__overlay {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100%;\r\n    width: 100%;\r\n    background-color: #00000060;\r\n    overflow: hidden;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    padding-top: var(--basicui-modal-margin-y);\r\n    padding-bottom: var(--basicui-modal-margin-y);\r\n}\r\n\r\n.basicui-modal__base {\r\n    display: grid;\r\n    grid-auto-flow: row;\r\n    align-self: center;\r\n    z-index: 102;\r\n    background-color: var(--theme-white-50);\r\n    border-radius: var(--basicui-modal-border-radius);\r\n    width: 500px;\r\n    max-width: 90vw;\r\n    /* max-height: var(--basicui-modal-max-height); */\r\n    /* height: 100%; */\r\n}\r\n\r\n.basicui-dark .basicui-modal__base {\r\n    background-color: var(--theme-black-50);\r\n}\r\n\r\n.basicui-modal__base--size-small {\r\n    width: 300px;\r\n}\r\n\r\n.basicui-modal__base--size-large {\r\n    width: 800px;\r\n}\r\n\r\n.basicui-modal__base--size-xlarge {\r\n    width: 1140px;\r\n}\r\n\r\n.basicui-modal__base--placement-top {\r\n    align-self: flex-start;\r\n}\r\n.basicui-modal__base--placement-bottom {\r\n    align-self: flex-end;\r\n}\r\n.basicui-dark .basicui-modal-body{\r\n    background-color: #000;\r\n}\r\n.basicui-modal-body{\r\n    padding: 10px 10px;\r\n    margin-top: 10px;\r\n    border-radius: 6px;\r\n    width: 50%;\r\n    background-color: #fff;\r\n}\r\n.basicui-modal-header{\r\n    border-bottom: 1px solid #e4e4e4;\r\n    font-weight: 500;\r\n    font-size: 16px;\r\n    font-family: sans-serif;\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n.basicui-modal-content{\r\n    border-bottom: 1px solid #e4e4e4;\r\n    padding: 10px 10px;\r\n}\r\n.basicui-modal-footer{\r\n    display: flex;\r\n    margin-right: 10px;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n}\r\n.basicui-modal-header__close{\r\n    background-color: transparent;\r\n    border: none;\r\n    cursor: pointer;\r\n}\r\n.basicui-modal-header__close svg{\r\n    height: 16px;\r\n    fill: #000;\r\n    justify-content:flex-end;\r\n}\r\n\r\n.Modal-footer{\r\n    justify-content: flex-end;\r\n    display: flex;\r\n}",
+                    "styleUrl": "./modal.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"Modal-footer\">\r\n    <div class=\"basicui-modal-footer\">\r\n        <button (click)=\"onClose()\"\r\n        [ngClass]=\"{\r\n        'basicui-button': true,\r\n        'basicui-button--theme-primary': theme === 'primary',\r\n        'basicui-button--variant-default': variant === 'default'}\" \r\n        style=\"background-color: #1492db; margin-right: 10px; outline: none; border: none; color: white;\">Apply</button>\r\n        <button (click)=\"onClose()\"\r\n        [ngClass]=\"{\r\n        'basicui-button': true,\r\n        'basicui-button--theme-default': theme === 'default',\r\n        'basicui-button--variant-default': variant === 'default'}\">Cancel</button>\r\n      </div>\r\n</div>\r\n"
+        },
+        {
             "name": "PageComponent",
             "id": "component-PageComponent-1fc7c24c98b4f0b0f413d91f5a6126f11ad55647457f5a7f372b7f83fe8ecd6dbe67b5ca4b826ed20b9bfbc04d5606b15f82a203b1311f98b18bd28ec9f4fc7c",
             "file": "src/stories/page.component.ts",
@@ -1583,6 +2061,134 @@
             "templateData": "\r\n\r\n  <div class=\"custom-select\" *ngIf=\"selectType === 'single'\">\r\n    <select *ngIf=\"selectedValue !== undefined\" class=\"positioned-select\">\r\n      <option> {{ selectedValue }}</option>\r\n      <option *ngFor=\"let option of options\" [value]=\"option.value\">{{ option.label }}</option>\r\n    </select>\r\n  </div>\r\n\r\n  <!-- <div class=\"custom-select\" *ngIf=\"selectType === 'multi'\">\r\n    <select multiple>\r\n      <option *ngFor=\"let option of options\" [value]=\"option.value\">{{ option.label }}</option>\r\n    </select>\r\n  </div> -->\r\n  \r\n  <div class=\"custom-select\" *ngIf=\"selectType === 'autocomplete'\">\r\n    <input type=\"text\" placeholder=\"Autocomplete dropdown\" list=\"autocompleteOptions\" class=\"auto-select\" style=\"width: 100%; \">\r\n    <datalist id=\"autocompleteOptions\">\r\n      <option *ngFor=\"let option of options\" [value]=\"option.label\" style=\"width: 100%;\">{{ option.label }}</option>\r\n    </datalist>\r\n  </div>\r\n  \r\n  <!-- <div class=\"custom-select\" *ngIf=\"selectType === 'autocomplete-multi'\">\r\n    <input type=\"text\" placeholder=\"Autocomplete dropdown\" list=\"autocompleteOptions\" class=\"auto-select\" style=\"width: 100%;\">\r\n    <datalist id=\"autocompleteOptions\">\r\n      <option *ngFor=\"let option of options\" [value]=\"option.label\" style=\"width: 100%;\">{{ option.label }}</option>\r\n    </datalist>\r\n  </div>-->\r\n  "
         },
         {
+            "name": "StoryWrapperComponent",
+            "id": "component-StoryWrapperComponent-02c7e0df0025be0c237987959e99f3945cd2ff771dc86b1aacefad307b2930471b8c177beaebb195684fbefd435916453a714ad7e416849026c9224b9863db33",
+            "file": "src/app/modal/story-wrapper.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-story-wrapper",
+            "styleUrls": [
+                "./story-wrapper.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./story-wrapper.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "onClick",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "any",
+                    "decorators": []
+                },
+                {
+                    "name": "onReset",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "any",
+                    "decorators": []
+                },
+                {
+                    "name": "onSubmit",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "any",
+                    "decorators": []
+                },
+                {
+                    "name": "theme",
+                    "defaultValue": "ThemeType.default",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "ThemeType",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "\"button\" | \"submit\" | \"reset\"",
+                    "decorators": []
+                },
+                {
+                    "name": "variant",
+                    "defaultValue": "ButtonVariantType.default",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "ButtonVariantType",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "isOpen",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "closeModal",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "openModal",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport ThemeType from '../types/ThemeType';\r\nimport ButtonVariantType from '../types/ButtonVariantType';\r\n\r\n@Component({\r\n  selector: 'app-story-wrapper',\r\n  templateUrl: './story-wrapper.component.html',\r\n  styleUrls: ['./story-wrapper.component.scss']\r\n})\r\nexport class StoryWrapperComponent {\r\n  @Input() theme: ThemeType = ThemeType.default;\r\n  @Input() onClick?: any;\r\n  @Input() onSubmit?: any;\r\n  @Input() onReset?: any;\r\n  @Input() type: 'button' | 'submit' | 'reset' = 'button';\r\n  @Input() variant: ButtonVariantType = ButtonVariantType.default;\r\n  \r\n  isOpen: boolean = false;\r\n\r\n  openModal() {\r\n    this.isOpen = true;\r\n  }\r\n\r\n  closeModal() {\r\n    this.isOpen = false;\r\n  }\r\n}",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "\r\n@import '../styles/index.css';\r\n\r\n.basicui-dark .basicui-modal-base{\r\n    background-color: black;\r\n}",
+                    "styleUrl": "./story-wrapper.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div>\r\n    <button\r\n    [ngClass] = \"{\r\n      'basicui-button': true,\r\n      'basicui-button--theme-default': true,\r\n      'basicui-button--variant-default':true,\r\n      'basicui-button--theme-dark': true\r\n    }\"\r\n    [type]=\"type\"\r\n     (click)=\"openModal()\">Open Modal</button>\r\n    <app-modal *ngIf=\"isOpen\" (closeModal)=\"closeModal()\" class=\"basicui-modal-base\" style=\"position: fixed; top: 0; left: 0; height: 100%; width: 100%; background-color: #00000060; padding-top: 20px; padding-bottom: 20px; align-items: center; justify-content: center; display: flex; overflow: hidden;\">\r\n      Praesent urna erat, pharetra vel est vitae, tincidunt viverra sapien. Nullam ac rutrum diam. Curabitur non augue justo. Morbi pulvinar convallis leo eu faucibus. Nullam eu ullamcorper nisl. Ut cursus sagittis elit at congue. Donec malesuada sem at condimentum ultrices. Ut elementum tincidunt ipsum quis condimentum. Mauris nec arcu vitae diam sollicitudin aliquet. Nunc sed euismod ante. Proin eros magna, lobortis ut varius finibus, dignissim eu purus. Praesent ornare rutrum turpis imperdiet fringilla.\r\n    </app-modal>\r\n  </div>"
+        },
+        {
             "name": "SvgIconComponent",
             "id": "component-SvgIconComponent-d3079d126b5caacf056d6fa8414a20f0b0a9e688729a4f6b48a3adb84f698f3e2a454e92c71b32b29cc99d7ac579020ca3d5fd50de9a8f525d0eb05df663cae6",
             "file": "src/app/svg-icon/svg-icon.component.ts",
@@ -1778,6 +2384,245 @@
             "templateData": "<label class=\"switch\" \r\n      [class.basicui-radio--theme-default]=\"theme === 'default'\"\r\n      [class.basicui-radio--theme-default]=\"theme === 'primary'\">\r\n    <input type=\"checkbox\" [checked]=\"isChecked\" (change)=\"toggleSwitch($event)\" />\r\n    <span class=\"slider\"></span>\r\n  </label>"
         },
         {
+            "name": "TableComponent",
+            "id": "component-TableComponent-9b50abde472b85a9c1bc3dd1e394a3538011dcd24b7018b709d5bb767cf12a35d3ed49e2a34edbcaaebd268449a33b15661d1bf75381e97c6702640bf830d9df",
+            "file": "src/app/table/table.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-table",
+            "styleUrls": [
+                "./table.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./table.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "bordered",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "hover",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "inverse",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "inverseHeader",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "small",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "striped",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "theme",
+                    "defaultValue": "ThemeType.default",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "ThemeType",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "tableData",
+                    "defaultValue": "[\r\n    { firstName: 'Gene', lastName: 'Tierney', email: 'gene.tierney@ioak.org', age: 36 },\r\n    { firstName: 'Jack', lastName: 'Lemmon', email: 'jack.lemmon@ioak.org', age: 28 },\r\n    { firstName: 'Billy', lastName: 'Wilder', email: 'billy.wilder@ioak.org', age: 45 },\r\n    { firstName: 'Katherine', lastName: 'Hepburn', email: 'katherina.hepburn@ioak.org', age: 27 },\r\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport  ThemeType  from '../types/ThemeType';\r\n\r\n@Component({\r\n  selector: 'app-table',\r\n  templateUrl: './table.component.html',\r\n  styleUrls: ['./table.component.scss']\r\n})\r\nexport class TableComponent {\r\n  @Input() theme: ThemeType = ThemeType.default;\r\n  @Input() inverse?: boolean;\r\n  @Input() inverseHeader?: boolean;\r\n  @Input() striped?: boolean;\r\n  @Input() hover?: boolean;\r\n  @Input() bordered?: boolean;\r\n  @Input() small?: boolean;\r\n\r\n  tableData = [\r\n    { firstName: 'Gene', lastName: 'Tierney', email: 'gene.tierney@ioak.org', age: 36 },\r\n    { firstName: 'Jack', lastName: 'Lemmon', email: 'jack.lemmon@ioak.org', age: 28 },\r\n    { firstName: 'Billy', lastName: 'Wilder', email: 'billy.wilder@ioak.org', age: 45 },\r\n    { firstName: 'Katherine', lastName: 'Hepburn', email: 'katherina.hepburn@ioak.org', age: 27 },\r\n  ];\r\n}",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../styles/index.css';\r\ntable{\r\n    font-weight: 300;\r\n    font-size: 14px;\r\n    color: #000;\r\n}",
+                    "styleUrl": "./table.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<table\r\n      [ngClass]=\"{\r\n        'basicui-table': true,\r\n        'theme-default': theme === 'default',\r\n        'table-inverse': inverse,\r\n        'table-striped': striped,\r\n        'table-hover': hover,\r\n        'table-bordered': bordered,\r\n        'table-small': small}\">\r\n      <thead [ngClass]=\"{ 'thead-inverse': inverseHeader }\">\r\n        <tr>\r\n          <th>First name</th>\r\n          <th>Last name</th>\r\n          <th>Email</th>\r\n          <th>Age</th>\r\n        </tr>\r\n      </thead>\r\n      <tbody>\r\n        <tr *ngFor=\"let row of tableData\">\r\n          <td>{{ row.firstName }}</td>\r\n          <td>{{ row.lastName }}</td>\r\n          <td>{{ row.email }}</td>\r\n          <td>{{ row.age }}</td>\r\n        </tr>\r\n      </tbody>\r\n    </table>\r\n\r\n    "
+        },
+        {
+            "name": "TabsComponent",
+            "id": "component-TabsComponent-40d3e856cc86ef54aa3ae1573222c94993b8de6a8a5401dd3fa6f17a98a349eb465fd048f85686151785a320d863262c9391ae0ea2267add6e5666ff8e360543",
+            "file": "src/app/tabs/tabs.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-tabs",
+            "styleUrls": [
+                "./tabs.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./tabs.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "activeTabId",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "checkmarkTabId",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "shape",
+                    "defaultValue": "TabShapeType.default",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "TabShapeType",
+                    "decorators": []
+                },
+                {
+                    "name": "tabs",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "Tab[]",
+                    "decorators": []
+                },
+                {
+                    "name": "theme",
+                    "defaultValue": "ThemeType.primary",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "ThemeType",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "tabChange",
+                    "defaultValue": "new EventEmitter<string>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "changeTab",
+                    "args": [
+                        {
+                            "name": "tabId",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "tabId",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport ThemeType from '../types/ThemeType';\r\nimport TabShapeType from '../types/TabShapeType';\r\n\r\n@Component({\r\n  selector: 'app-tabs',\r\n  templateUrl: './tabs.component.html',\r\n  styleUrls:['./tabs.component.scss']\r\n})\r\nexport class TabsComponent {\r\n  @Input() theme: ThemeType = ThemeType.primary;\r\n  @Input() shape: TabShapeType = TabShapeType.default;\r\n  @Input() tabs: Tab[] = [];\r\n  @Input() activeTabId!: string;\r\n  @Input() checkmarkTabId! : string;\r\n  @Output() tabChange = new EventEmitter<string>();\r\n\r\n  changeTab(tabId: string): void {\r\n    this.activeTabId = tabId;\r\n    this.tabChange.emit(tabId);\r\n    //this.checkmarkTabId = tabId;\r\n  }\r\n}\r\nexport interface Tab {\r\n  id: string;\r\n  header: string;\r\n  content: string;\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import './style-theme.css';\r\n@import '../styles/index.css';\r\n\r\n.basicui-tabs__ul {\r\n    list-style: none;\r\n    padding-left: 0;\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    border-bottom: 1px solid #e4e4e4;\r\n}\r\n.basicui-tabs__ul__li.active .basicui-tabs__ul__li__button{\r\n    background-color: #1492db;\r\n    color: white;\r\n}\r\n.basicui-tabs__ul__li--active .basicui-tabs__ul__li__button{\r\n    background-color: #1492db;\r\n}\r\n\r\n.basicui-tabs__ul__li__button:hover,\r\n.basicui-tabs__ul__li__button:focus{\r\n    transition: border-color 250ms ease-in-out, background-color 250ms ease-in-out, color 250ms ease-in-out;\r\n    border-bottom: none;\r\n}\r\n.basicui-tabs__ul__li__button {\r\n    position: relative;\r\n    background-color: transparent;\r\n    border: none;\r\n    color: var(--theme-black-900);\r\n    fill: var(--theme-black-900);\r\n    cursor: pointer;\r\n    padding: var(--basicui-tab-padding-y) var(--basicui-tab-padding-x);\r\n    border: var(--basicui-tab-border-width) solid transparent;\r\n    border-bottom: none;\r\n    border-radius: var(--basicui-tab-border-radius) var(--basicui-tab-border-radius) 0 0;\r\n}\r\n.basicui-dark .basicui-tabs__ul__li__button {\r\n    color: var(--theme-white-50);\r\n    fill: var(--theme-white-50);\r\n}\r\n.basicui-tabs__ul__li__button:hover,\r\n.basicui-tabs__ul__li__button:focus,\r\n.basicui-tabs__ul__li--active .basicui-tabs__ul__li__button {\r\n    border: var(--basicui-tab-border-width) solid var(--basicui-tab-border-color);\r\n    border-bottom: none; \r\n}\r\n\r\n.basicui-tabs--shape-round .basicui-tabs__ul__li__button {\r\n    border-radius: var(--basicui-tab-border-radius);\r\n}\r\n\r\n.basicui-tabs--shape-rectangle .basicui-tabs__ul__li__button {\r\n    border-radius: 0px;\r\n}\r\n\r\n.basicui-tabs--offset .basicui-tabs__ul__li {\r\n    //margin-right: var(--basicui-tab-offset);\r\n    //margin-bottom: var(--basicui-tab-offset);\r\n    margin: 0;\r\n}\r\n.basicui-tab-header {\r\n    display: grid;\r\n    grid-auto-flow: column;\r\n    column-gap: 6px;\r\n    row-gap: 6px;\r\n    justify-content: center;\r\n    justify-items: center;\r\n    align-items: center;\r\n    align-content: center;\r\n    font-size: 12px;\r\n}\r\n.basicui-tab-header--alignment-column {\r\n    grid-auto-flow: row;\r\n    column-gap: 10px;\r\n}\r\n.basicui-tab-header * {\r\n    display: flex;\r\n}\r\n.basicui-tabs__ul__li__button .checkmark {\r\n    height: 15px;\r\n    width: 15px;\r\n    position: absolute;\r\n    top: 51%;\r\n    right: 56px;\r\n    transform: translateY(-50%);\r\n}\r\n.basicui-tabs__ul__li.active .checkmark {\r\n    fill: #ffffff;\r\n  }",
+                    "styleUrl": "./tabs.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "\r\n<div class=\"basicui-tabs\" \r\n     [class.basicui-tabs--theme-primary]=\"true\"\r\n     [class.basicui-tabs--shape-default]=\"true\"\r\n     [class.basicui-tabs--offset]=\"true\">\r\n  <ul class=\"basicui-tabs__ul\">\r\n    <li *ngFor=\"let tab of tabs\" [class.active]=\"tab.id === activeTabId\" class=\"basicui-tabs__ul__li\">\r\n      <button class=\"basicui-tabs__ul__li__button\" (click)=\"changeTab(tab.id)\">\r\n        <svg height=\"16\" viewBox=\"0 0 16 16\" version=\"1.1\" width=\"16\" aria-hidden=\"true\" class=\"checkmark\" *ngIf=\"tab.id === checkmarkTabId\">\r\n            <path fillRule=\"evenodd\" d=\"M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z\"></path>\r\n        </svg>\r\n        <!--<span class=\"checkmark\" *ngIf=\"tab.id === checkmarkTabId\">&#10004;</span>-->\r\n        {{ tab.header }}\r\n    </button>\r\n    </li>\r\n  </ul>\r\n  <div *ngFor=\"let tab of tabs\">\r\n    <ng-container *ngIf=\"tab.id === activeTabId\">\r\n      <div>{{ tab.content }}</div>\r\n    </ng-container>\r\n  </div>\r\n</div>\r\n\r\n"
+        },
+        {
             "name": "TextareaComponent",
             "id": "component-TextareaComponent-691de77caabb1627749fd71fdeec7c44806f52d99cf03cc2147e3672c78806dcb7c72e1e0d56c7cdec1484726075861ed7a19a62dfbdb6269a259735f34be3a7",
             "file": "src/app/textarea/textarea.component.ts",
@@ -1918,18 +2763,73 @@
             "stylesData": "",
             "extends": [],
             "templateData": "\r\n<div class=\"basicui-textarea\">\r\n    <div class=\"label\">{{label}}</div>\r\n    <textarea [ngClass]=\"{'basicui-input': true }\"\r\n              [placeholder]=\"placeholder\" \r\n              [value]=\"value\"\r\n              autocomplete=\"none\">\r\n    </textarea>\r\n</div>\r\n    <div *ngIf=\"isSuccess\" class=\"success-message\">{{ successMessage }}</div>\r\n    <div *ngIf=\"isWarning\" class=\"warning-message\">{{ warningMessage }}</div>\r\n    <div *ngIf=\"isTooltip\" class=\"tooltip-message\">{{ tooltipMessage }}</div>\r\n    <div *ngIf=\"isError\" class=\"error-message\">{{ errorMessage }}</div>\r\n\r\n\r\n"
+        },
+        {
+            "name": "ThemesOverviewComponent",
+            "id": "component-ThemesOverviewComponent-58866e53f2d5d639564c8a991b78cb5e6bae167a442b45947a2668cac983e1d5aa45fd09917212bdb3a72f15572c5f8156c704cc8173611634defdd6adbd167f",
+            "file": "src/app/colorschemes/themes-overview.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-colorschemes",
+            "styleUrls": [
+                "./colorschemes.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./colorschemes.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "themes",
+                    "defaultValue": "[\r\n    \"adaptive\",\r\n    \"black\",\r\n    \"black-extended\",\r\n    \"white\",\r\n    \"white-extended\",\r\n    \"default\",\r\n    \"default-transparent\",\r\n    \"primary\",\r\n    \"primary-transparent\",\r\n    \"warning\",\r\n    \"warning-transparent\",\r\n    \"danger\",\r\n    \"danger-transparent\"\r\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-colorschemes',\r\n  templateUrl: './colorschemes.component.html',\r\n  styleUrls: ['./colorschemes.component.scss'],\r\n})\r\nexport class ThemesOverviewComponent{\r\n  themes: string[] = [\r\n    \"adaptive\",\r\n    \"black\",\r\n    \"black-extended\",\r\n    \"white\",\r\n    \"white-extended\",\r\n    \"default\",\r\n    \"default-transparent\",\r\n    \"primary\",\r\n    \"primary-transparent\",\r\n    \"warning\",\r\n    \"warning-transparent\",\r\n    \"danger\",\r\n    \"danger-transparent\"\r\n  ];\r\n}",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../styles/index.css';\r\n@import './styles/index.css';",
+                    "styleUrl": "./colorschemes.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div *ngIf=\"discriminator !== 'themes-overview'\" class=\"basicuidemo-color-scheme basicuidemo-color-scheme--{{ discriminator }}\">\r\n    <div *ngFor=\"let level of levels\" class=\"basicuidemo-color-scheme__x basicuidemo-color-scheme__{{ level }}\">\r\n      <div class=\"basicuidemo-color-scheme__x__bg\">\r\n        <div class=\"basicuidemo-color-scheme__x__bg__label\">background-color:</div>\r\n        <div class=\"basicuidemo-color-scheme__x__bg__value\">{{ 'var(--theme-' + discriminator + '-' + level + ')' }}</div>\r\n      </div>\r\n      <div class=\"basicuidemo-color-scheme__x__fg\">\r\n        <div class=\"basicuidemo-color-scheme__x__fg__label\">color:</div>\r\n        <div class=\"basicuidemo-color-scheme__x__fg__value\">{{ 'var(--theme-' + discriminator + '-' + level + 'i)' }}</div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <app-themes-overview *ngIf=\"discriminator === 'themes-overview'\"></app-themes-overview>"
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-f33ece9ca5c0ed7302fdab23a4b03bbccd212b01bbbee0cbe32a9bb42af33e307901edb1c055ef32cb34335578a65dc3a74bc3abe5f2ed7efa3a5b212ff81a4f",
+            "id": "module-AppModule-e4ccf4918b6fc7142d6fc1a7c2175187623817fc9fb398224325c421fea17be90e859f7c82fb69e837d3e3291b16d3c35ad4e99d5e94f45143aaa9f7cff34460",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { BrowserModule } from '@angular/platform-browser';\r\nimport { NgModule } from '@angular/core';\r\n//import { TaskModule } from './components/task.module';\r\nimport { NgxsModule } from '@ngxs/store';\r\nimport { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';\r\nimport { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';\r\nimport { environment } from '../environments/environment';\r\nimport { AppComponent } from './app.component';\r\n//import InboxScreenComponent from './components/inbox-screen.component';\r\n//import PureInboxScreenComponent from './components/pure-inbox-screen.component';\r\n//import { AvatarComponent } from './avatar/avatar.component';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { SelectComponent } from './select/select.component';\r\nimport { IconButtonComponent } from './icon-button/icon-button.component';\r\nimport { LinkComponent } from './link/link.component';\r\nimport { RadioComponent } from './radio/radio.component';\r\nimport { TextareaComponent } from './textarea/textarea.component';\r\n\r\n\r\n@NgModule({\r\n  declarations: [AppComponent, LinkComponent, TextareaComponent, RadioComponent /*InboxScreenComponent, PureInboxScreenComponent,*/ /*AvatarComponent*/, SelectComponent, IconButtonComponent],\r\n  imports: [\r\n    BrowserModule,\r\n    FormsModule,\r\n    //TaskModule,\r\n    NgxsModule.forRoot([], { developmentMode: !environment.production, }),\r\n    NgxsReduxDevtoolsPluginModule.forRoot(),\r\n    NgxsLoggerPluginModule.forRoot({ disabled: environment.production, }),\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {}\r\n",
+            "sourceCode": "import { BrowserModule } from '@angular/platform-browser';\r\nimport { NgModule } from '@angular/core';\r\nimport { NgxsModule } from '@ngxs/store';\r\nimport { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';\r\nimport { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';\r\nimport { environment } from '../environments/environment';\r\nimport { AppComponent } from './app.component';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { SelectComponent } from './select/select.component';\r\nimport { IconButtonComponent } from './icon-button/icon-button.component';\r\nimport { LinkComponent } from './link/link.component';\r\nimport { RadioComponent } from './radio/radio.component';\r\nimport { TextareaComponent } from './textarea/textarea.component';\r\nimport { AccordionComponent } from './accordion/accordion.component';\r\nimport { StoryWrapperComponent } from './modal/story-wrapper.component';\r\nimport { ModalComponent } from './modal/modal.component';\r\nimport { ModalFooterComponent } from './modal/modal-footer.component';\r\nimport { TableComponent } from './table/table.component';\r\nimport { TabsComponent } from './tabs/tabs.component';\r\nimport Button from '../stories/button.component';\r\nimport Header from '../stories/header.component';\r\nimport Page from '../stories/page.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    SelectComponent, \r\n    IconButtonComponent,\r\n    LinkComponent,\r\n    RadioComponent, \r\n    TextareaComponent,\r\n    AccordionComponent,\r\n    StoryWrapperComponent,\r\n    ModalComponent,\r\n    ModalFooterComponent,\r\n    TableComponent,\r\n    TabsComponent,\r\n    Button,\r\n    Header,\r\n    Page\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    FormsModule,\r\n    NgxsModule.forRoot([], { developmentMode: !environment.production, }),\r\n    NgxsReduxDevtoolsPluginModule.forRoot(),\r\n    NgxsLoggerPluginModule.forRoot({ disabled: environment.production, }),\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1939,7 +2839,16 @@
                     "type": "declarations",
                     "elements": [
                         {
+                            "name": "AccordionComponent"
+                        },
+                        {
                             "name": "AppComponent"
+                        },
+                        {
+                            "name": "Button"
+                        },
+                        {
+                            "name": "Header"
                         },
                         {
                             "name": "IconButtonComponent"
@@ -1948,10 +2857,28 @@
                             "name": "LinkComponent"
                         },
                         {
+                            "name": "ModalComponent"
+                        },
+                        {
+                            "name": "ModalFooterComponent"
+                        },
+                        {
+                            "name": "Page"
+                        },
+                        {
                             "name": "RadioComponent"
                         },
                         {
                             "name": "SelectComponent"
+                        },
+                        {
+                            "name": "StoryWrapperComponent"
+                        },
+                        {
+                            "name": "TableComponent"
+                        },
+                        {
+                            "name": "TabsComponent"
                         },
                         {
                             "name": "TextareaComponent"
@@ -2076,6 +3003,16 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "Adaptive",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/colorschemes/colorschemes.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "AutocompleteForm",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2096,6 +3033,46 @@
                 "defaultValue": "'https://res.cloudinary.com/dvujyxh7e/image/upload/c_scale,w_128/v1593253478/trung-vo_bioxmc.png'"
             },
             {
+                "name": "Black",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/colorschemes/colorschemes.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "BlackExtended",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/colorschemes/colorschemes.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Danger",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/colorschemes/colorschemes.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "DangerTransparent",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/colorschemes/colorschemes.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2103,6 +3080,26 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<BreadcrumbsComponent>",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/colorschemes/colorschemes.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "DefaultTransparent",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/colorschemes/colorschemes.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
                 "defaultValue": "Template.bind({})"
             },
             {
@@ -2279,11 +3276,41 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/table/table.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<>",
+                "defaultValue": "{\r\n  \r\n    title: 'Surfaces/Table',\r\n    component: TableComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/textarea/textarea.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<>",
                 "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Textarea',\r\n    component: TextareaComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
+            },
+            {
+                "name": "panels",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/accordion/accordion.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\r\n    { name: 'panel1', \r\n      heading: 'Etiam venenatis', \r\n      content: 'Etiam venenatis, quam nec volutpat bibendum, magna ex fringilla turpis, vitae efficitur nisl lectus ut mauris. Curabitur sagittis neque id odio viverra pellentesque. Etiam pellentesque molestie suscipit. Suspendisse quis dui a arcu ultrices tempor. Integer cursus justo nisi, vel vestibulum justo viverra id. Phasellus suscipit, felis ac volutpat viverra, ligula tellus molestie felis, et elementum tortor libero vel ante. Mauris sodales imperdiet turpis. Fusce pulvinar diam at dictum commodo. Aliquam erat volutpat. Suspendisse porta, sapien et euismod fermentum, lectus risus facilisis purus, sit amet tempus nunc leo sed neque.' \r\n    },\r\n\r\n    { name: 'panel2', \r\n      heading: 'Lorem ipsum', \r\n      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in tristique orci. Donec eget urna ut nisi mattis interdum sed sit amet orci. Nulla ac efficitur ipsum. Nam vitae nulla velit. Proin eu elementum velit. Cras id sollicitudin tortor, id placerat ante. Duis in magna purus. Aenean dignissim sit amet metus id ultrices. Ut egestas ex lectus, et congue erat pulvinar ac. In sem nulla, tincidunt eu convallis nec, sollicitudin id nulla. Donec ullamcorper, leo nec interdum mollis, dui sapien dignissim arcu, quis placerat tellus ligula id ex. Fusce convallis metus in elementum posuere. Proin eu nulla imperdiet, aliquet purus finibus, mollis tellus. Praesent accumsan nunc id purus sollicitudin egestas. Sed interdum sodales aliquam. Proin fermentum ipsum nec sem sagittis facilisis. Maecenas ac metus quis leo sodales posuere. Aliquam eleifend ultrices turpis pellentesque egestas.' \r\n    },\r\n    \r\n    { name: 'panel3', \r\n      heading: 'Curabitur condimentum risus pharetra diam', \r\n      content: 'Curabitur condimentum risus pharetra diam volutpat pellentesque. Proin volutpat, est nec sollicitudin posuere, justo neque elementum orci, in cursus neque nunc nec tortor. In lorem risus, tempor nec justo quis, scelerisque porttitor lacus. Phasellus dignissim nibh vel quam ornare porta a ut nulla. Sed congue vestibulum tellus, tincidunt porta libero molestie nec. Fusce elementum eros erat, eget varius turpis consectetur aliquam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit lorem in ex sagittis semper. Vivamus fermentum sit amet nisl id facilisis. Aenean convallis auctor consectetur. Pellentesque convallis mattis felis in molestie. Praesent at nisi condimentum, pharetra risus a, dapibus quam. Etiam tristique convallis tristique. Donec sagittis est sapien, sit amet aliquet ligula bibendum eu. Suspendisse maximus tincidunt urna ut mattis. Praesent non nulla quis odio lobortis tincidunt. Phasellus lacinia mauris dolor, id dapibus quam venenatis pretium. Donec semper faucibus ipsum eu pellentesque. Vivamus pharetra dui sem, nec condimentum mauris pulvinar vitae. Mauris sed leo felis. Mauris venenatis vel lorem id aliquam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent lacinia placerat sem, at blandit arcu congue sollicitudin. Sed non risus rhoncus, porttitor lectus et, iaculis est. Phasellus dui arcu, vestibulum vel malesuada ac, suscipit vel turpis. Mauris porta odio dui, ac pharetra ex fringilla eu. Donec molestie pellentesque ipsum eu tempus.' \r\n    },\r\n  ]"
+            },
+            {
+                "name": "Playground",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/accordion/accordion.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() =>({\r\n    component: AccordionComponent,\r\n    props: {\r\n        panels\r\n    },\r\n})"
             },
             {
                 "name": "Playground",
@@ -2349,6 +3376,26 @@
                 "name": "Playground",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/modal/modal-footer.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: ModalFooterComponent,\r\n  props: {}\r\n})"
+            },
+            {
+                "name": "Playground",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/modal/story-wrapper.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: StoryWrapperComponent,\r\n  props: {}\r\n})"
+            },
+            {
+                "name": "Playground",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/radio/radio.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2369,6 +3416,26 @@
                 "name": "Playground",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/table/table.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        //theme: ThemeType.default\r\n      },\r\n    }),\r\n  }"
+            },
+            {
+                "name": "Playground",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/tabs/tabs.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Playground",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/textarea/textarea.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2380,6 +3447,26 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/colorschemes/colorschemes.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "PrimaryTransparent",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/colorschemes/colorschemes.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2484,6 +3571,66 @@
                 "deprecationMessage": "",
                 "type": "Story<BreadcrumbsComponent>",
                 "defaultValue": "(args :BreadcrumbsComponent) => ({\r\n    component: BreadcrumbsComponent,\r\n    props: args\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/colorschemes/colorschemes.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ColorSchemesComponent>",
+                "defaultValue": "(args: ColorSchemesComponent) => ({\r\n  component: ColorSchemesComponent,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/table/table.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "(args: TableComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/tabs/tabs.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<TabsComponent>",
+                "defaultValue": "(args: TabsComponent) => ({\r\n  component: TabsComponent,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "ThemesOverview",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/colorschemes/colorschemes.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "White",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/colorschemes/colorschemes.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "WhiteExtended",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/colorschemes/colorschemes.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             }
         ],
         "functions": [],
@@ -2582,6 +3729,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<>",
                 "file": "src/app/switch/switch.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<>",
+                "file": "src/app/table/table.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2829,6 +3987,138 @@
             }
         ],
         "groupedVariables": {
+            "src/app/colorschemes/colorschemes.stories.ts": [
+                {
+                    "name": "Adaptive",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/colorschemes/colorschemes.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Black",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/colorschemes/colorschemes.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "BlackExtended",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/colorschemes/colorschemes.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Danger",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/colorschemes/colorschemes.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "DangerTransparent",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/colorschemes/colorschemes.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/colorschemes/colorschemes.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "DefaultTransparent",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/colorschemes/colorschemes.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/colorschemes/colorschemes.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "PrimaryTransparent",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/colorschemes/colorschemes.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/colorschemes/colorschemes.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ColorSchemesComponent>",
+                    "defaultValue": "(args: ColorSchemesComponent) => ({\r\n  component: ColorSchemesComponent,\r\n  props: args,\r\n})"
+                },
+                {
+                    "name": "ThemesOverview",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/colorschemes/colorschemes.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "White",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/colorschemes/colorschemes.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "WhiteExtended",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/colorschemes/colorschemes.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
             "src/app/select/select.stories.ts": [
                 {
                     "name": "AutocompleteForm",
@@ -3253,6 +4543,38 @@
                     "defaultValue": "{\r\n  render:() => ({\r\n    props:{\r\n      isChecked: true,\r\n      theme: ThemeType.primary,\r\n    },\r\n  }),\r\n}"
                 }
             ],
+            "src/app/table/table.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/table/table.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<>",
+                    "defaultValue": "{\r\n  \r\n    title: 'Surfaces/Table',\r\n    component: TableComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
+                },
+                {
+                    "name": "Playground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/table/table.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        //theme: ThemeType.default\r\n      },\r\n    }),\r\n  }"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/table/table.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "(args: TableComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
             "src/app/textarea/textarea.stories.ts": [
                 {
                     "name": "meta",
@@ -3273,6 +4595,74 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        label: 'Lorem ipsum',\r\n        placeholder: 'Dolor sit',\r\n        value:''\r\n      },\r\n    }),\r\n  }"
+                }
+            ],
+            "src/app/accordion/accordion.stories.ts": [
+                {
+                    "name": "panels",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/accordion/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\r\n    { name: 'panel1', \r\n      heading: 'Etiam venenatis', \r\n      content: 'Etiam venenatis, quam nec volutpat bibendum, magna ex fringilla turpis, vitae efficitur nisl lectus ut mauris. Curabitur sagittis neque id odio viverra pellentesque. Etiam pellentesque molestie suscipit. Suspendisse quis dui a arcu ultrices tempor. Integer cursus justo nisi, vel vestibulum justo viverra id. Phasellus suscipit, felis ac volutpat viverra, ligula tellus molestie felis, et elementum tortor libero vel ante. Mauris sodales imperdiet turpis. Fusce pulvinar diam at dictum commodo. Aliquam erat volutpat. Suspendisse porta, sapien et euismod fermentum, lectus risus facilisis purus, sit amet tempus nunc leo sed neque.' \r\n    },\r\n\r\n    { name: 'panel2', \r\n      heading: 'Lorem ipsum', \r\n      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in tristique orci. Donec eget urna ut nisi mattis interdum sed sit amet orci. Nulla ac efficitur ipsum. Nam vitae nulla velit. Proin eu elementum velit. Cras id sollicitudin tortor, id placerat ante. Duis in magna purus. Aenean dignissim sit amet metus id ultrices. Ut egestas ex lectus, et congue erat pulvinar ac. In sem nulla, tincidunt eu convallis nec, sollicitudin id nulla. Donec ullamcorper, leo nec interdum mollis, dui sapien dignissim arcu, quis placerat tellus ligula id ex. Fusce convallis metus in elementum posuere. Proin eu nulla imperdiet, aliquet purus finibus, mollis tellus. Praesent accumsan nunc id purus sollicitudin egestas. Sed interdum sodales aliquam. Proin fermentum ipsum nec sem sagittis facilisis. Maecenas ac metus quis leo sodales posuere. Aliquam eleifend ultrices turpis pellentesque egestas.' \r\n    },\r\n    \r\n    { name: 'panel3', \r\n      heading: 'Curabitur condimentum risus pharetra diam', \r\n      content: 'Curabitur condimentum risus pharetra diam volutpat pellentesque. Proin volutpat, est nec sollicitudin posuere, justo neque elementum orci, in cursus neque nunc nec tortor. In lorem risus, tempor nec justo quis, scelerisque porttitor lacus. Phasellus dignissim nibh vel quam ornare porta a ut nulla. Sed congue vestibulum tellus, tincidunt porta libero molestie nec. Fusce elementum eros erat, eget varius turpis consectetur aliquam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit lorem in ex sagittis semper. Vivamus fermentum sit amet nisl id facilisis. Aenean convallis auctor consectetur. Pellentesque convallis mattis felis in molestie. Praesent at nisi condimentum, pharetra risus a, dapibus quam. Etiam tristique convallis tristique. Donec sagittis est sapien, sit amet aliquet ligula bibendum eu. Suspendisse maximus tincidunt urna ut mattis. Praesent non nulla quis odio lobortis tincidunt. Phasellus lacinia mauris dolor, id dapibus quam venenatis pretium. Donec semper faucibus ipsum eu pellentesque. Vivamus pharetra dui sem, nec condimentum mauris pulvinar vitae. Mauris sed leo felis. Mauris venenatis vel lorem id aliquam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent lacinia placerat sem, at blandit arcu congue sollicitudin. Sed non risus rhoncus, porttitor lectus et, iaculis est. Phasellus dui arcu, vestibulum vel malesuada ac, suscipit vel turpis. Mauris porta odio dui, ac pharetra ex fringilla eu. Donec molestie pellentesque ipsum eu tempus.' \r\n    },\r\n  ]"
+                },
+                {
+                    "name": "Playground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/accordion/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() =>({\r\n    component: AccordionComponent,\r\n    props: {\r\n        panels\r\n    },\r\n})"
+                }
+            ],
+            "src/app/modal/modal-footer.stories.ts": [
+                {
+                    "name": "Playground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/modal/modal-footer.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: ModalFooterComponent,\r\n  props: {}\r\n})"
+                }
+            ],
+            "src/app/modal/story-wrapper.stories.ts": [
+                {
+                    "name": "Playground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/modal/story-wrapper.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: StoryWrapperComponent,\r\n  props: {}\r\n})"
+                }
+            ],
+            "src/app/tabs/tabs.stories.ts": [
+                {
+                    "name": "Playground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/tabs/tabs.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/tabs/tabs.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<TabsComponent>",
+                    "defaultValue": "(args: TabsComponent) => ({\r\n  component: TabsComponent,\r\n  props: args,\r\n})"
                 }
             ]
         },
@@ -3638,6 +5028,19 @@
                     "kind": 183
                 }
             ],
+            "src/app/table/table.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<>",
+                    "file": "src/app/table/table.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
             "src/app/textarea/textarea.stories.ts": [
                 {
                     "name": "Story",
@@ -3655,9 +5058,47 @@
     },
     "routes": [],
     "coverage": {
-        "count": 1,
+        "count": 0,
         "status": "low",
         "files": [
+            {
+                "filePath": "src/app/accordion/accordion.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AccordionComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/accordion/accordion.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "panels",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/accordion/accordion.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Playground",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/accordion/index.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "IndexComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
             {
                 "filePath": "src/app/app.component.ts",
                 "type": "component",
@@ -3804,6 +5245,154 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/colorschemes/colorschemes.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ColorSchemesComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/colorschemes/colorschemes.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Adaptive",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/colorschemes/colorschemes.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Black",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/colorschemes/colorschemes.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "BlackExtended",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/colorschemes/colorschemes.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Danger",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/colorschemes/colorschemes.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DangerTransparent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/colorschemes/colorschemes.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/colorschemes/colorschemes.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DefaultTransparent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/colorschemes/colorschemes.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/colorschemes/colorschemes.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PrimaryTransparent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/colorschemes/colorschemes.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/colorschemes/colorschemes.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ThemesOverview",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/colorschemes/colorschemes.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "White",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/colorschemes/colorschemes.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WhiteExtended",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/colorschemes/themes-overview.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ThemesOverviewComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/first-sample.module.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -3939,6 +5528,53 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/modal/modal-footer.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ModalFooterComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modal/modal-footer.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Playground",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modal/modal.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ModalComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modal/story-wrapper.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "StoryWrapperComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/10",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modal/story-wrapper.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Playground",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/radio/radio.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -4040,6 +5676,83 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Playground",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/table/table.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TableComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/table/table.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/table/table.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Playground",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/table/table.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tabs/tabs.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TabsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tabs/tabs.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Tab",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tabs/tabs.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Playground",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tabs/tabs.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

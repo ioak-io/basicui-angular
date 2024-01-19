@@ -1,0 +1,30 @@
+
+.basicui-accordion {
+    overflow: hidden;
+    border-bottom: 1px solid #dedede6b;
+    transition: background-color 250ms ease-in-out;
+}
+.accordion-header{
+    border-bottom: 1px solid #dedede6b;
+    height: 52px;
+    line-height: 45px;
+    align-content: center;
+    cursor: pointer;
+    padding: 0 16px;
+    transition: background-color 250ms ease-in-out;
+}
+.accordion-header:hover{
+    background-color: #3eb1f2;
+    border: none;
+    color: white;
+}
+.accordion-content{
+    padding: 16px 16px 16px 16px;
+    transition: 0.5s;
+    border-bottom: 1px solid #dedede6b;
+    -webkit-transition:5s;
+    font-family: system-ui;
+    font-size: 14px;
+    color: #000;
+    font-weight: 200;
+}
