@@ -903,7 +903,7 @@
         },
         {
             "name": "ColorSchemesComponent",
-            "id": "component-ColorSchemesComponent-13c0e9c5a1db8c5611a261296978c1601b7964ed7ba879cc780c9f0f35ca4b29fc9d931fb873a5324b254115612a9c15e5be7c2a7bc35decca8c7ad4f0699121",
+            "id": "component-ColorSchemesComponent-74bd212e8791128af7604d7ecd871f6ebfdcb4b6acbafe3d12c99d1bc2f8d774dba4ead0f097ed06fdd35984b765801c775ae862a05f6dc9c5a003f2d5c75309",
             "file": "src/app/colorschemes/colorschemes.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -935,13 +935,13 @@
             "propertiesClass": [
                 {
                     "name": "levels",
-                    "defaultValue": "[\r\n                        '50',\r\n                        '100',\r\n                        '200',\r\n                        '300',\r\n                        '400',\r\n                        '500',\r\n                        '600',\r\n                        '700',\r\n                        '800',\r\n                        '900',\r\n                    ]",
+                    "defaultValue": "[\r\n    '50',\r\n    '100',\r\n    '200',\r\n    '300',\r\n    '400',\r\n    '500',\r\n    '600',\r\n    '700',\r\n    '800',\r\n    '900',\r\n  ]",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string[]",
                     "optional": false,
                     "description": "",
-                    "line": 23
+                    "line": 22
                 }
             ],
             "methodsClass": [],
@@ -954,17 +954,71 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-colorschemes',\r\n  templateUrl: './colorschemes.component.html',\r\n  styleUrls: ['./colorschemes.component.scss'],\r\n})\r\nexport class ColorSchemesComponent {\r\n  @Input() discriminator: \r\n        'adaptive' |\r\n        'black' |\r\n        'white' |\r\n        'black-extended' |\r\n        'white-extended' |\r\n        'default' |\r\n        'default-transparent' |\r\n        'primary' |\r\n        'primary-transparent' |\r\n        'danger' |\r\n        'danger-transparent' |\r\n        'themes-overview' = \"adaptive\";\r\n\r\n    levels: string[] = [\r\n                        '50',\r\n                        '100',\r\n                        '200',\r\n                        '300',\r\n                        '400',\r\n                        '500',\r\n                        '600',\r\n                        '700',\r\n                        '800',\r\n                        '900',\r\n                    ];\r\n}",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-colorschemes',\r\n  templateUrl: './colorschemes.component.html',\r\n  styleUrls: ['./colorschemes.component.scss'],\r\n})\r\nexport class ColorSchemesComponent {\r\n  @Input() discriminator: 'adaptive' |\r\n    'black' |\r\n    'white' |\r\n    'black-extended' |\r\n    'white-extended' |\r\n    'default' |\r\n    'default-transparent' |\r\n    'primary' |\r\n    'primary-transparent' |\r\n    'danger' |\r\n    'danger-transparent' |\r\n    'themes-overview' = \"adaptive\";\r\n\r\n  levels: string[] = [\r\n    '50',\r\n    '100',\r\n    '200',\r\n    '300',\r\n    '400',\r\n    '500',\r\n    '600',\r\n    '700',\r\n    '800',\r\n    '900',\r\n  ];\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../styles/index.css';\r\n@import './styles/index.css';",
+                    "data": "@import '../styles/index.css';\r\n@import './styles/index.css';\r\n",
                     "styleUrl": "./colorschemes.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<div *ngIf=\"discriminator !== 'themes-overview'\" class=\"basicuidemo-color-scheme basicuidemo-color-scheme--{{ discriminator }}\">\r\n    <div *ngFor=\"let level of levels\" class=\"basicuidemo-color-scheme__x basicuidemo-color-scheme__{{ level }}\">\r\n      <div class=\"basicuidemo-color-scheme__x__bg\">\r\n        <div class=\"basicuidemo-color-scheme__x__bg__label\">background-color:</div>\r\n        <div class=\"basicuidemo-color-scheme__x__bg__value\">{{ 'var(--theme-' + discriminator + '-' + level + ')' }}</div>\r\n      </div>\r\n      <div class=\"basicuidemo-color-scheme__x__fg\">\r\n        <div class=\"basicuidemo-color-scheme__x__fg__label\">color:</div>\r\n        <div class=\"basicuidemo-color-scheme__x__fg__value\">{{ 'var(--theme-' + discriminator + '-' + level + 'i)' }}</div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <app-themes-overview *ngIf=\"discriminator === 'themes-overview'\"></app-themes-overview>"
+            "templateData": "<div class=\"basicuidemo-color-scheme basicuidemo-color-scheme--{{ discriminator }}\">\r\n  <div *ngFor=\"let level of levels\" class=\"basicuidemo-color-scheme__x basicuidemo-color-scheme__{{ level }}\">\r\n    <div class=\"basicuidemo-color-scheme__x__bg\">\r\n      <div class=\"basicuidemo-color-scheme__x__bg__label\">background-color:</div>\r\n      <div class=\"basicuidemo-color-scheme__x__bg__value\">{{ 'var(--theme-' + discriminator + '-' + level + ')' }}</div>\r\n    </div>\r\n    <div class=\"basicuidemo-color-scheme__x__fg\">\r\n      <div class=\"basicuidemo-color-scheme__x__fg__label\">color:</div>\r\n      <div class=\"basicuidemo-color-scheme__x__fg__value\">{{ 'var(--theme-' + discriminator + '-' + level + 'i)' }}</div>\r\n    </div>\r\n  </div>\r\n</div>"
+        },
+        {
+            "name": "DemoSectionComponent",
+            "id": "component-DemoSectionComponent-2204f3f337452ebd6cd06851ac61e0a03ad793bac69cb3bb38a43bbd01e50dc7a001b0689ea2318ae90a803425c9b6d5f6891b9896bd6579b09e95c71e4ce672",
+            "file": "src/app/demosection/demosection.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-demosection",
+            "styleUrls": [
+                "./demosection.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./demosection.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "heading",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-demosection',\r\n  templateUrl: './demosection.component.html',\r\n  styleUrls: ['./demosection.component.scss']\r\n})\r\nexport class DemoSectionComponent {\r\n  @Input() heading: string = '';\r\n}",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".basicuidemo-section {\r\n    margin: 2rem 0;\r\n}\r\n",
+                    "styleUrl": "./demosection.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"basicuidemo-section\">\r\n    <h3>{{ heading }}</h3>\r\n    <ng-content></ng-content>\r\n  </div>"
         },
         {
             "name": "HeaderComponent",
@@ -2765,38 +2819,27 @@
             "templateData": "\r\n<div class=\"basicui-textarea\">\r\n    <div class=\"label\">{{label}}</div>\r\n    <textarea [ngClass]=\"{'basicui-input': true }\"\r\n              [placeholder]=\"placeholder\" \r\n              [value]=\"value\"\r\n              autocomplete=\"none\">\r\n    </textarea>\r\n</div>\r\n    <div *ngIf=\"isSuccess\" class=\"success-message\">{{ successMessage }}</div>\r\n    <div *ngIf=\"isWarning\" class=\"warning-message\">{{ warningMessage }}</div>\r\n    <div *ngIf=\"isTooltip\" class=\"tooltip-message\">{{ tooltipMessage }}</div>\r\n    <div *ngIf=\"isError\" class=\"error-message\">{{ errorMessage }}</div>\r\n\r\n\r\n"
         },
         {
-            "name": "ThemesOverviewComponent",
-            "id": "component-ThemesOverviewComponent-58866e53f2d5d639564c8a991b78cb5e6bae167a442b45947a2668cac983e1d5aa45fd09917212bdb3a72f15572c5f8156c704cc8173611634defdd6adbd167f",
-            "file": "src/app/colorschemes/themes-overview.component.ts",
+            "name": "TypographyComponent",
+            "id": "component-TypographyComponent-b4900b3b4f8ed96a4c6ecd47dab4813c377bcdb99641bc57d90d042612a5d33707b360d7eeab6785c396938fe5c69cda87eb21f8aab0ff77ef2e03a4a2b07786",
+            "file": "src/app/typography/typography.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-colorschemes",
+            "selector": "app-typography",
             "styleUrls": [
-                "./colorschemes.component.scss"
+                "./typography.component.scss"
             ],
             "styles": [],
             "templateUrl": [
-                "./colorschemes.component.html"
+                "./typography.component.html"
             ],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "themes",
-                    "defaultValue": "[\r\n    \"adaptive\",\r\n    \"black\",\r\n    \"black-extended\",\r\n    \"white\",\r\n    \"white-extended\",\r\n    \"default\",\r\n    \"default-transparent\",\r\n    \"primary\",\r\n    \"primary-transparent\",\r\n    \"warning\",\r\n    \"warning-transparent\",\r\n    \"danger\",\r\n    \"danger-transparent\"\r\n  ]",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string[]",
-                    "optional": false,
-                    "description": "",
-                    "line": 9
-                }
-            ],
+            "propertiesClass": [],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
@@ -2807,17 +2850,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-colorschemes',\r\n  templateUrl: './colorschemes.component.html',\r\n  styleUrls: ['./colorschemes.component.scss'],\r\n})\r\nexport class ThemesOverviewComponent{\r\n  themes: string[] = [\r\n    \"adaptive\",\r\n    \"black\",\r\n    \"black-extended\",\r\n    \"white\",\r\n    \"white-extended\",\r\n    \"default\",\r\n    \"default-transparent\",\r\n    \"primary\",\r\n    \"primary-transparent\",\r\n    \"warning\",\r\n    \"warning-transparent\",\r\n    \"danger\",\r\n    \"danger-transparent\"\r\n  ];\r\n}",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-typography',\r\n  templateUrl: './typography.component.html',\r\n  styleUrls: ['./typography.component.scss']\r\n})\r\nexport class TypographyComponent {\r\n    \r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../styles/index.css';\r\n@import './styles/index.css';",
-                    "styleUrl": "./colorschemes.component.scss"
+                    "data": "",
+                    "styleUrl": "./typography.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<div *ngIf=\"discriminator !== 'themes-overview'\" class=\"basicuidemo-color-scheme basicuidemo-color-scheme--{{ discriminator }}\">\r\n    <div *ngFor=\"let level of levels\" class=\"basicuidemo-color-scheme__x basicuidemo-color-scheme__{{ level }}\">\r\n      <div class=\"basicuidemo-color-scheme__x__bg\">\r\n        <div class=\"basicuidemo-color-scheme__x__bg__label\">background-color:</div>\r\n        <div class=\"basicuidemo-color-scheme__x__bg__value\">{{ 'var(--theme-' + discriminator + '-' + level + ')' }}</div>\r\n      </div>\r\n      <div class=\"basicuidemo-color-scheme__x__fg\">\r\n        <div class=\"basicuidemo-color-scheme__x__fg__label\">color:</div>\r\n        <div class=\"basicuidemo-color-scheme__x__fg__value\">{{ 'var(--theme-' + discriminator + '-' + level + 'i)' }}</div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <app-themes-overview *ngIf=\"discriminator === 'themes-overview'\"></app-themes-overview>"
+            "templateData": "<div class=\"basicuidemo-typography\">\r\n    <app-demosection heading=\"Headings\">\r\n      <h1>h1. heading</h1>\r\n      <h2>h2. heading</h2>\r\n      <h3>h3. heading</h3>\r\n      <h4>h4. heading</h4>\r\n      <h5>h5. heading</h5>\r\n      <h6>h6. heading</h6>\r\n      <p>p. paragraph</p>\r\n    </app-demosection>\r\n    \r\n    <app-demosection heading=\"Body content\">\r\n      <h5>(p) Regular paragraph</h5>\r\n      <p>Purus adipiscing purus dictum nascetur hendrerit eleifend feugiat quam pulvinar. congue turpis est sodales placerat id nibh ante. ad justo platea mollis curae lacinia vitae mattis egestas eu musvestibulum. ullamcorper penatibus arcu eleifend cras massa justo. dictum lorem neque semper enim taciti leo imperdiet cubilia. cubilia nulla eu felis adipiscing at accumsan nibh</p>\r\n      \r\n      <h5>(mark) Inline text with highlighted content</h5>\r\n      <p>maximus urna vivamus euismod quam cursus imperdiet <mark>integer litora nostra luctus</mark> pulvinarin. rutrumaliquam cras phasellus fusce vestibulum nec mattis. laoreet tellus turpis ullamcorper dis sagittis felis gravida. facilisis nisi nulla massa montes habitasse vehicula ante porttitor consequat fusce dis conubia et</p>\r\n      \r\n      <h5>(small) Small text</h5>\r\n      <p><small>massa porta sed interdum penatibus euismod velit lacus et vestibulum nam class ipsum ad</small></p>\r\n      \r\n      <h5>(strong) (b) Bold text</h5>\r\n      <p><strong>porttitor faucibus quam curae adipiscing eleifend pulvinar integer maecenas auctor urna</strong></p>\r\n    </app-demosection>\r\n  </div>"
         }
     ],
     "modules": [
@@ -3010,7 +3053,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "Template.bind({})"
+                "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'adaptive',\r\n  }\r\n})"
             },
             {
                 "name": "AutocompleteForm",
@@ -3040,7 +3083,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "Template.bind({})"
+                "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'black',\r\n  }\r\n})"
             },
             {
                 "name": "BlackExtended",
@@ -3050,7 +3093,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "Template.bind({})"
+                "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'black-extended',\r\n  }\r\n})"
             },
             {
                 "name": "Danger",
@@ -3060,17 +3103,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "Template.bind({})"
+                "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'danger',\r\n  }\r\n})"
             },
             {
-                "name": "DangerTransparent",
+                "name": "DangerTransoparent",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/colorschemes/colorschemes.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "Template.bind({})"
+                "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'danger-transparent',\r\n  }\r\n})"
             },
             {
                 "name": "Default",
@@ -3090,6 +3133,16 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
+                "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'default',\r\n  }\r\n})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/typography/typography.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
                 "defaultValue": "Template.bind({})"
             },
             {
@@ -3100,7 +3153,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "Template.bind({})"
+                "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'default-transparent',\r\n  }\r\n})"
             },
             {
                 "name": "environment",
@@ -3460,7 +3513,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "Template.bind({})"
+                "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'primary',\r\n  }\r\n})"
             },
             {
                 "name": "PrimaryTransparent",
@@ -3470,7 +3523,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "Template.bind({})"
+                "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'primarytransparent',\r\n  }\r\n})"
             },
             {
                 "name": "Rounded",
@@ -3576,16 +3629,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/colorschemes/colorschemes.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<ColorSchemesComponent>",
-                "defaultValue": "(args: ColorSchemesComponent) => ({\r\n  component: ColorSchemesComponent,\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/table/table.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3603,6 +3646,16 @@
                 "defaultValue": "(args: TabsComponent) => ({\r\n  component: TabsComponent,\r\n  props: args,\r\n})"
             },
             {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/typography/typography.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<TypographyComponent>",
+                "defaultValue": "(args: TypographyComponent) => ({\r\n  component: TypographyComponent,\r\n  props: args,\r\n})"
+            },
+            {
                 "name": "ThemesOverview",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -3610,7 +3663,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "Template.bind({})"
+                "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'adaptive',\r\n  }\r\n})"
             },
             {
                 "name": "White",
@@ -3620,7 +3673,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "Template.bind({})"
+                "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'white',\r\n  }\r\n})"
             },
             {
                 "name": "WhiteExtended",
@@ -3630,7 +3683,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "Template.bind({})"
+                "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'white-extended',\r\n  }\r\n})"
             }
         ],
         "functions": [],
@@ -3996,7 +4049,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'adaptive',\r\n  }\r\n})"
                 },
                 {
                     "name": "Black",
@@ -4006,7 +4059,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'black',\r\n  }\r\n})"
                 },
                 {
                     "name": "BlackExtended",
@@ -4016,7 +4069,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'black-extended',\r\n  }\r\n})"
                 },
                 {
                     "name": "Danger",
@@ -4026,17 +4079,17 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'danger',\r\n  }\r\n})"
                 },
                 {
-                    "name": "DangerTransparent",
+                    "name": "DangerTransoparent",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/colorschemes/colorschemes.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'danger-transparent',\r\n  }\r\n})"
                 },
                 {
                     "name": "Default",
@@ -4046,7 +4099,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'default',\r\n  }\r\n})"
                 },
                 {
                     "name": "DefaultTransparent",
@@ -4056,7 +4109,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'default-transparent',\r\n  }\r\n})"
                 },
                 {
                     "name": "Primary",
@@ -4066,7 +4119,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'primary',\r\n  }\r\n})"
                 },
                 {
                     "name": "PrimaryTransparent",
@@ -4076,17 +4129,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/colorschemes/colorschemes.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<ColorSchemesComponent>",
-                    "defaultValue": "(args: ColorSchemesComponent) => ({\r\n  component: ColorSchemesComponent,\r\n  props: args,\r\n})"
+                    "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'primarytransparent',\r\n  }\r\n})"
                 },
                 {
                     "name": "ThemesOverview",
@@ -4096,7 +4139,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'adaptive',\r\n  }\r\n})"
                 },
                 {
                     "name": "White",
@@ -4106,7 +4149,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'white',\r\n  }\r\n})"
                 },
                 {
                     "name": "WhiteExtended",
@@ -4116,7 +4159,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'white-extended',\r\n  }\r\n})"
                 }
             ],
             "src/app/select/select.stories.ts": [
@@ -4213,6 +4256,28 @@
                     "deprecationMessage": "",
                     "type": "Story<BreadcrumbsComponent>",
                     "defaultValue": "(args :BreadcrumbsComponent) => ({\r\n    component: BreadcrumbsComponent,\r\n    props: args\r\n})"
+                }
+            ],
+            "src/app/typography/typography.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/typography/typography.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/typography/typography.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<TypographyComponent>",
+                    "defaultValue": "(args: TypographyComponent) => ({\r\n  component: TypographyComponent,\r\n  props: args,\r\n})"
                 }
             ],
             "src/environments/environment.prod.ts": [
@@ -5298,7 +5363,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "DangerTransparent",
+                "name": "DangerTransoparent",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5348,16 +5413,6 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/colorschemes/colorschemes.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
                 "name": "ThemesOverview",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -5384,10 +5439,10 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/colorschemes/themes-overview.component.ts",
+                "filePath": "src/app/demosection/demosection.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "ThemesOverviewComponent",
+                "name": "DemoSectionComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
                 "status": "low"
@@ -5782,6 +5837,35 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Playground",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/typography/typography.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TypographyComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/typography/typography.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/typography/typography.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
