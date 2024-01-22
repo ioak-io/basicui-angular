@@ -176,7 +176,7 @@
     "components": [
         {
             "name": "AccordionComponent",
-            "id": "component-AccordionComponent-a036ea874151ccbc4c8aa8fc7e5b347ac3b1398e33f18107d2f7f1c0f0df873b07379f0788c9b9d23b04a400b88ed735b3b8b668c45ce09d33f6df74f7189401",
+            "id": "component-AccordionComponent-ca7a6969bb484d0dbb2806cca7e9e0270c4244d3f8fca5d948382575ec159d31341df1ffceb6909a8f493d184bf03be1c206646f493f0c185720e879090b480b",
             "file": "src/app/accordion/accordion.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -292,11 +292,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, Input, Output, EventEmitter  } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'app-accordion',\r\n    templateUrl:'./accordion.component.html',\r\n    styleUrls:['./accordion.component.scss'],\r\n})\r\n\r\nexport class AccordionComponent {\r\n    \r\n    @Input() panels: any[] = [];\r\n    @Output() panelChange = new EventEmitter<string>();\r\n    expanded = '';\r\nheading: any;\r\ntheme: any;\r\nbordered: any;\r\n  \r\n    handleChange(panelName: string): void {\r\n      this.expanded = this.expanded === panelName ? '' : panelName;\r\n      this.panelChange.emit(this.expanded);\r\n    }\r\n  }",
+            "sourceCode": "import {Component, Input, Output, EventEmitter  } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'app-accordion',\r\n    templateUrl:'./accordion.component.html',\r\n    styleUrls:['./accordion.component.scss'],\r\n})\r\n\r\nexport class AccordionComponent {\r\n    \r\n    @Input() panels: any[] = [];\r\n    @Output() panelChange = new EventEmitter<string>();\r\n    expanded = '';\r\n    heading: any;\r\n    theme: any;\r\n    bordered: any;\r\n  \r\n    handleChange(panelName: string): void {\r\n      this.expanded = this.expanded === panelName ? '' : panelName;\r\n      this.panelChange.emit(this.expanded);\r\n    }\r\n  }",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\r\n.basicui-accordion {\r\n    overflow: hidden;\r\n    border-bottom: 1px solid #dedede6b;\r\n    transition: background-color 250ms ease-in-out;\r\n}\r\n.accordion-header{\r\n    height: 52px;\r\n    line-height: 45px;\r\n    align-content: center;\r\n    cursor: pointer;\r\n    padding: 0 16px;\r\n    transition: background-color 250ms ease-in-out;\r\n}\r\n.accordion-header:hover{\r\n    background-color: #3eb1f2;\r\n    border: none;\r\n    color: white;\r\n}\r\n.accordion-content{\r\n    padding: 16px 16px 16px 16px;\r\n    transition: 0.5s;\r\n    border-bottom: 1px solid #dedede6b;\r\n    -webkit-transition:5s;\r\n    font-family: system-ui;\r\n    font-size: 14px;\r\n    color: #000;\r\n    font-weight: 200;\r\n}\r\n",
+                    "data": "\r\n.basicui-accordion {\r\n    overflow: hidden;\r\n    border-bottom: 1px solid #dedede6b;\r\n    transition: background-color 250ms ease-in-out;\r\n}\r\n.accordion-header{\r\n    height: 52px;\r\n    line-height: 45px;\r\n    align-content: center;\r\n    cursor: pointer;\r\n    padding: 0 16px;\r\n    transition: background-color 250ms ease-in-out;\r\n    color: black;\r\n    font-family: sans-serif;\r\n    font-weight: 400;\r\n    font-size: 13px;\r\n}\r\n.accordion-header:hover{\r\n    background-color: #3eb1f2;\r\n    border: none;\r\n    color: white;\r\n}\r\n.accordion-content{\r\n    padding: 16px 16px 16px 16px;\r\n    transition: 0.5s;\r\n    border-bottom: 1px solid #dedede6b;\r\n    -webkit-transition:5s;\r\n    font-family: system-ui;\r\n    font-size: 14px;\r\n    color: #000;\r\n    font-weight: 200;\r\n}\r\n",
                     "styleUrl": "./accordion.component.scss"
                 }
             ],
@@ -754,7 +754,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "//@import '../styles/index.css';\r\n",
+                    "data": "// @import '../styles/index.css';\r\n",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -910,7 +910,7 @@
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-color-scheme",
+            "selector": "app-colorschemes",
             "styleUrls": [
                 "./colorschemes.component.scss"
             ],
@@ -1497,7 +1497,7 @@
                     }
                 }
             },
-            "templateData": "<div [ngClass]=\"['input-container', containerClassName]\">\r\n    <div *ngIf=\"icon\"\r\n         class=\"input-icon-container\"\r\n         [style.width.px]=\"iconContainerWidth\">\r\n        <svg-icon [name]=\"icon\"\r\n                  [size]=\"iconSize\">\r\n        </svg-icon>\r\n    </div>\r\n    <div>\r\n        <label [for]=\"label\">{{label}}</label>\r\n        <br>\r\n    </div>\r\n    <input \r\n        [type]=\"type\"\r\n        [placeholder]=\"placeholder\"\r\n        [ngClass]=\"['input', 'form-input']\" />\r\n        <!--<input type=\"submit\" value=\"Submit\" style=\"background-color:#04AA6D; padding: 8px 16px; color: white; font-size: 25px; border: 1px solid #ccc; border-radius: 4px;\"> -->\r\n\r\n    <div *ngIf=\"isShowClearButton\"\r\n         class=\"input-icon-container right\"\r\n         [style.width.px]=\"iconContainerWidth\">\r\n        <i nz-icon\r\n           nzType=\"close\"\r\n           nzTheme=\"outline\"\r\n           (click)=\"clear()\"></i>\r\n    </div>\r\n</div>\r\n<div *ngIf=\"isInfo\" class=\"info-message\">{{ infoMessage }}</div>"
+            "templateData": "<div [ngClass]=\"['input-container', containerClassName]\">\r\n    <div *ngIf=\"icon\"\r\n         class=\"input-icon-container\"\r\n         [style.width.px]=\"iconContainerWidth\">\r\n        <svg-icon [name]=\"icon\"\r\n                  [size]=\"iconSize\">\r\n        </svg-icon>\r\n    </div>\r\n    <div>\r\n        <label [for]=\"label\">{{label}}</label>\r\n        <br>\r\n    </div>\r\n    <input \r\n        [type]=\"type\"\r\n        [placeholder]=\"placeholder\"\r\n        [ngClass]=\"['input', 'form-input']\" />\r\n        <!--<input type=\"submit\" value=\"Submit\" style=\"background-color:#04AA6D; padding: 8px 16px; color: white; font-size: 25px; border: 1px solid #ccc; border-radius: 4px;\"> -->\r\n\r\n    <div *ngIf=\"isShowClearButton\"\r\n         class=\"input-icon-container right\"\r\n         [style.width.px]=\"iconContainerWidth\">\r\n        <i nz-icon\r\n           nzType=\"close\"\r\n           nzTheme=\"outline\"\r\n           (click)=\"clear()\"></i>\r\n    </div>\r\n</div>\r\n<div *ngIf=\"isInfo\" class=\"basicui-form-element-info\">{{ infoMessage }}</div>"
         },
         {
             "name": "LabelComponent",
@@ -1705,13 +1705,13 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../styles/index.css';\r\n\r\n.basicui-modal {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100%;\r\n    width: 100%;\r\n    overflow: hidden;\r\n    display: grid;\r\n    align-items: center;\r\n    justify-items: center;\r\n    z-index: 100;\r\n}\r\n\r\n.basicui-modal__overlay {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100%;\r\n    width: 100%;\r\n    background-color: #00000060;\r\n    overflow: hidden;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    padding-top: var(--basicui-modal-margin-y);\r\n    padding-bottom: var(--basicui-modal-margin-y);\r\n}\r\n\r\n.basicui-modal__base {\r\n    display: grid;\r\n    grid-auto-flow: row;\r\n    align-self: center;\r\n    z-index: 102;\r\n    background-color: var(--theme-white-50);\r\n    border-radius: var(--basicui-modal-border-radius);\r\n    width: 500px;\r\n    max-width: 90vw;\r\n    /* max-height: var(--basicui-modal-max-height); */\r\n    /* height: 100%; */\r\n}\r\n\r\n.basicui-dark .basicui-modal__base {\r\n    background-color: var(--theme-black-50);\r\n}\r\n\r\n.basicui-modal__base--size-small {\r\n    width: 300px;\r\n}\r\n\r\n.basicui-modal__base--size-large {\r\n    width: 800px;\r\n}\r\n\r\n.basicui-modal__base--size-xlarge {\r\n    width: 1140px;\r\n}\r\n\r\n.basicui-modal__base--placement-top {\r\n    align-self: flex-start;\r\n}\r\n.basicui-modal__base--placement-bottom {\r\n    align-self: flex-end;\r\n}\r\n.basicui-dark .basicui-modal-body{\r\n    background-color: #000;\r\n}\r\n.basicui-modal-body{\r\n    padding: 10px 10px;\r\n    margin-top: 10px;\r\n    border-radius: 6px;\r\n    width: 500px;\r\n    background-color: #fff;\r\n}\r\n.basicui-modal-header{\r\n    border-bottom: 1px solid #e4e4e4;\r\n    font-weight: 500;\r\n    font-size: 16px;\r\n    font-family: sans-serif;\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n.basicui-modal-content{\r\n    border-bottom: 1px solid #e4e4e4;\r\n    padding: 10px 10px 20px 10px;\r\n}\r\n.basicui-modal-footer{\r\n    display: flex;\r\n    margin-right: 10px;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n}\r\n.basicui-modal-header__close{\r\n    background-color: transparent;\r\n    border: none;\r\n    cursor: pointer;\r\n}\r\n.basicui-modal-header__close svg{\r\n    height: 16px;\r\n    fill: #000;\r\n    justify-content:flex-end;\r\n}\r\n\r\n.Modal-footer{\r\n    justify-content: flex-end;\r\n    display: flex;\r\n}",
+                    "data": "@import '../styles/index.css';\r\n\r\n.basicui-modal {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100%;\r\n    width: 100%;\r\n    overflow: hidden;\r\n    display: grid;\r\n    align-items: center;\r\n    justify-items: center;\r\n    z-index: 100;\r\n}\r\n\r\n.basicui-modal__overlay {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100%;\r\n    width: 100%;\r\n    background-color: #00000060;\r\n    overflow: hidden;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    padding-top: var(--basicui-modal-margin-y);\r\n    padding-bottom: var(--basicui-modal-margin-y);\r\n}\r\n\r\n.basicui-modal__base {\r\n    display: grid;\r\n    grid-auto-flow: row;\r\n    align-self: center;\r\n    z-index: 102;\r\n    background-color: var(--theme-white-50);\r\n    border-radius: var(--basicui-modal-border-radius);\r\n    width: 500px;\r\n    max-width: 90vw;\r\n    /* max-height: var(--basicui-modal-max-height); */\r\n    /* height: 100%; */\r\n}\r\n\r\n.basicui-dark .basicui-modal__base {\r\n    background-color: var(--theme-black-50);\r\n}\r\n\r\n.basicui-modal__base--size-small {\r\n    width: 300px;\r\n}\r\n\r\n.basicui-modal__base--size-large {\r\n    width: 800px;\r\n}\r\n\r\n.basicui-modal__base--size-xlarge {\r\n    width: 1140px;\r\n}\r\n\r\n.basicui-modal__base--placement-top {\r\n    align-self: flex-start;\r\n}\r\n.basicui-modal__base--placement-bottom {\r\n    align-self: flex-end;\r\n}\r\n.basicui-dark .basicui-modal-body{\r\n    background-color: #000;\r\n}\r\n.basicui-modal-body{\r\n    padding: 10px 10px;\r\n    margin-top: 10px;\r\n    border-radius: 6px;\r\n    width: 500px;\r\n    background-color: #fff;\r\n}\r\n.basicui-modal-header{\r\n    border-bottom: 1px solid #e4e4e4;\r\n    font-weight: 500;\r\n    font-size: 15px;\r\n    font-family: sans-serif;\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n.basicui-modal-header h5{\r\n    font-family: system-ui;\r\n    font-weight: 700;\r\n    font-size: 16px;\r\n}\r\n.basicui-modal-content{\r\n    border-bottom: 1px solid #e4e4e4;\r\n    padding: 10px 10px 20px 10px;\r\n    font-family: system-ui;\r\n    font-weight: 300;\r\n    color: #000;\r\n}\r\n.basicui-modal-footer{\r\n    padding: 16px 5px;\r\n    display: flex;\r\n    margin-right: 10px;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n}\r\n.basicui-modal-header__close{\r\n    background-color: transparent;\r\n    border: none;\r\n    cursor: pointer;\r\n}\r\n.basicui-modal-header__close svg{\r\n    height: 16px;\r\n    fill: #000;\r\n    justify-content:flex-end;\r\n}\r\n\r\n.Modal-footer{\r\n    justify-content: flex-end;\r\n    display: flex;\r\n}",
                     "styleUrl": "./modal.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"basicui-modal-body\">\r\n  <div class=\"basicui-modal-header\">\r\n      <h5>Lorem ipsum dolor sit</h5>\r\n      <button (click)=\"onClose()\" class=\"basicui-modal-header__close\">\r\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 384 512\"><path d=\"M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z\"></path></svg>\r\n      </button>\r\n  </div>\r\n  <div class=\"basicui-modal-content\">\r\n      <ng-content></ng-content>\r\n  </div><br>\r\n  <div class=\"basicui-modal-footer\">\r\n    <button (click)=\"onClose()\"\r\n    [ngClass]=\"{\r\n    'basicui-button': true,\r\n    'basicui-button--theme-primary': theme === 'primary',\r\n    'basicui-button--variant-default': variant === 'default'}\" \r\n    style=\"background-color: #1492db; margin-right: 10px; outline: none; border: none; color: white;\">Apply</button>\r\n    <button (click)=\"onClose()\"\r\n    [ngClass]=\"{\r\n    'basicui-button': true,\r\n    'basicui-button--theme-default': theme === 'default',\r\n    'basicui-button--variant-default': variant === 'default'}\">Cancel</button>\r\n  </div>\r\n</div>"
+            "templateData": "<div class=\"basicui-modal-body\">\r\n  <div class=\"basicui-modal-header\">\r\n      <h5>Lorem ipsum dolor sit</h5>\r\n      <button (click)=\"onClose()\" class=\"basicui-modal-header__close\">\r\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 384 512\"><path d=\"M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z\"></path></svg>\r\n      </button>\r\n  </div>\r\n  <div class=\"basicui-modal-content\">\r\n      <ng-content></ng-content>\r\n  </div>\r\n  <div class=\"basicui-modal-footer\">\r\n    <button (click)=\"onClose()\"\r\n    [ngClass]=\"{\r\n    'basicui-button': true,\r\n    'basicui-button--theme-primary': theme === 'primary',\r\n    'basicui-button--variant-default': variant === 'default'}\" \r\n    style=\"background-color: #1492db; margin-right: 10px; outline: none; border: none; color: white;\">Apply</button>\r\n    <button (click)=\"onClose()\"\r\n    [ngClass]=\"{\r\n    'basicui-button': true,\r\n    'basicui-button--theme-default': theme === 'default',\r\n    'basicui-button--variant-default': variant === 'default'}\">Cancel</button>\r\n  </div>\r\n</div>"
         },
         {
             "name": "ModalFooterComponent",
@@ -1788,7 +1788,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../styles/index.css';\r\n\r\n.basicui-modal {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100%;\r\n    width: 100%;\r\n    overflow: hidden;\r\n    display: grid;\r\n    align-items: center;\r\n    justify-items: center;\r\n    z-index: 100;\r\n}\r\n\r\n.basicui-modal__overlay {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100%;\r\n    width: 100%;\r\n    background-color: #00000060;\r\n    overflow: hidden;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    padding-top: var(--basicui-modal-margin-y);\r\n    padding-bottom: var(--basicui-modal-margin-y);\r\n}\r\n\r\n.basicui-modal__base {\r\n    display: grid;\r\n    grid-auto-flow: row;\r\n    align-self: center;\r\n    z-index: 102;\r\n    background-color: var(--theme-white-50);\r\n    border-radius: var(--basicui-modal-border-radius);\r\n    width: 500px;\r\n    max-width: 90vw;\r\n    /* max-height: var(--basicui-modal-max-height); */\r\n    /* height: 100%; */\r\n}\r\n\r\n.basicui-dark .basicui-modal__base {\r\n    background-color: var(--theme-black-50);\r\n}\r\n\r\n.basicui-modal__base--size-small {\r\n    width: 300px;\r\n}\r\n\r\n.basicui-modal__base--size-large {\r\n    width: 800px;\r\n}\r\n\r\n.basicui-modal__base--size-xlarge {\r\n    width: 1140px;\r\n}\r\n\r\n.basicui-modal__base--placement-top {\r\n    align-self: flex-start;\r\n}\r\n.basicui-modal__base--placement-bottom {\r\n    align-self: flex-end;\r\n}\r\n.basicui-dark .basicui-modal-body{\r\n    background-color: #000;\r\n}\r\n.basicui-modal-body{\r\n    padding: 10px 10px;\r\n    margin-top: 10px;\r\n    border-radius: 6px;\r\n    width: 500px;\r\n    background-color: #fff;\r\n}\r\n.basicui-modal-header{\r\n    border-bottom: 1px solid #e4e4e4;\r\n    font-weight: 500;\r\n    font-size: 16px;\r\n    font-family: sans-serif;\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n.basicui-modal-content{\r\n    border-bottom: 1px solid #e4e4e4;\r\n    padding: 10px 10px 20px 10px;\r\n}\r\n.basicui-modal-footer{\r\n    display: flex;\r\n    margin-right: 10px;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n}\r\n.basicui-modal-header__close{\r\n    background-color: transparent;\r\n    border: none;\r\n    cursor: pointer;\r\n}\r\n.basicui-modal-header__close svg{\r\n    height: 16px;\r\n    fill: #000;\r\n    justify-content:flex-end;\r\n}\r\n\r\n.Modal-footer{\r\n    justify-content: flex-end;\r\n    display: flex;\r\n}",
+                    "data": "@import '../styles/index.css';\r\n\r\n.basicui-modal {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100%;\r\n    width: 100%;\r\n    overflow: hidden;\r\n    display: grid;\r\n    align-items: center;\r\n    justify-items: center;\r\n    z-index: 100;\r\n}\r\n\r\n.basicui-modal__overlay {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100%;\r\n    width: 100%;\r\n    background-color: #00000060;\r\n    overflow: hidden;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    padding-top: var(--basicui-modal-margin-y);\r\n    padding-bottom: var(--basicui-modal-margin-y);\r\n}\r\n\r\n.basicui-modal__base {\r\n    display: grid;\r\n    grid-auto-flow: row;\r\n    align-self: center;\r\n    z-index: 102;\r\n    background-color: var(--theme-white-50);\r\n    border-radius: var(--basicui-modal-border-radius);\r\n    width: 500px;\r\n    max-width: 90vw;\r\n    /* max-height: var(--basicui-modal-max-height); */\r\n    /* height: 100%; */\r\n}\r\n\r\n.basicui-dark .basicui-modal__base {\r\n    background-color: var(--theme-black-50);\r\n}\r\n\r\n.basicui-modal__base--size-small {\r\n    width: 300px;\r\n}\r\n\r\n.basicui-modal__base--size-large {\r\n    width: 800px;\r\n}\r\n\r\n.basicui-modal__base--size-xlarge {\r\n    width: 1140px;\r\n}\r\n\r\n.basicui-modal__base--placement-top {\r\n    align-self: flex-start;\r\n}\r\n.basicui-modal__base--placement-bottom {\r\n    align-self: flex-end;\r\n}\r\n.basicui-dark .basicui-modal-body{\r\n    background-color: #000;\r\n}\r\n.basicui-modal-body{\r\n    padding: 10px 10px;\r\n    margin-top: 10px;\r\n    border-radius: 6px;\r\n    width: 500px;\r\n    background-color: #fff;\r\n}\r\n.basicui-modal-header{\r\n    border-bottom: 1px solid #e4e4e4;\r\n    font-weight: 500;\r\n    font-size: 15px;\r\n    font-family: sans-serif;\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n.basicui-modal-header h5{\r\n    font-family: system-ui;\r\n    font-weight: 700;\r\n    font-size: 16px;\r\n}\r\n.basicui-modal-content{\r\n    border-bottom: 1px solid #e4e4e4;\r\n    padding: 10px 10px 20px 10px;\r\n    font-family: system-ui;\r\n    font-weight: 300;\r\n    color: #000;\r\n}\r\n.basicui-modal-footer{\r\n    padding: 16px 5px;\r\n    display: flex;\r\n    margin-right: 10px;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n}\r\n.basicui-modal-header__close{\r\n    background-color: transparent;\r\n    border: none;\r\n    cursor: pointer;\r\n}\r\n.basicui-modal-header__close svg{\r\n    height: 16px;\r\n    fill: #000;\r\n    justify-content:flex-end;\r\n}\r\n\r\n.Modal-footer{\r\n    justify-content: flex-end;\r\n    display: flex;\r\n}",
                     "styleUrl": "./modal.component.scss"
                 }
             ],
@@ -2327,7 +2327,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\r\n@import '../styles/index.css';\r\nhtml{\r\n    font-family: 'Roboto', sans-serif;\r\n}\r\n\r\n.basicui-dark .basicui-modal-base{\r\n    background-color: black;\r\n}\r\n.basicui-modal-base{\r\n    position: fixed; top: 0; left: 0; height: 100%; width: 100%; background-color: #00000060; padding-top: 20px; padding-bottom: 20px; align-items: center; justify-content: center; display: flex; overflow: hidden;\r\n}",
+                    "data": "\r\n@import '../styles/index.css';\r\nhtml{\r\n    font-family: 'Roboto', sans-serif;\r\n}\r\n\r\n.basicui-dark .basicui-modal-base{\r\n    background-color: black;\r\n}\r\n.basicui-modal-base{\r\n    position: fixed; \r\n    top: 0; \r\n    left: 0; \r\n    height: 100%; \r\n    width: 100%; \r\n    background-color: #00000060; \r\n    padding-top: 20px; \r\n    padding-bottom: 20px; \r\n    align-items: center; \r\n    justify-content: center; \r\n    display: flex; \r\n    overflow: hidden;\r\n}",
                     "styleUrl": "./story-wrapper.component.scss"
                 }
             ],
@@ -2903,7 +2903,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../styles/index.css';\r\n\r\n.label{\r\n    color: rgba(112, 112, 112, 0.97);\r\n    font-family: system-ui;\r\n    font-size: 13px;\r\n    font-weight: 300;\r\n    margin-bottom: 4px;\r\n}\r\n.basicui-textarea textarea{\r\n  resize: vertical;\r\n  padding-top: 6px;\r\n  padding-bottom: 6px;\r\n  height: 73px;\r\n  font-family: 'Roboto', sans-serif;\r\n  border: 1px solid #e2e1e1;\r\n  background-color: #f6f6f6;\r\n}\r\n.basicui-textarea textarea:hover{\r\n  border: 1px solid;\r\n  border-color: var(--basicui-formelement-border-color);\r\n  background-color: var(--basicui-formelement-background-color);\r\n}\r\n/*label {\r\n    display: block;\r\n    font-size: 12px;\r\n    font-family: 'Roboto', sans-serif;\r\n    margin-bottom: 4px;\r\n    color: #726e6ea3;\r\n    \r\n}\r\n.textarea-input:hover{\r\n    border: 1px solid #c3e5f4;\r\n    background-color: #f1f8fe;\r\n}\r\n.textarea-input{\r\n    font-family: 'Roboto', sans-serif;\r\n    resize: vertical;\r\n    width: 100%;\r\n    padding: 6px;\r\n    line-height: 1.5;\r\n    height: 55px;\r\n    font-size: 12px;\r\n    font-weight: 400;\r\n    text-overflow: ellipsis;\r\n    outline: none;\r\n    border: 1px solid #dad8d8;\r\n    background-color: #f1f0f08a;\r\n    border-radius: 2px;\r\n    display: flex;\r\n    align-items: center;\r\n    transition: 250ms border-color ease-in-out, 250ms background-color ease-in-out, 250ms color ease-in-out;\r\n}\r\n\r\n  .error-message {\r\n    color: #fc374bc4;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .success-message{\r\n    color: #14db5a;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .warning-message{\r\n    color: #db9214;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .tooltip-message{\r\n    color: #908e8e;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }*/",
+                    "data": "// @import '../styles/index.css';\r\n\r\n.label{\r\n    color: rgba(112, 112, 112, 0.97);\r\n    font-family: system-ui;\r\n    font-size: 13px;\r\n    font-weight: 300;\r\n    margin-bottom: 4px;\r\n}\r\n.basicui-textarea textarea{\r\n  resize: vertical;\r\n  padding-top: 6px;\r\n  padding-bottom: 6px;\r\n  height: 73px;\r\n  font-family: 'Roboto', sans-serif;\r\n  border: 1px solid #e2e1e1;\r\n  background-color: #f6f6f6;\r\n}\r\n.basicui-textarea textarea:hover{\r\n  border-color: var(--basicui-formelement-border-color-hover);\r\n  background-color: var(--basicui-formelement-background-color-hover);\r\n  color: var(--basicui-formelement-color-hover);\r\n}\r\n/*label {\r\n    display: block;\r\n    font-size: 12px;\r\n    font-family: 'Roboto', sans-serif;\r\n    margin-bottom: 4px;\r\n    color: #726e6ea3;\r\n    \r\n}\r\n.textarea-input:hover{\r\n    border: 1px solid #c3e5f4;\r\n    background-color: #f1f8fe;\r\n}\r\n.textarea-input{\r\n    font-family: 'Roboto', sans-serif;\r\n    resize: vertical;\r\n    width: 100%;\r\n    padding: 6px;\r\n    line-height: 1.5;\r\n    height: 55px;\r\n    font-size: 12px;\r\n    font-weight: 400;\r\n    text-overflow: ellipsis;\r\n    outline: none;\r\n    border: 1px solid #dad8d8;\r\n    background-color: #f1f0f08a;\r\n    border-radius: 2px;\r\n    display: flex;\r\n    align-items: center;\r\n    transition: 250ms border-color ease-in-out, 250ms background-color ease-in-out, 250ms color ease-in-out;\r\n}\r\n\r\n  .error-message {\r\n    color: #fc374bc4;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .success-message{\r\n    color: #14db5a;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .warning-message{\r\n    color: #db9214;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .tooltip-message{\r\n    color: #908e8e;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }*/",
                     "styleUrl": "./textarea.component.scss"
                 }
             ],
@@ -2913,7 +2913,62 @@
         },
         {
             "name": "ThemesOverviewComponent",
-            "id": "component-ThemesOverviewComponent-40b0490bffe5d5239a62787050afdc547351732085673cefbb754c11a7f3c8e7034455af69f62b4565f98ef457b4495a394c0d8dcc86d716648d37a615313ff8",
+            "id": "component-ThemesOverviewComponent-0000e78c407ff6db80bdfa5b365c243e4a066a7b1465281a301e0d3aa02ea9a660b1e213289d2444c273a2c4cf90a889e68b3806518327ec7025dbb7baf2cc78",
+            "file": "src/app/colorschemes/themes-overview.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-themes-overview",
+            "styleUrls": [
+                "./colorschemes.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./themes-overview.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "themes",
+                    "defaultValue": "[\r\n    'adaptive',\r\n    'black',\r\n    'black-extended',\r\n    'white',\r\n    'white-extended',\r\n    'default',\r\n    'default-transparent',\r\n    'primary',\r\n    'primary-transparent',\r\n    'warning',\r\n    'warning-transparent',\r\n    'danger',\r\n    'danger-transparent',\r\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-themes-overview',\r\n  templateUrl: './themes-overview.component.html',\r\n  styleUrls: ['./colorschemes.component.scss'],\r\n})\r\nexport class ThemesOverviewComponent {\r\n  themes: string[] = [\r\n    'adaptive',\r\n    'black',\r\n    'black-extended',\r\n    'white',\r\n    'white-extended',\r\n    'default',\r\n    'default-transparent',\r\n    'primary',\r\n    'primary-transparent',\r\n    'warning',\r\n    'warning-transparent',\r\n    'danger',\r\n    'danger-transparent',\r\n  ];\r\n}",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../styles/index.css';\r\n@import './styles/index.css';\r\n",
+                    "styleUrl": "./colorschemes.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"basicuidemo-color-scheme\">\r\n  <div *ngFor=\"let theme of themes\" class=\"basicuidemo-color-scheme__x basicuidemo-themes-overview__{{ theme }}\">\r\n    <div class=\"basicuidemo-color-scheme__x__bg\">\r\n      <div class=\"basicuidemo-color-scheme__x__bg__label\">background-color:</div>\r\n      <div class=\"basicuidemo-color-scheme__x__bg__value\">{{ 'var(--theme-' + theme + '-500)' }}</div>\r\n    </div>\r\n    <div class=\"basicuidemo-color-scheme__x__fg\">\r\n      <div class=\"basicuidemo-color-scheme__x__fg__label\">color:</div>\r\n      <div class=\"basicuidemo-color-scheme__x__fg__value\">{{ 'var(--theme-' + theme + '-500i)' }}</div>\r\n    </div>\r\n  </div>\r\n</div>"
+        },
+        {
+            "name": "ThemesOverviewComponent",
+            "id": "component-ThemesOverviewComponent-40b0490bffe5d5239a62787050afdc547351732085673cefbb754c11a7f3c8e7034455af69f62b4565f98ef457b4495a394c0d8dcc86d716648d37a615313ff8-1",
             "file": "src/app/themes-overview/themes-overview.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2964,6 +3019,9 @@
             ],
             "stylesData": "",
             "extends": [],
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "ThemesOverviewComponent-1",
             "templateData": "<div class=\"basicuidemo-color-scheme\">\r\n  <div *ngFor=\"let theme of themes\" class=\"basicuidemo-color-scheme__x\" [ngClass]=\"'basicuidemo-themes-overview__' + theme\">\r\n    <div class=\"basicuidemo-color-scheme__x__bg\">\r\n      <div class=\"basicuidemo-color-scheme__x__bg__label\">background-color:</div>\r\n      <div class=\"basicuidemo-color-scheme__x__bg__value\">{{ 'var(--theme-' + theme + '-500)' }}</div>\r\n    </div>\r\n    <div class=\"basicuidemo-color-scheme__x__fg\">\r\n      <div class=\"basicuidemo-color-scheme__x__fg__label\">color:</div>\r\n      <div class=\"basicuidemo-color-scheme__x__fg__value\">{{ 'var(--theme-' + theme + '-500i)' }}</div>\r\n    </div>\r\n  </div>\r\n</div>"
         },
         {
@@ -3079,9 +3137,6 @@
                         },
                         {
                             "name": "TextareaComponent"
-                        },
-                        {
-                            "name": "ThemesOverviewComponent"
                         },
                         {
                             "name": "TypographyComponent"
@@ -3703,7 +3758,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'primarytransparent',\r\n  }\r\n})"
+                "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'primary-transparent',\r\n  }\r\n})"
             },
             {
                 "name": "Rounded",
@@ -4231,76 +4286,16 @@
             }
         ],
         "groupedVariables": {
-            "src/app/select/select.stories.ts": [
+            "src/app/colorschemes/colorschemes.stories.ts": [
                 {
-                    "name": "AutocompleteForm",
+                    "name": "Adaptive",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/select/select.stories.ts",
+                    "file": "src/app/colorschemes/colorschemes.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'adaptive',\r\n  }\r\n})"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/select/select.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'black',\r\n  }\r\n})"
-                },
-                {
-                    "name": "SelectForm",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/select/select.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'black-extended',\r\n  }\r\n})"
-                },
-                {
-                    "name": "avatarUrl",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/avatar/avatar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'danger',\r\n  }\r\n})"
-                },
-                {
-                    "name": "Rounded",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/avatar/avatar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'danger-transparent',\r\n  }\r\n})"
-                },
-                {
-                    "name": "Square",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/avatar/avatar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'default',\r\n  }\r\n})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/avatar/avatar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'default-transparent',\r\n  }\r\n})"
                 },
                 {
                     "name": "Black",
@@ -4310,7 +4305,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'primary',\r\n  }\r\n})"
+                    "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'black',\r\n  }\r\n})"
                 },
                 {
                     "name": "BlackExtended",
@@ -4320,7 +4315,67 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'primarytransparent',\r\n  }\r\n})"
+                    "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'black-extended',\r\n  }\r\n})"
+                },
+                {
+                    "name": "Danger",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/colorschemes/colorschemes.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'danger',\r\n  }\r\n})"
+                },
+                {
+                    "name": "DangerTransparent",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/colorschemes/colorschemes.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'danger-transparent',\r\n  }\r\n})"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/colorschemes/colorschemes.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'default',\r\n  }\r\n})"
+                },
+                {
+                    "name": "DefaultTransparent",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/colorschemes/colorschemes.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'default-transparent',\r\n  }\r\n})"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/colorschemes/colorschemes.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'primary',\r\n  }\r\n})"
+                },
+                {
+                    "name": "PrimaryTransparent",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/colorschemes/colorschemes.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'primary-transparent',\r\n  }\r\n})"
                 },
                 {
                     "name": "ThemesOverview",
@@ -4333,7 +4388,7 @@
                     "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'adaptive',\r\n  }\r\n})"
                 },
                 {
-                    "name": "Default",
+                    "name": "White",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/colorschemes/colorschemes.stories.ts",
@@ -4343,7 +4398,7 @@
                     "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'white',\r\n  }\r\n})"
                 },
                 {
-                    "name": "Primary",
+                    "name": "WhiteExtended",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/colorschemes/colorschemes.stories.ts",
@@ -4375,34 +4430,56 @@
                     "defaultValue": "{\r\n  \r\n  title: 'Form Elements/Select',\r\n  component: SelectComponent,\r\n  tags:[\"autodocs\"],\r\n  argTypes: {\r\n  },\r\n} as Meta"
                 },
                 {
+                    "name": "SelectForm",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/select/select.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        selectType: 'single',\r\n        options: [\r\n          { value: '1', label: 'Lorem ipsum' },\r\n          { value: '2', label: 'Another long text another long text' },\r\n          { value: '3', label: 'Dolor sit' },\r\n        ],\r\n        selectedValue: 'Dolor sit', \r\n      },\r\n    }),\r\n  }"
+                }
+            ],
+            "src/app/avatar/avatar.stories.ts": [
+                {
+                    "name": "avatarUrl",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/avatar/avatar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "defaultValue": "'https://res.cloudinary.com/dvujyxh7e/image/upload/c_scale,w_128/v1593253478/trung-vo_bioxmc.png'"
+                },
+                {
+                    "name": "Rounded",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/avatar/avatar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<AvatarComponent>",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Square",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/avatar/avatar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<AvatarComponent>",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/colorschemes/colorschemes.stories.ts",
+                    "file": "src/app/avatar/avatar.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<ColorSchemesComponent>",
-                    "defaultValue": "(args: ColorSchemesComponent) => ({\r\n  component: ColorSchemesComponent,\r\n  props: args,\r\n})"
-                },
-                {
-                    "name": "White",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/colorschemes/colorschemes.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "WhiteExtended",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/colorschemes/colorschemes.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "type": "Story<AvatarComponent>",
+                    "defaultValue": "(args: AvatarComponent) => ({\r\n  component: AvatarComponent,\r\n  props: args\r\n})"
                 }
             ],
             "src/app/breadcrumbs/breadcrumbs.stories.ts": [
@@ -5527,6 +5604,16 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "Adaptive",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/colorschemes/colorschemes.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "Black",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -5557,7 +5644,27 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "DangerTransparent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/colorschemes/colorschemes.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/colorschemes/colorschemes.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DefaultTransparent",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5610,6 +5717,15 @@
                 "name": "WhiteExtended",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/colorschemes/themes-overview.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ThemesOverviewComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {
