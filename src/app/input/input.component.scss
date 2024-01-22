@@ -14,7 +14,7 @@ label{
 input{
   width: 100%;
   border: 1px solid #ccc;
-  border-radius: 3px;
+  border-radius: var(--basicui-formelement-border-radius);
   box-sizing: border-box;
   padding: 0 6px;
   height: 32px;
@@ -23,10 +23,14 @@ input{
   outline: none;
   color: black;
   margin-top: 4px;
+  border-color: var(--basicui-formelement-border-color);
+  background-color: var(--basicui-formelement-background-color);
+  color: var(--basicui-formelement-color);
 }
 input:hover{
-  background-color: rgb(232, 248, 254);
-  border: 1px solid rgb(195, 233, 249);
+  border-color: var(--basicui-formelement-border-color-hover);
+    background-color: var(--basicui-formelement-background-color-hover);
+    color: var(--basicui-formelement-color-hover);
 }
 
   /*.input{
