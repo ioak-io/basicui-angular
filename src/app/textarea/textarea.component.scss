@@ -17,8 +17,9 @@
   background-color: #f6f6f6;
 }
 .basicui-textarea textarea:hover{
-  background-color: rgb(232, 248, 254);
-  border: 1px solid rgb(195, 233, 249);
+  border-color: var(--basicui-formelement-border-color-hover);
+  background-color: var(--basicui-formelement-background-color-hover);
+  color: var(--basicui-formelement-color-hover);
 }
 /*label {
     display: block;
