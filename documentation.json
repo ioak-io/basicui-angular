@@ -296,7 +296,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\r\n.basicui-accordion {\r\n    overflow: hidden;\r\n    border-bottom: 1px solid #dedede6b;\r\n    transition: background-color 250ms ease-in-out;\r\n}\r\n.accordion-header{\r\n    border-bottom: 1px solid #dedede6b;\r\n    height: 52px;\r\n    line-height: 45px;\r\n    align-content: center;\r\n    cursor: pointer;\r\n    padding: 0 16px;\r\n    transition: background-color 250ms ease-in-out;\r\n}\r\n.accordion-header:hover{\r\n    background-color: #3eb1f2;\r\n    border: none;\r\n    color: white;\r\n}\r\n.accordion-content{\r\n    padding: 16px 16px 16px 16px;\r\n    transition: 0.5s;\r\n    border-bottom: 1px solid #dedede6b;\r\n    -webkit-transition:5s;\r\n    font-family: system-ui;\r\n    font-size: 14px;\r\n    color: #000;\r\n    font-weight: 200;\r\n}\r\n",
+                    "data": "\r\n.basicui-accordion {\r\n    overflow: hidden;\r\n    border-bottom: 1px solid #dedede6b;\r\n    transition: background-color 250ms ease-in-out;\r\n}\r\n.accordion-header{\r\n    height: 52px;\r\n    line-height: 45px;\r\n    align-content: center;\r\n    cursor: pointer;\r\n    padding: 0 16px;\r\n    transition: background-color 250ms ease-in-out;\r\n}\r\n.accordion-header:hover{\r\n    background-color: #3eb1f2;\r\n    border: none;\r\n    color: white;\r\n}\r\n.accordion-content{\r\n    padding: 16px 16px 16px 16px;\r\n    transition: 0.5s;\r\n    border-bottom: 1px solid #dedede6b;\r\n    -webkit-transition:5s;\r\n    font-family: system-ui;\r\n    font-size: 14px;\r\n    color: #000;\r\n    font-weight: 200;\r\n}\r\n",
                     "styleUrl": "./accordion.component.scss"
                 }
             ],
@@ -754,7 +754,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../styles/index.css';\r\n",
+                    "data": "//@import '../styles/index.css';\r\n",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -903,7 +903,7 @@
         },
         {
             "name": "ColorSchemesComponent",
-            "id": "component-ColorSchemesComponent-74bd212e8791128af7604d7ecd871f6ebfdcb4b6acbafe3d12c99d1bc2f8d774dba4ead0f097ed06fdd35984b765801c775ae862a05f6dc9c5a003f2d5c75309",
+            "id": "component-ColorSchemesComponent-7fdb1f1549446a291a470725ec6aa562e03ef4c382f46d00636716ae13c6e2c907c67938bfad3741f7afd03836739dc4f9eeea3e5423019734790767f9dbecfa",
             "file": "src/app/colorschemes/colorschemes.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -923,7 +923,6 @@
             "inputsClass": [
                 {
                     "name": "discriminator",
-                    "defaultValue": "\"adaptive\"",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 9,
@@ -935,10 +934,10 @@
             "propertiesClass": [
                 {
                     "name": "levels",
-                    "defaultValue": "[\r\n    '50',\r\n    '100',\r\n    '200',\r\n    '300',\r\n    '400',\r\n    '500',\r\n    '600',\r\n    '700',\r\n    '800',\r\n    '900',\r\n  ]",
+                    "defaultValue": "[\r\n    '50',\r\n    '100',\r\n    '200',\r\n    '300',\r\n    '400',\r\n    '500',\r\n    '600',\r\n    '700',\r\n    '800',\r\n    '900'\r\n  ]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "string[]",
+                    "type": "[]",
                     "optional": false,
                     "description": "",
                     "line": 22
@@ -954,7 +953,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-colorschemes',\r\n  templateUrl: './colorschemes.component.html',\r\n  styleUrls: ['./colorschemes.component.scss'],\r\n})\r\nexport class ColorSchemesComponent {\r\n  @Input() discriminator: 'adaptive' |\r\n    'black' |\r\n    'white' |\r\n    'black-extended' |\r\n    'white-extended' |\r\n    'default' |\r\n    'default-transparent' |\r\n    'primary' |\r\n    'primary-transparent' |\r\n    'danger' |\r\n    'danger-transparent' |\r\n    'themes-overview' = \"adaptive\";\r\n\r\n  levels: string[] = [\r\n    '50',\r\n    '100',\r\n    '200',\r\n    '300',\r\n    '400',\r\n    '500',\r\n    '600',\r\n    '700',\r\n    '800',\r\n    '900',\r\n  ];\r\n}",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-colorschemes',\r\n  templateUrl: './colorschemes.component.html',\r\n  styleUrls: ['./colorschemes.component.scss'],\r\n})\r\nexport class ColorSchemesComponent {\r\n  @Input() discriminator!: |'adaptive' \r\n  | 'black' \r\n  | 'white' \r\n  | 'black-extended' \r\n  | 'white-extended' \r\n  | 'default' \r\n  | 'default-transparent' \r\n  | 'primary' \r\n  | 'primary-transparent' \r\n  | 'danger' \r\n  | 'danger-transparent' \r\n  | 'themes-overview';\r\n\r\n  levels = [\r\n    '50',\r\n    '100',\r\n    '200',\r\n    '300',\r\n    '400',\r\n    '500',\r\n    '600',\r\n    '700',\r\n    '800',\r\n    '900'\r\n  ];\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -964,7 +963,7 @@
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"basicuidemo-color-scheme basicuidemo-color-scheme--{{ discriminator }}\">\r\n  <div *ngFor=\"let level of levels\" class=\"basicuidemo-color-scheme__x basicuidemo-color-scheme__{{ level }}\">\r\n    <div class=\"basicuidemo-color-scheme__x__bg\">\r\n      <div class=\"basicuidemo-color-scheme__x__bg__label\">background-color:</div>\r\n      <div class=\"basicuidemo-color-scheme__x__bg__value\">{{ 'var(--theme-' + discriminator + '-' + level + ')' }}</div>\r\n    </div>\r\n    <div class=\"basicuidemo-color-scheme__x__fg\">\r\n      <div class=\"basicuidemo-color-scheme__x__fg__label\">color:</div>\r\n      <div class=\"basicuidemo-color-scheme__x__fg__value\">{{ 'var(--theme-' + discriminator + '-' + level + 'i)' }}</div>\r\n    </div>\r\n  </div>\r\n</div>"
+            "templateData": "<div *ngIf=\"discriminator !== 'themes-overview'\" class=\"basicuidemo-color-scheme\" [ngClass]=\"'basicuidemo-color-scheme--' + discriminator\">\r\n  <div *ngFor=\"let level of levels\" class=\"basicuidemo-color-scheme__x\" [ngClass]=\"'basicuidemo-color-scheme__' + level\">\r\n    <div class=\"basicuidemo-color-scheme__x__bg\">\r\n      <div class=\"basicuidemo-color-scheme__x__bg__label\">background-color:</div>\r\n      <div class=\"basicuidemo-color-scheme__x__bg__value\">{{ 'var(--theme-' + discriminator + '-' + level + ')' }}</div>\r\n    </div>\r\n    <div class=\"basicuidemo-color-scheme__x__fg\">\r\n      <div class=\"basicuidemo-color-scheme__x__fg__label\">color:</div>\r\n      <div class=\"basicuidemo-color-scheme__x__fg__value\">{{ 'var(--theme-' + discriminator + '-' + level + 'i)' }}</div>\r\n    </div>\r\n  </div>\r\n</div>\r\n<app-themes-overview *ngIf=\"discriminator === 'themes-overview'\"></app-themes-overview>"
         },
         {
             "name": "DemoSectionComponent",
@@ -1012,13 +1011,13 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".basicuidemo-section {\r\n    margin: 2rem 0;\r\n}\r\n",
+                    "data": ".basicuidemo-section {\r\n    margin: 2rem 0;\r\n}\r\nh4{\r\n    font-size: 1.4rem;\r\n    font-weight: 350;\r\n    margin-top: 0;\r\n    margin-bottom: 0.5rem;\r\n    line-height: 1.3;\r\n}\r\n",
                     "styleUrl": "./demosection.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"basicuidemo-section\">\r\n    <h3>{{ heading }}</h3>\r\n    <ng-content></ng-content>\r\n  </div>"
+            "templateData": "<div class=\"basicuidemo-section\">\r\n    <h4>{{ heading }}</h4>\r\n    <ng-content></ng-content>\r\n  </div>"
         },
         {
             "name": "HeaderComponent",
@@ -1461,7 +1460,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "label{\r\n    color: rgb(112 112 112 / 97%);\r\n    font-family: system-ui;\r\n    font-size: 13px;\r\n    font-weight: 300;\r\n    margin-bottom: 4px;\r\n    text-transform: capitalize;\r\n}\r\n.info-message{\r\n  color: #696c6d;\r\n  font-size: 10px;\r\n  margin-top: 5px;\r\n}\r\ninput{\r\n  width: 100%;\r\n  border: 1px solid #ccc;\r\n  border-radius: 3px;\r\n  box-sizing: border-box;\r\n  padding: 0 6px;\r\n  height: 32px;\r\n  font-size: 12px;\r\n  font-weight: 400;\r\n  outline: none;\r\n  color: black;\r\n  margin-top: 4px;\r\n}\r\ninput:hover{\r\n  background-color: rgb(232, 248, 254);\r\n  border: 1px solid rgb(195, 233, 249);\r\n}\r\n\r\n  /*.input{\r\n  width: 100%;\r\n  padding: 15px 0px 15px 35px;\r\n  margin: 8px 0;\r\n  display: inline-block;\r\n  border: 1px solid #ccc;\r\n  border-radius: 4px;\r\n  box-sizing: border-box;\r\n\r\n  &::placeholder {\r\n    font-size: 18px;\r\n    text-align:left;\r\n    \r\n  }\r\n}*/\r\n",
+                    "data": "label{\r\n    color: rgb(112 112 112 / 97%);\r\n    font-family: system-ui;\r\n    font-size: 13px;\r\n    font-weight: 300;\r\n    margin-bottom: 4px;\r\n    text-transform: capitalize;\r\n}\r\n.info-message{\r\n  color: #696c6d;\r\n  font-size: 10px;\r\n  margin-top: 5px;\r\n}\r\ninput{\r\n  width: 100%;\r\n  border: 1px solid #ccc;\r\n  border-radius: var(--basicui-formelement-border-radius);\r\n  box-sizing: border-box;\r\n  padding: 0 6px;\r\n  height: 32px;\r\n  font-size: 12px;\r\n  font-weight: 400;\r\n  outline: none;\r\n  color: black;\r\n  margin-top: 4px;\r\n  border-color: var(--basicui-formelement-border-color);\r\n  background-color: var(--basicui-formelement-background-color);\r\n  color: var(--basicui-formelement-color);\r\n}\r\ninput:hover{\r\n  border-color: var(--basicui-formelement-border-color-hover);\r\n    background-color: var(--basicui-formelement-background-color-hover);\r\n    color: var(--basicui-formelement-color-hover);\r\n}\r\n\r\n  /*.input{\r\n  width: 100%;\r\n  padding: 15px 0px 15px 35px;\r\n  margin: 8px 0;\r\n  display: inline-block;\r\n  border: 1px solid #ccc;\r\n  border-radius: 4px;\r\n  box-sizing: border-box;\r\n\r\n  &::placeholder {\r\n    font-size: 18px;\r\n    text-align:left;\r\n    \r\n  }\r\n}*/\r\n",
                     "styleUrl": "./input.component.scss"
                 }
             ],
@@ -1633,7 +1632,7 @@
         },
         {
             "name": "ModalComponent",
-            "id": "component-ModalComponent-d02ad453bc3c8322a971123e45e4ed5d8a6aa3aba379738d3798b0d72fa12589b6ffab9f087402010ab96d3942132a2f68087eace6bf7c3d9b24f719b651143c",
+            "id": "component-ModalComponent-889fc82de8a4700f36efc3282ba159fe89501b5ae8d93702cf2fd8e9aa9c1bc91d2d280f18df4d3115bccd4e5051cbafbff5f2487635edd68a37e9ca8726a758",
             "file": "src/app/modal/modal.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1653,7 +1652,7 @@
             "inputsClass": [
                 {
                     "name": "theme",
-                    "defaultValue": "ThemeType.default || ThemeType.primary",
+                    "defaultValue": "ThemeType.default",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 11,
@@ -1702,11 +1701,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Output, Input } from '@angular/core';\r\nimport ThemeType from '../types/ThemeType';\r\nimport ButtonVariantType from '../types/ButtonVariantType';\r\n\r\n@Component({\r\n  selector: 'app-modal',\r\n  templateUrl: './modal.component.html',\r\n  styleUrls: ['./modal.component.scss']\r\n})\r\nexport class ModalComponent {\r\n  @Input() theme: ThemeType = ThemeType.default || ThemeType.primary;\r\n  @Input() variant: ButtonVariantType = ButtonVariantType.default;\r\n  @Output() closeModal: EventEmitter<void> = new EventEmitter<void>();\r\n\r\n  onClose() {\r\n    this.closeModal.emit();\r\n  }\r\n}",
+            "sourceCode": "import { Component, EventEmitter, Output, Input } from '@angular/core';\r\nimport ThemeType from '../types/ThemeType';\r\nimport ButtonVariantType from '../types/ButtonVariantType';\r\n\r\n@Component({\r\n  selector: 'app-modal',\r\n  templateUrl: './modal.component.html',\r\n  styleUrls: ['./modal.component.scss']\r\n})\r\nexport class ModalComponent {\r\n  @Input() theme: ThemeType = ThemeType.default;\r\n  @Input() variant: ButtonVariantType = ButtonVariantType.default;\r\n  @Output() closeModal: EventEmitter<void> = new EventEmitter<void>();\r\n\r\n  onClose() {\r\n    this.closeModal.emit();\r\n  }\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../styles/index.css';\r\n\r\n.basicui-modal {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100%;\r\n    width: 100%;\r\n    overflow: hidden;\r\n    display: grid;\r\n    align-items: center;\r\n    justify-items: center;\r\n    z-index: 100;\r\n}\r\n\r\n.basicui-modal__overlay {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100%;\r\n    width: 100%;\r\n    background-color: #00000060;\r\n    overflow: hidden;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    padding-top: var(--basicui-modal-margin-y);\r\n    padding-bottom: var(--basicui-modal-margin-y);\r\n}\r\n\r\n.basicui-modal__base {\r\n    display: grid;\r\n    grid-auto-flow: row;\r\n    align-self: center;\r\n    z-index: 102;\r\n    background-color: var(--theme-white-50);\r\n    border-radius: var(--basicui-modal-border-radius);\r\n    width: 500px;\r\n    max-width: 90vw;\r\n    /* max-height: var(--basicui-modal-max-height); */\r\n    /* height: 100%; */\r\n}\r\n\r\n.basicui-dark .basicui-modal__base {\r\n    background-color: var(--theme-black-50);\r\n}\r\n\r\n.basicui-modal__base--size-small {\r\n    width: 300px;\r\n}\r\n\r\n.basicui-modal__base--size-large {\r\n    width: 800px;\r\n}\r\n\r\n.basicui-modal__base--size-xlarge {\r\n    width: 1140px;\r\n}\r\n\r\n.basicui-modal__base--placement-top {\r\n    align-self: flex-start;\r\n}\r\n.basicui-modal__base--placement-bottom {\r\n    align-self: flex-end;\r\n}\r\n.basicui-dark .basicui-modal-body{\r\n    background-color: #000;\r\n}\r\n.basicui-modal-body{\r\n    padding: 10px 10px;\r\n    margin-top: 10px;\r\n    border-radius: 6px;\r\n    width: 50%;\r\n    background-color: #fff;\r\n}\r\n.basicui-modal-header{\r\n    border-bottom: 1px solid #e4e4e4;\r\n    font-weight: 500;\r\n    font-size: 16px;\r\n    font-family: sans-serif;\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n.basicui-modal-content{\r\n    border-bottom: 1px solid #e4e4e4;\r\n    padding: 10px 10px;\r\n}\r\n.basicui-modal-footer{\r\n    display: flex;\r\n    margin-right: 10px;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n}\r\n.basicui-modal-header__close{\r\n    background-color: transparent;\r\n    border: none;\r\n    cursor: pointer;\r\n}\r\n.basicui-modal-header__close svg{\r\n    height: 16px;\r\n    fill: #000;\r\n    justify-content:flex-end;\r\n}\r\n\r\n.Modal-footer{\r\n    justify-content: flex-end;\r\n    display: flex;\r\n}",
+                    "data": "@import '../styles/index.css';\r\n\r\n.basicui-modal {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100%;\r\n    width: 100%;\r\n    overflow: hidden;\r\n    display: grid;\r\n    align-items: center;\r\n    justify-items: center;\r\n    z-index: 100;\r\n}\r\n\r\n.basicui-modal__overlay {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100%;\r\n    width: 100%;\r\n    background-color: #00000060;\r\n    overflow: hidden;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    padding-top: var(--basicui-modal-margin-y);\r\n    padding-bottom: var(--basicui-modal-margin-y);\r\n}\r\n\r\n.basicui-modal__base {\r\n    display: grid;\r\n    grid-auto-flow: row;\r\n    align-self: center;\r\n    z-index: 102;\r\n    background-color: var(--theme-white-50);\r\n    border-radius: var(--basicui-modal-border-radius);\r\n    width: 500px;\r\n    max-width: 90vw;\r\n    /* max-height: var(--basicui-modal-max-height); */\r\n    /* height: 100%; */\r\n}\r\n\r\n.basicui-dark .basicui-modal__base {\r\n    background-color: var(--theme-black-50);\r\n}\r\n\r\n.basicui-modal__base--size-small {\r\n    width: 300px;\r\n}\r\n\r\n.basicui-modal__base--size-large {\r\n    width: 800px;\r\n}\r\n\r\n.basicui-modal__base--size-xlarge {\r\n    width: 1140px;\r\n}\r\n\r\n.basicui-modal__base--placement-top {\r\n    align-self: flex-start;\r\n}\r\n.basicui-modal__base--placement-bottom {\r\n    align-self: flex-end;\r\n}\r\n.basicui-dark .basicui-modal-body{\r\n    background-color: #000;\r\n}\r\n.basicui-modal-body{\r\n    padding: 10px 10px;\r\n    margin-top: 10px;\r\n    border-radius: 6px;\r\n    width: 500px;\r\n    background-color: #fff;\r\n}\r\n.basicui-modal-header{\r\n    border-bottom: 1px solid #e4e4e4;\r\n    font-weight: 500;\r\n    font-size: 16px;\r\n    font-family: sans-serif;\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n.basicui-modal-content{\r\n    border-bottom: 1px solid #e4e4e4;\r\n    padding: 10px 10px 20px 10px;\r\n}\r\n.basicui-modal-footer{\r\n    display: flex;\r\n    margin-right: 10px;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n}\r\n.basicui-modal-header__close{\r\n    background-color: transparent;\r\n    border: none;\r\n    cursor: pointer;\r\n}\r\n.basicui-modal-header__close svg{\r\n    height: 16px;\r\n    fill: #000;\r\n    justify-content:flex-end;\r\n}\r\n\r\n.Modal-footer{\r\n    justify-content: flex-end;\r\n    display: flex;\r\n}",
                     "styleUrl": "./modal.component.scss"
                 }
             ],
@@ -1789,7 +1788,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../styles/index.css';\r\n\r\n.basicui-modal {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100%;\r\n    width: 100%;\r\n    overflow: hidden;\r\n    display: grid;\r\n    align-items: center;\r\n    justify-items: center;\r\n    z-index: 100;\r\n}\r\n\r\n.basicui-modal__overlay {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100%;\r\n    width: 100%;\r\n    background-color: #00000060;\r\n    overflow: hidden;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    padding-top: var(--basicui-modal-margin-y);\r\n    padding-bottom: var(--basicui-modal-margin-y);\r\n}\r\n\r\n.basicui-modal__base {\r\n    display: grid;\r\n    grid-auto-flow: row;\r\n    align-self: center;\r\n    z-index: 102;\r\n    background-color: var(--theme-white-50);\r\n    border-radius: var(--basicui-modal-border-radius);\r\n    width: 500px;\r\n    max-width: 90vw;\r\n    /* max-height: var(--basicui-modal-max-height); */\r\n    /* height: 100%; */\r\n}\r\n\r\n.basicui-dark .basicui-modal__base {\r\n    background-color: var(--theme-black-50);\r\n}\r\n\r\n.basicui-modal__base--size-small {\r\n    width: 300px;\r\n}\r\n\r\n.basicui-modal__base--size-large {\r\n    width: 800px;\r\n}\r\n\r\n.basicui-modal__base--size-xlarge {\r\n    width: 1140px;\r\n}\r\n\r\n.basicui-modal__base--placement-top {\r\n    align-self: flex-start;\r\n}\r\n.basicui-modal__base--placement-bottom {\r\n    align-self: flex-end;\r\n}\r\n.basicui-dark .basicui-modal-body{\r\n    background-color: #000;\r\n}\r\n.basicui-modal-body{\r\n    padding: 10px 10px;\r\n    margin-top: 10px;\r\n    border-radius: 6px;\r\n    width: 50%;\r\n    background-color: #fff;\r\n}\r\n.basicui-modal-header{\r\n    border-bottom: 1px solid #e4e4e4;\r\n    font-weight: 500;\r\n    font-size: 16px;\r\n    font-family: sans-serif;\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n.basicui-modal-content{\r\n    border-bottom: 1px solid #e4e4e4;\r\n    padding: 10px 10px;\r\n}\r\n.basicui-modal-footer{\r\n    display: flex;\r\n    margin-right: 10px;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n}\r\n.basicui-modal-header__close{\r\n    background-color: transparent;\r\n    border: none;\r\n    cursor: pointer;\r\n}\r\n.basicui-modal-header__close svg{\r\n    height: 16px;\r\n    fill: #000;\r\n    justify-content:flex-end;\r\n}\r\n\r\n.Modal-footer{\r\n    justify-content: flex-end;\r\n    display: flex;\r\n}",
+                    "data": "@import '../styles/index.css';\r\n\r\n.basicui-modal {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100%;\r\n    width: 100%;\r\n    overflow: hidden;\r\n    display: grid;\r\n    align-items: center;\r\n    justify-items: center;\r\n    z-index: 100;\r\n}\r\n\r\n.basicui-modal__overlay {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100%;\r\n    width: 100%;\r\n    background-color: #00000060;\r\n    overflow: hidden;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    padding-top: var(--basicui-modal-margin-y);\r\n    padding-bottom: var(--basicui-modal-margin-y);\r\n}\r\n\r\n.basicui-modal__base {\r\n    display: grid;\r\n    grid-auto-flow: row;\r\n    align-self: center;\r\n    z-index: 102;\r\n    background-color: var(--theme-white-50);\r\n    border-radius: var(--basicui-modal-border-radius);\r\n    width: 500px;\r\n    max-width: 90vw;\r\n    /* max-height: var(--basicui-modal-max-height); */\r\n    /* height: 100%; */\r\n}\r\n\r\n.basicui-dark .basicui-modal__base {\r\n    background-color: var(--theme-black-50);\r\n}\r\n\r\n.basicui-modal__base--size-small {\r\n    width: 300px;\r\n}\r\n\r\n.basicui-modal__base--size-large {\r\n    width: 800px;\r\n}\r\n\r\n.basicui-modal__base--size-xlarge {\r\n    width: 1140px;\r\n}\r\n\r\n.basicui-modal__base--placement-top {\r\n    align-self: flex-start;\r\n}\r\n.basicui-modal__base--placement-bottom {\r\n    align-self: flex-end;\r\n}\r\n.basicui-dark .basicui-modal-body{\r\n    background-color: #000;\r\n}\r\n.basicui-modal-body{\r\n    padding: 10px 10px;\r\n    margin-top: 10px;\r\n    border-radius: 6px;\r\n    width: 500px;\r\n    background-color: #fff;\r\n}\r\n.basicui-modal-header{\r\n    border-bottom: 1px solid #e4e4e4;\r\n    font-weight: 500;\r\n    font-size: 16px;\r\n    font-family: sans-serif;\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n.basicui-modal-content{\r\n    border-bottom: 1px solid #e4e4e4;\r\n    padding: 10px 10px 20px 10px;\r\n}\r\n.basicui-modal-footer{\r\n    display: flex;\r\n    margin-right: 10px;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n}\r\n.basicui-modal-header__close{\r\n    background-color: transparent;\r\n    border: none;\r\n    cursor: pointer;\r\n}\r\n.basicui-modal-header__close svg{\r\n    height: 16px;\r\n    fill: #000;\r\n    justify-content:flex-end;\r\n}\r\n\r\n.Modal-footer{\r\n    justify-content: flex-end;\r\n    display: flex;\r\n}",
                     "styleUrl": "./modal.component.scss"
                 }
             ],
@@ -2106,13 +2105,107 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "  /* single-select styles */\r\n  select:hover {\r\n    border: 1px solid #c3e5f4;\r\n    background-color: #f1f8fe;\r\n    border-radius: 4px;\r\n  }\r\n  select, input {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\n    border: 1px solid #dad8d8;\r\n    background-color: #f1f0f08a;\r\n    border-radius: 3px;\r\n    width: 100%;\r\n    outline: none;\r\n    font-size: 12px;\r\n    position: relative;\r\n    text-indent: 5px;\r\n  }\r\n  select[single] {\r\n    position: absolute;\r\n    top: 50px;\r\n    left: 50px;\r\n  }\r\n  \r\n  /* Multi-select styles */\r\n  select[multiple] {\r\n    background-color: white;\r\n    height: 30px;\r\n  }\r\n  select[multiple] option{\r\n    padding-top: 10px;\r\n    padding-bottom: 10px;\r\n    padding-left: 10px;\r\n    \r\n  }\r\n  select[multiple] option:hover{\r\n    padding-top: 10px;\r\n    padding-bottom: 10px;\r\n    border: 1px solid #c3e5f4;\r\n    background-color: #f1f8fe;\r\n  }\r\n  .positioned-select {\r\n    border: 1px solid #ccc;\r\n    border-radius: 4px;\r\n    font-size: 14px;\r\n    width: 100%;\r\n  }\r\n  .positioned-select[multiple] {\r\n    height: 150px;\r\n  }\r\n\r\n  /* auto complete-select styles */\r\n  .auto-select{\r\n    padding: 5px;\r\n    font-size: 14px;\r\n    border-radius: 3px;\r\n    border: 1px solid #dad8d8;\r\n    background-color: #f1f0f08a;\r\n    width: 100%;\r\n    outline: none;\r\n  }\r\n  .auto-select-option {\r\n    padding: 8px 16px;\r\n    cursor: pointer;\r\n  }\r\n  .auto-select:hover {\r\n    border: 1px solid #c3e5f4;\r\n    background-color: #f1f8fe;\r\n    border-radius: 3px;\r\n  }\r\n",
+                    "data": "  /* single-select styles */\r\n  select:hover {\r\n    border-color: var(--basicui-formelement-border-color-hover);\r\n    background-color: var(--basicui-formelement-background-color-hover);\r\n    color: var(--basicui-formelement-color-hover);\r\n  }\r\n  select, input {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\n    background-color: var(--theme-default-50);\r\n    color: var(--theme-default-50i);\r\n    width: 100%;\r\n    outline: none;\r\n    font-size: 11px;\r\n    position: relative;\r\n    text-indent: 5px;\r\n  }\r\n  select[single] {\r\n    position: absolute;\r\n    top: 50px;\r\n    left: 50px;\r\n  }\r\n  \r\n  /* Multi-select styles */\r\n  select[multiple] {\r\n    background-color: white;\r\n    height: 30px;\r\n  }\r\n  select[multiple] option{\r\n    padding-top: 10px;\r\n    padding-bottom: 10px;\r\n    padding-left: 10px;\r\n    \r\n  }\r\n  select[multiple] option:hover{\r\n    padding-top: 10px;\r\n    padding-bottom: 10px;\r\n    border: 1px solid #c3e5f4;\r\n    background-color: #f1f8fe;\r\n  }\r\n  .positioned-select {\r\n    border: 1px solid #e4e3e3;\r\n    border-radius: 2px;\r\n    font-size: 12px;\r\n    width: 100%;\r\n  }\r\n  .positioned-select[multiple] {\r\n    height: 150px;\r\n  }\r\n\r\n  /* auto complete-select styles */\r\n  .auto-select{\r\n    padding: 5px;\r\n    font-size: 12px;\r\n    border-radius: 2px;\r\n    border: 1px solid #dad8d8;\r\n    background-color: #f1f0f08a;\r\n    width: 100%;\r\n    outline: none;\r\n  }\r\n  .auto-select-option {\r\n    padding: 8px 16px;\r\n    cursor: pointer;\r\n  }\r\n  .auto-select:hover {\r\n    border-radius: 3px;\r\n    border-color: var(--basicui-formelement-border-color-hover);\r\n      background-color: var(--basicui-formelement-background-color-hover);\r\n      border-radius: 3px;\r\n  }\r\n",
                     "styleUrl": "./select.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "\r\n\r\n  <div class=\"custom-select\" *ngIf=\"selectType === 'single'\">\r\n    <select *ngIf=\"selectedValue !== undefined\" class=\"positioned-select\">\r\n      <option> {{ selectedValue }}</option>\r\n      <option *ngFor=\"let option of options\" [value]=\"option.value\">{{ option.label }}</option>\r\n    </select>\r\n  </div>\r\n\r\n  <!-- <div class=\"custom-select\" *ngIf=\"selectType === 'multi'\">\r\n    <select multiple>\r\n      <option *ngFor=\"let option of options\" [value]=\"option.value\">{{ option.label }}</option>\r\n    </select>\r\n  </div> -->\r\n  \r\n  <div class=\"custom-select\" *ngIf=\"selectType === 'autocomplete'\">\r\n    <input type=\"text\" placeholder=\"Autocomplete dropdown\" list=\"autocompleteOptions\" class=\"auto-select\" style=\"width: 100%; \">\r\n    <datalist id=\"autocompleteOptions\">\r\n      <option *ngFor=\"let option of options\" [value]=\"option.label\" style=\"width: 100%;\">{{ option.label }}</option>\r\n    </datalist>\r\n  </div>\r\n  \r\n  <!-- <div class=\"custom-select\" *ngIf=\"selectType === 'autocomplete-multi'\">\r\n    <input type=\"text\" placeholder=\"Autocomplete dropdown\" list=\"autocompleteOptions\" class=\"auto-select\" style=\"width: 100%;\">\r\n    <datalist id=\"autocompleteOptions\">\r\n      <option *ngFor=\"let option of options\" [value]=\"option.label\" style=\"width: 100%;\">{{ option.label }}</option>\r\n    </datalist>\r\n  </div>-->\r\n  "
+            "templateData": "\r\n\r\n  <div class=\"custom-select\" *ngIf=\"selectType === 'single'\">\r\n    <select *ngIf=\"selectedValue !== undefined\" class=\"positioned-select\">\r\n      <option value=\"select dropdown\"> {{ selectedValue }}</option>\r\n      <option *ngFor=\"let option of options\" [value]=\"option.value\">{{ option.label }}</option>\r\n    </select>\r\n  </div>\r\n\r\n  <!-- <div class=\"custom-select\" *ngIf=\"selectType === 'multi'\">\r\n    <select multiple>\r\n      <option *ngFor=\"let option of options\" [value]=\"option.value\">{{ option.label }}</option>\r\n    </select>\r\n  </div> -->\r\n  \r\n  <div class=\"custom-select\" *ngIf=\"selectType === 'autocomplete'\">\r\n    <input type=\"text\" value=\"Autocomplete drop down\" list=\"autocompleteOptions\" class=\"auto-select\" style=\"width: 100%; \">\r\n    <datalist id=\"autocompleteOptions\">\r\n      <option *ngFor=\"let option of options\" [value]=\"option.label\" style=\"width: 100%;\">{{ option.label }}</option>\r\n    </datalist>\r\n  </div>\r\n  \r\n  <!-- <div class=\"custom-select\" *ngIf=\"selectType === 'autocomplete-multi'\">\r\n    <input type=\"text\" placeholder=\"Autocomplete dropdown\" list=\"autocompleteOptions\" class=\"auto-select\" style=\"width: 100%;\">\r\n    <datalist id=\"autocompleteOptions\">\r\n      <option *ngFor=\"let option of options\" [value]=\"option.label\" style=\"width: 100%;\">{{ option.label }}</option>\r\n    </datalist>\r\n  </div>-->\r\n  "
+        },
+        {
+            "name": "SelectComponent",
+            "id": "component-SelectComponent-47209682439a91c07726e5371deb6a72e6a47516760d4ac284e990d72bc880979cb6ddaa04443ac7d445ff5691afd1ab9d1046a1ff413a347416466122f447c1-1",
+            "file": "src/app/select-native/select.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-select-native",
+            "styleUrls": [
+                "./select.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./select.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "options",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "literal type[]",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "selectType",
+                    "defaultValue": "'single'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "\"single\" | \"autocomplete\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "selectedValue",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-select-native',\r\n  templateUrl: './select.component.html',\r\n  styleUrls: ['./select.component.scss']\r\n})\r\nexport class SelectComponent {\r\n[x: string]: any;\r\n  @Input() label!: string;\r\n  @Input() placeholder = '';\r\n  @Input() selectType: 'single' | 'autocomplete' = 'single';\r\n  @Input() options: { value: string, label: string }[] = [];\r\n  selectedValue: string = '';\r\n  //selectedValues: string[] = [];\r\n  \r\n}",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "  /* single-select styles */\r\n  label{\r\n    color: rgb(112 112 112 / 97%);\r\n    font-family: system-ui;\r\n    font-size: 13px;\r\n    font-weight: 300;\r\n}\r\n  select:hover {\r\n    border-color: var(--basicui-formelement-border-color-hover);\r\n    background-color: var(--basicui-formelement-background-color-hover);\r\n    color: var(--basicui-formelement-color-hover);\r\n  }\r\n  select, input {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\n    background-color: var(--theme-default-50);\r\n    color: var(--theme-default-50i);\r\n    width: 100%;\r\n    outline: none;\r\n    font-size: 11px;\r\n    position: relative;\r\n    text-indent: 5px;\r\n  }\r\n  select[single] {\r\n    position: absolute;\r\n    top: 50px;\r\n    left: 50px;\r\n  }\r\n  \r\n  /* Multi-select styles */\r\n  select[multiple] {\r\n    background-color: white;\r\n    height: 30px;\r\n  }\r\n  select[multiple] option{\r\n    padding-top: 10px;\r\n    padding-bottom: 10px;\r\n    padding-left: 10px;\r\n    \r\n  }\r\n  select[multiple] option:hover{\r\n    padding-top: 10px;\r\n    padding-bottom: 10px;\r\n    border: 1px solid #c3e5f4;\r\n    background-color: #f1f8fe;\r\n  }\r\n  .positioned-select {\r\n    border: 1px solid #ecebeb;\r\n    border-radius: 2px;\r\n    font-size: 12px;\r\n    width: 100%;\r\n  }\r\n  .positioned-select[multiple] {\r\n    height: 150px;\r\n  }\r\n\r\n  /* auto complete-select styles */\r\n  .auto-select{\r\n    padding: 5px;\r\n    font-size: 10px;\r\n    border-radius: 2px;\r\n    border: 1px solid #dad8d8;\r\n    background-color: #f1f0f08a;\r\n    width: 100%;\r\n    outline: none;\r\n  }\r\n  .auto-select-option {\r\n    padding: 8px 16px;\r\n    cursor: pointer;\r\n  }\r\n  .auto-select:hover {\r\n    border-color: var(--basicui-formelement-border-color-hover);\r\n    background-color: var(--basicui-formelement-background-color-hover);\r\n    color: var(--basicui-formelement-color-hover);\r\n    border-radius: 3px;\r\n  }\r\n",
+                    "styleUrl": "./select.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "SelectComponent-1",
+            "templateData": "\r\n<label for=\"\">{{label}}</label>\r\n\r\n  <div class=\"custom-select\" *ngIf=\"selectType === 'single'\">\r\n    <select *ngIf=\"selectedValue !== undefined\" class=\"positioned-select\">\r\n      <option> {{ selectedValue }}</option>\r\n      <option *ngFor=\"let option of options\" [value]=\"option.value\">{{ option.label }}</option>\r\n    </select>\r\n  </div>\r\n\r\n  <!-- <div class=\"custom-select\" *ngIf=\"selectType === 'multi'\">\r\n    <select multiple>\r\n      <option *ngFor=\"let option of options\" [value]=\"option.value\">{{ option.label }}</option>\r\n    </select>\r\n  </div> -->\r\n  \r\n  <!-- <div class=\"custom-select\" *ngIf=\"selectType === 'autocomplete'\">\r\n    <input type=\"text\" placeholder=\"Autocomplete dropdown\" list=\"autocompleteOptions\" class=\"auto-select\" style=\"width: 100%; \">\r\n    <datalist id=\"autocompleteOptions\">\r\n      <option *ngFor=\"let option of options\" [value]=\"option.label\" style=\"width: 100%;\">{{ option.label }}</option>\r\n    </datalist>\r\n  </div> -->\r\n  \r\n  <!-- <div class=\"custom-select\" *ngIf=\"selectType === 'autocomplete-multi'\">\r\n    <input type=\"text\" placeholder=\"Autocomplete dropdown\" list=\"autocompleteOptions\" class=\"auto-select\" style=\"width: 100%;\">\r\n    <datalist id=\"autocompleteOptions\">\r\n      <option *ngFor=\"let option of options\" [value]=\"option.label\" style=\"width: 100%;\">{{ option.label }}</option>\r\n    </datalist>\r\n  </div>-->\r\n  "
         },
         {
             "name": "StoryWrapperComponent",
@@ -2234,13 +2327,13 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\r\n@import '../styles/index.css';\r\n\r\n.basicui-dark .basicui-modal-base{\r\n    background-color: black;\r\n}",
+                    "data": "\r\n@import '../styles/index.css';\r\nhtml{\r\n    font-family: 'Roboto', sans-serif;\r\n}\r\n\r\n.basicui-dark .basicui-modal-base{\r\n    background-color: black;\r\n}\r\n.basicui-modal-base{\r\n    position: fixed; top: 0; left: 0; height: 100%; width: 100%; background-color: #00000060; padding-top: 20px; padding-bottom: 20px; align-items: center; justify-content: center; display: flex; overflow: hidden;\r\n}",
                     "styleUrl": "./story-wrapper.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<div>\r\n    <button\r\n    [ngClass] = \"{\r\n      'basicui-button': true,\r\n      'basicui-button--theme-default': true,\r\n      'basicui-button--variant-default':true,\r\n      'basicui-button--theme-dark': true\r\n    }\"\r\n    [type]=\"type\"\r\n     (click)=\"openModal()\">Open Modal</button>\r\n    <app-modal *ngIf=\"isOpen\" (closeModal)=\"closeModal()\" class=\"basicui-modal-base\" style=\"position: fixed; top: 0; left: 0; height: 100%; width: 100%; background-color: #00000060; padding-top: 20px; padding-bottom: 20px; align-items: center; justify-content: center; display: flex; overflow: hidden;\">\r\n      Praesent urna erat, pharetra vel est vitae, tincidunt viverra sapien. Nullam ac rutrum diam. Curabitur non augue justo. Morbi pulvinar convallis leo eu faucibus. Nullam eu ullamcorper nisl. Ut cursus sagittis elit at congue. Donec malesuada sem at condimentum ultrices. Ut elementum tincidunt ipsum quis condimentum. Mauris nec arcu vitae diam sollicitudin aliquet. Nunc sed euismod ante. Proin eros magna, lobortis ut varius finibus, dignissim eu purus. Praesent ornare rutrum turpis imperdiet fringilla.\r\n    </app-modal>\r\n  </div>"
+            "templateData": "<div>\r\n    <button\r\n    [ngClass] = \"{\r\n      'basicui-button': true,\r\n      'basicui-button--theme-default': true,\r\n      'basicui-button--variant-default':true,\r\n      'basicui-button--theme-dark': true\r\n    }\"\r\n    [type]=\"type\"\r\n     (click)=\"openModal()\">Open Modal</button>\r\n    <app-modal *ngIf=\"isOpen\" (closeModal)=\"closeModal()\" class=\"basicui-modal-base\">\r\n      Praesent urna erat, pharetra vel est vitae, tincidunt viverra sapien. Nullam ac rutrum diam. Curabitur non augue justo. Morbi pulvinar convallis leo eu faucibus. Nullam eu ullamcorper nisl. Ut cursus sagittis elit at congue. Donec malesuada sem at condimentum ultrices. Ut elementum tincidunt ipsum quis condimentum. Mauris nec arcu vitae diam sollicitudin aliquet. Nunc sed euismod ante. Proin eros magna, lobortis ut varius finibus, dignissim eu purus. Praesent ornare rutrum turpis imperdiet fringilla.\r\n    </app-modal>\r\n  </div>"
         },
         {
             "name": "SvgIconComponent",
@@ -2810,13 +2903,68 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../styles/index.css';\r\n\r\n.label{\r\n    color: rgba(112, 112, 112, 0.97);\r\n    font-family: system-ui;\r\n    font-size: 13px;\r\n    font-weight: 300;\r\n    margin-bottom: 4px;\r\n}\r\n.basicui-textarea textarea{\r\n  resize: vertical;\r\n  padding-top: 6px;\r\n  padding-bottom: 6px;\r\n  height: 73px;\r\n  font-family: 'Roboto', sans-serif;\r\n  border: 1px solid #e2e1e1;\r\n  background-color: #f6f6f6;\r\n}\r\n.basicui-textarea textarea:hover{\r\n  background-color: rgb(232, 248, 254);\r\n  border: 1px solid rgb(195, 233, 249);\r\n}\r\n/*label {\r\n    display: block;\r\n    font-size: 12px;\r\n    font-family: 'Roboto', sans-serif;\r\n    margin-bottom: 4px;\r\n    color: #726e6ea3;\r\n    \r\n}\r\n.textarea-input:hover{\r\n    border: 1px solid #c3e5f4;\r\n    background-color: #f1f8fe;\r\n}\r\n.textarea-input{\r\n    font-family: 'Roboto', sans-serif;\r\n    resize: vertical;\r\n    width: 100%;\r\n    padding: 6px;\r\n    line-height: 1.5;\r\n    height: 55px;\r\n    font-size: 12px;\r\n    font-weight: 400;\r\n    text-overflow: ellipsis;\r\n    outline: none;\r\n    border: 1px solid #dad8d8;\r\n    background-color: #f1f0f08a;\r\n    border-radius: 2px;\r\n    display: flex;\r\n    align-items: center;\r\n    transition: 250ms border-color ease-in-out, 250ms background-color ease-in-out, 250ms color ease-in-out;\r\n}\r\n\r\n  .error-message {\r\n    color: #fc374bc4;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .success-message{\r\n    color: #14db5a;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .warning-message{\r\n    color: #db9214;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .tooltip-message{\r\n    color: #908e8e;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }*/",
+                    "data": "@import '../styles/index.css';\r\n\r\n.label{\r\n    color: rgba(112, 112, 112, 0.97);\r\n    font-family: system-ui;\r\n    font-size: 13px;\r\n    font-weight: 300;\r\n    margin-bottom: 4px;\r\n}\r\n.basicui-textarea textarea{\r\n  resize: vertical;\r\n  padding-top: 6px;\r\n  padding-bottom: 6px;\r\n  height: 73px;\r\n  font-family: 'Roboto', sans-serif;\r\n  border: 1px solid #e2e1e1;\r\n  background-color: #f6f6f6;\r\n}\r\n.basicui-textarea textarea:hover{\r\n  border: 1px solid;\r\n  border-color: var(--basicui-formelement-border-color);\r\n  background-color: var(--basicui-formelement-background-color);\r\n}\r\n/*label {\r\n    display: block;\r\n    font-size: 12px;\r\n    font-family: 'Roboto', sans-serif;\r\n    margin-bottom: 4px;\r\n    color: #726e6ea3;\r\n    \r\n}\r\n.textarea-input:hover{\r\n    border: 1px solid #c3e5f4;\r\n    background-color: #f1f8fe;\r\n}\r\n.textarea-input{\r\n    font-family: 'Roboto', sans-serif;\r\n    resize: vertical;\r\n    width: 100%;\r\n    padding: 6px;\r\n    line-height: 1.5;\r\n    height: 55px;\r\n    font-size: 12px;\r\n    font-weight: 400;\r\n    text-overflow: ellipsis;\r\n    outline: none;\r\n    border: 1px solid #dad8d8;\r\n    background-color: #f1f0f08a;\r\n    border-radius: 2px;\r\n    display: flex;\r\n    align-items: center;\r\n    transition: 250ms border-color ease-in-out, 250ms background-color ease-in-out, 250ms color ease-in-out;\r\n}\r\n\r\n  .error-message {\r\n    color: #fc374bc4;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .success-message{\r\n    color: #14db5a;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .warning-message{\r\n    color: #db9214;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .tooltip-message{\r\n    color: #908e8e;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }*/",
                     "styleUrl": "./textarea.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
             "templateData": "\r\n<div class=\"basicui-textarea\">\r\n    <div class=\"label\">{{label}}</div>\r\n    <textarea [ngClass]=\"{'basicui-input': true }\"\r\n              [placeholder]=\"placeholder\" \r\n              [value]=\"value\"\r\n              autocomplete=\"none\">\r\n    </textarea>\r\n</div>\r\n    <div *ngIf=\"isSuccess\" class=\"success-message\">{{ successMessage }}</div>\r\n    <div *ngIf=\"isWarning\" class=\"warning-message\">{{ warningMessage }}</div>\r\n    <div *ngIf=\"isTooltip\" class=\"tooltip-message\">{{ tooltipMessage }}</div>\r\n    <div *ngIf=\"isError\" class=\"error-message\">{{ errorMessage }}</div>\r\n\r\n\r\n"
+        },
+        {
+            "name": "ThemesOverviewComponent",
+            "id": "component-ThemesOverviewComponent-40b0490bffe5d5239a62787050afdc547351732085673cefbb754c11a7f3c8e7034455af69f62b4565f98ef457b4495a394c0d8dcc86d716648d37a615313ff8",
+            "file": "src/app/themes-overview/themes-overview.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-themes-overview",
+            "styleUrls": [
+                "../colorschemes/colorschemes.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./themes-overview.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "themes",
+                    "defaultValue": "[\r\n    'adaptive',\r\n    'black',\r\n    'black-extended',\r\n    'white',\r\n    'white-extended',\r\n    'default',\r\n    'default-transparent',\r\n    'primary',\r\n    'primary-transparent',\r\n    'warning',\r\n    'warning-transparent',\r\n    'danger',\r\n    'danger-transparent'\r\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-themes-overview',\r\n  templateUrl: './themes-overview.component.html',\r\n  styleUrls: ['../colorschemes/colorschemes.component.scss'],\r\n})\r\nexport class ThemesOverviewComponent {\r\n  themes = [\r\n    'adaptive',\r\n    'black',\r\n    'black-extended',\r\n    'white',\r\n    'white-extended',\r\n    'default',\r\n    'default-transparent',\r\n    'primary',\r\n    'primary-transparent',\r\n    'warning',\r\n    'warning-transparent',\r\n    'danger',\r\n    'danger-transparent'\r\n  ];\r\n}",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../styles/index.css';\r\n@import './styles/index.css';\r\n",
+                    "styleUrl": "../colorschemes/colorschemes.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"basicuidemo-color-scheme\">\r\n  <div *ngFor=\"let theme of themes\" class=\"basicuidemo-color-scheme__x\" [ngClass]=\"'basicuidemo-themes-overview__' + theme\">\r\n    <div class=\"basicuidemo-color-scheme__x__bg\">\r\n      <div class=\"basicuidemo-color-scheme__x__bg__label\">background-color:</div>\r\n      <div class=\"basicuidemo-color-scheme__x__bg__value\">{{ 'var(--theme-' + theme + '-500)' }}</div>\r\n    </div>\r\n    <div class=\"basicuidemo-color-scheme__x__fg\">\r\n      <div class=\"basicuidemo-color-scheme__x__fg__label\">color:</div>\r\n      <div class=\"basicuidemo-color-scheme__x__fg__value\">{{ 'var(--theme-' + theme + '-500i)' }}</div>\r\n    </div>\r\n  </div>\r\n</div>"
         },
         {
             "name": "TypographyComponent",
@@ -2854,7 +3002,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": "@import '../styles/index.css';\r\nhtml{\r\n    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\r\n}\r\nh1{\r\n    font-weight: 350;\r\n    font-size: 2.7rem;;\r\n}\r\nh2{\r\n    font-size: 2.1rem;\r\n    font-weight: 350;\r\n}\r\nh3{\r\n    font-size: 1.7rem;\r\n    font-weight: 350;\r\n}\r\nh4{\r\n    font-size: 1.37rem;\r\n    font-weight: 350;\r\n}\r\np{\r\n    font-size: 0.89rem;\r\n    font-weight: 350;\r\n    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\r\n}\r\nh5{\r\n    font-size: 1.1rem;\r\n    font-weight: 350;\r\n    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\r\n}\r\nh6{\r\n    font-size: 0.86rem;\r\n    font-weight: 400;\r\n    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\r\n}\r\nsmall .small{\r\n    font-size: 0.7rem;\r\n    font-weight: 400;\r\n    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\r\n}",
                     "styleUrl": "./typography.component.scss"
                 }
             ],
@@ -2866,13 +3014,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-e4ccf4918b6fc7142d6fc1a7c2175187623817fc9fb398224325c421fea17be90e859f7c82fb69e837d3e3291b16d3c35ad4e99d5e94f45143aaa9f7cff34460",
+            "id": "module-AppModule-0ebae8fa930c392d3644447e28aa77ba93ce27c56ee7f096c9b628e888a3019e21015ed0feb55fd8f41aa78c6873266bf23db94c1d99c9c5df9b62e888e809a9",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { BrowserModule } from '@angular/platform-browser';\r\nimport { NgModule } from '@angular/core';\r\nimport { NgxsModule } from '@ngxs/store';\r\nimport { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';\r\nimport { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';\r\nimport { environment } from '../environments/environment';\r\nimport { AppComponent } from './app.component';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { SelectComponent } from './select/select.component';\r\nimport { IconButtonComponent } from './icon-button/icon-button.component';\r\nimport { LinkComponent } from './link/link.component';\r\nimport { RadioComponent } from './radio/radio.component';\r\nimport { TextareaComponent } from './textarea/textarea.component';\r\nimport { AccordionComponent } from './accordion/accordion.component';\r\nimport { StoryWrapperComponent } from './modal/story-wrapper.component';\r\nimport { ModalComponent } from './modal/modal.component';\r\nimport { ModalFooterComponent } from './modal/modal-footer.component';\r\nimport { TableComponent } from './table/table.component';\r\nimport { TabsComponent } from './tabs/tabs.component';\r\nimport Button from '../stories/button.component';\r\nimport Header from '../stories/header.component';\r\nimport Page from '../stories/page.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    SelectComponent, \r\n    IconButtonComponent,\r\n    LinkComponent,\r\n    RadioComponent, \r\n    TextareaComponent,\r\n    AccordionComponent,\r\n    StoryWrapperComponent,\r\n    ModalComponent,\r\n    ModalFooterComponent,\r\n    TableComponent,\r\n    TabsComponent,\r\n    Button,\r\n    Header,\r\n    Page\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    FormsModule,\r\n    NgxsModule.forRoot([], { developmentMode: !environment.production, }),\r\n    NgxsReduxDevtoolsPluginModule.forRoot(),\r\n    NgxsLoggerPluginModule.forRoot({ disabled: environment.production, }),\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { BrowserModule } from '@angular/platform-browser';\r\nimport { NgModule } from '@angular/core';\r\nimport { NgxsModule } from '@ngxs/store';\r\nimport { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';\r\nimport { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';\r\nimport { environment } from '../environments/environment';\r\nimport { AppComponent } from './app.component';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { SelectComponent } from './select/select.component';\r\nimport { IconButtonComponent } from './icon-button/icon-button.component';\r\nimport { LinkComponent } from './link/link.component';\r\nimport { RadioComponent } from './radio/radio.component';\r\nimport { TextareaComponent } from './textarea/textarea.component';\r\nimport { AccordionComponent } from './accordion/accordion.component';\r\nimport { StoryWrapperComponent } from './modal/story-wrapper.component';\r\nimport { ModalComponent } from './modal/modal.component';\r\nimport { ModalFooterComponent } from './modal/modal-footer.component';\r\nimport { TableComponent } from './table/table.component';\r\nimport { TabsComponent } from './tabs/tabs.component';\r\nimport { ColorSchemesComponent } from './colorschemes/colorschemes.component';\r\nimport { ThemesOverviewComponent } from './themes-overview/themes-overview.component';\r\nimport { TypographyComponent } from './typography/typography.component';\r\nimport { DemoSectionComponent } from './demosection/demosection.component';\r\nimport Button from '../stories/button.component';\r\nimport Header from '../stories/header.component';\r\nimport Page from '../stories/page.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    SelectComponent, \r\n    IconButtonComponent,\r\n    LinkComponent,\r\n    RadioComponent, \r\n    TextareaComponent,\r\n    AccordionComponent,\r\n    StoryWrapperComponent,\r\n    ModalComponent,\r\n    ModalFooterComponent,\r\n    TableComponent,\r\n    TabsComponent,\r\n    ColorSchemesComponent,\r\n    ThemesOverviewComponent,\r\n    TypographyComponent,\r\n    DemoSectionComponent,\r\n    Button,\r\n    Header,\r\n    Page\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    FormsModule,\r\n    NgxsModule.forRoot([], { developmentMode: !environment.production, }),\r\n    NgxsReduxDevtoolsPluginModule.forRoot(),\r\n    NgxsLoggerPluginModule.forRoot({ disabled: environment.production, }),\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2889,6 +3037,12 @@
                         },
                         {
                             "name": "Button"
+                        },
+                        {
+                            "name": "ColorSchemesComponent"
+                        },
+                        {
+                            "name": "DemoSectionComponent"
                         },
                         {
                             "name": "Header"
@@ -2925,6 +3079,12 @@
                         },
                         {
                             "name": "TextareaComponent"
+                        },
+                        {
+                            "name": "ThemesOverviewComponent"
+                        },
+                        {
+                            "name": "TypographyComponent"
                         }
                     ]
                 },
@@ -3106,7 +3266,7 @@
                 "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'danger',\r\n  }\r\n})"
             },
             {
-                "name": "DangerTransoparent",
+                "name": "DangerTransparent",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/colorschemes/colorschemes.stories.ts",
@@ -3134,16 +3294,6 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'default',\r\n  }\r\n})"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/typography/typography.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "DefaultTransparent",
@@ -3283,7 +3433,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<>",
-                "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Lable',\r\n    component: LabelComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
+                "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Label',\r\n    component: LabelComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
             },
             {
                 "name": "meta",
@@ -3319,11 +3469,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/select-native/select.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<>",
+                "defaultValue": "{\r\n  \r\n  title: 'Form Elements/Select Native',\r\n  component: SelectComponent,\r\n  tags:[\"autodocs\"],\r\n  argTypes: {\r\n  },\r\n} as Meta"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/switch/switch.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<>",
-                "defaultValue": "{\r\n  \r\n  title: 'Form Elements/Switch',\r\n  component: SwitchComponent,\r\n  tags:[\"autodocs\"],\r\n  argTypes: {\r\n  },\r\n} as Meta"
+                "defaultValue": "{\r\n  \r\n  title: 'Components/Switch',\r\n  component: SwitchComponent,\r\n  tags:[\"autodocs\"],\r\n  argTypes: {\r\n  },\r\n} as Meta"
             },
             {
                 "name": "meta",
@@ -3443,7 +3603,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "() => ({\r\n  component: StoryWrapperComponent,\r\n  props: {}\r\n})"
+                "defaultValue": "() => ({\r\n  component: StoryWrapperComponent,\r\n  props: {\r\n    theme: ThemeType.primary,\r\n    variant: ButtonVariantType.default,\r\n    \r\n  }\r\n})"
             },
             {
                 "name": "Playground",
@@ -3454,6 +3614,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        theme: ThemeType.primary,\r\n        label:'Lorem ipsum',\r\n        onChange: action('Radio changed'),\r\n      },\r\n    }),\r\n  }"
+            },
+            {
+                "name": "Playground",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/select-native/select.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        label: 'Lorem ipsum',\r\n        selectType: 'single',\r\n        options: [\r\n          { value: '1', label: 'Lorem ipsum' },\r\n          { value: '2', label: 'Another long text another long text' },\r\n          { value: '3', label: 'Dolor sit' },\r\n        ],\r\n        selectedValue: 'Dolor sit', \r\n      },\r\n    }),\r\n  }"
             },
             {
                 "name": "Playground",
@@ -3494,6 +3664,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        label: 'Lorem ipsum',\r\n        placeholder: 'Dolor sit',\r\n        value:''\r\n      },\r\n    }),\r\n  }"
+            },
+            {
+                "name": "Playground",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/typography/typography.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Primary",
@@ -3771,6 +3951,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<>",
                 "file": "src/app/select/select.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<>",
+                "file": "src/app/select-native/select.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -4082,7 +4273,7 @@
                     "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'danger',\r\n  }\r\n})"
                 },
                 {
-                    "name": "DangerTransoparent",
+                    "name": "DangerTransparent",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/colorschemes/colorschemes.stories.ts",
@@ -4256,28 +4447,6 @@
                     "deprecationMessage": "",
                     "type": "Story<BreadcrumbsComponent>",
                     "defaultValue": "(args :BreadcrumbsComponent) => ({\r\n    component: BreadcrumbsComponent,\r\n    props: args\r\n})"
-                }
-            ],
-            "src/app/typography/typography.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/typography/typography.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/typography/typography.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<TypographyComponent>",
-                    "defaultValue": "(args: TypographyComponent) => ({\r\n  component: TypographyComponent,\r\n  props: args,\r\n})"
                 }
             ],
             "src/environments/environment.prod.ts": [
@@ -4529,7 +4698,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<>",
-                    "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Lable',\r\n    component: LabelComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
+                    "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Label',\r\n    component: LabelComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
                 },
                 {
                     "name": "Playground",
@@ -4586,6 +4755,28 @@
                     "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        theme: ThemeType.primary,\r\n        label:'Lorem ipsum',\r\n        onChange: action('Radio changed'),\r\n      },\r\n    }),\r\n  }"
                 }
             ],
+            "src/app/select-native/select.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/select-native/select.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<>",
+                    "defaultValue": "{\r\n  \r\n  title: 'Form Elements/Select Native',\r\n  component: SelectComponent,\r\n  tags:[\"autodocs\"],\r\n  argTypes: {\r\n  },\r\n} as Meta"
+                },
+                {
+                    "name": "Playground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/select-native/select.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        label: 'Lorem ipsum',\r\n        selectType: 'single',\r\n        options: [\r\n          { value: '1', label: 'Lorem ipsum' },\r\n          { value: '2', label: 'Another long text another long text' },\r\n          { value: '3', label: 'Dolor sit' },\r\n        ],\r\n        selectedValue: 'Dolor sit', \r\n      },\r\n    }),\r\n  }"
+                }
+            ],
             "src/app/switch/switch.stories.ts": [
                 {
                     "name": "meta",
@@ -4595,7 +4786,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<>",
-                    "defaultValue": "{\r\n  \r\n  title: 'Form Elements/Switch',\r\n  component: SwitchComponent,\r\n  tags:[\"autodocs\"],\r\n  argTypes: {\r\n  },\r\n} as Meta"
+                    "defaultValue": "{\r\n  \r\n  title: 'Components/Switch',\r\n  component: SwitchComponent,\r\n  tags:[\"autodocs\"],\r\n  argTypes: {\r\n  },\r\n} as Meta"
                 },
                 {
                     "name": "Playground",
@@ -4705,7 +4896,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "() => ({\r\n  component: StoryWrapperComponent,\r\n  props: {}\r\n})"
+                    "defaultValue": "() => ({\r\n  component: StoryWrapperComponent,\r\n  props: {\r\n    theme: ThemeType.primary,\r\n    variant: ButtonVariantType.default,\r\n    \r\n  }\r\n})"
                 }
             ],
             "src/app/tabs/tabs.stories.ts": [
@@ -4728,6 +4919,28 @@
                     "deprecationMessage": "",
                     "type": "Story<TabsComponent>",
                     "defaultValue": "(args: TabsComponent) => ({\r\n  component: TabsComponent,\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/app/typography/typography.stories.ts": [
+                {
+                    "name": "Playground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/typography/typography.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/typography/typography.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<TypographyComponent>",
+                    "defaultValue": "(args: TypographyComponent) => ({\r\n  component: TypographyComponent,\r\n  props: args,\r\n})"
                 }
             ]
         },
@@ -5080,6 +5293,19 @@
                     "kind": 183
                 }
             ],
+            "src/app/select-native/select.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<>",
+                    "file": "src/app/select-native/select.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
             "src/app/switch/switch.stories.ts": [
                 {
                     "name": "Story",
@@ -5363,7 +5589,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "DangerTransoparent",
+                "name": "DangerTransparent",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5659,6 +5885,35 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/select-native/select.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SelectComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/select-native/select.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/select-native/select.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Playground",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/select/select.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -5842,6 +6097,15 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/themes-overview/themes-overview.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ThemesOverviewComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/typography/typography.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -5855,7 +6119,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Default",
+                "name": "Playground",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
