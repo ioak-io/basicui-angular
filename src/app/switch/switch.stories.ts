@@ -4,7 +4,7 @@ import  ThemeType  from "../types/ThemeType";
 
 const meta: Meta<typeof SwitchComponent> = {
   
-  title: 'Form Elements/Switch',
+  title: 'Components/Switch',
   component: SwitchComponent,
   tags:["autodocs"],
   argTypes: {
