@@ -11,9 +11,9 @@ export class AccordionComponent {
     @Input() panels: any[] = [];
     @Output() panelChange = new EventEmitter<string>();
     expanded = '';
-heading: any;
-theme: any;
-bordered: any;
+    heading: any;
+    theme: any;
+    bordered: any;
   
     handleChange(panelName: string): void {
       this.expanded = this.expanded === panelName ? '' : panelName;

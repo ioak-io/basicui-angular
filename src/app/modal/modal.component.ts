@@ -8,7 +8,7 @@ import ButtonVariantType from '../types/ButtonVariantType';
   styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent {
-  @Input() theme: ThemeType = ThemeType.default || ThemeType.primary;
+  @Input() theme: ThemeType = ThemeType.default;
   @Input() variant: ButtonVariantType = ButtonVariantType.default;
   @Output() closeModal: EventEmitter<void> = new EventEmitter<void>();
 

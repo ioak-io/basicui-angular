@@ -1,6 +1,23 @@
 
 @import '../styles/index.css';
+html{
+    font-family: 'Roboto', sans-serif;
+}
 
 .basicui-dark .basicui-modal-base{
     background-color: black;
+}
+.basicui-modal-base{
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    height: 100%; 
+    width: 100%; 
+    background-color: #00000060; 
+    padding-top: 20px; 
+    padding-bottom: 20px; 
+    align-items: center; 
+    justify-content: center; 
+    display: flex; 
+    overflow: hidden;
 }

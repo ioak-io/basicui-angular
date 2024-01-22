@@ -3,7 +3,7 @@ import { LabelComponent } from './label.component';
 
 const meta: Meta<typeof LabelComponent> = {
   
-    title: 'Form Elements/Lable',
+    title: 'Form Elements/Label',
     component: LabelComponent,
     tags:["autodocs"],
     argTypes: {

@@ -5,13 +5,16 @@
     transition: background-color 250ms ease-in-out;
 }
 .accordion-header{
-    border-bottom: 1px solid #dedede6b;
     height: 52px;
     line-height: 45px;
     align-content: center;
     cursor: pointer;
     padding: 0 16px;
     transition: background-color 250ms ease-in-out;
+    color: black;
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 13px;
 }
 .accordion-header:hover{
     background-color: #3eb1f2;

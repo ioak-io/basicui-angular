@@ -17,6 +17,10 @@ import { ModalComponent } from './modal/modal.component';
 import { ModalFooterComponent } from './modal/modal-footer.component';
 import { TableComponent } from './table/table.component';
 import { TabsComponent } from './tabs/tabs.component';
+import { ColorSchemesComponent } from './colorschemes/colorschemes.component';
+import { ThemesOverviewComponent } from './themes-overview/themes-overview.component';
+import { TypographyComponent } from './typography/typography.component';
+import { DemoSectionComponent } from './demosection/demosection.component';
 import Button from '../stories/button.component';
 import Header from '../stories/header.component';
 import Page from '../stories/page.component';
@@ -35,6 +39,10 @@ import Page from '../stories/page.component';
     ModalFooterComponent,
     TableComponent,
     TabsComponent,
+    ColorSchemesComponent,
+    ThemesOverviewComponent,
+    TypographyComponent,
+    DemoSectionComponent,
     Button,
     Header,
     Page

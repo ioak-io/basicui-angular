@@ -1,26 +1,25 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-color-scheme',
+  selector: 'app-colorschemes',
   templateUrl: './colorschemes.component.html',
   styleUrls: ['./colorschemes.component.scss'],
 })
 export class ColorSchemesComponent {
-  @Input() discriminator: 
-    'adaptive' |
-    'black' |
-    'white' |
-    'black-extended' |
-    'white-extended' |
-    'default' |
-    'default-transparent' |
-    'primary' |
-    'primary-transparent' |
-    'danger' |
-    'danger-transparent' |
-    'themes-overview' = "adaptive";
+  @Input() discriminator!: |'adaptive' 
+  | 'black' 
+  | 'white' 
+  | 'black-extended' 
+  | 'white-extended' 
+  | 'default' 
+  | 'default-transparent' 
+  | 'primary' 
+  | 'primary-transparent' 
+  | 'danger' 
+  | 'danger-transparent' 
+  | 'themes-overview';
 
-  levels: string[] = [
+  levels = [
     '50',
     '100',
     '200',
@@ -30,6 +29,6 @@ export class ColorSchemesComponent {
     '600',
     '700',
     '800',
-    '900',
+    '900'
   ];
 }

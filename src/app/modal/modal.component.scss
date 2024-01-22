@@ -70,22 +70,31 @@
     padding: 10px 10px;
     margin-top: 10px;
     border-radius: 6px;
-    width: 50%;
+    width: 500px;
     background-color: #fff;
 }
 .basicui-modal-header{
     border-bottom: 1px solid #e4e4e4;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 15px;
     font-family: sans-serif;
     display: flex;
     justify-content: space-between;
 }
+.basicui-modal-header h5{
+    font-family: system-ui;
+    font-weight: 700;
+    font-size: 16px;
+}
 .basicui-modal-content{
     border-bottom: 1px solid #e4e4e4;
-    padding: 10px 10px;
+    padding: 10px 10px 20px 10px;
+    font-family: system-ui;
+    font-weight: 300;
+    color: #000;
 }
 .basicui-modal-footer{
+    padding: 16px 5px;
     display: flex;
     margin-right: 10px;
     justify-content: flex-start;
