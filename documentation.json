@@ -754,7 +754,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../styles/index.css';\r\n",
+                    "data": "// @import '../styles/index.css';\r\n",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -893,7 +893,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../styles/index.css';\r\n\r\n.basicui-checkbox {\r\n  cursor: pointer;\r\n  position: relative;\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n}\r\n\r\n.basicui-checkbox__input {\r\n  margin: 0;\r\n  padding: 0;\r\n  width: var(--basicui-checkbox-height);\r\n  height: var(--basicui-checkbox-height);\r\n  border: var(--basicui-checkbox-border-thickness) solid var(--basicui-checkbox-border-color);\r\n  background-color: var(--basicui-checkbox-background-color);\r\n  outline: 0;\r\n  cursor: pointer;\r\n  border-radius: var(--basicui-checkbox-border-radius);\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  /* position: static; */\r\n  transition: 250ms border-color ease-in-out, 250ms background-color ease-in-out, 250ms color ease-in-out;\r\n}\r\n\r\n.basicui-checkbox__input:checked {\r\n  background-color: var(--basicui-checkbox-background-color-checked);\r\n  border-color: var(--basicui-checkbox-border-color-checked);\r\n}\r\n\r\n.basicui-checkbox__input:hover,\r\n.basicui-checkbox__input:focus,\r\n.basicui-checkbox__input:checked:hover,\r\n.basicui-checkbox__input:checked:focus {\r\n  background-color: var(--basicui-checkbox-background-color-hover);\r\n  border-color: var(--basicui-checkbox-border-color-hover);\r\n}\r\n\r\n.basicui-checkbox__input:checked:after {\r\n  content: \"\";\r\n  display: block;\r\n  position: relative;\r\n  width: var(--basicui-checkbox-checkmark-width);\r\n  height: var(--basicui-checkbox-checkmark-height);\r\n  border-bottom: 1px solid var(--basicui-checkbox-checkmark-color);\r\n  border-right: 1px solid var(--basicui-checkbox-checkmark-color);\r\n  left: var(--basicui-checkbox-checkmark-offset-left);\r\n  bottom: var(--basicui-checkbox-checkmark-offset-bottom);\r\n  transform: rotate(40deg);\r\n}\r\n\r\n.basicui-checkbox__span {\r\n  font-size: var(--basicui-checkbox-font-size);\r\n  font-weight: var(--basicui-checkbox-font-weight);\r\n  margin-left: var(--basicui-checkbox-label-offset);\r\n}",
+                    "data": "// @import '../styles/index.css';\r\n\r\n.basicui-checkbox {\r\n  cursor: pointer;\r\n  position: relative;\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n}\r\n\r\n.basicui-checkbox__input {\r\n  margin: 0;\r\n  padding: 0;\r\n  width: var(--basicui-checkbox-height);\r\n  height: var(--basicui-checkbox-height);\r\n  border: var(--basicui-checkbox-border-thickness) solid var(--basicui-checkbox-border-color);\r\n  background-color: var(--basicui-checkbox-background-color);\r\n  outline: 0;\r\n  cursor: pointer;\r\n  border-radius: var(--basicui-checkbox-border-radius);\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  /* position: static; */\r\n  transition: 250ms border-color ease-in-out, 250ms background-color ease-in-out, 250ms color ease-in-out;\r\n}\r\n\r\n.basicui-checkbox__input:checked {\r\n  background-color: var(--basicui-checkbox-background-color-checked);\r\n  border-color: var(--basicui-checkbox-border-color-checked);\r\n}\r\n\r\n.basicui-checkbox__input:hover,\r\n.basicui-checkbox__input:focus,\r\n.basicui-checkbox__input:checked:hover,\r\n.basicui-checkbox__input:checked:focus {\r\n  background-color: var(--basicui-checkbox-background-color-hover);\r\n  border-color: var(--basicui-checkbox-border-color-hover);\r\n}\r\n\r\n.basicui-checkbox__input:checked:after {\r\n  content: \"\";\r\n  display: block;\r\n  position: relative;\r\n  width: var(--basicui-checkbox-checkmark-width);\r\n  height: var(--basicui-checkbox-checkmark-height);\r\n  border-bottom: 1px solid var(--basicui-checkbox-checkmark-color);\r\n  border-right: 1px solid var(--basicui-checkbox-checkmark-color);\r\n  left: var(--basicui-checkbox-checkmark-offset-left);\r\n  bottom: var(--basicui-checkbox-checkmark-offset-bottom);\r\n  transform: rotate(40deg);\r\n}\r\n\r\n.basicui-checkbox__span {\r\n  font-size: var(--basicui-checkbox-font-size);\r\n  font-weight: var(--basicui-checkbox-font-weight);\r\n  margin-left: var(--basicui-checkbox-label-offset);\r\n}",
                     "styleUrl": "./checkbox.component.scss"
                 }
             ],
@@ -903,14 +903,14 @@
         },
         {
             "name": "ColorSchemesComponent",
-            "id": "component-ColorSchemesComponent-13c0e9c5a1db8c5611a261296978c1601b7964ed7ba879cc780c9f0f35ca4b29fc9d931fb873a5324b254115612a9c15e5be7c2a7bc35decca8c7ad4f0699121",
+            "id": "component-ColorSchemesComponent-d661324cd8134c2ea52533e9a074f10056620d1cf36c1015ccdb3059d10da19f0c2dd511a68e09e0245d2823f75e014e195081b406c792d7c050f4208d1f97f4",
             "file": "src/app/colorschemes/colorschemes.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-colorschemes",
+            "selector": "app-color-scheme",
             "styleUrls": [
                 "./colorschemes.component.scss"
             ],
@@ -935,7 +935,7 @@
             "propertiesClass": [
                 {
                     "name": "levels",
-                    "defaultValue": "[\r\n                        '50',\r\n                        '100',\r\n                        '200',\r\n                        '300',\r\n                        '400',\r\n                        '500',\r\n                        '600',\r\n                        '700',\r\n                        '800',\r\n                        '900',\r\n                    ]",
+                    "defaultValue": "[\r\n    '50',\r\n    '100',\r\n    '200',\r\n    '300',\r\n    '400',\r\n    '500',\r\n    '600',\r\n    '700',\r\n    '800',\r\n    '900',\r\n  ]",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string[]",
@@ -954,7 +954,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-colorschemes',\r\n  templateUrl: './colorschemes.component.html',\r\n  styleUrls: ['./colorschemes.component.scss'],\r\n})\r\nexport class ColorSchemesComponent {\r\n  @Input() discriminator: \r\n        'adaptive' |\r\n        'black' |\r\n        'white' |\r\n        'black-extended' |\r\n        'white-extended' |\r\n        'default' |\r\n        'default-transparent' |\r\n        'primary' |\r\n        'primary-transparent' |\r\n        'danger' |\r\n        'danger-transparent' |\r\n        'themes-overview' = \"adaptive\";\r\n\r\n    levels: string[] = [\r\n                        '50',\r\n                        '100',\r\n                        '200',\r\n                        '300',\r\n                        '400',\r\n                        '500',\r\n                        '600',\r\n                        '700',\r\n                        '800',\r\n                        '900',\r\n                    ];\r\n}",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-color-scheme',\r\n  templateUrl: './colorschemes.component.html',\r\n  styleUrls: ['./colorschemes.component.scss'],\r\n})\r\nexport class ColorSchemesComponent {\r\n  @Input() discriminator: \r\n    'adaptive' |\r\n    'black' |\r\n    'white' |\r\n    'black-extended' |\r\n    'white-extended' |\r\n    'default' |\r\n    'default-transparent' |\r\n    'primary' |\r\n    'primary-transparent' |\r\n    'danger' |\r\n    'danger-transparent' |\r\n    'themes-overview' = \"adaptive\";\r\n\r\n  levels: string[] = [\r\n    '50',\r\n    '100',\r\n    '200',\r\n    '300',\r\n    '400',\r\n    '500',\r\n    '600',\r\n    '700',\r\n    '800',\r\n    '900',\r\n  ];\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -964,7 +964,7 @@
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<div *ngIf=\"discriminator !== 'themes-overview'\" class=\"basicuidemo-color-scheme basicuidemo-color-scheme--{{ discriminator }}\">\r\n    <div *ngFor=\"let level of levels\" class=\"basicuidemo-color-scheme__x basicuidemo-color-scheme__{{ level }}\">\r\n      <div class=\"basicuidemo-color-scheme__x__bg\">\r\n        <div class=\"basicuidemo-color-scheme__x__bg__label\">background-color:</div>\r\n        <div class=\"basicuidemo-color-scheme__x__bg__value\">{{ 'var(--theme-' + discriminator + '-' + level + ')' }}</div>\r\n      </div>\r\n      <div class=\"basicuidemo-color-scheme__x__fg\">\r\n        <div class=\"basicuidemo-color-scheme__x__fg__label\">color:</div>\r\n        <div class=\"basicuidemo-color-scheme__x__fg__value\">{{ 'var(--theme-' + discriminator + '-' + level + 'i)' }}</div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <app-themes-overview *ngIf=\"discriminator === 'themes-overview'\"></app-themes-overview>"
+            "templateData": "<div *ngIf=\"discriminator !== 'themes-overview'\" class=\"basicuidemo-color-scheme basicuidemo-color-scheme--{{ discriminator }}\">\r\n  <div *ngFor=\"let level of levels\" class=\"basicuidemo-color-scheme__x basicuidemo-color-scheme__{{ level }}\">\r\n    <div class=\"basicuidemo-color-scheme__x__bg\">\r\n      <div class=\"basicuidemo-color-scheme__x__bg__label\">background-color:</div>\r\n      <div class=\"basicuidemo-color-scheme__x__bg__value\">{{ 'var(--theme-' + discriminator + '-' + level + ')' }}</div>\r\n    </div>\r\n    <div class=\"basicuidemo-color-scheme__x__fg\">\r\n      <div class=\"basicuidemo-color-scheme__x__fg__label\">color:</div>\r\n      <div class=\"basicuidemo-color-scheme__x__fg__value\">{{ 'var(--theme-' + discriminator + '-' + level + 'i)' }}</div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<app-themes-overview *ngIf=\"discriminator === 'themes-overview'\"></app-themes-overview>"
         },
         {
             "name": "HeaderComponent",
@@ -1157,7 +1157,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../styles/index.css';\r\n\r\n.basicui-button--loading svg {\r\n    display: none;\r\n}\r\n.basicui-button--loading .basicui-button__svg--loading {\r\n    display: block;\r\n    animation: animate_button_loading 2s linear infinite both;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n/*@import '~material-design-icons/iconfont/material-icons.css';\r\n.material-icons{\r\n    font-size: 15px;\r\n}*/\r\n/*button{\r\n    height: 32px;\r\n    width: 32px;\r\n    border: none;\r\n    border: 1px solid #e6e7e7;\r\n    border-radius: 50%;\r\n    background-color: #e6e7e7;\r\n    align-items: center;\r\n    cursor: pointer;\r\n}\r\nbutton:hover{\r\n    background-color: #c3c3c3;\r\n}\r\n\r\n.default-outline-variant{\r\n    border: 1px solid #dadada;\r\n    background-color:white;\r\n    border-radius: 2px;\r\n    height: 32px;\r\n    width: 32px;\r\n}\r\n.default-outline-variant:hover{\r\n    background-color:white;\r\n    border: 1px solid #a1a1a1;\r\n}\r\n.default-fill-variant{\r\n    border: 1px solid #dadada;\r\n    background-color:white;\r\n    border-radius: 2px;\r\n    height: 32px;\r\n    width: 32px;\r\n}\r\n.default-fill-variant:hover{\r\n    background-color:#d1d1d1;\r\n    border: 1px solid #d1d1d1;\r\n}\r\n.default-transparent-variant{\r\n    height: 32px;\r\n    width: 32px;\r\n    border: 1px solid #000;\r\n    border-radius: 2px;\r\n    background-color: #e6e7e7;\r\n}\r\n.default-transparent-variant:hover{\r\n    background-color: #c3c3c3;\r\n}\r\n.primary{\r\n    background-color: #1492db;\r\n    border: 1px solid #1492db;\r\n    height: 32px;\r\n    width: 32px;\r\n    border-radius: 2px;\r\n    color: white;\r\n}\r\n.primary:hover{\r\n    background-color: #0669ac;\r\n}\r\n.primary-outline-variant{\r\n    background-color: #ffffff;\r\n    border: 1px solid #5cbcf4;\r\n    border-radius: 2px;\r\n}\r\n.primary-outline-variant:hover{\r\n    background-color: #ffffff;\r\n    border: 1px solid #0480d2;\r\n}\r\n.primary-fill-variant{\r\n    background-color: #ffffff;\r\n    border: 1px solid #0480d2;\r\n    border-radius: 2px;\r\n}\r\n.primary-fill-variant:hover{\r\n    background-color: #0588df;\r\n    border: 1px solid #0588df;\r\n    color: white;\r\n}\r\n.primary-transparent-variant{\r\n    background-color: #d9eaf8;\r\n    border: 1px solid #0480d2;\r\n    border-radius: 2px;\r\n}\r\n.primary-transparent-variant:hover{\r\n    border: 1px solid #0480d2;\r\n    background-color: #c9e6fc;\r\n}*/",
+                    "data": "// @import '../styles/index.css';\r\n\r\n.basicui-button--loading svg {\r\n    display: none;\r\n}\r\n.basicui-button--loading .basicui-button__svg--loading {\r\n    display: block;\r\n    animation: animate_button_loading 2s linear infinite both;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n/*@import '~material-design-icons/iconfont/material-icons.css';\r\n.material-icons{\r\n    font-size: 15px;\r\n}*/\r\n/*button{\r\n    height: 32px;\r\n    width: 32px;\r\n    border: none;\r\n    border: 1px solid #e6e7e7;\r\n    border-radius: 50%;\r\n    background-color: #e6e7e7;\r\n    align-items: center;\r\n    cursor: pointer;\r\n}\r\nbutton:hover{\r\n    background-color: #c3c3c3;\r\n}\r\n\r\n.default-outline-variant{\r\n    border: 1px solid #dadada;\r\n    background-color:white;\r\n    border-radius: 2px;\r\n    height: 32px;\r\n    width: 32px;\r\n}\r\n.default-outline-variant:hover{\r\n    background-color:white;\r\n    border: 1px solid #a1a1a1;\r\n}\r\n.default-fill-variant{\r\n    border: 1px solid #dadada;\r\n    background-color:white;\r\n    border-radius: 2px;\r\n    height: 32px;\r\n    width: 32px;\r\n}\r\n.default-fill-variant:hover{\r\n    background-color:#d1d1d1;\r\n    border: 1px solid #d1d1d1;\r\n}\r\n.default-transparent-variant{\r\n    height: 32px;\r\n    width: 32px;\r\n    border: 1px solid #000;\r\n    border-radius: 2px;\r\n    background-color: #e6e7e7;\r\n}\r\n.default-transparent-variant:hover{\r\n    background-color: #c3c3c3;\r\n}\r\n.primary{\r\n    background-color: #1492db;\r\n    border: 1px solid #1492db;\r\n    height: 32px;\r\n    width: 32px;\r\n    border-radius: 2px;\r\n    color: white;\r\n}\r\n.primary:hover{\r\n    background-color: #0669ac;\r\n}\r\n.primary-outline-variant{\r\n    background-color: #ffffff;\r\n    border: 1px solid #5cbcf4;\r\n    border-radius: 2px;\r\n}\r\n.primary-outline-variant:hover{\r\n    background-color: #ffffff;\r\n    border: 1px solid #0480d2;\r\n}\r\n.primary-fill-variant{\r\n    background-color: #ffffff;\r\n    border: 1px solid #0480d2;\r\n    border-radius: 2px;\r\n}\r\n.primary-fill-variant:hover{\r\n    background-color: #0588df;\r\n    border: 1px solid #0588df;\r\n    color: white;\r\n}\r\n.primary-transparent-variant{\r\n    background-color: #d9eaf8;\r\n    border: 1px solid #0480d2;\r\n    border-radius: 2px;\r\n}\r\n.primary-transparent-variant:hover{\r\n    border: 1px solid #0480d2;\r\n    background-color: #c9e6fc;\r\n}*/",
                     "styleUrl": "./icon-button.component.scss"
                 }
             ],
@@ -1569,7 +1569,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../styles/index.css';\r\n\r\n/*.link{\r\n    vertical-align: middle;\r\n    display: inline;\r\n    font-size: 12px;\r\n    font-family: system-ui;\r\n    color: #6b6b6b;\r\n    cursor: pointer;\r\n    font-weight: 350;\r\n}\r\n.link:hover{\r\n    text-decoration: underline;\r\n}\r\n.link.default-no-underline{\r\n    text-decoration: none;\r\n}\r\n.link.primary{\r\n    color: #1492db;\r\n    font-size: 13px;\r\n    font-weight: 350;\r\n}\r\n.link.primary-no-glow{\r\n    color: #08609c;\r\n}\r\n.link.primary-no-underline{\r\n    text-decoration: none;\r\n}\r\n.link.primary-no-underline:hover{\r\n    text-decoration: none;\r\n    color: #08609c;\r\n}\r\n\r\n.material-icons{\r\n    margin-right: 5px;\r\n    vertical-align: middle;\r\n    font-size: 16px;\r\n}*/\r\n",
+                    "data": "// @import '../styles/index.css';\r\n\r\n/*.link{\r\n    vertical-align: middle;\r\n    display: inline;\r\n    font-size: 12px;\r\n    font-family: system-ui;\r\n    color: #6b6b6b;\r\n    cursor: pointer;\r\n    font-weight: 350;\r\n}\r\n.link:hover{\r\n    text-decoration: underline;\r\n}\r\n.link.default-no-underline{\r\n    text-decoration: none;\r\n}\r\n.link.primary{\r\n    color: #1492db;\r\n    font-size: 13px;\r\n    font-weight: 350;\r\n}\r\n.link.primary-no-glow{\r\n    color: #08609c;\r\n}\r\n.link.primary-no-underline{\r\n    text-decoration: none;\r\n}\r\n.link.primary-no-underline:hover{\r\n    text-decoration: none;\r\n    color: #08609c;\r\n}\r\n\r\n.material-icons{\r\n    margin-right: 5px;\r\n    vertical-align: middle;\r\n    font-size: 16px;\r\n}*/\r\n",
                     "styleUrl": "./link.component.scss"
                 }
             ],
@@ -1969,7 +1969,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\r\n@import '../styles/index.css';\r\n\r\n.basicui-radio {\r\n    cursor: pointer;\r\n    position: relative;\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n}\r\n\r\n.basicui-radio__input {\r\n    margin: 0;\r\n    padding: 0;\r\n    width: var(--basicui-radio-height);\r\n    height: var(--basicui-radio-height);\r\n    border: var(--basicui-radio-border-thickness) solid var(--basicui-radio-border-color);\r\n    background-color: var(--basicui-radio-background-color);\r\n    outline: 0;\r\n    cursor: pointer;\r\n    border-radius: var(--basicui-radio-border-radius);\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    /* position: static; */\r\n    transition: 250ms border-color ease-in-out, 250ms background-color ease-in-out, 250ms color ease-in-out;\r\n}\r\n\r\n.basicui-radio__input:checked {\r\n    background-color: var(--basicui-radio-background-color-checked);\r\n    border-color: var(--basicui-radio-border-color-checked);\r\n}\r\n\r\n.basicui-radio__input:hover,\r\n.basicui-radio__input:focus,\r\n.basicui-radio__input:checked:hover,\r\n.basicui-radio__input:checked:focus {\r\n    background-color: var(--basicui-radio-background-color-hover);\r\n    border-color: var(--basicui-radio-border-color-hover);\r\n}\r\n\r\n.basicui-radio__input:checked:after {\r\n    content: \"\";\r\n    display: block;\r\n    position: relative;\r\n    width: var(--basicui-radio-dotmark-size);\r\n    height: var(--basicui-radio-dotmark-size);\r\n    background-color: var(--basicui-radio-dotmark-color);\r\n    left: var(--basicui-radio-dotmark-offset-left);\r\n    bottom: var(--basicui-radio-dotmark-offset-bottom);\r\n    border-radius: var(--basicui-radio-border-radius);\r\n}\r\n\r\n.basicui-radio__span {\r\n    font-size: var(--basicui-radio-font-size);\r\n    font-weight: var(--basicui-radio-font-weight);\r\n    margin-left: var(--basicui-radio-label-offset);\r\n}",
+                    "data": "\r\n// @import '../styles/index.css';\r\n\r\n.basicui-radio {\r\n    cursor: pointer;\r\n    position: relative;\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n}\r\n\r\n.basicui-radio__input {\r\n    margin: 0;\r\n    padding: 0;\r\n    width: var(--basicui-radio-height);\r\n    height: var(--basicui-radio-height);\r\n    border: var(--basicui-radio-border-thickness) solid var(--basicui-radio-border-color);\r\n    background-color: var(--basicui-radio-background-color);\r\n    outline: 0;\r\n    cursor: pointer;\r\n    border-radius: var(--basicui-radio-border-radius);\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    /* position: static; */\r\n    transition: 250ms border-color ease-in-out, 250ms background-color ease-in-out, 250ms color ease-in-out;\r\n}\r\n\r\n.basicui-radio__input:checked {\r\n    background-color: var(--basicui-radio-background-color-checked);\r\n    border-color: var(--basicui-radio-border-color-checked);\r\n}\r\n\r\n.basicui-radio__input:hover,\r\n.basicui-radio__input:focus,\r\n.basicui-radio__input:checked:hover,\r\n.basicui-radio__input:checked:focus {\r\n    background-color: var(--basicui-radio-background-color-hover);\r\n    border-color: var(--basicui-radio-border-color-hover);\r\n}\r\n\r\n.basicui-radio__input:checked:after {\r\n    content: \"\";\r\n    display: block;\r\n    position: relative;\r\n    width: var(--basicui-radio-dotmark-size);\r\n    height: var(--basicui-radio-dotmark-size);\r\n    background-color: var(--basicui-radio-dotmark-color);\r\n    left: var(--basicui-radio-dotmark-offset-left);\r\n    bottom: var(--basicui-radio-dotmark-offset-bottom);\r\n    border-radius: var(--basicui-radio-border-radius);\r\n}\r\n\r\n.basicui-radio__span {\r\n    font-size: var(--basicui-radio-font-size);\r\n    font-weight: var(--basicui-radio-font-weight);\r\n    margin-left: var(--basicui-radio-label-offset);\r\n}",
                     "styleUrl": "./radio.component.scss"
                 }
             ],
@@ -2756,7 +2756,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../styles/index.css';\r\n\r\n.label{\r\n    color: rgba(112, 112, 112, 0.97);\r\n    font-family: system-ui;\r\n    font-size: 13px;\r\n    font-weight: 300;\r\n    margin-bottom: 4px;\r\n}\r\n.basicui-textarea textarea{\r\n  resize: vertical;\r\n  padding-top: 6px;\r\n  padding-bottom: 6px;\r\n  height: 73px;\r\n  font-family: 'Roboto', sans-serif;\r\n  border: 1px solid #e2e1e1;\r\n  background-color: #f6f6f6;\r\n}\r\n.basicui-textarea textarea:hover{\r\n  background-color: rgb(232, 248, 254);\r\n  border: 1px solid rgb(195, 233, 249);\r\n}\r\n/*label {\r\n    display: block;\r\n    font-size: 12px;\r\n    font-family: 'Roboto', sans-serif;\r\n    margin-bottom: 4px;\r\n    color: #726e6ea3;\r\n    \r\n}\r\n.textarea-input:hover{\r\n    border: 1px solid #c3e5f4;\r\n    background-color: #f1f8fe;\r\n}\r\n.textarea-input{\r\n    font-family: 'Roboto', sans-serif;\r\n    resize: vertical;\r\n    width: 100%;\r\n    padding: 6px;\r\n    line-height: 1.5;\r\n    height: 55px;\r\n    font-size: 12px;\r\n    font-weight: 400;\r\n    text-overflow: ellipsis;\r\n    outline: none;\r\n    border: 1px solid #dad8d8;\r\n    background-color: #f1f0f08a;\r\n    border-radius: 2px;\r\n    display: flex;\r\n    align-items: center;\r\n    transition: 250ms border-color ease-in-out, 250ms background-color ease-in-out, 250ms color ease-in-out;\r\n}\r\n\r\n  .error-message {\r\n    color: #fc374bc4;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .success-message{\r\n    color: #14db5a;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .warning-message{\r\n    color: #db9214;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .tooltip-message{\r\n    color: #908e8e;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }*/",
+                    "data": "// @import '../styles/index.css';\r\n\r\n.label{\r\n    color: rgba(112, 112, 112, 0.97);\r\n    font-family: system-ui;\r\n    font-size: 13px;\r\n    font-weight: 300;\r\n    margin-bottom: 4px;\r\n}\r\n.basicui-textarea textarea{\r\n  resize: vertical;\r\n  padding-top: 6px;\r\n  padding-bottom: 6px;\r\n  height: 73px;\r\n  font-family: 'Roboto', sans-serif;\r\n  border: 1px solid #e2e1e1;\r\n  background-color: #f6f6f6;\r\n}\r\n.basicui-textarea textarea:hover{\r\n  background-color: rgb(232, 248, 254);\r\n  border: 1px solid rgb(195, 233, 249);\r\n}\r\n/*label {\r\n    display: block;\r\n    font-size: 12px;\r\n    font-family: 'Roboto', sans-serif;\r\n    margin-bottom: 4px;\r\n    color: #726e6ea3;\r\n    \r\n}\r\n.textarea-input:hover{\r\n    border: 1px solid #c3e5f4;\r\n    background-color: #f1f8fe;\r\n}\r\n.textarea-input{\r\n    font-family: 'Roboto', sans-serif;\r\n    resize: vertical;\r\n    width: 100%;\r\n    padding: 6px;\r\n    line-height: 1.5;\r\n    height: 55px;\r\n    font-size: 12px;\r\n    font-weight: 400;\r\n    text-overflow: ellipsis;\r\n    outline: none;\r\n    border: 1px solid #dad8d8;\r\n    background-color: #f1f0f08a;\r\n    border-radius: 2px;\r\n    display: flex;\r\n    align-items: center;\r\n    transition: 250ms border-color ease-in-out, 250ms background-color ease-in-out, 250ms color ease-in-out;\r\n}\r\n\r\n  .error-message {\r\n    color: #fc374bc4;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .success-message{\r\n    color: #14db5a;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .warning-message{\r\n    color: #db9214;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .tooltip-message{\r\n    color: #908e8e;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }*/",
                     "styleUrl": "./textarea.component.scss"
                 }
             ],
@@ -2766,20 +2766,20 @@
         },
         {
             "name": "ThemesOverviewComponent",
-            "id": "component-ThemesOverviewComponent-58866e53f2d5d639564c8a991b78cb5e6bae167a442b45947a2668cac983e1d5aa45fd09917212bdb3a72f15572c5f8156c704cc8173611634defdd6adbd167f",
+            "id": "component-ThemesOverviewComponent-0000e78c407ff6db80bdfa5b365c243e4a066a7b1465281a301e0d3aa02ea9a660b1e213289d2444c273a2c4cf90a889e68b3806518327ec7025dbb7baf2cc78",
             "file": "src/app/colorschemes/themes-overview.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-colorschemes",
+            "selector": "app-themes-overview",
             "styleUrls": [
                 "./colorschemes.component.scss"
             ],
             "styles": [],
             "templateUrl": [
-                "./colorschemes.component.html"
+                "./themes-overview.component.html"
             ],
             "viewProviders": [],
             "hostDirectives": [],
@@ -2788,7 +2788,7 @@
             "propertiesClass": [
                 {
                     "name": "themes",
-                    "defaultValue": "[\r\n    \"adaptive\",\r\n    \"black\",\r\n    \"black-extended\",\r\n    \"white\",\r\n    \"white-extended\",\r\n    \"default\",\r\n    \"default-transparent\",\r\n    \"primary\",\r\n    \"primary-transparent\",\r\n    \"warning\",\r\n    \"warning-transparent\",\r\n    \"danger\",\r\n    \"danger-transparent\"\r\n  ]",
+                    "defaultValue": "[\r\n    'adaptive',\r\n    'black',\r\n    'black-extended',\r\n    'white',\r\n    'white-extended',\r\n    'default',\r\n    'default-transparent',\r\n    'primary',\r\n    'primary-transparent',\r\n    'warning',\r\n    'warning-transparent',\r\n    'danger',\r\n    'danger-transparent',\r\n  ]",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string[]",
@@ -2807,7 +2807,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-colorschemes',\r\n  templateUrl: './colorschemes.component.html',\r\n  styleUrls: ['./colorschemes.component.scss'],\r\n})\r\nexport class ThemesOverviewComponent{\r\n  themes: string[] = [\r\n    \"adaptive\",\r\n    \"black\",\r\n    \"black-extended\",\r\n    \"white\",\r\n    \"white-extended\",\r\n    \"default\",\r\n    \"default-transparent\",\r\n    \"primary\",\r\n    \"primary-transparent\",\r\n    \"warning\",\r\n    \"warning-transparent\",\r\n    \"danger\",\r\n    \"danger-transparent\"\r\n  ];\r\n}",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-themes-overview',\r\n  templateUrl: './themes-overview.component.html',\r\n  styleUrls: ['./colorschemes.component.scss'],\r\n})\r\nexport class ThemesOverviewComponent {\r\n  themes: string[] = [\r\n    'adaptive',\r\n    'black',\r\n    'black-extended',\r\n    'white',\r\n    'white-extended',\r\n    'default',\r\n    'default-transparent',\r\n    'primary',\r\n    'primary-transparent',\r\n    'warning',\r\n    'warning-transparent',\r\n    'danger',\r\n    'danger-transparent',\r\n  ];\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2817,19 +2817,19 @@
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<div *ngIf=\"discriminator !== 'themes-overview'\" class=\"basicuidemo-color-scheme basicuidemo-color-scheme--{{ discriminator }}\">\r\n    <div *ngFor=\"let level of levels\" class=\"basicuidemo-color-scheme__x basicuidemo-color-scheme__{{ level }}\">\r\n      <div class=\"basicuidemo-color-scheme__x__bg\">\r\n        <div class=\"basicuidemo-color-scheme__x__bg__label\">background-color:</div>\r\n        <div class=\"basicuidemo-color-scheme__x__bg__value\">{{ 'var(--theme-' + discriminator + '-' + level + ')' }}</div>\r\n      </div>\r\n      <div class=\"basicuidemo-color-scheme__x__fg\">\r\n        <div class=\"basicuidemo-color-scheme__x__fg__label\">color:</div>\r\n        <div class=\"basicuidemo-color-scheme__x__fg__value\">{{ 'var(--theme-' + discriminator + '-' + level + 'i)' }}</div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <app-themes-overview *ngIf=\"discriminator === 'themes-overview'\"></app-themes-overview>"
+            "templateData": "<div class=\"basicuidemo-color-scheme\">\r\n  <div *ngFor=\"let theme of themes\" class=\"basicuidemo-color-scheme__x basicuidemo-themes-overview__{{ theme }}\">\r\n    <div class=\"basicuidemo-color-scheme__x__bg\">\r\n      <div class=\"basicuidemo-color-scheme__x__bg__label\">background-color:</div>\r\n      <div class=\"basicuidemo-color-scheme__x__bg__value\">{{ 'var(--theme-' + theme + '-500)' }}</div>\r\n    </div>\r\n    <div class=\"basicuidemo-color-scheme__x__fg\">\r\n      <div class=\"basicuidemo-color-scheme__x__fg__label\">color:</div>\r\n      <div class=\"basicuidemo-color-scheme__x__fg__value\">{{ 'var(--theme-' + theme + '-500i)' }}</div>\r\n    </div>\r\n  </div>\r\n</div>"
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-e4ccf4918b6fc7142d6fc1a7c2175187623817fc9fb398224325c421fea17be90e859f7c82fb69e837d3e3291b16d3c35ad4e99d5e94f45143aaa9f7cff34460",
+            "id": "module-AppModule-39a143d72e9b174425119efa28eac7724fae5777df0a12b5217b7e67937bbf73170b8c09350842ed9e3a52f9730c51350a60432bc9b79ae5bf9203772d110213",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { BrowserModule } from '@angular/platform-browser';\r\nimport { NgModule } from '@angular/core';\r\nimport { NgxsModule } from '@ngxs/store';\r\nimport { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';\r\nimport { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';\r\nimport { environment } from '../environments/environment';\r\nimport { AppComponent } from './app.component';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { SelectComponent } from './select/select.component';\r\nimport { IconButtonComponent } from './icon-button/icon-button.component';\r\nimport { LinkComponent } from './link/link.component';\r\nimport { RadioComponent } from './radio/radio.component';\r\nimport { TextareaComponent } from './textarea/textarea.component';\r\nimport { AccordionComponent } from './accordion/accordion.component';\r\nimport { StoryWrapperComponent } from './modal/story-wrapper.component';\r\nimport { ModalComponent } from './modal/modal.component';\r\nimport { ModalFooterComponent } from './modal/modal-footer.component';\r\nimport { TableComponent } from './table/table.component';\r\nimport { TabsComponent } from './tabs/tabs.component';\r\nimport Button from '../stories/button.component';\r\nimport Header from '../stories/header.component';\r\nimport Page from '../stories/page.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    SelectComponent, \r\n    IconButtonComponent,\r\n    LinkComponent,\r\n    RadioComponent, \r\n    TextareaComponent,\r\n    AccordionComponent,\r\n    StoryWrapperComponent,\r\n    ModalComponent,\r\n    ModalFooterComponent,\r\n    TableComponent,\r\n    TabsComponent,\r\n    Button,\r\n    Header,\r\n    Page\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    FormsModule,\r\n    NgxsModule.forRoot([], { developmentMode: !environment.production, }),\r\n    NgxsReduxDevtoolsPluginModule.forRoot(),\r\n    NgxsLoggerPluginModule.forRoot({ disabled: environment.production, }),\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { BrowserModule } from '@angular/platform-browser';\r\nimport { NgModule } from '@angular/core';\r\nimport { NgxsModule } from '@ngxs/store';\r\nimport { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';\r\nimport { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';\r\nimport { environment } from '../environments/environment';\r\nimport { AppComponent } from './app.component';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { SelectComponent } from './select/select.component';\r\nimport { IconButtonComponent } from './icon-button/icon-button.component';\r\nimport { LinkComponent } from './link/link.component';\r\nimport { RadioComponent } from './radio/radio.component';\r\nimport { TextareaComponent } from './textarea/textarea.component';\r\nimport { AccordionComponent } from './accordion/accordion.component';\r\nimport { StoryWrapperComponent } from './modal/story-wrapper.component';\r\nimport { ModalComponent } from './modal/modal.component';\r\nimport { ModalFooterComponent } from './modal/modal-footer.component';\r\nimport { TableComponent } from './table/table.component';\r\nimport { TabsComponent } from './tabs/tabs.component';\r\nimport Button from '../stories/button.component';\r\nimport Header from '../stories/header.component';\r\nimport Page from '../stories/page.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    SelectComponent, \r\n    IconButtonComponent,\r\n    LinkComponent,\r\n    RadioComponent, \r\n    TextareaComponent,\r\n    AccordionComponent,\r\n    StoryWrapperComponent,\r\n    ModalComponent,\r\n    ModalFooterComponent,\r\n    TableComponent,\r\n    TabsComponent,\r\n    // Button,\r\n    Header,\r\n    Page\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    FormsModule,\r\n    NgxsModule.forRoot([], { developmentMode: !environment.production, }),\r\n    NgxsReduxDevtoolsPluginModule.forRoot(),\r\n    NgxsLoggerPluginModule.forRoot({ disabled: environment.production, }),\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2843,9 +2843,6 @@
                         },
                         {
                             "name": "AppComponent"
-                        },
-                        {
-                            "name": "Button"
                         },
                         {
                             "name": "Header"
@@ -3003,16 +3000,6 @@
     "miscellaneous": {
         "variables": [
             {
-                "name": "Adaptive",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/colorschemes/colorschemes.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
                 "name": "AutocompleteForm",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -3063,16 +3050,6 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "DangerTransparent",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/colorschemes/colorschemes.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -3084,16 +3061,6 @@
             },
             {
                 "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/colorschemes/colorschemes.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "DefaultTransparent",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/colorschemes/colorschemes.stories.ts",
@@ -3463,16 +3430,6 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "PrimaryTransparent",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/colorschemes/colorschemes.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
                 "name": "Rounded",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -3601,16 +3558,6 @@
                 "deprecationMessage": "",
                 "type": "Story<TabsComponent>",
                 "defaultValue": "(args: TabsComponent) => ({\r\n  component: TabsComponent,\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "ThemesOverview",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/colorschemes/colorschemes.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "White",
@@ -3987,138 +3934,6 @@
             }
         ],
         "groupedVariables": {
-            "src/app/colorschemes/colorschemes.stories.ts": [
-                {
-                    "name": "Adaptive",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/colorschemes/colorschemes.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Black",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/colorschemes/colorschemes.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "BlackExtended",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/colorschemes/colorschemes.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Danger",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/colorschemes/colorschemes.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "DangerTransparent",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/colorschemes/colorschemes.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/colorschemes/colorschemes.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "DefaultTransparent",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/colorschemes/colorschemes.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/colorschemes/colorschemes.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "PrimaryTransparent",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/colorschemes/colorschemes.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/colorschemes/colorschemes.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<ColorSchemesComponent>",
-                    "defaultValue": "(args: ColorSchemesComponent) => ({\r\n  component: ColorSchemesComponent,\r\n  props: args,\r\n})"
-                },
-                {
-                    "name": "ThemesOverview",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/colorschemes/colorschemes.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "White",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/colorschemes/colorschemes.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "WhiteExtended",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/colorschemes/colorschemes.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                }
-            ],
             "src/app/select/select.stories.ts": [
                 {
                     "name": "AutocompleteForm",
@@ -4191,6 +4006,88 @@
                     "deprecationMessage": "",
                     "type": "Story<AvatarComponent>",
                     "defaultValue": "(args: AvatarComponent) => ({\r\n  component: AvatarComponent,\r\n  props: args\r\n})"
+                }
+            ],
+            "src/app/colorschemes/colorschemes.stories.ts": [
+                {
+                    "name": "Black",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/colorschemes/colorschemes.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "BlackExtended",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/colorschemes/colorschemes.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Danger",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/colorschemes/colorschemes.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/colorschemes/colorschemes.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/colorschemes/colorschemes.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/colorschemes/colorschemes.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ColorSchemesComponent>",
+                    "defaultValue": "(args: ColorSchemesComponent) => ({\r\n  component: ColorSchemesComponent,\r\n  props: args,\r\n})"
+                },
+                {
+                    "name": "White",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/colorschemes/colorschemes.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "WhiteExtended",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/colorschemes/colorschemes.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
                 }
             ],
             "src/app/breadcrumbs/breadcrumbs.stories.ts": [
@@ -5258,16 +5155,6 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Adaptive",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/colorschemes/colorschemes.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
                 "name": "Black",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -5298,27 +5185,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "DangerTransparent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/colorschemes/colorschemes.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
                 "name": "Default",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/colorschemes/colorschemes.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "DefaultTransparent",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5338,27 +5205,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "PrimaryTransparent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/colorschemes/colorschemes.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
                 "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/colorschemes/colorschemes.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "ThemesOverview",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
