@@ -18,10 +18,10 @@ const meta: Meta<typeof InputComponent> = {
   export const Playground:  Story = {
     render:() => ({
       props:{
-        placeholder: 'Dolor sit',
+        //placeholder: 'Dolor sit',
         label: 'First Name',
         isInfo: true,
-        value: '',
+        value: 'Dolor sit',
         infoMessage: 'Quisque tincidunt vitae purus id feugiat',
       },
     }),

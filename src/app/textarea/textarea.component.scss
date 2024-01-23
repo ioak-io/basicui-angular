@@ -1,11 +1,15 @@
 // @import '../styles/index.css';
 
 .label{
-    color: rgba(112, 112, 112, 0.97);
-    font-family: system-ui;
+    display: block;
     font-size: 13px;
-    font-weight: 300;
     margin-bottom: 4px;
+    text-transform: capitalize;
+    word-break: keep-all;
+  //color: rgb(129 128 128 / 97%);
+    color: var(--theme-white-extended-500);
+    font-family: system-ui;
+    font-weight: 100;
 }
 .basicui-textarea textarea{
   resize: vertical;
@@ -13,8 +17,8 @@
   padding-bottom: 6px;
   height: 73px;
   font-family: 'Roboto', sans-serif;
-  border: 1px solid #e2e1e1;
-  background-color: #f6f6f6;
+  //border: 1px solid #e2e1e1;
+  //background-color: #f6f6f6;
 }
 .basicui-textarea textarea:hover{
   border-color: var(--basicui-formelement-border-color-hover);

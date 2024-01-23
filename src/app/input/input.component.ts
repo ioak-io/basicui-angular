@@ -14,6 +14,7 @@ export class InputComponent implements OnInit {
     @Input() icon: string | undefined;
     @Input() iconSize =16;
     @Input() placeholder = '';
+    @Input() value = '';
     @Input() enableClearButton: boolean | undefined;
     @Input() name: string | undefined;
     @Input() label!: string;

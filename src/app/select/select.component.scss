@@ -6,21 +6,23 @@
   }
   select, input {
     padding-top: 8px;
-    padding-bottom: 8px;
-    background-color: var(--theme-default-50);
-    color: var(--theme-default-50i);
-    width: 100%;
-    outline: none;
-    font-size: 11px;
-    position: relative;
-    text-indent: 5px;
+  padding-bottom: 8px;
+  background-color: var(--theme-default-50);
+  width: 100%;
+  outline: none;
+  font-size: 11px;
+  position: relative;
+  text-indent: 5px;
   }
   select[single] {
     position: absolute;
     top: 50px;
     left: 50px;
   }
-  
+  option {
+    background-color: var(--theme-default-50);
+    color: var(--theme-default-50i);
+}
   /* Multi-select styles */
   select[multiple] {
     background-color: white;
@@ -39,8 +41,9 @@
     background-color: #f1f8fe;
   }
   .positioned-select {
-    border: 1px solid #e4e3e3;
-    border-radius: 2px;
+    border-color: var(--basicui-formelement-border-color);
+    border-radius: 1px;
+    background-color: var(--basicui-formelement-background-color);
     font-size: 12px;
     width: 100%;
   }
@@ -50,21 +53,26 @@
 
   /* auto complete-select styles */
   .auto-select{
-    padding: 5px;
+    padding: 6px;
     font-size: 12px;
     border-radius: 2px;
     border: 1px solid #dad8d8;
     background-color: #f1f0f08a;
     width: 100%;
     outline: none;
+    color: var(--theme-default-50i);
   }
   .auto-select-option {
     padding: 8px 16px;
     cursor: pointer;
+    color: var(--theme-default-50i);
   }
   .auto-select:hover {
     border-radius: 3px;
     border-color: var(--basicui-formelement-border-color-hover);
-      background-color: var(--basicui-formelement-background-color-hover);
-      border-radius: 3px;
+    background-color: var(--basicui-formelement-background-color-hover);
+    border-radius: 3px;
+  }
+  .auto-select::placeholder {
+    color: var(--theme-default-50i);
   }

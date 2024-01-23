@@ -14,7 +14,7 @@
   </div> -->
   
   <div class="custom-select" *ngIf="selectType === 'autocomplete'">
-    <input type="text" value="Autocomplete drop down" list="autocompleteOptions" class="auto-select" style="width: 100%; ">
+    <input type="text" placeholder="Autocomplete drop down" list="autocompleteOptions" class="auto-select" style="width: 100%; ">
     <datalist id="autocompleteOptions">
       <option *ngFor="let option of options" [value]="option.label" style="width: 100%;">{{ option.label }}</option>
     </datalist>

@@ -1,35 +1,42 @@
   /* single-select styles */
   label{
-    color: rgb(112 112 112 / 97%);
-    font-family: system-ui;
+    display: block;
     font-size: 13px;
-    font-weight: 300;
+    margin-bottom: 5px;
+    color: var(--theme-white-extended-500);
+    font-family: system-ui;
+    font-weight: 100;
+  }
+select, input {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: var(--theme-default-50);
+  //color: var(--theme-default-50i);
+  width: 100%;
+  outline: none;
+  font-size: 11px;
+  position: relative;
+  text-indent: 5px;
 }
   select:hover {
     border-color: var(--basicui-formelement-border-color-hover);
     background-color: var(--basicui-formelement-background-color-hover);
     color: var(--basicui-formelement-color-hover);
   }
-  select, input {
-    padding-top: 8px;
-    padding-bottom: 8px;
-    background-color: var(--theme-default-50);
-    color: var(--theme-default-50i);
-    width: 100%;
-    outline: none;
-    font-size: 11px;
-    position: relative;
-    text-indent: 5px;
-  }
+  
   select[single] {
     position: absolute;
     top: 50px;
     left: 50px;
+    color: inherit;
   }
-  
+  option {
+    background-color: var(--theme-default-50);
+    color: var(--theme-default-50i);
+}
   /* Multi-select styles */
   select[multiple] {
-    background-color: white;
+    //background-color: white;
     height: 30px;
   }
   select[multiple] option{
@@ -45,8 +52,9 @@
     background-color: #f1f8fe;
   }
   .positioned-select {
-    border: 1px solid #ecebeb;
-    border-radius: 2px;
+    border-color: var(--basicui-formelement-border-color);
+    border-radius: 1px;
+    background-color: var(--basicui-formelement-background-color);
     font-size: 12px;
     width: 100%;
   }
