@@ -15,7 +15,6 @@
 .basicui-tabs__ul__li--active .basicui-tabs__ul__li__button{
     background-color: #1492db;
 }
-
 .basicui-tabs__ul__li__button:hover,
 .basicui-tabs__ul__li__button:focus{
     transition: border-color 250ms ease-in-out, background-color 250ms ease-in-out, color 250ms ease-in-out;
@@ -23,19 +22,15 @@
 }
 .basicui-tabs__ul__li__button {
     position: relative;
-    background-color: transparent;
+    background-color: inherit;
     border: none;
-    color: var(--theme-black-900);
-    fill: var(--theme-black-900);
+    color: inherit;
+    //fill: inherit;
     cursor: pointer;
     padding: var(--basicui-tab-padding-y) var(--basicui-tab-padding-x);
     border: var(--basicui-tab-border-width) solid transparent;
     border-bottom: none;
     border-radius: var(--basicui-tab-border-radius) var(--basicui-tab-border-radius) 0 0;
-}
-.basicui-dark .basicui-tabs__ul__li__button {
-    color: var(--theme-white-50);
-    fill: var(--theme-white-50);
 }
 .basicui-tabs__ul__li__button:hover,
 .basicui-tabs__ul__li__button:focus,
@@ -84,5 +79,8 @@
     transform: translateY(-50%);
 }
 .basicui-tabs__ul__li.active .checkmark {
-    fill: #ffffff;
+    fill: white;
+  }
+  .checkmark{
+    fill: currentColor;
   }
