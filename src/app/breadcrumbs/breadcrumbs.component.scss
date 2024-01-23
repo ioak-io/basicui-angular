@@ -1,7 +1,8 @@
 .text-textMedium {
     --text-opacity: 1;
     &.text-15{
-        color: rgba(94, 108, 132, var(--text-opacity));
+        //color: rgba(94, 108, 132, var(--text-opacity));
+        color: inherit;
         font-size: 0.9375rem;
 }
 }
@@ -13,5 +14,4 @@
         }
 }
 }
-
 
