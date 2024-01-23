@@ -296,13 +296,13 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\r\n.basicui-accordion {\r\n    overflow: hidden;\r\n    border-bottom: 1px solid #dedede6b;\r\n    transition: background-color 250ms ease-in-out;\r\n}\r\n.accordion-header{\r\n    height: 52px;\r\n    line-height: 45px;\r\n    align-content: center;\r\n    cursor: pointer;\r\n    padding: 0 16px;\r\n    transition: background-color 250ms ease-in-out;\r\n    color: black;\r\n    font-family: sans-serif;\r\n    font-weight: 400;\r\n    font-size: 13px;\r\n}\r\n.accordion-header:hover{\r\n    background-color: #3eb1f2;\r\n    border: none;\r\n    color: white;\r\n}\r\n.accordion-content{\r\n    padding: 16px 16px 16px 16px;\r\n    transition: 0.5s;\r\n    border-bottom: 1px solid #dedede6b;\r\n    -webkit-transition:5s;\r\n    font-family: system-ui;\r\n    font-size: 14px;\r\n    color: #000;\r\n    font-weight: 200;\r\n}\r\n",
+                    "data": "@import './style-theme.css';\r\n\r\n.basicui-accordion {\r\n    overflow: hidden;\r\n    border-bottom: 1px solid #dedede6b;\r\n    transition: background-color 250ms ease-in-out;\r\n}\r\n.basicui-accordion-header{\r\n    width: 100%;\r\n    height: 52px;\r\n    line-height: 45px;\r\n    align-content: center;\r\n    cursor: pointer;\r\n    padding: 0 16px;\r\n    transition: background-color 250ms ease-in-out;\r\n    color: inherit;\r\n    font-family: sans-serif;\r\n    font-weight: 400;\r\n    font-size: 13px;\r\n    justify-content: flex-start;\r\n    display: flex;\r\n    border:none;\r\n    background-color: transparent;\r\n}\r\nbutton{\r\n    border: none;\r\n    background-color: white;\r\n}\r\n.basicui-accordion-header:hover{\r\n    background-color: #3eb1f2;\r\n    border: none;\r\n    color: white;\r\n}\r\n.basicui-accordion-content{\r\n    padding: 16px 16px 16px 16px;\r\n    transition: 0.5s;\r\n    border-bottom: 1px solid #dedede6b;\r\n    -webkit-transition:5s;\r\n    font-family: system-ui;\r\n    font-size: 14px;\r\n    color: inherit;\r\n    font-weight: 200;\r\n}\r\n",
                     "styleUrl": "./accordion.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<div>\r\n    <div *ngFor=\"let panel of panels\" class=\"basicui-accordion\">\r\n      <div class=\"accordion-header\" \r\n      (click)=\"handleChange(panel.name)\">\r\n        {{ panel.heading }}\r\n      </div>\r\n      \r\n      <div *ngIf=\"expanded === panel.name\" class=\"accordion-content\">\r\n        {{ panel.content }}\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  "
+            "templateData": "<div >\r\n    <div *ngFor=\"let panel of panels\" class=\"basicui-accordion\">\r\n      <button class=\"basicui-accordion-header\" (click)=\"handleChange(panel.name)\">\r\n        <div>\r\n          {{ panel.heading }}\r\n        </div>\r\n      </button>\r\n      \r\n      <div *ngIf=\"expanded === panel.name\" class=\"basicui-accordion-content\">\r\n        {{ panel.content }}\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  "
         },
         {
             "name": "AppComponent",
@@ -505,7 +505,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".text-textMedium {\r\n    --text-opacity: 1;\r\n    &.text-15{\r\n        color: rgba(94, 108, 132, var(--text-opacity));\r\n        font-size: 0.9375rem;\r\n}\r\n}\r\n.relative{\r\n    &.mx-2{\r\n        &.font-lg{\r\n            margin-left: 0.5rem;\r\n            margin-right: 0.5rem;\r\n        }\r\n}\r\n}\r\n\r\n\r\n",
+                    "data": ".text-textMedium {\r\n    --text-opacity: 1;\r\n    &.text-15{\r\n        //color: rgba(94, 108, 132, var(--text-opacity));\r\n        color: inherit;\r\n        font-size: 0.9375rem;\r\n}\r\n}\r\n.relative{\r\n    &.mx-2{\r\n        &.font-lg{\r\n            margin-left: 0.5rem;\r\n            margin-right: 0.5rem;\r\n        }\r\n}\r\n}\r\n\r\n",
                     "styleUrl": "./breadcrumbs.component.scss"
                 }
             ],
@@ -1544,7 +1544,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\r\nlabel{\r\n    color: rgb(112 112 112 / 97%);\r\n    font-family: system-ui;\r\n    font-size: 13px;\r\n    font-weight: 300;\r\n    \r\n}",
+                    "data": "\r\nlabel{\r\n    color: rgb(125 124 124 / 97%);\r\n    font-family: system-ui;\r\n    font-size: 13px;\r\n    font-weight: 400;\r\n    \r\n}",
                     "styleUrl": "./label.component.scss"
                 }
             ],
@@ -2635,7 +2635,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../styles/index.css';\r\ntable{\r\n    font-weight: 300;\r\n    font-size: 14px;\r\n    color: #000;\r\n}",
+                    "data": "@import '../styles/index.css';\r\n",
                     "styleUrl": "./table.component.scss"
                 }
             ],
