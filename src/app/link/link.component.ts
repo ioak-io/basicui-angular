@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import ThemeType from '../types/ThemeType';
 
 @Component({
     selector:'app-link',
@@ -7,8 +8,9 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 
 export class LinkComponent{
-    @Input() isPrimary: boolean = false;
-    @Input() isPrimarynoglow: boolean = false;
-    @Input() isPrimarynounderline: boolean = false;
-    @Input() isDefaultnounderline: boolean = false;
+    @Input() theme: ThemeType = ThemeType.default;
+    @Input() label!: string;
+    @Input() noUnderline!: boolean;
+    @Input() noGlow!: boolean;
+
 }

@@ -1,10 +1,10 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
-import { Story, Meta } from '@storybook/angular/types-6-0';
+import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import Button from './button.component';
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
-  title: 'Form Elements/Button Rounded',
+  title: 'Components/Button Rounded',
   component: Button,
   // More on argTypes: https://storybook.js.org/docs/angular/api/argtypes
   argTypes: {

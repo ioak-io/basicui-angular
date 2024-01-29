@@ -1,37 +1,32 @@
-import { Meta, Story } from '@storybook/angular';
+import {Meta, StoryObj, moduleMetadata } from '@storybook/angular';
 import { InputComponent } from './input.component';
-import { moduleMetadata } from '@storybook/angular';
 import { ReactiveFormsModule } from '@angular/forms';
+import ThemeType from '../types/ThemeType';
 
-export default{
+const meta: Meta<typeof InputComponent> = {
+  
     title: 'Form Elements/Input',
     component: InputComponent,
-    decorators: [
-        moduleMetadata({
-            imports: [ReactiveFormsModule],
-            declarations: [InputComponent]
-        })
-    ],
-    argsTypes: {
-        placeholder:{
-            control:'text'
-        },
-        label:{
-            control:'text'
-        }
-    }
-} as Meta;
+    tags:["autodocs"],
+    argTypes: {
+    },
+  } as Meta;
 
-const Template: Story<InputComponent> =(args:InputComponent) =>({
-    component: InputComponent,
-    props:args
-});
-export const Flat: Story<InputComponent> = Template.bind({});
-Flat.args={
-    containerClassName: 'flat text-textMedium',
-    placeholder: 'Search'
-    
-};
+  export default meta;
+  type Story = StoryObj<typeof InputComponent>;
+
+  export const Playground:  Story = {
+    render:() => ({
+      props:{
+        //placeholder: 'Dolor sit',
+        label: 'First Name',
+        isInfo: true,
+        value: 'Dolor sit',
+        infoMessage: 'Quisque tincidunt vitae purus id feugiat',
+      },
+    }),
+  };
+  
 /*export const FirstName: Story<InputComponent> = Template.bind({});
 FirstName.args={
     containerClassName: 'name',

@@ -1,39 +1,28 @@
-import { moduleMetadata } from "@storybook/angular";
+import {Meta, StoryObj, moduleMetadata } from '@storybook/angular';
 import { RadioComponent } from './radio.component';
+import { action } from '@storybook/addon-actions';
+import  ThemeType  from "../types/ThemeType";
 
-export default{
+const meta: Meta<typeof RadioComponent> = {
+  
     title: 'Form Elements/Radio',
-    decorators: [
-        moduleMetadata({
-            declarations: [RadioComponent],
-        }),
-    ],
-};
+    component: RadioComponent,
+    tags:["autodocs"],
+    argTypes: {
+    },
+  } as Meta;
+  
+  export default meta;
+  type Story = StoryObj<typeof RadioComponent>;
 
-export const BasicRadio = () =>({
-    component: RadioComponent,
-    props: {
-        label:'Article Description',
-        isChecked: false,
-        isError: false,
-        isPrimary: false,
-    },
-});
-export const RadioWithPrimary = () => ({
-    component: RadioComponent,
-    props: {
-        label:'Article Description',
-        isChecked: false,
-        isError: false,
-        isPrimary: true,
-    },
-});
-export const RadioWithError = () => ({
-    component: RadioComponent,
-    props: {
-        label:'Article Description',
-        isChecked: false,
-        isError: true,
-        isPrimary: false,
-    },
-});
+  export const Playground:  Story = {
+    render:() => ({
+      props:{
+        theme: ThemeType.primary,
+        label:'Lorem ipsum',
+        onChange: action('Radio changed'),
+      },
+    }),
+  };
+
+

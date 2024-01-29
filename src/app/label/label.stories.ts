@@ -1,18 +1,22 @@
-import { moduleMetadata } from "@storybook/angular";
-import { LabelComponent } from './label.component'
+import {Meta, StoryObj, moduleMetadata } from '@storybook/angular';
+import { LabelComponent } from './label.component';
 
-export default{
+const meta: Meta<typeof LabelComponent> = {
+  
     title: 'Form Elements/Label',
-    decorators:[
-        moduleMetadata({
-            declarations: [LabelComponent],
-        }),
-    ],
-};
-
-export const BasicLabel =() =>({
     component: LabelComponent,
-    props: {
-        label: 'Lorem ipsum Dolor sit'
+    tags:["autodocs"],
+    argTypes: {
     },
-});
+  } as Meta;
+  
+  export default meta;
+  type Story = StoryObj<typeof LabelComponent>;
+
+  export const Playground:  Story = {
+    render:() => ({
+      props:{
+        label: 'Lorem ipsum Dolor sit'
+      },
+    }),
+  };

@@ -14,12 +14,15 @@ export class InputComponent implements OnInit {
     @Input() icon: string | undefined;
     @Input() iconSize =16;
     @Input() placeholder = '';
+    @Input() value = '';
     @Input() enableClearButton: boolean | undefined;
     @Input() name: string | undefined;
     @Input() label!: string;
     @Input() for : string | undefined;
     @Input() text : string | undefined;
-    @Input() type: string | undefined;
+    @Input() type!: string;
+    @Input() isInfo: boolean = false;
+    @Input() infoMessage: string = 'Please enter valid text';
 
     get iconContainerWidth(): number {
         return this.iconSize * 2;

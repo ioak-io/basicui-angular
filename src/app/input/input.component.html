@@ -7,17 +7,15 @@
         </svg-icon>
     </div>
     <div>
-        <label [for]="label" style="font-size: 23px;">{{label}}</label>
+        <label [for]="label">{{label}}</label>
         <br>
     </div>
     <input 
         [type]="type"
         [placeholder]="placeholder"
-        [ngClass]="['input', 'form-input']" 
-        [style.padding-left.px]="icon ? iconContainerWidth : 20"
-        [style.padding-right.px]="isShowClearButton ? iconContainerWidth : 10" />
+        [value]="value"
+        [ngClass]="['input', 'form-input']" />
         <!--<input type="submit" value="Submit" style="background-color:#04AA6D; padding: 8px 16px; color: white; font-size: 25px; border: 1px solid #ccc; border-radius: 4px;"> -->
-    
 
     <div *ngIf="isShowClearButton"
          class="input-icon-container right"
@@ -28,3 +26,4 @@
            (click)="clear()"></i>
     </div>
 </div>
+<div *ngIf="isInfo" class="basicui-form-element-info">{{ infoMessage }}</div>
