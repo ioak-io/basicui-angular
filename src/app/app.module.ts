@@ -12,7 +12,7 @@ import { LinkComponent } from './link/link.component';
 import { RadioComponent } from './radio/radio.component';
 import { TextareaComponent } from './textarea/textarea.component';
 import { AccordionComponent } from './accordion/accordion.component';
-import { StoryWrapperComponent } from './modal/story-wrapper.component';
+import { StoryWrapperComponent } from './story-wrapper/story-wrapper.component';
 import { ModalComponent } from './modal/modal.component';
 import { ModalFooterComponent } from './modal/modal-footer.component';
 import { TableComponent } from './table/table.component';
