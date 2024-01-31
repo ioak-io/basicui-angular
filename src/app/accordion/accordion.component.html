@@ -6,8 +6,10 @@
         </div>
       </button>
       
-      <div *ngIf="expanded === panel.name" class="basicui-accordion-content">
-        {{ panel.content }}
+      <div *ngIf="expanded === panel.name" class="basicui-accordion__body">
+        <div class="basicui-accordion__body__content">
+          {{ panel.content }}
+        </div>
       </div>
     </div>
   </div>

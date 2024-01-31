@@ -56,11 +56,11 @@
     padding: 6px;
     font-size: 12px;
     border-radius: 2px;
-    border: 1px solid #dad8d8;
-    background-color: #f1f0f08a;
+    border: 1px solid var(--basicui-formelement-border-color);
+    background-color: var(--basicui-formelement-background-color);
     width: 100%;
     outline: none;
-    color: var(--theme-default-50i);
+    color: inherit;
   }
   .auto-select-option {
     padding: 8px 16px;
@@ -76,3 +76,29 @@
   .auto-select::placeholder {
     color: var(--theme-default-50i);
   }
+
+  .basicui-selectnative {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+  }
+  
+  .basicui-selectnative__option {
+    background-color: var(--theme-default-50);
+    color: var(--theme-default-50i);
+  }
+  
+  .basicui-selectnative__option:checked {
+    background-color: var(--theme-default-200);
+    color: var(--theme-default-200i);
+  }
+  
+  ::ng-deep .basicui-dark .basicui-selectnative__option {
+    background-color: var(--theme-default-900);
+    color: var(--theme-default-900i);
+  }
+  
+  ::ng-deep .basicui-dark .basicui-selectnative__option:checked {
+    background-color: var(--theme-default-700);
+    color: var(--theme-default-700i);
+  }
+  

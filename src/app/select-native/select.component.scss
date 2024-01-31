@@ -17,6 +17,7 @@ select, input {
   font-size: 11px;
   position: relative;
   text-indent: 5px;
+  color: inherit;
 }
   select:hover {
     border-color: var(--basicui-formelement-border-color-hover);
@@ -82,3 +83,29 @@ select, input {
     color: var(--basicui-formelement-color-hover);
     border-radius: 3px;
   }
+
+  .basicui-selectnative {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+  }
+  
+  .basicui-selectnative__option {
+    background-color: var(--theme-default-50);
+    color: var(--theme-default-50i);
+  }
+  
+  .basicui-selectnative__option:checked {
+    background-color: var(--theme-default-200);
+    color: var(--theme-default-200i);
+  }
+  
+  ::ng-deep .basicui-dark .basicui-selectnative__option {
+    background-color: var(--theme-default-900);
+    color: var(--theme-default-900i);
+  }
+  
+  ::ng-deep .basicui-dark .basicui-selectnative__option:checked {
+    background-color: var(--theme-default-700);
+    color: var(--theme-default-700i);
+  }
+  

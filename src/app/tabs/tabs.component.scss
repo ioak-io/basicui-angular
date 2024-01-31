@@ -6,7 +6,7 @@
     padding-left: 0;
     display: flex;
     flex-wrap: wrap;
-    border-bottom: 1px solid #e4e4e4;
+    border-bottom: var(--basicui-tab-border-width) solid var(--basicui-tab-border-color);
 }
 .basicui-tabs__ul__li.active .basicui-tabs__ul__li__button{
     background-color: #1492db;

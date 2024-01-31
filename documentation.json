@@ -631,7 +631,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".storybook-button {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  font-weight: 700;\r\n  border: 0;\r\n  border-radius: 3em;\r\n  cursor: pointer;\r\n  display: inline-block;\r\n  line-height: 1;\r\n}\r\n.storybook-button--primary {\r\n  color: white;\r\n  background-color: #1ea7fd;\r\n}\r\n.storybook-button--secondary {\r\n  color: #333;\r\n  background-color: transparent;\r\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\r\n}\r\n.storybook-button--small {\r\n  font-size: 12px;\r\n  padding: 10px 16px;\r\n}\r\n.storybook-button--medium {\r\n  font-size: 14px;\r\n  padding: 11px 20px;\r\n}\r\n.storybook-button--large {\r\n  font-size: 16px;\r\n  padding: 12px 24px;\r\n}\r\n",
+                    "data": ".storybook-button {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  font-weight: 700;\r\n  border: 0;\r\n  border-radius: 3em;\r\n  cursor: pointer;\r\n  display: inline-block;\r\n  line-height: 1;\r\n}\r\n.storybook-button--primary {\r\n  color: white;\r\n  background-color: #1ea7fd;\r\n}\r\n.storybook-button--secondary {\r\n  color: #333;\r\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\r\n}\r\n.storybook-button--small {\r\n  font-size: 12px;\r\n  padding: 10px 16px;\r\n}\r\n.storybook-button--medium {\r\n  font-size: 14px;\r\n  padding: 11px 20px;\r\n}\r\n.storybook-button--large {\r\n  font-size: 16px;\r\n  padding: 12px 24px;\r\n}\r\n",
                     "styleUrl": "./button.css"
                 }
             ],
@@ -1089,7 +1089,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".wrapper {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\r\n  padding: 15px 20px;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n}\r\n\r\nsvg {\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\nh1 {\r\n  font-weight: 900;\r\n  font-size: 20px;\r\n  line-height: 1;\r\n  margin: 6px 0 6px 10px;\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\nbutton + button {\r\n  margin-left: 10px;\r\n}\r\n\r\n.welcome {\r\n  color: #333;\r\n  font-size: 14px;\r\n  margin-right: 10px;\r\n}\r\n",
+                    "data": ".wrapper {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  border-bottom: 1px solid #dedede6b;\r\n  padding: 15px 20px;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n}\r\nsvg {\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\nh1 {\r\n  font-weight: 900;\r\n  font-size: 20px;\r\n  line-height: 1;\r\n  margin: 6px 0 6px 10px;\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\nbutton + button {\r\n  margin-left: 10px;\r\n}\r\n\r\n.welcome {\r\n  font-size: 14px;\r\n  margin-right: 10px;\r\n}\r\n",
                     "styleUrl": "./header.css"
                 }
             ],
@@ -1295,7 +1295,7 @@
         },
         {
             "name": "InputComponent",
-            "id": "component-InputComponent-13a0c3033371b38c29e356cc21d743b9a18612ffdf00847510732b3a3701a3b03ec5b039d1ed9de63a6776d1ca85985397aee8269508c4b6a1815ec6af512856",
+            "id": "component-InputComponent-4875f7cadaefe559574b5611d8f2a1a636d12c23f4940c24d57f3367b6e10acae759772890d679136e4b790642cc5a63fa112972ba76856326aba2a687e49175",
             "file": "src/app/input/input.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1334,7 +1334,7 @@
                     "name": "enableClearButton",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 18,
                     "type": "boolean | undefined",
                     "decorators": []
                 },
@@ -1342,7 +1342,7 @@
                     "name": "for",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20,
+                    "line": 21,
                     "type": "string | undefined",
                     "decorators": []
                 },
@@ -1368,7 +1368,7 @@
                     "defaultValue": "'Please enter valid text'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 24,
+                    "line": 25,
                     "type": "string",
                     "decorators": []
                 },
@@ -1377,7 +1377,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 23,
+                    "line": 24,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -1385,7 +1385,7 @@
                     "name": "label",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 20,
                     "type": "string",
                     "decorators": []
                 },
@@ -1393,7 +1393,7 @@
                     "name": "name",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 19,
                     "type": "string | undefined",
                     "decorators": []
                 },
@@ -1410,7 +1410,7 @@
                     "name": "text",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 22,
                     "type": "string | undefined",
                     "decorators": []
                 },
@@ -1418,7 +1418,16 @@
                     "name": "type",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 22,
+                    "line": 23,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
                     "type": "string",
                     "decorators": []
                 }
@@ -1432,7 +1441,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 40,
+                    "line": 41,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -1442,7 +1451,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 36,
+                    "line": 37,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -1456,11 +1465,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\nimport { FormControl } from '@angular/forms';\r\n\r\n@Component({\r\n    selector:'app-input',\r\n    templateUrl: './input.component.html',\r\n    styleUrls:['./input.component.scss']\r\n})\r\n\r\nexport class InputComponent implements OnInit {\r\n[x: string]: any;\r\n    @Input() control!: FormControl;\r\n    @Input() containerClassName='Name';\r\n    @Input() icon: string | undefined;\r\n    @Input() iconSize =16;\r\n    @Input() placeholder = '';\r\n    @Input() enableClearButton: boolean | undefined;\r\n    @Input() name: string | undefined;\r\n    @Input() label!: string;\r\n    @Input() for : string | undefined;\r\n    @Input() text : string | undefined;\r\n    @Input() type!: string;\r\n    @Input() isInfo: boolean = false;\r\n    @Input() infoMessage: string = 'Please enter valid text';\r\n\r\n    get iconContainerWidth(): number {\r\n        return this.iconSize * 2;\r\n      }\r\n    \r\n      get isShowClearButton(): boolean {\r\n        return this.enableClearButton && this.control?.value;\r\n      }\r\n    \r\n      constructor() {}\r\n\r\n      ngOnInit(): void {\r\n        this.control = this.control ?? new FormControl('');\r\n      }\r\n    \r\n      clear() {\r\n        this.control.patchValue('');\r\n      }\r\n      \r\n} \r\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\nimport { FormControl } from '@angular/forms';\r\n\r\n@Component({\r\n    selector:'app-input',\r\n    templateUrl: './input.component.html',\r\n    styleUrls:['./input.component.scss']\r\n})\r\n\r\nexport class InputComponent implements OnInit {\r\n[x: string]: any;\r\n    @Input() control!: FormControl;\r\n    @Input() containerClassName='Name';\r\n    @Input() icon: string | undefined;\r\n    @Input() iconSize =16;\r\n    @Input() placeholder = '';\r\n    @Input() value = '';\r\n    @Input() enableClearButton: boolean | undefined;\r\n    @Input() name: string | undefined;\r\n    @Input() label!: string;\r\n    @Input() for : string | undefined;\r\n    @Input() text : string | undefined;\r\n    @Input() type!: string;\r\n    @Input() isInfo: boolean = false;\r\n    @Input() infoMessage: string = 'Please enter valid text';\r\n\r\n    get iconContainerWidth(): number {\r\n        return this.iconSize * 2;\r\n      }\r\n    \r\n      get isShowClearButton(): boolean {\r\n        return this.enableClearButton && this.control?.value;\r\n      }\r\n    \r\n      constructor() {}\r\n\r\n      ngOnInit(): void {\r\n        this.control = this.control ?? new FormControl('');\r\n      }\r\n    \r\n      clear() {\r\n        this.control.patchValue('');\r\n      }\r\n      \r\n} \r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "label{\r\n    color: rgb(112 112 112 / 97%);\r\n    font-family: system-ui;\r\n    font-size: 13px;\r\n    font-weight: 300;\r\n    margin-bottom: 4px;\r\n    text-transform: capitalize;\r\n}\r\n.info-message{\r\n  color: #696c6d;\r\n  font-size: 10px;\r\n  margin-top: 5px;\r\n}\r\ninput{\r\n  width: 100%;\r\n  border: 1px solid #ccc;\r\n  border-radius: var(--basicui-formelement-border-radius);\r\n  box-sizing: border-box;\r\n  padding: 0 6px;\r\n  height: 32px;\r\n  font-size: 12px;\r\n  font-weight: 400;\r\n  outline: none;\r\n  color: black;\r\n  margin-top: 4px;\r\n  border-color: var(--basicui-formelement-border-color);\r\n  background-color: var(--basicui-formelement-background-color);\r\n  color: var(--basicui-formelement-color);\r\n}\r\ninput:hover{\r\n  border-color: var(--basicui-formelement-border-color-hover);\r\n    background-color: var(--basicui-formelement-background-color-hover);\r\n    color: var(--basicui-formelement-color-hover);\r\n}\r\n\r\n  /*.input{\r\n  width: 100%;\r\n  padding: 15px 0px 15px 35px;\r\n  margin: 8px 0;\r\n  display: inline-block;\r\n  border: 1px solid #ccc;\r\n  border-radius: 4px;\r\n  box-sizing: border-box;\r\n\r\n  &::placeholder {\r\n    font-size: 18px;\r\n    text-align:left;\r\n    \r\n  }\r\n}*/\r\n",
+                    "data": "label{\r\n  color: var(--theme-default-300);\r\n    font-family: system-ui;\r\n    font-size: 13px;\r\n    font-weight: 400;\r\n    margin-bottom: 4px;\r\n    text-transform: capitalize;\r\n}\r\n.basicui-form-element-info{\r\n  color: var(--theme-default-300);\r\n  font-size: 10px;\r\n  margin-top: 5px;\r\n  font-family: sans-serif;\r\n}\r\ninput{\r\n  width: 100%;\r\n  border: 1px solid #ccc;\r\n  border-radius: var(--basicui-formelement-border-radius);\r\n  box-sizing: border-box;\r\n  padding: 0 6px;\r\n  height: 32px;\r\n  font-size: 12px;\r\n  font-weight: 400;\r\n  outline: none;\r\n  color: black;\r\n  margin-top: 4px;\r\n  border-color: var(--basicui-formelement-border-color);\r\n  background-color: var(--basicui-formelement-background-color);\r\n  color: var(--basicui-formelement-color);\r\n}\r\ninput:hover{\r\n  border-color: var(--basicui-formelement-border-color-hover);\r\n    background-color: var(--basicui-formelement-background-color-hover);\r\n    color: var(--basicui-formelement-color-hover);\r\n}\r\n\r\n  /*.input{\r\n  width: 100%;\r\n  padding: 15px 0px 15px 35px;\r\n  margin: 8px 0;\r\n  display: inline-block;\r\n  border: 1px solid #ccc;\r\n  border-radius: 4px;\r\n  box-sizing: border-box;\r\n\r\n  &::placeholder {\r\n    font-size: 18px;\r\n    text-align:left;\r\n    \r\n  }\r\n}*/\r\n",
                     "styleUrl": "./input.component.scss"
                 }
             ],
@@ -1471,7 +1480,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 32
+                "line": 33
             },
             "extends": [],
             "implements": [
@@ -1484,7 +1493,7 @@
                         "name": "iconContainerWidth",
                         "type": "number",
                         "returnType": "number",
-                        "line": 26
+                        "line": 27
                     }
                 },
                 "isShowClearButton": {
@@ -1493,11 +1502,11 @@
                         "name": "isShowClearButton",
                         "type": "boolean",
                         "returnType": "boolean",
-                        "line": 30
+                        "line": 31
                     }
                 }
             },
-            "templateData": "<div [ngClass]=\"['input-container', containerClassName]\">\r\n    <div *ngIf=\"icon\"\r\n         class=\"input-icon-container\"\r\n         [style.width.px]=\"iconContainerWidth\">\r\n        <svg-icon [name]=\"icon\"\r\n                  [size]=\"iconSize\">\r\n        </svg-icon>\r\n    </div>\r\n    <div>\r\n        <label [for]=\"label\">{{label}}</label>\r\n        <br>\r\n    </div>\r\n    <input \r\n        [type]=\"type\"\r\n        [placeholder]=\"placeholder\"\r\n        [ngClass]=\"['input', 'form-input']\" />\r\n        <!--<input type=\"submit\" value=\"Submit\" style=\"background-color:#04AA6D; padding: 8px 16px; color: white; font-size: 25px; border: 1px solid #ccc; border-radius: 4px;\"> -->\r\n\r\n    <div *ngIf=\"isShowClearButton\"\r\n         class=\"input-icon-container right\"\r\n         [style.width.px]=\"iconContainerWidth\">\r\n        <i nz-icon\r\n           nzType=\"close\"\r\n           nzTheme=\"outline\"\r\n           (click)=\"clear()\"></i>\r\n    </div>\r\n</div>\r\n<div *ngIf=\"isInfo\" class=\"basicui-form-element-info\">{{ infoMessage }}</div>"
+            "templateData": "<div [ngClass]=\"['input-container', containerClassName]\">\r\n    <div *ngIf=\"icon\"\r\n         class=\"input-icon-container\"\r\n         [style.width.px]=\"iconContainerWidth\">\r\n        <svg-icon [name]=\"icon\"\r\n                  [size]=\"iconSize\">\r\n        </svg-icon>\r\n    </div>\r\n    <div>\r\n        <label [for]=\"label\">{{label}}</label>\r\n        <br>\r\n    </div>\r\n    <input \r\n        [type]=\"type\"\r\n        [placeholder]=\"placeholder\"\r\n        [value]=\"value\"\r\n        [ngClass]=\"['input', 'form-input']\" />\r\n        <!--<input type=\"submit\" value=\"Submit\" style=\"background-color:#04AA6D; padding: 8px 16px; color: white; font-size: 25px; border: 1px solid #ccc; border-radius: 4px;\"> -->\r\n\r\n    <div *ngIf=\"isShowClearButton\"\r\n         class=\"input-icon-container right\"\r\n         [style.width.px]=\"iconContainerWidth\">\r\n        <i nz-icon\r\n           nzType=\"close\"\r\n           nzTheme=\"outline\"\r\n           (click)=\"clear()\"></i>\r\n    </div>\r\n</div>\r\n<div *ngIf=\"isInfo\" class=\"basicui-form-element-info\">{{ infoMessage }}</div>"
         },
         {
             "name": "LabelComponent",
@@ -1622,7 +1631,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "// @import '../styles/index.css';\r\n\r\n/*.link{\r\n    vertical-align: middle;\r\n    display: inline;\r\n    font-size: 12px;\r\n    font-family: system-ui;\r\n    color: #6b6b6b;\r\n    cursor: pointer;\r\n    font-weight: 350;\r\n}\r\n.link:hover{\r\n    text-decoration: underline;\r\n}\r\n.link.default-no-underline{\r\n    text-decoration: none;\r\n}\r\n.link.primary{\r\n    color: #1492db;\r\n    font-size: 13px;\r\n    font-weight: 350;\r\n}\r\n.link.primary-no-glow{\r\n    color: #08609c;\r\n}\r\n.link.primary-no-underline{\r\n    text-decoration: none;\r\n}\r\n.link.primary-no-underline:hover{\r\n    text-decoration: none;\r\n    color: #08609c;\r\n}\r\n\r\n.material-icons{\r\n    margin-right: 5px;\r\n    vertical-align: middle;\r\n    font-size: 16px;\r\n}*/\r\n",
+                    "data": "// @import '../styles/index.css';\r\n.basicui-link{\r\n    font-family: sans-serif;\r\n}\r\n\r\n/*.link{\r\n    vertical-align: middle;\r\n    display: inline;\r\n    font-size: 12px;\r\n    font-family: system-ui;\r\n    color: #6b6b6b;\r\n    cursor: pointer;\r\n    font-weight: 350;\r\n}\r\n.link:hover{\r\n    text-decoration: underline;\r\n}\r\n.link.default-no-underline{\r\n    text-decoration: none;\r\n}\r\n.link.primary{\r\n    color: #1492db;\r\n    font-size: 13px;\r\n    font-weight: 350;\r\n}\r\n.link.primary-no-glow{\r\n    color: #08609c;\r\n}\r\n.link.primary-no-underline{\r\n    text-decoration: none;\r\n}\r\n.link.primary-no-underline:hover{\r\n    text-decoration: none;\r\n    color: #08609c;\r\n}\r\n\r\n.material-icons{\r\n    margin-right: 5px;\r\n    vertical-align: middle;\r\n    font-size: 16px;\r\n}*/\r\n",
                     "styleUrl": "./link.component.scss"
                 }
             ],
@@ -1632,7 +1641,7 @@
         },
         {
             "name": "ModalComponent",
-            "id": "component-ModalComponent-889fc82de8a4700f36efc3282ba159fe89501b5ae8d93702cf2fd8e9aa9c1bc91d2d280f18df4d3115bccd4e5051cbafbff5f2487635edd68a37e9ca8726a758",
+            "id": "component-ModalComponent-f811e0d73198337b405450446a0e58a0385fc2d41b312401826270ab466b61b5013fb89c24eed61627cc70b6d79e06340f8bd5ffacd7c1f45a8b1451e2b8f2e9",
             "file": "src/app/modal/modal.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1651,11 +1660,20 @@
             "hostDirectives": [],
             "inputsClass": [
                 {
+                    "name": "alignment",
+                    "defaultValue": "AlignmentType.default",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "AlignmentType",
+                    "decorators": []
+                },
+                {
                     "name": "theme",
                     "defaultValue": "ThemeType.default",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "line": 12,
                     "type": "ThemeType",
                     "decorators": []
                 },
@@ -1664,7 +1682,7 @@
                     "defaultValue": "ButtonVariantType.default",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 13,
                     "type": "ButtonVariantType",
                     "decorators": []
                 }
@@ -1675,7 +1693,7 @@
                     "defaultValue": "new EventEmitter<void>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 14,
                     "type": "EventEmitter<void>"
                 }
             ],
@@ -1687,7 +1705,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 15,
+                    "line": 17,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -1701,17 +1719,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Output, Input } from '@angular/core';\r\nimport ThemeType from '../types/ThemeType';\r\nimport ButtonVariantType from '../types/ButtonVariantType';\r\n\r\n@Component({\r\n  selector: 'app-modal',\r\n  templateUrl: './modal.component.html',\r\n  styleUrls: ['./modal.component.scss']\r\n})\r\nexport class ModalComponent {\r\n  @Input() theme: ThemeType = ThemeType.default;\r\n  @Input() variant: ButtonVariantType = ButtonVariantType.default;\r\n  @Output() closeModal: EventEmitter<void> = new EventEmitter<void>();\r\n\r\n  onClose() {\r\n    this.closeModal.emit();\r\n  }\r\n}",
+            "sourceCode": "import { Component, EventEmitter, Output, Input } from '@angular/core';\r\nimport ThemeType from '../types/ThemeType';\r\nimport ButtonVariantType from '../types/ButtonVariantType';\r\nimport AlignmentType from '../types/AlignmentType';\r\n\r\n@Component({\r\n  selector: 'app-modal',\r\n  templateUrl: './modal.component.html',\r\n  styleUrls: ['./modal.component.scss']\r\n})\r\nexport class ModalComponent {\r\n  @Input() theme: ThemeType = ThemeType.default;\r\n  @Input() variant: ButtonVariantType = ButtonVariantType.default;\r\n  @Output() closeModal: EventEmitter<void> = new EventEmitter<void>();\r\n  @Input() alignment: AlignmentType = AlignmentType.default;\r\n\r\n  onClose() {\r\n    this.closeModal.emit();\r\n  }\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../styles/index.css';\r\n\r\n.basicui-modal {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100%;\r\n    width: 100%;\r\n    overflow: hidden;\r\n    display: grid;\r\n    align-items: center;\r\n    justify-items: center;\r\n    z-index: 100;\r\n}\r\n\r\n.basicui-modal__overlay {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100%;\r\n    width: 100%;\r\n    background-color: #00000060;\r\n    overflow: hidden;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    padding-top: var(--basicui-modal-margin-y);\r\n    padding-bottom: var(--basicui-modal-margin-y);\r\n}\r\n\r\n.basicui-modal__base {\r\n    display: grid;\r\n    grid-auto-flow: row;\r\n    align-self: center;\r\n    z-index: 102;\r\n    background-color: var(--theme-white-50);\r\n    border-radius: var(--basicui-modal-border-radius);\r\n    width: 500px;\r\n    max-width: 90vw;\r\n    /* max-height: var(--basicui-modal-max-height); */\r\n    /* height: 100%; */\r\n}\r\n\r\n.basicui-dark .basicui-modal__base {\r\n    background-color: var(--theme-black-50);\r\n}\r\n\r\n.basicui-modal__base--size-small {\r\n    width: 300px;\r\n}\r\n\r\n.basicui-modal__base--size-large {\r\n    width: 800px;\r\n}\r\n\r\n.basicui-modal__base--size-xlarge {\r\n    width: 1140px;\r\n}\r\n\r\n.basicui-modal__base--placement-top {\r\n    align-self: flex-start;\r\n}\r\n.basicui-modal__base--placement-bottom {\r\n    align-self: flex-end;\r\n}\r\n.basicui-dark .basicui-modal-body{\r\n    background-color: #000;\r\n}\r\n.basicui-modal-body{\r\n    padding: 10px 10px;\r\n    margin-top: 10px;\r\n    border-radius: 6px;\r\n    width: 500px;\r\n    background-color: #fff;\r\n}\r\n.basicui-modal-header{\r\n    border-bottom: 1px solid #e4e4e4;\r\n    font-weight: 500;\r\n    font-size: 15px;\r\n    font-family: sans-serif;\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n.basicui-modal-header h5{\r\n    font-family: system-ui;\r\n    font-weight: 700;\r\n    font-size: 16px;\r\n}\r\n.basicui-modal-content{\r\n    border-bottom: 1px solid #e4e4e4;\r\n    padding: 10px 10px 20px 10px;\r\n    font-family: system-ui;\r\n    font-weight: 300;\r\n    color: #000;\r\n}\r\n.basicui-modal-footer{\r\n    padding: 16px 5px;\r\n    display: flex;\r\n    margin-right: 10px;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n}\r\n.basicui-modal-header__close{\r\n    background-color: transparent;\r\n    border: none;\r\n    cursor: pointer;\r\n}\r\n.basicui-modal-header__close svg{\r\n    height: 16px;\r\n    fill: #000;\r\n    justify-content:flex-end;\r\n}\r\n\r\n.Modal-footer{\r\n    justify-content: flex-end;\r\n    display: flex;\r\n}",
+                    "data": "//@import '../styles/index.css';\r\n\r\n.basicui-modal {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100%;\r\n    width: 100%;\r\n    overflow: hidden;\r\n    display: grid;\r\n    align-items: center;\r\n    justify-items: center;\r\n    z-index: 100;\r\n}\r\n.basicui-modal__overlay {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100%;\r\n    width: 100%;\r\n    background-color: #00000060;\r\n    overflow: hidden;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    padding-top: var(--basicui-modal-margin-y);\r\n    padding-bottom: var(--basicui-modal-margin-y);\r\n}\r\n\r\n.basicui-modal-header{\r\n    padding: 0 var(--basicui-modal-padding);\r\n    display: flex;\r\n    justify-content: space-between;\r\n    height: var(--basicui-modal-header-height);\r\n    align-items: center;\r\n}\r\n.basicui-modal-header .basicui-modal-header__heading {\r\n    font-size: 16px;\r\n    font-weight: 500;\r\n}\r\n.basicui-modal-header--show-border {\r\n    border-bottom: 1px solid var(--theme-white-400);\r\n}\r\n.basicui-dark .basicui-modal-header {\r\n    border-color: var(--theme-black-extended-400);  \r\n}\r\n.basicui-modal-header__close {\r\n    background-color: white;\r\n    border: none;\r\n    cursor: pointer;\r\n}\r\n.basicui-modal-header__close svg {\r\n    height: 16px;\r\n    fill: var(--theme-white-100i);\r\n    justify-content:flex-end;\r\n}\r\n.basicui-dark .basicui-modal-header__close svg {\r\n    height: 16px;\r\n    fill: var(--theme-black-100i);\r\n}\r\n.basicui-modal-content{\r\n    padding: var(--basicui-modal-padding) var(--basicui-modal-padding);\r\n    height: 100%;\r\n    max-height: calc(100vh - var(--basicui-modal-header-height)*2 - var(--basicui-modal-margin-y)*2);\r\n    overflow-y: auto;\r\n}\r\n.basicui-modal-footer {\r\n    padding: 0 var(--basicui-modal-padding);\r\n    display: flex;\r\n    justify-content: flex-end;\r\n    min-height: var(--basicui-modal-header-height);\r\n    align-items: center;\r\n}\r\n.basicui-modal-footer--show-border {\r\n    border-top: 1px solid var(--theme-white-400);\r\n}\r\n.basicui-dark .basicui-modal-footer--show-border {\r\n    border-color: var(--theme-black-extended-400);\r\n}\r\n.basicui-modal-footer * {\r\n    margin-right: var(--basicui-action-spacing);\r\n}\r\n.basicui-modal-footer *:last-child {\r\n    margin-right: 0px;\r\n}\r\n\r\n.basicui-dark .basicui-modal-footer {\r\n    border-color: var(--theme-default-500);\r\n    \r\n}\r\n.basicui-modal-footer--alignment-left {\r\n    justify-content: flex-start;\r\n}\r\n.basicui-modal-footer--alignment-center {\r\n    justify-content: center;\r\n}\r\n.basicui-modal__base {\r\n    display: grid;\r\n    grid-auto-flow: row;\r\n    align-self: center;\r\n    z-index: 102;\r\n    top: 0; \r\n    left: 0; \r\n    background-color: var(--theme-white-50);\r\n    border-radius: var(--basicui-modal-border-radius);\r\n    width: 500px;\r\n    max-width: 90vw;\r\n}\r\n.basicui-dark .basicui-modal__base {\r\n    background-color: var(--theme-black-50);\r\n}\r\n.basicui-modal__base--size-small {\r\n    width: 300px;\r\n}\r\n.basicui-modal__base--size-large {\r\n    width: 800px;\r\n}\r\n.basicui-modal__base--size-xlarge {\r\n    width: 1140px;\r\n}\r\n.basicui-modal__base--placement-top {\r\n    align-self: flex-start;\r\n}\r\n.basicui-modal__base--placement-bottom {\r\n    align-self: flex-end;\r\n}\r\n",
                     "styleUrl": "./modal.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"basicui-modal-body\">\r\n  <div class=\"basicui-modal-header\">\r\n      <h5>Lorem ipsum dolor sit</h5>\r\n      <button (click)=\"onClose()\" class=\"basicui-modal-header__close\">\r\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 384 512\"><path d=\"M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z\"></path></svg>\r\n      </button>\r\n  </div>\r\n  <div class=\"basicui-modal-content\">\r\n      <ng-content></ng-content>\r\n  </div>\r\n  <div class=\"basicui-modal-footer\">\r\n    <button (click)=\"onClose()\"\r\n    [ngClass]=\"{\r\n    'basicui-button': true,\r\n    'basicui-button--theme-primary': theme === 'primary',\r\n    'basicui-button--variant-default': variant === 'default'}\" \r\n    style=\"background-color: #1492db; margin-right: 10px; outline: none; border: none; color: white;\">Apply</button>\r\n    <button (click)=\"onClose()\"\r\n    [ngClass]=\"{\r\n    'basicui-button': true,\r\n    'basicui-button--theme-default': theme === 'default',\r\n    'basicui-button--variant-default': variant === 'default'}\">Cancel</button>\r\n  </div>\r\n</div>"
+            "templateData": "<div class=\"basicui-modal\">\r\n<div className=\"basicui-modal__overlay\">\r\n<div [ngClass]=\"{'basicui-modal__base':true,\r\n                 'basicui-modal__base--size-default':true,\r\n                 'basicui-modal__base--placement-default':true}\">\r\n  <div [ngClass]=\"{'basicui-modal-header':true,\r\n        'basicui-modal-header--show-border': true }\">\r\n      <div class=\"basicui-modal-header__heading\">\r\n        Lorem ipsum dolor sit\r\n      </div>\r\n      <button (click)=\"onClose()\" class=\"basicui-modal-header__close\">\r\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 384 512\"><path d=\"M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z\"></path></svg>\r\n      </button>\r\n  </div>\r\n  <div class=\"basicui-modal-content\">\r\n    Praesent urna erat, pharetra vel est vitae, tincidunt viverra sapien. Nullam ac rutrum diam. Curabitur non augue justo. Morbi pulvinar convallis leo eu faucibus. Nullam eu ullamcorper nisl. Ut cursus sagittis elit at congue. Donec malesuada sem at condimentum ultrices. Ut elementum tincidunt ipsum quis condimentum. Mauris nec arcu vitae diam sollicitudin aliquet. Nunc sed euismod ante. Proin eros magna, lobortis ut varius finibus, dignissim eu purus. Praesent ornare rutrum turpis imperdiet fringilla.\r\n  </div>\r\n  <div [ngClass]=\"{'basicui-modal-footer':true,\r\n  'basicui-modal-footer--show-border': true,\r\n  'basicui-modal-footer--alignment-left':true }\">\r\n    <button (click)=\"onClose()\"\r\n    [ngClass]=\"{\r\n    'basicui-button': true,\r\n    'basicui-button--theme-primary': theme === 'primary',\r\n    'basicui-button--variant-default': variant === 'default'}\" \r\n    style=\"background-color: #1492db; margin-right: 10px; outline: none; border: none; color: white;\">Apply</button>\r\n    <button (click)=\"onClose()\"\r\n    [ngClass]=\"{\r\n    'basicui-button': true,\r\n    'basicui-button--theme-default': theme === 'default',\r\n    'basicui-button--variant-default': variant === 'default'}\">Cancel</button>\r\n  </div>\r\n</div>\r\n</div>\r\n</div>"
         },
         {
             "name": "ModalFooterComponent",
@@ -1788,7 +1806,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../styles/index.css';\r\n\r\n.basicui-modal {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100%;\r\n    width: 100%;\r\n    overflow: hidden;\r\n    display: grid;\r\n    align-items: center;\r\n    justify-items: center;\r\n    z-index: 100;\r\n}\r\n\r\n.basicui-modal__overlay {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100%;\r\n    width: 100%;\r\n    background-color: #00000060;\r\n    overflow: hidden;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    padding-top: var(--basicui-modal-margin-y);\r\n    padding-bottom: var(--basicui-modal-margin-y);\r\n}\r\n\r\n.basicui-modal__base {\r\n    display: grid;\r\n    grid-auto-flow: row;\r\n    align-self: center;\r\n    z-index: 102;\r\n    background-color: var(--theme-white-50);\r\n    border-radius: var(--basicui-modal-border-radius);\r\n    width: 500px;\r\n    max-width: 90vw;\r\n    /* max-height: var(--basicui-modal-max-height); */\r\n    /* height: 100%; */\r\n}\r\n\r\n.basicui-dark .basicui-modal__base {\r\n    background-color: var(--theme-black-50);\r\n}\r\n\r\n.basicui-modal__base--size-small {\r\n    width: 300px;\r\n}\r\n\r\n.basicui-modal__base--size-large {\r\n    width: 800px;\r\n}\r\n\r\n.basicui-modal__base--size-xlarge {\r\n    width: 1140px;\r\n}\r\n\r\n.basicui-modal__base--placement-top {\r\n    align-self: flex-start;\r\n}\r\n.basicui-modal__base--placement-bottom {\r\n    align-self: flex-end;\r\n}\r\n.basicui-dark .basicui-modal-body{\r\n    background-color: #000;\r\n}\r\n.basicui-modal-body{\r\n    padding: 10px 10px;\r\n    margin-top: 10px;\r\n    border-radius: 6px;\r\n    width: 500px;\r\n    background-color: #fff;\r\n}\r\n.basicui-modal-header{\r\n    border-bottom: 1px solid #e4e4e4;\r\n    font-weight: 500;\r\n    font-size: 15px;\r\n    font-family: sans-serif;\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n.basicui-modal-header h5{\r\n    font-family: system-ui;\r\n    font-weight: 700;\r\n    font-size: 16px;\r\n}\r\n.basicui-modal-content{\r\n    border-bottom: 1px solid #e4e4e4;\r\n    padding: 10px 10px 20px 10px;\r\n    font-family: system-ui;\r\n    font-weight: 300;\r\n    color: #000;\r\n}\r\n.basicui-modal-footer{\r\n    padding: 16px 5px;\r\n    display: flex;\r\n    margin-right: 10px;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n}\r\n.basicui-modal-header__close{\r\n    background-color: transparent;\r\n    border: none;\r\n    cursor: pointer;\r\n}\r\n.basicui-modal-header__close svg{\r\n    height: 16px;\r\n    fill: #000;\r\n    justify-content:flex-end;\r\n}\r\n\r\n.Modal-footer{\r\n    justify-content: flex-end;\r\n    display: flex;\r\n}",
+                    "data": "//@import '../styles/index.css';\r\n\r\n.basicui-modal {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100%;\r\n    width: 100%;\r\n    overflow: hidden;\r\n    display: grid;\r\n    align-items: center;\r\n    justify-items: center;\r\n    z-index: 100;\r\n}\r\n.basicui-modal__overlay {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100%;\r\n    width: 100%;\r\n    background-color: #00000060;\r\n    overflow: hidden;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    padding-top: var(--basicui-modal-margin-y);\r\n    padding-bottom: var(--basicui-modal-margin-y);\r\n}\r\n\r\n.basicui-modal-header{\r\n    padding: 0 var(--basicui-modal-padding);\r\n    display: flex;\r\n    justify-content: space-between;\r\n    height: var(--basicui-modal-header-height);\r\n    align-items: center;\r\n}\r\n.basicui-modal-header .basicui-modal-header__heading {\r\n    font-size: 16px;\r\n    font-weight: 500;\r\n}\r\n.basicui-modal-header--show-border {\r\n    border-bottom: 1px solid var(--theme-white-400);\r\n}\r\n.basicui-dark .basicui-modal-header {\r\n    border-color: var(--theme-black-extended-400);  \r\n}\r\n.basicui-modal-header__close {\r\n    background-color: white;\r\n    border: none;\r\n    cursor: pointer;\r\n}\r\n.basicui-modal-header__close svg {\r\n    height: 16px;\r\n    fill: var(--theme-white-100i);\r\n    justify-content:flex-end;\r\n}\r\n.basicui-dark .basicui-modal-header__close svg {\r\n    height: 16px;\r\n    fill: var(--theme-black-100i);\r\n}\r\n.basicui-modal-content{\r\n    padding: var(--basicui-modal-padding) var(--basicui-modal-padding);\r\n    height: 100%;\r\n    max-height: calc(100vh - var(--basicui-modal-header-height)*2 - var(--basicui-modal-margin-y)*2);\r\n    overflow-y: auto;\r\n}\r\n.basicui-modal-footer {\r\n    padding: 0 var(--basicui-modal-padding);\r\n    display: flex;\r\n    justify-content: flex-end;\r\n    min-height: var(--basicui-modal-header-height);\r\n    align-items: center;\r\n}\r\n.basicui-modal-footer--show-border {\r\n    border-top: 1px solid var(--theme-white-400);\r\n}\r\n.basicui-dark .basicui-modal-footer--show-border {\r\n    border-color: var(--theme-black-extended-400);\r\n}\r\n.basicui-modal-footer * {\r\n    margin-right: var(--basicui-action-spacing);\r\n}\r\n.basicui-modal-footer *:last-child {\r\n    margin-right: 0px;\r\n}\r\n\r\n.basicui-dark .basicui-modal-footer {\r\n    border-color: var(--theme-default-500);\r\n    \r\n}\r\n.basicui-modal-footer--alignment-left {\r\n    justify-content: flex-start;\r\n}\r\n.basicui-modal-footer--alignment-center {\r\n    justify-content: center;\r\n}\r\n.basicui-modal__base {\r\n    display: grid;\r\n    grid-auto-flow: row;\r\n    align-self: center;\r\n    z-index: 102;\r\n    top: 0; \r\n    left: 0; \r\n    background-color: var(--theme-white-50);\r\n    border-radius: var(--basicui-modal-border-radius);\r\n    width: 500px;\r\n    max-width: 90vw;\r\n}\r\n.basicui-dark .basicui-modal__base {\r\n    background-color: var(--theme-black-50);\r\n}\r\n.basicui-modal__base--size-small {\r\n    width: 300px;\r\n}\r\n.basicui-modal__base--size-large {\r\n    width: 800px;\r\n}\r\n.basicui-modal__base--size-xlarge {\r\n    width: 1140px;\r\n}\r\n.basicui-modal__base--placement-top {\r\n    align-self: flex-start;\r\n}\r\n.basicui-modal__base--placement-bottom {\r\n    align-self: flex-end;\r\n}\r\n",
                     "styleUrl": "./modal.component.scss"
                 }
             ],
@@ -1873,7 +1891,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "section {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  font-size: 14px;\r\n  line-height: 24px;\r\n  padding: 48px 20px;\r\n  margin: 0 auto;\r\n  max-width: 600px;\r\n  color: #333;\r\n}\r\n\r\nsection h2 {\r\n  font-weight: 900;\r\n  font-size: 32px;\r\n  line-height: 1;\r\n  margin: 0 0 4px;\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\nsection p {\r\n  margin: 1em 0;\r\n}\r\n\r\nsection a {\r\n  text-decoration: none;\r\n  color: #1ea7fd;\r\n}\r\n\r\nsection ul {\r\n  padding-left: 30px;\r\n  margin: 1em 0;\r\n}\r\n\r\nsection li {\r\n  margin-bottom: 8px;\r\n}\r\n\r\nsection .tip {\r\n  display: inline-block;\r\n  border-radius: 1em;\r\n  font-size: 11px;\r\n  line-height: 12px;\r\n  font-weight: 700;\r\n  background: #e7fdd8;\r\n  color: #66bf3c;\r\n  padding: 4px 12px;\r\n  margin-right: 10px;\r\n  vertical-align: top;\r\n}\r\n\r\nsection .tip-wrapper {\r\n  font-size: 13px;\r\n  line-height: 20px;\r\n  margin-top: 40px;\r\n  margin-bottom: 40px;\r\n}\r\n\r\nsection .tip-wrapper svg {\r\n  display: inline-block;\r\n  height: 12px;\r\n  width: 12px;\r\n  margin-right: 4px;\r\n  vertical-align: top;\r\n  margin-top: 3px;\r\n}\r\n\r\nsection .tip-wrapper svg path {\r\n  fill: #1ea7fd;\r\n}\r\n",
+                    "data": "section {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  font-size: 14px;\r\n  line-height: 24px;\r\n  padding: 48px 20px;\r\n  margin: 0 auto;\r\n  max-width: 600px;\r\n}\r\nsection h2 {\r\n  font-weight: 900;\r\n  font-size: 32px;\r\n  line-height: 1;\r\n  margin: 0 0 4px;\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\nsection p {\r\n  margin: 1em 0;\r\n}\r\n\r\nsection a {\r\n  text-decoration: none;\r\n  color: #1ea7fd;\r\n}\r\n\r\nsection ul {\r\n  padding-left: 30px;\r\n  margin: 1em 0;\r\n}\r\n\r\nsection li {\r\n  margin-bottom: 8px;\r\n}\r\n\r\nsection .tip {\r\n  display: inline-block;\r\n  border-radius: 1em;\r\n  font-size: 11px;\r\n  line-height: 12px;\r\n  font-weight: 700;\r\n  background: #e7fdd8;\r\n  color: #66bf3c;\r\n  padding: 4px 12px;\r\n  margin-right: 10px;\r\n  vertical-align: top;\r\n}\r\n\r\nsection .tip-wrapper {\r\n  font-size: 13px;\r\n  line-height: 20px;\r\n  margin-top: 40px;\r\n  margin-bottom: 40px;\r\n}\r\n\r\nsection .tip-wrapper svg {\r\n  display: inline-block;\r\n  height: 12px;\r\n  width: 12px;\r\n  margin-right: 4px;\r\n  vertical-align: top;\r\n  margin-top: 3px;\r\n}\r\n\r\nsection .tip-wrapper svg path {\r\n  fill: #1ea7fd;\r\n}",
                     "styleUrl": "./page.css"
                 }
             ],
@@ -2022,7 +2040,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\r\n// @import '../styles/index.css';\r\n\r\n.basicui-radio {\r\n    cursor: pointer;\r\n    position: relative;\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n}\r\n\r\n.basicui-radio__input {\r\n    margin: 0;\r\n    padding: 0;\r\n    width: var(--basicui-radio-height);\r\n    height: var(--basicui-radio-height);\r\n    border: var(--basicui-radio-border-thickness) solid var(--basicui-radio-border-color);\r\n    background-color: var(--basicui-radio-background-color);\r\n    outline: 0;\r\n    cursor: pointer;\r\n    border-radius: var(--basicui-radio-border-radius);\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    /* position: static; */\r\n    transition: 250ms border-color ease-in-out, 250ms background-color ease-in-out, 250ms color ease-in-out;\r\n}\r\n\r\n.basicui-radio__input:checked {\r\n    background-color: var(--basicui-radio-background-color-checked);\r\n    border-color: var(--basicui-radio-border-color-checked);\r\n}\r\n\r\n.basicui-radio__input:hover,\r\n.basicui-radio__input:focus,\r\n.basicui-radio__input:checked:hover,\r\n.basicui-radio__input:checked:focus {\r\n    background-color: var(--basicui-radio-background-color-hover);\r\n    border-color: var(--basicui-radio-border-color-hover);\r\n}\r\n\r\n.basicui-radio__input:checked:after {\r\n    content: \"\";\r\n    display: block;\r\n    position: relative;\r\n    width: var(--basicui-radio-dotmark-size);\r\n    height: var(--basicui-radio-dotmark-size);\r\n    background-color: var(--basicui-radio-dotmark-color);\r\n    left: var(--basicui-radio-dotmark-offset-left);\r\n    bottom: var(--basicui-radio-dotmark-offset-bottom);\r\n    border-radius: var(--basicui-radio-border-radius);\r\n}\r\n\r\n.basicui-radio__span {\r\n    font-size: var(--basicui-radio-font-size);\r\n    font-weight: var(--basicui-radio-font-weight);\r\n    margin-left: var(--basicui-radio-label-offset);\r\n}",
+                    "data": "\r\n@import '../styles/index.css';\r\n\r\n.basicui-radio {\r\n    cursor: pointer;\r\n    position: relative;\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n}\r\n\r\n.basicui-radio__input {\r\n    margin: 0;\r\n    padding: 0;\r\n    width: var(--basicui-radio-height);\r\n    height: var(--basicui-radio-height);\r\n    border: var(--basicui-radio-border-thickness) solid var(--basicui-radio-border-color);\r\n    background-color: var(--basicui-radio-background-color);\r\n    outline: 0;\r\n    cursor: pointer;\r\n    border-radius: var(--basicui-radio-border-radius);\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    /* position: static; */\r\n    transition: 250ms border-color ease-in-out, 250ms background-color ease-in-out, 250ms color ease-in-out;\r\n}\r\n\r\n.basicui-radio__input:checked {\r\n    background-color: var(--basicui-radio-background-color-checked);\r\n    border-color: var(--basicui-radio-border-color-checked);\r\n}\r\n\r\n.basicui-radio__input:hover,\r\n.basicui-radio__input:focus,\r\n.basicui-radio__input:checked:hover,\r\n.basicui-radio__input:checked:focus {\r\n    background-color: var(--basicui-radio-background-color-hover);\r\n    border-color: var(--basicui-radio-border-color-hover);\r\n}\r\n\r\n.basicui-radio__input:checked:after {\r\n    content: \"\";\r\n    display: block;\r\n    position: relative;\r\n    width: var(--basicui-radio-dotmark-size);\r\n    height: var(--basicui-radio-dotmark-size);\r\n    background-color: var(--basicui-radio-dotmark-color);\r\n    left: var(--basicui-radio-dotmark-offset-left);\r\n    bottom: var(--basicui-radio-dotmark-offset-bottom);\r\n    border-radius: var(--basicui-radio-border-radius);\r\n}\r\n\r\n.basicui-radio__span {\r\n    font-size: var(--basicui-radio-font-size);\r\n    font-weight: var(--basicui-radio-font-weight);\r\n    margin-left: var(--basicui-radio-label-offset);\r\n}",
                     "styleUrl": "./radio.component.scss"
                 }
             ],
@@ -2105,13 +2123,13 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "  /* single-select styles */\r\n  select:hover {\r\n    border-color: var(--basicui-formelement-border-color-hover);\r\n    background-color: var(--basicui-formelement-background-color-hover);\r\n    color: var(--basicui-formelement-color-hover);\r\n  }\r\n  select, input {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\n    background-color: var(--theme-default-50);\r\n    color: var(--theme-default-50i);\r\n    width: 100%;\r\n    outline: none;\r\n    font-size: 11px;\r\n    position: relative;\r\n    text-indent: 5px;\r\n  }\r\n  select[single] {\r\n    position: absolute;\r\n    top: 50px;\r\n    left: 50px;\r\n  }\r\n  \r\n  /* Multi-select styles */\r\n  select[multiple] {\r\n    background-color: white;\r\n    height: 30px;\r\n  }\r\n  select[multiple] option{\r\n    padding-top: 10px;\r\n    padding-bottom: 10px;\r\n    padding-left: 10px;\r\n    \r\n  }\r\n  select[multiple] option:hover{\r\n    padding-top: 10px;\r\n    padding-bottom: 10px;\r\n    border: 1px solid #c3e5f4;\r\n    background-color: #f1f8fe;\r\n  }\r\n  .positioned-select {\r\n    border: 1px solid #e4e3e3;\r\n    border-radius: 2px;\r\n    font-size: 12px;\r\n    width: 100%;\r\n  }\r\n  .positioned-select[multiple] {\r\n    height: 150px;\r\n  }\r\n\r\n  /* auto complete-select styles */\r\n  .auto-select{\r\n    padding: 5px;\r\n    font-size: 12px;\r\n    border-radius: 2px;\r\n    border: 1px solid #dad8d8;\r\n    background-color: #f1f0f08a;\r\n    width: 100%;\r\n    outline: none;\r\n  }\r\n  .auto-select-option {\r\n    padding: 8px 16px;\r\n    cursor: pointer;\r\n  }\r\n  .auto-select:hover {\r\n    border-radius: 3px;\r\n    border-color: var(--basicui-formelement-border-color-hover);\r\n      background-color: var(--basicui-formelement-background-color-hover);\r\n      border-radius: 3px;\r\n  }\r\n",
+                    "data": "  /* single-select styles */\r\n  select:hover {\r\n    border-color: var(--basicui-formelement-border-color-hover);\r\n    background-color: var(--basicui-formelement-background-color-hover);\r\n    color: var(--basicui-formelement-color-hover);\r\n  }\r\n  select, input {\r\n    padding-top: 8px;\r\n  padding-bottom: 8px;\r\n  background-color: var(--theme-default-50);\r\n  width: 100%;\r\n  outline: none;\r\n  font-size: 11px;\r\n  position: relative;\r\n  text-indent: 5px;\r\n  }\r\n  select[single] {\r\n    position: absolute;\r\n    top: 50px;\r\n    left: 50px;\r\n  }\r\n  option {\r\n    background-color: var(--theme-default-50);\r\n    color: var(--theme-default-50i);\r\n}\r\n  /* Multi-select styles */\r\n  select[multiple] {\r\n    background-color: white;\r\n    height: 30px;\r\n  }\r\n  select[multiple] option{\r\n    padding-top: 10px;\r\n    padding-bottom: 10px;\r\n    padding-left: 10px;\r\n    \r\n  }\r\n  select[multiple] option:hover{\r\n    padding-top: 10px;\r\n    padding-bottom: 10px;\r\n    border: 1px solid #c3e5f4;\r\n    background-color: #f1f8fe;\r\n  }\r\n  .positioned-select {\r\n    border-color: var(--basicui-formelement-border-color);\r\n    border-radius: 1px;\r\n    background-color: var(--basicui-formelement-background-color);\r\n    font-size: 12px;\r\n    width: 100%;\r\n  }\r\n  .positioned-select[multiple] {\r\n    height: 150px;\r\n  }\r\n\r\n  /* auto complete-select styles */\r\n  .auto-select{\r\n    padding: 6px;\r\n    font-size: 12px;\r\n    border-radius: 2px;\r\n    border: 1px solid #dad8d8;\r\n    background-color: #f1f0f08a;\r\n    width: 100%;\r\n    outline: none;\r\n    color: var(--theme-default-50i);\r\n  }\r\n  .auto-select-option {\r\n    padding: 8px 16px;\r\n    cursor: pointer;\r\n    color: var(--theme-default-50i);\r\n  }\r\n  .auto-select:hover {\r\n    border-radius: 3px;\r\n    border-color: var(--basicui-formelement-border-color-hover);\r\n    background-color: var(--basicui-formelement-background-color-hover);\r\n    border-radius: 3px;\r\n  }\r\n  .auto-select::placeholder {\r\n    color: var(--theme-default-50i);\r\n  }",
                     "styleUrl": "./select.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "\r\n\r\n  <div class=\"custom-select\" *ngIf=\"selectType === 'single'\">\r\n    <select *ngIf=\"selectedValue !== undefined\" class=\"positioned-select\">\r\n      <option value=\"select dropdown\"> {{ selectedValue }}</option>\r\n      <option *ngFor=\"let option of options\" [value]=\"option.value\">{{ option.label }}</option>\r\n    </select>\r\n  </div>\r\n\r\n  <!-- <div class=\"custom-select\" *ngIf=\"selectType === 'multi'\">\r\n    <select multiple>\r\n      <option *ngFor=\"let option of options\" [value]=\"option.value\">{{ option.label }}</option>\r\n    </select>\r\n  </div> -->\r\n  \r\n  <div class=\"custom-select\" *ngIf=\"selectType === 'autocomplete'\">\r\n    <input type=\"text\" value=\"Autocomplete drop down\" list=\"autocompleteOptions\" class=\"auto-select\" style=\"width: 100%; \">\r\n    <datalist id=\"autocompleteOptions\">\r\n      <option *ngFor=\"let option of options\" [value]=\"option.label\" style=\"width: 100%;\">{{ option.label }}</option>\r\n    </datalist>\r\n  </div>\r\n  \r\n  <!-- <div class=\"custom-select\" *ngIf=\"selectType === 'autocomplete-multi'\">\r\n    <input type=\"text\" placeholder=\"Autocomplete dropdown\" list=\"autocompleteOptions\" class=\"auto-select\" style=\"width: 100%;\">\r\n    <datalist id=\"autocompleteOptions\">\r\n      <option *ngFor=\"let option of options\" [value]=\"option.label\" style=\"width: 100%;\">{{ option.label }}</option>\r\n    </datalist>\r\n  </div>-->\r\n  "
+            "templateData": "\r\n\r\n  <div class=\"custom-select\" *ngIf=\"selectType === 'single'\">\r\n    <select *ngIf=\"selectedValue !== undefined\" class=\"positioned-select\">\r\n      <option value=\"select dropdown\"> {{ selectedValue }}</option>\r\n      <option *ngFor=\"let option of options\" [value]=\"option.value\">{{ option.label }}</option>\r\n    </select>\r\n  </div>\r\n\r\n  <!-- <div class=\"custom-select\" *ngIf=\"selectType === 'multi'\">\r\n    <select multiple>\r\n      <option *ngFor=\"let option of options\" [value]=\"option.value\">{{ option.label }}</option>\r\n    </select>\r\n  </div> -->\r\n  \r\n  <div class=\"custom-select\" *ngIf=\"selectType === 'autocomplete'\">\r\n    <input type=\"text\" placeholder=\"Autocomplete drop down\" list=\"autocompleteOptions\" class=\"auto-select\" style=\"width: 100%; \">\r\n    <datalist id=\"autocompleteOptions\">\r\n      <option *ngFor=\"let option of options\" [value]=\"option.label\" style=\"width: 100%;\">{{ option.label }}</option>\r\n    </datalist>\r\n  </div>\r\n  \r\n  <!-- <div class=\"custom-select\" *ngIf=\"selectType === 'autocomplete-multi'\">\r\n    <input type=\"text\" placeholder=\"Autocomplete dropdown\" list=\"autocompleteOptions\" class=\"auto-select\" style=\"width: 100%;\">\r\n    <datalist id=\"autocompleteOptions\">\r\n      <option *ngFor=\"let option of options\" [value]=\"option.label\" style=\"width: 100%;\">{{ option.label }}</option>\r\n    </datalist>\r\n  </div>-->\r\n  "
         },
         {
             "name": "SelectComponent",
@@ -2196,7 +2214,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "  /* single-select styles */\r\n  label{\r\n    color: rgb(112 112 112 / 97%);\r\n    font-family: system-ui;\r\n    font-size: 13px;\r\n    font-weight: 300;\r\n}\r\n  select:hover {\r\n    border-color: var(--basicui-formelement-border-color-hover);\r\n    background-color: var(--basicui-formelement-background-color-hover);\r\n    color: var(--basicui-formelement-color-hover);\r\n  }\r\n  select, input {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\n    background-color: var(--theme-default-50);\r\n    color: var(--theme-default-50i);\r\n    width: 100%;\r\n    outline: none;\r\n    font-size: 11px;\r\n    position: relative;\r\n    text-indent: 5px;\r\n  }\r\n  select[single] {\r\n    position: absolute;\r\n    top: 50px;\r\n    left: 50px;\r\n  }\r\n  \r\n  /* Multi-select styles */\r\n  select[multiple] {\r\n    background-color: white;\r\n    height: 30px;\r\n  }\r\n  select[multiple] option{\r\n    padding-top: 10px;\r\n    padding-bottom: 10px;\r\n    padding-left: 10px;\r\n    \r\n  }\r\n  select[multiple] option:hover{\r\n    padding-top: 10px;\r\n    padding-bottom: 10px;\r\n    border: 1px solid #c3e5f4;\r\n    background-color: #f1f8fe;\r\n  }\r\n  .positioned-select {\r\n    border: 1px solid #ecebeb;\r\n    border-radius: 2px;\r\n    font-size: 12px;\r\n    width: 100%;\r\n  }\r\n  .positioned-select[multiple] {\r\n    height: 150px;\r\n  }\r\n\r\n  /* auto complete-select styles */\r\n  .auto-select{\r\n    padding: 5px;\r\n    font-size: 10px;\r\n    border-radius: 2px;\r\n    border: 1px solid #dad8d8;\r\n    background-color: #f1f0f08a;\r\n    width: 100%;\r\n    outline: none;\r\n  }\r\n  .auto-select-option {\r\n    padding: 8px 16px;\r\n    cursor: pointer;\r\n  }\r\n  .auto-select:hover {\r\n    border-color: var(--basicui-formelement-border-color-hover);\r\n    background-color: var(--basicui-formelement-background-color-hover);\r\n    color: var(--basicui-formelement-color-hover);\r\n    border-radius: 3px;\r\n  }\r\n",
+                    "data": "/* single-select styles */\r\nlabel {\r\n    display: block;\r\n    font-size: 13px;\r\n    margin-bottom: 5px;\r\n    color: var(--theme-white-extended-500);\r\n    font-family: system-ui;\r\n    font-weight: 100;\r\n  }\r\n  select,\r\n  input {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\n    background-color: var(--theme-default-50);\r\n    /* //color: var(--theme-default-50i); */\r\n    width: 100%;\r\n    outline: none;\r\n    font-size: 11px;\r\n    position: relative;\r\n    text-indent: 5px;\r\n    color: inherit;\r\n  }\r\n  select:hover {\r\n    border-color: var(--basicui-formelement-border-color-hover);\r\n    background-color: var(--basicui-formelement-background-color-hover);\r\n    color: var(--basicui-formelement-color-hover);\r\n  }\r\n  \r\n  select[single] {\r\n    position: absolute;\r\n    top: 50px;\r\n    left: 50px;\r\n    color: inherit;\r\n  }\r\n  \r\n  /* Multi-select styles */\r\n  select[multiple] {\r\n    /* //background-color: white; */\r\n    height: 30px;\r\n  }\r\n  select[multiple] option {\r\n    padding-top: 10px;\r\n    padding-bottom: 10px;\r\n    padding-left: 10px;\r\n  }\r\n  select[multiple] option:hover {\r\n    padding-top: 10px;\r\n    padding-bottom: 10px;\r\n    border: 1px solid #c3e5f4;\r\n    background-color: #f1f8fe;\r\n  }\r\n  .positioned-select {\r\n    border-color: var(--basicui-formelement-border-color);\r\n    border-radius: 1px;\r\n    background-color: var(--basicui-formelement-background-color);\r\n    font-size: 12px;\r\n    width: 100%;\r\n  }\r\n  .positioned-select[multiple] {\r\n    height: 150px;\r\n  }\r\n  \r\n  /* auto complete-select styles */\r\n  .auto-select {\r\n    padding: 5px;\r\n    font-size: 10px;\r\n    border-radius: 2px;\r\n    border: 1px solid #dad8d8;\r\n    background-color: #f1f0f08a;\r\n    width: 100%;\r\n    outline: none;\r\n  }\r\n  .auto-select-option {\r\n    padding: 8px 16px;\r\n    cursor: pointer;\r\n  }\r\n  .auto-select:hover {\r\n    border-color: var(--basicui-formelement-border-color-hover);\r\n    background-color: var(--basicui-formelement-background-color-hover);\r\n    color: var(--basicui-formelement-color-hover);\r\n    border-radius: 3px;\r\n  }\r\n  \r\n  .basicui-selectnative {\r\n    -webkit-appearance: none;\r\n    -webkit-border-radius: 0px;\r\n  }\r\n  \r\n  .basicui-selectnative__option {\r\n    background-color: var(--theme-default-50);\r\n    color: var(--theme-default-50i);\r\n  }\r\n  \r\n  .basicui-selectnative__option:checked {\r\n    background-color: var(--theme-default-200);\r\n    color: var(--theme-default-200i);\r\n  }\r\n  \r\n  ::ng-deep .basicui-dark .basicui-selectnative__option {\r\n    background-color: var(--theme-default-900);\r\n    color: var(--theme-default-900i);\r\n  }\r\n  \r\n  ::ng-deep .basicui-dark .basicui-selectnative__option:checked {\r\n    background-color: var(--theme-default-700);\r\n    color: var(--theme-default-700i);\r\n  }\r\n  ",
                     "styleUrl": "./select.component.scss"
                 }
             ],
@@ -2205,12 +2223,12 @@
             "isDuplicate": true,
             "duplicateId": 1,
             "duplicateName": "SelectComponent-1",
-            "templateData": "\r\n<label for=\"\">{{label}}</label>\r\n\r\n  <div class=\"custom-select\" *ngIf=\"selectType === 'single'\">\r\n    <select *ngIf=\"selectedValue !== undefined\" class=\"positioned-select\">\r\n      <option> {{ selectedValue }}</option>\r\n      <option *ngFor=\"let option of options\" [value]=\"option.value\">{{ option.label }}</option>\r\n    </select>\r\n  </div>\r\n\r\n  <!-- <div class=\"custom-select\" *ngIf=\"selectType === 'multi'\">\r\n    <select multiple>\r\n      <option *ngFor=\"let option of options\" [value]=\"option.value\">{{ option.label }}</option>\r\n    </select>\r\n  </div> -->\r\n  \r\n  <!-- <div class=\"custom-select\" *ngIf=\"selectType === 'autocomplete'\">\r\n    <input type=\"text\" placeholder=\"Autocomplete dropdown\" list=\"autocompleteOptions\" class=\"auto-select\" style=\"width: 100%; \">\r\n    <datalist id=\"autocompleteOptions\">\r\n      <option *ngFor=\"let option of options\" [value]=\"option.label\" style=\"width: 100%;\">{{ option.label }}</option>\r\n    </datalist>\r\n  </div> -->\r\n  \r\n  <!-- <div class=\"custom-select\" *ngIf=\"selectType === 'autocomplete-multi'\">\r\n    <input type=\"text\" placeholder=\"Autocomplete dropdown\" list=\"autocompleteOptions\" class=\"auto-select\" style=\"width: 100%;\">\r\n    <datalist id=\"autocompleteOptions\">\r\n      <option *ngFor=\"let option of options\" [value]=\"option.label\" style=\"width: 100%;\">{{ option.label }}</option>\r\n    </datalist>\r\n  </div>-->\r\n  "
+            "templateData": "\r\n<label for=\"\">{{label}}</label>\r\n\r\n  <div class=\"custom-select\" *ngIf=\"selectType === 'single'\">\r\n    <select *ngIf=\"selectedValue !== undefined\" class=\"positioned-select\">\r\n      <option class=\"basicui-selectnative__option\"> {{ selectedValue }}</option>\r\n      <option class=\"basicui-selectnative__option\" *ngFor=\"let option of options\" [value]=\"option.value\">{{ option.label }}</option>\r\n    </select>\r\n  </div>\r\n\r\n  <!-- <div class=\"custom-select\" *ngIf=\"selectType === 'multi'\">\r\n    <select multiple>\r\n      <option *ngFor=\"let option of options\" [value]=\"option.value\">{{ option.label }}</option>\r\n    </select>\r\n  </div> -->\r\n  \r\n  <!-- <div class=\"custom-select\" *ngIf=\"selectType === 'autocomplete'\">\r\n    <input type=\"text\" placeholder=\"Autocomplete dropdown\" list=\"autocompleteOptions\" class=\"auto-select\" style=\"width: 100%; \">\r\n    <datalist id=\"autocompleteOptions\">\r\n      <option *ngFor=\"let option of options\" [value]=\"option.label\" style=\"width: 100%;\">{{ option.label }}</option>\r\n    </datalist>\r\n  </div> -->\r\n  \r\n  <!-- <div class=\"custom-select\" *ngIf=\"selectType === 'autocomplete-multi'\">\r\n    <input type=\"text\" placeholder=\"Autocomplete dropdown\" list=\"autocompleteOptions\" class=\"auto-select\" style=\"width: 100%;\">\r\n    <datalist id=\"autocompleteOptions\">\r\n      <option *ngFor=\"let option of options\" [value]=\"option.label\" style=\"width: 100%;\">{{ option.label }}</option>\r\n    </datalist>\r\n  </div>-->\r\n  "
         },
         {
             "name": "StoryWrapperComponent",
             "id": "component-StoryWrapperComponent-02c7e0df0025be0c237987959e99f3945cd2ff771dc86b1aacefad307b2930471b8c177beaebb195684fbefd435916453a714ad7e416849026c9224b9863db33",
-            "file": "src/app/modal/story-wrapper.component.ts",
+            "file": "src/app/story-wrapper/story-wrapper.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -2327,13 +2345,13 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\r\n@import '../styles/index.css';\r\nhtml{\r\n    font-family: 'Roboto', sans-serif;\r\n}\r\n\r\n.basicui-dark .basicui-modal-base{\r\n    background-color: black;\r\n}\r\n.basicui-modal-base{\r\n    position: fixed; \r\n    top: 0; \r\n    left: 0; \r\n    height: 100%; \r\n    width: 100%; \r\n    background-color: #00000060; \r\n    padding-top: 20px; \r\n    padding-bottom: 20px; \r\n    align-items: center; \r\n    justify-content: center; \r\n    display: flex; \r\n    overflow: hidden;\r\n}",
+                    "data": "\r\n//@import '../styles/index.css';\r\n\r\nhtml{\r\n    font-family: 'Roboto', sans-serif;\r\n}\r\n\r\n.basicui-modal-body-content{\r\n    position: fixed; \r\n    top: 0; \r\n    left: 0; \r\n    height: 100%; \r\n    width: 100%; \r\n    background-color: #00000060; \r\n    padding-top: 20px; \r\n    padding-bottom: 20px; \r\n    align-items: center; \r\n    justify-content: center; \r\n    display: flex; \r\n    overflow: hidden;\r\n}\r\n\r\n",
                     "styleUrl": "./story-wrapper.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<div>\r\n    <button\r\n    [ngClass] = \"{\r\n      'basicui-button': true,\r\n      'basicui-button--theme-default': true,\r\n      'basicui-button--variant-default':true,\r\n      'basicui-button--theme-dark': true\r\n    }\"\r\n    [type]=\"type\"\r\n     (click)=\"openModal()\">Open Modal</button>\r\n    <app-modal *ngIf=\"isOpen\" (closeModal)=\"closeModal()\" class=\"basicui-modal-base\">\r\n      Praesent urna erat, pharetra vel est vitae, tincidunt viverra sapien. Nullam ac rutrum diam. Curabitur non augue justo. Morbi pulvinar convallis leo eu faucibus. Nullam eu ullamcorper nisl. Ut cursus sagittis elit at congue. Donec malesuada sem at condimentum ultrices. Ut elementum tincidunt ipsum quis condimentum. Mauris nec arcu vitae diam sollicitudin aliquet. Nunc sed euismod ante. Proin eros magna, lobortis ut varius finibus, dignissim eu purus. Praesent ornare rutrum turpis imperdiet fringilla.\r\n    </app-modal>\r\n  </div>"
+            "templateData": "<div>\r\n    <button\r\n    [ngClass]=\"{\r\n      'basicui-button': true,\r\n      'basicui-button--theme-default': true,\r\n      'basicui-button--variant-default':true}\"\r\n    [type]=\"type\"\r\n     (click)=\"openModal()\">Open Modal</button>\r\n     \r\n      <app-modal *ngIf=\"isOpen\" (closeModal)=\"closeModal()\" [ngClass]=\"{'basicui-modal-body-content':true,\r\n      'basicui-modal-body-content--size-default':true,\r\n      'basicui-modal-body-content--placement-default':true}\">\r\n      </app-modal>\r\n</div>"
         },
         {
             "name": "SvgIconComponent",
@@ -2635,7 +2653,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../styles/index.css';\r\n",
+                    "data": "//@import '../styles/index.css';\r\n",
                     "styleUrl": "./table.component.scss"
                 }
             ],
@@ -2761,7 +2779,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import './style-theme.css';\r\n@import '../styles/index.css';\r\n\r\n.basicui-tabs__ul {\r\n    list-style: none;\r\n    padding-left: 0;\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    border-bottom: 1px solid #e4e4e4;\r\n}\r\n.basicui-tabs__ul__li.active .basicui-tabs__ul__li__button{\r\n    background-color: #1492db;\r\n    color: white;\r\n}\r\n.basicui-tabs__ul__li--active .basicui-tabs__ul__li__button{\r\n    background-color: #1492db;\r\n}\r\n\r\n.basicui-tabs__ul__li__button:hover,\r\n.basicui-tabs__ul__li__button:focus{\r\n    transition: border-color 250ms ease-in-out, background-color 250ms ease-in-out, color 250ms ease-in-out;\r\n    border-bottom: none;\r\n}\r\n.basicui-tabs__ul__li__button {\r\n    position: relative;\r\n    background-color: transparent;\r\n    border: none;\r\n    color: var(--theme-black-900);\r\n    fill: var(--theme-black-900);\r\n    cursor: pointer;\r\n    padding: var(--basicui-tab-padding-y) var(--basicui-tab-padding-x);\r\n    border: var(--basicui-tab-border-width) solid transparent;\r\n    border-bottom: none;\r\n    border-radius: var(--basicui-tab-border-radius) var(--basicui-tab-border-radius) 0 0;\r\n}\r\n.basicui-dark .basicui-tabs__ul__li__button {\r\n    color: var(--theme-white-50);\r\n    fill: var(--theme-white-50);\r\n}\r\n.basicui-tabs__ul__li__button:hover,\r\n.basicui-tabs__ul__li__button:focus,\r\n.basicui-tabs__ul__li--active .basicui-tabs__ul__li__button {\r\n    border: var(--basicui-tab-border-width) solid var(--basicui-tab-border-color);\r\n    border-bottom: none; \r\n}\r\n\r\n.basicui-tabs--shape-round .basicui-tabs__ul__li__button {\r\n    border-radius: var(--basicui-tab-border-radius);\r\n}\r\n\r\n.basicui-tabs--shape-rectangle .basicui-tabs__ul__li__button {\r\n    border-radius: 0px;\r\n}\r\n\r\n.basicui-tabs--offset .basicui-tabs__ul__li {\r\n    //margin-right: var(--basicui-tab-offset);\r\n    //margin-bottom: var(--basicui-tab-offset);\r\n    margin: 0;\r\n}\r\n.basicui-tab-header {\r\n    display: grid;\r\n    grid-auto-flow: column;\r\n    column-gap: 6px;\r\n    row-gap: 6px;\r\n    justify-content: center;\r\n    justify-items: center;\r\n    align-items: center;\r\n    align-content: center;\r\n    font-size: 12px;\r\n}\r\n.basicui-tab-header--alignment-column {\r\n    grid-auto-flow: row;\r\n    column-gap: 10px;\r\n}\r\n.basicui-tab-header * {\r\n    display: flex;\r\n}\r\n.basicui-tabs__ul__li__button .checkmark {\r\n    height: 15px;\r\n    width: 15px;\r\n    position: absolute;\r\n    top: 51%;\r\n    right: 56px;\r\n    transform: translateY(-50%);\r\n}\r\n.basicui-tabs__ul__li.active .checkmark {\r\n    fill: #ffffff;\r\n  }",
+                    "data": "@import './style-theme.css';\r\n@import '../styles/index.css';\r\n\r\n.basicui-tabs__ul {\r\n    list-style: none;\r\n    padding-left: 0;\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    border-bottom: 1px solid #e4e4e4;\r\n}\r\n.basicui-tabs__ul__li.active .basicui-tabs__ul__li__button{\r\n    background-color: #1492db;\r\n    color: white;\r\n}\r\n.basicui-tabs__ul__li--active .basicui-tabs__ul__li__button{\r\n    background-color: #1492db;\r\n}\r\n.basicui-tabs__ul__li__button:hover,\r\n.basicui-tabs__ul__li__button:focus{\r\n    transition: border-color 250ms ease-in-out, background-color 250ms ease-in-out, color 250ms ease-in-out;\r\n    border-bottom: none;\r\n}\r\n.basicui-tabs__ul__li__button {\r\n    position: relative;\r\n    background-color: inherit;\r\n    border: none;\r\n    color: inherit;\r\n    //fill: inherit;\r\n    cursor: pointer;\r\n    padding: var(--basicui-tab-padding-y) var(--basicui-tab-padding-x);\r\n    border: var(--basicui-tab-border-width) solid transparent;\r\n    border-bottom: none;\r\n    border-radius: var(--basicui-tab-border-radius) var(--basicui-tab-border-radius) 0 0;\r\n}\r\n.basicui-tabs__ul__li__button:hover,\r\n.basicui-tabs__ul__li__button:focus,\r\n.basicui-tabs__ul__li--active .basicui-tabs__ul__li__button {\r\n    border: var(--basicui-tab-border-width) solid var(--basicui-tab-border-color);\r\n    border-bottom: none; \r\n}\r\n\r\n.basicui-tabs--shape-round .basicui-tabs__ul__li__button {\r\n    border-radius: var(--basicui-tab-border-radius);\r\n}\r\n\r\n.basicui-tabs--shape-rectangle .basicui-tabs__ul__li__button {\r\n    border-radius: 0px;\r\n}\r\n\r\n.basicui-tabs--offset .basicui-tabs__ul__li {\r\n    //margin-right: var(--basicui-tab-offset);\r\n    //margin-bottom: var(--basicui-tab-offset);\r\n    margin: 0;\r\n}\r\n.basicui-tab-header {\r\n    display: grid;\r\n    grid-auto-flow: column;\r\n    column-gap: 6px;\r\n    row-gap: 6px;\r\n    justify-content: center;\r\n    justify-items: center;\r\n    align-items: center;\r\n    align-content: center;\r\n    font-size: 12px;\r\n}\r\n.basicui-tab-header--alignment-column {\r\n    grid-auto-flow: row;\r\n    column-gap: 10px;\r\n}\r\n.basicui-tab-header * {\r\n    display: flex;\r\n}\r\n.basicui-tabs__ul__li__button .checkmark {\r\n    height: 15px;\r\n    width: 15px;\r\n    position: absolute;\r\n    top: 51%;\r\n    right: 56px;\r\n    transform: translateY(-50%);\r\n}\r\n.basicui-tabs__ul__li.active .checkmark {\r\n    fill: white;\r\n  }\r\n  .checkmark{\r\n    fill: currentColor;\r\n  }\r\n",
                     "styleUrl": "./tabs.component.scss"
                 }
             ],
@@ -2903,7 +2921,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "// @import '../styles/index.css';\r\n\r\n.label{\r\n    color: rgba(112, 112, 112, 0.97);\r\n    font-family: system-ui;\r\n    font-size: 13px;\r\n    font-weight: 300;\r\n    margin-bottom: 4px;\r\n}\r\n.basicui-textarea textarea{\r\n  resize: vertical;\r\n  padding-top: 6px;\r\n  padding-bottom: 6px;\r\n  height: 73px;\r\n  font-family: 'Roboto', sans-serif;\r\n  border: 1px solid #e2e1e1;\r\n  background-color: #f6f6f6;\r\n}\r\n.basicui-textarea textarea:hover{\r\n  border-color: var(--basicui-formelement-border-color-hover);\r\n  background-color: var(--basicui-formelement-background-color-hover);\r\n  color: var(--basicui-formelement-color-hover);\r\n}\r\n/*label {\r\n    display: block;\r\n    font-size: 12px;\r\n    font-family: 'Roboto', sans-serif;\r\n    margin-bottom: 4px;\r\n    color: #726e6ea3;\r\n    \r\n}\r\n.textarea-input:hover{\r\n    border: 1px solid #c3e5f4;\r\n    background-color: #f1f8fe;\r\n}\r\n.textarea-input{\r\n    font-family: 'Roboto', sans-serif;\r\n    resize: vertical;\r\n    width: 100%;\r\n    padding: 6px;\r\n    line-height: 1.5;\r\n    height: 55px;\r\n    font-size: 12px;\r\n    font-weight: 400;\r\n    text-overflow: ellipsis;\r\n    outline: none;\r\n    border: 1px solid #dad8d8;\r\n    background-color: #f1f0f08a;\r\n    border-radius: 2px;\r\n    display: flex;\r\n    align-items: center;\r\n    transition: 250ms border-color ease-in-out, 250ms background-color ease-in-out, 250ms color ease-in-out;\r\n}\r\n\r\n  .error-message {\r\n    color: #fc374bc4;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .success-message{\r\n    color: #14db5a;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .warning-message{\r\n    color: #db9214;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .tooltip-message{\r\n    color: #908e8e;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }*/",
+                    "data": "// @import '../styles/index.css';\r\n\r\n.label{\r\n    display: block;\r\n    font-size: 13px;\r\n    margin-bottom: 4px;\r\n    text-transform: capitalize;\r\n    word-break: keep-all;\r\n  //color: rgb(129 128 128 / 97%);\r\n    color: var(--theme-white-extended-500);\r\n    font-family: system-ui;\r\n    font-weight: 100;\r\n}\r\n.basicui-textarea textarea{\r\n  resize: vertical;\r\n  padding-top: 6px;\r\n  padding-bottom: 6px;\r\n  height: 73px;\r\n  font-family: 'Roboto', sans-serif;\r\n  //border: 1px solid #e2e1e1;\r\n  //background-color: #f6f6f6;\r\n}\r\n.basicui-textarea textarea:hover{\r\n  border-color: var(--basicui-formelement-border-color-hover);\r\n  background-color: var(--basicui-formelement-background-color-hover);\r\n  color: var(--basicui-formelement-color-hover);\r\n}\r\n/*label {\r\n    display: block;\r\n    font-size: 12px;\r\n    font-family: 'Roboto', sans-serif;\r\n    margin-bottom: 4px;\r\n    color: #726e6ea3;\r\n    \r\n}\r\n.textarea-input:hover{\r\n    border: 1px solid #c3e5f4;\r\n    background-color: #f1f8fe;\r\n}\r\n.textarea-input{\r\n    font-family: 'Roboto', sans-serif;\r\n    resize: vertical;\r\n    width: 100%;\r\n    padding: 6px;\r\n    line-height: 1.5;\r\n    height: 55px;\r\n    font-size: 12px;\r\n    font-weight: 400;\r\n    text-overflow: ellipsis;\r\n    outline: none;\r\n    border: 1px solid #dad8d8;\r\n    background-color: #f1f0f08a;\r\n    border-radius: 2px;\r\n    display: flex;\r\n    align-items: center;\r\n    transition: 250ms border-color ease-in-out, 250ms background-color ease-in-out, 250ms color ease-in-out;\r\n}\r\n\r\n  .error-message {\r\n    color: #fc374bc4;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .success-message{\r\n    color: #14db5a;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .warning-message{\r\n    color: #db9214;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }\r\n  .tooltip-message{\r\n    color: #908e8e;\r\n    font-size: 10px;\r\n    margin-top: 5px;\r\n  }*/",
                     "styleUrl": "./textarea.component.scss"
                 }
             ],
@@ -3072,13 +3090,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-0ebae8fa930c392d3644447e28aa77ba93ce27c56ee7f096c9b628e888a3019e21015ed0feb55fd8f41aa78c6873266bf23db94c1d99c9c5df9b62e888e809a9",
+            "id": "module-AppModule-2b68d08a6097d3a6e5723ad746cf533c2be0fec8c98ab1648918c2f8e6dc42c1e7990a3b0dce5424ccfab71246a832ed681c37077073440aa47db0f62ede6a11",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { BrowserModule } from '@angular/platform-browser';\r\nimport { NgModule } from '@angular/core';\r\nimport { NgxsModule } from '@ngxs/store';\r\nimport { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';\r\nimport { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';\r\nimport { environment } from '../environments/environment';\r\nimport { AppComponent } from './app.component';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { SelectComponent } from './select/select.component';\r\nimport { IconButtonComponent } from './icon-button/icon-button.component';\r\nimport { LinkComponent } from './link/link.component';\r\nimport { RadioComponent } from './radio/radio.component';\r\nimport { TextareaComponent } from './textarea/textarea.component';\r\nimport { AccordionComponent } from './accordion/accordion.component';\r\nimport { StoryWrapperComponent } from './modal/story-wrapper.component';\r\nimport { ModalComponent } from './modal/modal.component';\r\nimport { ModalFooterComponent } from './modal/modal-footer.component';\r\nimport { TableComponent } from './table/table.component';\r\nimport { TabsComponent } from './tabs/tabs.component';\r\nimport { ColorSchemesComponent } from './colorschemes/colorschemes.component';\r\nimport { ThemesOverviewComponent } from './themes-overview/themes-overview.component';\r\nimport { TypographyComponent } from './typography/typography.component';\r\nimport { DemoSectionComponent } from './demosection/demosection.component';\r\nimport Button from '../stories/button.component';\r\nimport Header from '../stories/header.component';\r\nimport Page from '../stories/page.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    SelectComponent, \r\n    IconButtonComponent,\r\n    LinkComponent,\r\n    RadioComponent, \r\n    TextareaComponent,\r\n    AccordionComponent,\r\n    StoryWrapperComponent,\r\n    ModalComponent,\r\n    ModalFooterComponent,\r\n    TableComponent,\r\n    TabsComponent,\r\n    ColorSchemesComponent,\r\n    ThemesOverviewComponent,\r\n    TypographyComponent,\r\n    DemoSectionComponent,\r\n    Button,\r\n    Header,\r\n    Page\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    FormsModule,\r\n    NgxsModule.forRoot([], { developmentMode: !environment.production, }),\r\n    NgxsReduxDevtoolsPluginModule.forRoot(),\r\n    NgxsLoggerPluginModule.forRoot({ disabled: environment.production, }),\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { BrowserModule } from '@angular/platform-browser';\r\nimport { NgModule } from '@angular/core';\r\nimport { NgxsModule } from '@ngxs/store';\r\nimport { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';\r\nimport { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';\r\nimport { environment } from '../environments/environment';\r\nimport { AppComponent } from './app.component';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { SelectComponent } from './select/select.component';\r\nimport { IconButtonComponent } from './icon-button/icon-button.component';\r\nimport { LinkComponent } from './link/link.component';\r\nimport { RadioComponent } from './radio/radio.component';\r\nimport { TextareaComponent } from './textarea/textarea.component';\r\nimport { AccordionComponent } from './accordion/accordion.component';\r\nimport { StoryWrapperComponent } from './story-wrapper/story-wrapper.component';\r\nimport { ModalComponent } from './modal/modal.component';\r\nimport { ModalFooterComponent } from './modal/modal-footer.component';\r\nimport { TableComponent } from './table/table.component';\r\nimport { TabsComponent } from './tabs/tabs.component';\r\nimport { ColorSchemesComponent } from './colorschemes/colorschemes.component';\r\nimport { ThemesOverviewComponent } from './themes-overview/themes-overview.component';\r\nimport { TypographyComponent } from './typography/typography.component';\r\nimport { DemoSectionComponent } from './demosection/demosection.component';\r\nimport Button from '../stories/button.component';\r\nimport Header from '../stories/header.component';\r\nimport Page from '../stories/page.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    SelectComponent, \r\n    IconButtonComponent,\r\n    LinkComponent,\r\n    RadioComponent, \r\n    TextareaComponent,\r\n    AccordionComponent,\r\n    StoryWrapperComponent,\r\n    ModalComponent,\r\n    ModalFooterComponent,\r\n    TableComponent,\r\n    TabsComponent,\r\n    ColorSchemesComponent,\r\n    ThemesOverviewComponent,\r\n    TypographyComponent,\r\n    DemoSectionComponent,\r\n    Button,\r\n    Header,\r\n    Page\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    FormsModule,\r\n    NgxsModule.forRoot([], { developmentMode: !environment.production, }),\r\n    NgxsReduxDevtoolsPluginModule.forRoot(),\r\n    NgxsLoggerPluginModule.forRoot({ disabled: environment.production, }),\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -3618,7 +3636,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        placeholder: 'Dolor sit',\r\n        label: 'First Name',\r\n        isInfo: true,\r\n        value: '',\r\n        infoMessage: 'Quisque tincidunt vitae purus id feugiat',\r\n      },\r\n    }),\r\n  }"
+                "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        //placeholder: 'Dolor sit',\r\n        label: 'First Name',\r\n        isInfo: true,\r\n        value: 'Dolor sit',\r\n        infoMessage: 'Quisque tincidunt vitae purus id feugiat',\r\n      },\r\n    }),\r\n  }"
             },
             {
                 "name": "Playground",
@@ -3654,16 +3672,6 @@
                 "name": "Playground",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/modal/story-wrapper.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n  component: StoryWrapperComponent,\r\n  props: {\r\n    theme: ThemeType.primary,\r\n    variant: ButtonVariantType.default,\r\n    \r\n  }\r\n})"
-            },
-            {
-                "name": "Playground",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/radio/radio.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3679,6 +3687,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        label: 'Lorem ipsum',\r\n        selectType: 'single',\r\n        options: [\r\n          { value: '1', label: 'Lorem ipsum' },\r\n          { value: '2', label: 'Another long text another long text' },\r\n          { value: '3', label: 'Dolor sit' },\r\n        ],\r\n        selectedValue: 'Dolor sit', \r\n      },\r\n    }),\r\n  }"
+            },
+            {
+                "name": "Playground",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/story-wrapper/story-wrapper.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: StoryWrapperComponent,\r\n  props: {\r\n    theme: ThemeType.default,\r\n    variant: ButtonVariantType.default,\r\n    \r\n  }\r\n})"
             },
             {
                 "name": "Playground",
@@ -4741,7 +4759,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        placeholder: 'Dolor sit',\r\n        label: 'First Name',\r\n        isInfo: true,\r\n        value: '',\r\n        infoMessage: 'Quisque tincidunt vitae purus id feugiat',\r\n      },\r\n    }),\r\n  }"
+                    "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        //placeholder: 'Dolor sit',\r\n        label: 'First Name',\r\n        isInfo: true,\r\n        value: 'Dolor sit',\r\n        infoMessage: 'Quisque tincidunt vitae purus id feugiat',\r\n      },\r\n    }),\r\n  }"
                 }
             ],
             "src/app/label/label.stories.ts": [
@@ -4942,16 +4960,16 @@
                     "defaultValue": "() => ({\r\n  component: ModalFooterComponent,\r\n  props: {}\r\n})"
                 }
             ],
-            "src/app/modal/story-wrapper.stories.ts": [
+            "src/app/story-wrapper/story-wrapper.stories.ts": [
                 {
                     "name": "Playground",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/modal/story-wrapper.stories.ts",
+                    "file": "src/app/story-wrapper/story-wrapper.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "() => ({\r\n  component: StoryWrapperComponent,\r\n  props: {\r\n    theme: ThemeType.primary,\r\n    variant: ButtonVariantType.default,\r\n    \r\n  }\r\n})"
+                    "defaultValue": "() => ({\r\n  component: StoryWrapperComponent,\r\n  props: {\r\n    theme: ThemeType.default,\r\n    variant: ButtonVariantType.default,\r\n    \r\n  }\r\n})"
                 }
             ],
             "src/app/tabs/tabs.stories.ts": [
@@ -5782,7 +5800,7 @@
                 "linktype": "component",
                 "name": "InputComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/17",
+                "coverageCount": "0/18",
                 "status": "low"
             },
             {
@@ -5897,26 +5915,7 @@
                 "linktype": "component",
                 "name": "ModalComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/modal/story-wrapper.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "StoryWrapperComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/10",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/modal/story-wrapper.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Playground",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -6012,6 +6011,25 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "SelectForm",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/story-wrapper/story-wrapper.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "StoryWrapperComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/10",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/story-wrapper/story-wrapper.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Playground",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
