@@ -11,6 +11,7 @@ module.exports = {
     '@storybook/addon-controls',
     '@storybook/addon-outline',
     "storybook-dark-mode",
+    "@storybook/addon-coverage"
   ],
   
   "framework": "@storybook/angular",

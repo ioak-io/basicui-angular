@@ -3472,46 +3472,6 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/icon-button/icon-button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<>",
-                "defaultValue": "{\r\n  \r\n  title: 'Form Elements/Icon Button',\r\n  component: IconButtonComponent,\r\n  tags:[\"autodocs\"],\r\n  argTypes: {\r\n  },\r\n} as Meta"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/input/input.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<>",
-                "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Input',\r\n    component: InputComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/label/label.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<>",
-                "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Label',\r\n    component: LabelComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/link/link.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<>",
-                "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Link',\r\n    component: LinkComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/radio/radio.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3592,6 +3552,16 @@
                 "name": "Playground",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind ({})"
+            },
+            {
+                "name": "Playground",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/checkbox/checkbox.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3605,8 +3575,8 @@
                 "file": "src/app/icon-button/icon-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  render:() => ({\r\n    props:{\r\n      theme: ThemeType.primary,\r\n      variant: ButtonVariantType.default,\r\n      circle: false,\r\n    },\r\n  }),\r\n}"
+                "type": "",
+                "defaultValue": "Template.bind ({})"
             },
             {
                 "name": "Playground",
@@ -3615,8 +3585,8 @@
                 "file": "src/app/input/input.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        //placeholder: 'Dolor sit',\r\n        label: 'First Name',\r\n        isInfo: true,\r\n        value: 'Dolor sit',\r\n        infoMessage: 'Quisque tincidunt vitae purus id feugiat',\r\n      },\r\n    }),\r\n  }"
+                "type": "",
+                "defaultValue": "Template.bind ({})"
             },
             {
                 "name": "Playground",
@@ -3625,8 +3595,8 @@
                 "file": "src/app/label/label.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        label: 'Lorem ipsum Dolor sit'\r\n      },\r\n    }),\r\n  }"
+                "type": "",
+                "defaultValue": "Template.bind ({})"
             },
             {
                 "name": "Playground",
@@ -3635,8 +3605,8 @@
                 "file": "src/app/link/link.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        theme: ThemeType.primary,\r\n        label: 'Lorem ipsum',\r\n      },\r\n    }),\r\n  }"
+                "type": "",
+                "defaultValue": "Template.bind ({})"
             },
             {
                 "name": "Playground",
@@ -3742,16 +3712,6 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind ({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/colorschemes/colorschemes.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3852,6 +3812,16 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonComponent>",
+                "defaultValue": "(args: ButtonComponent) => ({\r\n  props:args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/avatar/avatar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3872,11 +3842,41 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/button/button.stories.ts",
+                "file": "src/app/icon-button/icon-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<ButtonComponent>",
-                "defaultValue": "(args: ButtonComponent) => ({\r\n  props:args,\r\n})"
+                "type": "Story<IconButtonComponent>",
+                "defaultValue": "(args: IconButtonComponent) => ({\r\n  props:args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/input/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<InputComponent>",
+                "defaultValue": "(args: InputComponent) => ({\r\n  props:args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/label/label.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<LabelComponent>",
+                "defaultValue": "(args: LabelComponent) => ({\r\n  props:args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/link/link.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<LinkComponent>",
+                "defaultValue": "(args: LinkComponent) => ({\r\n  props:args,\r\n})"
             },
             {
                 "name": "Template",
@@ -3947,50 +3947,6 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<>",
                 "file": "src/app/checkbox/checkbox.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<>",
-                "file": "src/app/icon-button/icon-button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<>",
-                "file": "src/app/input/input.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<>",
-                "file": "src/app/label/label.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<>",
-                "file": "src/app/link/link.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -4685,94 +4641,6 @@
                     "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        theme: ThemeType.default,\r\n        label:'Lorem ipsum Dolor sit',\r\n        \r\n      },\r\n    }),\r\n  }"
                 }
             ],
-            "src/app/icon-button/icon-button.stories.ts": [
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/icon-button/icon-button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<>",
-                    "defaultValue": "{\r\n  \r\n  title: 'Form Elements/Icon Button',\r\n  component: IconButtonComponent,\r\n  tags:[\"autodocs\"],\r\n  argTypes: {\r\n  },\r\n} as Meta"
-                },
-                {
-                    "name": "Playground",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/icon-button/icon-button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  render:() => ({\r\n    props:{\r\n      theme: ThemeType.primary,\r\n      variant: ButtonVariantType.default,\r\n      circle: false,\r\n    },\r\n  }),\r\n}"
-                }
-            ],
-            "src/app/input/input.stories.ts": [
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/input/input.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<>",
-                    "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Input',\r\n    component: InputComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
-                },
-                {
-                    "name": "Playground",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/input/input.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        //placeholder: 'Dolor sit',\r\n        label: 'First Name',\r\n        isInfo: true,\r\n        value: 'Dolor sit',\r\n        infoMessage: 'Quisque tincidunt vitae purus id feugiat',\r\n      },\r\n    }),\r\n  }"
-                }
-            ],
-            "src/app/label/label.stories.ts": [
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/label/label.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<>",
-                    "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Label',\r\n    component: LabelComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
-                },
-                {
-                    "name": "Playground",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/label/label.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        label: 'Lorem ipsum Dolor sit'\r\n      },\r\n    }),\r\n  }"
-                }
-            ],
-            "src/app/link/link.stories.ts": [
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/link/link.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<>",
-                    "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Link',\r\n    component: LinkComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
-                },
-                {
-                    "name": "Playground",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/link/link.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        theme: ThemeType.primary,\r\n        label: 'Lorem ipsum',\r\n      },\r\n    }),\r\n  }"
-                }
-            ],
             "src/app/radio/radio.stories.ts": [
                 {
                     "name": "meta",
@@ -4915,6 +4783,116 @@
                     "defaultValue": "() =>({\r\n    component: AccordionComponent,\r\n    props: {\r\n        panels\r\n    },\r\n})"
                 }
             ],
+            "src/app/button/button.stories.ts": [
+                {
+                    "name": "Playground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind ({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ButtonComponent>",
+                    "defaultValue": "(args: ButtonComponent) => ({\r\n  props:args,\r\n})"
+                }
+            ],
+            "src/app/icon-button/icon-button.stories.ts": [
+                {
+                    "name": "Playground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/icon-button/icon-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind ({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/icon-button/icon-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<IconButtonComponent>",
+                    "defaultValue": "(args: IconButtonComponent) => ({\r\n  props:args,\r\n})"
+                }
+            ],
+            "src/app/input/input.stories.ts": [
+                {
+                    "name": "Playground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/input/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind ({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/input/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<InputComponent>",
+                    "defaultValue": "(args: InputComponent) => ({\r\n  props:args,\r\n})"
+                }
+            ],
+            "src/app/label/label.stories.ts": [
+                {
+                    "name": "Playground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/label/label.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind ({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/label/label.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<LabelComponent>",
+                    "defaultValue": "(args: LabelComponent) => ({\r\n  props:args,\r\n})"
+                }
+            ],
+            "src/app/link/link.stories.ts": [
+                {
+                    "name": "Playground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/link/link.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind ({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/link/link.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<LinkComponent>",
+                    "defaultValue": "(args: LinkComponent) => ({\r\n  props:args,\r\n})"
+                }
+            ],
             "src/app/modal/modal-footer.stories.ts": [
                 {
                     "name": "Playground",
@@ -4981,28 +4959,6 @@
                     "deprecationMessage": "",
                     "type": "Story<TypographyComponent>",
                     "defaultValue": "(args: TypographyComponent) => ({\r\n  component: TypographyComponent,\r\n  props: args,\r\n})"
-                }
-            ],
-            "src/app/button/button.stories.ts": [
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind ({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<ButtonComponent>",
-                    "defaultValue": "(args: ButtonComponent) => ({\r\n  props:args,\r\n})"
                 }
             ]
         },
@@ -5264,58 +5220,6 @@
                     "kind": 183
                 }
             ],
-            "src/app/icon-button/icon-button.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<>",
-                    "file": "src/app/icon-button/icon-button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
-            "src/app/input/input.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<>",
-                    "file": "src/app/input/input.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
-            "src/app/label/label.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<>",
-                    "file": "src/app/label/label.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
-            "src/app/link/link.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<>",
-                    "file": "src/app/link/link.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
             "src/app/radio/radio.stories.ts": [
                 {
                     "name": "Story",
@@ -5540,7 +5444,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Primary",
+                "name": "Playground",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5755,7 +5659,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "meta",
+                "name": "Playground",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5765,7 +5669,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Playground",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5784,7 +5688,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "meta",
+                "name": "Playground",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5794,7 +5698,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Playground",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5822,7 +5726,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "meta",
+                "name": "Playground",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5832,7 +5736,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Playground",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5851,7 +5755,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "meta",
+                "name": "Playground",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5861,7 +5765,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Playground",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
