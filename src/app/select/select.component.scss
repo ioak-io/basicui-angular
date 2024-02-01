@@ -74,7 +74,8 @@
     border-radius: 3px;
   }
   .auto-select::placeholder {
-    color: var(--theme-default-50i);
+    // color: var(--theme-default-50i);
+    color: inherit;
   }
 
   .basicui-selectnative {
