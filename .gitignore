@@ -36,6 +36,7 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
+/storybook-static
 
 # System files
 .DS_Store
@@ -48,3 +49,4 @@ Thumbs.db
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+

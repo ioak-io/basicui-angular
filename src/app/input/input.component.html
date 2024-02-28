@@ -1,11 +1,4 @@
 <div [ngClass]="['input-container', containerClassName]">
-    <div *ngIf="icon"
-         class="input-icon-container"
-         [style.width.px]="iconContainerWidth">
-        <svg-icon [name]="icon"
-                  [size]="iconSize">
-        </svg-icon>
-    </div>
     <div>
         <label [for]="label">{{label}}</label>
         <br>
@@ -15,15 +8,5 @@
         [placeholder]="placeholder"
         [value]="value"
         [ngClass]="['input', 'form-input']" />
-        <!--<input type="submit" value="Submit" style="background-color:#04AA6D; padding: 8px 16px; color: white; font-size: 25px; border: 1px solid #ccc; border-radius: 4px;"> -->
-
-    <div *ngIf="isShowClearButton"
-         class="input-icon-container right"
-         [style.width.px]="iconContainerWidth">
-        <i nz-icon
-           nzType="close"
-           nzTheme="outline"
-           (click)="clear()"></i>
-    </div>
 </div>
 <div *ngIf="isInfo" class="basicui-form-element-info">{{ infoMessage }}</div>

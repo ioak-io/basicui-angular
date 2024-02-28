@@ -176,7 +176,7 @@
     "components": [
         {
             "name": "AccordionComponent",
-            "id": "component-AccordionComponent-ca7a6969bb484d0dbb2806cca7e9e0270c4244d3f8fca5d948382575ec159d31341df1ffceb6909a8f493d184bf03be1c206646f493f0c185720e879090b480b",
+            "id": "component-AccordionComponent-eeaf33b13c2572137f3d7fd567c515e06ffa1944e7f03f6dc55a88229c519c00951b94f57010c6910140a2e55538a86fe906339ca24b641fe03ea861a8bb3dff",
             "file": "src/app/accordion/accordion.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -195,25 +195,24 @@
             "hostDirectives": [],
             "inputsClass": [
                 {
+                    "name": "panelChange",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "any",
+                    "decorators": []
+                },
+                {
                     "name": "panels",
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "line": 10,
                     "type": "any[]",
                     "decorators": []
                 }
             ],
-            "outputsClass": [
-                {
-                    "name": "panelChange",
-                    "defaultValue": "new EventEmitter<string>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 12,
-                    "type": "EventEmitter"
-                }
-            ],
+            "outputsClass": [],
             "propertiesClass": [
                 {
                     "name": "bordered",
@@ -292,7 +291,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, Input, Output, EventEmitter  } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'app-accordion',\r\n    templateUrl:'./accordion.component.html',\r\n    styleUrls:['./accordion.component.scss'],\r\n})\r\n\r\nexport class AccordionComponent {\r\n    \r\n    @Input() panels: any[] = [];\r\n    @Output() panelChange = new EventEmitter<string>();\r\n    expanded = '';\r\n    heading: any;\r\n    theme: any;\r\n    bordered: any;\r\n  \r\n    handleChange(panelName: string): void {\r\n      this.expanded = this.expanded === panelName ? '' : panelName;\r\n      this.panelChange.emit(this.expanded);\r\n    }\r\n  }",
+            "sourceCode": "import {Component, Input, Output, EventEmitter  } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'app-accordion',\r\n    templateUrl:'./accordion.component.html',\r\n    styleUrls:['./accordion.component.scss'],\r\n})\r\n\r\nexport class AccordionComponent {\r\n    @Input() panels: any[] = [];\r\n    @Input() panelChange: any;\r\n    //@Output() panelChange = new EventEmitter<string>();\r\n    expanded = '';\r\n    heading: any;\r\n    theme: any;\r\n    bordered: any;\r\n  \r\n    handleChange(panelName: string): void {\r\n      this.expanded = this.expanded === panelName ? '' : panelName;\r\n      this.panelChange.emit(this.expanded);\r\n    }\r\n  }",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -351,7 +350,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import './core/styles/custom.scss';\r\n\r\n#app-frame {\r\n  position: absolute;\r\n  width: 100vw;\r\n  height: 100vh;\r\n  overflow: hidden;\r\n  display: flex;\r\n  flex-direction: column;\r\n\r\n  > nz-spin {\r\n    @apply flex;\r\n    flex-grow: 1;\r\n\r\n    > .ant-spin-container {\r\n      @apply flex;\r\n      flex-grow: 1;\r\n    }\r\n  }\r\n}\r\n\r\napp-project {\r\n  @apply flex;\r\n  flex-grow: 1;\r\n  flex-direction: column;\r\n  /* for Firefox */\r\n  min-height: 0;\r\n}\r\n\r\nboard-dnd {\r\n  @apply flex;\r\n  flex-grow: 1;\r\n}\r\n\r\n.global-spinner {\r\n  @apply min-h-screen;\r\n  .ant-spin {\r\n    max-height: unset !important;\r\n  }\r\n}\r\n\r\n//ng-zorro override\r\nbody {\r\n  overflow: hidden;\r\n}\r\n\r\nbody,\r\n.ant-modal {\r\n  @apply text-textDark;\r\n}\r\n\r\n.ant-modal-body {\r\n  padding: 0;\r\n}",
+                    "data": "#app-frame {\r\n  position: absolute;\r\n  width: 100vw;\r\n  height: 100vh;\r\n  overflow: hidden;\r\n  display: flex;\r\n  flex-direction: column;\r\n\r\n  > nz-spin {\r\n    @apply flex;\r\n    flex-grow: 1;\r\n\r\n    > .ant-spin-container {\r\n      @apply flex;\r\n      flex-grow: 1;\r\n    }\r\n  }\r\n}\r\n\r\napp-project {\r\n  @apply flex;\r\n  flex-grow: 1;\r\n  flex-direction: column;\r\n  /* for Firefox */\r\n  min-height: 0;\r\n}\r\n\r\nboard-dnd {\r\n  @apply flex;\r\n  flex-grow: 1;\r\n}\r\n\r\n.global-spinner {\r\n  @apply min-h-screen;\r\n  .ant-spin {\r\n    max-height: unset !important;\r\n  }\r\n}\r\n\r\n//ng-zorro override\r\nbody {\r\n  overflow: hidden;\r\n}\r\n\r\nbody,\r\n.ant-modal {\r\n  @apply text-textDark;\r\n}\r\n\r\n.ant-modal-body {\r\n  padding: 0;\r\n}",
                     "styleUrl": "./app.component.scss"
                 }
             ],
@@ -767,7 +766,7 @@
         },
         {
             "name": "CheckboxComponent",
-            "id": "component-CheckboxComponent-867ec9f880e5610b26c43952c2b63a12298c5189a6220bdc0280bdf9dc55191a7c1a0fc5ede4e4c5ab64aa21dea489197e93ed4d526c0946596bb88720667c35",
+            "id": "component-CheckboxComponent-1d358d3344211490fa90f9804b215ea9d9a38ffb7f1bb2eb3407791017f868149f9e92379fd221d1b9738777c7c99ff03782bce7344a2543af64d0896bef558a",
             "file": "src/app/checkbox/checkbox.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -791,24 +790,6 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 13,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "isError",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 14,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "isTooltip",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 15,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -845,7 +826,7 @@
                     "defaultValue": "new EventEmitter<boolean>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 14,
                     "type": "EventEmitter"
                 }
             ],
@@ -864,7 +845,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 18,
+                    "line": 15,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -889,17 +870,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport ThemeType from '../types/ThemeType';\r\n\r\n@Component({\r\n  selector: 'app-checkbox',\r\n  templateUrl: './checkbox.component.html',\r\n  styleUrls: ['./checkbox.component.scss']\r\n})\r\nexport class CheckboxComponent {\r\n  @Input() label: string = '';\r\n  @Input() theme: ThemeType = ThemeType.default;\r\n  @Input() type!: string;\r\n  @Input() isChecked: boolean = false;\r\n  @Input() isError: boolean = false;\r\n  @Input() isTooltip: boolean = false;\r\n  @Output() isCheckedChange = new EventEmitter<boolean>();\r\n\r\n  toggleCheckbox(event: Event) {\r\n    this.isChecked = (event.target as HTMLInputElement).checked;\r\n    this.isCheckedChange.emit(this.isChecked);\r\n  }\r\n}",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport ThemeType from '../types/ThemeType';\r\n\r\n@Component({\r\n  selector: 'app-checkbox',\r\n  templateUrl: './checkbox.component.html',\r\n  styleUrls: ['./checkbox.component.scss']\r\n})\r\nexport class CheckboxComponent {\r\n  @Input() label: string = '';\r\n  @Input() theme: ThemeType = ThemeType.default;\r\n  @Input() type!: string;\r\n  @Input() isChecked: boolean = false;\r\n  @Output() isCheckedChange = new EventEmitter<boolean>();\r\n  toggleCheckbox(event: Event) {\r\n    this.isChecked = (event.target as HTMLInputElement).checked;\r\n    this.isCheckedChange.emit(this.isChecked);\r\n  }\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "// @import '../styles/index.css';\r\n\r\n.basicui-checkbox {\r\n  cursor: pointer;\r\n  position: relative;\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n}\r\n\r\n.basicui-checkbox__input {\r\n  margin: 0;\r\n  padding: 0;\r\n  width: var(--basicui-checkbox-height);\r\n  height: var(--basicui-checkbox-height);\r\n  border: var(--basicui-checkbox-border-thickness) solid var(--basicui-checkbox-border-color);\r\n  background-color: var(--basicui-checkbox-background-color);\r\n  outline: 0;\r\n  cursor: pointer;\r\n  border-radius: var(--basicui-checkbox-border-radius);\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  /* position: static; */\r\n  transition: 250ms border-color ease-in-out, 250ms background-color ease-in-out, 250ms color ease-in-out;\r\n}\r\n\r\n.basicui-checkbox__input:checked {\r\n  background-color: var(--basicui-checkbox-background-color-checked);\r\n  border-color: var(--basicui-checkbox-border-color-checked);\r\n}\r\n\r\n.basicui-checkbox__input:hover,\r\n.basicui-checkbox__input:focus,\r\n.basicui-checkbox__input:checked:hover,\r\n.basicui-checkbox__input:checked:focus {\r\n  background-color: var(--basicui-checkbox-background-color-hover);\r\n  border-color: var(--basicui-checkbox-border-color-hover);\r\n}\r\n\r\n.basicui-checkbox__input:checked:after {\r\n  content: \"\";\r\n  display: block;\r\n  position: relative;\r\n  width: var(--basicui-checkbox-checkmark-width);\r\n  height: var(--basicui-checkbox-checkmark-height);\r\n  border-bottom: 1px solid var(--basicui-checkbox-checkmark-color);\r\n  border-right: 1px solid var(--basicui-checkbox-checkmark-color);\r\n  left: var(--basicui-checkbox-checkmark-offset-left);\r\n  bottom: var(--basicui-checkbox-checkmark-offset-bottom);\r\n  transform: rotate(40deg);\r\n}\r\n\r\n.basicui-checkbox__span {\r\n  font-size: var(--basicui-checkbox-font-size);\r\n  font-weight: var(--basicui-checkbox-font-weight);\r\n  margin-left: var(--basicui-checkbox-label-offset);\r\n}",
+                    "data": "// @import '../styles/index.css';\r\n\r\n.basicui-checkbox {\r\n  cursor: pointer;\r\n  position: relative;\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n}\r\n\r\n.basicui-checkbox__input {\r\n  appearance: none;\r\n  margin: 0;\r\n  padding: 0;\r\n  width: var(--basicui-checkbox-height);\r\n  height: var(--basicui-checkbox-height);\r\n  border: var(--basicui-checkbox-border-thickness) solid var(--basicui-checkbox-border-color);\r\n  background-color: var(--basicui-checkbox-background-color);\r\n  outline: 0;\r\n  cursor: pointer;\r\n  border-radius: var(--basicui-checkbox-border-radius);\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  /* position: static; */\r\n  transition: 250ms border-color ease-in-out, 250ms background-color ease-in-out, 250ms color ease-in-out;\r\n}\r\n\r\n.basicui-checkbox__input:checked {\r\n  background-color: var(--basicui-checkbox-background-color-checked);\r\n  border-color: var(--basicui-checkbox-border-color-checked);\r\n}\r\n\r\n.basicui-checkbox__input:hover,\r\n.basicui-checkbox__input:focus,\r\n.basicui-checkbox__input:checked:hover,\r\n.basicui-checkbox__input:checked:focus {\r\n  background-color: var(--basicui-checkbox-background-color-hover);\r\n  border-color: var(--basicui-checkbox-border-color-hover);\r\n}\r\n\r\n.basicui-checkbox__input:checked:after {\r\n  content: \"\";\r\n  display: block;\r\n  position: relative;\r\n  width: var(--basicui-checkbox-checkmark-width);\r\n  height: var(--basicui-checkbox-checkmark-height);\r\n  border-bottom: 1px solid var(--basicui-checkbox-checkmark-color);\r\n  border-right: 1px solid var(--basicui-checkbox-checkmark-color);\r\n  left: var(--basicui-checkbox-checkmark-offset-left);\r\n  bottom: var(--basicui-checkbox-checkmark-offset-bottom);\r\n  transform: rotate(40deg);\r\n}\r\n\r\n.basicui-checkbox__span {\r\n  font-size: var(--basicui-checkbox-font-size);\r\n  font-weight: var(--basicui-checkbox-font-weight);\r\n  margin-left: var(--basicui-checkbox-label-offset);\r\n}",
                     "styleUrl": "./checkbox.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "\r\n<label class=\"basicui-checkbox\" \r\n      [class.basicui-checkbox--theme-default]=\"theme === 'default'\"\r\n      [class.basicui-checkbox--theme-primary]=\"theme === 'primary'\"\r\n      [class.error]=\"isError\" [class.tooltip]=\"isTooltip\">\r\n  <input type=\"checkbox\" class=\"basicui-checkbox__input\" [checked]=\"isChecked\" (change)=\"toggleCheckbox($event)\" />\r\n  <span class=\"basicui-checkbox__span\">{{label}}</span>\r\n</label>"
+            "templateData": "\r\n<label class=\"basicui-checkbox\" \r\n      [class.basicui-checkbox--theme-default]=\"theme === 'default'\"\r\n      [class.basicui-checkbox--theme-primary]=\"theme === 'primary'\">\r\n  <input type=\"checkbox\" class=\"basicui-checkbox__input\" [checked]=\"isChecked\" (change)=\"toggleCheckbox($event)\" />\r\n  <span class=\"basicui-checkbox__span\">{{label}}</span>\r\n</label>"
         },
         {
             "name": "ColorSchemesComponent",
@@ -1295,7 +1276,7 @@
         },
         {
             "name": "InputComponent",
-            "id": "component-InputComponent-4875f7cadaefe559574b5611d8f2a1a636d12c23f4940c24d57f3367b6e10acae759772890d679136e4b790642cc5a63fa112972ba76856326aba2a687e49175",
+            "id": "component-InputComponent-ae28448a812dd9dd1d8a0081b7309547f0249fe9c9ce32ee4fb7e9570bc2ec9bdee2ca1a6b82f12a8de4879254dba367ca2a2ee32861073880b34367df78143e",
             "file": "src/app/input/input.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1365,7 +1346,7 @@
                 },
                 {
                     "name": "infoMessage",
-                    "defaultValue": "'Please enter valid text'",
+                    "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 25,
@@ -1374,7 +1355,7 @@
                 },
                 {
                     "name": "isInfo",
-                    "defaultValue": "false",
+                    "defaultValue": "true",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 24,
@@ -1465,7 +1446,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\nimport { FormControl } from '@angular/forms';\r\n\r\n@Component({\r\n    selector:'app-input',\r\n    templateUrl: './input.component.html',\r\n    styleUrls:['./input.component.scss']\r\n})\r\n\r\nexport class InputComponent implements OnInit {\r\n[x: string]: any;\r\n    @Input() control!: FormControl;\r\n    @Input() containerClassName='Name';\r\n    @Input() icon: string | undefined;\r\n    @Input() iconSize =16;\r\n    @Input() placeholder = '';\r\n    @Input() value = '';\r\n    @Input() enableClearButton: boolean | undefined;\r\n    @Input() name: string | undefined;\r\n    @Input() label!: string;\r\n    @Input() for : string | undefined;\r\n    @Input() text : string | undefined;\r\n    @Input() type!: string;\r\n    @Input() isInfo: boolean = false;\r\n    @Input() infoMessage: string = 'Please enter valid text';\r\n\r\n    get iconContainerWidth(): number {\r\n        return this.iconSize * 2;\r\n      }\r\n    \r\n      get isShowClearButton(): boolean {\r\n        return this.enableClearButton && this.control?.value;\r\n      }\r\n    \r\n      constructor() {}\r\n\r\n      ngOnInit(): void {\r\n        this.control = this.control ?? new FormControl('');\r\n      }\r\n    \r\n      clear() {\r\n        this.control.patchValue('');\r\n      }\r\n      \r\n} \r\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\nimport { FormControl } from '@angular/forms';\r\n\r\n@Component({\r\n    selector:'app-input',\r\n    templateUrl: './input.component.html',\r\n    styleUrls:['./input.component.scss']\r\n})\r\n\r\nexport class InputComponent implements OnInit {\r\n[x: string]: any;\r\n    @Input() control!: FormControl;\r\n    @Input() containerClassName='Name';\r\n    @Input() icon: string | undefined;\r\n    @Input() iconSize =16;\r\n    @Input() placeholder = '';\r\n    @Input() value = '';\r\n    @Input() enableClearButton: boolean | undefined;\r\n    @Input() name: string | undefined;\r\n    @Input() label!: string;\r\n    @Input() for : string | undefined;\r\n    @Input() text : string | undefined;\r\n    @Input() type!: string;\r\n    @Input() isInfo: boolean = true;\r\n    @Input() infoMessage: string = '';\r\n\r\n    get iconContainerWidth(): number {\r\n        return this.iconSize * 2;\r\n      }\r\n    \r\n      get isShowClearButton(): boolean {\r\n        return this.enableClearButton && this.control?.value;\r\n      }\r\n    \r\n      constructor() {}\r\n\r\n      ngOnInit(): void {\r\n        this.control = this.control ?? new FormControl('');\r\n      }\r\n    \r\n      clear() {\r\n        this.control.patchValue('');\r\n      }\r\n      \r\n} \r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1900,7 +1881,7 @@
         },
         {
             "name": "RadioComponent",
-            "id": "component-RadioComponent-1aac70680654f0e5d15ef098bac58cc6faf94037cf4d69b3e6bc70b64fee72a8d14a7c5175a9a48c65a40e63f904a7c3586d6f72048f0dba44dc04cf4e9d6e77",
+            "id": "component-RadioComponent-67e9b006b8102720101649354955013303bd31dbddfb6ab1b37afa5f7c973ecab439a1b41fbc8d6bcbb84cab34eb3793973d7db413265c7e7213208c08b5917a",
             "file": "src/app/radio/radio.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1988,43 +1969,25 @@
                     "type": "EventEmitter"
                 },
                 {
-                    "name": "radioChange",
-                    "defaultValue": "new EventEmitter<string>()",
+                    "name": "radioChanged",
+                    "defaultValue": "new EventEmitter<boolean>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
-                    "type": "EventEmitter"
+                    "line": 20,
+                    "type": "EventEmitter<boolean>"
                 }
             ],
             "propertiesClass": [],
             "methodsClass": [
                 {
-                    "name": "onChange",
-                    "args": [
-                        {
-                            "name": "value",
-                            "type": "string",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
+                    "name": "onRadioChanged",
+                    "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 20,
+                    "line": 22,
                     "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "name": "value",
-                            "type": "string",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
+                    "deprecationMessage": ""
                 }
             ],
             "deprecated": false,
@@ -2036,17 +1999,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, Output} from '@angular/core';\r\nimport ThemeType from '../types/ThemeType';\r\n\r\n@Component({\r\n    selector:'app-radio',\r\n    templateUrl:'./radio.component.html',\r\n    styleUrls:['./radio.component.scss'],\r\n})\r\n\r\nexport class RadioComponent {\r\n    @Input() label: string = '';\r\n    @Input() type!: string;\r\n    @Input() theme: ThemeType = ThemeType.default;\r\n    @Input() isChecked: boolean = false;\r\n    @Output() isCheckedChange = new EventEmitter<boolean>();\r\n    @Input() name?: string;\r\n    @Input() id?: string;\r\n    @Input() value?: any;\r\n    @Output() radioChange = new EventEmitter<string>();\r\n    onChange(value: string): void {\r\n      this.radioChange.emit(value);\r\n    }\r\n}",
+            "sourceCode": "import { Component, EventEmitter, Input, Output} from '@angular/core';\r\nimport ThemeType from '../types/ThemeType';\r\n\r\n@Component({\r\n    selector:'app-radio',\r\n    templateUrl:'./radio.component.html',\r\n    styleUrls:['./radio.component.scss'],\r\n})\r\n\r\nexport class RadioComponent {\r\n    @Input() label: string = '';\r\n    @Input() type!: string;\r\n    @Input() theme: ThemeType = ThemeType.default;\r\n    @Input() isChecked: boolean = false;\r\n    @Output() isCheckedChange = new EventEmitter<boolean>();\r\n    @Input() name?: string;\r\n    @Input() id?: string;\r\n    @Input() value?: any;\r\n\r\n    @Output() radioChanged: EventEmitter<boolean> = new EventEmitter<boolean>();\r\n\r\n    onRadioChanged(): void {\r\n    this.radioChanged.emit(this.isChecked);\r\n  }\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\r\n@import '../styles/index.css';\r\n\r\n.basicui-radio {\r\n    cursor: pointer;\r\n    position: relative;\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n}\r\n\r\n.basicui-radio__input {\r\n    margin: 0;\r\n    padding: 0;\r\n    width: var(--basicui-radio-height);\r\n    height: var(--basicui-radio-height);\r\n    border: var(--basicui-radio-border-thickness) solid var(--basicui-radio-border-color);\r\n    background-color: var(--basicui-radio-background-color);\r\n    outline: 0;\r\n    cursor: pointer;\r\n    border-radius: var(--basicui-radio-border-radius);\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    /* position: static; */\r\n    transition: 250ms border-color ease-in-out, 250ms background-color ease-in-out, 250ms color ease-in-out;\r\n}\r\n\r\n.basicui-radio__input:checked {\r\n    background-color: var(--basicui-radio-background-color-checked);\r\n    border-color: var(--basicui-radio-border-color-checked);\r\n}\r\n\r\n.basicui-radio__input:hover,\r\n.basicui-radio__input:focus,\r\n.basicui-radio__input:checked:hover,\r\n.basicui-radio__input:checked:focus {\r\n    background-color: var(--basicui-radio-background-color-hover);\r\n    border-color: var(--basicui-radio-border-color-hover);\r\n}\r\n\r\n.basicui-radio__input:checked:after {\r\n    content: \"\";\r\n    display: block;\r\n    position: relative;\r\n    width: var(--basicui-radio-dotmark-size);\r\n    height: var(--basicui-radio-dotmark-size);\r\n    background-color: var(--basicui-radio-dotmark-color);\r\n    left: var(--basicui-radio-dotmark-offset-left);\r\n    bottom: var(--basicui-radio-dotmark-offset-bottom);\r\n    border-radius: var(--basicui-radio-border-radius);\r\n}\r\n\r\n.basicui-radio__span {\r\n    font-size: var(--basicui-radio-font-size);\r\n    font-weight: var(--basicui-radio-font-weight);\r\n    margin-left: var(--basicui-radio-label-offset);\r\n}",
+                    "data": "\r\n@import '../styles/index.css';\r\n\r\n.basicui-radio {\r\n    cursor: pointer;\r\n    position: relative;\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n}\r\n\r\n.basicui-radio__input {\r\n    appearance: none;\r\n    margin: 0;\r\n    padding: 0;\r\n    width: var(--basicui-radio-height);\r\n    height: var(--basicui-radio-height);\r\n    border: var(--basicui-radio-border-thickness) solid var(--basicui-radio-border-color);\r\n    background-color: var(--basicui-radio-background-color);\r\n    outline: 0;\r\n    cursor: pointer;\r\n    border-radius: var(--basicui-radio-border-radius);\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    /* position: static; */\r\n    transition: 250ms border-color ease-in-out, 250ms background-color ease-in-out, 250ms color ease-in-out;\r\n}\r\n\r\n.basicui-radio__input:checked {\r\n    background-color: var(--basicui-radio-background-color-checked);\r\n    border-color: var(--basicui-radio-border-color-checked);\r\n}\r\n\r\n.basicui-radio__input:hover,\r\n.basicui-radio__input:focus,\r\n.basicui-radio__input:checked:hover,\r\n.basicui-radio__input:checked:focus {\r\n    background-color: var(--basicui-radio-background-color-hover);\r\n    border-color: var(--basicui-radio-border-color-hover);\r\n}\r\n\r\n.basicui-radio__input:checked:after {\r\n    content: \"\";\r\n    display: block;\r\n    position: relative;\r\n    width: var(--basicui-radio-dotmark-size);\r\n    height: var(--basicui-radio-dotmark-size);\r\n    background-color: var(--basicui-radio-dotmark-color);\r\n    left: var(--basicui-radio-dotmark-offset-left);\r\n    bottom: var(--basicui-radio-dotmark-offset-bottom);\r\n    border-radius: var(--basicui-radio-border-radius);\r\n}\r\n\r\n.basicui-radio__span {\r\n    font-size: var(--basicui-radio-font-size);\r\n    font-weight: var(--basicui-radio-font-weight);\r\n    margin-left: var(--basicui-radio-label-offset);\r\n}",
                     "styleUrl": "./radio.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": " <!-- <div>\r\n    <label for=\"\" class=\"basicui-radio\">\r\n        <input type=\"radio\" class=\"radio-input\">\r\n        <span class=\"radio-label\">{{label}}</span>\r\n    </label>\r\n</div> -->\r\n\r\n<label class=\"basicui-radio\"\r\n    [class.basicui-radio--checked]=\"isChecked\"\r\n    [class.basicui-radio--theme-default]=\"theme === 'default'\"\r\n    [class.basicui-radio--theme-primary]=\"theme === 'primary'\">\r\n    <input class=\"basicui-radio__input\" type=\"radio\" [checked]=\"isChecked\" [name]=\"name\" [id]=\"id\" [value]=\"value\" (change)=\"onChange($event.target.value)\" />\r\n    <span class=\"basicui-radio__span\">{{label}}</span>\r\n</label>"
+            "templateData": " <!-- <div>\r\n    <label for=\"\" class=\"basicui-radio\">\r\n        <input type=\"radio\" class=\"radio-input\">\r\n        <span class=\"radio-label\">{{label}}</span>\r\n    </label>\r\n</div> -->\r\n\r\n<label class=\"basicui-radio\"\r\n    [class.basicui-radio--checked]=\"isChecked\"\r\n    [class.basicui-radio--theme-default]=\"theme === 'default'\"\r\n    [class.basicui-radio--theme-primary]=\"theme === 'primary'\">\r\n    <input class=\"basicui-radio__input\" type=\"radio\" [checked]=\"isChecked\" [name]=\"name\" [id]=\"id\" [value]=\"value\" (change)=\"onRadioChanged()\" />\r\n    <span class=\"basicui-radio__span\">{{label}}</span>\r\n</label>"
         },
         {
             "name": "SelectComponent",
@@ -3472,6 +3435,46 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/icon-button/icon-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<>",
+                "defaultValue": "{\r\n  \r\n  title: 'Form Elements/Icon Button',\r\n  component: IconButtonComponent,\r\n  tags:[\"autodocs\"],\r\n  argTypes: {\r\n  },\r\n} as Meta"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/input/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<>",
+                "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Input',\r\n    component: InputComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/label/label.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<>",
+                "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Label',\r\n    component: LabelComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/link/link.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<>",
+                "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Link',\r\n    component: LinkComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/radio/radio.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3575,8 +3578,8 @@
                 "file": "src/app/icon-button/icon-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind ({})"
+                "type": "Story",
+                "defaultValue": "{\r\n  render:() => ({\r\n    props:{\r\n      theme: ThemeType.primary,\r\n      variant: ButtonVariantType.default,\r\n      circle: false,\r\n    },\r\n  }),\r\n}"
             },
             {
                 "name": "Playground",
@@ -3585,8 +3588,8 @@
                 "file": "src/app/input/input.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind ({})"
+                "type": "Story",
+                "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        //placeholder: 'Dolor sit',\r\n        label: 'First Name',\r\n        isInfo: true,\r\n        value: 'Dolor sit',\r\n        infoMessage: 'Quisque tincidunt vitae purus id feugiat',\r\n      },\r\n    }),\r\n  }"
             },
             {
                 "name": "Playground",
@@ -3595,8 +3598,8 @@
                 "file": "src/app/label/label.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind ({})"
+                "type": "Story",
+                "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        label: 'Lorem ipsum Dolor sit'\r\n      },\r\n    }),\r\n  }"
             },
             {
                 "name": "Playground",
@@ -3605,8 +3608,8 @@
                 "file": "src/app/link/link.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind ({})"
+                "type": "Story",
+                "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        theme: ThemeType.primary,\r\n        label: 'Lorem ipsum',\r\n      },\r\n    }),\r\n  }"
             },
             {
                 "name": "Playground",
@@ -3697,6 +3700,16 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "preview",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": ".storybook/preview.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Preview",
+                "defaultValue": "{\r\n  parameters: {\r\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/,\r\n      },\r\n    },\r\n  },\r\n}"
             },
             {
                 "name": "Primary",
@@ -3812,16 +3825,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<ButtonComponent>",
-                "defaultValue": "(args: ButtonComponent) => ({\r\n  props:args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/avatar/avatar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3832,51 +3835,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonComponent>",
+                "defaultValue": "(args: ButtonComponent) => ({\r\n  props:args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/breadcrumbs/breadcrumbs.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<BreadcrumbsComponent>",
                 "defaultValue": "(args :BreadcrumbsComponent) => ({\r\n    component: BreadcrumbsComponent,\r\n    props: args\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/icon-button/icon-button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<IconButtonComponent>",
-                "defaultValue": "(args: IconButtonComponent) => ({\r\n  props:args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/input/input.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<InputComponent>",
-                "defaultValue": "(args: InputComponent) => ({\r\n  props:args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/label/label.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<LabelComponent>",
-                "defaultValue": "(args: LabelComponent) => ({\r\n  props:args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/link/link.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<LinkComponent>",
-                "defaultValue": "(args: LinkComponent) => ({\r\n  props:args,\r\n})"
             },
             {
                 "name": "Template",
@@ -3947,6 +3920,50 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<>",
                 "file": "src/app/checkbox/checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<>",
+                "file": "src/app/icon-button/icon-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<>",
+                "file": "src/app/input/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<>",
+                "file": "src/app/label/label.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<>",
+                "file": "src/app/link/link.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -4641,6 +4658,94 @@
                     "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        theme: ThemeType.default,\r\n        label:'Lorem ipsum Dolor sit',\r\n        \r\n      },\r\n    }),\r\n  }"
                 }
             ],
+            "src/app/icon-button/icon-button.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/icon-button/icon-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<>",
+                    "defaultValue": "{\r\n  \r\n  title: 'Form Elements/Icon Button',\r\n  component: IconButtonComponent,\r\n  tags:[\"autodocs\"],\r\n  argTypes: {\r\n  },\r\n} as Meta"
+                },
+                {
+                    "name": "Playground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/icon-button/icon-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  render:() => ({\r\n    props:{\r\n      theme: ThemeType.primary,\r\n      variant: ButtonVariantType.default,\r\n      circle: false,\r\n    },\r\n  }),\r\n}"
+                }
+            ],
+            "src/app/input/input.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/input/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<>",
+                    "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Input',\r\n    component: InputComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
+                },
+                {
+                    "name": "Playground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/input/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        //placeholder: 'Dolor sit',\r\n        label: 'First Name',\r\n        isInfo: true,\r\n        value: 'Dolor sit',\r\n        infoMessage: 'Quisque tincidunt vitae purus id feugiat',\r\n      },\r\n    }),\r\n  }"
+                }
+            ],
+            "src/app/label/label.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/label/label.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<>",
+                    "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Label',\r\n    component: LabelComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
+                },
+                {
+                    "name": "Playground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/label/label.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        label: 'Lorem ipsum Dolor sit'\r\n      },\r\n    }),\r\n  }"
+                }
+            ],
+            "src/app/link/link.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/link/link.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<>",
+                    "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Link',\r\n    component: LinkComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
+                },
+                {
+                    "name": "Playground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/link/link.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        theme: ThemeType.primary,\r\n        label: 'Lorem ipsum',\r\n      },\r\n    }),\r\n  }"
+                }
+            ],
             "src/app/radio/radio.stories.ts": [
                 {
                     "name": "meta",
@@ -4805,94 +4910,6 @@
                     "defaultValue": "(args: ButtonComponent) => ({\r\n  props:args,\r\n})"
                 }
             ],
-            "src/app/icon-button/icon-button.stories.ts": [
-                {
-                    "name": "Playground",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/icon-button/icon-button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind ({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/icon-button/icon-button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<IconButtonComponent>",
-                    "defaultValue": "(args: IconButtonComponent) => ({\r\n  props:args,\r\n})"
-                }
-            ],
-            "src/app/input/input.stories.ts": [
-                {
-                    "name": "Playground",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/input/input.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind ({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/input/input.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<InputComponent>",
-                    "defaultValue": "(args: InputComponent) => ({\r\n  props:args,\r\n})"
-                }
-            ],
-            "src/app/label/label.stories.ts": [
-                {
-                    "name": "Playground",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/label/label.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind ({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/label/label.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<LabelComponent>",
-                    "defaultValue": "(args: LabelComponent) => ({\r\n  props:args,\r\n})"
-                }
-            ],
-            "src/app/link/link.stories.ts": [
-                {
-                    "name": "Playground",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/link/link.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind ({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/link/link.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<LinkComponent>",
-                    "defaultValue": "(args: LinkComponent) => ({\r\n  props:args,\r\n})"
-                }
-            ],
             "src/app/modal/modal-footer.stories.ts": [
                 {
                     "name": "Playground",
@@ -4959,6 +4976,18 @@
                     "deprecationMessage": "",
                     "type": "Story<TypographyComponent>",
                     "defaultValue": "(args: TypographyComponent) => ({\r\n  component: TypographyComponent,\r\n  props: args,\r\n})"
+                }
+            ],
+            ".storybook/preview.ts": [
+                {
+                    "name": "preview",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": ".storybook/preview.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Preview",
+                    "defaultValue": "{\r\n  parameters: {\r\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/,\r\n      },\r\n    },\r\n  },\r\n}"
                 }
             ]
         },
@@ -5220,6 +5249,58 @@
                     "kind": 183
                 }
             ],
+            "src/app/icon-button/icon-button.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<>",
+                    "file": "src/app/icon-button/icon-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/input/input.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<>",
+                    "file": "src/app/input/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/label/label.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<>",
+                    "file": "src/app/label/label.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/link/link.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<>",
+                    "file": "src/app/link/link.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
             "src/app/radio/radio.stories.ts": [
                 {
                     "name": "Story",
@@ -5305,6 +5386,16 @@
         "count": 0,
         "status": "low",
         "files": [
+            {
+                "filePath": ".storybook/preview.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "preview",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
             {
                 "filePath": "src/app/accordion/accordion.component.ts",
                 "type": "component",
@@ -5465,7 +5556,7 @@
                 "linktype": "component",
                 "name": "CheckboxComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/9",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
@@ -5659,7 +5750,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Playground",
+                "name": "meta",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5669,7 +5760,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Template",
+                "name": "Playground",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5688,7 +5779,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Playground",
+                "name": "meta",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5698,7 +5789,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Template",
+                "name": "Playground",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5726,7 +5817,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Playground",
+                "name": "meta",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5736,7 +5827,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Template",
+                "name": "Playground",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5755,7 +5846,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Playground",
+                "name": "meta",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5765,7 +5856,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Template",
+                "name": "Playground",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

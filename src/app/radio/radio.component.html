@@ -1,14 +1,6 @@
- <!-- <div>
-    <label for="" class="basicui-radio">
-        <input type="radio" class="radio-input">
-        <span class="radio-label">{{label}}</span>
-    </label>
-</div> -->
-
 <label class="basicui-radio"
-    [class.basicui-radio--checked]="isChecked"
     [class.basicui-radio--theme-default]="theme === 'default'"
     [class.basicui-radio--theme-primary]="theme === 'primary'">
-    <input class="basicui-radio__input" type="radio" [checked]="isChecked" [name]="name" [id]="id" [value]="value" (change)="onChange($event.target.value)" />
+    <input class="basicui-radio__input" type="radio"/>
     <span class="basicui-radio__span">{{label}}</span>
 </label>

@@ -10,14 +10,5 @@ import ThemeType from '../types/ThemeType';
 export class RadioComponent {
     @Input() label: string = '';
     @Input() type!: string;
-    @Input() theme: ThemeType = ThemeType.default;
-    @Input() isChecked: boolean = false;
-    @Output() isCheckedChange = new EventEmitter<boolean>();
-    @Input() name?: string;
-    @Input() id?: string;
-    @Input() value?: any;
-    @Output() radioChange = new EventEmitter<string>();
-    onChange(value: string): void {
-      this.radioChange.emit(value);
-    }
+    @Input() theme: ThemeType = ThemeType.default;  
 }

@@ -4,7 +4,9 @@
     "types": [
       "node"
     ],
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "strictBindCallApply": true
   },
   "exclude": [
     "../src/test.ts",
