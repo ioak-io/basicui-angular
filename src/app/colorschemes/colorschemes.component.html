@@ -1,0 +1,16 @@
+<div *ngIf="discriminator !== 'themes-overview'" class="basicuidemo-color-scheme"
+  [ngClass]="'basicuidemo-color-scheme--' + discriminator">
+  <div *ngFor="let level of levels" class="basicuidemo-color-scheme__x"
+    [ngClass]="'basicuidemo-color-scheme__' + level">
+    <div class="basicuidemo-color-scheme__x__bg">
+      <div class="basicuidemo-color-scheme__x__bg__label">background-color:</div>
+      <div class="basicuidemo-color-scheme__x__bg__value">{{ 'var(--theme-' + discriminator + '-' + level + ')' }}</div>
+    </div>
+    <div class="basicuidemo-color-scheme__x__fg">
+      <div class="basicuidemo-color-scheme__x__fg__label">color:</div>
+      <div class="basicuidemo-color-scheme__x__fg__value">{{ 'var(--theme-' + discriminator + '-' + level + 'i)' }}
+      </div>
+    </div>
+  </div>
+</div>
+<app-themes-overview *ngIf="discriminator === 'themes-overview'"></app-themes-overview>

@@ -1,0 +1,8 @@
+<label for="">{{label}}</label>
+
+<div class="custom-select" *ngIf="selectType === 'single'">
+  <select *ngIf="selectedValue !== undefined" class="positioned-select">
+    <option> {{ selectedValue }}</option>
+    <option *ngFor="let option of options" [value]="option.value">{{ option.label }}</option>
+  </select>
+</div>
