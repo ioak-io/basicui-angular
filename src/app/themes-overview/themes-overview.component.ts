@@ -3,7 +3,6 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-themes-overview',
   templateUrl: './themes-overview.component.html',
-  styleUrls: ['../colorschemes/colorschemes.component.scss'],
 })
 export class ThemesOverviewComponent {
   themes = [

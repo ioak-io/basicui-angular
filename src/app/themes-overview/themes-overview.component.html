@@ -1,5 +1,6 @@
 <div class="basicuidemo-color-scheme">
-  <div *ngFor="let theme of themes" class="basicuidemo-color-scheme__x" [ngClass]="'basicuidemo-themes-overview__' + theme">
+  <div *ngFor="let theme of themes" class="basicuidemo-color-scheme__x"
+    [ngClass]="'basicuidemo-themes-overview__' + theme">
     <div class="basicuidemo-color-scheme__x__bg">
       <div class="basicuidemo-color-scheme__x__bg__label">background-color:</div>
       <div class="basicuidemo-color-scheme__x__bg__value">{{ 'var(--theme-' + theme + '-500)' }}</div>

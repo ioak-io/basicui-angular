@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CheckboxComponent } from './checkbox.component';
-import  ThemeType  from '../types/ThemeType';
+import ThemeType from '../types/ThemeType';
 
 describe('CheckboxComponent', () => {
   let component: CheckboxComponent;

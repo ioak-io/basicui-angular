@@ -1,6 +1,4 @@
-
-<button 
-    [ngClass]="{
+<button [ngClass]="{
         'basicui-button': true,
         'basicui-button--theme-default': theme === 'default',
         'basicui-button--theme-primary': theme === 'primary',
@@ -9,11 +7,7 @@
         'basicui-button--variant-outline': variant === 'outline',
         'basicui-button--variant-transparent': variant === 'transparent',
         'basicui-button--loading': loading
-      }"
-    [type]="type"
-    (click)="onClick && onClick()"
-    (submit)="onSubmit && onSubmit()"
-    (reset)="onReset && onReset()">
-    <ng-container *ngIf="loading">{{label}}</ng-container>
-    <ng-container *ngIf="!loading">{{label}}</ng-container>
+      }" [type]="type" (click)="onClick && onClick()" (submit)="onSubmit && onSubmit()" (reset)="onReset && onReset()">
+  <ng-container *ngIf="loading">{{label}}</ng-container>
+  <ng-container *ngIf="!loading">{{label}}</ng-container>
 </button>

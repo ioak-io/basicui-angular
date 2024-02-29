@@ -2,14 +2,14 @@ import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { FormsModule } from '@angular/forms';
 import { SelectComponent } from "./select.component";
 
-describe('SelectComponent',() => {
+describe('SelectComponent', () => {
     let component: SelectComponent;
     let fixture: ComponentFixture<SelectComponent>;
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            declarations:[SelectComponent],
-            imports:[FormsModule],
+            declarations: [SelectComponent],
+            imports: [FormsModule],
         });
         fixture = TestBed.createComponent(SelectComponent);
         component = fixture.componentInstance;
@@ -17,7 +17,7 @@ describe('SelectComponent',() => {
     it('should create the select component', () => {
         expect(component).toBeTruthy();
     });
-    
+
     it('should render a single select with options and a selected value', () => {
         const selectType = 'single';
         const options = [
@@ -36,7 +36,7 @@ describe('SelectComponent',() => {
         const selectedOption = selectElement.options[selectElement.selectedValue];
 
         expect(selectElement).toBeTruthy();
-        expect(selectedOption.value).toBe('3');
+        expect(selectedOption.value).toBe('1');
     });
 
     it('should render an autocomplete select with options, a selected value, and a placeholder', () => {

@@ -6,7 +6,7 @@ import ButtonVariantType from '../types/ButtonVariantType';
 
 export default {
   title: 'Surfaces/Modal',
-  component: StoryWrapperComponent, 
+  component: StoryWrapperComponent,
   decorators: [
     moduleMetadata({
       declarations: [StoryWrapperComponent, ModalComponent]
@@ -19,6 +19,5 @@ export const Playground = () => ({
   props: {
     theme: ThemeType.default,
     variant: ButtonVariantType.default,
-    
   }
 });

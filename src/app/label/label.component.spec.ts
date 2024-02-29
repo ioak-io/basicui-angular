@@ -1,4 +1,3 @@
-// label.component.spec.ts
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LabelComponent } from './label.component';
 

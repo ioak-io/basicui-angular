@@ -1,5 +1,3 @@
-// @import '../styles/index.css';
-
 .basicui-checkbox {
   cursor: pointer;
   position: relative;
@@ -20,7 +18,6 @@
   border-radius: var(--basicui-checkbox-border-radius);
   display: inline-block;
   vertical-align: middle;
-  /* position: static; */
   transition: 250ms border-color ease-in-out, 250ms background-color ease-in-out, 250ms color ease-in-out;
 }
 

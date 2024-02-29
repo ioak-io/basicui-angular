@@ -11,9 +11,8 @@ import AlignmentType from '../types/AlignmentType';
 export class ModalComponent {
   @Input() theme: ThemeType = ThemeType.default;
   @Input() variant: ButtonVariantType = ButtonVariantType.default;
-  @Output() closeModal: EventEmitter<void> = new EventEmitter<void>();
   @Input() alignment: AlignmentType = AlignmentType.default;
-
+  @Output() closeModal: EventEmitter<void> = new EventEmitter<void>();
   onClose() {
     this.closeModal.emit();
   }

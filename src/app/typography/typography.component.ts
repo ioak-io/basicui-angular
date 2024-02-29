@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./typography.component.scss']
 })
 export class TypographyComponent {
-    
+
 }

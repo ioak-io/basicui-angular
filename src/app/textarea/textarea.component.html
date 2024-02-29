@@ -1,15 +1,9 @@
-
 <div class="basicui-textarea">
     <div class="label">{{label}}</div>
-    <textarea [ngClass]="{'basicui-input': true }"
-              [placeholder]="placeholder" 
-              [value]="value"
-              autocomplete="none">
+    <textarea [ngClass]="{'basicui-input': true }" [placeholder]="placeholder" [value]="value" autocomplete="none">
     </textarea>
 </div>
-    <div *ngIf="isSuccess" class="success-message">{{ successMessage }}</div>
-    <div *ngIf="isWarning" class="warning-message">{{ warningMessage }}</div>
-    <div *ngIf="isTooltip" class="tooltip-message">{{ tooltipMessage }}</div>
-    <div *ngIf="isError" class="error-message">{{ errorMessage }}</div>
-
-
+<div *ngIf="isSuccess" class="success-message">{{ successMessage }}</div>
+<div *ngIf="isWarning" class="warning-message">{{ warningMessage }}</div>
+<div *ngIf="isTooltip" class="tooltip-message">{{ tooltipMessage }}</div>
+<div *ngIf="isError" class="error-message">{{ errorMessage }}</div>

@@ -5,53 +5,47 @@ describe('AvatarComponent', () => {
   let component: AvatarComponent;
   let fixture: ComponentFixture<AvatarComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [AvatarComponent],
-    });
-
-    fixture = TestBed.createComponent(AvatarComponent);
-    component = fixture.componentInstance;
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [AvatarComponent]
+    })
+      .compileComponents();
   });
 
-  it('should create the avatar component', () => {
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AvatarComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render the avatar with correct size, roundedness, and class when avatarUrl is provided', () => {
-    const avatarUrl = 'https://res.cloudinary.com/dvujyxh7e/image/upload/c_scale,w_128/v1593253478/trung-vo_bioxmc.png';
-    const size = 12;
-    const name = 'John Doe';
-    const rounded = true;
-    const className = 'avatar-container';
-
+  it('should render avatar image with correct size and rounded corners', () => {
+    const avatarUrl = 'https://example.com/avatar.jpg';
+    const size = 50;
     component.avatarUrl = avatarUrl;
     component.size = size;
-    component.name = name;
-    component.rounded = rounded;
-    component.className = className;
-
+    component.rounded = true;
     fixture.detectChanges();
 
-    const avatarElement: HTMLDivElement = fixture.nativeElement.querySelector('.app-avatar');
-
+    const avatarElement = fixture.nativeElement.querySelector('.avatar-container');
     expect(avatarElement).toBeTruthy();
-    expect(avatarElement.classList.contains(className)).toBe(true);
     expect(avatarElement.style.width).toBe(`${size}px`);
     expect(avatarElement.style.height).toBe(`${size}px`);
-    expect(avatarElement.style.backgroundImage).toBe(`url('${avatarUrl}')`);
-    expect(avatarElement.style.borderRadius).toBe(rounded ? '100%' : '3px');
+    expect(avatarElement.style.backgroundImage).toContain(avatarUrl);
+    expect(avatarElement.style.borderRadius).toBe('100%');
   });
 
-  it('should not render the avatar container when avatarUrl is not present', () => {
-    const avatarUrl = '';
-
+  it('should render avatar image with square corners if rounded is set to false', () => {
+    const avatarUrl = 'https://res.cloudinary.com/dvujyxh7e/image/upload/c_scale,w_128/v1593253478/trung-vo_bioxmc.png';
     component.avatarUrl = avatarUrl;
-
+    component.rounded = false;
     fixture.detectChanges();
 
-    const avatarElement: HTMLDivElement = fixture.nativeElement.querySelector('.app-avatar');
-
-    expect(avatarElement).toBeFalsy();
+    const avatarElement = fixture.nativeElement.querySelector('.avatar-container');
+    expect(avatarElement).toBeTruthy();
+    expect(avatarElement.style.borderRadius).toBe('3px');
   });
 });

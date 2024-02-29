@@ -5,7 +5,8 @@
     border-bottom: 1px solid #dedede6b;
     transition: background-color 250ms ease-in-out;
 }
-.basicui-accordion-header{
+
+.basicui-accordion-header {
     width: 100%;
     height: 52px;
     line-height: 45px;
@@ -19,23 +20,26 @@
     font-size: 13px;
     justify-content: flex-start;
     display: flex;
-    border:none;
+    border: none;
     background-color: transparent;
 }
-button{
+
+button {
     border: none;
     background-color: white;
 }
-.basicui-accordion-header:hover{
+
+.basicui-accordion-header:hover {
     background-color: #3eb1f2;
     border: none;
     color: white;
 }
-.basicui-accordion-content{
+
+.basicui-accordion-content {
     padding: 16px 16px 16px 16px;
     transition: 0.5s;
     border-bottom: 1px solid #dedede6b;
-    -webkit-transition:5s;
+    -webkit-transition: 5s;
     font-family: system-ui;
     font-size: 14px;
     color: inherit;

@@ -6,18 +6,18 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./colorschemes.component.scss'],
 })
 export class ColorSchemesComponent {
-  @Input() discriminator!: |'adaptive' 
-  | 'black' 
-  | 'white' 
-  | 'black-extended' 
-  | 'white-extended' 
-  | 'default' 
-  | 'default-transparent' 
-  | 'primary' 
-  | 'primary-transparent' 
-  | 'danger' 
-  | 'danger-transparent' 
-  | 'themes-overview';
+  @Input() discriminator!: | 'adaptive'
+    | 'black'
+    | 'white'
+    | 'black-extended'
+    | 'white-extended'
+    | 'default'
+    | 'default-transparent'
+    | 'primary'
+    | 'primary-transparent'
+    | 'danger'
+    | 'danger-transparent'
+    | 'themes-overview';
 
   levels = [
     '50',

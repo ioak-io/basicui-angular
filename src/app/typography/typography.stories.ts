@@ -1,4 +1,4 @@
-import { Meta,moduleMetadata,Story } from '@storybook/angular';
+import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { TypographyComponent } from './typography.component';
 import { DemoSectionComponent } from '../demosection/demosection.component';
 
@@ -19,5 +19,5 @@ const Template: Story<TypographyComponent> = (args: TypographyComponent) => ({
 
 export const Playground = Template.bind({});
 Playground.args = {
-    heading: 'Demo Section Heading',
+  heading: 'Demo Section Heading',
 };

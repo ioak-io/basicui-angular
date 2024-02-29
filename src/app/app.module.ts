@@ -28,10 +28,10 @@ import Page from '../stories/page.component';
 @NgModule({
   declarations: [
     AppComponent,
-    SelectComponent, 
+    SelectComponent,
     IconButtonComponent,
     LinkComponent,
-    RadioComponent, 
+    RadioComponent,
     TextareaComponent,
     AccordionComponent,
     StoryWrapperComponent,

@@ -6,14 +6,14 @@ import TabShapeType from '../types/TabShapeType';
 @Component({
   selector: 'app-tabs',
   templateUrl: './tabs.component.html',
-  styleUrls:['./tabs.component.scss']
+  styleUrls: ['./tabs.component.scss']
 })
 export class TabsComponent {
   @Input() theme: ThemeType = ThemeType.primary;
   @Input() shape: TabShapeType = TabShapeType.default;
   @Input() tabs: Tab[] = [];
   @Input() activeTabId!: string;
-  @Input() checkmarkTabId! : string;
+  @Input() checkmarkTabId!: string;
   @Output() tabChange = new EventEmitter<string>();
 
   changeTab(tabId: string): void {

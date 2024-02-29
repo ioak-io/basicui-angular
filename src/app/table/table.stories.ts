@@ -7,21 +7,20 @@ const Template = (args: TableComponent) => ({
 });
 
 const meta: Meta<typeof TableComponent> = {
-  
-    title: 'Surfaces/Table',
-    component: TableComponent,
-    tags:["autodocs"],
-    argTypes: {
+
+  title: 'Surfaces/Table',
+  component: TableComponent,
+  tags: ["autodocs"],
+  argTypes: {
+  },
+} as Meta;
+
+export default meta;
+type Story = StoryObj<typeof TableComponent>;
+
+export const Playground: Story = {
+  render: () => ({
+    props: {
     },
-  } as Meta;
-  
-  export default meta;
-  type Story = StoryObj<typeof TableComponent>;
-  
-  export const Playground:  Story = {
-    render:() => ({
-      props:{
-        //theme: ThemeType.default
-      },
-    }),
-  };
+  }),
+};

@@ -2,9 +2,9 @@ import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'app-label',
-    templateUrl:'./label.component.html',
-    styleUrls:['./label.component.scss'],
+    templateUrl: './label.component.html',
+    styleUrls: ['./label.component.scss'],
 })
-export class LabelComponent{
+export class LabelComponent {
     @Input() label!: string;
 }

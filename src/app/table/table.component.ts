@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import  ThemeType  from '../types/ThemeType';
+import ThemeType from '../types/ThemeType';
 
 @Component({
   selector: 'app-table',

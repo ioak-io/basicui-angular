@@ -16,9 +16,8 @@ export class TextareaComponent {
   @Input() isSuccess: boolean = false;
   @Input() isTooltip: boolean = false;
   @Input() errorMessage: string = 'Please enter valid text';
-  @Input() successMessage: string = 'Please eneter valid text'; 
-  @Input() warningMessage: string = 'Please eneter valid text'; 
-  @Input() tooltipMessage: string = 'Please eneter valid text'; 
-
+  @Input() successMessage: string = 'Please eneter valid text';
+  @Input() warningMessage: string = 'Please eneter valid text';
+  @Input() tooltipMessage: string = 'Please eneter valid text';
 
 }

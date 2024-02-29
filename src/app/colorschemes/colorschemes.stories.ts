@@ -5,7 +5,7 @@ import { ThemesOverviewComponent } from '../themes-overview/themes-overview.comp
 
 export default {
   title: 'Styleguide/Color Schemes',
-  component: ColorSchemesComponent, 
+  component: ColorSchemesComponent,
   decorators: [
     moduleMetadata({
       declarations: [ColorSchemesComponent, ThemesOverviewComponent]
@@ -85,5 +85,3 @@ export const DangerTransparent = () => ({
     discriminator: 'danger-transparent',
   }
 });
-
-

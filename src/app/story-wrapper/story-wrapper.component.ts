@@ -10,17 +10,14 @@ import ButtonVariantType from '../types/ButtonVariantType';
 export class StoryWrapperComponent {
   @Input() theme: ThemeType = ThemeType.default;
   @Input() onClick?: any;
-  @Input() onSubmit?: any;
-  @Input() onReset?: any;
-  @Input() type: 'button' | 'submit' | 'reset' = 'button';
+  @Input() type!: 'button';
   @Input() variant: ButtonVariantType = ButtonVariantType.default;
-  
+
   isOpen: boolean = false;
 
   openModal() {
     this.isOpen = true;
   }
-
   closeModal() {
     this.isOpen = false;
   }

@@ -1,5 +1,4 @@
-<table
-      [ngClass]="{
+<table [ngClass]="{
         'basicui-table': true,
         'theme-default': theme === 'default',
         'table-inverse': inverse,
@@ -7,22 +6,20 @@
         'table-hover': hover,
         'table-bordered': bordered,
         'table-small': small}">
-      <thead [ngClass]="{ 'thead-inverse': inverseHeader }">
-        <tr>
-          <th>First name</th>
-          <th>Last name</th>
-          <th>Email</th>
-          <th>Age</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let row of tableData">
-          <td>{{ row.firstName }}</td>
-          <td>{{ row.lastName }}</td>
-          <td>{{ row.email }}</td>
-          <td>{{ row.age }}</td>
-        </tr>
-      </tbody>
-    </table>
-
-    
+  <thead [ngClass]="{ 'thead-inverse': inverseHeader }">
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Email</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of tableData">
+      <td>{{ row.firstName }}</td>
+      <td>{{ row.lastName }}</td>
+      <td>{{ row.email }}</td>
+      <td>{{ row.age }}</td>
+    </tr>
+  </tbody>
+</table>

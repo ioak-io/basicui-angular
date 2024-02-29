@@ -1,5 +1,5 @@
   /* single-select styles */
-  label{
+  label {
     display: block;
     font-size: 13px;
     margin-bottom: 5px;
@@ -7,50 +7,58 @@
     font-family: system-ui;
     font-weight: 100;
   }
-select, input {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  background-color: var(--theme-default-50);
-  //color: var(--theme-default-50i);
-  width: 100%;
-  outline: none;
-  font-size: 11px;
-  position: relative;
-  text-indent: 5px;
-}
+
+  select,
+  input {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: var(--theme-default-50);
+    //color: var(--theme-default-50i);
+    width: 100%;
+    outline: none;
+    font-size: 11px;
+    position: relative;
+    text-indent: 5px;
+  }
+
   select:hover {
     border-color: var(--basicui-formelement-border-color-hover);
     background-color: var(--basicui-formelement-background-color-hover);
     color: var(--basicui-formelement-color-hover);
   }
-  
+
   select[single] {
     position: absolute;
     top: 50px;
     left: 50px;
     color: inherit;
   }
+
   option {
     background-color: var(--theme-default-50);
     color: var(--theme-default-50i);
-}
+  }
+
   /* Multi-select styles */
   select[multiple] {
     //background-color: white;
     height: 30px;
   }
-  select[multiple] option{
+
+  select[multiple] option {
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 10px;
-    
+
   }
-  select[multiple] option:hover{
+
+  select[multiple] option:hover {
     padding-top: 10px;
     padding-bottom: 10px;
     border: 1px solid #c3e5f4;
     background-color: #f1f8fe;
   }
+
   .positioned-select {
     border-color: var(--basicui-formelement-border-color);
     border-radius: 1px;
@@ -58,12 +66,13 @@ select, input {
     font-size: 12px;
     width: 100%;
   }
+
   .positioned-select[multiple] {
     height: 150px;
   }
 
   /* auto complete-select styles */
-  .auto-select{
+  .auto-select {
     padding: 5px;
     font-size: 10px;
     border-radius: 2px;
@@ -72,10 +81,12 @@ select, input {
     width: 100%;
     outline: none;
   }
+
   .auto-select-option {
     padding: 8px 16px;
     cursor: pointer;
   }
+
   .auto-select:hover {
     border-color: var(--basicui-formelement-border-color-hover);
     background-color: var(--basicui-formelement-background-color-hover);
