@@ -1,0 +1,24 @@
+.label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 4px;
+  text-transform: capitalize;
+  word-break: keep-all;
+  color: var(--theme-white-extended-500);
+  font-family: system-ui;
+  font-weight: 100;
+}
+
+.basicui-textarea textarea {
+  resize: vertical;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  height: 73px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.basicui-textarea textarea:hover {
+  border-color: var(--basicui-formelement-border-color-hover);
+  background-color: var(--basicui-formelement-background-color-hover);
+  color: var(--basicui-formelement-color-hover);
+}
