@@ -1,12 +1,12 @@
 import { BreadcrumbsComponent } from "./breadcrumbs.component";
-import { Meta, Story } from '@storybook/angular';
+import{ Meta, Story } from '@storybook/angular';
 
-export default {
+export default{
     title: 'Components/Breadcrumbs',
     component: BreadcrumbsComponent
 } as Meta;
 
-const Template: Story<BreadcrumbsComponent> = (args: BreadcrumbsComponent) => ({
+const Template: Story<BreadcrumbsComponent> = (args :BreadcrumbsComponent) => ({
     component: BreadcrumbsComponent,
     props: args
 });
