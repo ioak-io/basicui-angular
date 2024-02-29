@@ -1033,7 +1033,7 @@
         },
         {
             "name": "IconButtonComponent",
-            "id": "component-IconButtonComponent-24814a4c8fa2b0f5f6411e926b68a0e4401459d0ad05cd8d5f30c3ad52d9c63e4547fdd8369ac81ee05291404b3246023755b6a8ee21064fd4c462181a1c7414",
+            "id": "component-IconButtonComponent-6007121f0bbaf17171bfd92c7d96438ab076020711736a92a5f29aa16144175514eb98d24fa5cf3489edcaa9d7d0cdf19fc2725e6a15e26675331e42241744cd",
             "file": "src/app/icon-button/icon-button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1103,7 +1103,7 @@
                 },
                 {
                     "name": "theme",
-                    "defaultValue": "ThemeType.default",
+                    "defaultValue": "ThemeType.primary",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 12,
@@ -1141,7 +1141,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport ButtonVariantType from '../types/ButtonVariantType';\r\nimport ThemeType from '../types/ThemeType';\r\n\r\n@Component({\r\n  selector: 'app-icon-button',\r\n  templateUrl: './icon-button.component.html',\r\n  styleUrls: ['./icon-button.component.scss']\r\n})\r\nexport class IconButtonComponent {\r\n  @Input() theme: ThemeType = ThemeType.default;\r\n  @Input() onClick?: any;\r\n  @Input() onSubmit?: any;\r\n  @Input() onReset?: any;\r\n  @Input() type: 'button' | 'submit' | 'reset' = 'button';\r\n  @Input() variant: ButtonVariantType = ButtonVariantType.default;\r\n  @Input() children: any;\r\n  @Input() circle = false;\r\n  @Input() loading = false;\r\n}",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport ButtonVariantType from '../types/ButtonVariantType';\r\nimport ThemeType from '../types/ThemeType';\r\n\r\n@Component({\r\n  selector: 'app-icon-button',\r\n  templateUrl: './icon-button.component.html',\r\n  styleUrls: ['./icon-button.component.scss']\r\n})\r\nexport class IconButtonComponent {\r\n  @Input() theme: ThemeType = ThemeType.primary;\r\n  @Input() onClick?: any;\r\n  @Input() onSubmit?: any;\r\n  @Input() onReset?: any;\r\n  @Input() type: 'button' | 'submit' | 'reset' = 'button';\r\n  @Input() variant: ButtonVariantType = ButtonVariantType.default;\r\n  @Input() children: any;\r\n  @Input() circle = false;\r\n  @Input() loading = false;\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1443,7 +1443,7 @@
         },
         {
             "name": "LinkComponent",
-            "id": "component-LinkComponent-a4f9b31d2786d96efe6f2fbf71d739bfeac4800dfa3eae32682e5143fd6ca0a9b36dc81e5b2fe315eb37e6676635cef0603b7630b9f13ef3e98b10812d5bfc5e",
+            "id": "component-LinkComponent-9bee95cb25b1dd436a871cec0c4434879a0c1c4e5f3247de05d8e51c653ecd33610bd37fc235912bdfe78c526e04e47c7dd56dc3f388713b54b29142517e9ccf",
             "file": "src/app/link/link.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1487,7 +1487,7 @@
                 },
                 {
                     "name": "theme",
-                    "defaultValue": "ThemeType.default",
+                    "defaultValue": "ThemeType.primary",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 11,
@@ -1507,7 +1507,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport ThemeType from '../types/ThemeType';\r\n\r\n@Component({\r\n    selector: 'app-link',\r\n    templateUrl: './link.component.html',\r\n    styleUrls: ['./link.component.scss'],\r\n})\r\n\r\nexport class LinkComponent {\r\n    @Input() theme: ThemeType = ThemeType.default;\r\n    @Input() label!: string;\r\n    @Input() noUnderline!: boolean;\r\n    @Input() noGlow!: boolean;\r\n}",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport ThemeType from '../types/ThemeType';\r\n\r\n@Component({\r\n    selector: 'app-link',\r\n    templateUrl: './link.component.html',\r\n    styleUrls: ['./link.component.scss'],\r\n})\r\n\r\nexport class LinkComponent {\r\n    @Input() theme: ThemeType = ThemeType.primary;\r\n    @Input() label!: string;\r\n    @Input() noUnderline!: boolean;\r\n    @Input() noGlow!: boolean;\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
