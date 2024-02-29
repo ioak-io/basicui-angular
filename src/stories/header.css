@@ -1,15 +1,17 @@
 .wrapper {
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  border-bottom: 1px solid #dedede6b;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 15px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 svg {
   display: inline-block;
   vertical-align: top;
 }
+
 h1 {
   font-weight: 900;
   font-size: 20px;
@@ -24,6 +26,7 @@ button + button {
 }
 
 .welcome {
+  color: #333;
   font-size: 14px;
   margin-right: 10px;
 }

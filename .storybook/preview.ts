@@ -1,4 +1,4 @@
-import type { Preview } from "@storybook/angular";
+/*import type { Preview } from "@storybook/angular";
 import { setCompodocJson } from "@storybook/addon-docs/angular";
 import docJson from "./main";
 setCompodocJson(docJson);
@@ -15,4 +15,4 @@ const preview: Preview = {
   },
 };
 
-export default preview;
+export default preview;*/
