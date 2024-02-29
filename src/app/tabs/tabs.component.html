@@ -1,0 +1,21 @@
+<div class="basicui-tabs" [class.basicui-tabs--theme-primary]="true" [class.basicui-tabs--shape-default]="true"
+  [class.basicui-tabs--offset]="true">
+  <ul class="basicui-tabs__ul">
+    <li *ngFor="let tab of tabs" [class.active]="tab.id === activeTabId" class="basicui-tabs__ul__li">
+      <button class="basicui-tabs__ul__li__button" (click)="changeTab(tab.id)">
+        <svg height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true" class="checkmark"
+          *ngIf="tab.id === checkmarkTabId">
+          <path fillRule="evenodd"
+            d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z">
+          </path>
+        </svg>
+        {{ tab.header }}
+      </button>
+    </li>
+  </ul>
+  <div *ngFor="let tab of tabs">
+    <ng-container *ngIf="tab.id === activeTabId">
+      <div>{{ tab.content }}</div>
+    </ng-container>
+  </div>
+</div>

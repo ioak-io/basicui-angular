@@ -1,26 +1,62 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { InputComponent } from '../input/input.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('InputComponent', () => {
   let component: InputComponent;
+  let fixture: ComponentFixture<InputComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [InputComponent],
+      imports: [ReactiveFormsModule],
+    }).compileComponents();
+  });
 
   beforeEach(() => {
-    component = new InputComponent();
+    fixture = TestBed.createComponent(InputComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
-  it('should be able to init', () => {
-    component.ngOnInit();
-    expect(component.control).toBeTruthy();
+  it('should create the input component', () => {
+    expect(component).toBeTruthy();
   });
-  it('should be able to get icon size', () => {
-    expect(component.iconContainerWidth).toEqual(32);
+
+  it('should render with the provided label, info message, and value', () => {
+    const placeholder = 'Dolor sit';
+    const label = 'First Name';
+    const isInfo = true;
+    const value = 'Dolor sit';
+    const infoMessage = 'Quisque tincidunt vitae purus id feugiat';
+
+    component.placeholder = placeholder;
+    component.label = label;
+    component.isInfo = isInfo;
+    component.value = value;
+    component.infoMessage = infoMessage;
+
+    fixture.detectChanges();
+
+    const inputElement: HTMLInputElement = fixture.nativeElement.querySelector('input');
+    const infoElement: HTMLElement = fixture.nativeElement.querySelector('.info-message');
+
+    expect(inputElement).toBeTruthy();
+    expect(inputElement.placeholder).toContain(placeholder);
+    expect(inputElement.value).toContain(value);
+
+    expect(infoElement).toBeTruthy();
+    expect(infoElement.textContent).toContain(infoMessage);
   });
-  it('should be able to get return  is Show Clear Button', () => {
-    expect(typeof component.isShowClearButton).toEqual('undefined');
-  });
-  it('should be able to clear control', () => {
-    component.ngOnInit();
-    spyOn(component.control, 'patchValue').and.callThrough();
-    component.clear();
-    expect(component.control.patchValue).toHaveBeenCalled();
+
+  it('should update the value when the user types in the input', () => {
+    const inputElement: HTMLInputElement = fixture.nativeElement.querySelector('input');
+    const newValue = 'New Value';
+
+    inputElement.value = newValue;
+    inputElement.dispatchEvent(new Event('input'));
+    fixture.detectChanges();
+
+    expect(component.value).toBe(newValue);
   });
 });
