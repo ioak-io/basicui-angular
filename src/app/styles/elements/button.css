@@ -2,6 +2,7 @@
 @import './button-primary.css';
 @import './button-danger.css';
 @import '../theme/index.css';
+@import './button-secondary.css';
 
 .basicui-button {
     display: grid;

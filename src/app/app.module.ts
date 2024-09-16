@@ -24,6 +24,7 @@ import { DemoSectionComponent } from './demosection/demosection.component';
 import Button from '../stories/button.component';
 import Header from '../stories/header.component';
 import Page from '../stories/page.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import Page from '../stories/page.component';
     NgxsModule.forRoot([], { developmentMode: !environment.production, }),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsLoggerPluginModule.forRoot({ disabled: environment.production, }),
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -45,7 +45,7 @@ import { User } from './User';
             (onClick)="onLogin.emit($event)"
             label="Log in"
           ></storybook-button>
-          <storybook-button
+          <!-- <storybook-button
             *ngIf="!user"
             primary
             size="small"
@@ -53,7 +53,7 @@ import { User } from './User';
             class="margin-left"
             (onClick)="onCreateAccount.emit($event)"
             label="Sign up"
-          ></storybook-button>
+          ></storybook-button> -->
         </div>
       </div>
     </div>

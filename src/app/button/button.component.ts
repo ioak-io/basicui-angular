@@ -12,6 +12,7 @@ import ThemeType from "../types/ThemeType";
 export class ButtonComponent {
   @Input() type: 'button' | 'submit' | 'reset' = 'button';
   @Input() theme: ThemeType = ThemeType.default;
+  // @Input() theme: 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'danger' = 'default';
   @Input() variant: ButtonVariantType = ButtonVariantType.default;
   @Input() label!: string;
   @Input() loading = false;

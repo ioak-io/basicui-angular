@@ -7,7 +7,9 @@ import ThemeType from '../types/ThemeType';
   styleUrls: ['./checkbox.component.scss']
 })
 export class CheckboxComponent {
-  @Input() label: string = '';
+  @Input() label : string = 'Lorem Dolor';
   @Input() theme: ThemeType = ThemeType.default;
   @Input() type!: string;
+  @Input() checked !: boolean;
+  @Input() defaultChecked !: boolean;
 }
