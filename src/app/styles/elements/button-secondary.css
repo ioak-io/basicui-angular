@@ -1,18 +1,18 @@
+@import '../theme/theme-secondary.css';
 .basicui-button--theme-secondary {
-    background-color: var(#dfaeb4);
-    color: var(#000000);
-    fill: var(#000000);
-    border-color: var(#dfaeb4);
+  background-color: var(--basicui-bg-secondary);
+  color: var(--basicui-fg-secondary);
+  fill: var(--basicui-fg-secondary);
+  border-color: var(--basicui-bg-secondary);
 }
 
 .basicui-button--theme-secondary:hover,
 .basicui-button--theme-secondary:focus {
-    background-color: var(#e8c4c870);
-    color: var(#000000);
-    fill: var(#000000);
-    border-color: var(#e8c4c8);
+  background-color: var(--basicui-bg-secondary-light);
+  color: var(--basicui-fg-secondary);
+  fill: var(--basicui-fg-secondary);
+  border-color: var(--basicui-bg-secondary-light);
 }
-
 .basicui-dark .basicui-button--theme-secondary {
     background-color: var(--basicui-bg-secondary);
     color: var(--basicui-fg-secondary);
@@ -134,7 +134,7 @@
     border-color: var(--basicui-bg-primary);
   }
    
-/* .basicui-dark .basicui-button--variant-chroma.basicui-button--theme-secondary {
+/* /* .basicui-dark .basicui-button--variant-chroma.basicui-button--theme-secondary {
   }
   
   .basicui-dark

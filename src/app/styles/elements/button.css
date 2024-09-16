@@ -3,6 +3,8 @@
 @import './button-danger.css';
 @import '../theme/index.css';
 @import './button-secondary.css';
+@import './button-success.css';
+@import './button-warning.css';
 
 .basicui-button {
     display: grid;
