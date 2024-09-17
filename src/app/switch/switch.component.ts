@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 })
 export class SwitchComponent {
   @Input() id: string="";
-  @Input() theme: 'default' | 'primary' | 'danger' = 'default';
+  @Input() theme: 'default' | 'primary' |'secondary'|'warning'|'success'| 'danger' = 'default';
   @Input() size: 'small'| 'medium'| 'large'| 'default'='small';
   @Input() checked: boolean = false;
   @Input() icon: [string, string] = ["", ""];

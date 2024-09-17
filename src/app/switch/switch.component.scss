@@ -198,6 +198,30 @@
   background-color:  #B71C1C;
 }
 
+.basicui-switch__input-secondary{
+  background-color: #e8c4c870;
+}
+
+.basicui-switch__input-secondary:before {
+  background-color:  #dcb1b670;
+}
+
+.basicui-switch__input-success{
+  background-color: #3deb79;
+}
+
+.basicui-switch__input-success:before {
+  background-color:  #0f6c30;
+}
+
+.basicui-switch__input-warning{
+  background-color: #f3c551;
+}
+
+.basicui-switch__input-warning:before {
+  background-color:  #994f0f;
+}
+
 .basicui-switch__input:focus {
   box-shadow: 0 0 0 0.125em var(--primary);
   outline: transparent;

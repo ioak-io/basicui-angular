@@ -9,7 +9,7 @@ const meta: Meta<SwitchComponent> = {
   argTypes: {
     theme:{
     control: {type: 'select',},
-    options: ['default', 'primary', 'danger']   
+    options: ['default', 'primary', 'secondary', 'success', 'warning', 'danger']   
   },
   size:{
     control: {type:'radio'},
