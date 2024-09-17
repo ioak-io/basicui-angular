@@ -1,23 +1,38 @@
 import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
 import { SwitchComponent } from './switch.component';
-import ThemeType from "../types/ThemeType";
 
-const meta: Meta<typeof SwitchComponent> = {
+const meta: Meta<SwitchComponent> = {
 
   title: 'Components/Switch',
   component: SwitchComponent,
   tags: ["autodocs"],
   argTypes: {
+    theme:{
+    control: {type: 'select',},
+    options: ['default', 'primary', 'danger']   
   },
-} as Meta;
+  size:{
+    control: {type:'radio'},
+    options: ['default', 'small', 'medium', 'large']
+  }
+  },
+} as Meta<SwitchComponent>;
 
 export default meta;
-type Story = StoryObj<typeof SwitchComponent>;
+type Story = StoryObj<SwitchComponent>;
 
 export const Playground: Story = {
-  render: () => ({
+  render: (args) => ({
     props: {
-      theme: ThemeType.primary,
+      ...args
     },
   }),
+  args:{
+    theme: 'primary',
+    size: 'small',
+    checked: false
+  }
 };
+
+// export const BasicSwitch = Template.bind({});
+

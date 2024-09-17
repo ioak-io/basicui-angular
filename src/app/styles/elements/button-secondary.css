@@ -134,11 +134,11 @@
     border-color: var(--basicui-bg-primary);
   }
    
-/* /* .basicui-dark .basicui-button--variant-chroma.basicui-button--theme-secondary {
+.basicui-dark .basicui-button--variant-chroma.basicui-button--theme-secondary {
   }
   
   .basicui-dark
     .basicui-button--variant-chroma.basicui-button--theme-secondary:hover,
   .basicui-dark
     .basicui-button--variant-chroma.basicui-button--theme-secondary:focus {
-  } */
+  }

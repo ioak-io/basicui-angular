@@ -25,6 +25,8 @@ import Button from '../stories/button.component';
 import Header from '../stories/header.component';
 import Page from '../stories/page.component';
 import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { SwitchComponent } from './switch/switch.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,7 @@ import { RouterModule } from '@angular/router';
     ThemesOverviewComponent,
     TypographyComponent,
     DemoSectionComponent,
+    SwitchComponent,
     Button,
     Header,
     Page
@@ -54,7 +57,8 @@ import { RouterModule } from '@angular/router';
     NgxsModule.forRoot([], { developmentMode: !environment.production, }),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsLoggerPluginModule.forRoot({ disabled: environment.production, }),
-    RouterModule
+    RouterModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,5 +1,36 @@
-<label class="basicui-switch" [class.basicui-switch--theme-default]="theme === 'default'"
-  [class.basicui-switch--theme-primary]="theme === 'primary'">
-  <input class="basicui-switch__input" type="checkbox" />
-  <span class="basicui-switch__slider"></span>
+<label class="basicui-switch" [class.basicui-switch--checked]="checked" [attr.for]="id"
+[ngClass]="{
+  'basicui-switch--theme-default': theme === 'default',
+  'basicui-switch--theme-primary': theme === 'primary',
+  'basicui-switch--theme-danger': theme === 'danger',
+}">
+
+  <span class="basicui-switch__input-wrap">
+    <input class="basicui-switch__input" 
+    [ngClass]="{
+      'basicui-switch__input-default': theme === 'default',
+      'basicui-switch__input-primary': theme === 'primary',
+      'basicui-switch__input-danger': theme === 'danger',
+      'basicui-switch__input-defaultsize': size === 'default',
+      'basicui-switch__input-small': size === 'small',
+      'basicui-switch__input-medium': size === 'medium',
+      'basicui-switch__input-large': size === 'large',
+    }"
+    [id]="id"
+    [checked]="checked" type="checkbox" role="switch" value="dark">
+
+
+    <span class="basicui-switch__slider"></span>
+
+    <span *ngIf="!icon && (size !== 'small' && size !== 'medium')" class="basicui-switch__theme__icon">
+      <span class="basicui-switch__theme__icon-part" *ngFor="let i of [1,2,3,4,5,6,7,8,9]"></span>
+    </span>
+
+    <span *ngIf="icon" class="basicui-icon">
+      <span class="basicui-icon-part">
+        <img [src]="icon[0]" />
+        <img [src]="icon[1]" />
+      </span>
+    </span>
+  </span>
 </label>
