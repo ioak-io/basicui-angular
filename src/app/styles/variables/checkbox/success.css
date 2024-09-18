@@ -1,0 +1,28 @@
+* {
+    --basicui-checkbox-background-color: none;
+  }
+  
+  .basicui-light .basicui-checkbox--theme-success,
+  .basicui-light .basicui-radio--theme-success {
+    --basicui-checkbox-border-color: #3deb79;
+    --basicui-checkbox-checkmark-color: #0b8a39;
+    --basicui-checkbox-background-color-hover: #3deb79;
+    --basicui-checkbox-border-color-hover: #3deb79;
+    --basicui-checkbox-background-color-checked: #2ec04f70;
+    --basicui-checkbox-border-color-checked: #28a745;
+  }
+  
+  .basicui-dark .basicui-checkbox--theme-success,
+  .basicui-dark .basicui-radio--theme-success {
+    --basicui-checkbox-border-color: var(--theme-white-extended-500);
+    --basicui-checkbox-checkmark-color: var(--theme-white-50);
+    --basicui-checkbox-background-color-hover: var(
+      --basicui-bg-success-transparent
+    );
+    --basicui-checkbox-border-color-hover: var(--basicui-bg-success-dark);
+    --basicui-checkbox-background-color-checked: var(
+      --basicui-bg-success-transparent-dark
+    );
+    --basicui-checkbox-border-color-checked: var(--basicui-bg-success);
+  }
+  

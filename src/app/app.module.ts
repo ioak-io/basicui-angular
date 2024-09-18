@@ -27,6 +27,7 @@ import Page from '../stories/page.component';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { SwitchComponent } from './switch/switch.component';
+import { CheckboxComponent } from './checkbox/checkbox.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { SwitchComponent } from './switch/switch.component';
     TypographyComponent,
     DemoSectionComponent,
     SwitchComponent,
+    CheckboxComponent,
     Button,
     Header,
     Page

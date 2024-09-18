@@ -7,9 +7,20 @@ import ThemeType from '../types/ThemeType';
   styleUrls: ['./checkbox.component.scss']
 })
 export class CheckboxComponent {
-  @Input() label : string = 'Lorem Dolor';
-  @Input() theme: ThemeType = ThemeType.default;
+  @Input() id: string = '';
+  @Input() label: string = 'Lorem Dolor';
+  @Input() theme: 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'danger' = 'default';
   @Input() type!: string;
-  @Input() checked !: boolean;
+  @Input() checked: boolean = false;
   @Input() defaultChecked !: boolean;
+
+  @Output() checkedChange = new EventEmitter<boolean>();
+
+  onCheckboxChange(event: Event) {
+    const target = event.target as HTMLInputElement;
+    this.checked = target.checked;
+    this.checkedChange.emit(this.checked);
+  }
 }
+
+

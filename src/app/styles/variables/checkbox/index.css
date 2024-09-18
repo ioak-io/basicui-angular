@@ -1,6 +1,9 @@
 @import './default.css';
 @import './primary.css';
 @import './danger.css';
+@import './secondary.css';
+@import './success.css';
+@import './warning.css';
 
 * {
     --basicui-checkbox-height: 20px;
