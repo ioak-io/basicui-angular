@@ -9,7 +9,7 @@ import ThemeType from '../types/ThemeType';
   styleUrls: ['./icon-button.component.scss']
 })
 export class IconButtonComponent {
-  @Input() theme: ThemeType = ThemeType.primary;
+  @Input() theme: 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'danger' = 'default';
   @Input() onClick?: any;
   @Input() onSubmit?: any;
   @Input() onReset?: any;
