@@ -778,7 +778,7 @@
         },
         {
             "name": "CheckboxComponent",
-            "id": "component-CheckboxComponent-3dc95e823f813b7e85ab1ac9f20b4ee4141372a9f43006a623f5f660736a8770be39031dcf68dec7eabe80b82a19bbd1eb559d464eb5a60db46eec6cf9052e15",
+            "id": "component-CheckboxComponent-97c7742341a498d6f66308068215f83142c4b7f314bba7671dc8650ae392e0c2e1f12da2c6f46227a3090211c60f69e47401b802e0063799b3e09697c7129fc5",
             "file": "src/app/checkbox/checkbox.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -798,6 +798,7 @@
             "inputsClass": [
                 {
                     "name": "checked",
+                    "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 14,
@@ -848,9 +849,47 @@
                     "decorators": []
                 }
             ],
-            "outputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "checkedChange",
+                    "defaultValue": "new EventEmitter<boolean>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "EventEmitter"
+                }
+            ],
             "propertiesClass": [],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "onCheckboxChange",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -860,7 +899,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport ThemeType from '../types/ThemeType';\r\n\r\n@Component({\r\n  selector: 'app-checkbox',\r\n  templateUrl: './checkbox.component.html',\r\n  styleUrls: ['./checkbox.component.scss']\r\n})\r\nexport class CheckboxComponent {\r\n  @Input() id : string = '';\r\n  @Input() label : string = 'Lorem Dolor';\r\n  @Input() theme: 'default'| 'primary'| 'secondary'| 'success'| 'warning'| 'danger' = 'default';\r\n  @Input() type!: string;\r\n  @Input() checked !: boolean;\r\n  @Input() defaultChecked !: boolean;\r\n}",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport ThemeType from '../types/ThemeType';\r\n\r\n@Component({\r\n  selector: 'app-checkbox',\r\n  templateUrl: './checkbox.component.html',\r\n  styleUrls: ['./checkbox.component.scss']\r\n})\r\nexport class CheckboxComponent {\r\n  @Input() id: string = '';\r\n  @Input() label: string = 'Lorem Dolor';\r\n  @Input() theme: 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'danger' = 'default';\r\n  @Input() type!: string;\r\n  @Input() checked: boolean = false;\r\n  @Input() defaultChecked !: boolean;\r\n\r\n  @Output() checkedChange = new EventEmitter<boolean>();\r\n\r\n  onCheckboxChange(event: Event) {\r\n    const target = event.target as HTMLInputElement;\r\n    this.checked = target.checked;\r\n    this.checkedChange.emit(this.checked);\r\n  }\r\n}\r\n\r\n\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -870,7 +909,7 @@
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<label class=\"basicui-switch\" [class.basicui-switch--checked]=\"checked\"\r\n[ngClass]=\"{\r\n  'basicui-checkbox--theme-default': theme === 'default',\r\n  'basicui-checkbox--theme-primary': theme === 'primary',\r\n  'basicui-checkbox--theme-danger': theme === 'danger',\r\n  'basicui-checkbox--theme-secondary': theme === 'secondary',\r\n  'basicui-checkbox--theme-success': theme === 'success',\r\n  'basicui-checkbox--theme-warning': theme === 'warning',\r\n}\">\r\n  <input type=\"checkbox\" class=\"basicui-checkbox__input\" />\r\n  <span class=\"basicui-checkbox__span\">{{label}}</span>\r\n</label>"
+            "templateData": "<label class=\"basicui-checkbox\" [class.basicui-checkbox--checked]=\"checked\" [attr.for]=\"id\"\r\n[ngClass]=\"{\r\n  ' basicui-checkbox--theme-default': theme === 'default',\r\n  ' basicui-checkbox--theme-primary': theme === 'primary',\r\n  ' basicui-checkbox--theme-danger': theme === 'danger',\r\n  ' basicui-checkbox--theme-secondary': theme === 'secondary',\r\n  ' basicui-checkbox--theme-success': theme === 'success',\r\n  'basicui-checkbox--theme-warning': theme === 'warning',\r\n}\">\r\n  <input type=\"checkbox\" class=\"basicui-checkbox__input\" [checked]=\"checked\" (change)=\"onCheckboxChange($event)\"/>\r\n  <span class=\"basicui-checkbox__span\">{{label}}</span>\r\n</label>"
         },
         {
             "name": "ColorSchemesComponent",
@@ -1816,7 +1855,7 @@
         },
         {
             "name": "RadioComponent",
-            "id": "component-RadioComponent-544bd6172a853e0946f04a6f05d9ebaaa124566cc7bb959616b8f10288bdb0ee87d4356dcf0fa723ff247121ba2a1e422d8fdbcaa5e88d55928f572efc26068f",
+            "id": "component-RadioComponent-3ad3390c84cfd207686e837208e0593ccd708b54b290ee364a56364b4d5170b71aaf4683e93a85ae27f794d7aa31f1f6bca48e358bf6e928b3ecd4cb8586bb47",
             "file": "src/app/radio/radio.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1835,7 +1874,15 @@
             "hostDirectives": [],
             "inputsClass": [
                 {
-                    "name": "label",
+                    "name": "checked",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "id",
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -1844,26 +1891,73 @@
                     "decorators": []
                 },
                 {
-                    "name": "theme",
-                    "defaultValue": "ThemeType.default",
+                    "name": "label",
+                    "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
-                    "type": "ThemeType",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "theme",
+                    "defaultValue": "'default'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "\"default\" | \"primary\" | \"secondary\" | \"success\" | \"warning\" | \"danger\"",
                     "decorators": []
                 },
                 {
                     "name": "type",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 13,
                     "type": "string",
                     "decorators": []
                 }
             ],
-            "outputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "onChange",
+                    "defaultValue": "new EventEmitter<boolean>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "EventEmitter"
+                }
+            ],
             "propertiesClass": [],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "onRadioChange",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -1873,7 +1967,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, Output} from '@angular/core';\r\nimport ThemeType from '../types/ThemeType';\r\n\r\n@Component({\r\n    selector:'app-radio',\r\n    templateUrl:'./radio.component.html',\r\n    styleUrls:['./radio.component.scss'],\r\n})\r\n\r\nexport class RadioComponent {\r\n    @Input() label: string = '';\r\n    @Input() type!: string;\r\n    @Input() theme: ThemeType = ThemeType.default;  \r\n}",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\r\nimport ThemeType from '../types/ThemeType';\r\n\r\n@Component({\r\n    selector: 'app-radio',\r\n    templateUrl: './radio.component.html',\r\n    styleUrls: ['./radio.component.scss'],\r\n})\r\n\r\nexport class RadioComponent {\r\n    @Input() id: string = '';\r\n    @Input() label: string = '';\r\n    @Input() type!: string;\r\n    @Input() theme: 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'danger' = 'default';\r\n    @Input() checked !: boolean;\r\n\r\n    @Output() onChange = new EventEmitter<boolean>();\r\n\r\n    onRadioChange(event: Event) {\r\n        const target = event.target as HTMLInputElement;\r\n        this.checked = target.checked;\r\n        this.onChange.emit(this.checked);\r\n    }\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1883,7 +1977,7 @@
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<label class=\"basicui-radio\"\r\n    [class.basicui-radio--theme-default]=\"theme === 'default'\"\r\n    [class.basicui-radio--theme-primary]=\"theme === 'primary'\">\r\n    <input class=\"basicui-radio__input\" type=\"radio\"/>\r\n    <span class=\"basicui-radio__span\">{{label}}</span>\r\n</label>"
+            "templateData": "<label class=\"basicui-radio\" [attr.for]=\"id\"\r\n[ngClass]=\"{\r\n    'basicui-radio--theme-default': theme === 'default',\r\n    'basicui-radio--theme-primary': theme === 'primary',\r\n    'basicui-radio--theme-danger': theme === 'danger',\r\n    'basicui-radio--theme-secondary': theme === 'secondary',\r\n    'basicui-radio--theme-success': theme === 'success',\r\n    'basicui-radio--theme-warning': theme === 'warning',\r\n  }\">\r\n\r\n    <input class=\"basicui-radio__input\" type=\"radio\" [checked]=\"checked\" (change)=\"onRadioChange($event)\"/>\r\n    <span class=\"basicui-radio__span\">{{label}}</span>\r\n</label>"
         },
         {
             "name": "SelectComponent",
@@ -3268,8 +3362,8 @@
                 "file": "src/app/radio/radio.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<>",
-                "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Radio',\r\n    component: RadioComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
+                "type": "Meta<RadioComponent>",
+                "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Radio',\r\n    component: RadioComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n      theme: {\r\n        control:{\r\n          type:'select'\r\n        },\r\n        options: ['default', 'primary', 'secondary', 'success', 'warning', 'danger']\r\n      }\r\n    },\r\n  } as Meta<RadioComponent>"
             },
             {
                 "name": "meta",
@@ -3359,7 +3453,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: {\r\n      ...args,\r\n      theme: args.theme\r\n    },\r\n  }),\r\n  args:{\r\n    theme: 'primary',\r\n    checked: false\r\n  }\r\n}"
+                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: {\r\n      ...args,\r\n      theme: args.theme,\r\n      checked: args.checked,\r\n      checkedChange: action('checkedChange'),\r\n    },\r\n  }),\r\n  args:{\r\n    theme: 'primary',\r\n    checked: true\r\n  }\r\n}"
             },
             {
                 "name": "Playground",
@@ -3419,7 +3513,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        theme: ThemeType.primary,\r\n        label:'Lorem ipsum',\r\n        onChange: action('Radio changed'),\r\n      },\r\n    }),\r\n  }"
+                "defaultValue": "{\r\n    render:(args) => ({\r\n      props:{\r\n        ...args,\r\n        theme: 'primary',\r\n        label:'Lorem ipsum',\r\n        onChange: action('onChange'),\r\n      },\r\n    }),\r\n    args:{\r\n      theme: 'primary',\r\n      checked: true\r\n    }\r\n  }"
             },
             {
                 "name": "Playground",
@@ -3763,7 +3857,7 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<>",
+                "rawtype": "StoryObj<RadioComponent>",
                 "file": "src/app/radio/radio.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -4445,7 +4539,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: {\r\n      ...args,\r\n      theme: args.theme\r\n    },\r\n  }),\r\n  args:{\r\n    theme: 'primary',\r\n    checked: false\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: {\r\n      ...args,\r\n      theme: args.theme,\r\n      checked: args.checked,\r\n      checkedChange: action('checkedChange'),\r\n    },\r\n  }),\r\n  args:{\r\n    theme: 'primary',\r\n    checked: true\r\n  }\r\n}"
                 }
             ],
             "src/app/icon-button/icon-button.stories.ts": [
@@ -4544,8 +4638,8 @@
                     "file": "src/app/radio/radio.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Meta<>",
-                    "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Radio',\r\n    component: RadioComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n    },\r\n  } as Meta"
+                    "type": "Meta<RadioComponent>",
+                    "defaultValue": "{\r\n  \r\n    title: 'Form Elements/Radio',\r\n    component: RadioComponent,\r\n    tags:[\"autodocs\"],\r\n    argTypes: {\r\n      theme: {\r\n        control:{\r\n          type:'select'\r\n        },\r\n        options: ['default', 'primary', 'secondary', 'success', 'warning', 'danger']\r\n      }\r\n    },\r\n  } as Meta<RadioComponent>"
                 },
                 {
                     "name": "Playground",
@@ -4555,7 +4649,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n    render:() => ({\r\n      props:{\r\n        theme: ThemeType.primary,\r\n        label:'Lorem ipsum',\r\n        onChange: action('Radio changed'),\r\n      },\r\n    }),\r\n  }"
+                    "defaultValue": "{\r\n    render:(args) => ({\r\n      props:{\r\n        ...args,\r\n        theme: 'primary',\r\n        label:'Lorem ipsum',\r\n        onChange: action('onChange'),\r\n      },\r\n    }),\r\n    args:{\r\n      theme: 'primary',\r\n      checked: true\r\n    }\r\n  }"
                 }
             ],
             "src/app/select-native/select.stories.ts": [
@@ -5096,7 +5190,7 @@
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<>",
+                    "rawtype": "StoryObj<RadioComponent>",
                     "file": "src/app/radio/radio.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -5346,7 +5440,7 @@
                 "linktype": "component",
                 "name": "CheckboxComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {
@@ -5676,7 +5770,7 @@
                 "linktype": "component",
                 "name": "RadioComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/8",
                 "status": "low"
             },
             {

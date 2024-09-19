@@ -1,6 +1,13 @@
-<label class="basicui-radio"
-    [class.basicui-radio--theme-default]="theme === 'default'"
-    [class.basicui-radio--theme-primary]="theme === 'primary'">
-    <input class="basicui-radio__input" type="radio"/>
+<label class="basicui-radio" [attr.for]="id"
+[ngClass]="{
+    'basicui-radio--theme-default': theme === 'default',
+    'basicui-radio--theme-primary': theme === 'primary',
+    'basicui-radio--theme-danger': theme === 'danger',
+    'basicui-radio--theme-secondary': theme === 'secondary',
+    'basicui-radio--theme-success': theme === 'success',
+    'basicui-radio--theme-warning': theme === 'warning',
+  }">
+
+    <input class="basicui-radio__input" type="radio" [checked]="checked" (change)="onRadioChange($event)"/>
     <span class="basicui-radio__span">{{label}}</span>
 </label>
