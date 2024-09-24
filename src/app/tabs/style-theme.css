@@ -32,3 +32,27 @@
     fill: var(--theme-danger-500i);
     border-color: var(--theme-danger-500);
 }
+
+/* secondary */
+.basicui-tabs--theme-secondary .basicui-tabs__ul__li--active .basicui-tabs__ul__li__button {
+  background-color: var(--basicui-bg-secondary);
+  color: var(--basicui-fg-secondary);
+  fill: var(--basicui-fg-secondary);
+  border-color: var(--basicui-bg-secondary);
+}
+
+/* success */
+.basicui-tabs--theme-success .basicui-tabs__ul__li--active .basicui-tabs__ul__li__button {
+    background-color: var(--basicui-bg-success);
+    color: var(--basicui-fg-success);
+    fill: var(--basicui-fg-success);
+    border-color: var(--basicui-bg-success);
+  }
+
+/* warning */
+.basicui-tabs--theme-warning .basicui-tabs__ul__li--active .basicui-tabs__ul__li__button {
+    background-color: var(--basicui-bg-warning);
+    color: var(--basicui-fg-warning);
+    fill: var(--basicui-fg-warning);
+    border-color: var(--basicui-bg-warning);
+  }

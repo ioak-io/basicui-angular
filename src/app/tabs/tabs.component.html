@@ -1,7 +1,23 @@
-<div class="basicui-tabs" [class.basicui-tabs--theme-primary]="true" [class.basicui-tabs--shape-default]="true"
-  [class.basicui-tabs--offset]="true">
+<div [ngClass]="{
+  'basicui-tabs': true,
+  'basicui-tabs--shape-default': shape === 'default',
+  'basicui-tabs--shape-round': shape === 'round',
+  'basicui-tabs--shape-rectangle': shape === 'rectangle',
+  'basicui-tabs--offset':true,
+  'basicui-tabs--theme-default': theme === 'default',
+  'basicui-tabs--theme-primary': theme === 'primary',
+  'basicui-tabs--theme-danger': theme === 'danger',
+  'basicui-tabs--theme-secondary': theme === 'secondary',
+  'basicui-tabs--theme-success': theme === 'success',
+  'basicui-tabs--theme-warning': theme === 'warning',
+}
+">
   <ul class="basicui-tabs__ul">
-    <li *ngFor="let tab of tabs" [class.active]="tab.id === activeTabId" class="basicui-tabs__ul__li">
+    <li *ngFor="let tab of tabs" 
+    [ngClass]="{
+      'basicui-tabs__ul__li':true, 
+      'basicui-tabs__ul__li--active': tab.id === activeTabId
+      }">
       <button class="basicui-tabs__ul__li__button" (click)="changeTab(tab.id)">
         <svg height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true" class="checkmark"
           *ngIf="tab.id === checkmarkTabId">

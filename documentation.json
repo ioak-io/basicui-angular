@@ -1108,7 +1108,7 @@
         },
         {
             "name": "IconButtonComponent",
-            "id": "component-IconButtonComponent-6007121f0bbaf17171bfd92c7d96438ab076020711736a92a5f29aa16144175514eb98d24fa5cf3489edcaa9d7d0cdf19fc2725e6a15e26675331e42241744cd",
+            "id": "component-IconButtonComponent-5f9674f06b193a53b10e1c7e0b41a964f58f4a156cf0dd067947d7204ab81f70bcc07c62b65fa158205a78a48b9f92093ab457d8f4634d0fc4598a804d39c26d",
             "file": "src/app/icon-button/icon-button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1178,11 +1178,11 @@
                 },
                 {
                     "name": "theme",
-                    "defaultValue": "ThemeType.primary",
+                    "defaultValue": "'default'",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 12,
-                    "type": "ThemeType",
+                    "type": "\"default\" | \"primary\" | \"secondary\" | \"success\" | \"warning\" | \"danger\"",
                     "decorators": []
                 },
                 {
@@ -1216,17 +1216,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport ButtonVariantType from '../types/ButtonVariantType';\r\nimport ThemeType from '../types/ThemeType';\r\n\r\n@Component({\r\n  selector: 'app-icon-button',\r\n  templateUrl: './icon-button.component.html',\r\n  styleUrls: ['./icon-button.component.scss']\r\n})\r\nexport class IconButtonComponent {\r\n  @Input() theme: ThemeType = ThemeType.primary;\r\n  @Input() onClick?: any;\r\n  @Input() onSubmit?: any;\r\n  @Input() onReset?: any;\r\n  @Input() type: 'button' | 'submit' | 'reset' = 'button';\r\n  @Input() variant: ButtonVariantType = ButtonVariantType.default;\r\n  @Input() children: any;\r\n  @Input() circle = false;\r\n  @Input() loading = false;\r\n}",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport ButtonVariantType from '../types/ButtonVariantType';\r\nimport ThemeType from '../types/ThemeType';\r\n\r\n@Component({\r\n  selector: 'app-icon-button',\r\n  templateUrl: './icon-button.component.html',\r\n  styleUrls: ['./icon-button.component.scss']\r\n})\r\nexport class IconButtonComponent {\r\n  @Input() theme: 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'danger' = 'default';\r\n  @Input() onClick?: any;\r\n  @Input() onSubmit?: any;\r\n  @Input() onReset?: any;\r\n  @Input() type: 'button' | 'submit' | 'reset' = 'button';\r\n  @Input() variant: ButtonVariantType = ButtonVariantType.default;\r\n  @Input() children: any;\r\n  @Input() circle = false;\r\n  @Input() loading = false;\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".basicui-button--loading svg {\r\n    display: none;\r\n}\r\n\r\n.basicui-button--loading .basicui-button__svg--loading {\r\n    display: block;\r\n    animation: animate_button_loading 2s linear infinite both;\r\n}",
+                    "data": "@import '../styles/index.css';\r\n\r\n.basicui-button--loading svg {\r\n    display: none;\r\n}\r\n\r\n.basicui-button--loading .basicui-button__svg--loading {\r\n    display: block;\r\n    animation: animate_button_loading 2s linear infinite both;\r\n}",
                     "styleUrl": "./icon-button.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<button [ngClass]=\"{\r\n    'basicui-button': true,\r\n    'basicui-icon-button': true,\r\n    'basicui-icon-button--circle': circle,\r\n    'basicui-button--theme-default': theme === 'default',\r\n    'basicui-button--theme-primary': theme === 'primary',\r\n    'basicui-button--variant-default': variant === 'default',\r\n    'basicui-button--variant-fill': variant === 'fill',\r\n    'basicui-button--variant-outline': variant === 'outline',\r\n    'basicui-button--variant-transparent': variant === 'transparent',\r\n    'basicui-button--loading': loading\r\n  }\" [type]=\"type\" (click)=\"onClick && onClick()\" (submit)=\"onSubmit && onSubmit()\" (reset)=\"onReset && onReset()\">\r\n  <ng-container *ngIf=\"loading\">\r\n    <svg class=\"basicui-button__svg--loading\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\r\n      <path\r\n        d=\"M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z\">\r\n      </path>\r\n    </svg>\r\n  </ng-container>\r\n  <ng-container *ngIf=\"!loading\">\r\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" aria-hidden=\"true\">\r\n      <path\r\n        d=\"M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z\">\r\n      </path>\r\n    </svg>\r\n  </ng-container>\r\n</button>"
+            "templateData": "<button [ngClass]=\"{\r\n    'basicui-button': true,\r\n    'basicui-icon-button': true,\r\n    'basicui-icon-button--circle': circle,\r\n    'basicui-button--theme-default': theme === 'default',\r\n    'basicui-button--theme-primary': theme === 'primary',\r\n    'basicui-button--theme-secondary': theme === 'secondary',\r\n    'basicui-button--theme-success': theme === 'success',\r\n    'basicui-button--theme-warning': theme === 'warning',\r\n    'basicui-button--theme-danger': theme === 'danger',\r\n    'basicui-button--variant-default': variant === 'default',\r\n    'basicui-button--variant-fill': variant === 'fill',\r\n    'basicui-button--variant-outline': variant === 'outline',\r\n    'basicui-button--variant-transparent': variant === 'transparent',\r\n    'basicui-button--loading': loading\r\n  }\" [type]=\"type\" (click)=\"onClick && onClick()\" (submit)=\"onSubmit && onSubmit()\" (reset)=\"onReset && onReset()\">\r\n  <ng-container *ngIf=\"loading\">\r\n    <svg class=\"basicui-button__svg--loading\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\r\n      <path\r\n        d=\"M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z\">\r\n      </path>\r\n    </svg>\r\n  </ng-container>\r\n  <ng-container *ngIf=\"!loading\">\r\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" aria-hidden=\"true\">\r\n      <path\r\n        d=\"M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z\">\r\n      </path>\r\n    </svg>\r\n  </ng-container>\r\n</button>"
         },
         {
             "name": "IndexComponent",
@@ -2453,7 +2453,7 @@
         },
         {
             "name": "TableComponent",
-            "id": "component-TableComponent-e64151f149915d309870bc19ce7abddc7cc9d1b4cd5ca6de1b440edd0e4a991a465b1308139a49fd8babf5bc572ddb9373500d4e0cb2a9266ddcce24cffb7878",
+            "id": "component-TableComponent-55737da7bdf162c12576f79bea5938249407ddb913c0f4ff892b153342cbc6ce355e534253d6a1a0238386c55c260bdb119020f11b2c9595ac72b595bb30875f",
             "file": "src/app/table/table.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2521,11 +2521,11 @@
                 },
                 {
                     "name": "theme",
-                    "defaultValue": "ThemeType.default",
+                    "defaultValue": "'default'",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 10,
-                    "type": "ThemeType",
+                    "type": "\"default\" | \"primary\" | \"secondary\" | \"success\" | \"warning\" | \"danger\"",
                     "decorators": []
                 }
             ],
@@ -2552,17 +2552,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport ThemeType from '../types/ThemeType';\r\n\r\n@Component({\r\n  selector: 'app-table',\r\n  templateUrl: './table.component.html',\r\n  styleUrls: ['./table.component.scss']\r\n})\r\nexport class TableComponent {\r\n  @Input() theme: ThemeType = ThemeType.default;\r\n  @Input() inverse?: boolean;\r\n  @Input() inverseHeader?: boolean;\r\n  @Input() striped?: boolean;\r\n  @Input() hover?: boolean;\r\n  @Input() bordered?: boolean;\r\n  @Input() small?: boolean;\r\n\r\n  tableData = [\r\n    { firstName: 'Gene', lastName: 'Tierney', email: 'gene.tierney@ioak.org', age: 36 },\r\n    { firstName: 'Jack', lastName: 'Lemmon', email: 'jack.lemmon@ioak.org', age: 28 },\r\n    { firstName: 'Billy', lastName: 'Wilder', email: 'billy.wilder@ioak.org', age: 45 },\r\n    { firstName: 'Katherine', lastName: 'Hepburn', email: 'katherina.hepburn@ioak.org', age: 27 },\r\n  ];\r\n}",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport ThemeType from '../types/ThemeType';\r\n\r\n@Component({\r\n  selector: 'app-table',\r\n  templateUrl: './table.component.html',\r\n  styleUrls: ['./table.component.scss']\r\n})\r\nexport class TableComponent {\r\n  @Input() theme: 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'danger' = 'default';\r\n  @Input() inverse?: boolean;\r\n  @Input() inverseHeader?: boolean;\r\n  @Input() striped?: boolean;\r\n  @Input() hover?: boolean;\r\n  @Input() bordered?: boolean;\r\n  @Input() small?: boolean;\r\n\r\n  tableData = [\r\n    { firstName: 'Gene', lastName: 'Tierney', email: 'gene.tierney@ioak.org', age: 36 },\r\n    { firstName: 'Jack', lastName: 'Lemmon', email: 'jack.lemmon@ioak.org', age: 28 },\r\n    { firstName: 'Billy', lastName: 'Wilder', email: 'billy.wilder@ioak.org', age: 45 },\r\n    { firstName: 'Katherine', lastName: 'Hepburn', email: 'katherina.hepburn@ioak.org', age: 27 },\r\n  ];\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "//@import '../styles/index.css';\r\n",
+                    "data": "@import '../styles/index.css';\r\n",
                     "styleUrl": "./table.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<table [ngClass]=\"{\r\n        'basicui-table': true,\r\n        'theme-default': theme === 'default',\r\n        'table-inverse': inverse,\r\n        'table-striped': striped,\r\n        'table-hover': hover,\r\n        'table-bordered': bordered,\r\n        'table-small': small}\">\r\n  <thead [ngClass]=\"{ 'thead-inverse': inverseHeader }\">\r\n    <tr>\r\n      <th>First name</th>\r\n      <th>Last name</th>\r\n      <th>Email</th>\r\n      <th>Age</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let row of tableData\">\r\n      <td>{{ row.firstName }}</td>\r\n      <td>{{ row.lastName }}</td>\r\n      <td>{{ row.email }}</td>\r\n      <td>{{ row.age }}</td>\r\n    </tr>\r\n  </tbody>\r\n</table>"
+            "templateData": "<table [ngClass]=\"{\r\n        'basicui-table': true,\r\n        'theme-default': theme === 'default',\r\n        'theme-primary': theme === 'primary',\r\n        'theme-danger': theme === 'danger',\r\n        'theme-default': theme === 'default',\r\n        'table-inverse': inverse,\r\n        'table-striped': striped,\r\n        'table-hover': hover,\r\n        'table-bordered': bordered,\r\n        'table-small': small}\">\r\n  <thead [ngClass]=\"{ 'thead-inverse': inverseHeader }\">\r\n    <tr>\r\n      <th>First name</th>\r\n      <th>Last name</th>\r\n      <th>Email</th>\r\n      <th>Age</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let row of tableData\">\r\n      <td>{{ row.firstName }}</td>\r\n      <td>{{ row.lastName }}</td>\r\n      <td>{{ row.email }}</td>\r\n      <td>{{ row.age }}</td>\r\n    </tr>\r\n  </tbody>\r\n</table>"
         },
         {
             "name": "TabsComponent",
@@ -3322,8 +3322,8 @@
                 "file": "src/app/icon-button/icon-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<>",
-                "defaultValue": "{\r\n\r\n  title: 'Form Elements/Icon Button',\r\n  component: IconButtonComponent,\r\n  tags: [\"autodocs\"],\r\n  argTypes: {\r\n  },\r\n} as Meta"
+                "type": "Meta<IconButtonComponent>",
+                "defaultValue": "{\r\n\r\n  title: 'Form Elements/Icon Button',\r\n  component: IconButtonComponent,\r\n  tags: [\"autodocs\"],\r\n  argTypes: {\r\n    theme:{\r\n      control: {type: 'radio'},\r\n      options: ['default', 'primary', 'secondary', 'success', 'warning', 'danger']\r\n    },\r\n    variant:{\r\n      control: {type: 'radio'},\r\n      options: [\"default\", \"outline\", \"fill\", \"transparent\"]\r\n    }\r\n  },\r\n} as Meta"
             },
             {
                 "name": "meta",
@@ -3403,7 +3403,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<>",
-                "defaultValue": "{\r\n\r\n  title: 'Surfaces/Table',\r\n  component: TableComponent,\r\n  tags: [\"autodocs\"],\r\n  argTypes: {\r\n  },\r\n} as Meta"
+                "defaultValue": "{\r\n\r\n  title: 'Surfaces/Table',\r\n  component: TableComponent,\r\n  tags: [\"autodocs\"],\r\n  argTypes: {\r\n    theme:{\r\n      control: {type: 'radio'},\r\n      options: ['default', 'primary', 'secondary', 'success', 'warning', 'danger']\r\n    }\r\n  },\r\n} as Meta"
             },
             {
                 "name": "meta",
@@ -3463,7 +3463,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  render: () => ({\r\n    props: {\r\n      theme: ThemeType.primary,\r\n      variant: ButtonVariantType.default,\r\n      circle: false,\r\n    },\r\n  }),\r\n}"
+                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: {\r\n      ...args\r\n    },\r\n  }),\r\n}"
             },
             {
                 "name": "Playground",
@@ -3513,7 +3513,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n    render:(args) => ({\r\n      props:{\r\n        ...args,\r\n        theme: 'primary',\r\n        label:'Lorem ipsum',\r\n        onChange: action('onChange'),\r\n      },\r\n    }),\r\n    args:{\r\n      theme: 'primary',\r\n      checked: true\r\n    }\r\n  }"
+                "defaultValue": "{\r\n    render:(args) => ({\r\n      props:{\r\n        ...args,\r\n        label:'Lorem ipsum',\r\n        onChange: action('onChange'),\r\n      },\r\n    }),\r\n    args:{\r\n      theme: 'primary',\r\n      checked: true\r\n    }\r\n  }"
             },
             {
                 "name": "Playground",
@@ -3553,7 +3553,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  render: () => ({\r\n    props: {\r\n    },\r\n  }),\r\n}"
+                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: {\r\n      ...args\r\n    },\r\n  }),\r\n}"
             },
             {
                 "name": "Playground",
@@ -3813,7 +3813,7 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<>",
+                "rawtype": "StoryObj<IconButtonComponent>",
                 "file": "src/app/icon-button/icon-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -4550,8 +4550,8 @@
                     "file": "src/app/icon-button/icon-button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Meta<>",
-                    "defaultValue": "{\r\n\r\n  title: 'Form Elements/Icon Button',\r\n  component: IconButtonComponent,\r\n  tags: [\"autodocs\"],\r\n  argTypes: {\r\n  },\r\n} as Meta"
+                    "type": "Meta<IconButtonComponent>",
+                    "defaultValue": "{\r\n\r\n  title: 'Form Elements/Icon Button',\r\n  component: IconButtonComponent,\r\n  tags: [\"autodocs\"],\r\n  argTypes: {\r\n    theme:{\r\n      control: {type: 'radio'},\r\n      options: ['default', 'primary', 'secondary', 'success', 'warning', 'danger']\r\n    },\r\n    variant:{\r\n      control: {type: 'radio'},\r\n      options: [\"default\", \"outline\", \"fill\", \"transparent\"]\r\n    }\r\n  },\r\n} as Meta"
                 },
                 {
                     "name": "Playground",
@@ -4561,7 +4561,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  render: () => ({\r\n    props: {\r\n      theme: ThemeType.primary,\r\n      variant: ButtonVariantType.default,\r\n      circle: false,\r\n    },\r\n  }),\r\n}"
+                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: {\r\n      ...args\r\n    },\r\n  }),\r\n}"
                 }
             ],
             "src/app/input/input.stories.ts": [
@@ -4649,7 +4649,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n    render:(args) => ({\r\n      props:{\r\n        ...args,\r\n        theme: 'primary',\r\n        label:'Lorem ipsum',\r\n        onChange: action('onChange'),\r\n      },\r\n    }),\r\n    args:{\r\n      theme: 'primary',\r\n      checked: true\r\n    }\r\n  }"
+                    "defaultValue": "{\r\n    render:(args) => ({\r\n      props:{\r\n        ...args,\r\n        label:'Lorem ipsum',\r\n        onChange: action('onChange'),\r\n      },\r\n    }),\r\n    args:{\r\n      theme: 'primary',\r\n      checked: true\r\n    }\r\n  }"
                 }
             ],
             "src/app/select-native/select.stories.ts": [
@@ -4705,7 +4705,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<>",
-                    "defaultValue": "{\r\n\r\n  title: 'Surfaces/Table',\r\n  component: TableComponent,\r\n  tags: [\"autodocs\"],\r\n  argTypes: {\r\n  },\r\n} as Meta"
+                    "defaultValue": "{\r\n\r\n  title: 'Surfaces/Table',\r\n  component: TableComponent,\r\n  tags: [\"autodocs\"],\r\n  argTypes: {\r\n    theme:{\r\n      control: {type: 'radio'},\r\n      options: ['default', 'primary', 'secondary', 'success', 'warning', 'danger']\r\n    }\r\n  },\r\n} as Meta"
                 },
                 {
                     "name": "Playground",
@@ -4715,7 +4715,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  render: () => ({\r\n    props: {\r\n    },\r\n  }),\r\n}"
+                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: {\r\n      ...args\r\n    },\r\n  }),\r\n}"
                 },
                 {
                     "name": "Template",
@@ -5138,7 +5138,7 @@
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<>",
+                    "rawtype": "StoryObj<IconButtonComponent>",
                     "file": "src/app/icon-button/icon-button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",

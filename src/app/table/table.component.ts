@@ -7,7 +7,7 @@ import ThemeType from '../types/ThemeType';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent {
-  @Input() theme: ThemeType = ThemeType.default;
+  @Input() theme: 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'danger' = 'default';
   @Input() inverse?: boolean;
   @Input() inverseHeader?: boolean;
   @Input() striped?: boolean;
