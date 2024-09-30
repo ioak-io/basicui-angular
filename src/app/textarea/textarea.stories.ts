@@ -14,8 +14,9 @@ export default meta;
 type Story = StoryObj<typeof TextareaComponent>;
 
 export const Playground: Story = {
-  render: () => ({
+  render: (args) => ({
     props: {
+      ...args,
       label: 'Lorem ipsum',
       placeholder: 'Dolor sit',
       value: ''

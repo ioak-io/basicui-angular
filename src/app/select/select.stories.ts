@@ -14,8 +14,9 @@ export default meta;
 type Story = StoryObj<typeof SelectComponent>;
 
 export const SelectForm: Story = {
-  render: () => ({
+  render: (args) => ({
     props: {
+      ...args,
       selectType: 'single',
       options: [
         { value: '1', label: 'Lorem ipsum' },
@@ -27,8 +28,9 @@ export const SelectForm: Story = {
   }),
 };
 export const AutocompleteForm: Story = {
-  render: () => ({
+  render: (args) => ({
     props: {
+      ...args,
       selectType: 'autocomplete',
       options: [
         { value: '1', label: 'Lorem ipsum' },
