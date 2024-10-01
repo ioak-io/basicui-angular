@@ -1767,7 +1767,7 @@
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"modal-footer\">\r\n  <div class=\"basicui-modal-footer\">\r\n    <button (click)=\"onClose()\" [ngClass]=\"{\r\n        'basicui-button': true,\r\n        'basicui-button--theme-primary': theme === 'primary',\r\n        'basicui-button--theme-default': theme === 'default',\r\n        'basicui-button--theme-secondary': theme === 'secondary',\r\n        'basicui-button--theme-success': theme === 'success',\r\n        'basicui-button--theme-warning': theme === 'warning',\r\n        'basicui-button--theme-danger': theme === 'danger',\r\n        'basicui-button--variant-default': variant === 'default',}\"\r\n      style=\"background-color: #1492db; margin-right: 10px; outline: none; border: none; color: white;\">Apply</button>\r\n    <button (click)=\"onClose()\" [ngClass]=\"{\r\n        'basicui-button': true,\r\n        'basicui-button--theme-default': theme === 'default',\r\n        'basicui-button--variant-default': variant === 'default'}\">Cancel</button>\r\n  </div>\r\n</div>"
+            "templateData": "<div class=\"modal-footer\">\r\n  <div class=\"basicui-modal-footer\">\r\n    <button (click)=\"onClose()\" [ngClass]=\"{\r\n        'basicui-button': true,\r\n        'basicui-button--theme-primary': theme === 'primary',\r\n        'basicui-button--theme-default': theme === 'default',\r\n        'basicui-button--theme-secondary': theme === 'secondary',\r\n        'basicui-button--theme-success': theme === 'success',\r\n        'basicui-button--theme-warning': theme === 'warning',\r\n        'basicui-button--theme-danger': theme === 'danger',\r\n        'basicui-button--variant-default': variant === 'default',\r\n        'basicui-button--variant-fill': variant === 'fill',\r\n        'basicui-button--variant-outline': variant === 'outline',\r\n        'basicui-button--variant-transparent': variant === 'transparent',}\"\r\n      >Apply</button>\r\n    <button (click)=\"onClose()\" [ngClass]=\"{\r\n        'basicui-button': true,\r\n        'basicui-button--theme-default': theme === 'default',\r\n        'basicui-button--variant-default': variant === 'default'}\" style=\"border:none;\">Cancel</button>\r\n  </div>\r\n</div>"
         },
         {
             "name": "PageComponent",
@@ -1981,7 +1981,7 @@
         },
         {
             "name": "SelectComponent",
-            "id": "component-SelectComponent-f2bbdbea34481264fc763ebd62461799facf01f3e1ac046244e5eb94698d063f79dce34fb13737d41dfe9f362da757db287afbd19178718e8ec0ea1fa6145720",
+            "id": "component-SelectComponent-cb466aac0d93e74d9cd116b0ac33943bc9c2414afbc1271dbd34cfef93e247c5e4c8bbc66bf838534e2581c8f81e048a6f5aa861ccc791f983a2f3b55f883817",
             "file": "src/app/select/select.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2000,6 +2000,24 @@
             "hostDirectives": [],
             "inputsClass": [
                 {
+                    "name": "allowNewValues",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "autocomplete",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
                     "name": "options",
                     "defaultValue": "[]",
                     "deprecated": false,
@@ -2010,7 +2028,7 @@
                 },
                 {
                     "name": "placeholder",
-                    "defaultValue": "''",
+                    "defaultValue": "'Select Dropdown'",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 10,
@@ -2023,24 +2041,151 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 11,
-                    "type": "\"single\" | \"autocomplete\"",
+                    "type": "\"single\" | \"multiple\" | \"autocomplete\"",
                     "decorators": []
                 }
             ],
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "selectedValue",
+                    "name": "filteredOptions",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                },
+                {
+                    "name": "isVisible",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                },
+                {
+                    "name": "searchText",
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 13
+                    "line": 18
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "(string | number)[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
                 }
             ],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "getSelectedtext",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 63,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "handleOptionClick",
+                    "args": [
+                        {
+                            "name": "optionValue",
+                            "type": "string | number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 34,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "optionValue",
+                            "type": "string | number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnChanges",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 26,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInIt",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onSearchTextChange",
+                    "args": [
+                        {
+                            "name": "searchText",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 49,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "searchText",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "toggleDropdown",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 30,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -2050,7 +2195,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-select',\r\n  templateUrl: './select.component.html',\r\n  styleUrls: ['./select.component.scss']\r\n})\r\nexport class SelectComponent {\r\n  [x: string]: any;\r\n  @Input() placeholder = '';\r\n  @Input() selectType: 'single' | 'autocomplete' = 'single';\r\n  @Input() options: { value: string, label: string }[] = [];\r\n  selectedValue: string = '';\r\n}",
+            "sourceCode": "import { Component, Input, OnInit, OnChanges } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-select',\r\n  templateUrl: './select.component.html',\r\n  styleUrls: ['./select.component.scss']\r\n})\r\nexport class SelectComponent {\r\n  // [x: string]: any;\r\n  @Input() placeholder = 'Select Dropdown';\r\n  @Input() selectType: 'single' | 'multiple' | 'autocomplete' = 'single';\r\n  @Input() options: { value: string | number, label: string }[] = [];\r\n  @Input() allowNewValues = false;\r\n  @Input() autocomplete = false;\r\n\r\n  value: (string | number)[] = [];\r\n\r\n  searchText: string = '';\r\n  isVisible: boolean = false;\r\n  filteredOptions: { value: string | number, label: string }[] = [];\r\n\r\n  ngOnInIt() {\r\n    this.filteredOptions = this.options;\r\n  }\r\n\r\n  ngOnChanges() {\r\n    this.filteredOptions = this.options;\r\n  }\r\n\r\n  toggleDropdown() {\r\n    this.isVisible = !this.isVisible;\r\n  }\r\n\r\n  handleOptionClick(optionValue: string | number) {\r\n    if (this.selectType === 'single') {\r\n      this.value = [optionValue];\r\n      this.isVisible = false;\r\n    } else {\r\n      if (this.value.includes(optionValue)) {\r\n        this.value = this.value.filter(item => item != optionValue);\r\n      }\r\n      else {\r\n        this.value = [...this.value, optionValue];\r\n      }\r\n    }\r\n\r\n  }\r\n\r\n  onSearchTextChange(searchText: string) {\r\n    const _searchText = searchText.toLowerCase();\r\n    if (!_searchText.trim()) {\r\n      this.filteredOptions = this.options;\r\n    } else {\r\n      this.filteredOptions = this.options.filter(item => (item.label + '').toLowerCase().includes(_searchText));\r\n\r\n      if (this.allowNewValues && !this.filteredOptions.find(item => item.label === searchText)) {\r\n        this.filteredOptions.unshift({ label: searchText, value: searchText });\r\n      }\r\n    }\r\n\r\n  }\r\n\r\n  getSelectedtext(): string{\r\n    return this.value.map(val => this.options.find(option => option.value === val)?.label || val).join(', ');\r\n  }\r\n}\r\n\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2060,7 +2205,7 @@
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"custom-select\" *ngIf=\"selectType === 'single'\">\r\n  <select *ngIf=\"selectedValue !== undefined\" class=\"positioned-select\">\r\n    <option value=\"select dropdown\"> {{ selectedValue }}</option>\r\n    <option *ngFor=\"let option of options\" [value]=\"option.value\">{{ option.label }}</option>\r\n  </select>\r\n</div>\r\n\r\n<div class=\"custom-select\" *ngIf=\"selectType === 'autocomplete'\">\r\n  <input type=\"text\" placeholder=\"Autocomplete drop down\" list=\"autocompleteOptions\" class=\"auto-select\"\r\n    style=\"width: 100%; \">\r\n  <datalist id=\"autocompleteOptions\">\r\n    <option *ngFor=\"let option of options\" [value]=\"option.label\" style=\"width: 100%;\">{{ option.label }}</option>\r\n  </datalist>\r\n</div>"
+            "templateData": "<div class=\"custom-select\" *ngIf=\"!autocomplete\">\r\n  <button class=\"basicui-input basicui-select__button\" type=\"button\" (click)=\"toggleDropdown()\" [innerHTML]=\"getSelectedtext() || placeholder\"></button>\r\n\r\n  <div class=\"basicui-select__popper\" *ngIf=\"isVisible\">\r\n    <ul class=\"options-list\">\r\n      <li *ngFor=\"let option of filteredOptions\" (click)=\"handleOptionClick(option.value)\">\r\n        {{ option.label }}\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"custom-select\" *ngIf=\"autocomplete\">\r\n  <input type=\"text\" [(ngModel)]=\"searchText\" placeholder=\"{{placeholder}}\" (input)=\"onSearchTextChange(searchText)\" class=\"auto-select\" />\r\n  <datalist id=\"autocompleteOptions\">\r\n    <option *ngFor=\"let option of filteredOptions\" [value]=\"option.label\"></option>\r\n  </datalist>\r\n</div>\r\n"
         },
         {
             "name": "SelectComponent",
@@ -3143,7 +3288,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  render: () => ({\r\n    props: {\r\n      selectType: 'autocomplete',\r\n      options: [\r\n        { value: '1', label: 'Lorem ipsum' },\r\n        { value: '2', label: 'Dolor sit' },\r\n        { value: '3', label: 'Another long text another long text' },\r\n      ],\r\n      selectedValue: 'Dolor sit',\r\n      placeholder: 'Enter select option'\r\n    },\r\n  }),\r\n}"
+                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: {\r\n      ...args,\r\n      selectType: 'autocomplete',\r\n      options: [\r\n        { value: '1', label: 'Lorem ipsum' },\r\n        { value: '2', label: 'Dolor sit' },\r\n        { value: '3', label: 'Another long text another long text' },\r\n      ],\r\n      selectedValue: 'Dolor sit',\r\n      placeholder: 'Enter select option'\r\n    },\r\n  }),\r\n}"
             },
             {
                 "name": "avatarUrl",
@@ -3503,7 +3648,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "() => ({\r\n  component: ModalFooterComponent,\r\n  props: {}\r\n})"
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Playground",
@@ -3523,7 +3668,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  render: () => ({\r\n    props: {\r\n      label: 'Lorem ipsum',\r\n      selectType: 'single',\r\n      options: [\r\n        { value: '1', label: 'Lorem ipsum' },\r\n        { value: '2', label: 'Another long text another long text' },\r\n        { value: '3', label: 'Dolor sit' },\r\n      ],\r\n      selectedValue: 'Dolor sit',\r\n    },\r\n  }),\r\n}"
+                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: {\r\n      ...args,\r\n      label: 'Lorem ipsum',\r\n      selectType: 'single',\r\n      options: [\r\n        { value: '1', label: 'Lorem ipsum' },\r\n        { value: '2', label: 'Another long text another long text' },\r\n        { value: '3', label: 'Dolor sit' },\r\n      ],\r\n      selectedValue: 'Dolor sit',\r\n    },\r\n  }),\r\n}"
             },
             {
                 "name": "Playground",
@@ -3573,7 +3718,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  render: () => ({\r\n    props: {\r\n      label: 'Lorem ipsum',\r\n      placeholder: 'Dolor sit',\r\n      value: ''\r\n    },\r\n  }),\r\n}"
+                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: {\r\n      ...args,\r\n      label: 'Lorem ipsum',\r\n      placeholder: 'Dolor sit',\r\n      value: ''\r\n    },\r\n  }),\r\n}"
             },
             {
                 "name": "Playground",
@@ -3653,7 +3798,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  render: () => ({\r\n    props: {\r\n      selectType: 'single',\r\n      options: [\r\n        { value: '1', label: 'Lorem ipsum' },\r\n        { value: '2', label: 'Another long text another long text' },\r\n        { value: '3', label: 'Dolor sit' },\r\n      ],\r\n      selectedValue: 'Dolor sit',\r\n    },\r\n  }),\r\n}"
+                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: {\r\n      ...args,\r\n      selectType: 'single',\r\n      options: [\r\n        { value: '1', label: 'Lorem ipsum' },\r\n        { value: '2', label: 'Another long text another long text' },\r\n        { value: '3', label: 'Dolor sit' },\r\n      ],\r\n      selectedValue: 'Dolor sit',\r\n    },\r\n  }),\r\n}"
             },
             {
                 "name": "Small",
@@ -3709,6 +3854,16 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonComponent>",
+                "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/breadcrumbs/breadcrumbs.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3724,16 +3879,6 @@
                 "deprecationMessage": "",
                 "type": "Story<AvatarComponent>",
                 "defaultValue": "(args: AvatarComponent) => ({\r\n  component: AvatarComponent,\r\n  props: args\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<ButtonComponent>",
-                "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -4291,7 +4436,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  render: () => ({\r\n    props: {\r\n      selectType: 'autocomplete',\r\n      options: [\r\n        { value: '1', label: 'Lorem ipsum' },\r\n        { value: '2', label: 'Dolor sit' },\r\n        { value: '3', label: 'Another long text another long text' },\r\n      ],\r\n      selectedValue: 'Dolor sit',\r\n      placeholder: 'Enter select option'\r\n    },\r\n  }),\r\n}"
+                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: {\r\n      ...args,\r\n      selectType: 'autocomplete',\r\n      options: [\r\n        { value: '1', label: 'Lorem ipsum' },\r\n        { value: '2', label: 'Dolor sit' },\r\n        { value: '3', label: 'Another long text another long text' },\r\n      ],\r\n      selectedValue: 'Dolor sit',\r\n      placeholder: 'Enter select option'\r\n    },\r\n  }),\r\n}"
                 },
                 {
                     "name": "meta",
@@ -4311,7 +4456,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  render: () => ({\r\n    props: {\r\n      selectType: 'single',\r\n      options: [\r\n        { value: '1', label: 'Lorem ipsum' },\r\n        { value: '2', label: 'Another long text another long text' },\r\n        { value: '3', label: 'Dolor sit' },\r\n      ],\r\n      selectedValue: 'Dolor sit',\r\n    },\r\n  }),\r\n}"
+                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: {\r\n      ...args,\r\n      selectType: 'single',\r\n      options: [\r\n        { value: '1', label: 'Lorem ipsum' },\r\n        { value: '2', label: 'Another long text another long text' },\r\n        { value: '3', label: 'Dolor sit' },\r\n      ],\r\n      selectedValue: 'Dolor sit',\r\n    },\r\n  }),\r\n}"
                 }
             ],
             "src/app/avatar/avatar.stories.ts": [
@@ -4681,7 +4826,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  render: () => ({\r\n    props: {\r\n      label: 'Lorem ipsum',\r\n      selectType: 'single',\r\n      options: [\r\n        { value: '1', label: 'Lorem ipsum' },\r\n        { value: '2', label: 'Another long text another long text' },\r\n        { value: '3', label: 'Dolor sit' },\r\n      ],\r\n      selectedValue: 'Dolor sit',\r\n    },\r\n  }),\r\n}"
+                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: {\r\n      ...args,\r\n      label: 'Lorem ipsum',\r\n      selectType: 'single',\r\n      options: [\r\n        { value: '1', label: 'Lorem ipsum' },\r\n        { value: '2', label: 'Another long text another long text' },\r\n        { value: '3', label: 'Dolor sit' },\r\n      ],\r\n      selectedValue: 'Dolor sit',\r\n    },\r\n  }),\r\n}"
                 }
             ],
             "src/app/switch/switch.stories.ts": [
@@ -4757,7 +4902,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  render: () => ({\r\n    props: {\r\n      label: 'Lorem ipsum',\r\n      placeholder: 'Dolor sit',\r\n      value: ''\r\n    },\r\n  }),\r\n}"
+                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: {\r\n      ...args,\r\n      label: 'Lorem ipsum',\r\n      placeholder: 'Dolor sit',\r\n      value: ''\r\n    },\r\n  }),\r\n}"
                 }
             ],
             "src/app/accordion/accordion.stories.ts": [
@@ -4813,7 +4958,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "() => ({\r\n  component: ModalFooterComponent,\r\n  props: {}\r\n})"
+                    "defaultValue": "Template.bind({})"
                 },
                 {
                     "name": "Template",
@@ -5858,7 +6003,7 @@
                 "linktype": "component",
                 "name": "SelectComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/16",
                 "status": "low"
             },
             {

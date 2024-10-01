@@ -1,14 +1,18 @@
-<div class="custom-select" *ngIf="selectType === 'single'">
-  <select *ngIf="selectedValue !== undefined" class="positioned-select">
-    <option value="select dropdown"> {{ selectedValue }}</option>
-    <option *ngFor="let option of options" [value]="option.value">{{ option.label }}</option>
-  </select>
+<div class="custom-select" *ngIf="!autocomplete">
+  <button class="basicui-input basicui-select__button" type="button" (click)="toggleDropdown()" [innerHTML]="getSelectedtext() || placeholder"></button>
+
+  <div class="basicui-select__popper" *ngIf="isVisible">
+    <ul class="options-list">
+      <li *ngFor="let option of filteredOptions" (click)="handleOptionClick(option.value)">
+        {{ option.label }}
+      </li>
+    </ul>
+  </div>
 </div>
 
-<div class="custom-select" *ngIf="selectType === 'autocomplete'">
-  <input type="text" placeholder="Autocomplete drop down" list="autocompleteOptions" class="auto-select"
-    style="width: 100%; ">
+<div class="custom-select" *ngIf="autocomplete">
+  <input type="text" [(ngModel)]="searchText" placeholder="{{placeholder}}" (input)="onSearchTextChange(searchText)" class="auto-select" />
   <datalist id="autocompleteOptions">
-    <option *ngFor="let option of options" [value]="option.label" style="width: 100%;">{{ option.label }}</option>
+    <option *ngFor="let option of filteredOptions" [value]="option.label"></option>
   </datalist>
 </div>
