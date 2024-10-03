@@ -1,0 +1,31 @@
+<div class="basicui-selectnative">
+  <label *ngIf="label" for="{{id}}">{{ label }}</label>
+
+  <select 
+    [id]="id"
+    class="basicui-input basicui-selectnative"
+    [class.basicui-selectnative--multiple]="multiple"
+    [multiple]="multiple"
+    [size]="multiple ? 5 : 1"
+    [(ngModel)]="values"
+  >
+    <option *ngIf="placeholder && !multiple" disabled [value]="null" [selected]="!values?.length">
+      {{ placeholder }}
+    </option>
+
+
+    <option 
+      *ngFor="let option of options"
+      [selected]="isSelected(option.name)"
+      [value]="option.name"
+      class="basicui-selectnative__option"
+    >
+      {{ option.value }}
+    </option>
+  </select>
+
+  <small *ngIf="tooltip" class="form-text text-muted">{{ tooltip }}</small>
+  <small *ngIf="errorMessage" class="form-text text-danger">{{ errorMessage }}</small>
+  <small *ngIf="warningMessage" class="form-text text-warning">{{ warningMessage }}</small>
+  <small *ngIf="successMessage" class="form-text text-success">{{ successMessage }}</small>
+</div>

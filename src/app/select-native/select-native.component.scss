@@ -1,0 +1,36 @@
+@import '../styles/index.css';
+
+.basicui-selectnative {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  border: 1px solid var(--basicui-formelement-border-color, #ccc); 
+  padding: 0.5rem;
+  width: 100%;
+  background-color: var(--theme-background-color); 
+  font-size: 13px;
+}
+
+.basicui-selectnative__option {
+  background-color: var(--basicui-formelement-background-color); 
+  color: var(--basicui-formelement-color);
+}
+
+.basicui-selectnative option:checked {
+  background-color: var(--theme-adaptive-200, #f0f0f0);
+  color: var(--basicui-formelement-color);
+}
+
+.basicui-selectnative--multiple {
+  height: auto;
+  padding: 0;
+  min-height: 100px; 
+  background-color: var(--theme-background-color, #fff);
+}
+
+.basicui-selectnative--multiple option {
+  background-color: transparent;
+}
+
+.basicui-selectnative--multiple option:checked {
+  background-color: var(--theme-adaptive-200, #f0f0f0);
+}

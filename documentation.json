@@ -113,6 +113,39 @@
             "extends": []
         },
         {
+            "name": "OptionsObjectType",
+            "id": "interface-OptionsObjectType-0e422f91dc398f14c5503aa0cd43d325b47f114d202f3223fdde75f514e0edcb041a231d2206748f6c2bbd366761717a07c37345cdc03531ffc614202aab8a15",
+            "file": "src/app/select-native/select-native.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\ninterface OptionsObjectType {\r\n  name: string;\r\n  value: string | number;\r\n}\r\n@Component({\r\n  selector: 'app-select-native',\r\n  templateUrl: './select-native.component.html',\r\n  styleUrls: ['./select-native.component.scss']\r\n})\r\nexport class SelectNativeComponent {\r\n  @Input() initialValues?: (string | number)[];\r\n  @Input() options: OptionsObjectType[] = [];\r\n  @Input() id?: string;\r\n  @Input() label?: string;\r\n  @Input() placeholder?: string;\r\n  @Input() tooltip?: string;\r\n  @Input() errorMessage?: string;\r\n  @Input() warningMessage?: string;\r\n  @Input() successMessage?: string;\r\n  @Input() multiple?: boolean = false;\r\n  @Input() autocomplete?: boolean = false;\r\n\r\n  values: (string | number)[] = [];\r\n\r\n  ngOnInit(): void {\r\n    // Set initial values on component load\r\n    if (this.initialValues && this.initialValues.length > 0) {\r\n      this.values = [...this.initialValues];\r\n    }\r\n  }\r\n\r\n  isSelected(option: string | number): boolean {\r\n    return this.values.includes(option);\r\n  }\r\n}",
+            "properties": [
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "value",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | number",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
             "name": "Tab",
             "id": "interface-Tab-4705c978eb6cde774b1c08a781438879fc72de4cff1ba7838e4016af76fec3bbd24a7074ce05dfa8d86d2b03363a3f2449041450603abfa0f1fb56188ad5e8eb",
             "file": "src/app/tabs/tabs.component.ts",
@@ -2208,9 +2241,9 @@
             "templateData": "<div class=\"custom-select\" *ngIf=\"!autocomplete\">\r\n  <button class=\"basicui-input basicui-select__button\" type=\"button\" (click)=\"toggleDropdown()\" [innerHTML]=\"getSelectedtext() || placeholder\"></button>\r\n\r\n  <div class=\"basicui-select__popper\" *ngIf=\"isVisible\">\r\n    <ul class=\"options-list\">\r\n      <li *ngFor=\"let option of filteredOptions\" (click)=\"handleOptionClick(option.value)\">\r\n        {{ option.label }}\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"custom-select\" *ngIf=\"autocomplete\">\r\n  <input type=\"text\" [(ngModel)]=\"searchText\" placeholder=\"{{placeholder}}\" (input)=\"onSearchTextChange(searchText)\" class=\"auto-select\" />\r\n  <datalist id=\"autocompleteOptions\">\r\n    <option *ngFor=\"let option of filteredOptions\" [value]=\"option.label\"></option>\r\n  </datalist>\r\n</div>\r\n"
         },
         {
-            "name": "SelectComponent",
-            "id": "component-SelectComponent-8c9d7eabb8486840261b2a9215ac68a7b197dd7381790b98949f178f154a5e3658596ffade5d42181691339009c9f5ae8836998032f79ff1fc83fedd50ad858f-1",
-            "file": "src/app/select-native/select.component.ts",
+            "name": "SelectNativeComponent",
+            "id": "component-SelectNativeComponent-0e422f91dc398f14c5503aa0cd43d325b47f114d202f3223fdde75f514e0edcb041a231d2206748f6c2bbd366761717a07c37345cdc03531ffc614202aab8a15",
+            "file": "src/app/select-native/select-native.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -2218,21 +2251,63 @@
             "providers": [],
             "selector": "app-select-native",
             "styleUrls": [
-                "./select.component.scss"
+                "./select-native.component.scss"
             ],
             "styles": [],
             "templateUrl": [
-                "./select.component.html"
+                "./select-native.component.html"
             ],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [
                 {
+                    "name": "autocomplete",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "errorMessage",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "id",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "initialValues",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "(string | number)[]",
+                    "decorators": []
+                },
+                {
                     "name": "label",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 10,
+                    "line": 15,
                     "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "multiple",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "boolean",
                     "decorators": []
                 },
                 {
@@ -2241,42 +2316,95 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 13,
-                    "type": "literal type[]",
+                    "type": "OptionsObjectType[]",
                     "decorators": []
                 },
                 {
                     "name": "placeholder",
-                    "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "line": 16,
                     "type": "string",
                     "decorators": []
                 },
                 {
-                    "name": "selectType",
-                    "defaultValue": "'single'",
+                    "name": "successMessage",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
-                    "type": "\"single\" | \"autocomplete\"",
+                    "line": 20,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "tooltip",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "warningMessage",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "string",
                     "decorators": []
                 }
             ],
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "selectedValue",
-                    "defaultValue": "''",
+                    "name": "values",
+                    "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "string",
+                    "type": "(string | number)[]",
                     "optional": false,
                     "description": "",
-                    "line": 14
+                    "line": 24
                 }
             ],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "isSelected",
+                    "args": [
+                        {
+                            "name": "option",
+                            "type": "string | number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 33,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "option",
+                            "type": "string | number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 26,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -2286,20 +2414,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-select-native',\r\n  templateUrl: './select.component.html',\r\n  styleUrls: ['./select.component.scss']\r\n})\r\nexport class SelectComponent {\r\n  [x: string]: any;\r\n  @Input() label!: string;\r\n  @Input() placeholder = '';\r\n  @Input() selectType: 'single' | 'autocomplete' = 'single';\r\n  @Input() options: { value: string, label: string }[] = [];\r\n  selectedValue: string = '';\r\n}",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\ninterface OptionsObjectType {\r\n  name: string;\r\n  value: string | number;\r\n}\r\n@Component({\r\n  selector: 'app-select-native',\r\n  templateUrl: './select-native.component.html',\r\n  styleUrls: ['./select-native.component.scss']\r\n})\r\nexport class SelectNativeComponent {\r\n  @Input() initialValues?: (string | number)[];\r\n  @Input() options: OptionsObjectType[] = [];\r\n  @Input() id?: string;\r\n  @Input() label?: string;\r\n  @Input() placeholder?: string;\r\n  @Input() tooltip?: string;\r\n  @Input() errorMessage?: string;\r\n  @Input() warningMessage?: string;\r\n  @Input() successMessage?: string;\r\n  @Input() multiple?: boolean = false;\r\n  @Input() autocomplete?: boolean = false;\r\n\r\n  values: (string | number)[] = [];\r\n\r\n  ngOnInit(): void {\r\n    // Set initial values on component load\r\n    if (this.initialValues && this.initialValues.length > 0) {\r\n      this.values = [...this.initialValues];\r\n    }\r\n  }\r\n\r\n  isSelected(option: string | number): boolean {\r\n    return this.values.includes(option);\r\n  }\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "  /* single-select styles */\r\n  label {\r\n    display: block;\r\n    font-size: 13px;\r\n    margin-bottom: 5px;\r\n    color: var(--theme-white-extended-500);\r\n    font-family: system-ui;\r\n    font-weight: 100;\r\n  }\r\n\r\n  select,\r\n  input {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\n    background-color: var(--theme-default-50);\r\n    //color: var(--theme-default-50i);\r\n    width: 100%;\r\n    outline: none;\r\n    font-size: 11px;\r\n    position: relative;\r\n    text-indent: 5px;\r\n  }\r\n\r\n  select:hover {\r\n    border-color: var(--basicui-formelement-border-color-hover);\r\n    background-color: var(--basicui-formelement-background-color-hover);\r\n    color: var(--basicui-formelement-color-hover);\r\n  }\r\n\r\n  select[single] {\r\n    position: absolute;\r\n    top: 50px;\r\n    left: 50px;\r\n    color: inherit;\r\n  }\r\n\r\n  option {\r\n    background-color: var(--theme-default-50);\r\n    color: var(--theme-default-50i);\r\n  }\r\n\r\n  /* Multi-select styles */\r\n  select[multiple] {\r\n    //background-color: white;\r\n    height: 30px;\r\n  }\r\n\r\n  select[multiple] option {\r\n    padding-top: 10px;\r\n    padding-bottom: 10px;\r\n    padding-left: 10px;\r\n\r\n  }\r\n\r\n  select[multiple] option:hover {\r\n    padding-top: 10px;\r\n    padding-bottom: 10px;\r\n    border: 1px solid #c3e5f4;\r\n    background-color: #f1f8fe;\r\n  }\r\n\r\n  .positioned-select {\r\n    border-color: var(--basicui-formelement-border-color);\r\n    border-radius: 1px;\r\n    background-color: var(--basicui-formelement-background-color);\r\n    font-size: 12px;\r\n    width: 100%;\r\n  }\r\n\r\n  .positioned-select[multiple] {\r\n    height: 150px;\r\n  }\r\n\r\n  /* auto complete-select styles */\r\n  .auto-select {\r\n    padding: 5px;\r\n    font-size: 10px;\r\n    border-radius: 2px;\r\n    border: 1px solid #dad8d8;\r\n    background-color: #f1f0f08a;\r\n    width: 100%;\r\n    outline: none;\r\n  }\r\n\r\n  .auto-select-option {\r\n    padding: 8px 16px;\r\n    cursor: pointer;\r\n  }\r\n\r\n  .auto-select:hover {\r\n    border-color: var(--basicui-formelement-border-color-hover);\r\n    background-color: var(--basicui-formelement-background-color-hover);\r\n    color: var(--basicui-formelement-color-hover);\r\n    border-radius: 3px;\r\n  }",
-                    "styleUrl": "./select.component.scss"
+                    "data": "@import '../styles/index.css';\r\n\r\n/* General styles for the select element */\r\n.basicui-selectnative {\r\n  -webkit-appearance: none;\r\n  -webkit-border-radius: 0px;\r\n  border: 1px solid var(--theme-border-color, #ccc); /* Default border color */\r\n  padding: 0.5rem;\r\n  width: 100%;\r\n  background-color: var(--theme-background-color, #fff); /* Default background color */\r\n  font-size: 16px;\r\n}\r\n\r\n/* Option styling */\r\n.basicui-selectnative__option {\r\n  background-color: var(--theme-adaptive-200, #f0f0f0);\r\n  color: var(--theme-adaptive-100, #333);\r\n}\r\n\r\n/* Styling for selected option */\r\n.basicui-selectnative option:checked {\r\n  background-color: var(--theme-adaptive-200, #f0f0f0);\r\n  color: var(--theme-adaptive-100, #333);\r\n}\r\n\r\n/* Multiple select adjustments */\r\n.basicui-selectnative--multiple {\r\n  height: auto;\r\n  padding: 0;\r\n  min-height: 100px; /* Ensure minimum height for multiple select */\r\n  background-color: var(--theme-background-color, #fff);\r\n}\r\n\r\n.basicui-selectnative--multiple option {\r\n  background-color: transparent;\r\n}\r\n\r\n.basicui-selectnative--multiple option:checked {\r\n  background-color: var(--theme-adaptive-200, #f0f0f0);\r\n}\r\n",
+                    "styleUrl": "./select-native.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "isDuplicate": true,
-            "duplicateId": 1,
-            "duplicateName": "SelectComponent-1",
-            "templateData": "<label for=\"\">{{label}}</label>\r\n\r\n<div class=\"custom-select\" *ngIf=\"selectType === 'single'\">\r\n  <select *ngIf=\"selectedValue !== undefined\" class=\"positioned-select\">\r\n    <option> {{ selectedValue }}</option>\r\n    <option *ngFor=\"let option of options\" [value]=\"option.value\">{{ option.label }}</option>\r\n  </select>\r\n</div>"
+            "templateData": "<div class=\"basicui-selectnative\">\r\n  <!-- Label -->\r\n  <label *ngIf=\"label\" for=\"{{id}}\">{{ label }}</label>\r\n\r\n  <!-- Select -->\r\n  <select \r\n    [id]=\"id\"\r\n    class=\"basicui-input basicui-selectnative\"\r\n    [class.basicui-selectnative--multiple]=\"multiple\"\r\n    [multiple]=\"multiple\"\r\n    [size]=\"multiple ? 5 : 1\"\r\n    [(ngModel)]=\"values\"\r\n  >\r\n    <!-- Render placeholder as the first option if applicable -->\r\n    <option *ngIf=\"placeholder && !multiple\" disabled [value]=\"null\" [selected]=\"!values?.length\">\r\n      {{ placeholder }}\r\n    </option>\r\n\r\n    <!-- Render options dynamically -->\r\n    <option \r\n      *ngFor=\"let option of options\"\r\n      [selected]=\"isSelected(option.name)\"\r\n      [value]=\"option.name\"\r\n      class=\"basicui-selectnative__option\"\r\n    >\r\n      {{ option.value }}\r\n    </option>\r\n  </select>\r\n\r\n  <!-- Tooltip and Messages -->\r\n  <small *ngIf=\"tooltip\" class=\"form-text text-muted\">{{ tooltip }}</small>\r\n  <small *ngIf=\"errorMessage\" class=\"form-text text-danger\">{{ errorMessage }}</small>\r\n  <small *ngIf=\"warningMessage\" class=\"form-text text-warning\">{{ warningMessage }}</small>\r\n  <small *ngIf=\"successMessage\" class=\"form-text text-success\">{{ successMessage }}</small>\r\n</div>\r\n"
         },
         {
             "name": "StoryWrapperComponent",
@@ -3073,13 +3198,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-9e35192fe2eb70453d2e36af0552dda8a6fbe801ce38e20b6b816fda6f6920ded4cd30750fa302bf9b4c609c2909d0ff24a84f18a5bb8023764be3312859f0ce",
+            "id": "module-AppModule-4bae25c05402f31c102d711092444247c8f2c0aaaf8c6a34a42fdb26572a57001f3b740f3393d930f9c440ad190e44fe8e748edd9b2d6b21b6d70bdf3123ea62",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { BrowserModule } from '@angular/platform-browser';\r\nimport { NgModule } from '@angular/core';\r\nimport { NgxsModule } from '@ngxs/store';\r\nimport { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';\r\nimport { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';\r\nimport { environment } from '../environments/environment';\r\nimport { AppComponent } from './app.component';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { SelectComponent } from './select/select.component';\r\nimport { IconButtonComponent } from './icon-button/icon-button.component';\r\nimport { LinkComponent } from './link/link.component';\r\nimport { RadioComponent } from './radio/radio.component';\r\nimport { TextareaComponent } from './textarea/textarea.component';\r\nimport { AccordionComponent } from './accordion/accordion.component';\r\nimport { StoryWrapperComponent } from './story-wrapper/story-wrapper.component';\r\nimport { ModalComponent } from './modal/modal.component';\r\nimport { ModalFooterComponent } from './modal/modal-footer.component';\r\nimport { TableComponent } from './table/table.component';\r\nimport { TabsComponent } from './tabs/tabs.component';\r\nimport { ColorSchemesComponent } from './colorschemes/colorschemes.component';\r\nimport { ThemesOverviewComponent } from './themes-overview/themes-overview.component';\r\nimport { TypographyComponent } from './typography/typography.component';\r\nimport { DemoSectionComponent } from './demosection/demosection.component';\r\nimport Button from '../stories/button.component';\r\nimport Header from '../stories/header.component';\r\nimport Page from '../stories/page.component';\r\nimport { RouterModule } from '@angular/router';\r\nimport { CommonModule } from '@angular/common';\r\nimport { SwitchComponent } from './switch/switch.component';\r\nimport { CheckboxComponent } from './checkbox/checkbox.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    SelectComponent,\r\n    IconButtonComponent,\r\n    LinkComponent,\r\n    RadioComponent,\r\n    TextareaComponent,\r\n    AccordionComponent,\r\n    StoryWrapperComponent,\r\n    ModalComponent,\r\n    ModalFooterComponent,\r\n    TableComponent,\r\n    TabsComponent,\r\n    ColorSchemesComponent,\r\n    ThemesOverviewComponent,\r\n    TypographyComponent,\r\n    DemoSectionComponent,\r\n    SwitchComponent,\r\n    CheckboxComponent,\r\n    Button,\r\n    Header,\r\n    Page\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    FormsModule,\r\n    NgxsModule.forRoot([], { developmentMode: !environment.production, }),\r\n    NgxsReduxDevtoolsPluginModule.forRoot(),\r\n    NgxsLoggerPluginModule.forRoot({ disabled: environment.production, }),\r\n    RouterModule,\r\n    CommonModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { BrowserModule } from '@angular/platform-browser';\r\nimport { NgModule } from '@angular/core';\r\nimport { NgxsModule } from '@ngxs/store';\r\nimport { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';\r\nimport { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';\r\nimport { environment } from '../environments/environment';\r\nimport { AppComponent } from './app.component';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { SelectComponent } from './select/select.component';\r\nimport { IconButtonComponent } from './icon-button/icon-button.component';\r\nimport { LinkComponent } from './link/link.component';\r\nimport { RadioComponent } from './radio/radio.component';\r\nimport { TextareaComponent } from './textarea/textarea.component';\r\nimport { AccordionComponent } from './accordion/accordion.component';\r\nimport { StoryWrapperComponent } from './story-wrapper/story-wrapper.component';\r\nimport { ModalComponent } from './modal/modal.component';\r\nimport { ModalFooterComponent } from './modal/modal-footer.component';\r\nimport { TableComponent } from './table/table.component';\r\nimport { TabsComponent } from './tabs/tabs.component';\r\nimport { ColorSchemesComponent } from './colorschemes/colorschemes.component';\r\nimport { ThemesOverviewComponent } from './themes-overview/themes-overview.component';\r\nimport { TypographyComponent } from './typography/typography.component';\r\nimport { DemoSectionComponent } from './demosection/demosection.component';\r\nimport Button from '../stories/button.component';\r\nimport Header from '../stories/header.component';\r\nimport Page from '../stories/page.component';\r\nimport { RouterModule } from '@angular/router';\r\nimport { CommonModule } from '@angular/common';\r\nimport { SwitchComponent } from './switch/switch.component';\r\nimport { CheckboxComponent } from './checkbox/checkbox.component';\r\nimport { SelectNativeComponent } from './select-native/select-native.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    SelectComponent,\r\n    SelectNativeComponent,\r\n    IconButtonComponent,\r\n    LinkComponent,\r\n    RadioComponent,\r\n    TextareaComponent,\r\n    AccordionComponent,\r\n    StoryWrapperComponent,\r\n    ModalComponent,\r\n    ModalFooterComponent,\r\n    TableComponent,\r\n    TabsComponent,\r\n    ColorSchemesComponent,\r\n    ThemesOverviewComponent,\r\n    TypographyComponent,\r\n    DemoSectionComponent,\r\n    SwitchComponent,\r\n    CheckboxComponent,\r\n    Button,\r\n    Header,\r\n    Page\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    FormsModule,\r\n    NgxsModule.forRoot([], { developmentMode: !environment.production, }),\r\n    NgxsReduxDevtoolsPluginModule.forRoot(),\r\n    NgxsLoggerPluginModule.forRoot({ disabled: environment.production, }),\r\n    RouterModule,\r\n    CommonModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -3129,6 +3254,9 @@
                         },
                         {
                             "name": "SelectComponent"
+                        },
+                        {
+                            "name": "SelectNativeComponent"
                         },
                         {
                             "name": "StoryWrapperComponent"
@@ -3288,7 +3416,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: {\r\n      ...args,\r\n      selectType: 'autocomplete',\r\n      options: [\r\n        { value: '1', label: 'Lorem ipsum' },\r\n        { value: '2', label: 'Dolor sit' },\r\n        { value: '3', label: 'Another long text another long text' },\r\n      ],\r\n      selectedValue: 'Dolor sit',\r\n      placeholder: 'Enter select option'\r\n    },\r\n  }),\r\n}"
+                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: {\r\n      ...args,\r\n      selectType: 'autocomplete',\r\n      options: [\r\n        { value: '1', label: 'Lorem ipsum' },\r\n        { value: '2', label: 'Dolor sit' },\r\n        { value: '3', label: 'Another long text another long text' },\r\n      ],\r\n      selectedValue: 'Dolor sit',\r\n      placeholder: 'Select Dropdown'\r\n    },\r\n  }),\r\n}"
             },
             {
                 "name": "avatarUrl",
@@ -3524,16 +3652,6 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/select-native/select.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<>",
-                "defaultValue": "{\r\n\r\n  title: 'Form Elements/Select Native',\r\n  component: SelectComponent,\r\n  tags: [\"autodocs\"],\r\n  argTypes: {\r\n  },\r\n} as Meta"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/switch/switch.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3664,11 +3782,11 @@
                 "name": "Playground",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/select-native/select.stories.ts",
+                "file": "src/app/select-native/select-native.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: {\r\n      ...args,\r\n      label: 'Lorem ipsum',\r\n      selectType: 'single',\r\n      options: [\r\n        { value: '1', label: 'Lorem ipsum' },\r\n        { value: '2', label: 'Another long text another long text' },\r\n        { value: '3', label: 'Dolor sit' },\r\n      ],\r\n      selectedValue: 'Dolor sit',\r\n    },\r\n  }),\r\n}"
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Playground",
@@ -3854,6 +3972,16 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/avatar/avatar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<AvatarComponent>",
+                "defaultValue": "(args: AvatarComponent) => ({\r\n  component: AvatarComponent,\r\n  props: args\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3874,21 +4002,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/avatar/avatar.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<AvatarComponent>",
-                "defaultValue": "(args: AvatarComponent) => ({\r\n  component: AvatarComponent,\r\n  props: args\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/modal/modal-footer.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<ModalFooterComponent>",
                 "defaultValue": "(args: ModalFooterComponent) => ({\r\n  component: ModalFooterComponent,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/select-native/select-native.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<SelectNativeComponent>",
+                "defaultValue": "(args: SelectNativeComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -4025,17 +4153,6 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<>",
                 "file": "src/app/select/select.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<>",
-                "file": "src/app/select-native/select.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -4436,7 +4553,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: {\r\n      ...args,\r\n      selectType: 'autocomplete',\r\n      options: [\r\n        { value: '1', label: 'Lorem ipsum' },\r\n        { value: '2', label: 'Dolor sit' },\r\n        { value: '3', label: 'Another long text another long text' },\r\n      ],\r\n      selectedValue: 'Dolor sit',\r\n      placeholder: 'Enter select option'\r\n    },\r\n  }),\r\n}"
+                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: {\r\n      ...args,\r\n      selectType: 'autocomplete',\r\n      options: [\r\n        { value: '1', label: 'Lorem ipsum' },\r\n        { value: '2', label: 'Dolor sit' },\r\n        { value: '3', label: 'Another long text another long text' },\r\n      ],\r\n      selectedValue: 'Dolor sit',\r\n      placeholder: 'Select Dropdown'\r\n    },\r\n  }),\r\n}"
                 },
                 {
                     "name": "meta",
@@ -4807,28 +4924,6 @@
                     "defaultValue": "{\r\n    render:(args) => ({\r\n      props:{\r\n        ...args,\r\n        label:'Lorem ipsum',\r\n        onChange: action('onChange'),\r\n      },\r\n    }),\r\n    args:{\r\n      theme: 'primary',\r\n      checked: true\r\n    }\r\n  }"
                 }
             ],
-            "src/app/select-native/select.stories.ts": [
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/select-native/select.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<>",
-                    "defaultValue": "{\r\n\r\n  title: 'Form Elements/Select Native',\r\n  component: SelectComponent,\r\n  tags: [\"autodocs\"],\r\n  argTypes: {\r\n  },\r\n} as Meta"
-                },
-                {
-                    "name": "Playground",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/select-native/select.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: {\r\n      ...args,\r\n      label: 'Lorem ipsum',\r\n      selectType: 'single',\r\n      options: [\r\n        { value: '1', label: 'Lorem ipsum' },\r\n        { value: '2', label: 'Another long text another long text' },\r\n        { value: '3', label: 'Dolor sit' },\r\n      ],\r\n      selectedValue: 'Dolor sit',\r\n    },\r\n  }),\r\n}"
-                }
-            ],
             "src/app/switch/switch.stories.ts": [
                 {
                     "name": "meta",
@@ -4969,6 +5064,28 @@
                     "deprecationMessage": "",
                     "type": "Story<ModalFooterComponent>",
                     "defaultValue": "(args: ModalFooterComponent) => ({\r\n  component: ModalFooterComponent,\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/app/select-native/select-native.stories.ts": [
+                {
+                    "name": "Playground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/select-native/select-native.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/select-native/select-native.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<SelectNativeComponent>",
+                    "defaultValue": "(args: SelectNativeComponent) => ({\r\n  props: args,\r\n})"
                 }
             ],
             "src/app/story-wrapper/story-wrapper.stories.ts": [
@@ -5370,19 +5487,6 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<>",
                     "file": "src/app/select/select.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
-            "src/app/select-native/select.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<>",
-                    "file": "src/app/select-native/select.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -5969,30 +6073,39 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/select-native/select.component.ts",
+                "filePath": "src/app/select-native/select-native.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "SelectComponent",
+                "name": "SelectNativeComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/15",
                 "status": "low"
             },
             {
-                "filePath": "src/app/select-native/select.stories.ts",
+                "filePath": "src/app/select-native/select-native.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "OptionsObjectType",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/select-native/select-native.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "meta",
+                "name": "Playground",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "src/app/select-native/select.stories.ts",
+                "filePath": "src/app/select-native/select-native.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Playground",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

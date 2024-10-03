@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { SelectComponent } from './select.component';
+import { SelectNativeComponent } from './select-native.component';
 
 describe('SelectComponent', () => {
-  let component: SelectComponent;
-  let fixture: ComponentFixture<SelectComponent>;
+  let component: SelectNativeComponent;
+  let fixture: ComponentFixture<SelectNativeComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [SelectComponent],
+      declarations: [SelectNativeComponent],
     });
 
-    fixture = TestBed.createComponent(SelectComponent);
+    fixture = TestBed.createComponent(SelectNativeComponent);
     component = fixture.componentInstance;
   });
 

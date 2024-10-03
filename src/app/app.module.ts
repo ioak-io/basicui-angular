@@ -28,11 +28,13 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { SwitchComponent } from './switch/switch.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
+import { SelectNativeComponent } from './select-native/select-native.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SelectComponent,
+    SelectNativeComponent,
     IconButtonComponent,
     LinkComponent,
     RadioComponent,

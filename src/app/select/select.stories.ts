@@ -38,7 +38,7 @@ export const AutocompleteForm: Story = {
         { value: '3', label: 'Another long text another long text' },
       ],
       selectedValue: 'Dolor sit',
-      placeholder: 'Enter select option'
+      placeholder: 'Select Dropdown'
     },
   }),
 };
