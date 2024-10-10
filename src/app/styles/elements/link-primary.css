@@ -1,9 +1,9 @@
 .basicui-link--theme-primary {
-    color: var(--theme-primary-500);
+    color: var(--theme-primary-50i);
 }
 
 .basicui-link--theme-primary svg {
-    fill: var(--theme-primary-500);
+    fill: var(--theme-primary-50i);
 }
 
 .basicui-dark .basicui-link--theme-primary {

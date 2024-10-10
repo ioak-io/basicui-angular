@@ -19,11 +19,34 @@
 .basicui-accordion.theme-primary .basicui-accordion__header:hover,
 .basicui-accordion.theme-primary .basicui-accordion__header:focus {
     background-color: var(--theme-primary-400);
-    color: var(--theme-primary-400i);
-    fill: var(--theme-primary-400i);
+    color: var(--theme-primary-50i);
+    fill: var(--theme-primary-50i);
 }
 
 /* danger */
+.basicui-accordion.theme-secondary .basicui-accordion__header:hover,
+.basicui-accordion.theme-secondary.accordion-active .basicui-accordion__header,
+.basicui-accordion.theme-secondary .basicui-accordion__header:focus {
+    background-color: var(--basicui-bg-secondary-dark);
+    color: var(--theme-danger-400i);
+    fill: var(--theme-danger-400i);
+}
+
+.basicui-accordion.theme-success.accordion-active .basicui-accordion__header,
+.basicui-accordion.theme-success .basicui-accordion__header:hover,
+.basicui-accordion.theme-success .basicui-accordion__header:focus {
+    background-color: var(--basicui-bg-success-muted);
+    color: var(--theme-danger-400i);
+    fill: var(--theme-danger-400i);
+}
+
+.basicui-accordion.theme-warning.accordion-active .basicui-accordion__header,
+.basicui-accordion.theme-warning .basicui-accordion__header:hover,
+.basicui-accordion.theme-warning .basicui-accordion__header:focus {
+    background-color: var(--basicui-bg-warning-muted);
+    color: var(--theme-danger-400i);
+    fill: var(--theme-danger-400i);
+}
 .basicui-accordion.theme-danger.accordion-active .basicui-accordion__header,
 .basicui-accordion.theme-danger .basicui-accordion__header:hover,
 .basicui-accordion.theme-danger .basicui-accordion__header:focus {

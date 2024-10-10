@@ -8,10 +8,10 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 export class AccordionComponent {
   @Input() panels: any[] = [];
-  expanded = '';
-  heading: any;
-  theme: any;
-  bordered: any;
+  @Input() expanded = '';
+  @Input() heading: any;
+  @Input() theme: 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'danger' = 'default';
+  @Input() bordered: any;
 
   @Output() panelChange = new EventEmitter<string>();
   handleChange(panelName: string): void {

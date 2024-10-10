@@ -1,6 +1,15 @@
 <div>
-  <div *ngFor="let panel of panels" class="basicui-accordion">
-    <button class="basicui-accordion-header" (click)="handleChange(panel.name)">
+  <div *ngFor="let panel of panels" [ngClass]="
+  {'basicui-accordion': true,
+  'theme-danger': theme==='danger',
+  'theme-primary': theme==='primary',
+  'theme-default': theme==='default',
+  'theme-secondary': theme==='secondary',
+  'theme-success': theme==='success',
+  'theme-warning': theme==='warning',
+  }
+  ">
+    <button class="basicui-accordion__header" (click)="handleChange(panel.name)">
       <div>
         {{ panel.heading }}
       </div>

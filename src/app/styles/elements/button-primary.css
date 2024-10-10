@@ -1,9 +1,9 @@
 @import '../theme/index.css';
 @import '../theme/theme-primary-light-transparent.css';
 .basicui-button--theme-primary {
-    background-color: var(--theme-primary-500);
-    color: var(--theme-primary-500i);
-    fill: var(--theme-primary-500i);
+    background-color: var(--theme-primary-400);
+    color: var(--theme-primary-50i);
+    fill: var(--theme-primary-50i);
     border-color: var(--theme-primary-500);
 }
 

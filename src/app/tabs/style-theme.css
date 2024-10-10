@@ -19,9 +19,9 @@
 
 /* primary */
 .basicui-tabs--theme-primary .basicui-tabs__ul__li--active .basicui-tabs__ul__li__button {
-    background-color: var(--theme-primary-500);
-    color: var(--theme-primary-500i);
-    fill: var(--theme-primary-500i);
+    background-color: var(--theme-primary-400);
+    color: var(--theme-primary-50i);
+    fill: var(--theme-primary-50i);
     border-color: var(--theme-primary-500);
 }
 

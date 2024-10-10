@@ -6,9 +6,9 @@
 .basicui-light .basicui-radio--theme-primary {
     --basicui-checkbox-border-color: var(--theme-white-extended-500);
     --basicui-checkbox-checkmark-color: var(--theme-black-500);
-    --basicui-checkbox-background-color-hover: var(--theme-primary-transparent-100);
+    --basicui-checkbox-background-color-hover: var(--theme-primary-50);
     --basicui-checkbox-border-color-hover: var(--theme-primary-300);
-    --basicui-checkbox-background-color-checked: var(--theme-primary-transparent-200);
+    --basicui-checkbox-background-color-checked: var(--theme-primary-100);
     --basicui-checkbox-border-color-checked: var(--theme-primary-400);
 }
 

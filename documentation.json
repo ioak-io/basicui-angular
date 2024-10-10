@@ -114,12 +114,12 @@
         },
         {
             "name": "OptionsObjectType",
-            "id": "interface-OptionsObjectType-0e422f91dc398f14c5503aa0cd43d325b47f114d202f3223fdde75f514e0edcb041a231d2206748f6c2bbd366761717a07c37345cdc03531ffc614202aab8a15",
+            "id": "interface-OptionsObjectType-97d72467f0b8916bc23337f9e527a68bfc8e4b496257375142a6e089f30ab8800237411bb66742609b998a120157b8ccab59cbd75b3004829980f1e5779fd5cf",
             "file": "src/app/select-native/select-native.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\ninterface OptionsObjectType {\r\n  name: string;\r\n  value: string | number;\r\n}\r\n@Component({\r\n  selector: 'app-select-native',\r\n  templateUrl: './select-native.component.html',\r\n  styleUrls: ['./select-native.component.scss']\r\n})\r\nexport class SelectNativeComponent {\r\n  @Input() initialValues?: (string | number)[];\r\n  @Input() options: OptionsObjectType[] = [];\r\n  @Input() id?: string;\r\n  @Input() label?: string;\r\n  @Input() placeholder?: string;\r\n  @Input() tooltip?: string;\r\n  @Input() errorMessage?: string;\r\n  @Input() warningMessage?: string;\r\n  @Input() successMessage?: string;\r\n  @Input() multiple?: boolean = false;\r\n  @Input() autocomplete?: boolean = false;\r\n\r\n  values: (string | number)[] = [];\r\n\r\n  ngOnInit(): void {\r\n    // Set initial values on component load\r\n    if (this.initialValues && this.initialValues.length > 0) {\r\n      this.values = [...this.initialValues];\r\n    }\r\n  }\r\n\r\n  isSelected(option: string | number): boolean {\r\n    return this.values.includes(option);\r\n  }\r\n}",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\ninterface OptionsObjectType {\r\n  name: string;\r\n  value: string | number;\r\n}\r\n@Component({\r\n  selector: 'app-select-native',\r\n  templateUrl: './select-native.component.html',\r\n  styleUrls: ['./select-native.component.scss']\r\n})\r\nexport class SelectNativeComponent {\r\n  @Input() initialValues?: (string | number)[];\r\n  @Input() options: OptionsObjectType[] = [];\r\n  @Input() id?: string;\r\n  @Input() label?: string;\r\n  @Input() placeholder?: string;\r\n  @Input() tooltip?: string;\r\n  @Input() errorMessage?: string;\r\n  @Input() warningMessage?: string;\r\n  @Input() successMessage?: string;\r\n  @Input() multiple?: boolean = false;\r\n  @Input() autocomplete?: boolean = false;\r\n\r\n  values: (string | number)[] = [];\r\n\r\n  ngOnInit(): void {\r\n    if (this.initialValues && this.initialValues.length > 0) {\r\n      this.values = [...this.initialValues];\r\n    }\r\n  }\r\n\r\n  isSelected(option: string | number): boolean {\r\n    return this.values.includes(option);\r\n  }\r\n}",
             "properties": [
                 {
                     "name": "name",
@@ -220,7 +220,7 @@
     "components": [
         {
             "name": "AccordionComponent",
-            "id": "component-AccordionComponent-36d5b8acb14d7b34aadd49e09965a4ba9bad427f660403c151baff621de2a622019bda51ec321d6740a15d0476eb77cc04cf44a0ea3463536a383f71e1ace64d",
+            "id": "component-AccordionComponent-1f056209fdb173ff312ee4e691052d33aba3732dc83591a1d6ab7575641b04b14ddd9e75633240e685f2b7a72fbbd2ed16ccbf8bbe5934c92a8029c5c8bd7757",
             "file": "src/app/accordion/accordion.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -239,12 +239,46 @@
             "hostDirectives": [],
             "inputsClass": [
                 {
+                    "name": "bordered",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "any",
+                    "decorators": []
+                },
+                {
+                    "name": "expanded",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "heading",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "any",
+                    "decorators": []
+                },
+                {
                     "name": "panels",
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 10,
                     "type": "any[]",
+                    "decorators": []
+                },
+                {
+                    "name": "theme",
+                    "defaultValue": "'default'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "\"default\" | \"primary\" | \"secondary\" | \"success\" | \"warning\" | \"danger\"",
                     "decorators": []
                 }
             ],
@@ -258,45 +292,7 @@
                     "type": "EventEmitter"
                 }
             ],
-            "propertiesClass": [
-                {
-                    "name": "bordered",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "any",
-                    "optional": false,
-                    "description": "",
-                    "line": 14
-                },
-                {
-                    "name": "expanded",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 11
-                },
-                {
-                    "name": "heading",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "any",
-                    "optional": false,
-                    "description": "",
-                    "line": 12
-                },
-                {
-                    "name": "theme",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "any",
-                    "optional": false,
-                    "description": "",
-                    "line": 13
-                }
-            ],
+            "propertiesClass": [],
             "methodsClass": [
                 {
                     "name": "handleChange",
@@ -336,17 +332,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-accordion',\r\n  templateUrl: './accordion.component.html',\r\n  styleUrls: ['./accordion.component.scss'],\r\n})\r\n\r\nexport class AccordionComponent {\r\n  @Input() panels: any[] = [];\r\n  expanded = '';\r\n  heading: any;\r\n  theme: any;\r\n  bordered: any;\r\n\r\n  @Output() panelChange = new EventEmitter<string>();\r\n  handleChange(panelName: string): void {\r\n    this.expanded = this.expanded === panelName ? '' : panelName;\r\n    this.panelChange.emit(this.expanded);\r\n  }\r\n}",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-accordion',\r\n  templateUrl: './accordion.component.html',\r\n  styleUrls: ['./accordion.component.scss'],\r\n})\r\n\r\nexport class AccordionComponent {\r\n  @Input() panels: any[] = [];\r\n  @Input() expanded = '';\r\n  @Input() heading: any;\r\n  @Input() theme: 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'danger' = 'default';\r\n  @Input() bordered: any;\r\n\r\n  @Output() panelChange = new EventEmitter<string>();\r\n  handleChange(panelName: string): void {\r\n    this.expanded = this.expanded === panelName ? '' : panelName;\r\n    this.panelChange.emit(this.expanded);\r\n  }\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import './style-theme.css';\r\n\r\n.basicui-accordion {\r\n    overflow: hidden;\r\n    border-bottom: 1px solid #dedede6b;\r\n    transition: background-color 250ms ease-in-out;\r\n}\r\n\r\n.basicui-accordion-header {\r\n    width: 100%;\r\n    height: 52px;\r\n    line-height: 45px;\r\n    align-content: center;\r\n    cursor: pointer;\r\n    padding: 0 16px;\r\n    transition: background-color 250ms ease-in-out;\r\n    color: inherit;\r\n    font-family: sans-serif;\r\n    font-weight: 400;\r\n    font-size: 13px;\r\n    justify-content: flex-start;\r\n    display: flex;\r\n    border: none;\r\n    background-color: transparent;\r\n}\r\n\r\nbutton {\r\n    border: none;\r\n    background-color: white;\r\n}\r\n\r\n.basicui-accordion-header:hover {\r\n    background-color: #3eb1f2;\r\n    border: none;\r\n    color: white;\r\n}\r\n\r\n.basicui-accordion-content {\r\n    padding: 16px 16px 16px 16px;\r\n    transition: 0.5s;\r\n    border-bottom: 1px solid #dedede6b;\r\n    -webkit-transition: 5s;\r\n    font-family: system-ui;\r\n    font-size: 14px;\r\n    color: inherit;\r\n    font-weight: 200;\r\n}",
+                    "data": "@import './style-theme.css';\r\n\r\n.basicui-accordion {\r\n    overflow: hidden;\r\n    border-bottom: 1px solid #dedede6b;\r\n    transition: background-color 250ms ease-in-out;\r\n}\r\n\r\n.basicui-accordion__header {\r\n    width: 100%;\r\n    height: 52px;\r\n    line-height: 45px;\r\n    align-content: center;\r\n    cursor: pointer;\r\n    padding: 0 16px;\r\n    transition: background-color 250ms ease-in-out;\r\n    color: inherit;\r\n    font-family: sans-serif;\r\n    font-weight: 400;\r\n    font-size: 13px;\r\n    justify-content: flex-start;\r\n    display: flex;\r\n    border: none;\r\n    background-color: transparent;\r\n}\r\n\r\nbutton {\r\n    border: none;\r\n    background-color: white;\r\n}\r\n\r\n// .basicui-accordion-header:hover {\r\n//     background-color: #3eb1f2;\r\n//     border: none;\r\n//     color: white;\r\n// }\r\n\r\n.basicui-accordion-content {\r\n    padding: 16px 16px 16px 16px;\r\n    transition: 0.5s;\r\n    border-bottom: 1px solid #dedede6b;\r\n    -webkit-transition: 5s;\r\n    font-family: system-ui;\r\n    font-size: 14px;\r\n    color: inherit;\r\n    font-weight: 200;\r\n}",
                     "styleUrl": "./accordion.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<div>\r\n  <div *ngFor=\"let panel of panels\" class=\"basicui-accordion\">\r\n    <button class=\"basicui-accordion-header\" (click)=\"handleChange(panel.name)\">\r\n      <div>\r\n        {{ panel.heading }}\r\n      </div>\r\n    </button>\r\n    <div *ngIf=\"expanded === panel.name\" class=\"basicui-accordion-content\">\r\n      {{ panel.content }}\r\n    </div>\r\n  </div>\r\n</div>"
+            "templateData": "<div>\r\n  <div *ngFor=\"let panel of panels\" [ngClass]=\"\r\n  {'basicui-accordion': true,\r\n  'theme-danger': theme==='danger',\r\n  'theme-primary': theme==='primary',\r\n  'theme-default': theme==='default',\r\n  'theme-secondary': theme==='secondary',\r\n  'theme-success': theme==='success',\r\n  'theme-warning': theme==='warning',\r\n  }\r\n  \">\r\n    <button class=\"basicui-accordion__header\" (click)=\"handleChange(panel.name)\">\r\n      <div>\r\n        {{ panel.heading }}\r\n      </div>\r\n    </button>\r\n    <div *ngIf=\"expanded === panel.name\" class=\"basicui-accordion-content\">\r\n      {{ panel.content }}\r\n    </div>\r\n  </div>\r\n</div>"
         },
         {
             "name": "AppComponent",
@@ -2242,7 +2238,7 @@
         },
         {
             "name": "SelectNativeComponent",
-            "id": "component-SelectNativeComponent-0e422f91dc398f14c5503aa0cd43d325b47f114d202f3223fdde75f514e0edcb041a231d2206748f6c2bbd366761717a07c37345cdc03531ffc614202aab8a15",
+            "id": "component-SelectNativeComponent-97d72467f0b8916bc23337f9e527a68bfc8e4b496257375142a6e089f30ab8800237411bb66742609b998a120157b8ccab59cbd75b3004829980f1e5779fd5cf",
             "file": "src/app/select-native/select-native.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2379,7 +2375,7 @@
                     "optional": false,
                     "returnType": "boolean",
                     "typeParameters": [],
-                    "line": 33,
+                    "line": 32,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -2414,17 +2410,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\ninterface OptionsObjectType {\r\n  name: string;\r\n  value: string | number;\r\n}\r\n@Component({\r\n  selector: 'app-select-native',\r\n  templateUrl: './select-native.component.html',\r\n  styleUrls: ['./select-native.component.scss']\r\n})\r\nexport class SelectNativeComponent {\r\n  @Input() initialValues?: (string | number)[];\r\n  @Input() options: OptionsObjectType[] = [];\r\n  @Input() id?: string;\r\n  @Input() label?: string;\r\n  @Input() placeholder?: string;\r\n  @Input() tooltip?: string;\r\n  @Input() errorMessage?: string;\r\n  @Input() warningMessage?: string;\r\n  @Input() successMessage?: string;\r\n  @Input() multiple?: boolean = false;\r\n  @Input() autocomplete?: boolean = false;\r\n\r\n  values: (string | number)[] = [];\r\n\r\n  ngOnInit(): void {\r\n    // Set initial values on component load\r\n    if (this.initialValues && this.initialValues.length > 0) {\r\n      this.values = [...this.initialValues];\r\n    }\r\n  }\r\n\r\n  isSelected(option: string | number): boolean {\r\n    return this.values.includes(option);\r\n  }\r\n}",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\ninterface OptionsObjectType {\r\n  name: string;\r\n  value: string | number;\r\n}\r\n@Component({\r\n  selector: 'app-select-native',\r\n  templateUrl: './select-native.component.html',\r\n  styleUrls: ['./select-native.component.scss']\r\n})\r\nexport class SelectNativeComponent {\r\n  @Input() initialValues?: (string | number)[];\r\n  @Input() options: OptionsObjectType[] = [];\r\n  @Input() id?: string;\r\n  @Input() label?: string;\r\n  @Input() placeholder?: string;\r\n  @Input() tooltip?: string;\r\n  @Input() errorMessage?: string;\r\n  @Input() warningMessage?: string;\r\n  @Input() successMessage?: string;\r\n  @Input() multiple?: boolean = false;\r\n  @Input() autocomplete?: boolean = false;\r\n\r\n  values: (string | number)[] = [];\r\n\r\n  ngOnInit(): void {\r\n    if (this.initialValues && this.initialValues.length > 0) {\r\n      this.values = [...this.initialValues];\r\n    }\r\n  }\r\n\r\n  isSelected(option: string | number): boolean {\r\n    return this.values.includes(option);\r\n  }\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../styles/index.css';\r\n\r\n/* General styles for the select element */\r\n.basicui-selectnative {\r\n  -webkit-appearance: none;\r\n  -webkit-border-radius: 0px;\r\n  border: 1px solid var(--theme-border-color, #ccc); /* Default border color */\r\n  padding: 0.5rem;\r\n  width: 100%;\r\n  background-color: var(--theme-background-color, #fff); /* Default background color */\r\n  font-size: 16px;\r\n}\r\n\r\n/* Option styling */\r\n.basicui-selectnative__option {\r\n  background-color: var(--theme-adaptive-200, #f0f0f0);\r\n  color: var(--theme-adaptive-100, #333);\r\n}\r\n\r\n/* Styling for selected option */\r\n.basicui-selectnative option:checked {\r\n  background-color: var(--theme-adaptive-200, #f0f0f0);\r\n  color: var(--theme-adaptive-100, #333);\r\n}\r\n\r\n/* Multiple select adjustments */\r\n.basicui-selectnative--multiple {\r\n  height: auto;\r\n  padding: 0;\r\n  min-height: 100px; /* Ensure minimum height for multiple select */\r\n  background-color: var(--theme-background-color, #fff);\r\n}\r\n\r\n.basicui-selectnative--multiple option {\r\n  background-color: transparent;\r\n}\r\n\r\n.basicui-selectnative--multiple option:checked {\r\n  background-color: var(--theme-adaptive-200, #f0f0f0);\r\n}\r\n",
+                    "data": "@import '../styles/index.css';\r\n\r\n.basicui-selectnative {\r\n  -webkit-appearance: none;\r\n  -webkit-border-radius: 0px;\r\n  border: 1px solid var(--basicui-formelement-border-color, #ccc); \r\n  padding: 0.5rem;\r\n  width: 100%;\r\n  background-color: var(--theme-background-color); \r\n  font-size: 13px;\r\n}\r\n\r\n.basicui-selectnative__option {\r\n  background-color: var(--basicui-formelement-background-color); \r\n  color: var(--basicui-formelement-color);\r\n}\r\n\r\n.basicui-selectnative option:checked {\r\n  background-color: var(--theme-adaptive-200, #f0f0f0);\r\n  color: var(--basicui-formelement-color);\r\n}\r\n\r\n.basicui-selectnative--multiple {\r\n  height: auto;\r\n  padding: 0;\r\n  min-height: 100px; \r\n  background-color: var(--theme-background-color, #fff);\r\n}\r\n\r\n.basicui-selectnative--multiple option {\r\n  background-color: transparent;\r\n}\r\n\r\n.basicui-selectnative--multiple option:checked {\r\n  background-color: var(--theme-adaptive-200, #f0f0f0);\r\n}\r\n",
                     "styleUrl": "./select-native.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"basicui-selectnative\">\r\n  <!-- Label -->\r\n  <label *ngIf=\"label\" for=\"{{id}}\">{{ label }}</label>\r\n\r\n  <!-- Select -->\r\n  <select \r\n    [id]=\"id\"\r\n    class=\"basicui-input basicui-selectnative\"\r\n    [class.basicui-selectnative--multiple]=\"multiple\"\r\n    [multiple]=\"multiple\"\r\n    [size]=\"multiple ? 5 : 1\"\r\n    [(ngModel)]=\"values\"\r\n  >\r\n    <!-- Render placeholder as the first option if applicable -->\r\n    <option *ngIf=\"placeholder && !multiple\" disabled [value]=\"null\" [selected]=\"!values?.length\">\r\n      {{ placeholder }}\r\n    </option>\r\n\r\n    <!-- Render options dynamically -->\r\n    <option \r\n      *ngFor=\"let option of options\"\r\n      [selected]=\"isSelected(option.name)\"\r\n      [value]=\"option.name\"\r\n      class=\"basicui-selectnative__option\"\r\n    >\r\n      {{ option.value }}\r\n    </option>\r\n  </select>\r\n\r\n  <!-- Tooltip and Messages -->\r\n  <small *ngIf=\"tooltip\" class=\"form-text text-muted\">{{ tooltip }}</small>\r\n  <small *ngIf=\"errorMessage\" class=\"form-text text-danger\">{{ errorMessage }}</small>\r\n  <small *ngIf=\"warningMessage\" class=\"form-text text-warning\">{{ warningMessage }}</small>\r\n  <small *ngIf=\"successMessage\" class=\"form-text text-success\">{{ successMessage }}</small>\r\n</div>\r\n"
+            "templateData": "<div class=\"basicui-selectnative\">\r\n  <label *ngIf=\"label\" for=\"{{id}}\">{{ label }}</label>\r\n\r\n  <select \r\n    [id]=\"id\"\r\n    class=\"basicui-input basicui-selectnative\"\r\n    [class.basicui-selectnative--multiple]=\"multiple\"\r\n    [multiple]=\"multiple\"\r\n    [size]=\"multiple ? 5 : 1\"\r\n    [(ngModel)]=\"values\"\r\n  >\r\n    <option *ngIf=\"placeholder && !multiple\" disabled [value]=\"null\" [selected]=\"!values?.length\">\r\n      {{ placeholder }}\r\n    </option>\r\n\r\n\r\n    <option \r\n      *ngFor=\"let option of options\"\r\n      [selected]=\"isSelected(option.name)\"\r\n      [value]=\"option.name\"\r\n      class=\"basicui-selectnative__option\"\r\n    >\r\n      {{ option.value }}\r\n    </option>\r\n  </select>\r\n\r\n  <small *ngIf=\"tooltip\" class=\"form-text text-muted\">{{ tooltip }}</small>\r\n  <small *ngIf=\"errorMessage\" class=\"form-text text-danger\">{{ errorMessage }}</small>\r\n  <small *ngIf=\"warningMessage\" class=\"form-text text-warning\">{{ warningMessage }}</small>\r\n  <small *ngIf=\"successMessage\" class=\"form-text text-success\">{{ successMessage }}</small>\r\n</div>\r\n"
         },
         {
             "name": "StoryWrapperComponent",
@@ -3399,6 +3395,16 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "Accordion",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/accordion/accordion.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: {\r\n      ...args,\r\n      panels\r\n    },\r\n  }),\r\n}"
+            },
+            {
                 "name": "Adaptive",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -3686,7 +3692,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
-                "defaultValue": "[\r\n  {\r\n    name: 'panel1',\r\n    heading: 'Etiam venenatis',\r\n    content: 'Etiam venenatis, quam nec volutpat bibendum, magna ex fringilla turpis, vitae efficitur nisl lectus ut mauris. Curabitur sagittis neque id odio viverra pellentesque. Etiam pellentesque molestie suscipit. Suspendisse quis dui a arcu ultrices tempor. Integer cursus justo nisi, vel vestibulum justo viverra id. Phasellus suscipit, felis ac volutpat viverra, ligula tellus molestie felis, et elementum tortor libero vel ante. Mauris sodales imperdiet turpis. Fusce pulvinar diam at dictum commodo. Aliquam erat volutpat. Suspendisse porta, sapien et euismod fermentum, lectus risus facilisis purus, sit amet tempus nunc leo sed neque.'\r\n  },\r\n\r\n  {\r\n    name: 'panel2',\r\n    heading: 'Lorem ipsum',\r\n    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in tristique orci. Donec eget urna ut nisi mattis interdum sed sit amet orci. Nulla ac efficitur ipsum. Nam vitae nulla velit. Proin eu elementum velit. Cras id sollicitudin tortor, id placerat ante. Duis in magna purus. Aenean dignissim sit amet metus id ultrices. Ut egestas ex lectus, et congue erat pulvinar ac. In sem nulla, tincidunt eu convallis nec, sollicitudin id nulla. Donec ullamcorper, leo nec interdum mollis, dui sapien dignissim arcu, quis placerat tellus ligula id ex. Fusce convallis metus in elementum posuere. Proin eu nulla imperdiet, aliquet purus finibus, mollis tellus. Praesent accumsan nunc id purus sollicitudin egestas. Sed interdum sodales aliquam. Proin fermentum ipsum nec sem sagittis facilisis. Maecenas ac metus quis leo sodales posuere. Aliquam eleifend ultrices turpis pellentesque egestas.'\r\n  },\r\n\r\n  {\r\n    name: 'panel3',\r\n    heading: 'Curabitur condimentum risus pharetra diam',\r\n    content: 'Curabitur condimentum risus pharetra diam volutpat pellentesque. Proin volutpat, est nec sollicitudin posuere, justo neque elementum orci, in cursus neque nunc nec tortor. In lorem risus, tempor nec justo quis, scelerisque porttitor lacus. Phasellus dignissim nibh vel quam ornare porta a ut nulla. Sed congue vestibulum tellus, tincidunt porta libero molestie nec. Fusce elementum eros erat, eget varius turpis consectetur aliquam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit lorem in ex sagittis semper. Vivamus fermentum sit amet nisl id facilisis. Aenean convallis auctor consectetur. Pellentesque convallis mattis felis in molestie. Praesent at nisi condimentum, pharetra risus a, dapibus quam. Etiam tristique convallis tristique. Donec sagittis est sapien, sit amet aliquet ligula bibendum eu. Suspendisse maximus tincidunt urna ut mattis. Praesent non nulla quis odio lobortis tincidunt. Phasellus lacinia mauris dolor, id dapibus quam venenatis pretium. Donec semper faucibus ipsum eu pellentesque. Vivamus pharetra dui sem, nec condimentum mauris pulvinar vitae. Mauris sed leo felis. Mauris venenatis vel lorem id aliquam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent lacinia placerat sem, at blandit arcu congue sollicitudin. Sed non risus rhoncus, porttitor lectus et, iaculis est. Phasellus dui arcu, vestibulum vel malesuada ac, suscipit vel turpis. Mauris porta odio dui, ac pharetra ex fringilla eu. Donec molestie pellentesque ipsum eu tempus.'\r\n  },\r\n]"
+                "defaultValue": "[\r\n  {\r\n    name: 'panel1',\r\n    heading: 'Etiam venenatis',\r\n    content: 'Etiam venenatis, quam nec volutpat bibendum, magna ex fringilla turpis, vitae efficitur nisl lectus ut mauris. Curabitur sagittis neque id odio viverra pellentesque. Etiam pellentesque molestie suscipit. Suspendisse quis dui a arcu ultrices tempor. Integer cursus justo nisi, vel vestibulum justo viverra id. Phasellus suscipit, felis ac volutpat viverra, ligula tellus molestie felis, et elementum tortor libero vel ante. Mauris sodales imperdiet turpis. Fusce pulvinar diam at dictum commodo. Aliquam erat volutpat. Suspendisse porta, sapien et euismod fermentum, lectus risus facilisis purus, sit amet tempus nunc leo sed neque.'\r\n  },\r\n  {\r\n    name: 'panel2',\r\n    heading: 'Lorem ipsum',\r\n    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in tristique orci. Donec eget urna ut nisi mattis interdum sed sit amet orci. Nulla ac efficitur ipsum. Nam vitae nulla velit. Proin eu elementum velit. Cras id sollicitudin tortor, id placerat ante. Duis in magna purus. Aenean dignissim sit amet metus id ultrices. Ut egestas ex lectus, et congue erat pulvinar ac. In sem nulla, tincidunt eu convallis nec, sollicitudin id nulla. Donec ullamcorper, leo nec interdum mollis, dui sapien dignissim arcu, quis placerat tellus ligula id ex. Fusce convallis metus in elementum posuere. Proin eu nulla imperdiet, aliquet purus finibus, mollis tellus. Praesent accumsan nunc id purus sollicitudin egestas. Sed interdum sodales aliquam. Proin fermentum ipsum nec sem sagittis facilisis. Maecenas ac metus quis leo sodales posuere. Aliquam eleifend ultrices turpis pellentesque egestas.'\r\n  },\r\n  {\r\n    name: 'panel3',\r\n    heading: 'Curabitur condimentum risus pharetra diam',\r\n    content: 'Curabitur condimentum risus pharetra diam volutpat pellentesque. Proin volutpat, est nec sollicitudin posuere, justo neque elementum orci, in cursus neque nunc nec tortor. In lorem risus, tempor nec justo quis, scelerisque porttitor lacus. Phasellus dignissim nibh vel quam ornare porta a ut nulla. Sed congue vestibulum tellus, tincidunt porta libero molestie nec. Fusce elementum eros erat, eget varius turpis consectetur aliquam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit lorem in ex sagittis semper. Vivamus fermentum sit amet nisl id facilisis. Aenean convallis auctor consectetur. Pellentesque convallis mattis felis in molestie. Praesent at nisi condimentum, pharetra risus a, dapibus quam. Etiam tristique convallis tristique. Donec sagittis est sapien, sit amet aliquet ligula bibendum eu. Suspendisse maximus tincidunt urna ut mattis. Praesent non nulla quis odio lobortis tincidunt. Phasellus lacinia mauris dolor, id dapibus quam venenatis pretium. Donec semper faucibus ipsum eu pellentesque. Vivamus pharetra dui sem, nec condimentum mauris pulvinar vitae. Mauris sed leo felis. Mauris venenatis vel lorem id aliquam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent lacinia placerat sem, at blandit arcu congue sollicitudin. Sed non risus rhoncus, porttitor lectus et, iaculis est. Phasellus dui arcu, vestibulum vel malesuada ac, suscipit vel turpis. Mauris porta odio dui, ac pharetra ex fringilla eu. Donec molestie pellentesque ipsum eu tempus.'\r\n  },\r\n]"
             },
             {
                 "name": "Playground",
@@ -3982,21 +3988,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<ButtonComponent>",
-                "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/breadcrumbs/breadcrumbs.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<BreadcrumbsComponent>",
                 "defaultValue": "(args: BreadcrumbsComponent) => ({\r\n    component: BreadcrumbsComponent,\r\n    props: args\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonComponent>",
+                "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -4081,6 +4087,17 @@
         ],
         "functions": [],
         "typealiases": [
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<>",
+                "file": "src/app/accordion/accordion.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
             {
                 "name": "Story",
                 "ctype": "miscellaneous",
@@ -4422,6 +4439,38 @@
             }
         ],
         "groupedVariables": {
+            "src/app/accordion/accordion.stories.ts": [
+                {
+                    "name": "Accordion",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/accordion/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: {\r\n      ...args,\r\n      panels\r\n    },\r\n  }),\r\n}"
+                },
+                {
+                    "name": "panels",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/accordion/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\r\n  {\r\n    name: 'panel1',\r\n    heading: 'Etiam venenatis',\r\n    content: 'Etiam venenatis, quam nec volutpat bibendum, magna ex fringilla turpis, vitae efficitur nisl lectus ut mauris. Curabitur sagittis neque id odio viverra pellentesque. Etiam pellentesque molestie suscipit. Suspendisse quis dui a arcu ultrices tempor. Integer cursus justo nisi, vel vestibulum justo viverra id. Phasellus suscipit, felis ac volutpat viverra, ligula tellus molestie felis, et elementum tortor libero vel ante. Mauris sodales imperdiet turpis. Fusce pulvinar diam at dictum commodo. Aliquam erat volutpat. Suspendisse porta, sapien et euismod fermentum, lectus risus facilisis purus, sit amet tempus nunc leo sed neque.'\r\n  },\r\n  {\r\n    name: 'panel2',\r\n    heading: 'Lorem ipsum',\r\n    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in tristique orci. Donec eget urna ut nisi mattis interdum sed sit amet orci. Nulla ac efficitur ipsum. Nam vitae nulla velit. Proin eu elementum velit. Cras id sollicitudin tortor, id placerat ante. Duis in magna purus. Aenean dignissim sit amet metus id ultrices. Ut egestas ex lectus, et congue erat pulvinar ac. In sem nulla, tincidunt eu convallis nec, sollicitudin id nulla. Donec ullamcorper, leo nec interdum mollis, dui sapien dignissim arcu, quis placerat tellus ligula id ex. Fusce convallis metus in elementum posuere. Proin eu nulla imperdiet, aliquet purus finibus, mollis tellus. Praesent accumsan nunc id purus sollicitudin egestas. Sed interdum sodales aliquam. Proin fermentum ipsum nec sem sagittis facilisis. Maecenas ac metus quis leo sodales posuere. Aliquam eleifend ultrices turpis pellentesque egestas.'\r\n  },\r\n  {\r\n    name: 'panel3',\r\n    heading: 'Curabitur condimentum risus pharetra diam',\r\n    content: 'Curabitur condimentum risus pharetra diam volutpat pellentesque. Proin volutpat, est nec sollicitudin posuere, justo neque elementum orci, in cursus neque nunc nec tortor. In lorem risus, tempor nec justo quis, scelerisque porttitor lacus. Phasellus dignissim nibh vel quam ornare porta a ut nulla. Sed congue vestibulum tellus, tincidunt porta libero molestie nec. Fusce elementum eros erat, eget varius turpis consectetur aliquam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit lorem in ex sagittis semper. Vivamus fermentum sit amet nisl id facilisis. Aenean convallis auctor consectetur. Pellentesque convallis mattis felis in molestie. Praesent at nisi condimentum, pharetra risus a, dapibus quam. Etiam tristique convallis tristique. Donec sagittis est sapien, sit amet aliquet ligula bibendum eu. Suspendisse maximus tincidunt urna ut mattis. Praesent non nulla quis odio lobortis tincidunt. Phasellus lacinia mauris dolor, id dapibus quam venenatis pretium. Donec semper faucibus ipsum eu pellentesque. Vivamus pharetra dui sem, nec condimentum mauris pulvinar vitae. Mauris sed leo felis. Mauris venenatis vel lorem id aliquam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent lacinia placerat sem, at blandit arcu congue sollicitudin. Sed non risus rhoncus, porttitor lectus et, iaculis est. Phasellus dui arcu, vestibulum vel malesuada ac, suscipit vel turpis. Mauris porta odio dui, ac pharetra ex fringilla eu. Donec molestie pellentesque ipsum eu tempus.'\r\n  },\r\n]"
+                },
+                {
+                    "name": "Playground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/accordion/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: AccordionComponent,\r\n  props: {\r\n    panels\r\n  },\r\n})"
+                }
+            ],
             "src/app/colorschemes/colorschemes.stories.ts": [
                 {
                     "name": "Adaptive",
@@ -5000,28 +5049,6 @@
                     "defaultValue": "{\r\n  render: (args) => ({\r\n    props: {\r\n      ...args,\r\n      label: 'Lorem ipsum',\r\n      placeholder: 'Dolor sit',\r\n      value: ''\r\n    },\r\n  }),\r\n}"
                 }
             ],
-            "src/app/accordion/accordion.stories.ts": [
-                {
-                    "name": "panels",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/accordion/accordion.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "[]",
-                    "defaultValue": "[\r\n  {\r\n    name: 'panel1',\r\n    heading: 'Etiam venenatis',\r\n    content: 'Etiam venenatis, quam nec volutpat bibendum, magna ex fringilla turpis, vitae efficitur nisl lectus ut mauris. Curabitur sagittis neque id odio viverra pellentesque. Etiam pellentesque molestie suscipit. Suspendisse quis dui a arcu ultrices tempor. Integer cursus justo nisi, vel vestibulum justo viverra id. Phasellus suscipit, felis ac volutpat viverra, ligula tellus molestie felis, et elementum tortor libero vel ante. Mauris sodales imperdiet turpis. Fusce pulvinar diam at dictum commodo. Aliquam erat volutpat. Suspendisse porta, sapien et euismod fermentum, lectus risus facilisis purus, sit amet tempus nunc leo sed neque.'\r\n  },\r\n\r\n  {\r\n    name: 'panel2',\r\n    heading: 'Lorem ipsum',\r\n    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in tristique orci. Donec eget urna ut nisi mattis interdum sed sit amet orci. Nulla ac efficitur ipsum. Nam vitae nulla velit. Proin eu elementum velit. Cras id sollicitudin tortor, id placerat ante. Duis in magna purus. Aenean dignissim sit amet metus id ultrices. Ut egestas ex lectus, et congue erat pulvinar ac. In sem nulla, tincidunt eu convallis nec, sollicitudin id nulla. Donec ullamcorper, leo nec interdum mollis, dui sapien dignissim arcu, quis placerat tellus ligula id ex. Fusce convallis metus in elementum posuere. Proin eu nulla imperdiet, aliquet purus finibus, mollis tellus. Praesent accumsan nunc id purus sollicitudin egestas. Sed interdum sodales aliquam. Proin fermentum ipsum nec sem sagittis facilisis. Maecenas ac metus quis leo sodales posuere. Aliquam eleifend ultrices turpis pellentesque egestas.'\r\n  },\r\n\r\n  {\r\n    name: 'panel3',\r\n    heading: 'Curabitur condimentum risus pharetra diam',\r\n    content: 'Curabitur condimentum risus pharetra diam volutpat pellentesque. Proin volutpat, est nec sollicitudin posuere, justo neque elementum orci, in cursus neque nunc nec tortor. In lorem risus, tempor nec justo quis, scelerisque porttitor lacus. Phasellus dignissim nibh vel quam ornare porta a ut nulla. Sed congue vestibulum tellus, tincidunt porta libero molestie nec. Fusce elementum eros erat, eget varius turpis consectetur aliquam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit lorem in ex sagittis semper. Vivamus fermentum sit amet nisl id facilisis. Aenean convallis auctor consectetur. Pellentesque convallis mattis felis in molestie. Praesent at nisi condimentum, pharetra risus a, dapibus quam. Etiam tristique convallis tristique. Donec sagittis est sapien, sit amet aliquet ligula bibendum eu. Suspendisse maximus tincidunt urna ut mattis. Praesent non nulla quis odio lobortis tincidunt. Phasellus lacinia mauris dolor, id dapibus quam venenatis pretium. Donec semper faucibus ipsum eu pellentesque. Vivamus pharetra dui sem, nec condimentum mauris pulvinar vitae. Mauris sed leo felis. Mauris venenatis vel lorem id aliquam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent lacinia placerat sem, at blandit arcu congue sollicitudin. Sed non risus rhoncus, porttitor lectus et, iaculis est. Phasellus dui arcu, vestibulum vel malesuada ac, suscipit vel turpis. Mauris porta odio dui, ac pharetra ex fringilla eu. Donec molestie pellentesque ipsum eu tempus.'\r\n  },\r\n]"
-                },
-                {
-                    "name": "Playground",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/accordion/accordion.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  component: AccordionComponent,\r\n  props: {\r\n    panels\r\n  },\r\n})"
-                }
-            ],
             "src/app/button/button.stories.ts": [
                 {
                     "name": "Playground",
@@ -5402,6 +5429,19 @@
             ]
         },
         "groupedTypeAliases": {
+            "src/app/accordion/accordion.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<>",
+                    "file": "src/app/accordion/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
             "src/app/checkbox/checkbox.stories.ts": [
                 {
                     "name": "Story",
@@ -5556,6 +5596,16 @@
                 "name": "AccordionComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/accordion/accordion.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Accordion",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
