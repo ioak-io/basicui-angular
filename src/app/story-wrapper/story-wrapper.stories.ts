@@ -5,7 +5,7 @@ import ThemeType from '../types/ThemeType';
 import ButtonVariantType from '../types/ButtonVariantType';
 
 export default {
-  title: 'Surfaces/Modal',
+  title: 'Surfaces/Story Wrapper',
   component: StoryWrapperComponent,
   decorators: [
     moduleMetadata({
@@ -13,7 +13,7 @@ export default {
     })
   ]
 };
-
+// Playground.storyName = 'Story Wrapper Playground';
 export const Playground = () => ({
   component: StoryWrapperComponent,
   props: {

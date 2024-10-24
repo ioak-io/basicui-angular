@@ -15,8 +15,9 @@ export default meta;
 type Story = StoryObj<typeof InputComponent>;
 
 export const Playground: Story = {
-  render: () => ({
+  render: (args) => ({
     props: {
+      ...args,
       label: 'First Name',
       isInfo: true,
       value: 'Dolor sit',

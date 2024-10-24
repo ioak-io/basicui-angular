@@ -18,6 +18,7 @@
       'basicui-switch__input-small': size === 'small',
       'basicui-switch__input-medium': size === 'medium',
       'basicui-switch__input-large': size === 'large',
+      'basicui-switch__input-xlarge': size === 'xlarge',
     }"
     [id]="id"
     [checked]="checked" type="checkbox" role="switch" value="dark">
@@ -25,7 +26,14 @@
 
     <span class="basicui-switch__slider"></span>
 
-    <span *ngIf="!icon && (size !== 'small' && size !== 'medium')" class="basicui-switch__theme__icon">
+    <span *ngIf="size === 'xlarge'" class="basicui-icon">
+      <span class="basicui-icon-part">
+        <svg-icon *ngIf="icon[0] && !checked" [name]="icon[0]" [size]="24"></svg-icon>
+        <svg-icon *ngIf="icon[1] && checked" [name]="icon[1]" [size]="24"></svg-icon>
+      </span>
+    </span>
+
+    <span *ngIf="!icon && (size !== 'small' && size !== 'medium' && size!=='xlarge')" class="basicui-switch__theme__icon">
       <span class="basicui-switch__theme__icon-part" *ngFor="let i of [1,2,3,4,5,6,7,8,9]"></span>
     </span>
 

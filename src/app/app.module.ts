@@ -29,6 +29,8 @@ import { CommonModule } from '@angular/common';
 import { SwitchComponent } from './switch/switch.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { SelectNativeComponent } from './select-native/select-native.component';
+import { FirstSampleModule } from './first-sample.module';
+import { AppshellComponent } from './appshell/appshell.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,8 @@ import { SelectNativeComponent } from './select-native/select-native.component';
     CheckboxComponent,
     Button,
     Header,
-    Page
+    Page,
+    AppshellComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,7 +65,8 @@ import { SelectNativeComponent } from './select-native/select-native.component';
     NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsLoggerPluginModule.forRoot({ disabled: environment.production, }),
     RouterModule,
-    CommonModule
+    CommonModule,
+    FirstSampleModule
   ],
   providers: [],
   bootstrap: [AppComponent],

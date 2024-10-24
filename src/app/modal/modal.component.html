@@ -1,4 +1,4 @@
-<div class="basicui-modal">
+<!-- <div class="basicui-modal">
   <div className="basicui-modal__overlay">
     <div [ngClass]="{'basicui-modal__base':true,
                  'basicui-modal__base--size-default':true,
@@ -38,4 +38,25 @@
       </div>
     </div>
   </div>
+</div> -->
+
+<div>
+  <button [ngClass]="{
+      'basicui-button': true,
+        'basicui-button--theme-primary': theme === 'primary',
+        'basicui-button--theme-default': theme === 'default',
+        'basicui-button--theme-secondary': theme === 'secondary',
+        'basicui-button--theme-success': theme === 'success',
+        'basicui-button--theme-warning': theme === 'warning',
+        'basicui-button--theme-danger': theme === 'danger',
+        'basicui-button--variant-default': variant === 'default',
+        'basicui-button--variant-fill': variant === 'fill',
+        'basicui-button--variant-outline': variant === 'outline',
+        'basicui-button--variant-transparent': variant === 'transparent',
+        }" [type]="type" (click)="openModal()">Open Modal</button>
+
+  <app-modal *ngIf="isOpen" (closeModal)="closeModal()" [ngClass]="{'basicui-modal-body-content':true,
+      'basicui-modal-body-content--size-default':true,
+      'basicui-modal-body-content--placement-default': true}">
+  </app-modal>
 </div>

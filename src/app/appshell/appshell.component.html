@@ -1,0 +1,45 @@
+<div class="basicui-appshell" [ngClass]="{'dark-mode':isDarkMode}">
+    <header class="basicui-appshell-topbar">
+        <div class="basicui-logo">
+            <div class="basicui-logo__icon">
+                <img [src]="isDarkMode ? logoIconWhite : logoIconBlack" alt="Logo Icon"/>
+            </div>
+            <div class="basicui-logo__text">
+                <img [src]="isDarkMode ? logoTextWhite : logoTextBlack" alt="Logo Text"/>
+            </div>
+        </div>
+
+        <button class="basicui-appshell-topbar_right_toggle" (click)="toggleSidebar()">
+            {{isSidebarExpanded ? 'Collapse' : 'Expand'}} Sidebar
+        </button>
+
+        <button class="basicui-appshell-topbar_right_toggle" (click)="toggleDarkMode()">
+            Toggle {{isDarkMode ? 'Light' : 'Dark'}} Mode
+        </button>
+
+        <button class="basicui-appshell-topbar_right_toggle" (click)="onSignin()">
+            Sign In
+        </button>
+
+        <button class="basicui-appshell-topbar_right_toggle" (click)="onSignout()">
+            Sign Out
+        </button>
+    </header>
+
+    <aside *ngIf="isSidebarExpanded" class="navbar">
+        <ng-content select="[navabr]"></ng-content>
+    </aside>
+
+    <main [innerHTML]="body">
+        
+    </main>
+
+    <footer>
+        <ng-content select="[footer]"></ng-content>
+    </footer>
+
+    <div class="basicui-appshell-mobile-navbar" [innerHTML]="mobileNavbar">
+        
+    </div>
+
+</div>

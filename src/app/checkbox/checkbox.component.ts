@@ -8,7 +8,7 @@ import ThemeType from '../types/ThemeType';
 })
 export class CheckboxComponent {
   @Input() id: string = '';
-  @Input() label: string = 'Lorem Dolor';
+  @Input() label: string = 'Lorem ipsum dolor sit';
   @Input() theme: 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'danger' = 'default';
   @Input() type!: string;
   @Input() checked: boolean = false;

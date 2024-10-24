@@ -29,7 +29,7 @@ export const Playground: Story = {
     },
   }),
   args:{
-    theme: 'primary',
+    theme: 'default',
     checked: true
   }
 };
