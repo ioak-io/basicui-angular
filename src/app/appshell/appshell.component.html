@@ -1,4 +1,4 @@
-<div class="basicui-appshell" [ngClass]="{'dark-mode':isDarkMode}">
+<!-- <div class="basicui-appshell" [ngClass]="{'dark-mode':isDarkMode}">
     <header class="basicui-appshell-topbar">
         <div class="basicui-logo">
             <div class="basicui-logo__icon">
@@ -10,19 +10,20 @@
         </div>
 
         <button class="basicui-appshell-topbar_right_toggle" (click)="toggleSidebar()">
-            {{isSidebarExpanded ? 'Collapse' : 'Expand'}} Sidebar
+            {{isSidebarExpanded ? "basicui-appshell--expanded"
+          : "basicui-appshell--collapsed"}} SI
         </button>
 
         <button class="basicui-appshell-topbar_right_toggle" (click)="toggleDarkMode()">
             Toggle {{isDarkMode ? 'Light' : 'Dark'}} Mode
         </button>
 
-        <button class="basicui-appshell-topbar_right_toggle" (click)="onSignin()">
-            Sign In
+        <button class="basicui-appshell-navbar-footer basicui-appshell-navbar-footer--expanded" (click)="onSignin()">
+            S I
         </button>
 
         <button class="basicui-appshell-topbar_right_toggle" (click)="onSignout()">
-            Sign Out
+            S O
         </button>
     </header>
 
@@ -42,4 +43,52 @@
         
     </div>
 
-</div>
+</div> -->
+
+<div class="basicui-appshell" [ngClass]="{'dark-mode': isDarkMode}">
+    <header class="basicui-appshell-topbar">
+      <div class="basicui-logo">
+        <div class="basicui-logo__icon">
+          <img [src]="isDarkMode ? logoIconWhite : logoIconBlack" alt="Logo Icon" />
+        </div>
+        <div class="basicui-logo__text">
+          <img [src]="isDarkMode ? logoTextWhite : logoTextBlack" alt="Logo Text" />
+        </div>
+      </div>
+  
+      <div class="basicui-appshell-topbar__actions">
+        <button class="basicui-appshell-topbar_right_toggle" (click)="toggleSidebar()">
+          {{ isSidebarExpanded ? "Collapse Sidebar" : "Expand Sidebar" }}
+        </button>
+  
+        <button class="basicui-appshell-topbar_right_toggle" (click)="toggleDarkMode()">
+          Toggle {{ isDarkMode ? 'Light' : 'Dark' }} Mode
+        </button>
+  
+        <button class="basicui-appshell-topbar_right_toggle" (click)="onSignin()">
+          Sign In
+        </button>
+  
+        <button class="basicui-appshell-topbar_right_toggle" (click)="onSignout()">
+          Sign Out
+        </button>
+      </div>
+    </header>
+  
+    <!-- Sidebar for larger screens -->
+    <aside *ngIf="isSidebarExpanded" class="navbar">
+      <ng-content select="[navbar]"></ng-content>
+    </aside>
+  
+    <!-- Main body content -->
+    <main [innerHTML]="body" class="basicui-appshell-body"></main>
+  
+    <!-- Footer content -->
+    <footer>
+      <ng-content select="[footer]"></ng-content>
+    </footer>
+  
+    <!-- Mobile navbar visible on small screens -->
+    <div *ngIf="!isSidebarExpanded" class="basicui-appshell-mobile-navbar" [innerHTML]="mobileNavbar"></div>
+  </div>
+  

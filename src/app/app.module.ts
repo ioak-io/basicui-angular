@@ -31,6 +31,11 @@ import { CheckboxComponent } from './checkbox/checkbox.component';
 import { SelectNativeComponent } from './select-native/select-native.component';
 import { FirstSampleModule } from './first-sample.module';
 import { AppshellComponent } from './appshell/appshell.component';
+import { UserGuideComponent } from './userguides/user-guide.component';
+import { IntroductionComponent } from './userguides/introduction.component';
+import { ColorPaletteComponent } from './userguides/color-palette.component';
+import { ColorSchemeGeneratorComponent } from './userguides/color-scheme-generator.component';
+import { FlexContainerComponent } from './flex-container/flex-container.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +62,11 @@ import { AppshellComponent } from './appshell/appshell.component';
     Header,
     Page,
     AppshellComponent,
+    UserGuideComponent,
+    IntroductionComponent,
+    ColorPaletteComponent,
+    ColorSchemeGeneratorComponent,
+    FlexContainerComponent
   ],
   imports: [
     BrowserModule,

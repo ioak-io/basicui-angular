@@ -80,6 +80,69 @@
             "extends": []
         },
         {
+            "name": "ColorPaletteColors",
+            "id": "interface-ColorPaletteColors-70ac0c890287a352f1d2943c6f71334b2b9407ba5a400b4f2772c402c00e88265b9e5531f37f3089efc02e11452ebc860782dfe04459b9cba527b0bec7da60ee",
+            "file": "src/app/userguides/color-palette.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';\r\n\r\ninterface ColorPaletteColors {\r\n  lightMode: Record<string, string>;\r\n  darkMode: Record<string, string>;\r\n}\r\n\r\n@Component({\r\n  selector: 'app-color-palette',\r\n  template: `\r\n    <div class=\"flex flex-wrap gap-2\">\r\n      <div\r\n        *ngFor=\"let color of palette; let i = index\"\r\n        [style.background-color]=\"color[1]\"\r\n        class=\"w-24 h-24 flex items-center justify-center text-white font-bold rounded shadow-md\"\r\n      >\r\n        {{ colorKey[i] }}\r\n      </div>\r\n    </div>\r\n  `,\r\n})\r\nexport class ColorPaletteComponent implements OnChanges {\r\n  @Input() colors!: ColorPaletteColors;\r\n  @Input() colorname!: string;\r\n  @Input() isDarkMode = false;\r\n\r\n  palette: string[][] = [];\r\n  colorKey = [\r\n    'muted',\r\n    'light',\r\n    'base',\r\n    'dark',\r\n    'text',\r\n    'transparent-muted',\r\n    'transparent-light',\r\n    'transparent-base',\r\n    'transparent-dark',\r\n  ];\r\n\r\n  ngOnChanges(changes: SimpleChanges): void {\r\n    if (changes['colors'] || changes['colorname'] || changes['isDarkMode']) {\r\n      this.updatePalette();\r\n    }\r\n  }\r\n\r\n  private updatePalette(): void {\r\n    const colorOrder = [\r\n      `--basicui-bg-${this.colorname}-muted`,\r\n      `--basicui-bg-${this.colorname}-light`,\r\n      `--basicui-bg-${this.colorname}`,\r\n      `--basicui-bg-${this.colorname}-dark`,\r\n      `--basicui-bg-${this.colorname}-text`,\r\n      `--basicui-bg-${this.colorname}-transparent-muted`,\r\n      `--basicui-bg-${this.colorname}-transparent-light`,\r\n      `--basicui-bg-${this.colorname}-transparent`,\r\n      `--basicui-bg-${this.colorname}-transparent-dark`,\r\n    ];\r\n\r\n    this.palette = colorOrder.map((key) => [\r\n      key,\r\n      this.colors[this.isDarkMode ? 'darkMode' : 'lightMode'][key],\r\n    ]);\r\n  }\r\n}",
+            "properties": [
+                {
+                    "name": "darkMode",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Record<string | string>",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "lightMode",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Record<string | string>",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "ColorSet",
+            "id": "interface-ColorSet-4742226a42983f682b69d165e54186d2923befb0d92048c782485e20a2b0c490b2ba80395fbc6ad79b433ba711e01ae8cbf3157934267366c5212d4da863222f",
+            "file": "src/app/userguides/util.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import * as tinycolor from 'tinycolor2';\r\n\r\nexport interface ColorSet {\r\n  [key: string]: string;\r\n}\r\n\r\nconst generateColorSchemeForMode = (\r\n    baseHex: string,\r\n    baseColorVariableName: string,\r\n    isDarkMode: boolean = false\r\n  ): ColorSet => {\r\n    const baseColor = tinycolor(baseHex);\r\n\r\n    const getColorShades = (\r\n        color: any,\r\n        darkMode: boolean\r\n      ): string[] => {\r\n        const shades: string[] = [];\r\n    \r\n        // Create slightly lighter, slightly darker, muted and text colors\r\n        const base = color\r\n          .clone()\r\n          .desaturate(darkMode ? 5 : 0)\r\n          .toHexString();\r\n        const light = color\r\n          .clone()\r\n          .lighten(darkMode ? 6 : 6)\r\n          .desaturate(darkMode ? 5 : 0)\r\n          .toHexString();\r\n        const dark = color\r\n          .clone()\r\n          .darken(darkMode ? 6 : 6)\r\n          .desaturate(darkMode ? 5 : 0)\r\n          .toHexString();\r\n        const muted = color\r\n          .clone()\r\n          .lighten(darkMode ? 10 : 10)\r\n          .desaturate(darkMode ? 10 : 5)\r\n          .toHexString();\r\n        const text = darkMode\r\n          ? color.clone().lighten(15).saturate(0).toHexString()\r\n          : color.clone().darken(15).toHexString();\r\n    \r\n        shades.push(\r\n          base,\r\n          light,\r\n          dark,\r\n          muted,\r\n          text,\r\n          `${base}70`,\r\n          `${light}70`,\r\n          `${dark}70`,\r\n          `${muted}70`\r\n        );\r\n    \r\n        return shades;\r\n      };\r\n    \r\n      // Generate 5 color variations\r\n      const colorShades = getColorShades(baseColor, isDarkMode);\r\n    \r\n      // Choose the best foreground color (either white or black) for legibility across most shades\r\n      const foregroundColor = tinycolor\r\n        .mostReadable(baseHex, [\"#ffffff\", \"#000000\"], {\r\n          includeFallbackColors: true,\r\n          level: \"AAA\",\r\n          size: \"large\",\r\n        })\r\n        .toHexString();\r\n    \r\n      // Assign colors and foregrounds with updated variable names\r\n      const colors: ColorSet = {\r\n        [`--basicui-bg-${baseColorVariableName}`]: colorShades[0],\r\n        [`--basicui-bg-${baseColorVariableName}-light`]: colorShades[1],\r\n        [`--basicui-bg-${baseColorVariableName}-dark`]: colorShades[2],\r\n        [`--basicui-bg-${baseColorVariableName}-muted`]: colorShades[3],\r\n        [`--basicui-bg-${baseColorVariableName}-text`]: colorShades[4],\r\n        [`--basicui-bg-${baseColorVariableName}-transparent`]: colorShades[5],\r\n        [`--basicui-bg-${baseColorVariableName}-transparent-light`]: colorShades[6],\r\n        [`--basicui-bg-${baseColorVariableName}-transparent-dark`]: colorShades[7],\r\n        [`--basicui-bg-${baseColorVariableName}-transparent-muted`]: colorShades[8],\r\n        [`--basicui-fg-${baseColorVariableName}`]: foregroundColor,\r\n      };\r\n    \r\n      return colors;\r\n    };\r\n    \r\n    export const generateCompleteColorScheme = (\r\n      baseHex: string,\r\n      baseColorVariableName: string\r\n    ) => {\r\n      // Light mode colors\r\n      const lightMode = generateColorSchemeForMode(\r\n        baseHex,\r\n        baseColorVariableName,\r\n        false\r\n      );\r\n    \r\n      // Dark mode colors\r\n      const darkMode = generateColorSchemeForMode(\r\n        baseHex,\r\n        baseColorVariableName,\r\n        true\r\n      );\r\n    \r\n      return {\r\n        lightMode,\r\n        darkMode,\r\n      };\r\n    };",
+            "properties": [],
+            "indexSignatures": [
+                {
+                    "id": "index-declaration-4742226a42983f682b69d165e54186d2923befb0d92048c782485e20a2b0c490b2ba80395fbc6ad79b433ba711e01ae8cbf3157934267366c5212d4da863222f",
+                    "args": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "returnType": "string",
+                    "line": 3,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "kind": 181,
+            "methods": [],
+            "extends": []
+        },
+        {
             "name": "EnvironmentModel",
             "id": "interface-EnvironmentModel-1787be42b6b500b3da8e48fa28a4cf2ab51b2887ccb07f0021c54b3e4539f865ef291afbcb81d31f6cfe1b4195d375c9d3c60f844601bc7c815dba76ecfe46b6",
             "file": "src/environments/environment-model.ts",
@@ -401,7 +464,7 @@
         },
         {
             "name": "AppshellComponent",
-            "id": "component-AppshellComponent-a930d34dc89ab5190b9fba291d542253851de031ee054e48e0185c4cb061556ea3750520c9bead57780266c3022ef26c49fd1fc55fc2f99dad90fa9b2f283ac4",
+            "id": "component-AppshellComponent-21315c6474d6b3a217eb66d1e1f44f22b4b4f6dbfe23062de183b1b3ac9289e19e940619951eb9a47e7f8e8f16e9e471388a2ec7c274624e888528f4589beb56",
             "file": "src/app/appshell/appshell.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -424,16 +487,16 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 60,
                     "type": "string",
                     "decorators": []
                 },
                 {
                     "name": "isDarkMode",
-                    "defaultValue": "true",
+                    "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "line": 53,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -442,7 +505,7 @@
                     "defaultValue": "true",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 10,
+                    "line": 52,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -451,7 +514,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 55,
                     "type": "string",
                     "decorators": []
                 },
@@ -460,7 +523,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 54,
                     "type": "string",
                     "decorators": []
                 },
@@ -469,7 +532,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 57,
                     "type": "string",
                     "decorators": []
                 },
@@ -478,7 +541,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 14,
+                    "line": 56,
                     "type": "string",
                     "decorators": []
                 },
@@ -487,7 +550,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 61,
                     "type": "string",
                     "decorators": []
                 },
@@ -496,7 +559,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 59,
                     "type": "string",
                     "decorators": []
                 }
@@ -507,7 +570,7 @@
                     "defaultValue": "new EventEmitter<void>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 22,
+                    "line": 64,
                     "type": "EventEmitter"
                 },
                 {
@@ -515,7 +578,7 @@
                     "defaultValue": "new EventEmitter<void>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 63,
                     "type": "EventEmitter"
                 },
                 {
@@ -523,7 +586,7 @@
                     "defaultValue": "new EventEmitter<void>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 23,
+                    "line": 65,
                     "type": "EventEmitter"
                 },
                 {
@@ -531,7 +594,7 @@
                     "defaultValue": "new EventEmitter<void>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 24,
+                    "line": 66,
                     "type": "EventEmitter"
                 }
             ],
@@ -543,7 +606,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 34,
+                    "line": 78,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -553,7 +616,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 38,
+                    "line": 82,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -563,7 +626,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 30,
+                    "line": 73,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -573,7 +636,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 26,
+                    "line": 68,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -587,17 +650,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'app-appshell',\n  templateUrl: './appshell.component.html',\n  styleUrls: ['./appshell.component.scss'],\n  \n})\nexport class AppshellComponent {\n  @Input() isSidebarExpanded: boolean = true;\n  @Input() isDarkMode: boolean=true;\n  @Input() logoIconWhite: string = '';\n  @Input() logoIconBlack: string ='';\n  @Input() logoTextWhite: string='';\n  @Input() logoTextBlack: string = '';\n\n  @Input() navbar: string='';\n  @Input() body: string = '';\n  @Input() mobileNavbar: string = '';\n\n  @Output() sidebarToggle = new EventEmitter<void>();\n  @Output() darkModeToggle = new EventEmitter<void>();\n  @Output() signin = new EventEmitter<void>();\n  @Output() signout = new EventEmitter<void>();\n\n  toggleSidebar(){\n    this.sidebarToggle.emit();\n  }\n\n  toggleDarkMode(){\n    this.darkModeToggle.emit();\n  }\n\n  onSignin(){\n    this.signin.emit();\n  }\n\n  onSignout(){\n    this.signout.emit();\n  }\n\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'app-appshell',\n  templateUrl: './appshell.component.html',\n  styleUrls: ['./appshell.component.scss'],\n})\nexport class AppshellComponent {\n  @Input() isSidebarExpanded: boolean = true;\n  @Input() isDarkMode: boolean = false;\n  @Input() logoIconWhite: string = '';\n  @Input() logoIconBlack: string = '';\n  @Input() logoTextWhite: string = '';\n  @Input() logoTextBlack: string = '';\n\n  @Input() navbar: string = '';\n  @Input() body: string = '';\n  @Input() mobileNavbar: string = '';\n\n  @Output() sidebarToggle = new EventEmitter<void>();\n  @Output() darkModeToggle = new EventEmitter<void>();\n  @Output() signin = new EventEmitter<void>();\n  @Output() signout = new EventEmitter<void>();\n\n  toggleSidebar() {\n    this.isSidebarExpanded = !this.isSidebarExpanded;\n    this.sidebarToggle.emit();\n  }\n\n  toggleDarkMode() {\n    this.isDarkMode = !this.isDarkMode;\n    this.darkModeToggle.emit();\n  }\n\n  onSignin() {\n    this.signin.emit();\n  }\n\n  onSignout() {\n    this.signout.emit();\n  }\n}\n\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".basicui-appshell {\r\n}\r\n\r\n.basicui-appshell__left {\r\n  width: var(--basicui-appshell-navbar-width);\r\n  transition: width 250ms ease-in-out, background-color 250ms ease-in-out;\r\n  position: fixed;\r\n  left: 0;\r\n  top: 0;\r\n  bottom: 0;\r\n  height: 100%;\r\n  border-right: 1px solid var(--basicui-border-color);\r\n}\r\n\r\n.basicui-appshell--collapsed .basicui-appshell__left {\r\n  width: var(--basicui-appshell-navbar-width-collapsed);\r\n}\r\n\r\n@media (max-width: 767px) {\r\n  .basicui-appshell__left {\r\n    display: none;\r\n  }\r\n\r\n  .basicui-appshell__right {\r\n    display: flex;\r\n    flex-direction: column;\r\n  }\r\n}\r\n\r\n@media (min-width: 768px) {\r\n  .basicui-appshell__right {\r\n    margin-left: var(--basicui-appshell-navbar-width);\r\n    transition: margin-left 250ms ease-in-out;\r\n  }\r\n  .basicui-appshell__right--hide-navbar {\r\n    margin-left: 0;\r\n    transition: margin-left 0ms ease-in-out;\r\n  }\r\n  .basicui-appshell--collapsed .basicui-appshell__right {\r\n    margin-left: var(--basicui-appshell-navbar-width-collapsed);\r\n  }\r\n}\r\n\r\n@media (max-width: 767px) {\r\n    .basicui-appshell-body {\r\n      margin-top: var(--basicui-appshell-topbar-height);\r\n    }\r\n  }\r\n\r\n.basicui-appshell-mobile-navbar-body {\r\n    padding: 20px;\r\n  }\r\n  \r\n.basicui-appshell-mobile-navbar-body::-webkit-scrollbar {\r\n    display: none;\r\n  }\r\n  \r\n.basicui-appshell-mobile-navbar-body:first-child {\r\n    overflow-y: auto;\r\n  }\r\n\r\n.basicui-appshell-mobile-navbar-footer {\r\n    display: grid;\r\n    grid-auto-flow: column;\r\n    justify-content: space-between;\r\n    align-content: center;\r\n    align-items: center;\r\n    /* background-color: var(--basicui-bg-surface); */\r\n    height: var(--basicui-appshell-topbar-height);\r\n    padding: 10px 20px;\r\n  }\r\n  \r\n  .basicui-appshell-mobile-navbar-footer__left {\r\n    display: grid;\r\n    grid-auto-flow: column;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    font-size: 18px;\r\n    width: 100%;\r\n  }\r\n  \r\n.basicui-appshell-mobile-navbar-footer__left button {\r\n    font-size: inherit;\r\n    box-shadow: none;\r\n    border: none;\r\n    background: none;\r\n    color: inherit;\r\n    font-size: 24px;\r\n    width: 60px;\r\n    display: flex;\r\n    justify-content: center;\r\n  }\r\n  \r\n  .basicui-appshell-mobile-navbar-footer__right {\r\n    width: 60px;\r\n    display: flex;\r\n    justify-content: center;\r\n  }\r\n  \r\n.basicui-appshell-mobile-navbar-footer svg {\r\n    height: 1em;\r\n  }\r\n\r\n  \r\n  \r\n.basicui-appshell-mobile-navbar {\r\n    position: fixed;\r\n    left: 0;\r\n    top: var(--basicui-appshell-topbar-height);\r\n    bottom: 0;\r\n    right: 0;\r\n    background-color: var(--basicui-bg-surface);\r\n    z-index: 9;\r\n    display: grid;\r\n    grid-template-rows: 1fr auto;\r\n}\r\n\r\n.basicui-appshell-navbar-body {\r\n    padding: 10px 10px;\r\n    display: grid;\r\n    grid-auto-flow: row;\r\n    row-gap: 5px;\r\n    align-content: flex-start;\r\n  }\r\n  \r\n  .basicui-appshell-navbar-body__toggle {\r\n    background-color: transparent;\r\n    border: none;\r\n    color: inherit;\r\n    width: 60px;\r\n    height: 36px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n  }\r\n  \r\n  .basicui-appshell-navbar-body__toggle svg {\r\n    height: 1em;\r\n  }\r\n\r\n  .basicui-appshell-navbar-footer {\r\n    position: fixed;\r\n    bottom: 0;\r\n    left: 0;\r\n    display: grid;\r\n    grid-auto-flow: column;\r\n    justify-content: space-between;\r\n    align-content: center;\r\n    align-items: center;\r\n    background-color: var(--basicui-bg-surface);\r\n    height: var(--basicui-appshell-topbar-height);\r\n    padding: 0 10px;\r\n    border-right: 1px solid var(--basicui-border-color);\r\n    transition: width 250ms ease-in-out, background-color 250ms ease-in-out;\r\n  }\r\n  \r\n  .basicui-appshell-navbar-footer--expanded {\r\n    width: var(--basicui-appshell-navbar-width);\r\n  }\r\n  \r\n  .basicui-appshell-navbar-footer--collapsed {\r\n    width: var(--basicui-appshell-navbar-width-collapsed);\r\n  }\r\n  \r\n  .basicui-appshell-navbar-footer__left {\r\n    display: grid;\r\n    grid-auto-flow: column;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    font-size: 18px;\r\n    width: 100%;\r\n  }\r\n  \r\n  .basicui-appshell-navbar-footer__left button {\r\n    font-size: inherit;\r\n    box-shadow: none;\r\n    border: none;\r\n    background: none;\r\n    color: inherit;\r\n    font-size: 24px;\r\n    width: 60px;\r\n    display: flex;\r\n    justify-content: center;\r\n  }\r\n  \r\n  .basicui-appshell-navbar-footer__right {\r\n    width: 60px;\r\n    display: flex;\r\n    justify-content: center;\r\n  }\r\n  \r\n  .basicui-appshell-navbar-footer svg {\r\n    height: 1em;\r\n  }\r\n\r\n  .basicui-appshell-navbar-header {\r\n    height: var(--basicui-appshell-topbar-height);\r\n    display: grid;\r\n    align-items: center;\r\n    grid-auto-flow: column;\r\n    justify-content: space-between;\r\n    padding: 0 10px;\r\n  }\r\n\r\n\r\n.basicui-appshell-navbar {\r\n  display: grid;\r\n  grid-auto-flow: column;\r\n  font-size: 18px;\r\n  background-color: var(--basicui-appshell-navbar-bg);\r\n  width: 100%;\r\n  height: 100%;\r\n  display: grid;\r\n  grid-template-rows: auto 1fr auto;\r\n  overflow-y: auto;\r\n  transition: width 250ms ease-in-out, background-color 250ms ease-in-out;\r\n}\r\n\r\n.basicui-appshell-navbar::-webkit-scrollbar {\r\n  display: none;\r\n}\r\n\r\n.basicui-appshell-topbar {\r\n    height: var(--basicui-appshell-topbar-height);\r\n    display: grid;\r\n    grid-template-columns: 1fr auto;\r\n    column-gap: 10px;\r\n    align-items: center;\r\n    padding: 0 20px;\r\n    border-bottom: 1px solid var(--basicui-border-color);\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    z-index: 9;\r\n    background-color: var(--basicui-bg-surface);\r\n  }\r\n  \r\n  @media (min-width: 768px) {\r\n    .basicui-appshell-topbar {\r\n      display: none;\r\n    }\r\n  }\r\n  \r\n  .basicui-appshell-topbar .basicui-logo {\r\n    column-gap: 6px;\r\n  }\r\n  \r\n  .basicui-appshell-topbar .basicui-logo__icon img {\r\n    height: 24px;\r\n    width: auto;\r\n  }\r\n  \r\n  .basicui-appshell-topbar .basicui-logo__text img {\r\n    height: 60%;\r\n  }\r\n  \r\n  .basicui-appshell-topbar__right__toggle {\r\n    background-color: transparent;\r\n    border: none;\r\n    color: inherit;\r\n    /* width: 60px;\r\n    height: 36px; */\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n  }\r\n  \r\n  .basicui-appshell-topbar__right__toggle svg {\r\n    height: 1em;\r\n  }\r\n\r\n  \r\n\r\n  \r\n",
+                    "data": "// .basicui-appshell {\r\n// }\r\n\r\n// .basicui-appshell__left {\r\n//   width: var(--basicui-appshell-navbar-width);\r\n//   transition: width 250ms ease-in-out, background-color 250ms ease-in-out;\r\n//   position: fixed;\r\n//   left: 0;\r\n//   top: 0;\r\n//   bottom: 0;\r\n//   height: 100%;\r\n//   border-right: 1px solid var(--basicui-border-color);\r\n// }\r\n\r\n// .basicui-appshell--collapsed .basicui-appshell__left {\r\n//   width: var(--basicui-appshell-navbar-width-collapsed);\r\n// }\r\n\r\n// @media (max-width: 767px) {\r\n//   .basicui-appshell__left {\r\n//     display: none;\r\n//   }\r\n\r\n//   .basicui-appshell__right {\r\n//     display: flex;\r\n//     flex-direction: column;\r\n//   }\r\n// }\r\n\r\n// @media (min-width: 768px) {\r\n//   .basicui-appshell__right {\r\n//     margin-left: var(--basicui-appshell-navbar-width);\r\n//     transition: margin-left 250ms ease-in-out;\r\n//   }\r\n//   .basicui-appshell__right--hide-navbar {\r\n//     margin-left: 0;\r\n//     transition: margin-left 0ms ease-in-out;\r\n//   }\r\n//   .basicui-appshell--collapsed .basicui-appshell__right {\r\n//     margin-left: var(--basicui-appshell-navbar-width-collapsed);\r\n//   }\r\n// }\r\n\r\n// @media (max-width: 767px) {\r\n//     .basicui-appshell-body {\r\n//       margin-top: var(--basicui-appshell-topbar-height);\r\n//     }\r\n//   }\r\n\r\n// .basicui-appshell-mobile-navbar-body {\r\n//     padding: 20px;\r\n//   }\r\n  \r\n// .basicui-appshell-mobile-navbar-body::-webkit-scrollbar {\r\n//     display: none;\r\n//   }\r\n  \r\n// .basicui-appshell-mobile-navbar-body:first-child {\r\n//     overflow-y: auto;\r\n//   }\r\n\r\n// .basicui-appshell-mobile-navbar-footer {\r\n//     display: grid;\r\n//     grid-auto-flow: column;\r\n//     justify-content: space-between;\r\n//     align-content: center;\r\n//     align-items: center;\r\n//     /* background-color: var(--basicui-bg-surface); */\r\n//     height: var(--basicui-appshell-topbar-height);\r\n//     padding: 10px 20px;\r\n//   }\r\n  \r\n//   .basicui-appshell-mobile-navbar-footer__left {\r\n//     display: grid;\r\n//     grid-auto-flow: column;\r\n//     justify-content: flex-start;\r\n//     align-items: center;\r\n//     font-size: 18px;\r\n//     width: 100%;\r\n//   }\r\n  \r\n// .basicui-appshell-mobile-navbar-footer__left button {\r\n//     font-size: inherit;\r\n//     box-shadow: none;\r\n//     border: none;\r\n//     background: none;\r\n//     color: inherit;\r\n//     font-size: 24px;\r\n//     width: 60px;\r\n//     display: flex;\r\n//     justify-content: center;\r\n//   }\r\n  \r\n//   .basicui-appshell-mobile-navbar-footer__right {\r\n//     width: 60px;\r\n//     display: flex;\r\n//     justify-content: center;\r\n//   }\r\n  \r\n// .basicui-appshell-mobile-navbar-footer svg {\r\n//     height: 1em;\r\n//   }\r\n\r\n  \r\n  \r\n// .basicui-appshell-mobile-navbar {\r\n//     position: fixed;\r\n//     left: 0;\r\n//     top: var(--basicui-appshell-topbar-height);\r\n//     bottom: 0;\r\n//     right: 0;\r\n//     background-color: var(--basicui-bg-surface);\r\n//     z-index: 9;\r\n//     display: grid;\r\n//     grid-template-rows: 1fr auto;\r\n// }\r\n\r\n// .basicui-appshell-navbar-body {\r\n//     padding: 10px 10px;\r\n//     display: grid;\r\n//     grid-auto-flow: row;\r\n//     row-gap: 5px;\r\n//     align-content: flex-start;\r\n//   }\r\n  \r\n//   .basicui-appshell-navbar-body__toggle {\r\n//     background-color: transparent;\r\n//     border: none;\r\n//     color: inherit;\r\n//     width: 60px;\r\n//     height: 36px;\r\n//     display: flex;\r\n//     justify-content: center;\r\n//     align-items: center;\r\n//   }\r\n  \r\n//   .basicui-appshell-navbar-body__toggle svg {\r\n//     height: 1em;\r\n//   }\r\n\r\n//   .basicui-appshell-navbar-footer {\r\n//     position: fixed;\r\n//     bottom: 0;\r\n//     left: 0;\r\n//     display: grid;\r\n//     grid-auto-flow: column;\r\n//     justify-content: space-between;\r\n//     align-content: center;\r\n//     align-items: center;\r\n//     background-color: var(--basicui-bg-surface);\r\n//     height: var(--basicui-appshell-topbar-height);\r\n//     padding: 0 10px;\r\n//     border-right: 1px solid var(--basicui-border-color);\r\n//     transition: width 250ms ease-in-out, background-color 250ms ease-in-out;\r\n//   }\r\n  \r\n//   .basicui-appshell-navbar-footer--expanded {\r\n//     width: var(--basicui-appshell-navbar-width);\r\n//   }\r\n  \r\n//   .basicui-appshell-navbar-footer--collapsed {\r\n//     width: var(--basicui-appshell-navbar-width-collapsed);\r\n//   }\r\n  \r\n//   .basicui-appshell-navbar-footer__left {\r\n//     display: grid;\r\n//     grid-auto-flow: column;\r\n//     justify-content: flex-start;\r\n//     align-items: center;\r\n//     font-size: 18px;\r\n//     width: 100%;\r\n//   }\r\n  \r\n//   .basicui-appshell-navbar-footer__left button {\r\n//     font-size: inherit;\r\n//     box-shadow: none;\r\n//     border: none;\r\n//     background: none;\r\n//     color: inherit;\r\n//     font-size: 24px;\r\n//     width: 60px;\r\n//     display: flex;\r\n//     justify-content: center;\r\n//   }\r\n  \r\n//   .basicui-appshell-navbar-footer__right {\r\n//     width: 60px;\r\n//     display: flex;\r\n//     justify-content: center;\r\n//   }\r\n  \r\n//   .basicui-appshell-navbar-footer svg {\r\n//     height: 1em;\r\n//   }\r\n\r\n//   .basicui-appshell-navbar-header {\r\n//     height: var(--basicui-appshell-topbar-height);\r\n//     display: grid;\r\n//     align-items: center;\r\n//     grid-auto-flow: column;\r\n//     justify-content: space-between;\r\n//     padding: 0 10px;\r\n//   }\r\n\r\n\r\n// .basicui-appshell-navbar {\r\n//   display: grid;\r\n//   grid-auto-flow: column;\r\n//   font-size: 18px;\r\n//   background-color: var(--basicui-appshell-navbar-bg);\r\n//   width: 100%;\r\n//   height: 100%;\r\n//   display: grid;\r\n//   grid-template-rows: auto 1fr auto;\r\n//   overflow-y: auto;\r\n//   transition: width 250ms ease-in-out, background-color 250ms ease-in-out;\r\n// }\r\n\r\n// .basicui-appshell-navbar::-webkit-scrollbar {\r\n//   display: none;\r\n// }\r\n\r\n// .basicui-appshell-topbar {\r\n//     height: var(--basicui-appshell-topbar-height);\r\n//     display: grid;\r\n//     grid-template-columns: 1fr auto;\r\n//     column-gap: 10px;\r\n//     align-items: center;\r\n//     padding: 0 20px;\r\n//     border-bottom: 1px solid var(--basicui-border-color);\r\n//     position: fixed;\r\n//     top: 0;\r\n//     left: 0;\r\n//     right: 0;\r\n//     z-index: 9;\r\n//     background-color: var(--basicui-bg-surface);\r\n//   }\r\n  \r\n//   @media (min-width: 768px) {\r\n//     .basicui-appshell-topbar {\r\n//       display: none;\r\n//     }\r\n//   }\r\n  \r\n//   .basicui-appshell-topbar .basicui-logo {\r\n//     column-gap: 6px;\r\n//   }\r\n  \r\n//   .basicui-appshell-topbar .basicui-logo__icon img {\r\n//     height: 24px;\r\n//     width: auto;\r\n//   }\r\n  \r\n//   .basicui-appshell-topbar .basicui-logo__text img {\r\n//     height: 60%;\r\n//   }\r\n  \r\n//   .basicui-appshell-topbar__right__toggle {\r\n//     background-color: transparent;\r\n//     border: none;\r\n//     color: inherit;\r\n//     /* width: 60px;\r\n//     height: 36px; */\r\n//     display: flex;\r\n//     justify-content: center;\r\n//     align-items: center;\r\n//   }\r\n  \r\n//   .basicui-appshell-topbar__right__toggle svg {\r\n//     height: 1em;\r\n//   }\r\n\r\n@import '../styles/index.css';\r\n.basicui-appshell {\r\n  &.dark-mode {\r\n    background-color: #333;\r\n    color: #fff;\r\n  }\r\n}\r\n\r\n.basicui-appshell-topbar {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  padding: 10px 20px;\r\n  background-color: var(--basicui-bg-surface);\r\n  border-bottom: 1px solid var(--basicui-border-color);\r\n  z-index: 1000;\r\n}\r\n\r\n.basicui-logo {\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n.basicui-logo__icon img {\r\n  height: 24px;\r\n}\r\n\r\n.basicui-logo__text img {\r\n  height: 18px;\r\n}\r\n\r\n.basicui-appshell-topbar__actions {\r\n  display: flex;\r\n  gap: 10px;\r\n}\r\n\r\n.basicui-appshell-body {\r\n  margin-top: var(--basicui-appshell-topbar-height);\r\n  padding: 20px;\r\n}\r\n\r\n/* Sidebar and mobile navbar styles */\r\n.navbar {\r\n  width: var(--basicui-appshell-navbar-width);\r\n  transition: width 250ms ease-in-out;\r\n  position: fixed;\r\n  left: 0;\r\n  top: 0;\r\n  bottom: 0;\r\n  height: 100%;\r\n  overflow-y: auto;\r\n}\r\n\r\n.basicui-appshell-mobile-navbar {\r\n  position: fixed;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n  background-color: var(--basicui-bg-surface);\r\n  padding: 10px;\r\n  z-index: 1000;\r\n}\r\n\r\n@media (max-width: 767px) {\r\n  .navbar {\r\n    display: none;\r\n  }\r\n\r\n  .basicui-appshell-mobile-navbar {\r\n    display: block;\r\n  }\r\n}\r\n\r\n@media (min-width: 768px) {\r\n  .basicui-appshell-mobile-navbar {\r\n    display: none;\r\n  }\r\n}\r\n\r\n/* Modern Gradient Button */\r\n.button {\r\n  padding: 12px 24px;\r\n  font-size: 16px;\r\n  font-weight: 500;\r\n  color: white;\r\n  background: #90aead;\r\n  border: none;\r\n  border-radius: 8px;\r\n  cursor: pointer;\r\n  transition: all 0.3s ease;\r\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\r\n}\r\n\r\n.button:hover {\r\n  transform: translateY(-2px);\r\n  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);\r\n}\r\n\r\n.button:active {\r\n  transform: translateY(0);\r\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\r\n}\r\n\r\n",
                     "styleUrl": "./appshell.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"basicui-appshell\" [ngClass]=\"{'dark-mode':isDarkMode}\">\n    <header class=\"basicui-appshell-topbar\">\n        <div class=\"basicui-logo\">\n            <div class=\"basicui-logo__icon\">\n                <img [src]=\"isDarkMode ? logoIconWhite : logoIconBlack\" alt=\"Logo Icon\"/>\n            </div>\n            <div class=\"basicui-logo__text\">\n                <img [src]=\"isDarkMode ? logoTextWhite : logoTextBlack\" alt=\"Logo Text\"/>\n            </div>\n        </div>\n\n        <button class=\"basicui-appshell-topbar_right_toggle\" (click)=\"toggleSidebar()\">\n            {{isSidebarExpanded ? 'Collapse' : 'Expand'}} Sidebar\n        </button>\n\n        <button class=\"basicui-appshell-topbar_right_toggle\" (click)=\"toggleDarkMode()\">\n            Toggle {{isDarkMode ? 'Light' : 'Dark'}} Mode\n        </button>\n\n        <button class=\"basicui-appshell-topbar_right_toggle\" (click)=\"onSignin()\">\n            Sign In\n        </button>\n\n        <button class=\"basicui-appshell-topbar_right_toggle\" (click)=\"onSignout()\">\n            Sign Out\n        </button>\n    </header>\n\n    <aside *ngIf=\"isSidebarExpanded\" class=\"navbar\">\n        <ng-content select=\"[navabr]\"></ng-content>\n    </aside>\n\n    <main [innerHTML]=\"body\">\n        \n    </main>\n\n    <footer>\n        <ng-content select=\"[footer]\"></ng-content>\n    </footer>\n\n    <div class=\"basicui-appshell-mobile-navbar\" [innerHTML]=\"mobileNavbar\">\n        \n    </div>\n\n</div>"
+            "templateData": "<!-- <div class=\"basicui-appshell\" [ngClass]=\"{'dark-mode':isDarkMode}\">\n    <header class=\"basicui-appshell-topbar\">\n        <div class=\"basicui-logo\">\n            <div class=\"basicui-logo__icon\">\n                <img [src]=\"isDarkMode ? logoIconWhite : logoIconBlack\" alt=\"Logo Icon\"/>\n            </div>\n            <div class=\"basicui-logo__text\">\n                <img [src]=\"isDarkMode ? logoTextWhite : logoTextBlack\" alt=\"Logo Text\"/>\n            </div>\n        </div>\n\n        <button class=\"basicui-appshell-topbar_right_toggle\" (click)=\"toggleSidebar()\">\n            {{isSidebarExpanded ? \"basicui-appshell--expanded\"\n          : \"basicui-appshell--collapsed\"}} SI\n        </button>\n\n        <button class=\"basicui-appshell-topbar_right_toggle\" (click)=\"toggleDarkMode()\">\n            Toggle {{isDarkMode ? 'Light' : 'Dark'}} Mode\n        </button>\n\n        <button class=\"basicui-appshell-navbar-footer basicui-appshell-navbar-footer--expanded\" (click)=\"onSignin()\">\n            S I\n        </button>\n\n        <button class=\"basicui-appshell-topbar_right_toggle\" (click)=\"onSignout()\">\n            S O\n        </button>\n    </header>\n\n    <aside *ngIf=\"isSidebarExpanded\" class=\"navbar\">\n        <ng-content select=\"[navabr]\"></ng-content>\n    </aside>\n\n    <main [innerHTML]=\"body\">\n        \n    </main>\n\n    <footer>\n        <ng-content select=\"[footer]\"></ng-content>\n    </footer>\n\n    <div class=\"basicui-appshell-mobile-navbar\" [innerHTML]=\"mobileNavbar\">\n        \n    </div>\n\n</div> -->\n\n<div class=\"basicui-appshell\" [ngClass]=\"{'dark-mode': isDarkMode}\">\n    <header class=\"basicui-appshell-topbar\">\n      <div class=\"basicui-logo\">\n        <div class=\"basicui-logo__icon\">\n          <img [src]=\"isDarkMode ? logoIconWhite : logoIconBlack\" alt=\"Logo Icon\" />\n        </div>\n        <div class=\"basicui-logo__text\">\n          <img [src]=\"isDarkMode ? logoTextWhite : logoTextBlack\" alt=\"Logo Text\" />\n        </div>\n      </div>\n  \n      <div class=\"basicui-appshell-topbar__actions\">\n        <button class=\"basicui-appshell-topbar_right_toggle\" (click)=\"toggleSidebar()\">\n          {{ isSidebarExpanded ? \"Collapse Sidebar\" : \"Expand Sidebar\" }}\n        </button>\n  \n        <button class=\"basicui-appshell-topbar_right_toggle\" (click)=\"toggleDarkMode()\">\n          Toggle {{ isDarkMode ? 'Light' : 'Dark' }} Mode\n        </button>\n  \n        <button class=\"basicui-appshell-topbar_right_toggle\" (click)=\"onSignin()\">\n          Sign In\n        </button>\n  \n        <button class=\"basicui-appshell-topbar_right_toggle\" (click)=\"onSignout()\">\n          Sign Out\n        </button>\n      </div>\n    </header>\n  \n    <!-- Sidebar for larger screens -->\n    <aside *ngIf=\"isSidebarExpanded\" class=\"navbar\">\n      <ng-content select=\"[navbar]\"></ng-content>\n    </aside>\n  \n    <!-- Main body content -->\n    <main [innerHTML]=\"body\" class=\"basicui-appshell-body\"></main>\n  \n    <!-- Footer content -->\n    <footer>\n      <ng-content select=\"[footer]\"></ng-content>\n    </footer>\n  \n    <!-- Mobile navbar visible on small screens -->\n    <div *ngIf=\"!isSidebarExpanded\" class=\"basicui-appshell-mobile-navbar\" [innerHTML]=\"mobileNavbar\"></div>\n  </div>\n  "
         },
         {
             "name": "AvatarComponent",
@@ -1141,6 +1204,335 @@
             "templateData": "<label class=\"basicui-checkbox\" [class.basicui-checkbox--checked]=\"checked\" [attr.for]=\"id\"\r\n[ngClass]=\"{\r\n  ' basicui-checkbox--theme-default': theme === 'default',\r\n  ' basicui-checkbox--theme-primary': theme === 'primary',\r\n  ' basicui-checkbox--theme-danger': theme === 'danger',\r\n  ' basicui-checkbox--theme-secondary': theme === 'secondary',\r\n  ' basicui-checkbox--theme-success': theme === 'success',\r\n  'basicui-checkbox--theme-warning': theme === 'warning',\r\n}\">\r\n  <input type=\"checkbox\" class=\"basicui-checkbox__input\" [checked]=\"checked\" (change)=\"onCheckboxChange($event)\"/>\r\n  <span class=\"basicui-checkbox__span\">{{label}}</span>\r\n</label>"
         },
         {
+            "name": "ColorPaletteComponent",
+            "id": "component-ColorPaletteComponent-70ac0c890287a352f1d2943c6f71334b2b9407ba5a400b4f2772c402c00e88265b9e5531f37f3089efc02e11452ebc860782dfe04459b9cba527b0bec7da60ee",
+            "file": "src/app/userguides/color-palette.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-color-palette",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<div class=\"flex flex-wrap gap-2\">\n  <div\n    *ngFor=\"let color of palette; let i = index\"\n    [style.background-color]=\"color[1]\"\n    class=\"w-24 h-24 flex items-center justify-center text-white font-bold rounded shadow-md\"\n  >\n    {{ colorKey[i] }}\n  </div>\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "colorname",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "colors",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "ColorPaletteColors",
+                    "decorators": []
+                },
+                {
+                    "name": "isDarkMode",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "colorKey",
+                    "defaultValue": "[\r\n    'muted',\r\n    'light',\r\n    'base',\r\n    'dark',\r\n    'text',\r\n    'transparent-muted',\r\n    'transparent-light',\r\n    'transparent-base',\r\n    'transparent-dark',\r\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 28
+                },
+                {
+                    "name": "palette",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string[][]",
+                    "optional": false,
+                    "description": "",
+                    "line": 27
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnChanges",
+                    "args": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 40,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "updatePalette",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 46,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';\r\n\r\ninterface ColorPaletteColors {\r\n  lightMode: Record<string, string>;\r\n  darkMode: Record<string, string>;\r\n}\r\n\r\n@Component({\r\n  selector: 'app-color-palette',\r\n  template: `\r\n    <div class=\"flex flex-wrap gap-2\">\r\n      <div\r\n        *ngFor=\"let color of palette; let i = index\"\r\n        [style.background-color]=\"color[1]\"\r\n        class=\"w-24 h-24 flex items-center justify-center text-white font-bold rounded shadow-md\"\r\n      >\r\n        {{ colorKey[i] }}\r\n      </div>\r\n    </div>\r\n  `,\r\n})\r\nexport class ColorPaletteComponent implements OnChanges {\r\n  @Input() colors!: ColorPaletteColors;\r\n  @Input() colorname!: string;\r\n  @Input() isDarkMode = false;\r\n\r\n  palette: string[][] = [];\r\n  colorKey = [\r\n    'muted',\r\n    'light',\r\n    'base',\r\n    'dark',\r\n    'text',\r\n    'transparent-muted',\r\n    'transparent-light',\r\n    'transparent-base',\r\n    'transparent-dark',\r\n  ];\r\n\r\n  ngOnChanges(changes: SimpleChanges): void {\r\n    if (changes['colors'] || changes['colorname'] || changes['isDarkMode']) {\r\n      this.updatePalette();\r\n    }\r\n  }\r\n\r\n  private updatePalette(): void {\r\n    const colorOrder = [\r\n      `--basicui-bg-${this.colorname}-muted`,\r\n      `--basicui-bg-${this.colorname}-light`,\r\n      `--basicui-bg-${this.colorname}`,\r\n      `--basicui-bg-${this.colorname}-dark`,\r\n      `--basicui-bg-${this.colorname}-text`,\r\n      `--basicui-bg-${this.colorname}-transparent-muted`,\r\n      `--basicui-bg-${this.colorname}-transparent-light`,\r\n      `--basicui-bg-${this.colorname}-transparent`,\r\n      `--basicui-bg-${this.colorname}-transparent-dark`,\r\n    ];\r\n\r\n    this.palette = colorOrder.map((key) => [\r\n      key,\r\n      this.colors[this.isDarkMode ? 'darkMode' : 'lightMode'][key],\r\n    ]);\r\n  }\r\n}",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "implements": [
+                "OnChanges"
+            ]
+        },
+        {
+            "name": "ColorSchemeGeneratorComponent",
+            "id": "component-ColorSchemeGeneratorComponent-ddfb2ffc52327bf448838f9ac69d9ea4a6850f726bf456b1abd98542807421e959b0169dffcfbe0a1bb1b3db63e613f8624c26320bfb1c585ec9a29dcc4c434d",
+            "file": "src/app/userguides/color-scheme-generator.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-color-scheme-generator",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<div>\n  <input\n    type=\"color\"\n    [value]=\"baseColor\"\n    (input)=\"onChangeBaseColor($event)\"\n    class=\"form-control\"\n  />\n  <input\n    type=\"text\"\n    [value]=\"colorname\"\n    (input)=\"onChange($event)\"\n    class=\"form-control\"\n  />\n  <app-color-palette\n    *ngIf=\"palette\"\n    [colors]=\"palette\"\n    [colorname]=\"colorname\"\n    [isDarkMode]=\"isDarkMode\"\n  ></app-color-palette>\n  <button (click)=\"onCopy()\" class=\"btn btn-primary\">Copy CSS</button>\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "baseColor",
+                    "defaultValue": "'#CF8BA9'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 32
+                },
+                {
+                    "name": "colorname",
+                    "defaultValue": "'secondary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 33
+                },
+                {
+                    "name": "isDarkMode",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 34
+                },
+                {
+                    "name": "palette",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 31
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "generateCSS",
+                    "args": [
+                        {
+                            "name": "mode",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 54,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "mode",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 36,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onChange",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 45,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onChangeBaseColor",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 40,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onCopy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Promise<void>",
+                    "typeParameters": [],
+                    "line": 63,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        134
+                    ]
+                },
+                {
+                    "name": "updatePalette",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 50,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { generateCompleteColorScheme } from './util';\r\n\r\n@Component({\r\n  selector: 'app-color-scheme-generator',\r\n  template: `\r\n    <div>\r\n      <input\r\n        type=\"color\"\r\n        [value]=\"baseColor\"\r\n        (input)=\"onChangeBaseColor($event)\"\r\n        class=\"form-control\"\r\n      />\r\n      <input\r\n        type=\"text\"\r\n        [value]=\"colorname\"\r\n        (input)=\"onChange($event)\"\r\n        class=\"form-control\"\r\n      />\r\n      <app-color-palette\r\n        *ngIf=\"palette\"\r\n        [colors]=\"palette\"\r\n        [colorname]=\"colorname\"\r\n        [isDarkMode]=\"isDarkMode\"\r\n      ></app-color-palette>\r\n      <button (click)=\"onCopy()\" class=\"btn btn-primary\">Copy CSS</button>\r\n    </div>\r\n  `,\r\n})\r\nexport class ColorSchemeGeneratorComponent implements OnInit {\r\n  palette: any;\r\n  baseColor = '#CF8BA9';\r\n  colorname = 'secondary';\r\n  isDarkMode = false;\r\n\r\n  ngOnInit(): void {\r\n    this.updatePalette();\r\n  }\r\n\r\n  onChangeBaseColor(event: Event): void {\r\n    this.baseColor = (event.target as HTMLInputElement).value;\r\n    this.updatePalette();\r\n  }\r\n\r\n  onChange(event: Event): void {\r\n    this.colorname = (event.target as HTMLInputElement).value;\r\n    this.updatePalette();\r\n  }\r\n\r\n  private updatePalette(): void {\r\n    this.palette = generateCompleteColorScheme(this.baseColor, this.colorname);\r\n  }\r\n\r\n  private generateCSS(mode: string): string {\r\n    const theme = this.palette[mode];\r\n    return Object.entries(theme)\r\n      .map(([key, value]) => {\r\n        return `${key}: ${value};`;\r\n      })\r\n      .join('\\n');\r\n  }\r\n\r\n  async onCopy(): Promise<void> {\r\n    const lightModeCSS = this.generateCSS('lightMode');\r\n    const darkModeCSS = this.generateCSS('darkMode');\r\n    try {\r\n      await navigator.clipboard.writeText(\r\n        `.basicui-light {\\n ${lightModeCSS} \\n} .basicui-dark {\\n ${darkModeCSS} \\n}`\r\n      );\r\n    } catch (err) {\r\n      console.error('Failed to copy CSS to clipboard: ', err);\r\n    }\r\n  }\r\n}",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "implements": [
+                "OnInit"
+            ]
+        },
+        {
             "name": "ColorSchemesComponent",
             "id": "component-ColorSchemesComponent-3767830f085a22cd06bdc05bc04a14fdea4ab801d2fba38ace8690a767b2cea0e671b82ae6c1df939dcc3872b571f7c761e97e8ab5773d3631e09733fcb1eb1d",
             "file": "src/app/colorschemes/colorschemes.component.ts",
@@ -1257,6 +1649,105 @@
             "stylesData": "",
             "extends": [],
             "templateData": "<div class=\"basicuidemo-section\">\r\n  <h4>{{ heading }}</h4>\r\n  <ng-content></ng-content>\r\n</div>"
+        },
+        {
+            "name": "FlexContainerComponent",
+            "id": "component-FlexContainerComponent-c2f17cf2db52e61b7d755cc9d45b91486b0cb1c6a18776e212c5a45cca623881fefcbccfbcdf3e99d219626f26dc519ca2400a6eb6d922247fc6e32bfc757759",
+            "file": "src/app/flex-container/flex-container.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-flex-container",
+            "styleUrls": [
+                "./flex-container.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./flex-container.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "alignX",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "\"default\" | \"center\" | \"right\"",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "alignY",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "\"default\" | \"middle\" | \"bottom\"",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                },
+                {
+                    "name": "children",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                },
+                {
+                    "name": "gap",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "\"default\" | \"less\" | \"more\"",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                },
+                {
+                    "name": "orientation",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "\"default\" | \"common\"",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "wrap",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-flex-container',\n  templateUrl: './flex-container.component.html',\n  styleUrls: ['./flex-container.component.scss']\n})\nexport class FlexContainerComponent {\n  children:any;\n  orientation !: \"default\" | \"common\";\n  wrap !: boolean;\n  alignX !: \"default\" | \"center\" | \"right\";\n  alignY !: \"default\" | \"middle\" | \"bottom\";\n  gap !: \"default\" | \"less\" | \"more\";\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".basicui-flex-container {\r\n    display: flex;\r\n    flex-direction: column;\r\n  }\r\n  \r\n  .basicui-flex-container .basicui-flex-container__children {\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: flex-start;\r\n    justify-items: flex-start;\r\n    align-content: flex-start;\r\n    align-items: flex-start;\r\n  }\r\n  \r\n  .basicui-flex-container--orientation-column .basicui-flex-container__children {\r\n    flex-direction: column;\r\n  }\r\n  \r\n  .basicui-flex-container--wrap .basicui-flex-container__children {\r\n    flex-wrap: wrap;\r\n  }\r\n  \r\n  .basicui-flex-container--alignx-center .basicui-flex-container__children {\r\n    justify-content: center;\r\n    justify-items: center;\r\n  }\r\n  \r\n  .basicui-flex-container--alignx-right .basicui-flex-container__children {\r\n    justify-content: flex-end;\r\n    justify-items: flex-end;\r\n  }\r\n  \r\n  .basicui-flex-container--aligny-middle .basicui-flex-container__children {\r\n    align-content: center;\r\n    align-items: center;\r\n  }\r\n  \r\n  .basicui-flex-container--aligny-bottom .basicui-flex-container__children {\r\n    align-content: flex-end;\r\n    align-items: flex-end;\r\n  }\r\n  \r\n  .basicui-flex-container--gap-default .basicui-flex-container__children > * {\r\n    margin-right: var(--basicui-grid-gap);\r\n    margin-bottom: var(--basicui-grid-gap);\r\n  }\r\n  \r\n  .basicui-flex-container--gap-none .basicui-flex-container__children > * {\r\n    margin-right: 0px;\r\n    margin-bottom: 0px;\r\n  }\r\n  \r\n  .basicui-flex-container--gap-less .basicui-flex-container__children > * {\r\n    margin-right: var(--basicui-grid-gap-less);\r\n    margin-bottom: var(--basicui-grid-gap-less);\r\n  }\r\n  \r\n  .basicui-flex-container--gap-more .basicui-flex-container__children > * {\r\n    margin-right: var(--basicui-grid-gap-more);\r\n    margin-bottom: var(--basicui-grid-gap-more);\r\n  }\r\n  ",
+                    "styleUrl": "./flex-container.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"basicui-flex-container\">\n    \n</div>"
         },
         {
             "name": "HeaderComponent",
@@ -1691,6 +2182,41 @@
                 "OnInit"
             ],
             "templateData": "<div [ngClass]=\"['input-container', containerClassName]\">\r\n    <div>\r\n        <label [for]=\"label\">{{label}}</label>\r\n        <br>\r\n    </div>\r\n    <input [type]=\"type\" [placeholder]=\"placeholder\" [value]=\"value\" [ngClass]=\"['input', 'form-input']\" />\r\n</div>\r\n<div *ngIf=\"isInfo\" class=\"basicui-form-element-info\">{{ infoMessage }}</div>"
+        },
+        {
+            "name": "IntroductionComponent",
+            "id": "component-IntroductionComponent-01a926adca569fe8c3dd000509db57a8ef991b4f6e924dca5f6b096ff239c3001deac63fc084428ff686ca484298a90f2ea16d7fd6131dac982efc7995482e70",
+            "file": "src/app/userguides/introduction.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-introduction",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<h1>Introduction</h1>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-introduction',\r\n  template: `<h1>Introduction</h1>`,\r\n})\r\nexport class IntroductionComponent {}",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
         },
         {
             "name": "LabelComponent",
@@ -3408,18 +3934,63 @@
             "stylesData": "",
             "extends": [],
             "templateData": "<div class=\"basicuidemo-typography\">\r\n  <app-demosection heading=\"Headings\">\r\n    <h1>h1. heading</h1>\r\n    <h2>h2. heading</h2>\r\n    <h3>h3. heading</h3>\r\n    <h4>h4. heading</h4>\r\n    <h5>h5. heading</h5>\r\n    <h6>h6. heading</h6>\r\n    <p>p. paragraph</p>\r\n  </app-demosection>\r\n\r\n  <app-demosection heading=\"Body content\">\r\n    <h5>(p) Regular paragraph</h5>\r\n    <p>Purus adipiscing purus dictum nascetur hendrerit eleifend feugiat quam pulvinar. congue turpis est sodales\r\n      placerat id nibh ante. ad justo platea mollis curae lacinia vitae mattis egestas eu musvestibulum. ullamcorper\r\n      penatibus arcu eleifend cras massa justo. dictum lorem neque semper enim taciti leo imperdiet cubilia. cubilia\r\n      nulla eu felis adipiscing at accumsan nibh</p>\r\n\r\n    <h5>(mark) Inline text with highlighted content</h5>\r\n    <p>maximus urna vivamus euismod quam cursus imperdiet <mark>integer litora nostra luctus</mark> pulvinarin.\r\n      rutrumaliquam cras phasellus fusce vestibulum nec mattis. laoreet tellus turpis ullamcorper dis sagittis felis\r\n      gravida. facilisis nisi nulla massa montes habitasse vehicula ante porttitor consequat fusce dis conubia et</p>\r\n\r\n    <h5>(small) Small text</h5>\r\n    <p><small>massa porta sed interdum penatibus euismod velit lacus et vestibulum nam class ipsum ad</small></p>\r\n\r\n    <h5>(strong) (b) Bold text</h5>\r\n    <p><strong>porttitor faucibus quam curae adipiscing eleifend pulvinar integer maecenas auctor urna</strong></p>\r\n  </app-demosection>\r\n</div>"
+        },
+        {
+            "name": "UserGuideComponent",
+            "id": "component-UserGuideComponent-b0c713d05704648692afed82880bc0aa7be2b7ff66b86d638b6df6e0ab7cc99f4cdcba18a317935caa9190c0a528cd2bda62ff4f0779ad052af939c80352fb6b",
+            "file": "src/app/userguides/user-guide.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-user-guide",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<app-introduction *ngIf=\"variant === 'introduction'\"></app-introduction>\n<app-color-scheme-generator *ngIf=\"variant === 'color-scheme-generator'\"></app-color-scheme-generator>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "variant",
+                    "defaultValue": "'introduction'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "\"introduction\" | \"color-scheme-generator\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-user-guide',\n  template: `\n    <app-introduction *ngIf=\"variant === 'introduction'\"></app-introduction>\n    <app-color-scheme-generator *ngIf=\"variant === 'color-scheme-generator'\"></app-color-scheme-generator>\n  `,\n})\nexport class UserGuideComponent {\n  @Input() variant: 'introduction' | 'color-scheme-generator' = 'introduction';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-aa5c364eac40b884805bc1ba6a54b2340d3c8486bd406b14965b033e561fcb2427fd4a93125dc4ae025b3200908ca6eb4cf328baa561867be6156f02e58257d4",
+            "id": "module-AppModule-f5c01839c5b786b19156f533b7f7cff646aa5d0a11a4d1bb0ed3c2d1a7c8bd72dc4563493fc56f1ac07827ea1b877005fdf8e2fc666586290ba67bf459532fa5",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { BrowserModule } from '@angular/platform-browser';\r\nimport { NgModule } from '@angular/core';\r\nimport { NgxsModule } from '@ngxs/store';\r\nimport { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';\r\nimport { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';\r\nimport { environment } from '../environments/environment';\r\nimport { AppComponent } from './app.component';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { SelectComponent } from './select/select.component';\r\nimport { IconButtonComponent } from './icon-button/icon-button.component';\r\nimport { LinkComponent } from './link/link.component';\r\nimport { RadioComponent } from './radio/radio.component';\r\nimport { TextareaComponent } from './textarea/textarea.component';\r\nimport { AccordionComponent } from './accordion/accordion.component';\r\nimport { StoryWrapperComponent } from './story-wrapper/story-wrapper.component';\r\nimport { ModalComponent } from './modal/modal.component';\r\nimport { ModalFooterComponent } from './modal/modal-footer.component';\r\nimport { TableComponent } from './table/table.component';\r\nimport { TabsComponent } from './tabs/tabs.component';\r\nimport { ColorSchemesComponent } from './colorschemes/colorschemes.component';\r\nimport { ThemesOverviewComponent } from './themes-overview/themes-overview.component';\r\nimport { TypographyComponent } from './typography/typography.component';\r\nimport { DemoSectionComponent } from './demosection/demosection.component';\r\nimport Button from '../stories/button.component';\r\nimport Header from '../stories/header.component';\r\nimport Page from '../stories/page.component';\r\nimport { RouterModule } from '@angular/router';\r\nimport { CommonModule } from '@angular/common';\r\nimport { SwitchComponent } from './switch/switch.component';\r\nimport { CheckboxComponent } from './checkbox/checkbox.component';\r\nimport { SelectNativeComponent } from './select-native/select-native.component';\r\nimport { FirstSampleModule } from './first-sample.module';\nimport { AppshellComponent } from './appshell/appshell.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    SelectComponent,\r\n    SelectNativeComponent,\r\n    IconButtonComponent,\r\n    LinkComponent,\r\n    RadioComponent,\r\n    TextareaComponent,\r\n    AccordionComponent,\r\n    StoryWrapperComponent,\r\n    ModalComponent,\r\n    ModalFooterComponent,\r\n    TableComponent,\r\n    TabsComponent,\r\n    ColorSchemesComponent,\r\n    ThemesOverviewComponent,\r\n    TypographyComponent,\r\n    DemoSectionComponent,\r\n    SwitchComponent,\r\n    CheckboxComponent,\r\n    Button,\r\n    Header,\r\n    Page,\r\n    AppshellComponent,\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    FormsModule,\r\n    NgxsModule.forRoot([], { developmentMode: !environment.production, }),\r\n    NgxsReduxDevtoolsPluginModule.forRoot(),\r\n    NgxsLoggerPluginModule.forRoot({ disabled: environment.production, }),\r\n    RouterModule,\r\n    CommonModule,\r\n    FirstSampleModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { BrowserModule } from '@angular/platform-browser';\r\nimport { NgModule } from '@angular/core';\r\nimport { NgxsModule } from '@ngxs/store';\r\nimport { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';\r\nimport { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';\r\nimport { environment } from '../environments/environment';\r\nimport { AppComponent } from './app.component';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { SelectComponent } from './select/select.component';\r\nimport { IconButtonComponent } from './icon-button/icon-button.component';\r\nimport { LinkComponent } from './link/link.component';\r\nimport { RadioComponent } from './radio/radio.component';\r\nimport { TextareaComponent } from './textarea/textarea.component';\r\nimport { AccordionComponent } from './accordion/accordion.component';\r\nimport { StoryWrapperComponent } from './story-wrapper/story-wrapper.component';\r\nimport { ModalComponent } from './modal/modal.component';\r\nimport { ModalFooterComponent } from './modal/modal-footer.component';\r\nimport { TableComponent } from './table/table.component';\r\nimport { TabsComponent } from './tabs/tabs.component';\r\nimport { ColorSchemesComponent } from './colorschemes/colorschemes.component';\r\nimport { ThemesOverviewComponent } from './themes-overview/themes-overview.component';\r\nimport { TypographyComponent } from './typography/typography.component';\r\nimport { DemoSectionComponent } from './demosection/demosection.component';\r\nimport Button from '../stories/button.component';\r\nimport Header from '../stories/header.component';\r\nimport Page from '../stories/page.component';\r\nimport { RouterModule } from '@angular/router';\r\nimport { CommonModule } from '@angular/common';\r\nimport { SwitchComponent } from './switch/switch.component';\r\nimport { CheckboxComponent } from './checkbox/checkbox.component';\r\nimport { SelectNativeComponent } from './select-native/select-native.component';\r\nimport { FirstSampleModule } from './first-sample.module';\r\nimport { AppshellComponent } from './appshell/appshell.component';\r\nimport { UserGuideComponent } from './userguides/user-guide.component';\r\nimport { IntroductionComponent } from './userguides/introduction.component';\r\nimport { ColorPaletteComponent } from './userguides/color-palette.component';\r\nimport { ColorSchemeGeneratorComponent } from './userguides/color-scheme-generator.component';\nimport { FlexContainerComponent } from './flex-container/flex-container.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    SelectComponent,\r\n    SelectNativeComponent,\r\n    IconButtonComponent,\r\n    LinkComponent,\r\n    RadioComponent,\r\n    TextareaComponent,\r\n    AccordionComponent,\r\n    StoryWrapperComponent,\r\n    ModalComponent,\r\n    ModalFooterComponent,\r\n    TableComponent,\r\n    TabsComponent,\r\n    ColorSchemesComponent,\r\n    ThemesOverviewComponent,\r\n    TypographyComponent,\r\n    DemoSectionComponent,\r\n    SwitchComponent,\r\n    CheckboxComponent,\r\n    Button,\r\n    Header,\r\n    Page,\r\n    AppshellComponent,\r\n    UserGuideComponent,\r\n    IntroductionComponent,\r\n    ColorPaletteComponent,\r\n    ColorSchemeGeneratorComponent,\r\n    FlexContainerComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    FormsModule,\r\n    NgxsModule.forRoot([], { developmentMode: !environment.production, }),\r\n    NgxsReduxDevtoolsPluginModule.forRoot(),\r\n    NgxsLoggerPluginModule.forRoot({ disabled: environment.production, }),\r\n    RouterModule,\r\n    CommonModule,\r\n    FirstSampleModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -3444,16 +4015,28 @@
                             "name": "CheckboxComponent"
                         },
                         {
+                            "name": "ColorPaletteComponent"
+                        },
+                        {
+                            "name": "ColorSchemeGeneratorComponent"
+                        },
+                        {
                             "name": "ColorSchemesComponent"
                         },
                         {
                             "name": "DemoSectionComponent"
                         },
                         {
+                            "name": "FlexContainerComponent"
+                        },
+                        {
                             "name": "Header"
                         },
                         {
                             "name": "IconButtonComponent"
+                        },
+                        {
+                            "name": "IntroductionComponent"
                         },
                         {
                             "name": "LinkComponent"
@@ -3496,6 +4079,9 @@
                         },
                         {
                             "name": "TypographyComponent"
+                        },
+                        {
+                            "name": "UserGuideComponent"
                         }
                     ]
                 },
@@ -3681,6 +4267,16 @@
                 "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'black-extended',\r\n  }\r\n})"
             },
             {
+                "name": "ColorSchemeGenerator",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/userguides/user-guide.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    variant: 'color-scheme-generator',\r\n  },\r\n}"
+            },
+            {
                 "name": "Danger",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -3759,6 +4355,36 @@
                 "deprecationMessage": "",
                 "type": "[]",
                 "defaultValue": "[\r\n  //SvgDefinitionsComponent,\r\n  SvgIconComponent,\r\n  //BreadcrumbsComponent,\r\n  ButtonComponent,\r\n  InputComponent,\r\n  AvatarComponent\r\n]"
+            },
+            {
+                "name": "generateColorSchemeForMode",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/userguides/util.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "(\r\n    baseHex: string,\r\n    baseColorVariableName: string,\r\n    isDarkMode: boolean = false\r\n  ): ColorSet => {\r\n    const baseColor = tinycolor(baseHex);\r\n\r\n    const getColorShades = (\r\n        color: any,\r\n        darkMode: boolean\r\n      ): string[] => {\r\n        const shades: string[] = [];\r\n    \r\n        // Create slightly lighter, slightly darker, muted and text colors\r\n        const base = color\r\n          .clone()\r\n          .desaturate(darkMode ? 5 : 0)\r\n          .toHexString();\r\n        const light = color\r\n          .clone()\r\n          .lighten(darkMode ? 6 : 6)\r\n          .desaturate(darkMode ? 5 : 0)\r\n          .toHexString();\r\n        const dark = color\r\n          .clone()\r\n          .darken(darkMode ? 6 : 6)\r\n          .desaturate(darkMode ? 5 : 0)\r\n          .toHexString();\r\n        const muted = color\r\n          .clone()\r\n          .lighten(darkMode ? 10 : 10)\r\n          .desaturate(darkMode ? 10 : 5)\r\n          .toHexString();\r\n        const text = darkMode\r\n          ? color.clone().lighten(15).saturate(0).toHexString()\r\n          : color.clone().darken(15).toHexString();\r\n    \r\n        shades.push(\r\n          base,\r\n          light,\r\n          dark,\r\n          muted,\r\n          text,\r\n          `${base}70`,\r\n          `${light}70`,\r\n          `${dark}70`,\r\n          `${muted}70`\r\n        );\r\n    \r\n        return shades;\r\n      };\r\n    \r\n      // Generate 5 color variations\r\n      const colorShades = getColorShades(baseColor, isDarkMode);\r\n    \r\n      // Choose the best foreground color (either white or black) for legibility across most shades\r\n      const foregroundColor = tinycolor\r\n        .mostReadable(baseHex, [\"#ffffff\", \"#000000\"], {\r\n          includeFallbackColors: true,\r\n          level: \"AAA\",\r\n          size: \"large\",\r\n        })\r\n        .toHexString();\r\n    \r\n      // Assign colors and foregrounds with updated variable names\r\n      const colors: ColorSet = {\r\n        [`--basicui-bg-${baseColorVariableName}`]: colorShades[0],\r\n        [`--basicui-bg-${baseColorVariableName}-light`]: colorShades[1],\r\n        [`--basicui-bg-${baseColorVariableName}-dark`]: colorShades[2],\r\n        [`--basicui-bg-${baseColorVariableName}-muted`]: colorShades[3],\r\n        [`--basicui-bg-${baseColorVariableName}-text`]: colorShades[4],\r\n        [`--basicui-bg-${baseColorVariableName}-transparent`]: colorShades[5],\r\n        [`--basicui-bg-${baseColorVariableName}-transparent-light`]: colorShades[6],\r\n        [`--basicui-bg-${baseColorVariableName}-transparent-dark`]: colorShades[7],\r\n        [`--basicui-bg-${baseColorVariableName}-transparent-muted`]: colorShades[8],\r\n        [`--basicui-fg-${baseColorVariableName}`]: foregroundColor,\r\n      };\r\n    \r\n      return colors;\r\n    }"
+            },
+            {
+                "name": "generateCompleteColorScheme",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/userguides/util.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "(\r\n      baseHex: string,\r\n      baseColorVariableName: string\r\n    ) => {\r\n      // Light mode colors\r\n      const lightMode = generateColorSchemeForMode(\r\n        baseHex,\r\n        baseColorVariableName,\r\n        false\r\n      );\r\n    \r\n      // Dark mode colors\r\n      const darkMode = generateColorSchemeForMode(\r\n        baseHex,\r\n        baseColorVariableName,\r\n        true\r\n      );\r\n    \r\n      return {\r\n        lightMode,\r\n        darkMode,\r\n      };\r\n    }"
+            },
+            {
+                "name": "Introduction",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/userguides/user-guide.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    variant: 'introduction',\r\n  },\r\n}"
             },
             {
                 "name": "Large",
@@ -3911,6 +4537,16 @@
                 "defaultValue": "{\r\n\r\n  title: 'Form Elements/Textarea',\r\n  component: TextareaComponent,\r\n  tags: [\"autodocs\"],\r\n  argTypes: {\r\n  },\r\n} as Meta"
             },
             {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/userguides/user-guide.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<UserGuideComponent>",
+                "defaultValue": "{\r\n  title: 'User Guide',\r\n  component: UserGuideComponent,\r\n  argTypes: {\r\n    variant: {\r\n      control: {\r\n        type: 'select',\r\n      },\r\n      options: ['introduction', 'color-scheme-generator'],\r\n\r\n    },\r\n  },\r\n}"
+            },
+            {
                 "name": "panels",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -3959,6 +4595,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  render: (args) => ({\r\n    props: {\r\n      ...args,\r\n      theme: args.theme,\r\n      checked: args.checked,\r\n      checkedChange: action('checkedChange'),\r\n    },\r\n  }),\r\n  args:{\r\n    theme: 'default',\r\n    checked: true\r\n  }\r\n}"
+            },
+            {
+                "name": "Playground",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/flex-container/flex-container.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Playground",
@@ -4224,21 +4870,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/appshell/appshell.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<AppshellComponent>",
-                "defaultValue": "(args: AppshellComponent) => ({\r\n  component: AppshellComponent,\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/avatar/avatar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<AvatarComponent>",
                 "defaultValue": "(args: AvatarComponent) => ({\r\n  component: AvatarComponent,\r\n  props: args\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/appshell/appshell.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<AppshellComponent>",
+                "defaultValue": "(args: AppshellComponent) => ({\r\n  component: AppshellComponent,\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -4259,6 +4905,16 @@
                 "deprecationMessage": "",
                 "type": "Story<ButtonComponent>",
                 "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/flex-container/flex-container.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FlexContainerComponent>",
+                "defaultValue": "(args: FlexContainerComponent) => ({\r\n  props: args,\r\n  template: `\r\n    <app-flex-container>\r\n      <div>One</div>\r\n      <div>Two</div>\r\n      <div>Three</div>\r\n    </app-flex-container>\r\n  `,\r\n})"
             },
             {
                 "name": "Template",
@@ -4479,6 +5135,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<>",
                 "file": "src/app/textarea/textarea.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<UserGuideComponent>",
+                "file": "src/app/userguides/user-guide.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -4943,6 +5610,38 @@
                     "defaultValue": "(args: AvatarComponent) => ({\r\n  component: AvatarComponent,\r\n  props: args\r\n})"
                 }
             ],
+            "src/app/userguides/user-guide.stories.ts": [
+                {
+                    "name": "ColorSchemeGenerator",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/userguides/user-guide.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    variant: 'color-scheme-generator',\r\n  },\r\n}"
+                },
+                {
+                    "name": "Introduction",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/userguides/user-guide.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    variant: 'introduction',\r\n  },\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/userguides/user-guide.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<UserGuideComponent>",
+                    "defaultValue": "{\r\n  title: 'User Guide',\r\n  component: UserGuideComponent,\r\n  argTypes: {\r\n    variant: {\r\n      control: {\r\n        type: 'select',\r\n      },\r\n      options: ['introduction', 'color-scheme-generator'],\r\n\r\n    },\r\n  },\r\n}"
+                }
+            ],
             "src/app/breadcrumbs/breadcrumbs.stories.ts": [
                 {
                     "name": "Default",
@@ -4999,6 +5698,28 @@
                     "deprecationMessage": "",
                     "type": "[]",
                     "defaultValue": "[\r\n  //SvgDefinitionsComponent,\r\n  SvgIconComponent,\r\n  //BreadcrumbsComponent,\r\n  ButtonComponent,\r\n  InputComponent,\r\n  AvatarComponent\r\n]"
+                }
+            ],
+            "src/app/userguides/util.ts": [
+                {
+                    "name": "generateColorSchemeForMode",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/userguides/util.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "(\r\n    baseHex: string,\r\n    baseColorVariableName: string,\r\n    isDarkMode: boolean = false\r\n  ): ColorSet => {\r\n    const baseColor = tinycolor(baseHex);\r\n\r\n    const getColorShades = (\r\n        color: any,\r\n        darkMode: boolean\r\n      ): string[] => {\r\n        const shades: string[] = [];\r\n    \r\n        // Create slightly lighter, slightly darker, muted and text colors\r\n        const base = color\r\n          .clone()\r\n          .desaturate(darkMode ? 5 : 0)\r\n          .toHexString();\r\n        const light = color\r\n          .clone()\r\n          .lighten(darkMode ? 6 : 6)\r\n          .desaturate(darkMode ? 5 : 0)\r\n          .toHexString();\r\n        const dark = color\r\n          .clone()\r\n          .darken(darkMode ? 6 : 6)\r\n          .desaturate(darkMode ? 5 : 0)\r\n          .toHexString();\r\n        const muted = color\r\n          .clone()\r\n          .lighten(darkMode ? 10 : 10)\r\n          .desaturate(darkMode ? 10 : 5)\r\n          .toHexString();\r\n        const text = darkMode\r\n          ? color.clone().lighten(15).saturate(0).toHexString()\r\n          : color.clone().darken(15).toHexString();\r\n    \r\n        shades.push(\r\n          base,\r\n          light,\r\n          dark,\r\n          muted,\r\n          text,\r\n          `${base}70`,\r\n          `${light}70`,\r\n          `${dark}70`,\r\n          `${muted}70`\r\n        );\r\n    \r\n        return shades;\r\n      };\r\n    \r\n      // Generate 5 color variations\r\n      const colorShades = getColorShades(baseColor, isDarkMode);\r\n    \r\n      // Choose the best foreground color (either white or black) for legibility across most shades\r\n      const foregroundColor = tinycolor\r\n        .mostReadable(baseHex, [\"#ffffff\", \"#000000\"], {\r\n          includeFallbackColors: true,\r\n          level: \"AAA\",\r\n          size: \"large\",\r\n        })\r\n        .toHexString();\r\n    \r\n      // Assign colors and foregrounds with updated variable names\r\n      const colors: ColorSet = {\r\n        [`--basicui-bg-${baseColorVariableName}`]: colorShades[0],\r\n        [`--basicui-bg-${baseColorVariableName}-light`]: colorShades[1],\r\n        [`--basicui-bg-${baseColorVariableName}-dark`]: colorShades[2],\r\n        [`--basicui-bg-${baseColorVariableName}-muted`]: colorShades[3],\r\n        [`--basicui-bg-${baseColorVariableName}-text`]: colorShades[4],\r\n        [`--basicui-bg-${baseColorVariableName}-transparent`]: colorShades[5],\r\n        [`--basicui-bg-${baseColorVariableName}-transparent-light`]: colorShades[6],\r\n        [`--basicui-bg-${baseColorVariableName}-transparent-dark`]: colorShades[7],\r\n        [`--basicui-bg-${baseColorVariableName}-transparent-muted`]: colorShades[8],\r\n        [`--basicui-fg-${baseColorVariableName}`]: foregroundColor,\r\n      };\r\n    \r\n      return colors;\r\n    }"
+                },
+                {
+                    "name": "generateCompleteColorScheme",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/userguides/util.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "(\r\n      baseHex: string,\r\n      baseColorVariableName: string\r\n    ) => {\r\n      // Light mode colors\r\n      const lightMode = generateColorSchemeForMode(\r\n        baseHex,\r\n        baseColorVariableName,\r\n        false\r\n      );\r\n    \r\n      // Dark mode colors\r\n      const darkMode = generateColorSchemeForMode(\r\n        baseHex,\r\n        baseColorVariableName,\r\n        true\r\n      );\r\n    \r\n      return {\r\n        lightMode,\r\n        darkMode,\r\n      };\r\n    }"
                 }
             ],
             "src/stories/Button.stories.ts": [
@@ -5377,6 +6098,28 @@
                     "deprecationMessage": "",
                     "type": "Story<ButtonComponent>",
                     "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/app/flex-container/flex-container.stories.ts": [
+                {
+                    "name": "Playground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/flex-container/flex-container.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/flex-container/flex-container.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FlexContainerComponent>",
+                    "defaultValue": "(args: FlexContainerComponent) => ({\r\n  props: args,\r\n  template: `\r\n    <app-flex-container>\r\n      <div>One</div>\r\n      <div>Two</div>\r\n      <div>Three</div>\r\n    </app-flex-container>\r\n  `,\r\n})"
                 }
             ],
             "src/app/modal/modal-footer.stories.ts": [
@@ -5901,6 +6644,19 @@
                     "description": "",
                     "kind": 183
                 }
+            ],
+            "src/app/userguides/user-guide.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<UserGuideComponent>",
+                    "file": "src/app/userguides/user-guide.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
             ]
         }
     },
@@ -6295,6 +7051,35 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "FirstSampleComponents",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/flex-container/flex-container.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FlexContainerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/flex-container/flex-container.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Playground",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/flex-container/flex-container.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -6785,6 +7570,110 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/userguides/color-palette.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ColorPaletteComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/userguides/color-palette.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ColorPaletteColors",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/userguides/color-scheme-generator.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ColorSchemeGeneratorComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/11",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/userguides/introduction.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "IntroductionComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/userguides/user-guide.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UserGuideComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/userguides/user-guide.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ColorSchemeGenerator",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/userguides/user-guide.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Introduction",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/userguides/user-guide.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/userguides/util.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ColorSet",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/userguides/util.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "generateColorSchemeForMode",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/userguides/util.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "generateCompleteColorScheme",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

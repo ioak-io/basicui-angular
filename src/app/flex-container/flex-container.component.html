@@ -1,0 +1,21 @@
+<div
+  class="basicui-flex-container"
+  [ngClass]="{
+    'basicui-flex-container--wrap': true,
+    'basicui-flex-container--orientation-column': false,
+    'basicui-flex-container--alignx-center': alignX==='center',
+    'basicui-flex-container--alignx-right': alignX==='right',
+    'basicui-flex-container--aligny-middle' : alignY==='middle',
+    'basicui-flex-container--aligny-bottom' :alignY==='bottom',
+    'basicui-flex-container--gap-default' : gap==='default',
+    'basicui-flex-container--gap-less' : gap==='less',
+    'basicui-flex-container--gap-more' : gap==='more',
+
+  }"
+>
+
+  <div class="basicui-flex-container__children">
+    <ng-content></ng-content>
+  </div>
+  <div class="basicui-flex-container__antimargin"></div>
+</div>
