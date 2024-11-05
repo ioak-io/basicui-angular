@@ -18,9 +18,9 @@ const Template: Story<FlexContainerComponent> = (args: FlexContainerComponent) =
   props: args,
   template: `
     <app-flex-container [orientation]="orientation" [wrap]="wrap" [alignX]="alignX" [alignY]="alignY" [gap]="gap">
-      <div>One</div>
-      <div>Two</div>
-      <div>Three</div>
+      <div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; border-radius: 2px;">One</div>
+      <div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; border-radius: 2px;">Two</div>
+      <div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; border-radius: 2px;">Three</div>
     </app-flex-container>
   `,
 });

@@ -1652,7 +1652,7 @@
         },
         {
             "name": "FlexContainerComponent",
-            "id": "component-FlexContainerComponent-c2f17cf2db52e61b7d755cc9d45b91486b0cb1c6a18776e212c5a45cca623881fefcbccfbcdf3e99d219626f26dc519ca2400a6eb6d922247fc6e32bfc757759",
+            "id": "component-FlexContainerComponent-43b7525d6a80defed9f269ff46e087d9772c45393970d71be0207a63b4196a6a43c3e5102eaed8000743bfd3678bfd37af1cc2746bcad3114ba11dacc96d9558",
             "file": "src/app/flex-container/flex-container.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1669,27 +1669,55 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [
+            "inputsClass": [
                 {
                     "name": "alignX",
+                    "defaultValue": "'default'",
                     "deprecated": false,
                     "deprecationMessage": "",
+                    "line": 12,
                     "type": "\"default\" | \"center\" | \"right\"",
-                    "optional": false,
-                    "description": "",
-                    "line": 12
+                    "decorators": []
                 },
                 {
                     "name": "alignY",
+                    "defaultValue": "'default'",
                     "deprecated": false,
                     "deprecationMessage": "",
+                    "line": 13,
                     "type": "\"default\" | \"middle\" | \"bottom\"",
-                    "optional": false,
-                    "description": "",
-                    "line": 13
+                    "decorators": []
                 },
+                {
+                    "name": "gap",
+                    "defaultValue": "'default'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "\"default\" | \"less\" | \"more\"",
+                    "decorators": []
+                },
+                {
+                    "name": "orientation",
+                    "defaultValue": "'default'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "\"default\" | \"column\"",
+                    "decorators": []
+                },
+                {
+                    "name": "wrap",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
                 {
                     "name": "children",
                     "deprecated": false,
@@ -1698,33 +1726,6 @@
                     "optional": false,
                     "description": "",
                     "line": 9
-                },
-                {
-                    "name": "gap",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "\"default\" | \"less\" | \"more\"",
-                    "optional": false,
-                    "description": "",
-                    "line": 14
-                },
-                {
-                    "name": "orientation",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "\"default\" | \"common\"",
-                    "optional": false,
-                    "description": "",
-                    "line": 10
-                },
-                {
-                    "name": "wrap",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "boolean",
-                    "optional": false,
-                    "description": "",
-                    "line": 11
                 }
             ],
             "methodsClass": [],
@@ -1737,17 +1738,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-flex-container',\n  templateUrl: './flex-container.component.html',\n  styleUrls: ['./flex-container.component.scss']\n})\nexport class FlexContainerComponent {\n  children:any;\n  orientation !: \"default\" | \"common\";\n  wrap !: boolean;\n  alignX !: \"default\" | \"center\" | \"right\";\n  alignY !: \"default\" | \"middle\" | \"bottom\";\n  gap !: \"default\" | \"less\" | \"more\";\n}\n",
+            "sourceCode": "import { Component , Input} from '@angular/core'\n\n@Component({\n  selector: 'app-flex-container',\n  templateUrl: './flex-container.component.html',\n  styleUrls: ['./flex-container.component.scss']\n})\nexport class FlexContainerComponent {\n  children: any;\n  @Input() orientation: 'default' | 'column' = 'default';\n  @Input() wrap: boolean = false;\n  @Input() alignX: 'default' | 'center' | 'right' = 'default';\n  @Input() alignY: 'default' | 'middle' | 'bottom' = 'default';\n  @Input() gap: 'default' | 'less' | 'more' = 'default';\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".basicui-flex-container {\r\n    display: flex;\r\n    flex-direction: column;\r\n  }\r\n  \r\n  .basicui-flex-container .basicui-flex-container__children {\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: flex-start;\r\n    justify-items: flex-start;\r\n    align-content: flex-start;\r\n    align-items: flex-start;\r\n  }\r\n  \r\n  .basicui-flex-container--orientation-column .basicui-flex-container__children {\r\n    flex-direction: column;\r\n  }\r\n  \r\n  .basicui-flex-container--wrap .basicui-flex-container__children {\r\n    flex-wrap: wrap;\r\n  }\r\n  \r\n  .basicui-flex-container--alignx-center .basicui-flex-container__children {\r\n    justify-content: center;\r\n    justify-items: center;\r\n  }\r\n  \r\n  .basicui-flex-container--alignx-right .basicui-flex-container__children {\r\n    justify-content: flex-end;\r\n    justify-items: flex-end;\r\n  }\r\n  \r\n  .basicui-flex-container--aligny-middle .basicui-flex-container__children {\r\n    align-content: center;\r\n    align-items: center;\r\n  }\r\n  \r\n  .basicui-flex-container--aligny-bottom .basicui-flex-container__children {\r\n    align-content: flex-end;\r\n    align-items: flex-end;\r\n  }\r\n  \r\n  .basicui-flex-container--gap-default .basicui-flex-container__children > * {\r\n    margin-right: var(--basicui-grid-gap);\r\n    margin-bottom: var(--basicui-grid-gap);\r\n  }\r\n  \r\n  .basicui-flex-container--gap-none .basicui-flex-container__children > * {\r\n    margin-right: 0px;\r\n    margin-bottom: 0px;\r\n  }\r\n  \r\n  .basicui-flex-container--gap-less .basicui-flex-container__children > * {\r\n    margin-right: var(--basicui-grid-gap-less);\r\n    margin-bottom: var(--basicui-grid-gap-less);\r\n  }\r\n  \r\n  .basicui-flex-container--gap-more .basicui-flex-container__children > * {\r\n    margin-right: var(--basicui-grid-gap-more);\r\n    margin-bottom: var(--basicui-grid-gap-more);\r\n  }\r\n  ",
+                    "data": "* {\r\n  --basicui-grid-gap: 12px;\r\n  --basicui-grid-gap-less: 6px;\r\n  --basicui-grid-gap-more: 24px;\r\n}\r\n.basicui-flex-container {\r\n    display: flex;\r\n    flex-direction: column;\r\n  }\r\n  \r\n  .basicui-flex-container .basicui-flex-container__children {\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: flex-start;\r\n    justify-items: flex-start;\r\n    align-content: flex-start;\r\n    align-items: flex-start;\r\n  }\r\n  \r\n  .basicui-flex-container--orientation-column .basicui-flex-container__children {\r\n    flex-direction: column;\r\n  }\r\n  \r\n  .basicui-flex-container--wrap .basicui-flex-container__children {\r\n    flex-wrap: wrap;\r\n  }\r\n  \r\n  .basicui-flex-container--alignx-center .basicui-flex-container__children {\r\n    justify-content: center;\r\n    justify-items: center;\r\n  }\r\n  \r\n  .basicui-flex-container--alignx-right .basicui-flex-container__children {\r\n    justify-content: flex-end;\r\n    justify-items: flex-end;\r\n  }\r\n  \r\n  .basicui-flex-container--aligny-middle .basicui-flex-container__children {\r\n    align-content: center;\r\n    align-items: center;\r\n  }\r\n  \r\n  .basicui-flex-container--aligny-bottom .basicui-flex-container__children {\r\n    align-content: flex-end;\r\n    align-items: flex-end;\r\n  }\r\n  \r\n  .basicui-flex-container--gap-default .basicui-flex-container__children > * {\r\n    margin-right: 12px;\r\n    margin-bottom: 12px;\r\n  }\r\n  \r\n  .basicui-flex-container--gap-none .basicui-flex-container__children > * {\r\n    margin-right: 0px;\r\n    margin-bottom: 0px;\r\n  }\r\n  \r\n  .basicui-flex-container--gap-less .basicui-flex-container__children > * {\r\n    margin-right: 6px;\r\n    margin-bottom: 6px;\r\n  }\r\n  \r\n  .basicui-flex-container--gap-more .basicui-flex-container__children > * {\r\n    margin-right: 24px;\r\n    margin-bottom: 24px;\r\n  }\r\n  ",
                     "styleUrl": "./flex-container.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"basicui-flex-container\">\n    \n</div>"
+            "templateData": "<div\n  class=\"basicui-flex-container\"\n  [ngClass]=\"{\n    'basicui-flex-container--wrap': true,\n    'basicui-flex-container--orientation-column': false,\n    'basicui-flex-container--alignx-center': alignX==='center',\n    'basicui-flex-container--alignx-right': alignX==='right',\n    'basicui-flex-container--aligny-middle' : alignY==='middle',\n    'basicui-flex-container--aligny-bottom' :alignY==='bottom',\n    'basicui-flex-container--gap-default' : gap==='default',\n    'basicui-flex-container--gap-less' : gap==='less',\n    'basicui-flex-container--gap-more' : gap==='more',\n\n  }\"\n>\n\n  <div class=\"basicui-flex-container__children\">\n    <ng-content></ng-content>\n  </div>\n  <div class=\"basicui-flex-container__antimargin\"></div>\n</div>\n"
         },
         {
             "name": "HeaderComponent",
@@ -4317,6 +4318,16 @@
                 "defaultValue": "() => ({\r\n  component: ColorSchemesComponent,\r\n  props: {\r\n    discriminator: 'default',\r\n  }\r\n})"
             },
             {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/flex-container/flex-container.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "DefaultTransparent",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4600,16 +4611,6 @@
                 "name": "Playground",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/flex-container/flex-container.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Playground",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/icon-button/icon-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -4870,21 +4871,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/avatar/avatar.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<AvatarComponent>",
-                "defaultValue": "(args: AvatarComponent) => ({\r\n  component: AvatarComponent,\r\n  props: args\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/appshell/appshell.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<AppshellComponent>",
                 "defaultValue": "(args: AppshellComponent) => ({\r\n  component: AppshellComponent,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/avatar/avatar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<AvatarComponent>",
+                "defaultValue": "(args: AvatarComponent) => ({\r\n  component: AvatarComponent,\r\n  props: args\r\n})"
             },
             {
                 "name": "Template",
@@ -4914,7 +4915,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<FlexContainerComponent>",
-                "defaultValue": "(args: FlexContainerComponent) => ({\r\n  props: args,\r\n  template: `\r\n    <app-flex-container>\r\n      <div>One</div>\r\n      <div>Two</div>\r\n      <div>Three</div>\r\n    </app-flex-container>\r\n  `,\r\n})"
+                "defaultValue": "(args: FlexContainerComponent) => ({\r\n  component: FlexContainerComponent,\r\n  props: args,\r\n  template: `\r\n    <app-flex-container [orientation]=\"orientation\" [wrap]=\"wrap\" [alignX]=\"alignX\" [alignY]=\"alignY\" [gap]=\"gap\">\r\n      <div>One</div>\r\n      <div>Two</div>\r\n      <div>Three</div>\r\n    </app-flex-container>\r\n  `,\r\n})"
             },
             {
                 "name": "Template",
@@ -5664,6 +5665,28 @@
                     "defaultValue": "(args: BreadcrumbsComponent) => ({\r\n    component: BreadcrumbsComponent,\r\n    props: args\r\n})"
                 }
             ],
+            "src/app/flex-container/flex-container.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/flex-container/flex-container.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/flex-container/flex-container.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FlexContainerComponent>",
+                    "defaultValue": "(args: FlexContainerComponent) => ({\r\n  component: FlexContainerComponent,\r\n  props: args,\r\n  template: `\r\n    <app-flex-container [orientation]=\"orientation\" [wrap]=\"wrap\" [alignX]=\"alignX\" [alignY]=\"alignY\" [gap]=\"gap\">\r\n      <div>One</div>\r\n      <div>Two</div>\r\n      <div>Three</div>\r\n    </app-flex-container>\r\n  `,\r\n})"
+                }
+            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -6098,28 +6121,6 @@
                     "deprecationMessage": "",
                     "type": "Story<ButtonComponent>",
                     "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
-                }
-            ],
-            "src/app/flex-container/flex-container.stories.ts": [
-                {
-                    "name": "Playground",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/flex-container/flex-container.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/flex-container/flex-container.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<FlexContainerComponent>",
-                    "defaultValue": "(args: FlexContainerComponent) => ({\r\n  props: args,\r\n  template: `\r\n    <app-flex-container>\r\n      <div>One</div>\r\n      <div>Two</div>\r\n      <div>Three</div>\r\n    </app-flex-container>\r\n  `,\r\n})"
                 }
             ],
             "src/app/modal/modal-footer.stories.ts": [
@@ -7069,7 +7070,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Playground",
+                "name": "Default",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

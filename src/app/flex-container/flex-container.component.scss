@@ -15,6 +15,7 @@
     justify-items: flex-start;
     align-content: flex-start;
     align-items: flex-start;
+    gap: var(--basicui-grid-gap);
   }
   
   .basicui-flex-container--orientation-column .basicui-flex-container__children {
@@ -45,23 +46,15 @@
     align-items: flex-end;
   }
   
-  .basicui-flex-container--gap-default .basicui-flex-container__children > * {
-    margin-right: 12px;
-    margin-bottom: 12px;
+  .basicui-flex-container--gap-none .basicui-flex-container__children {
+    gap: 0;
   }
   
-  .basicui-flex-container--gap-none .basicui-flex-container__children > * {
-    margin-right: 0px;
-    margin-bottom: 0px;
+  .basicui-flex-container--gap-less .basicui-flex-container__children {
+    gap: var(--basicui-grid-gap-less);
   }
   
-  .basicui-flex-container--gap-less .basicui-flex-container__children > * {
-    margin-right: 6px;
-    margin-bottom: 6px;
-  }
-  
-  .basicui-flex-container--gap-more .basicui-flex-container__children > * {
-    margin-right: 24px;
-    margin-bottom: 24px;
+  .basicui-flex-container--gap-more .basicui-flex-container__children {
+    gap: var(--basicui-grid-gap-more);
   }
   
